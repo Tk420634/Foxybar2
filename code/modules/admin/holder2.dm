@@ -30,6 +30,7 @@ GLOBAL_PROTECT(href_token)
 
 	/// if set to anything non-null, will make the admin see invisible objects, shrimple as
 	var/see_invis_override
+	var/datum/filter_editor/filteriffic
 
 /datum/admins/New(datum/admin_rank/R, ckey, force_active = FALSE, protected)
 	if(IsAdminAdvancedProcCall())
