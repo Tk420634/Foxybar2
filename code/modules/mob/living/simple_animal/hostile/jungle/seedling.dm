@@ -15,14 +15,14 @@
 	icon_dead = "seedling_dead"
 	maxHealth = 100
 	health = 100
-	melee_damage_lower = 15
+	melee_damage_lower = 30
 	melee_damage_upper = 30
 	pixel_x = -16
 	pixel_y = -14
-	minimum_distance = 3
+	approach_distance = 3
 	move_to_delay = 20
 	vision_range = 9
-	aggro_vision_range = 9
+	aggro_vision_range = 15
 	ranged = TRUE
 	ranged_cooldown_time = 10
 	projectiletype = /obj/item/projectile/seedling
@@ -109,8 +109,7 @@
 		return
 	return ..()
 
-/mob/living/simple_animal/hostile/jungle/seedling/AttackingTarget()
-	var/atom/my_target = get_target()
+/mob/living/simple_animal/hostile/jungle/seedling/MeleeAttackTarget(atom/my_target)
 	if(isliving(my_target))
 		if(ranged_cooldown <= world.time && combatant_state == SEEDLING_STATE_NEUTRAL)
 			OpenFire(my_target)
@@ -136,7 +135,7 @@
 		if(get_dist(src,my_target) >= 4 && prob(40))
 			SolarBeamStartup(my_target)
 			return
-	addtimer(CALLBACK(src,PROC_REF(Volley)), 5)
+	addtimer(CALLBACK(src, .proc/Volley), 5)
 
 /mob/living/simple_animal/hostile/jungle/seedling/proc/SolarBeamStartup(mob/living/living_target)//It's more like requiem than final spark
 	if(combatant_state != SEEDLING_STATE_WARMUP || !get_target())
@@ -148,7 +147,7 @@
 	if(get_dist(src,living_target) > 7)
 		playsound(living_target,'sound/effects/seedling_chargeup.ogg', 100, 0)
 	solar_beam_identifier = world.time
-	addtimer(CALLBACK(src,PROC_REF(Beamu), living_target, solar_beam_identifier), 35)
+	addtimer(CALLBACK(src, .proc/Beamu, living_target, solar_beam_identifier), 35)
 
 /mob/living/simple_animal/hostile/jungle/seedling/proc/Beamu(mob/living/living_target, beam_id = 0)
 	if(combatant_state == SEEDLING_STATE_ACTIVE && living_target && beam_id == solar_beam_identifier)
@@ -168,7 +167,7 @@
 			living_target.adjust_fire_stacks(0.2)//Just here for the showmanship
 			living_target.IgniteMob()
 			playsound(living_target,'sound/weapons/sear.ogg', 50, 1)
-			addtimer(CALLBACK(src,PROC_REF(AttackRecovery)), 5)
+			addtimer(CALLBACK(src, .proc/AttackRecovery), 5)
 			return
 	AttackRecovery()
 
@@ -176,10 +175,10 @@
 	if(combatant_state == SEEDLING_STATE_WARMUP && target)
 		combatant_state = SEEDLING_STATE_ACTIVE
 		update_icons()
-		var/datum/callback/cb = CALLBACK(src,PROC_REF(InaccurateShot))
+		var/datum/callback/cb = CALLBACK(src, .proc/InaccurateShot)
 		for(var/i in 1 to 13)
 			addtimer(cb, i)
-		addtimer(CALLBACK(src,PROC_REF(AttackRecovery)), 14)
+		addtimer(CALLBACK(src, .proc/AttackRecovery), 14)
 
 /mob/living/simple_animal/hostile/jungle/seedling/proc/InaccurateShot()
 	var/atom/my_target = get_target()
@@ -203,14 +202,14 @@
 	ranged_cooldown = world.time + ranged_cooldown_time
 	if(my_target)
 		face_atom(my_target)
-	addtimer(CALLBACK(src,PROC_REF(ResetNeutral)), 10)
+	addtimer(CALLBACK(src, .proc/ResetNeutral), 10)
 
 /mob/living/simple_animal/hostile/jungle/seedling/proc/ResetNeutral()
 	combatant_state = SEEDLING_STATE_NEUTRAL
 	var/atom/my_target = get_target()
 	if(my_target && !stat)
 		update_icons()
-		Goto(my_target, move_to_delay, minimum_distance)
+		Goto(my_target)
 
 /mob/living/simple_animal/hostile/jungle/seedling/adjustHealth()
 	. = ..()

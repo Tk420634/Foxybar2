@@ -38,9 +38,8 @@
 					span_danger("We inject our egg into [victim]'s body!"))
 	egg_lain = 1
 
-/mob/living/simple_animal/hostile/headcrab/AttackingTarget()
+/mob/living/simple_animal/hostile/headcrab/MeleeAttackTarget(atom/my_target)
 	. = ..()
-	var/atom/my_target = get_target()
 	if(!. || egg_lain || !iscarbon(my_target) || ismonkey(my_target))
 		return
 	// Changeling egg can survive in aliens!
@@ -52,7 +51,7 @@
 		return
 	Infect(my_target)
 	to_chat(src, span_userdanger("With our egg laid, our death approaches rapidly..."))
-	addtimer(CALLBACK(src,PROC_REF(death)), 100)
+	addtimer(CALLBACK(src, .proc/death), 100)
 
 /obj/item/organ/body_egg/changeling_egg
 	name = "changeling egg"

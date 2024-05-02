@@ -49,7 +49,6 @@
 	var/list/attack_action_types = list()
 	var/small_sprite_type
 	ignore_other_mobs = TRUE // Their entire existance is to kill players
-	am_important = TRUE
 
 /mob/living/simple_animal/hostile/megafauna/Initialize(mapload)
 	. = ..()
@@ -112,11 +111,10 @@
 	else
 		..()
 
-/mob/living/simple_animal/hostile/megafauna/AttackingTarget()
+/mob/living/simple_animal/hostile/megafauna/MeleeAttackTarget(atom/my_target)
 	if(recovery_time >= world.time)
 		return
 	. = ..()
-	var/atom/my_target = get_target()
 	if(. && isliving(my_target))
 		var/mob/living/L = my_target
 		if(L.stat != DEAD)

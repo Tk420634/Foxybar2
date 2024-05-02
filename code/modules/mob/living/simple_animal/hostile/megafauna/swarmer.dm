@@ -151,7 +151,7 @@ GLOBAL_LIST_INIT(AISwarmerCapsByType, list(/mob/living/simple_animal/hostile/swa
 /mob/living/simple_animal/hostile/swarmer/ai/proc/StartAction(deci = 0)
 	stop_automated_movement = TRUE
 	AIStatus = AI_OFF
-	addtimer(CALLBACK(src,PROC_REF(EndAction)), deci)
+	addtimer(CALLBACK(src, .proc/EndAction), deci)
 
 
 /mob/living/simple_animal/hostile/swarmer/ai/proc/EndAction()
@@ -175,7 +175,7 @@ GLOBAL_LIST_INIT(AISwarmerCapsByType, list(/mob/living/simple_animal/hostile/swa
 //This handles viable things to eat/attack
 //Place specific cases of AI derpiness here
 //Most can be left to the automatic Gain/LosePatience() system
-/mob/living/simple_animal/hostile/swarmer/ai/resource/CanAttack(atom/the_target)
+/mob/living/simple_animal/hostile/swarmer/ai/resource/AllowedToAttackTarget(atom/the_target)
 
 	//SPECIFIC CASES:
 	//Smash fulltile windows before grilles
@@ -199,8 +199,7 @@ GLOBAL_LIST_INIT(AISwarmerCapsByType, list(/mob/living/simple_animal/hostile/swa
 		..()
 
 
-/mob/living/simple_animal/hostile/swarmer/ai/resource/AttackingTarget()
-	var/atom/my_target = get_target()
+/mob/living/simple_animal/hostile/swarmer/ai/resource/MeleeAttackTarget(atom/my_target)
 	if(my_target.swarmer_act(src))
 		add_type_to_wanted(my_target.type)
 		return TRUE
@@ -247,7 +246,7 @@ GLOBAL_LIST_INIT(AISwarmerCapsByType, list(/mob/living/simple_animal/hostile/swa
 	projectilesound = 'sound/weapons/laser.ogg'
 	check_friendly_fire = TRUE //you're supposed to protect the resource swarmers, you poop
 	retreat_distance = 3
-	minimum_distance = 3
+	approach_distance = 3
 
 /mob/living/simple_animal/hostile/swarmer/ai/ranged_combat/Aggro()
 	..()
@@ -267,8 +266,7 @@ GLOBAL_LIST_INIT(AISwarmerCapsByType, list(/mob/living/simple_animal/hostile/swa
 	summon_backup(15, TRUE)
 
 
-/mob/living/simple_animal/hostile/swarmer/ai/melee_combat/AttackingTarget()
-	var/atom/my_target = get_target()
+/mob/living/simple_animal/hostile/swarmer/ai/melee_combat/MeleeAttackTarget(atom/my_target)
 	if(isliving(my_target))
 		if(prob(35))
 			StartAction(30)

@@ -21,7 +21,7 @@ Difficulty: Extremely Hard
 	melee_damage_lower = 10
 	melee_damage_upper = 10
 	aggro_vision_range = 18 // large vision range so combat doesn't abruptly end when someone runs a bit away
-	rapid_melee = 4
+	melee_attacks_per_tick = 4
 	speed = 20
 	move_to_delay = 20
 	ranged = TRUE
@@ -98,7 +98,7 @@ Difficulty: Extremely Hard
 			if(easy_attack)
 				snowball_machine_gun()
 			else
-				INVOKE_ASYNC(src,PROC_REF(ice_shotgun), 5, list(list(-180, -140, -100, -60, -20, 20, 60, 100, 140), list(-160, -120, -80, -40, 0, 40, 80, 120, 160)))
+				INVOKE_ASYNC(src, .proc/ice_shotgun, 5, list(list(-180, -140, -100, -60, -20, 20, 60, 100, 140), list(-160, -120, -80, -40, 0, 40, 80, 120, 160)))
 				snowball_machine_gun(5 * 8, 5)
 		if(3)
 			if(easy_attack)
@@ -147,7 +147,7 @@ Difficulty: Extremely Hard
 		return
 	return ..()
 
-/mob/living/simple_animal/hostile/megafauna/demonic_frost_miner/MoveToTarget(list/possible_targets)
+/mob/living/simple_animal/hostile/megafauna/demonic_frost_miner/InitiateMovement(list/possible_targets)
 	if(enraging)
 		return
 	return ..()
@@ -282,7 +282,7 @@ Difficulty: Extremely Hard
 		return
 	forceMove(user)
 	to_chat(user, span_notice("You feel a bit safer... but a demonic presence lurks in the back of your head..."))
-	RegisterSignal(user, COMSIG_MOB_DEATH,PROC_REF(resurrect))
+	RegisterSignal(user, COMSIG_MOB_DEATH, .proc/resurrect)
 
 /// Resurrects the targette when they die by cloning them into a new duplicate body and transferring their mind to the clone on a safe station turf
 /obj/item/resurrection_crystal/proc/resurrect(mob/living/carbon/user, gibbed)
@@ -343,7 +343,7 @@ Difficulty: Extremely Hard
 	icon_state = "frozen"
 
 /datum/status_effect/ice_block_talisman/on_apply()
-	RegisterSignal(owner, COMSIG_MOVABLE_PRE_MOVE,PROC_REF(owner_moved))
+	RegisterSignal(owner, COMSIG_MOVABLE_PRE_MOVE, .proc/owner_moved)
 	if(!owner.stat)
 		to_chat(owner, span_userdanger("You become frozen in a cube!"))
 	cube = icon('icons/effects/freeze.dmi', "ice_cube")

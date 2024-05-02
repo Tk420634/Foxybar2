@@ -36,7 +36,7 @@ Difficulty: Medium
 	ranged = 1
 	del_on_death = 1
 	retreat_distance = 5
-	minimum_distance = 5
+	approach_distance = 5
 	ranged_cooldown_time = 10
 	var/size = 5
 	var/charging = 0
@@ -67,8 +67,7 @@ Difficulty: Medium
 		GLOB.necropolis_gate.toggle_the_gate(null, TRUE) //very clever.
 	return ..()
 
-/mob/living/simple_animal/hostile/megafauna/legion/AttackingTarget()
-	. = ..()
+/mob/living/simple_animal/hostile/megafauna/legion/MeleeAttackTarget(atom/my_target)
 	if(. && ishuman(target))
 		var/mob/living/L = target
 		if(L.stat == UNCONSCIOUS)
@@ -88,16 +87,16 @@ Difficulty: Medium
 			SpinAnimation(speed = 20, loops = 5)
 			ranged = 0
 			retreat_distance = 0
-			minimum_distance = 0
+			approach_distance = 0
 			speed = 0
 			move_to_delay = 1
 			charging = 1
-			addtimer(CALLBACK(src,PROC_REF(reset_charge)), 50)
+			addtimer(CALLBACK(src, .proc/reset_charge), 50)
 
 /mob/living/simple_animal/hostile/megafauna/legion/proc/reset_charge()
 	ranged = 1
 	retreat_distance = 5
-	minimum_distance = 5
+	approach_distance = 5
 	speed = 1
 	move_to_delay = 2
 	charging = 0

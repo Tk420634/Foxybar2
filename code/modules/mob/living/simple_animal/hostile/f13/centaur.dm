@@ -22,9 +22,6 @@
 	ranged = TRUE
 	wound_bonus = 0
 	footstep_type = FOOTSTEP_MOB_CRAWL
-	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon)
-	loot_drop_amount = 2
-	loot_amount_random = TRUE
 
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	robust_searching = TRUE
@@ -34,7 +31,7 @@
 	retreat_distance = 0 // Mob doesn't retreat
 	//how far they pull back
 
-	minimum_distance = 0 //Mob pushes up to melee, leading with its ranged attacks to soften up player.
+	approach_distance = 0 //Mob pushes up to melee, leading with its ranged attacks to soften up player.
 	// how close you can get before they try to pull back
 
 	aggro_vision_range = 7 //Will start attacking within player sight, but gives wiggle room to avoid if moving slow and carefully

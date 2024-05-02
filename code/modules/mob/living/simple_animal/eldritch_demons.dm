@@ -85,7 +85,7 @@
 	var/datum/action/innate/mansus_speech/action = new(src)
 	linked_mobs[mob_linked] = action
 	action.Grant(mob_linked)
-	RegisterSignal(mob_linked, list(COMSIG_MOB_DEATH, COMSIG_PARENT_QDELETING) ,PROC_REF(unlink_mob))
+	RegisterSignal(mob_linked, list(COMSIG_MOB_DEATH, COMSIG_PARENT_QDELETING) , .proc/unlink_mob)
 	return TRUE
 
 /mob/living/simple_animal/hostile/eldritch/raw_prophet/proc/unlink_mob(mob/living/mob_linked)
@@ -245,11 +245,9 @@
 
 /mob/living/simple_animal/hostile/eldritch/armsy/Shoot(atom/targeted_atom)
 	GiveTarget(targeted_atom)
-	AttackingTarget()
+	MeleeAttackTarget(targeted_atom)
 
-
-/mob/living/simple_animal/hostile/eldritch/armsy/AttackingTarget()
-	var/atom/my_target = get_target()
+/mob/living/simple_animal/hostile/eldritch/armsy/MeleeAttackTarget(atom/my_target)
 	if(istype(my_target,/obj/item/bodypart/r_arm) || istype(my_target,/obj/item/bodypart/l_arm))
 		qdel(my_target)
 		heal()
@@ -258,7 +256,7 @@
 		return
 	if(back)
 		back.GiveTarget(my_target)
-		back.AttackingTarget()
+		back.InitiateMeleeAttack(my_target)
 	if(!Adjacent(my_target))
 		return
 	do_attack_animation(my_target)

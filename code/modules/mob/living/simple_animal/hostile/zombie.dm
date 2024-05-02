@@ -27,7 +27,7 @@
 
 /mob/living/simple_animal/hostile/zombie/Initialize(mapload)
 	. = ..()
-	INVOKE_ASYNC(src,PROC_REF(setup_visuals))
+	INVOKE_ASYNC(src, .proc/setup_visuals)
 
 /mob/living/simple_animal/hostile/zombie/proc/setup_visuals()
 	var/datum/preferences/dummy_prefs = new
@@ -53,9 +53,8 @@
 		QDEL_NULL(corpse)
 	. = ..()
 
-/mob/living/simple_animal/hostile/zombie/AttackingTarget()
+/mob/living/simple_animal/hostile/zombie/PostMeleeAttack(atom/my_target)
 	. = ..()
-	var/atom/my_target = get_target()
 	if(. && ishuman(my_target) && prob(infection_chance))
 		try_to_zombie_infect(my_target)
 

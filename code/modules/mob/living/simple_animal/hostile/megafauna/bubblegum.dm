@@ -77,15 +77,15 @@ Difficulty: Hard
 	blood_warp()
 
 	if(prob(25))
-		INVOKE_ASYNC(src,PROC_REF(blood_spray))
+		INVOKE_ASYNC(src, .proc/blood_spray)
 
 	else if(prob(5+anger_modifier/2))
 		slaughterlings()
 	else
 		if(health > maxHealth/2 && !client)
-			INVOKE_ASYNC(src,PROC_REF(charge))
+			INVOKE_ASYNC(src, .proc/charge)
 		else
-			INVOKE_ASYNC(src,PROC_REF(triple_charge))
+			INVOKE_ASYNC(src, .proc/triple_charge)
 
 
 /mob/living/simple_animal/hostile/megafauna/bubblegum/Initialize()
@@ -109,12 +109,12 @@ Difficulty: Hard
 		return
 	..()
 
-/mob/living/simple_animal/hostile/megafauna/bubblegum/AttackingTarget()
+/mob/living/simple_animal/hostile/megafauna/bubblegum/MeleeAttackTarget(atom/my_target)
 	if(charging)
 		return
 	..()
 
-/mob/living/simple_animal/hostile/megafauna/bubblegum/Goto(target, delay, minimum_distance)
+/mob/living/simple_animal/hostile/megafauna/bubblegum/Goto(target, delay)
 	if(charging)
 		return
 	..()
@@ -151,7 +151,7 @@ Difficulty: Hard
 	sleep(5)
 	throw_at(T, get_dist(src, T), 1, src, 0)
 	charging = 0
-	Goto(my_target, move_to_delay, minimum_distance)
+	Goto(my_target)
 
 
 /mob/living/simple_animal/hostile/megafauna/bubblegum/Bump(atom/A)

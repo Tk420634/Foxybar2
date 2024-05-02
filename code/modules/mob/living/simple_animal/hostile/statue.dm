@@ -97,7 +97,7 @@
 		LoseTarget()
 		GiveTarget(watching)
 
-/mob/living/simple_animal/hostile/statue/AttackingTarget()
+/mob/living/simple_animal/hostile/statue/PreMeleeAttack(atom/my_target)
 	if(can_be_seen(get_turf(loc)))
 		if(client)
 			to_chat(src, span_warning("You cannot attack, there are eyes on you!"))
@@ -132,7 +132,7 @@
 	// This loop will, at most, loop twice.
 	for(var/atom/check in check_list)
 		for(var/mob/living/M in fov_viewers(world.view + 1, check) - src)
-			if(M.client && CanAttack(M) && !M.silicon_privileges)
+			if(M.client && AllowedToAttackTarget(M) && !M.silicon_privileges)
 				if(!M.eye_blind)
 					return M
 	return null
@@ -150,7 +150,7 @@
 
 // Stop attacking clientless mobs
 
-/mob/living/simple_animal/hostile/statue/CanAttack(atom/the_target)
+/mob/living/simple_animal/hostile/statue/AllowedToAttackTarget(atom/the_target)
 	if(isliving(the_target))
 		var/mob/living/L = the_target
 		if(!L.client && !L.ckey)

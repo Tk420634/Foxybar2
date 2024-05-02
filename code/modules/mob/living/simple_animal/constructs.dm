@@ -201,9 +201,8 @@
 	var/crit_refund = 50 //5 seconds when putting a targette into critical
 	var/kill_refund = 250 //full refund on kills
 
-/mob/living/simple_animal/hostile/construct/wraith/AttackingTarget() //refund jaunt cooldown when attacking living targets
+/mob/living/simple_animal/hostile/construct/wraith/MeleeAttackTarget(atom/my_target) //refund jaunt cooldown when attacking living targets
 	var/prev_stat
-	var/atom/my_target = get_target()
 	if(isliving(my_target) && !iscultist(my_target))
 		var/mob/living/L = my_target
 		prev_stat = L.stat
@@ -243,7 +242,7 @@
 	melee_damage_lower = 5
 	melee_damage_upper = 5
 	retreat_distance = 10
-	minimum_distance = 10 //AI artificers will flee like fuck
+	approach_distance = 10 //AI artificers will flee like fuck
 	attack_verb_continuous = "rams"
 	attack_verb_simple = "ram"
 	environment_smash = ENVIRONMENT_SMASH_WALLS
@@ -271,13 +270,13 @@
 	else
 		return 0
 
-/mob/living/simple_animal/hostile/construct/builder/CanAttack(atom/the_target)
+/mob/living/simple_animal/hostile/construct/builder/AllowedToAttackTarget(atom/the_target)
 	if(see_invisible < the_target.invisibility)//Target's invisible to us, forget it
 		return 0
 	if(Found(the_target) || ..()) //If we Found it or Can_Attack it normally, we Can_Attack it as long as it wasn't invisible
 		return 1 //as a note this shouldn't be added to base hostile mobs because it'll mess up retaliate hostile mobs
 
-/mob/living/simple_animal/hostile/construct/builder/MoveToTarget(list/possible_targets)
+/mob/living/simple_animal/hostile/construct/builder/InitiateMovement(list/possible_targets)
 	..()
 	var/mob/living/L = get_target()
 	if(!isliving(L))
@@ -287,19 +286,19 @@
 		return 0
 	if(L.health <= melee_damage_lower+melee_damage_upper) //ey bucko you're hurt as fuck let's go hit you
 		retreat_distance = null
-		minimum_distance = 1
+		approach_distance = 1
 
 /mob/living/simple_animal/hostile/construct/builder/Aggro()
 	..()
 	if(!isconstruct(get_target())) //oh the targette is a construct no need to flee
 		return
 	retreat_distance = null
-	minimum_distance = 1
+	approach_distance = 1
 
 /mob/living/simple_animal/hostile/construct/builder/LoseAggro()
 	..()
 	retreat_distance = initial(retreat_distance)
-	minimum_distance = initial(minimum_distance)
+	approach_distance = initial(approach_distance)
 
 /mob/living/simple_animal/hostile/construct/builder/hostile //actually hostile, will move around, hit things, heal other constructs
 	AIStatus = AI_ON
@@ -347,8 +346,7 @@
 		if(stored_pulling)
 			start_pulling(stored_pulling, supress_message = TRUE) //drag anything we're pulling through the wall with us by magic
 
-/mob/living/simple_animal/hostile/construct/harvester/AttackingTarget()
-	var/atom/my_target = get_target()
+/mob/living/simple_animal/hostile/construct/harvester/MeleeAttackTarget(atom/my_target)
 	if(!iscarbon(my_target))
 		return ..()
 	var/mob/living/carbon/C = my_target

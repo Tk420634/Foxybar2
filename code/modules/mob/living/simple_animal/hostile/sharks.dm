@@ -22,8 +22,8 @@
 	maxHealth = 75
 	health = 75
 	harm_intent_damage = 18
-	melee_damage_lower = 24
-	melee_damage_upper = 48
+	melee_damage_lower = 18
+	melee_damage_upper = 18
 	attack_verb_continuous = "maims"
 	attack_verb_simple = "maim"
 	attack_sound = 'sound/weapons/bite.ogg'
@@ -43,9 +43,9 @@
 	if(.)
 		emote("me", 1, "growls at [.]!")
 
-/mob/living/simple_animal/hostile/shark/AttackingTarget()
+/mob/living/simple_animal/hostile/shark/PostMeleeAttack(atom/my_target)
 	. =..()
-	var/mob/living/carbon/L = .
+	var/mob/living/carbon/L = my_target
 	if(istype(L))
 		if(prob(25))
 			L.DefaultCombatKnockdown(20)
@@ -61,7 +61,7 @@
 	icon_gib = "carp_gib"
 	ranged = 1
 	retreat_distance = 3
-	minimum_distance = 0 //Between shots they can and will close in to nash
+	approach_distance = 0 //Between shots they can and will close in to nash
 	projectiletype = /obj/item/projectile/beam/laser/heavylaser
 	projectilesound = 'sound/weapons/lasercannonfire.ogg'
 	maxHealth = 50
@@ -83,8 +83,8 @@
 	//maxbodytemp = INFINITY
 
 	harm_intent_damage = 0
-	melee_damage_lower = 5
-	melee_damage_upper = 15
+	melee_damage_lower = 0
+	melee_damage_upper = 0
 	attack_verb_continuous = "violently hugs"
 	attack_verb_simple = "violently hug"
 	vision_range = 0

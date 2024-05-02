@@ -29,7 +29,7 @@
 	obj_damage = 0
 	environment_smash = ENVIRONMENT_SMASH_NONE
 	retreat_distance = 3
-	minimum_distance = 3
+	approach_distance = 3
 	pass_flags = PASSTABLE
 	loot = list(/obj/item/organ/regenerative_core)
 	var/brood_type = /mob/living/simple_animal/hostile/asteroid/hivelordbrood
@@ -44,7 +44,7 @@
 		A.faction = faction.Copy()
 		ranged_cooldown = world.time + ranged_cooldown_time
 
-/mob/living/simple_animal/hostile/asteroid/hivelord/AttackingTarget()
+/mob/living/simple_animal/hostile/asteroid/hivelord/MeleeAttackTarget(atom/my_target)
 	OpenFire()
 	return TRUE
 
@@ -93,7 +93,7 @@
 	. = ..()
 	if(swarming)
 		AddComponent(/datum/component/swarming) //oh god not the bees
-	addtimer(CALLBACK(src,PROC_REF(death)), 100)
+	addtimer(CALLBACK(src, .proc/death), 100)
 
 //Legion
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion
@@ -161,7 +161,7 @@
 		return
 	stored_mob = prefbreak
 	prefbreak.forceMove(src)
-	RegisterSignal(prefbreak, COMSIG_PARENT_QDELETING,PROC_REF(squirt_mob))
+	RegisterSignal(prefbreak, COMSIG_PARENT_QDELETING, .proc/squirt_mob)
 
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/proc/squirt_mob()
 	visible_message(span_warning("The skulls on [src] wail in anger as they flee from their dying host!"))

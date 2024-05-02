@@ -34,32 +34,25 @@
 	/// slots in a list of trash loot
 	var/random_trash_loot = TRUE
 	footstep_type = FOOTSTEP_MOB_SHOE
-	rapid_melee = 2
+	melee_attacks_per_tick = 2
 	melee_queue_distance = 5
 	move_to_delay = 3.1
 	waddle_amount = 2
 	waddle_up_time = 1
 	waddle_side_time = 1
 	retreat_distance = 1 //mob retreats 1 tile when in min distance
-	minimum_distance = 1 //Mob pushes up to melee, then backs off to avoid player attack?
+	approach_distance = 1 //Mob pushes up to melee, then backs off to avoid player attack?
 	aggro_vision_range = 6 //mob waits to attack if the player chooses to close distance, or if the player attacks first.
 	vision_range = 8 //will see the player at max view range, and communicate that they've been seen but won't aggro unless they get closer.
 	variation_list = list(
 		MOB_NAME_FROM_GLOBAL_LIST(\
 			MOB_RANDOM_NAME(MOB_NAME_RANDOM_MALE, 1)\
 		))
-	retreat_health_percent = 0.1
-	max_heal_amount = 0.9
-	heal_per_life = 0.115
-	tactical_retreat = 30
-	loot = list(/obj/effect/spawner/lootdrop/f13/common)
-	loot_drop_amount = 2
-	loot_amount_random = TRUE
 
-/mob/living/simple_animal/hostile/raider/Initialize() // I dont, but, you can
+/mob/living/simple_animal/hostile/raider/Initialize()
 	. = ..()
 	if(random_trash_loot)
-		loot = GLOB.trash_ammo + GLOB.trash_chem + GLOB.trash_clothing + GLOB.trash_craft + GLOB.trash_gun + GLOB.trash_misc + GLOB.trash_money + GLOB.trash_mob + GLOB.trash_part + GLOB.trash_tool
+		loot = GLOB.trash_ammo + GLOB.trash_chem + GLOB.trash_clothing + GLOB.trash_craft + GLOB.trash_gun + GLOB.trash_misc + GLOB.trash_money + GLOB.trash_mob + GLOB.trash_part + GLOB.trash_tool + GLOB.trash_attachment
 
 /obj/effect/mob_spawn/human/corpse/raider
 	name = "Raider"
@@ -84,8 +77,7 @@
 /mob/living/simple_animal/hostile/raider/thief/movement_delay()
 	return -2
 
-/mob/living/simple_animal/hostile/raider/thief/AttackingTarget()
-	var/atom/my_target = get_target()
+/mob/living/simple_animal/hostile/raider/thief/MeleeAttackTarget(atom/my_target)
 	if(!ishuman(my_target))
 		return
 	var/mob/living/carbon/human/H = my_target
@@ -119,11 +111,11 @@
 	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
 	maxHealth = 80
 	health = 80
-	rapid_melee = 2
+	melee_attacks_per_tick = 2
 	melee_queue_distance = 5
 	move_to_delay = 2.8 //faster than average, but not a lot
 	retreat_distance = 1 //mob retreats 1 tile when in min distance
-	minimum_distance = 1 //Mob pushes up to melee, then backs off to avoid player attack?
+	approach_distance = 1 //Mob pushes up to melee, then backs off to avoid player attack?
 	aggro_vision_range = 6 //mob waits to attack if the player chooses to close distance, or if the player attacks first.
 	vision_range = 8 //will see the player at max view range, and communicate that they've been seen but won't aggro unless they get closer.
 	ranged_cooldown_time = 2 SECONDS
@@ -160,15 +152,12 @@
 	health = 300
 	speed = 2
 	obj_damage = 300
-	rapid_melee = 1
+	melee_attacks_per_tick = 1
 	loot = list(/obj/item/melee/onehanded/knife/survival, /obj/item/reagent_containers/food/snacks/kebab/human, /obj/item/stack/f13Cash/random/high)
 	loot_drop_amount = MOB_LOOT_ALL
 	loot_amount_random = FALSE
 	random_trash_loot = FALSE
 	footstep_type = FOOTSTEP_MOB_SHOE
-	loot = list(/obj/effect/spawner/lootdrop/f13/common, /obj/effect/spawner/lootdrop/f13/uncommon)
-	loot_drop_amount = 2
-	loot_amount_random = TRUE
 
 // LEGENDARY RANGED RAIDER
 /mob/living/simple_animal/hostile/raider/ranged/legendary
@@ -179,15 +168,15 @@
 	maxHealth = 240
 	health = 240
 	retreat_distance = 1
-	minimum_distance = 2
-	rapid_melee = 1
+	approach_distance = 2
+	melee_attacks_per_tick = 1
 	ranged_cooldown_time = 2 SECONDS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	sight_shoot_delay_time = 0 SECONDS
 	speed = 3.5
 	projectiletype = /obj/item/projectile/bullet/m44/simple
 	projectilesound = 'sound/f13weapons/44mag.ogg'
-	extra_projectiles = 1
+	auto_fire_burst_count = 2
 	obj_damage = 300
 	loot = list(/obj/item/gun/ballistic/revolver/m29, /obj/item/stack/f13Cash/random/high)
 	loot_drop_amount = MOB_LOOT_ALL
@@ -204,33 +193,25 @@
 		SP_DISTANT_SOUND(PISTOL_HEAVY_DISTANT_SOUND),
 		SP_DISTANT_RANGE(PISTOL_HEAVY_RANGE_DISTANT)
 	)
-	retreat_health_percent = 0.5
-	max_heal_amount = 0.9
-	heal_per_life = 0.115
-	tactical_retreat = 30
-	loot = list(/obj/effect/spawner/lootdrop/f13/common, /obj/effect/spawner/lootdrop/f13/uncommon)
-	loot_drop_amount = 3
-	loot_amount_random = TRUE
 
 // RAIDER BOSS
 /mob/living/simple_animal/hostile/raider/ranged/boss
-	name = "Machinegun Martha"
-	gender = FEMALE
+	name = "Raider Boss"
 	icon_state = "raiderboss"
 	icon_living = "raiderboss"
 	icon_dead = "raiderboss_dead"
 	mob_armor = ARMOR_VALUE_RAIDER_COMBAT_ARMOR_BOSS
 	maxHealth = 150
 	health = 150
-	extra_projectiles = 2
-	rapid_melee = 1
+	auto_fire_burst_count = 3
+	melee_attacks_per_tick = 1
 	waddle_amount = 4
 	waddle_up_time = 2
 	waddle_side_time = 1
 	ranged_cooldown_time = 2 SECONDS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_FAST
 	speed = 3.5
-	projectiletype = /obj/item/projectile/bullet/c10mm/improvised/simple
+	projectiletype = /obj/item/projectile/bullet/c10mm/improvised
 	loot = list(/obj/item/gun/ballistic/automatic/smg/smg10mm, /obj/item/clothing/head/helmet/f13/combat/mk2/raider, /obj/effect/spawner/lootdrop/f13/armor/randomraiderchest, /obj/item/clothing/under/f13/ravenharness, /obj/item/stack/f13Cash/random/high)
 	loot_drop_amount = MOB_LOOT_ALL
 	loot_amount_random = FALSE
@@ -238,11 +219,10 @@
 	footstep_type = FOOTSTEP_MOB_SHOE
 	move_to_delay = 4.0 //faster than average, but not a lot
 	retreat_distance = 4 //mob retreats 1 tile when in min distance
-	minimum_distance = 2 //Mob pushes up to melee, then backs off to avoid player attack?
+	approach_distance = 2 //Mob pushes up to melee, then backs off to avoid player attack?
 	aggro_vision_range = 6 //mob waits to attack if the player chooses to close distance, or if the player attacks first.
 	vision_range = 8 //will see the player at max view range, and communicate that they've been seen but won't aggro unless they get closer.
 	despawns_when_lonely = FALSE
-	important = TRUE
 	projectile_sound_properties = list(
 		SP_VARY(FALSE),
 		SP_VOLUME(PISTOL_MEDIUM_VOLUME),
@@ -253,13 +233,7 @@
 		SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
 		SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
 	)
-	retreat_health_percent = 0.5
-	max_heal_amount = 0.9
-	heal_per_life = 0.115
-	tactical_retreat = 30
-	loot = list(/obj/effect/spawner/lootdrop/f13/common, /obj/effect/spawner/lootdrop/f13/uncommon)
-	loot_drop_amount = 5
-	loot_amount_random = TRUE
+
 	variation_list = list(
 		MOB_RETREAT_DISTANCE_LIST(0, 1, 3, 4),
 		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(50),
@@ -284,7 +258,7 @@
 	mob_armor = ARMOR_VALUE_RAIDER_COMBAT_ARMOR_BOSS
 	maxHealth = 165
 	health = 165
-	extra_projectiles = 2
+	auto_fire_burst_count = 3
 	ranged_cooldown_time = 1 SECONDS
 	sight_shoot_delay_time = 0 SECONDS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_FAST
@@ -326,9 +300,6 @@
 		"*come",\
 		"Fuck em' up!"\
 		))
-	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon, /obj/effect/spawner/lootdrop/f13/rare)
-	loot_drop_amount = 10
-	loot_amount_random = TRUE
 
 /mob/living/simple_animal/hostile/raider/ranged/boss/blueberrybates
 	name = "Blueberry Bates and his Bottom-Feeder Buys"
@@ -345,12 +316,10 @@
 	projectilesound = 'sound/f13weapons/shotgun.ogg'
 	maxHealth = 200 //bit beefier since his arena is significantly shittier for him and he's more of an annoyance
 	health = 200
-	extra_projectiles = 0
+	auto_fire_burst_count = 1
 	retreat_distance = 3
-	minimum_distance = 3
-	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon, /obj/effect/spawner/lootdrop/f13/rare)
-	loot_drop_amount = 5
-	loot_amount_random = TRUE
+	approach_distance = 3
+	loot = list(/obj/item/stack/f13Cash/random/high, /obj/item/ammo_box/shotgun/incendiary, /obj/item/gun/ballistic/shotgun/police)
 	speak_emote = list(
 		"mutters",
 		"counts his coins to himself",
@@ -397,7 +366,7 @@
 	mob_armor = ARMOR_VALUE_RAIDER_METAL_ARMOR
 	maxHealth = 60
 	health = 60
-	rapid_melee = 1
+	melee_attacks_per_tick = 1
 	ranged_cooldown_time = 2 SECONDS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	speed = 4.5
@@ -416,9 +385,6 @@
 		SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
 		SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
 	)
-	loot = list(/obj/effect/spawner/lootdrop/f13/common)
-	loot_drop_amount = 2
-	loot_amount_random = TRUE
 
 // FIREFIGHTER RAIDER
 /mob/living/simple_animal/hostile/raider/firefighter
@@ -431,10 +397,7 @@
 	loot = list(/obj/item/twohanded/fireaxe, /obj/item/stack/f13Cash/random/med)
 	loot_drop_amount = 3
 	footstep_type = FOOTSTEP_MOB_SHOE
-	rapid_melee = 1
-	loot = list(/obj/effect/spawner/lootdrop/f13/common)
-	loot_drop_amount = 2
-	loot_amount_random = TRUE
+	melee_attacks_per_tick = 1
 
 // BIKER RAIDER
 /mob/living/simple_animal/hostile/raider/ranged/biker
@@ -446,12 +409,12 @@
 	mob_armor = ARMOR_VALUE_RAIDER_COMBAT_ARMOR_RUSTY
 	maxHealth = 125
 	health = 125
-	rapid_melee = 1
+	melee_attacks_per_tick = 1
 	ranged_cooldown_time = 2 SECONDS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	speed = 4.5
 	retreat_distance = 2 //retreat this far
-	minimum_distance = 3 //if within this distance
+	approach_distance = 3 //if within this distance
 	projectiletype = /obj/item/projectile/bullet/a308/improvised/simple
 	projectilesound = 'sound/f13weapons/magnum_fire.ogg'
 	loot = list(/obj/item/gun/ballistic/revolver/thatgun, /obj/item/clothing/suit/armor/medium/combat/rusted, /obj/item/clothing/head/helmet/f13/raidercombathelmet, /obj/item/stack/f13Cash/random/med)
@@ -467,9 +430,6 @@
 		SP_DISTANT_SOUND(RIFLE_LIGHT_DISTANT_SOUND),
 		SP_DISTANT_RANGE(RIFLE_LIGHT_RANGE_DISTANT)
 	)
-	loot = list(/obj/effect/spawner/lootdrop/f13/common)
-	loot_drop_amount = 2
-	loot_amount_random = TRUE
 
 /obj/effect/mob_spawn/human/corpse/raider/ranged/biker
 	uniform = /obj/item/clothing/under/f13/ncrcf
@@ -478,7 +438,6 @@
 	gloves = /obj/item/clothing/gloves/f13/leather/fingerless
 	head = /obj/item/clothing/head/helmet/f13/raidercombathelmet
 	neck = /obj/item/clothing/neck/mantle/brown
-	
 
 // YANKEE RAIDER
 
@@ -487,19 +446,16 @@
 	icon_living = "baseball_raider"
 	icon_dead = "baseball_raider_dead"
 	retreat_distance = 1
-	minimum_distance = 1
+	approach_distance = 1
 	melee_damage_lower = 15
 	melee_damage_upper = 33
 	mob_armor = ARMOR_VALUE_RAIDER_ARMOR
 	maxHealth = 125
 	health = 125
-	rapid_melee = 1
+	melee_attacks_per_tick = 1
 	loot = list(/obj/item/twohanded/baseball, /obj/item/stack/f13Cash/random/med)
 	loot_drop_amount = 3
 	footstep_type = FOOTSTEP_MOB_SHOE
-	loot = list(/obj/effect/spawner/lootdrop/f13/common)
-	loot_drop_amount = 2
-	loot_amount_random = TRUE
 
 
 /obj/effect/mob_spawn/human/corpse/raider/baseball
@@ -523,10 +479,7 @@
 	loot = list(/obj/item/twohanded/spear)
 	loot_drop_amount = 3
 	footstep_type = FOOTSTEP_MOB_SHOE
-	rapid_melee = 1
-	loot = list(/obj/effect/spawner/lootdrop/f13/common)
-	loot_drop_amount = 2
-	loot_amount_random = TRUE
+	melee_attacks_per_tick = 1
 
 /obj/effect/mob_spawn/human/corpse/raider/tribal
 	uniform = /obj/item/clothing/under/f13/raiderrags
@@ -548,7 +501,7 @@
 	mob_armor = ARMOR_VALUE_RAIDER_COMBAT_ARMOR_RUSTY
 	maxHealth = 135
 	health = 135
-	rapid_melee = 1
+	melee_attacks_per_tick = 1
 	melee_damage_lower = 15
 	melee_damage_upper = 37
 	loot = list(/obj/item/stack/f13Cash/random/med)
@@ -569,7 +522,7 @@
 	mob_armor = ARMOR_VALUE_RAIDER_COMBAT_ARMOR_RUSTY
 	maxHealth = 150
 	health = 150
-	rapid_melee = 1
+	melee_attacks_per_tick = 1
 	melee_damage_lower = 18
 	melee_damage_upper = 42
 	footstep_type = FOOTSTEP_MOB_SHOE
@@ -585,7 +538,7 @@
 	maxHealth = 165
 	health = 165
 	damage_coeff = list(BRUTE = 1, BURN = 0.75, TOX = 0, CLONE = 0, STAMINA = 0, OXY = 0)
-	rapid_melee = 1
+	melee_attacks_per_tick = 1
 	melee_damage_lower = 20
 	melee_damage_upper = 38
 	footstep_type = FOOTSTEP_MOB_SHOE
@@ -602,25 +555,25 @@
 	health = 150
 	ranged = TRUE
 	retreat_distance = 6
-	minimum_distance = 8
-	rapid_melee = 1
+	approach_distance = 8
+	melee_attacks_per_tick = 1
 	speed = 4.5
 	ranged_cooldown_time = 2 SECONDS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	projectiletype = /obj/item/projectile/bullet/c45/improvised
+	projectiletype = /obj/item/projectile/bullet/c45/op
 	projectilesound = 'sound/weapons/gunshot.ogg'
 	var/list/spawned_mobs = list()
 	var/max_mobs = 3
 	var/mob_types = list(/mob/living/simple_animal/hostile/eyebot/reinforced)
 	var/spawn_time = 15 SECONDS
-	//var/spawn_text = "flies from"
+	var/spawn_text = "flies from"
 	footstep_type = FOOTSTEP_MOB_SHOE
 	loot_drop_amount = 5
 
 
 /mob/living/simple_animal/hostile/raider/junker/creator/Initialize()
 	. = ..()
-	AddComponent(/datum/component/spawner, mob_types, spawn_time, faction, /*spawn_text,*/ max_mobs, _range = 7)
+	AddComponent(/datum/component/spawner, mob_types, spawn_time, faction, spawn_text, max_mobs, _range = 7)
 
 /mob/living/simple_animal/hostile/raider/junker/creator/death()
 	RemoveComponentByType(/datum/component/spawner)
@@ -646,10 +599,10 @@
 	maxHealth = 165
 	health = 165
 	ranged = TRUE
-	rapid_melee = 1
+	melee_attacks_per_tick = 1
 	retreat_distance = 4
-	minimum_distance = 6
-	extra_projectiles = 2
+	approach_distance = 6
+	auto_fire_burst_count = 3
 	ranged_cooldown_time = 2 SECONDS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	projectiletype = /obj/item/projectile/bullet/shrapnel/simple
@@ -686,14 +639,14 @@
 	loot = list(/obj/item/melee/onehanded/knife/survival, /obj/item/stack/f13Cash/random/med)
 	loot_drop_amount = 2
 	footstep_type = FOOTSTEP_MOB_SHOE
-	rapid_melee = 2
+	melee_attacks_per_tick = 2
 	melee_queue_distance = 5
 	move_to_delay = 1.5
 	waddle_amount = 2
 	waddle_up_time = 1
 	waddle_side_time = 1
 	retreat_distance = 1 //mob retreats 1 tile when in min distance
-	minimum_distance = 1 //Mob pushes up to melee, then backs off to avoid player attack?
+	approach_distance = 1 //Mob pushes up to melee, then backs off to avoid player attack?
 	aggro_vision_range = 6 //mob waits to attack if the player chooses to close distance, or if the player attacks first.
 	vision_range = 8 //will see the player at max view range, and communicate that they've been seen but won't aggro unless they get closer.
 
@@ -709,11 +662,11 @@
 	faction = list("raider", "hostile")
 	maxHealth = 85
 	health = 85
-	rapid_melee = 2
+	melee_attacks_per_tick = 2
 	melee_queue_distance = 5
 	move_to_delay = 2.8 //faster than average, but not a lot
 	retreat_distance = 4 //mob retreats 1 tile when in min distance
-	minimum_distance = 2 //Mob pushes up to melee, then backs off to avoid player attack?
+	approach_distance = 2 //Mob pushes up to melee, then backs off to avoid player attack?
 	aggro_vision_range = 6 //mob waits to attack if the player chooses to close distance, or if the player attacks first.
 	vision_range = 8 //will see the player at max view range, and communicate that they've been seen but won't aggro unless they get closer.
 	ranged_cooldown_time = 2 SECONDS
@@ -745,11 +698,11 @@
 	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
 	maxHealth = 80
 	health = 80
-	rapid_melee = 2
+	melee_attacks_per_tick = 2
 	melee_queue_distance = 5
 	move_to_delay = 2.8 //faster than average, but not a lot
 	retreat_distance = 4 //mob retreats 1 tile when in min distance
-	minimum_distance = 2 //Mob pushes up to melee, then backs off to avoid player attack?
+	approach_distance = 2 //Mob pushes up to melee, then backs off to avoid player attack?
 	aggro_vision_range = 6 //mob waits to attack if the player chooses to close distance, or if the player attacks first.
 	vision_range = 8 //will see the player at max view range, and communicate that they've been seen but won't aggro unless they get closer.
 	ranged_cooldown_time = 4 SECONDS
@@ -757,7 +710,7 @@
 	projectiletype = /obj/item/projectile/bullet/pellet/shotgun_buckshot
 	projectilesound = 'sound/f13weapons/shotgun.ogg'
 	sound_after_shooting = 'sound/weapons/shotguninsert.ogg'
-	extra_projectiles = 1
+	auto_fire_burst_count = 2
 	loot = list(/obj/item/gun/ballistic/shotgun/trench, /obj/item/stack/f13Cash/random/med)
 	loot_drop_amount = 6
 	footstep_type = FOOTSTEP_MOB_SHOE
@@ -783,11 +736,11 @@
 	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
 	maxHealth = 80
 	health = 80
-	rapid_melee = 2
+	melee_attacks_per_tick = 2
 	melee_queue_distance = 5
 	move_to_delay = 2.8 //faster than average, but not a lot
 	retreat_distance = 4 //mob retreats 1 tile when in min distance
-	minimum_distance = 2 //Mob pushes up to melee, then backs off to avoid player attack?
+	approach_distance = 2 //Mob pushes up to melee, then backs off to avoid player attack?
 	aggro_vision_range = 6 //mob waits to attack if the player chooses to close distance, or if the player attacks first.
 	vision_range = 8 //will see the player at max view range, and communicate that they've been seen but won't aggro unless they get closer.
 	ranged_cooldown_time = 1 SECONDS
@@ -795,7 +748,7 @@
 	projectiletype = /obj/item/projectile/bullet/c22
 	projectilesound = 'sound/f13weapons/assaultrifle_fire.ogg'
 	sound_after_shooting = 'sound/weapons/shotguninsert.ogg'
-	extra_projectiles = 2
+	auto_fire_burst_count = 3
 	loot = list(/obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22, /obj/item/stack/f13Cash/random/med)
 	loot_drop_amount = 8
 	footstep_type = FOOTSTEP_MOB_SHOE
@@ -821,11 +774,11 @@
 	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
 	maxHealth = 150
 	health = 150
-	rapid_melee = 2
+	melee_attacks_per_tick = 2
 	melee_queue_distance = 5
 	move_to_delay = 2.8 //faster than average, but not a lot
 	retreat_distance = 4 //mob retreats 1 tile when in min distance
-	minimum_distance = 2 //Mob pushes up to melee, then backs off to avoid player attack?
+	approach_distance = 2 //Mob pushes up to melee, then backs off to avoid player attack?
 	aggro_vision_range = 6 //mob waits to attack if the player chooses to close distance, or if the player attacks first.
 	vision_range = 8 //will see the player at max view range, and communicate that they've been seen but won't aggro unless they get closer.
 	ranged_cooldown_time = 2 SECONDS
@@ -833,7 +786,7 @@
 	projectiletype = /obj/item/projectile/energy/teslacannon/oasis
 	projectilesound = 'sound/weapons/resonator_fire.ogg'
 	sound_after_shooting = 'sound/f13weapons/rcwfire.ogg'
-	extra_projectiles = 2
+	auto_fire_burst_count = 15 // lol
 	loot = list(/obj/item/gun/energy/laser/auto/oasis, /obj/item/stack/f13Cash/random/high)
 	loot_drop_amount = 8
 	footstep_type = FOOTSTEP_MOB_SHOE
@@ -859,19 +812,19 @@
 	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
 	maxHealth = 150
 	health = 150
-	rapid_melee = 2
+	melee_attacks_per_tick = 2
 	melee_queue_distance = 5
 	move_to_delay = 2.8 //faster than average, but not a lot
 	retreat_distance = 4 //mob retreats 1 tile when in min distance
-	minimum_distance = 2 //Mob pushes up to melee, then backs off to avoid player attack?
+	approach_distance = 2 //Mob pushes up to melee, then backs off to avoid player attack?
 	aggro_vision_range = 6 //mob waits to attack if the player chooses to close distance, or if the player attacks first.
 	vision_range = 8 //will see the player at max view range, and communicate that they've been seen but won't aggro unless they get closer.
 	ranged_cooldown_time = 2 SECONDS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_FAST
-	projectiletype = /obj/item/projectile/energy/nuclear_particle/cultist
+	projectiletype = /obj/item/projectile/energy/nuclear_particle
 	projectilesound = 'sound/weapons/resonator_fire.ogg'
 	sound_after_shooting = 'sound/f13weapons/rcwfire.ogg'
-	extra_projectiles = 1
+	auto_fire_burst_count = 1
 	loot = list(/obj/item/gun/energy/gammagun, /obj/item/stack/f13Cash/random/high)
 	loot_drop_amount = 10
 	footstep_type = FOOTSTEP_MOB_SHOE

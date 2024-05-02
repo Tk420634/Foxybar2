@@ -21,7 +21,7 @@
 	speed = 1
 	move_to_delay = 8
 	ranged_cooldown_time = 10
-	rapid_melee = 1
+	melee_attacks_per_tick = 1
 	melee_queue_distance = 20 // as far as possible really, need this because of charging
 	ranged = 1
 	pixel_x = -16
@@ -58,10 +58,10 @@
 		eyebots()
 	else
 		if(health > maxHealth/2 && !client)
-			INVOKE_ASYNC(src,PROC_REF(charge))
+			INVOKE_ASYNC(src, .proc/charge)
 			visible_message("<span class='colossus'>\"<b> FOR THE ENCLAVE!</b>\"</span>")
 		else
-			INVOKE_ASYNC(src,PROC_REF(triple_charge))
+			INVOKE_ASYNC(src, .proc/triple_charge)
 			visible_message("<span class='colossus'>\"<b>YOUR RIDE IS OVER MUTIE, TIME TO DIE!</b>\"</span>")
 			
 /mob/living/simple_animal/hostile/megafauna/captainarlem/Initialize()
@@ -70,17 +70,17 @@
 		if(B != src)
 			return INITIALIZE_HINT_QDEL //There can be only one
 
-/mob/living/simple_animal/hostile/megafauna/captainarlem/do_attack_animation(atom/A, visual_effect_icon, obj/item/used_item, no_effect)
+mob/living/simple_animal/hostile/megafauna/captainarlem/do_attack_animation(atom/A, visual_effect_icon, obj/item/used_item, no_effect)
 	if(charging)
 		return
 	..()
 
-/mob/living/simple_animal/hostile/megafauna/captainarlem/AttackingTarget()
+/mob/living/simple_animal/hostile/megafauna/captainarlem/MeleeAttackTarget(atom/my_target)
 	if(charging)
 		return
 	..()
 
-/mob/living/simple_animal/hostile/megafauna/captainarlem/Goto(target, delay, minimum_distance)
+/mob/living/simple_animal/hostile/megafauna/captainarlem/Goto(target, delay, approach_distance)
 	if(charging)
 		return
 	..()
@@ -117,7 +117,7 @@
 	sleep(5)
 	throw_at(T, get_dist(src, T), 1, src, 0)
 	charging = 0
-	Goto(my_target, move_to_delay, minimum_distance)
+	Goto(my_target)
 
 
 /mob/living/simple_animal/hostile/megafauna/captainarlem/Bump(atom/A)
@@ -178,7 +178,7 @@
 
 /mob/living/simple_animal/hostile/megafauna/captainarlem/death()
 	do_sparks(3, TRUE, src)
-	addtimer(CALLBACK(src,PROC_REF(self_destruct)), 4 SECONDS)
+	addtimer(CALLBACK(src, .proc/self_destruct), 4 SECONDS)
 	return ..()
 
 

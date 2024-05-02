@@ -74,10 +74,10 @@
 	icon_state = "nanotrasenrangedsmg"
 	icon_living = "nanotrasenrangedsmg"
 	vision_range = 9
-	rapid = 3
+	auto_fire_burst_count = 3
 	ranged = 1
 	retreat_distance = 3
-	minimum_distance = 5
+	approach_distance = 5
 	casingtype = /obj/item/ammo_casing/c46x30mm
 	projectilesound = 'sound/weapons/gunshot_smg.ogg'
 	loot = list(/obj/item/gun/ballistic/automatic/autopipe,

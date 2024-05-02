@@ -43,7 +43,7 @@
 	harm_intent_damage = 8
 	melee_damage_lower = 2
 	melee_damage_upper = 3
-	minimum_distance = 6
+	approach_distance = 6
 	retreat_distance = 14
 	attack_verb_simple = "punches"
 	attack_sound = "punch"
@@ -55,15 +55,12 @@
 	vision_range = 7 //reduced from 13 to 7 because who needs that kind of shit in their life
 	aggro_vision_range = 7 //as above
 	ranged = 1
-	projectiletype = /obj/item/projectile/beam/laser/pistol/wastebot
+	projectiletype = /obj/item/projectile/beam/laser/pistol/wattz
 	projectilesound = 'sound/weapons/resonator_fire.ogg'
 	emote_taunt_sound = list('sound/f13npc/eyebot/aggro.ogg')
 	idlesound = list('sound/f13npc/eyebot/idle1.ogg', 'sound/f13npc/eyebot/idle2.ogg')
 	death_sound = 'sound/f13npc/eyebot/robo_death.ogg'
 	speak_emote = list("states")
-	loot = list(/obj/effect/spawner/lootdrop/f13/trash)
-	loot_drop_amount = 1
-	loot_amount_random = TRUE
 	projectile_sound_properties = list(
 		SP_VARY(FALSE),
 		SP_VOLUME(LASER_VOLUME),
@@ -199,11 +196,11 @@
 	maxHealth = 100
 	health = 100
 	faction = list("raider", "wastebot")
-	extra_projectiles = 1
+	auto_fire_burst_count = 2
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_SLOWER
 	melee_damage_lower = 5
 	melee_damage_upper = 10
-	minimum_distance = 4
+	approach_distance = 4
 	retreat_distance = 6
 
 /mob/living/simple_animal/hostile/eyebot/reinforced/become_the_mob(mob/user)

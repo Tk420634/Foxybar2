@@ -12,8 +12,6 @@
 	response_help_simple = "pokes"
 	response_disarm_simple = "shoves"
 	response_harm_simple = "hits"
-	retreat_distance = 2
-	minimum_distance = 1
 	speed = 1
 	maxHealth = 80
 	health = 80
@@ -30,14 +28,6 @@
 	check_friendly_fire = 1
 	status_flags = CANPUSH
 	tastes = list("people" = 1, "dust" = 2)
-	retreat_health_percent = 0.5
-	max_heal_amount = 0.99
-	heal_per_life = 0.115
-	tactical_retreat = 10
-	loot = list(/obj/effect/spawner/lootdrop/f13/uncommon)
-	loot_drop_amount = 2
-	loot_amount_random = TRUE
-
 
 /mob/living/simple_animal/hostile/chinese/Aggro()
 	. = ..()
@@ -55,8 +45,8 @@
 	ranged = 1
 	maxHealth = 110
 	health = 110
-	retreat_distance = 3
-	minimum_distance = 2
+	retreat_distance = 4
+	approach_distance = 6
 	projectiletype = /obj/item/projectile/bullet/c9mm/simple
 	projectilesound =  'sound/f13weapons/ninemil.ogg'
 	projectile_sound_properties = list(
@@ -70,19 +60,6 @@
 		SP_DISTANT_RANGE(PISTOL_LIGHT_RANGE_DISTANT)
 	)
 
-/mob/living/simple_animal/hostile/chinese/ranged/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
-	. = ..()
-	if(stat == DEAD || health > maxHealth*0.5)
-		retreat_distance = initial(retreat_distance)
-		return
-	var/atom/my_target = get_target()
-	if(!retreat_message_said && my_target)
-		visible_message(span_danger("The [name] tries to tactically retreat from [my_target]!"))
-		retreat_message_said = TRUE
-	retreat_distance = 15
-
-
-
 /mob/living/simple_animal/hostile/chinese/ranged/assault
 	name = "chinese remnant assault soldier"
 	icon_state = "chineseassault"
@@ -90,7 +67,7 @@
 	icon_dead = "chineseassault_dead"
 	maxHealth = 160
 	health = 160
-	extra_projectiles = 2
+	auto_fire_burst_count = 3
 	loot = list()
 	projectiletype = /obj/item/projectile/bullet/a556/simple
 	projectilesound = 'sound/f13weapons/assaultrifle_fire.ogg'

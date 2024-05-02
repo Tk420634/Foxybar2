@@ -33,7 +33,7 @@
 	maxHealth = 10
 	health = 10
 	spacewalk = TRUE
-	faction = list("hostile", "bees-friend")
+	faction = list("hostile")
 	dodge_prob = 0
 	move_to_delay = 0
 	obj_damage = 0
@@ -103,7 +103,7 @@
 
 
 //We don't attack beekeepers/people dressed as bees//Todo: bee costume
-/mob/living/simple_animal/hostile/poison/bees/CanAttack(atom/the_target)
+/mob/living/simple_animal/hostile/poison/bees/AllowedToAttackTarget(atom/the_target)
 	. = ..()
 	if(!.)
 		return FALSE
@@ -124,9 +124,7 @@
 	return FALSE
 
 
-/mob/living/simple_animal/hostile/poison/bees/AttackingTarget()
-	//Pollinate
-	var/atom/my_target = get_target()
+/mob/living/simple_animal/hostile/poison/bees/MeleeAttackTarget(atom/my_target)
 	if(istype(my_target, /obj/machinery/hydroponics))
 		var/obj/machinery/hydroponics/Hydro = my_target
 		pollinate(Hydro)
@@ -210,7 +208,7 @@
 		return
 	beehome = BB
 	BB.bees |= src
-	RegisterSignal(BB, COMSIG_PARENT_QDELETING,PROC_REF(move_out))
+	RegisterSignal(BB, COMSIG_PARENT_QDELETING, .proc/move_out)
 
 /mob/living/simple_animal/hostile/poison/bees/proc/move_out()
 	if(!beehome)
@@ -241,9 +239,8 @@
 
 
 //leave pollination for the peasent bees
-/mob/living/simple_animal/hostile/poison/bees/queen/AttackingTarget()
+/mob/living/simple_animal/hostile/poison/bees/queen/MeleeAttackTarget(atom/my_target)
 	. = ..()
-	var/atom/my_target = get_target()
 	if(!. || !beegent || !isliving(my_target))
 		return
 	var/mob/living/L = my_target
@@ -326,7 +323,7 @@
 
 /mob/living/simple_animal/hostile/poison/bees/short/Initialize()
 	. = ..()
-	addtimer(CALLBACK(src,PROC_REF(death)), 50 SECONDS)
+	addtimer(CALLBACK(src, .proc/death), 50 SECONDS)
 
 /mob/living/simple_animal/hostile/poison/bees/short/frenly //these bees need to be frenly or they'd murder everyone
 	faction = list("neutral")
