@@ -55,7 +55,7 @@
 	icon_dead = "hivedead"
 	ranged = 1
 	retreat_distance = 5
-	minimum_distance = 5
+	approach_distance = 5
 
 /mob/living/simple_animal/hostile/hivebot/rapid
 	name = "gunner hivebot"
@@ -63,9 +63,9 @@
 	icon_living = "ranged"
 	icon_dead = "hivedead"
 	ranged = 1
-	rapid = 3
+	auto_fire_burst_count = 3
 	retreat_distance = 5
-	minimum_distance = 5
+	approach_distance = 5
 
 /mob/living/simple_animal/hostile/hivebot/engineering
 	name = "engineering hivebot"

@@ -13,7 +13,7 @@
 	response_disarm_simple = "shoves"
 	response_harm_simple = "hits"
 	retreat_distance = 2
-	minimum_distance = 1
+	approach_distance = 1
 	speed = 1
 	maxHealth = 80
 	health = 80
@@ -56,7 +56,7 @@
 	maxHealth = 110
 	health = 110
 	retreat_distance = 3
-	minimum_distance = 2
+	approach_distance = 2
 	projectiletype = /obj/item/projectile/bullet/c9mm/simple
 	projectilesound =  'sound/f13weapons/ninemil.ogg'
 	projectile_sound_properties = list(
@@ -90,7 +90,7 @@
 	icon_dead = "chineseassault_dead"
 	maxHealth = 160
 	health = 160
-	extra_projectiles = 2
+	auto_fire_burst_count = 3
 	loot = list()
 	projectiletype = /obj/item/projectile/bullet/a556/simple
 	projectilesound = 'sound/f13weapons/assaultrifle_fire.ogg'

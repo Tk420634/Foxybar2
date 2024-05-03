@@ -49,7 +49,7 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 
 /mob/living/simple_animal/hostile/vault/dweller
-	minimum_distance = 10
+	approach_distance = 10
 	retreat_distance = 10
 	obj_damage = 0
 	environment_smash = 0
@@ -93,7 +93,8 @@
 	maxHealth = 160
 	health = 160
 	retreat_distance = 5
-	minimum_distance = 5
+	approach_distance = 5
+	loot = list()
 	healable = 1
 	ranged = 1
 	projectiletype = /obj/item/projectile/beam
@@ -143,10 +144,10 @@
 	response_disarm_simple = "shoves"
 	response_harm_simple = "hits"
 	retreat_distance = 6
-	minimum_distance = 6
+	approach_distance = 6
 	speed = 0
 	ranged_cooldown_time = 22
-	extra_projectiles = 2
+	auto_fire_burst_count = 3
 	stat_attack = 1
 	ranged = TRUE
 	robust_searching = TRUE
@@ -194,7 +195,7 @@
 	icon_dead = "enclave_scientist_dead"
 	maxHealth = 120
 	health = 120
-	minimum_distance = 10
+	approach_distance = 10
 	retreat_distance = 10
 	obj_damage = 0
 	environment_smash = 0
@@ -203,7 +204,7 @@
 	ranged_cooldown_time = 30
 	projectiletype = /obj/item/projectile/f13plasma/pistol/adam/simple
 	projectilesound = 'sound/weapons/wave.ogg'
-	extra_projectiles = 1
+	auto_fire_burst_count = 2
 	attack_verb_simple = "thrusts"
 	projectile_sound_properties = list(
 		SP_VARY(FALSE),
@@ -236,9 +237,9 @@
 	health = 650
 	melee_damage_lower = 20
 	melee_damage_upper = 47
-	extra_projectiles = 2
+	auto_fire_burst_count = 3 
 	retreat_distance = 3
-	minimum_distance = 5
+	approach_distance = 5
 	ranged_cooldown_time = 12
 	healable = 1
 	attack_verb_simple = "power-fists"
@@ -340,7 +341,8 @@
 	icon_living = "bs_knight"
 	icon_dead = "bs_knight_dead"
 	retreat_distance = 5
-	minimum_distance = 5
+	approach_distance = 5
+	loot = list()
 	healable = 1
 	ranged = 1
 	loot = list(/obj/effect/spawner/lootdrop/f13/rare, /obj/effect/gibspawner/human)
@@ -366,7 +368,8 @@
 	icon_living = "bs_paladin"
 	icon_dead = "bs_paladin_dead"
 	retreat_distance = 5
-	minimum_distance = 5
+	approach_distance = 5
+	loot = list()
 	maxHealth = 480
 	health = 480
 	healable = 1
@@ -451,7 +454,7 @@
 	icon_living = "ncr_trooper"
 	icon_dead = "ncr_trooper_dead"
 	retreat_distance = 5
-	minimum_distance = 5
+	approach_distance = 5
 	loot = list()
 	healable = 1
 	ranged = 1
@@ -476,7 +479,7 @@
 	icon_living = "ncr_sergeant"
 	icon_dead = "ncr_sergeant_dead"
 	retreat_distance = 5
-	minimum_distance = 5
+	approach_distance = 5
 	loot = list()
 	maxHealth = 160
 	health = 160
@@ -556,7 +559,7 @@
 	icon_dead = "legion_prime_dead"
 	icon_gib = "legion_prime"
 	retreat_distance = 5
-	minimum_distance = 5
+	approach_distance = 5
 	loot = list()
 	healable = 1
 	ranged = 1
@@ -582,7 +585,8 @@
 	icon_dead = "legion_decan_dead"
 	icon_gib = "gib"
 	retreat_distance = 5
-	minimum_distance = 5
+	approach_distance = 5
+	loot = list()
 	maxHealth = 180
 	health = 180
 	healable = 1

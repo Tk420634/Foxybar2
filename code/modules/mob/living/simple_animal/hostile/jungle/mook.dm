@@ -45,8 +45,7 @@
 	desc = "A deceased primitive. Upon closer inspection, it was suffering from severe cellular degeneration and its garments are machine made..."//Can you guess the twist
 	return ..()
 
-/mob/living/simple_animal/hostile/jungle/mook/AttackingTarget()
-	var/atom/my_target = get_target()
+/mob/living/simple_animal/hostile/jungle/mook/MeleeAttackTarget(atom/my_target)
 	if(!isliving(my_target))
 		return ..()
 	if(ranged_cooldown <= world.time && attack_state == MOOK_ATTACK_NEUTRAL)
@@ -156,13 +155,13 @@
 	var/atom/my_target = get_target()
 	if(my_target && !stat)
 		update_icons()
-		Goto(my_target, move_to_delay, minimum_distance)
+		Goto(my_target)
 
 /mob/living/simple_animal/hostile/jungle/mook/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	. = ..()
 	if(isliving(hit_atom) && attack_state == MOOK_ATTACK_ACTIVE)
 		var/mob/living/L = hit_atom
-		if(CanAttack(L))
+		if(AllowedToAttackTarget(L))
 			L.attack_animal(src)
 			struck_target_leap = TRUE
 			density = TRUE
@@ -175,7 +174,7 @@
 			continue
 		if(isliving(A))
 			var/mob/living/ML = A
-			if(!struck_target_leap && CanAttack(ML))//Check if some joker is attempting to use rest to evade us
+			if(!struck_target_leap && AllowedToAttackTarget(ML))//Check if some joker is attempting to use rest to evade us
 				struck_target_leap = TRUE
 				ML.attack_animal(src)
 				density = TRUE

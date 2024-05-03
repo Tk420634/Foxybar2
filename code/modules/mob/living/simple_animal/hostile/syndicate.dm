@@ -46,7 +46,7 @@
 	status_flags = CANPUSH
 	del_on_death = FALSE
 	dodging = TRUE
-	rapid_melee = 2
+	melee_attacks_per_tick = 2
 	retreat_health_percent = 0.2
 	max_heal_amount = 0.9
 	heal_per_life = 0.115
@@ -67,7 +67,7 @@
 	melee_damage_lower = 15
 	melee_damage_upper = 30
 	wound_bonus = 10
-	rapid_melee = 2
+	melee_attacks_per_tick = 2
 	status_flags = 0
 
 /mob/living/simple_animal/hostile/renegade/syndicate/melee/sword
@@ -83,7 +83,7 @@
 	melee_damage_lower = 25
 	melee_damage_upper = 30
 	wound_bonus = 20
-	rapid_melee = 1
+	melee_attacks_per_tick = 1
 	light_color = LIGHT_COLOR_RED
 	status_flags = 0
 	light_system = MOVABLE_LIGHT
@@ -111,14 +111,14 @@
 	melee_damage_lower = 15
 	melee_damage_upper = 25
 	wound_bonus = 20
-	rapid_melee = 1
+	melee_attacks_per_tick = 1
 	ranged = 1
 	retreat_distance = 6
-	minimum_distance = 6
+	approach_distance = 6
 	casingtype = /obj/item/ammo_casing/c10mm
 	projectilesound = 'sound/weapons/gunshot.ogg'
 	dodging = FALSE
-	rapid_melee = 1
+	melee_attacks_per_tick = 1
 
 /mob/living/simple_animal/hostile/renegade/syndicate/ranged/infiltrator //shuttle loan event
 	projectilesound = 'sound/weapons/gunshot_silenced.ogg'
@@ -133,11 +133,11 @@
 	melee_damage_lower = 15
 	melee_damage_upper = 25
 	wound_bonus = 20
-	rapid_melee = 1
+	melee_attacks_per_tick = 1
 	ranged = 1
 	retreat_distance = 6
-	minimum_distance = 6
-	rapid = 5
+	approach_distance = 6
+	auto_fire_delay = 5
 	casingtype = /obj/item/ammo_casing/c45
 	projectilesound = 'sound/weapons/gunshot_smg.ogg'
 
@@ -151,18 +151,18 @@
 	melee_damage_lower = 15
 	melee_damage_upper = 25
 	wound_bonus = 20
-	rapid_melee = 1
+	melee_attacks_per_tick = 1
 	ranged = 1
 	retreat_distance = 4
-	minimum_distance = 4
-	rapid = 2
-	rapid_fire_delay = 6
+	approach_distance = 4
+	auto_fire_delay = 2
+	auto_fire_delay = 6
 	icon_state = "syndicate_shotgun"
 	icon_living = "syndicate_shotgun"
 	casingtype = /obj/item/ammo_casing/shotgun/buckshot //buckshot (up to 72.5 brute) fired in a two-round burst
 
 /mob/living/simple_animal/hostile/renegade/syndicate/civilian
-	minimum_distance = 10
+	approach_distance = 10
 	retreat_distance = 10
 	obj_damage = 0
 	environment_smash = ENVIRONMENT_SMASH_NONE
@@ -201,7 +201,7 @@
 	melee_damage_lower = 25
 	melee_damage_upper = 45
 	wound_bonus = 10
-	rapid_melee = 2
+	melee_attacks_per_tick = 2
 	maxHealth = 170
 	health = 170
 	mob_armor = ARMOR_VALUE_SYNDIE_REDSUIT
@@ -220,7 +220,7 @@
 	melee_damage_lower = 45
 	melee_damage_upper = 50
 	wound_bonus = 40
-	rapid_melee = 1
+	melee_attacks_per_tick = 1
 	maxHealth = 170
 	health = 170
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
@@ -241,6 +241,32 @@
 /mob/living/simple_animal/hostile/renegade/syndicate/ranged/space
 	name = "Renegade Commando Trooper"
 	desc = "Part of the Void Stalker arm of the Renegades, here from parts unknown to give backup to their Terra Firma company (the guys you've been shooting). This one's decked out in a red voidsuit, which just so happens to be pretty darn good powered armor."
+/mob/living/simple_animal/hostile/syndicate/melee/sword/space/stormtrooper
+	icon_state = "syndicate_stormtrooper_sword"
+	icon_living = "syndicate_stormtrooper_sword"
+	name = "Syndicate Stormtrooper"
+	maxHealth = 250
+	health = 250
+
+///////////////Guns////////////
+
+/mob/living/simple_animal/hostile/syndicate/ranged
+	ranged = 1
+	retreat_distance = 5
+	approach_distance = 5
+	icon_state = "syndicate_pistol"
+	icon_living = "syndicate_pistol"
+	casingtype = /obj/item/ammo_casing/c10mm
+	projectilesound = 'sound/weapons/gunshot.ogg'
+	loot = list(/obj/effect/gibspawner/human)
+	dodging = FALSE
+	melee_attacks_per_tick = 1
+
+/mob/living/simple_animal/hostile/syndicate/ranged/infiltrator //shuttle loan event
+	projectilesound = 'sound/weapons/gunshot_silenced.ogg'
+	loot = list()
+
+/mob/living/simple_animal/hostile/syndicate/ranged/space
 	icon_state = "syndicate_space_pistol"
 	icon_living = "syndicate_space_pistol"
 	move_to_delay = 3
@@ -257,9 +283,25 @@
 	light_system = MOVABLE_LIGHT
 	light_range = 4
 
-/mob/living/simple_animal/hostile/renegade/syndicate/ranged/smg/space
-	name = "Renegade Assault Commando"
-	desc = "Part of the Void Stalker arm of the Renegades, here from parts unknown to give backup to their Terra Firma company (the guys you've been shooting). This one's decked out in a red voidsuit, which just so happens to be pretty darn good powered armor."
+/mob/living/simple_animal/hostile/syndicate/ranged/space/stormtrooper
+	icon_state = "syndicate_stormtrooper_pistol"
+	icon_living = "syndicate_stormtrooper_pistol"
+	name = "Syndicate Stormtrooper"
+	maxHealth = 250
+	health = 250
+
+/mob/living/simple_animal/hostile/syndicate/ranged/smg
+	auto_fire_burst_count = 2
+	icon_state = "syndicate_smg"
+	icon_living = "syndicate_smg"
+	casingtype = /obj/item/ammo_casing/c45
+	projectilesound = 'sound/weapons/gunshot_smg.ogg'
+
+/mob/living/simple_animal/hostile/syndicate/ranged/smg/pilot //caravan ambush ruin
+	name = "Syndicate Salvage Pilot"
+	loot = list()
+
+/mob/living/simple_animal/hostile/syndicate/ranged/smg/space
 	icon_state = "syndicate_space_smg"
 	icon_living = "syndicate_space_smg"
 	move_to_delay = 3
@@ -329,7 +371,7 @@
 	melee_damage_lower = 50
 	melee_damage_upper = 55
 	wound_bonus = 40
-	rapid_melee = 1
+	melee_attacks_per_tick = 1
 	maxHealth = 250
 	health = 250
 
@@ -370,6 +412,18 @@
 	health = 250
 
 ///////////////Misc////////////
+
+/mob/living/simple_animal/hostile/syndicate/civilian
+	approach_distance = 10
+	retreat_distance = 10
+	obj_damage = 0
+	environment_smash = ENVIRONMENT_SMASH_NONE
+
+/mob/living/simple_animal/hostile/syndicate/civilian/Aggro()
+	..()
+	summon_backup(15)
+	say("GUARDS!!")
+
 
 /mob/living/simple_animal/hostile/viscerator
 	name = "viscerator"

@@ -21,7 +21,7 @@ Difficulty: Extremely Hard
 	melee_damage_lower = 10
 	melee_damage_upper = 10
 	aggro_vision_range = 18 // large vision range so combat doesn't abruptly end when someone runs a bit away
-	rapid_melee = 4
+	melee_attacks_per_tick = 4
 	speed = 20
 	move_to_delay = 20
 	ranged = TRUE
@@ -142,12 +142,12 @@ Difficulty: Extremely Hard
 	adjustBruteLoss(30 * severity - 120)
 	visible_message(span_danger("[src] absorbs the explosion!"), span_userdanger("You absorb the explosion!"))
 
-/mob/living/simple_animal/hostile/megafauna/demonic_frost_miner/Goto(target, delay, minimum_distance)
+/mob/living/simple_animal/hostile/megafauna/demonic_frost_miner/Goto(target, delay, approach_distance)
 	if(enraging)
 		return
 	return ..()
 
-/mob/living/simple_animal/hostile/megafauna/demonic_frost_miner/MoveToTarget(list/possible_targets)
+/mob/living/simple_animal/hostile/megafauna/demonic_frost_miner/InitiateMovement(list/possible_targets)
 	if(enraging)
 		return
 	return ..()

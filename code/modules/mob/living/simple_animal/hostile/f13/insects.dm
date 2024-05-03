@@ -22,7 +22,7 @@
 	retreat_distance = 0
 	//how far they pull back
 
-	minimum_distance = 0
+	approach_distance = 0
 	// how close you can get before they try to pull back
 
 	aggro_vision_range = 4 //due to ants poor eyesight
@@ -122,9 +122,8 @@
 	..()
 	summon_backup(10)
 
-/mob/living/simple_animal/hostile/fireant/AttackingTarget()
+/mob/living/simple_animal/hostile/fireant/MeleeAttackTarget(atom/my_target)
 	. = ..()
-	var/atom/my_target = get_target()
 	if(!. || !ishuman(my_target))
 		return
 	var/mob/living/carbon/human/H = my_target
@@ -163,10 +162,10 @@
 	attack_sound = 'sound/creatures/radroach_attack.ogg'
 	projectiletype = /obj/item/projectile/bile
 	projectilesound = 'sound/f13npc/centaur/spit.ogg'
-	extra_projectiles = 2
+	auto_fire_burst_count = 3
 	speak_emote = list("skitters")
 	retreat_distance = 5
-	minimum_distance = 7
+	approach_distance = 7
 	faction = list("ant")
 	gold_core_spawnable = HOSTILE_SPAWN
 	decompose = FALSE
@@ -230,7 +229,7 @@
 	retreat_distance = 0
 	//how far they pull back
 
-	minimum_distance = 0
+	approach_distance = 0
 	// how close you can get before they try to pull back
 
 	aggro_vision_range = 4 //due to scorpions poor eyesight
@@ -267,9 +266,8 @@
 	death_sound = 'sound/f13npc/scorpion/death.ogg'
 
 
-/mob/living/simple_animal/hostile/radscorpion/AttackingTarget()
+/mob/living/simple_animal/hostile/radscorpion/MeleeAttackTarget(atom/my_target)
 	. = ..()
-	var/atom/my_target = get_target()
 	if(!. || !ishuman(my_target))
 		return
 	var/mob/living/carbon/human/H = my_target
@@ -337,7 +335,7 @@
 	retreat_distance = 3
 	//how far they pull back
 
-	minimum_distance = 1
+	approach_distance = 1
 	// how close you can get before they try to pull back
 
 	aggro_vision_range = 7 //due to scorpions poor eyesight
@@ -345,7 +343,7 @@
 
 	vision_range = 8
 	//tiles within they start making noise, does count the mobs tile
-	rapid_melee = 2
+	melee_attacks_per_tick = 2
 
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/cazador_meat = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/animalhide/chitin = 2)
 	butcher_difficulty = 1.5
@@ -380,9 +378,8 @@
 	loot_drop_amount = 1
 	loot_amount_random = TRUE
 
-/mob/living/simple_animal/hostile/cazador/AttackingTarget()
+/mob/living/simple_animal/hostile/cazador/MeleeAttackTarget(atom/my_target)
 	. = ..()
-	var/atom/my_target = get_target()
 	if(!. || !ishuman(my_target))
 		return
 	var/mob/living/carbon/human/H = my_target
@@ -506,7 +503,7 @@
 	projectilesound = 'sound/f13npc/bloatfly/shoot2.ogg'
 	//sound_after_shooting = 'sound/f13npc/bloatfly/afterfire1.ogg'
 	//sound_after_shooting_delay = 1 SECONDS
-	extra_projectiles = 1
+	auto_fire_burst_count = 2
 	auto_fire_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	ranged_cooldown_time = 3 SECONDS
 	variation_list = list(
@@ -668,7 +665,7 @@
 	melee_damage_lower = 20
 	melee_damage_upper = 30
 	retreat_distance = 9
-	minimum_distance = 7
+	approach_distance = 7
 	aggro_vision_range = 7
 	vision_range = 9
 	ranged = TRUE

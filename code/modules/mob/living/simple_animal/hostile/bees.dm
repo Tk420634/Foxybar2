@@ -103,7 +103,7 @@
 
 
 //We don't attack beekeepers/people dressed as bees//Todo: bee costume
-/mob/living/simple_animal/hostile/poison/bees/CanAttack(atom/the_target)
+/mob/living/simple_animal/hostile/poison/bees/AllowedToAttackTarget(atom/the_target)
 	. = ..()
 	if(!.)
 		return FALSE
@@ -124,9 +124,7 @@
 	return FALSE
 
 
-/mob/living/simple_animal/hostile/poison/bees/AttackingTarget()
-	//Pollinate
-	var/atom/my_target = get_target()
+/mob/living/simple_animal/hostile/poison/bees/MeleeAttackTarget(atom/my_target)
 	if(istype(my_target, /obj/machinery/hydroponics))
 		var/obj/machinery/hydroponics/Hydro = my_target
 		pollinate(Hydro)
@@ -241,9 +239,8 @@
 
 
 //leave pollination for the peasent bees
-/mob/living/simple_animal/hostile/poison/bees/queen/AttackingTarget()
+/mob/living/simple_animal/hostile/poison/bees/queen/MeleeAttackTarget(atom/my_target)
 	. = ..()
-	var/atom/my_target = get_target()
 	if(!. || !beegent || !isliving(my_target))
 		return
 	var/mob/living/L = my_target

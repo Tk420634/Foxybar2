@@ -109,12 +109,12 @@ Difficulty: Hard
 		return
 	..()
 
-/mob/living/simple_animal/hostile/megafauna/bubblegum/AttackingTarget()
+/mob/living/simple_animal/hostile/megafauna/bubblegum/MeleeAttackTarget(atom/my_target)
 	if(charging)
 		return
 	..()
 
-/mob/living/simple_animal/hostile/megafauna/bubblegum/Goto(target, delay, minimum_distance)
+/mob/living/simple_animal/hostile/megafauna/bubblegum/Goto(target, delay)
 	if(charging)
 		return
 	..()
@@ -151,7 +151,7 @@ Difficulty: Hard
 	sleep(5)
 	throw_at(T, get_dist(src, T), 1, src, 0)
 	charging = 0
-	Goto(my_target, move_to_delay, minimum_distance)
+	Goto(my_target)
 
 
 /mob/living/simple_animal/hostile/megafauna/bubblegum/Bump(atom/A)

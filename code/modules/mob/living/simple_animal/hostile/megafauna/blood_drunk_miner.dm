@@ -59,7 +59,7 @@ Difficulty: Medium
 /mob/living/simple_animal/hostile/megafauna/blood_drunk_miner/guidance
 	guidance = TRUE
 
-/mob/living/simple_animal/hostile/megafauna/blood_drunk_miner/hunter/AttackingTarget()
+/mob/living/simple_animal/hostile/megafauna/blood_drunk_miner/hunter/MeleeAttackTarget(atom/my_target)
 	. = ..()
 	if(. && prob(12))
 		INVOKE_ASYNC(src,PROC_REF(dash))
@@ -108,8 +108,7 @@ Difficulty: Medium
 		return
 	return ..()
 
-/mob/living/simple_animal/hostile/megafauna/blood_drunk_miner/AttackingTarget()
-	var/atom/my_target = get_target()
+/mob/living/simple_animal/hostile/megafauna/blood_drunk_miner/MeleeAttackTarget(atom/my_target)
 	if(QDELETED(my_target))
 		return
 	if(!CheckActionCooldown() || !Adjacent(my_target)) //some cheating
@@ -152,7 +151,7 @@ Difficulty: Medium
 
 /mob/living/simple_animal/hostile/megafauna/blood_drunk_miner/OpenFire()
 	var/atom/my_target = get_target()
-	Goto(my_target, move_to_delay, minimum_distance)
+	Goto(my_target)
 	if(get_dist(src, my_target) > MINER_DASH_RANGE && dash_cooldown <= world.time)
 		INVOKE_ASYNC(src,PROC_REF(dash), my_target)
 	else
@@ -184,7 +183,7 @@ Difficulty: Medium
 			SetNextAction(1, considered_action = FALSE, immediate = FALSE, flush = TRUE)
 		INVOKE_ASYNC(src,PROC_REF(quick_attack_loop)) //lets try that again.
 		return
-	AttackingTarget()
+	MeleeAttackTarget(my_target)
 
 /mob/living/simple_animal/hostile/megafauna/blood_drunk_miner/proc/dash(atom/dash_target)
 	if(world.time < dash_cooldown)

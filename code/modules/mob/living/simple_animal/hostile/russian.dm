@@ -41,7 +41,7 @@
 	loot = /obj/item/gun/ballistic/rifle/mosin
 	ranged = 1
 	retreat_distance = 5
-	minimum_distance = 5
+	approach_distance = 5
 	projectilesound = 'sound/weapons/gunshot.ogg'
 	casingtype = /obj/item/ammo_casing/a357
 
@@ -64,7 +64,7 @@
 	icon_living = "russianofficer"
 	maxHealth = 65
 	health = 65
-	rapid = 3
+	auto_fire_burst_count = 3
 	casingtype = /obj/item/ammo_casing/c9mm
 	loot = /obj/item/gun/ballistic/rifle/mosin
 

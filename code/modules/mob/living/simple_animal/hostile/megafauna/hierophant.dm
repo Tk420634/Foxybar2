@@ -132,7 +132,7 @@ Difficulty: Normal
 	L.dust()
 */
 
-/mob/living/simple_animal/hostile/megafauna/hierophant/CanAttack(atom/the_target)
+/mob/living/simple_animal/hostile/megafauna/hierophant/AllowedToAttackTarget(atom/the_target)
 	. = ..()
 	if(istype(the_target, /mob/living/simple_animal/hostile/asteroid/hivelordbrood)) //ignore temporary targets in favor of more permanent targets
 		return FALSE
@@ -152,8 +152,7 @@ Difficulty: Normal
 		wander = TRUE
 		did_reset = FALSE
 
-/mob/living/simple_animal/hostile/megafauna/hierophant/AttackingTarget()
-	var/atom/my_target = get_target()
+/mob/living/simple_animal/hostile/megafauna/hierophant/MeleeAttackTarget(atom/my_target)
 	if(!blinking)
 		if(my_target && isliving(my_target))
 			var/mob/living/L = my_target
@@ -187,7 +186,7 @@ Difficulty: Normal
 		if(my_target)
 			arena_trap(my_target)
 
-/mob/living/simple_animal/hostile/megafauna/hierophant/Goto(target, delay, minimum_distance)
+/mob/living/simple_animal/hostile/megafauna/hierophant/Goto(target, delay, approach_distance)
 	wander = TRUE
 	if(!blinking)
 		..()

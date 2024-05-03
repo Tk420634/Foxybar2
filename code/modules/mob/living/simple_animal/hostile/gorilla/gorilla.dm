@@ -57,10 +57,9 @@
 						parts += BP
 			return parts
 
-/mob/living/simple_animal/hostile/gorilla/AttackingTarget()
+/mob/living/simple_animal/hostile/gorilla/MeleeAttackTarget(atom/my_target)
 	if(client)
 		oogaooga()
-	var/atom/my_target = get_target()
 	var/list/parts = target_bodyparts(my_target)
 	if(parts)
 		if(!parts.len)
@@ -78,7 +77,7 @@
 			L.DefaultCombatKnockdown(20)
 			visible_message(span_danger("[src] knocks [L] down!"))
 
-/mob/living/simple_animal/hostile/gorilla/CanAttack(atom/the_target)
+/mob/living/simple_animal/hostile/gorilla/AllowedToAttackTarget(atom/the_target)
 	var/list/parts = target_bodyparts(get_target())
 	return ..() && !istype(the_target, /mob/living/carbon/monkey) && (!parts  || parts.len > 3)
 

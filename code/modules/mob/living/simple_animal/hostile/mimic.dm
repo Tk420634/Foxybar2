@@ -69,9 +69,8 @@
 	if(.)
 		trigger()
 
-/mob/living/simple_animal/hostile/mimic/crate/AttackingTarget()
+/mob/living/simple_animal/hostile/mimic/crate/MeleeAttackTarget(atom/my_target)
 	. = ..()
-	var/atom/my_target = get_target()
 	if(!.)
 		return
 	icon_state = initial(icon_state)
@@ -184,9 +183,8 @@ GLOBAL_LIST_INIT(protected_objects, list(/obj/structure/table, /obj/structure/ca
 	if(destroy_objects)
 		..()
 
-/mob/living/simple_animal/hostile/mimic/copy/AttackingTarget()
+/mob/living/simple_animal/hostile/mimic/copy/MeleeAttackTarget(atom/my_target)
 	. = ..()
-	var/atom/my_target = get_target()
 	if(knockdown_people && . && prob(15) && iscarbon(my_target))
 		var/mob/living/carbon/C = my_target
 		C.DefaultCombatKnockdown(40)
@@ -198,7 +196,7 @@ GLOBAL_LIST_INIT(protected_objects, list(/obj/structure/table, /obj/structure/ca
 				"My logic is undeniable.", "One of us.", "FLESH IS WEAK", "THIS ISN'T WAR, THIS IS EXTERMINATION!")
 	speak_chance = 7
 
-/mob/living/simple_animal/hostile/mimic/copy/machine/CanAttack(atom/the_target)
+/mob/living/simple_animal/hostile/mimic/copy/machine/AllowedToAttackTarget(atom/the_target)
 	if(the_target == creator) // Don't attack our creator AI.
 		return 0
 	if(iscyborg(the_target))
@@ -220,7 +218,7 @@ GLOBAL_LIST_INIT(protected_objects, list(/obj/structure/table, /obj/structure/ca
 		environment_smash = ENVIRONMENT_SMASH_NONE //needed? seems weird for them to do so
 		ranged = 1
 		retreat_distance = 1 //just enough to shoot
-		minimum_distance = 6
+		approach_distance = 6
 		var/obj/item/gun/G = O
 		melee_damage_upper = G.force
 		melee_damage_lower = G.force - max(0, (G.force / 2))
@@ -275,7 +273,7 @@ GLOBAL_LIST_INIT(protected_objects, list(/obj/structure/table, /obj/structure/ca
 	else
 		ranged = 0 //BANZAIIII
 		retreat_distance = 0
-		minimum_distance = 1
+		approach_distance = 1
 		return
 	icon_state = TrueGun.icon_state
 	icon_living = TrueGun.icon_state

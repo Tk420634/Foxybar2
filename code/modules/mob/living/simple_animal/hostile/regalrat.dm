@@ -55,7 +55,7 @@
 		coffer.Trigger()
 	return ..()
 
-/mob/living/simple_animal/hostile/regalrat/CanAttack(atom/the_target)
+/mob/living/simple_animal/hostile/regalrat/AllowedToAttackTarget(atom/the_target)
 	if(istype(the_target,/mob/living/simple_animal))
 		var/mob/living/A = the_target
 		if(istype(the_target, /mob/living/simple_animal/hostile/regalrat) && A.stat == CONSCIOUS)
@@ -180,7 +180,7 @@
 	maxHealth = 15
 	health = 15
 	retreat_distance = 0
-	minimum_distance = 0
+	approach_distance = 0
 	aggro_vision_range = 7
 	vision_range = 8
 	waddle_amount = 3
@@ -232,7 +232,7 @@
 	maxHealth = 5
 	health = 5
 	retreat_distance = 7
-	minimum_distance = 7
+	approach_distance = 7
 	aggro_vision_range = 7
 	vision_range = 10
 	is_smol = TRUE
@@ -282,7 +282,7 @@
 	maxHealth = 50
 	health = 50
 	retreat_distance = 7
-	minimum_distance = 7
+	approach_distance = 7
 	aggro_vision_range = 7
 	vision_range = 10
 	faction = list("neutral")
@@ -359,7 +359,7 @@
 		else
 			. += span_warning("This peasant serves a different king! Strike him down!")
 
-/mob/living/simple_animal/hostile/rat/CanAttack(atom/the_target)
+/mob/living/simple_animal/hostile/rat/AllowedToAttackTarget(atom/the_target)
 	if(istype(the_target,/mob/living/simple_animal))
 		var/mob/living/A = the_target
 		if(istype(the_target, /mob/living/simple_animal/hostile/regalrat) && A.stat == CONSCIOUS)

@@ -83,10 +83,10 @@ Featuring:
 			do_ranged = 1
 			break
 	if(do_ranged)
-		minimum_distance = 5
+		approach_distance = 5
 		ranged = 1
 	else
-		minimum_distance = 1
+		approach_distance = 1
 		ranged = 0
 	wanted_objects = list()
 	search_objects = 0
@@ -112,7 +112,7 @@ Featuring:
 			break
 	search_objects = search_aggressiveness
 	ranged = 0
-	minimum_distance = 1
+	approach_distance = 1
 
 	walk(M,0)//end any lingering movement loops, to prevent the haunted mecha bug
 
@@ -172,8 +172,7 @@ Featuring:
 		..()
 
 
-/mob/living/simple_animal/hostile/renegade/syndicate/mecha_pilot/AttackingTarget()
-	var/atom/my_target = get_target()
+/mob/living/simple_animal/hostile/renegade/syndicate/mecha_pilot/MeleeAttackTarget(atom/my_target)
 	if(mecha)
 		var/list/possible_weapons = get_mecha_equip_by_flag(MELEE)
 		if(possible_weapons.len)
@@ -193,7 +192,7 @@ Featuring:
 				enter_mecha(M)
 				return
 			else
-				if(!CanAttack(M))
+				if(!AllowedToAttackTarget(M))
 					LoseTarget()
 					return
 
@@ -206,7 +205,7 @@ Featuring:
 			for(var/obj/mecha/combat/C in range(src,vision_range))
 				if(is_valid_mecha(C))
 					GiveTarget(C) //Let's nab it!
-					minimum_distance = 1
+					approach_distance = 1
 					ranged = 0
 					break
 		if(mecha)
@@ -261,16 +260,16 @@ Featuring:
 
 //Yes they actually try and pull this shit
 //~simple animals~
-/mob/living/simple_animal/hostile/renegade/syndicate/mecha_pilot/CanAttack(atom/the_target)
+/mob/living/simple_animal/hostile/renegade/syndicate/mecha_pilot/AllowedToAttackTarget(atom/the_target)
 	if(ismecha(the_target))
 		var/obj/mecha/M = the_target
 		if(mecha)
-			if(M == mecha || !CanAttack(M.occupant))
+			if(M == mecha || !AllowedToAttackTarget(M.occupant))
 				return 0
 		else //we're not in a mecha, so we check if we can steal it instead.
 			if(is_valid_mecha(M))
 				return 1
-			else if (M.occupant && CanAttack(M.occupant))
+			else if (M.occupant && AllowedToAttackTarget(M.occupant))
 				return 1
 			else
 				return 0
@@ -290,8 +289,8 @@ Featuring:
 	return ..()
 
 
-/mob/living/simple_animal/hostile/renegade/syndicate/mecha_pilot/Goto(target, delay, minimum_distance)
+/mob/living/simple_animal/hostile/renegade/syndicate/mecha_pilot/Goto(target, delay, approach_distance)
 	if(mecha)
-		walk_to(mecha, target, minimum_distance, mecha.step_in)
+		walk_to(mecha, target, approach_distance, mecha.step_in)
 	else
 		..()

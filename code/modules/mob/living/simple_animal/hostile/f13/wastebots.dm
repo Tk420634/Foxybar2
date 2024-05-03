@@ -124,10 +124,10 @@
 	attack_verb_simple = "shoots a burst of flame at"
 	projectilesound = 'sound/weapons/laser.ogg'
 	projectiletype = /obj/item/projectile/f13plasma/scatter
-	extra_projectiles = 1
+	auto_fire_burst_count = 2
 	ranged = TRUE
 	retreat_distance = 4
-	minimum_distance = 4
+	approach_distance = 4
 	check_friendly_fire = TRUE
 	loot = list(
 		/obj/effect/decal/cleanable/robot_debris,
@@ -215,10 +215,10 @@
 	attack_verb_simple = "slaps"
 	projectilesound = 'sound/weapons/laser.ogg'
 	projectiletype = /obj/item/projectile/beam/laser/pistol
-	extra_projectiles = 1
+	auto_fire_burst_count = 2
 	ranged = TRUE
 	retreat_distance = 2
-	minimum_distance = 2
+	approach_distance = 2
 	check_friendly_fire = TRUE
 	loot = list(
 		/obj/effect/decal/cleanable/robot_debris,
@@ -267,10 +267,10 @@
 	attack_verb_simple = "slaps"
 	projectilesound = 'sound/weapons/laser.ogg'
 	projectiletype = /obj/item/projectile/beam/laser
-	extra_projectiles = 1
+	auto_fire_burst_count = 2
 	ranged = TRUE
 	retreat_distance = 2
-	minimum_distance = 2
+	approach_distance = 2
 	check_friendly_fire = TRUE
 	loot = list(/obj/effect/spawner/lootdrop/f13/common, /obj/effect/gibspawner/ipc/bodypartless)
 	loot_drop_amount = 2
@@ -292,9 +292,6 @@
 		SP_DISTANT_RANGE(LASER_RANGE_DISTANT)
 	)
 	desc_short = "A brainy robot with lasers."
-
-/mob/living/simple_animal/hostile/handy/robobrain/AttackingTarget()
-	. = ..()
 
 /mob/living/simple_animal/hostile/handy/robobrain/nsb //NSB + Raider Bunker specific
 	name = "robobrain"
@@ -322,7 +319,7 @@
 	loot_amount_random = TRUE
 	melee_damage_lower = 5 //severely reduced melee damage here because its silly to have a ranged mob also be a cqc master
 	melee_damage_upper = 10
-	extra_projectiles = 0 //removed extra projectiles to make these easier to deal with on super lowpop
+	auto_fire_burst_count = 1 //removed extra projectiles to make these easier to deal with on super lowpop
 	stat_attack = CONSCIOUS
 	ranged = TRUE
 	move_to_delay = 9 //WAY slower than average,
@@ -331,7 +328,7 @@
 	retreat_distance = 0 // Mob doesn't retreat
 	//how far they pull back
 
-	minimum_distance = 1
+	approach_distance = 1
 	// how close you can get before they try to pull back
 
 	aggro_vision_range = 7
@@ -543,7 +540,7 @@
 	color = "#B85C00"
 	projectilesound = 'sound/magic/fireball.ogg'
 	projectiletype = /obj/item/projectile/incendiary/flamethrower
-	extra_projectiles = 1
+	auto_fire_burst_count = 2
 	can_ghost_into = FALSE
 
 /mob/living/simple_animal/hostile/handy/assaultron/laser
@@ -552,7 +549,7 @@
 	color = "#B85C00"
 	ranged = TRUE
 	retreat_distance = null
-	minimum_distance = 1
+	approach_distance = 1
 	projectilesound = 'sound/weapons/laser.ogg'
 	projectiletype = /obj/item/projectile/beam/laser/lasgun
 	projectile_sound_properties = list(

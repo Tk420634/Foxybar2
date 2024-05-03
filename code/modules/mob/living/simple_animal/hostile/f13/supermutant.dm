@@ -177,13 +177,13 @@
 	maxHealth = 130 
 	health = 130
 	retreat_distance = 3
-	minimum_distance = 2
+	approach_distance = 2
 	casingtype = /obj/item/ammo_casing/shotgun/improvised/simplemob
 	projectiletype = null
 	projectilesound = 'sound/f13weapons/shotgun.ogg'
 	sound_after_shooting = 'sound/weapons/shotguninsert.ogg'
 	sound_after_shooting_delay = 1 SECONDS
-	extra_projectiles = 1
+	auto_fire_burst_count = 2
 	auto_fire_delay = GUN_BURSTFIRE_DELAY_FAST
 	ranged_cooldown_time = 4 SECONDS
 	loot = list(
@@ -212,9 +212,9 @@
 	projectilesound = 'sound/f13weapons/assaultrifle_fire.ogg'
 	sound_after_shooting = null
 	sound_after_shooting_delay = 1 SECONDS
-	extra_projectiles = 0
+	auto_fire_burst_count = 1
 	retreat_distance = 3
-	minimum_distance = 3
+	approach_distance = 3
 	ranged_cooldown_time = 2 SECONDS
 	loot = list(
 		/obj/item/gun/ballistic/automatic/varmint,
@@ -297,9 +297,9 @@
 	melee_damage_upper = 37
 	attack_verb_simple = "smashes"
 	attack_sound = "punch"
-	extra_projectiles = 1
+	auto_fire_burst_count = 2
 	retreat_distance = 4
-	minimum_distance = 6
+	approach_distance = 6
 	projectiletype = /obj/item/projectile/bullet/a556/simple
 	projectilesound = 'sound/f13weapons/assaultrifle_fire.ogg'
 	loot = list(/obj/item/ammo_box/magazine/m556/rifle, /obj/effect/gibspawner/generic/animal)
@@ -344,7 +344,7 @@
 	attack_verb_simple = "smashes"
 	attack_sound = "punch"
 	retreat_distance = 5
-	minimum_distance = 7
+	approach_distance = 7
 	projectiletype = /obj/item/projectile/f13plasma/repeater
 	projectilesound = 'sound/f13weapons/plasma_rifle.ogg'
 	loot = list(/obj/item/stock_parts/cell/ammo/mfc, /obj/effect/gibspawner/generic/animal)
@@ -428,11 +428,11 @@
 	if(!charging)
 		..()
 
-/mob/living/simple_animal/hostile/supermutant/nightkin/rain/AttackingTarget()
+/mob/living/simple_animal/hostile/supermutant/nightkin/rain/MeleeAttackTarget(atom/my_target)
 	if(!charging)
 		return ..()
 
-/mob/living/simple_animal/hostile/supermutant/nightkin/rain/Goto(target, delay, minimum_distance)
+/mob/living/simple_animal/hostile/supermutant/nightkin/rain/Goto(target)
 	if(!charging)
 		..()
 
@@ -462,7 +462,7 @@
 	var/atom/my_target = get_target()
 	if(!my_target)
 		return
-	Goto(my_target, move_to_delay, minimum_distance)
+	Goto(my_target)
 
 /mob/living/simple_animal/hostile/supermutant/nightkin/rain/Bump(atom/A)
 	if(charging)
@@ -498,9 +498,9 @@
 	damage_coeff = list(BRUTE = 1, BURN = -0.25, TOX = 0, CLONE = 0, STAMINA = 0, OXY = 0)
 	melee_damage_lower = 35
 	melee_damage_upper = 60
-	extra_projectiles = 2
+	auto_fire_burst_count = 3
 	retreat_distance = 2
-	minimum_distance = 4
+	approach_distance = 4
 
 /mob/living/simple_animal/hostile/supermutant/nightkin/rangedmutant/rain/Initialize(mapload)
 	. = ..()
@@ -540,7 +540,7 @@
 	damage_coeff = list(BRUTE = 0.5, BURN = 0.5, TOX = 0, CLONE = 0, STAMINA = 0, OXY = 0)
 	melee_damage_lower = 28
 	melee_damage_upper = 62
-	extra_projectiles = 1
+	auto_fire_burst_count = 2
 
 /mob/living/simple_animal/hostile/supermutant/nightkin/elitemutant/rain/Initialize(mapload)
 	. = ..()
