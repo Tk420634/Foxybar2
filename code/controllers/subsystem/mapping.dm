@@ -27,6 +27,7 @@ SUBSYSTEM_DEF(mapping)
 
 	var/list/shuttle_templates = list()
 	var/list/shelter_templates = list()
+	var/list/dungeon_templates = list()
 
 	var/list/areas_in_z = list()
 
@@ -89,6 +90,7 @@ SUBSYSTEM_DEF(mapping)
 	repopulate_sorted_areas()
 	process_teleport_locs()			//Sets up the wizard teleport locations
 	preloadTemplates()
+	transit = add_new_zlevel("Transit/Reserved", list(ZTRAIT_RESERVED = TRUE))
 #ifndef LOWMEMORYMODE
 	// Create space ruin levels
 	while (space_levels_so_far < config.space_ruin_levels)
@@ -98,8 +100,6 @@ SUBSYSTEM_DEF(mapping)
 	for (var/i in 1 to config.space_empty_levels)
 		++space_levels_so_far
 		empty_space = add_new_zlevel("Empty Area [space_levels_so_far]", list(ZTRAIT_LINKAGE = CROSSLINKED))
-	// and the transit level
-	transit = add_new_zlevel("Transit/Reserved", list(ZTRAIT_RESERVED = TRUE))
 /*
 	// Pick a random away mission.
 	if(CONFIG_GET(flag/roundstart_away))
@@ -416,6 +416,7 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 	preloadRuinTemplates()
 	preloadShuttleTemplates()
 	preloadShelterTemplates()
+	preloadDungeonTemplates()
 
 /datum/controller/subsystem/mapping/proc/preloadRuinTemplates()
 	// Still supporting bans by filename
@@ -476,6 +477,17 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 
 		shelter_templates[S.shelter_id] = S
 		map_templates[S.shelter_id] = S
+
+/datum/controller/subsystem/mapping/proc/preloadDungeonTemplates()
+	for(var/item in subtypesof(/datum/map_template/dungeon))
+		var/datum/map_template/dungeon/dungeon_type = item
+		if(!(initial(dungeon_type.mappath)))
+			continue
+		var/datum/map_template/dungeon/D = new dungeon_type()
+
+		dungeon_templates[D.name] = D
+		map_templates[D.name] = D
+
 
 //Manual loading of away missions.
 /client/proc/admin_away()
