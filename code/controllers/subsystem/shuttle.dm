@@ -85,7 +85,7 @@ SUBSYSTEM_DEF(shuttle)
 		supply_packs[P.type] = P
 
 	initial_load()
-	// Not used on Coyote Bayou.
+	// Not used on Knotingham Forest.
 //	if(!arrivals)
 //		WARNING("No /obj/docking_port/mobile/arrivals placed on the map!")
 	if(!emergency)

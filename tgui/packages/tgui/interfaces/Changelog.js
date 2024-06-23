@@ -176,7 +176,7 @@ export class Changelog extends Component {
 
     const header = (
       <Section>
-        <h1>Coyote Bayou</h1>
+        <h1>Knotingham Forest</h1>
         <p>
           <b>Thanks to: </b>
           Baystation 12, /vg/station, NTstation, CDK Station devs,

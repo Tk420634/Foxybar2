@@ -3313,7 +3313,7 @@
 	path = /obj/item/clothing/under/rank/civilian/head_of_personnel/suit/skirt
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_UNIFORMS
 
-// Coyote Bayou Customs
+// Knotingham Forest Customs
 
 /datum/gear/uniform/frogsuit
 	name = "Frogsuit"
