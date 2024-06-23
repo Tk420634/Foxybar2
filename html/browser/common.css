@@ -1,12 +1,12 @@
-@import url(https://fonts.googleapis.com/css?family=VT323);
+@import url('https://fonts.googleapis.com/css2?family=Almendra:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 body
 {
 	padding: 0;
 	margin: 0;
-	background: #383838;
+	background: #000000;
 	color: #00dd00;
 	font-size: 12px;
-	font-family: 'VT323', Courier;
+	font-family: 'Almendra';
 	color: #2fc22f;
 	line-height: 170%;
 }
@@ -148,8 +148,8 @@ h4
 {
 	animation: scroll 0.25s 1;
 	clear: both;
-	padding: 8px;
-	font-family: Verdana, Geneva, sans-serif;
+	padding: 16px;
+	font-family: "Almendra";
 	
 }
 
