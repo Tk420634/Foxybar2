@@ -98,7 +98,7 @@
 		"body_model" = MALE,\
 		"body_size" = RESIZE_DEFAULT_SIZE,\
 		"body_width" = RESIZE_DEFAULT_WIDTH,\
-		"color_scheme" = OLD_CHARACTER_COLORING,\
+		"color_scheme" = ADVANCED_CHARACTER_COLORING,\
 		"chat_color" = "whoopsie")
 
 GLOBAL_LIST_EMPTY(preferences_datums)
@@ -354,7 +354,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/icon/bgstate = "steel"
 	var/list/bgstate_options = list("000", "midgrey", "FFF", "white", "steel", "techmaint", "dark", "plating", "reinforced")
 
-	var/show_mismatched_markings = FALSE //determines whether or not the markings lists should show markings that don't match the currently selected species. Intentionally left unsaved.
+	var/show_mismatched_markings = TRUE //determines whether or not the markings lists should show markings that don't match the currently selected species. Intentionally left unsaved.
 
 	var/no_tetris_storage = FALSE
 
@@ -476,7 +476,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	dat += "<a href='?_src_=prefs;preference=tab;tab=[ERP_TAB]' [current_tab == ERP_TAB ? "class='linkOn'" : ""]>Underlying Appearance</a>"
 	dat += "<a href='?_src_=prefs;preference=tab;tab=[LOADOUT_TAB]' [current_tab == LOADOUT_TAB ? "class='linkOn'" : ""]>Loadout</a>"
 	dat += "<a href='?_src_=prefs;preference=tab;tab=[GAME_PREFERENCES_TAB]' [current_tab == GAME_PREFERENCES_TAB ? "class='linkOn'" : ""]>Game Preferences</a>"
-	dat += "<a href='?_src_=prefs;preference=tab;tab=[CONTENT_PREFERENCES_TAB]' [current_tab == CONTENT_PREFERENCES_TAB ? "class='linkOn'" : ""]>Content Preferences</a>"
+	dat += "<a href='?_src_=prefs;preference=tab;tab=[CONTENT_PREFERENCES_TAB]' [current_tab == CONTENT_PREFERENCES_TAB ? "class='linkOn'" : ""]>Adult Preferences</a>"
 	dat += "<a href='?_src_=prefs;preference=tab;tab=[KEYBINDINGS_TAB]' [current_tab == KEYBINDINGS_TAB ? "class='linkOn'" : ""]>Keybindings</a>"
 
 	if(!path)
@@ -542,7 +542,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<b>Top/Bottom/Switch:</b> <a href='?_src_=prefs;preference=tbs;task=input'>[tbs]</a><BR>"
 			dat += "<b>Orientation:</b> <a href='?_src_=prefs;preference=kisser;task=input'>[kisser]</a><BR>"
 			dat += "</td>"
-			//Middle Column
+/*			//Middle Column
 			dat +="<td width='30%' valign='top'>"
 			dat += "<h2>Matchmaking preferences:</h2>"
 			if(SSmatchmaking.initialized)
@@ -557,12 +557,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<b>Loading matchmaking preferences...</b><br>"
 				dat += "<b>Refresh once the game has finished setting up...</b><br>"
 			dat += "</td>"
+*/
 			//Right column
 			dat +="<td width='30%' valign='top'>"
 			dat += "<h2>Profile Picture ([pfphost]):</h2><BR>"
 			dat += "<b>Picture:</b> <a href='?_src_=prefs;preference=ProfilePicture;task=input'>[profilePicture ? "<img src=[PfpHostLink(profilePicture, pfphost)] width='125' height='auto' max-height='300'>" : "Upload a picture!"]</a><BR>"
-			dat += "<h2>Simple Creature Profile Picture ([creature_pfphost]):</h2><BR>"
-			dat += "<b>Picture:</b> <a href='?_src_=prefs;preference=CreatureProfilePicture;task=input'>[creature_profilepic ? "<img src=[PfpHostLink(creature_profilepic, creature_pfphost)] width='125' height='auto' max-height='300'>" : "Upload a picture!"]</a><BR>"
 			dat += "</td>"
 			/*
 			dat += "<b>Special Names:</b><BR>"
@@ -773,8 +772,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			// assume you can only have mam markings or regular markings or none, never both
 			var/marking_type
 			dat += APPEARANCE_CATEGORY_COLUMN
-			dat += "<b>Advanced Coloring:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=color_scheme;task=input'>[(features["color_scheme"] == ADVANCED_CHARACTER_COLORING) ? "Enabled" : "Disabled"]</a>"
-			dat += "<b>Mismatched Markings:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=mismatched_markings;task=input'>[show_mismatched_markings ? "Yes" : "No"]</a>"
 			if(parent.can_have_part("mam_body_markings"))
 				marking_type = "mam_body_markings"
 			if(marking_type)
@@ -1060,38 +1057,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "</td>"
 			dat += APPEARANCE_CATEGORY_COLUMN
 
-			//Start Creature Character
-			dat += "<h2>Simple Creature Character</h2>"
-			dat += "<b>Creature Species</b><a style='display:block;width:100px' href='?_src_=prefs;preference=creature_species;task=input'>[creature_species ? creature_species : "Eevee"]</a><BR>"
-			dat += "<b>Creature Name</b><a style='display:block;width:100px' href='?_src_=prefs;preference=creature_name;task=input'>[creature_name ? creature_name : "Eevee"]</a><BR>"
-			/*
-			if(CONFIG_GET(number/body_size_min) != CONFIG_GET(number/body_size_max))
-				dat += "<b>Size:</b> <a href='?_src_=prefs;preference=creature_body_size;task=input'>[creature_body_size*100]%</a><br>"
-			dat += "<b>Scaling:</b> <a href='?_src_=prefs;preference=creature_toggle_fuzzy;task=input'>[creature_fuzzy ? "Fuzzy" : "Sharp"]</a><br>"
-			*/
-			dat += "<a href='?_src_=prefs;preference=creature_flavor_text;task=input'><b>Set Creature Examine Text</b></a><br>"
-			if(length(creature_flavor_text) <= 40)
-				if(!length(creature_flavor_text))
-					dat += "\[...\]<br>"
-				else
-					dat += "[creature_flavor_text]<br>"
-			else
-				dat += "[TextPreview(creature_flavor_text)]...<br>"
-			dat += "<a href='?_src_=prefs;preference=creature_ooc;task=input'><b>Set Creature OOC Notes</b></a><br>"
-			if(length(creature_ooc) <= 40)
-				if(!length(creature_ooc))
-					dat += "\[...\]<br>"
-				else
-					dat += "[creature_ooc]<br>"
-			else
-				dat += "[TextPreview(creature_ooc)]...<br>"
-			if(creature_species)
-				if(!LAZYLEN(GLOB.creature_selectable))
-					generate_selectable_creatures()
-				if(!(creature_species in GLOB.creature_selectable))
-					creature_species = initial(creature_species)
-				dat += "[icon2base64html(GLOB.creature_selectable_icons[creature_species])]<br>"
-			// End creature Character
+
 
 			dat += "</td>"
 			dat += APPEARANCE_CATEGORY_COLUMN
@@ -1672,20 +1638,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<h2>Adult content prefs</h2>"
 			dat += "<b>Arousal:</b><a href='?_src_=prefs;preference=arousable'>[arousable == TRUE ? "Enabled" : "Disabled"]</a><BR>"
 			dat += "<b>Genital examine text</b>:<a href='?_src_=prefs;preference=genital_examine'>[(cit_toggles & GENITAL_EXAMINE) ? "Enabled" : "Disabled"]</a><BR>"
-			dat += "<b>Hypno:</b> <a href='?_src_=prefs;preference=never_hypno'>[(cit_toggles & NEVER_HYPNO) ? "Disallowed" : "Allowed"]</a><br>"
 			dat += "<b>Ass Slapping:</b> <a href='?_src_=prefs;preference=ass_slap'>[(cit_toggles & NO_ASS_SLAP) ? "Disallowed" : "Allowed"]</a><br>"
-			dat += "<b>Automatic Wagging:</b> <a href='?_src_=prefs;preference=auto_wag'>[(cit_toggles & NO_AUTO_WAG) ? "Disabled" : "Enabled"]</a><br>"
-			dat += "<b>Forced Feminization:</b> <a href='?_src_=prefs;preference=feminization'>[(cit_toggles & FORCED_FEM) ? "Allowed" : "Disallowed"]</a><br>"
-			dat += "<b>Forced Masculinization:</b> <a href='?_src_=prefs;preference=masculinization'>[(cit_toggles & FORCED_MASC) ? "Allowed" : "Disallowed"]</a><br>"
-			dat += "<b>Lewd Hypno:</b> <a href='?_src_=prefs;preference=hypno'>[(cit_toggles & HYPNO) ? "Allowed" : "Disallowed"]</a><br>"
-			dat += "<b>Bimbofication:</b> <a href='?_src_=prefs;preference=bimbo'>[(cit_toggles & BIMBOFICATION) ? "Allowed" : "Disallowed"]</a><br>"
-			dat += "</td>"
-			dat +="<td width='300px' height='300px' valign='top'>"
-			dat += "<h2>Other content prefs</h2>"
-			dat += "<b>Breast Enlargement:</b> <a href='?_src_=prefs;preference=breast_enlargement'>[(cit_toggles & BREAST_ENLARGEMENT) ? "Allowed" : "Disallowed"]</a><br>"
-			dat += "<b>Penis Enlargement:</b> <a href='?_src_=prefs;preference=penis_enlargement'>[(cit_toggles & PENIS_ENLARGEMENT) ? "Allowed" : "Disallowed"]</a><br>"
-			dat += "<b>Butt Enlargement:</b> <a href='?_src_=prefs;preference=butt_enlargement'>[(cit_toggles & BUTT_ENLARGEMENT) ? "Allowed" : "Disallowed"]</a><br>"
-			dat += "<b>Belly Enlargement:</b> <a href='?_src_=prefs;preference=belly_enlargement'>[(cit_toggles & BELLY_ENLARGEMENT) ? "Allowed" : "Disallowed"]</a><br>"
 			dat += "<h2>Vore prefs</h2>"
 			dat += "<b>Master Vore Toggle:</b> <a href='?_src_=prefs;task=input;preference=master_vore_toggle'>[(master_vore_toggle) ? "Per Preferences" : "All Disabled"]</a><br>"
 			if(master_vore_toggle)
