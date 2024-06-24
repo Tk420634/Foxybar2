@@ -109,7 +109,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/path
 	var/vr_path
 	var/default_slot = 1				//Holder so it doesn't default to slot 1, rather the last one used
-	var/max_save_slots = 30
+	var/max_save_slots = 5
 	var/lockdown = FALSE // prevents any funny business while we delete
 
 	//non-preference stuff
@@ -630,7 +630,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 			dat += "<h3>Body</h3>"
 			
-			dat += "<b>Species:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=species;task=input'>[pref_species.name]</a><BR>"
+			//dat += "<b>Species:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=species;task=input'>[pref_species.name]</a><BR>"
 			
 			if(LAZYLEN(pref_species.alt_prefixes))
 				dat += "<b>Alt Appearance:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=species_alt_prefix;task=input'>[alt_appearance ? alt_appearance : "Select"]</a><BR>"
