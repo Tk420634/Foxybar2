@@ -3859,7 +3859,6 @@
 #include "modular_citadel\code\modules\client\loadout\hands.dm"
 #include "modular_citadel\code\modules\client\loadout\head.dm"
 #include "modular_citadel\code\modules\client\loadout\kits.dm"
-#include "modular_citadel\code\modules\client\loadout\mask.dm"
 #include "modular_citadel\code\modules\client\loadout\neck.dm"
 #include "modular_citadel\code\modules\client\loadout\shoes.dm"
 #include "modular_citadel\code\modules\client\loadout\suit.dm"

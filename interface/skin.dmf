@@ -111,19 +111,25 @@ window "mapwindow"
 window "infowindow"
 	elem "infowindow"
 		type = MAIN
-		pos = 1049,204
+		pos = 291,0
 		size = 640x480
 		anchor1 = -1,-1
 		anchor2 = -1,-1
+		background-color = none
 		saved-params = "pos;size;is-minimized;is-maximized"
 		is-pane = true
 		image = 'C:\\Users\\tk420\\Pictures\\1712666654961543.jpg'
+		outer-size = 656x538
+		outer-pos = 291,0
+		inner-pos = 8,31
+		screen-size = 2560x1392
 	elem "info"
 		type = CHILD
-		pos = -8,0
-		size = 648x480
+		pos = 8,0
+		size = 632x480
 		anchor1 = 0,0
 		anchor2 = 100,100
+		background-color = none
 		saved-params = "splitter"
 		left = "statwindow"
 		right = "outputwindow"
@@ -132,22 +138,16 @@ window "infowindow"
 window "outputwindow"
 	elem "outputwindow"
 		type = MAIN
-		pos = 296,0
-		size = 635x480
+		pos = 291,0
+		size = 640x480
 		anchor1 = -1,-1
 		anchor2 = -1,-1
-		background-color = none
 		saved-params = "pos;size;is-minimized;is-maximized"
 		is-pane = true
-		outer-size = 651x538
-		outer-pos = 296,0
-		inner-size = 635x480
-		inner-pos = 8,31
-		screen-size = 2560x1392
 	elem "input"
 		type = INPUT
-		pos = 8,460
-		size = 584x20
+		pos = 2,460
+		size = 595x20
 		anchor1 = 0,100
 		anchor2 = 100,100
 		font-style = "bold"
@@ -156,11 +156,10 @@ window "outputwindow"
 		saved-params = "command"
 	elem "saybutton"
 		type = BUTTON
-		pos = 595,460
+		pos = 600,460
 		size = 37x20
 		anchor1 = 100,100
 		anchor2 = -1,-1
-		background-color = none
 		saved-params = "is-checked"
 		text = "Chat"
 		command = ".winset \"saybutton.is-checked=true ? input.command=\"!say \\\"\" : input.command=\""
@@ -169,7 +168,7 @@ window "outputwindow"
 	elem "browseroutput"
 		type = BROWSER
 		pos = 0,0
-		size = 635x456
+		size = 640x456
 		anchor1 = 0,0
 		anchor2 = 100,100
 		background-color = #ffffff
@@ -178,8 +177,8 @@ window "outputwindow"
 		saved-params = ""
 	elem "output"
 		type = OUTPUT
-		pos = 8,0
-		size = 627x456
+		pos = 0,0
+		size = 640x456
 		anchor1 = 0,0
 		anchor2 = 100,100
 		is-default = true
@@ -242,8 +241,8 @@ window "statwindow"
 		screen-size = 2560x1392
 	elem "statbrowser"
 		type = BROWSER
-		pos = 8,0
-		size = 1002x784
+		pos = 16,-8
+		size = 1000x792
 		anchor1 = 0,0
 		anchor2 = 100,100
 		background-color = none
