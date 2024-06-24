@@ -61,6 +61,7 @@
 	w_class = WEIGHT_CLASS_TINY
 	full_w_class = WEIGHT_CLASS_TINY
 	resistance_flags = FLAMMABLE
+	var/cashtier = 1
 	var/flavor_desc =	"A copper coin, commonly used for trade."
 	var/value = CASH_CAP
 	var/flippable = TRUE
@@ -70,26 +71,6 @@
 	var/pitch = 100
 	merge_type = /obj/item/stack/f13Cash
 	custom_materials = list(/datum/material/f13cash=MINERAL_MATERIAL_AMOUNT)
-
-/obj/item/stack/f13Cash/ComponentInitialize()
-	. = ..()
-	RegisterSignal(src, COMSIG_ITEM_MOB_DROPPED,PROC_REF(dingaling))
-
-/obj/item/stack/f13Cash/attack_self(mob/user)
-	if (flippable)
-		if(cooldown < world.time)
-			coinflip = pick(sideslist)
-			cooldown = world.time + 15
-			//flick("coin_[cmineral]_flip", src)
-			//icon_state = "coin_[cmineral]_[coinflip]"
-			playsound(user.loc, 'sound/items/coinflip.ogg', 50, 1)
-			var/oldloc = loc
-			sleep(15)
-			if(loc == oldloc && user && !user.incapacitated(allow_crit = TRUE))
-				user.visible_message("[user] has flipped [src]. It lands on [coinflip].", \
-									span_notice("You flip [src]. It lands on [coinflip]."), \
-									span_italic("You hear the clattering of loose change."))
-		return TRUE//did the coin flip? Not really useful anymore!
 
 /obj/item/stack/f13Cash/caps
 	merge_type = /obj/item/stack/f13Cash/caps
@@ -136,12 +117,40 @@
 
 /obj/item/stack/f13Cash/Initialize()
 	. = ..()
-	update_desc()
 	update_icon()
+	value = SSeconomy.GetCoinValue(cashtier)
+	name = SSeconomy.GetCoinName(cashtier)
+	singular_name = SSeconomy.GetCoinName(cashtier, TRUE)
+	update_desc()
+	
+/obj/item/stack/f13Cash/ComponentInitialize()
+	. = ..()
+	RegisterSignal(src, COMSIG_ITEM_MOB_DROPPED,PROC_REF(dingaling))
 
 /obj/item/stack/f13Cash/proc/update_desc()
-	var/total_worth = get_item_credit_value()
-	desc = "It's worth [total_worth] [singular_name][ (latin) ? (( amount > 1 ) ? "i" : "us") : (( amount > 1 ) ? "s each" : "")].\n[flavor_desc]"
+	desc = SSeconomy.GetCoinDesc(cashtier, amount)
+
+/obj/item/stack/f13Cash/attack_self(mob/user)
+	if (flippable)
+		if(cooldown < world.time)
+			coinflip = pick(sideslist)
+			cooldown = world.time + 15
+			//flick("coin_[cmineral]_flip", src)
+			//icon_state = "coin_[cmineral]_[coinflip]"
+			playsound(user.loc, 'sound/items/coinflip.ogg', 50, 1)
+			var/oldloc = loc
+			sleep(15)
+			if(loc == oldloc && user && !user.incapacitated(allow_crit = TRUE))
+				user.visible_message("[user] has flipped [src]. It lands on [coinflip].", \
+									span_notice("You flip [src]. It lands on [coinflip]."), \
+									span_italic("You hear the clattering of loose change."))
+		return TRUE//did the coin flip? Not really useful anymore!
+
+
+
+// /obj/item/stack/f13Cash/proc/update_desc()
+// 	var/total_worth = get_item_credit_value()
+// 	desc = "It's worth [total_worth] [singular_name][ (latin) ? (( amount > 1 ) ? "i" : "us") : (( amount > 1 ) ? "s each" : "")].\n[flavor_desc]"
 
 /obj/item/stack/f13Cash/get_item_credit_value()
 	return (amount*value)
@@ -264,12 +273,13 @@
 /obj/item/stack/f13Cash/denarius
 	name = "silver coin"
 	latin = 0
-	singular_name = "Sliver Coin" // -us or -i
+	singular_name = "Sliver Coin" // -us or -i // silver coinus
 	icon = 'icons/obj/economy.dmi'
 	icon_state = "denarius"
 	flavor_desc =	"A sliver, shiny coin, used mainly by the middle class. Worth the same as 10 copper coins."
 	merge_type = /obj/item/stack/f13Cash/denarius
 	pitch = 0
+	cashtier = 2
 
 /obj/item/stack/f13Cash/denarius/five
 	amount = 5
@@ -325,6 +335,7 @@
 	value = CASH_AUR * CASH_CAP
 	merge_type = /obj/item/stack/f13Cash/aureus
 	pitch = -100
+	cashtier = 3
 
 /obj/item/stack/f13Cash/aureus/five
 	amount = 5

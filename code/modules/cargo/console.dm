@@ -111,7 +111,7 @@
 
 /obj/machinery/computer/cargo/ui_static_data(mob/user)
 	var/list/data = list()
-	data["CoinUnit"] = SSeconomy.currency_unit
+	data["CoinUnit"] = SSeconomy.currency_tier1_unit
 	data["requestonly"] = requestonly
 	data["supplies"] = list()
 	for(var/pack in SSshuttle.supply_packs)
