@@ -328,7 +328,7 @@ GLOBAL_LIST_EMPTY(bounties_list)
 	var/payment = get_reward()
 	var/message = "You [deafoid] [whats_talking] say, \"[phrase_congrats(claimant)] [phrase_accomplishment(claimant)]"
 	if(payment <= 10) // one copper
-		message += " And for your valiant efforts, here's a single measly [SSeconomy.currency_name]. Don't spend it all in one place!\""
+		message += " And for your valiant efforts, here's a single measly [SSeconomy.currency_tier1_name]. Don't spend it all in one place!\""
 	else
 		message += " [phrase_reward(claimant, payment)]\""
 	to_chat(claimant, span_green(message))
@@ -405,7 +405,7 @@ GLOBAL_LIST_EMPTY(bounties_list)
 			++compelted_objectives
 	data["QuestObjectivesComplete"] = compelted_objectives
 	data["QuestObjectivesTotal"] = LAZYLEN(wanted_things)
-	data["CurrencyUnit"] = SSeconomy.currency_unit
+	data["CurrencyUnit"] = SSeconomy.currency_tier1_unit
 	return data
 
 /// converts everything to a save-friendly list

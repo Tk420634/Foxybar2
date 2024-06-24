@@ -53,9 +53,25 @@ SUBSYSTEM_DEF(economy)
 	var/list/dep_cards = list()
 
 	//// all the good stuff below this
-	var/currency_unit = "$"
-	var/currency_name = "buc"
-	var/currency_name_plural = "bux"
+	var/currency_tier1_unit = "$"
+	var/currency_tier1_name = "buc"
+	var/currency_tier1_name_plural = "bux"
+	var/currency_tier1_flavor = "The basic currency of the realm."
+	var/currency_tier1_value = 1 // in coins, not credits
+
+	var/currency_tier2_name = "bux"
+	var/currency_tier2_name_plural = "Buxes"
+	var/currency_tier2_unit = "$$"
+	var/currency_tier2_flavor = "The more valuable currency of the realm."
+	var/currency_tier2_value = 10 // also in coins
+
+
+	var/currency_tier3_name = "bees"
+	var/currency_tier3_name_plural = "Beeses" 
+	var/currency_tier3_unit = "B"
+	var/currency_tier3_flavor = "The opulent currency of the realm."
+	var/currency_tier3_value = 100 // coins
+
 	var/boring_units_only = TRUE
 	/// when depositing coins, what proportion just fricks off into the void?
 	var/coin_deposit_tax = 0.80 
@@ -281,76 +297,174 @@ SUBSYSTEM_DEF(economy)
 		"≒", "≓", "≔", "≕", "≖", "≗", "≘", "≙", "≚", "≛", "≜", "≝", "≞", "≟", "≠", "≡", "≢", "≣", 
 		"≤", "≥", "≦", "≧", "≨", "≩", "≪", "≫", "≬", "≭", "≮", "≯", "≰", "≱", "≲", "≳", "≴", "≵", 
 		"≶", "≷", "≸", "≹", "≺")
-	if(boring_units_only && prob(95))
-		currency_name = "Copper"
-		currency_name_plural = "Coppers"
-		if(prob(85))
-			currency_unit = "₡"
-		else
-			currency_unit = pick(units)
+	currency_tier1_name = "Copper Fennec" //Tia shaped coins (they're literally snack sized, put them in your mouth)
+	currency_tier1_name_plural = "Fennecs"
+	currency_tier1_unit = "∮"
+	currency_tier2_name = "Silver Todd"
+	currency_tier2_name_plural = "Todds" //It's just Keegans big ass head
+	currency_tier2_unit = "∯"
+	currency_tier3_name = "Gold Vixen"
+	currency_tier3_name_plural = "Vixens" //Chiara on one side. Dan on the other. ~TK
+	currency_tier3_unit = "∰"
+	if(boring_units_only || prob(85))
 		return ":/"
-	currency_unit = "[pick(units)]"
+	if(prob(90))
+		currency_tier1_unit = "[pick(units)]"
+		currency_tier2_unit = currency_tier1_unit
+		currency_tier3_unit = currency_tier1_unit
+		return
 	var/s33d = rand(1,12)
 	switch(s33d)
 		if(1)
-			currency_name = "Simoleon"
-			currency_name_plural = "Simoleons"
-			currency_unit = "§"
+			currency_tier1_name = "Simoleon"
+			currency_tier1_name_plural = "Simoleons"
+			currency_tier1_unit = "§"
 		if(2)
-			currency_name = "Smackeroo"
-			currency_name_plural = "Smackeroos"
-			currency_unit = "§"
+			currency_tier1_name = "Smackeroo"
+			currency_tier1_name_plural = "Smackeroos"
+			currency_tier1_unit = "§"
 		if(3)
-			currency_name = "Gil"
-			currency_name_plural = "Gil"
-			currency_unit = "GP"
+			currency_tier1_name = "Gil"
+			currency_tier1_name_plural = "Gil"
+			currency_tier1_unit = "GP"
 		if(4)
-			currency_name = "Zennus"
-			currency_name_plural = "Zenny"
-			currency_unit = "Z"
+			currency_tier1_name = "Zennus"
+			currency_tier1_name_plural = "Zenny"
+			currency_tier1_unit = "Z"
 		if(5)
-			currency_name = "Plat"
-			currency_name_plural = "Plat"
-			currency_unit = "pp"
+			currency_tier1_name = "Plat"
+			currency_tier1_name_plural = "Plat"
+			currency_tier1_unit = "pp"
 		if(6)
-			currency_name = "Bean"
-			currency_name_plural = "Beans"
-			currency_unit = "🐾"
+			currency_tier1_name = "Bean"
+			currency_tier1_name_plural = "Beans"
+			currency_tier1_unit = "🐾"
 		if(7)
-			currency_name = "Banana"
-			currency_name_plural = "Bananas"
-			currency_unit = "%"
+			currency_tier1_name = "Banana"
+			currency_tier1_name_plural = "Bananas"
+			currency_tier1_unit = "%"
 		if(8)
-			currency_name = "Quadrillion Cookies"
-			currency_name_plural = "Quadrillion Cookies"
-			currency_unit = "🥠"
+			currency_tier1_name = "Quadrillion Cookies"
+			currency_tier1_name_plural = "Quadrillion Cookies"
+			currency_tier1_unit = "🥠"
 		if(9)
-			currency_name = "Meat"
-			currency_name_plural = "Meat"
-			currency_unit = "Prime"
+			currency_tier1_name = "Meat"
+			currency_tier1_name_plural = "Meat"
+			currency_tier1_unit = "Prime"
 		if(10)
-			currency_name = "Capsule"
-			currency_name_plural = "Capsules"
-			currency_unit = "♥"
+			currency_tier1_name = "Capsule"
+			currency_tier1_name_plural = "Capsules"
+			currency_tier1_unit = "♥"
 		if(11)
-			currency_name = "Buck"
-			currency_name_plural = "Bucks"
-			currency_unit = "$"
+			currency_tier1_name = "Buck"
+			currency_tier1_name_plural = "Bucks"
+			currency_tier1_unit = "$"
 		if(12)
-			currency_name = "Dollar"
-			currency_name_plural = "Dollars"
-			currency_unit = "$"
+			currency_tier1_name = "Dollar"
+			currency_tier1_name_plural = "Dollars"
+			currency_tier1_unit = "$"
+	currency_tier2_name = currency_tier1_name
+	currency_tier2_name_plural = currency_tier1_name_plural
+	currency_tier2_unit = currency_tier1_unit
+	currency_tier3_name = currency_tier1_name
+	currency_tier3_name_plural = currency_tier1_name_plural
+	currency_tier3_unit = currency_tier1_unit
 
-/datum/controller/subsystem/economy/proc/format_currency(amount, credits_to_coins = FALSE, full = FALSE)
+/datum/controller/subsystem/economy/proc/GetCoinValue(tier = 1)
+	switch(tier)
+		if(1)
+			return currency_tier1_value
+		if(2)
+			return currency_tier2_value
+		if(3)
+			return currency_tier3_value
+
+/datum/controller/subsystem/economy/proc/GetCoinName(tier = 1, singular)
+	switch(tier)
+		if(1)
+			if(singular)
+				return "/the [currency_tier1_name]"
+			else
+				return "/the [currency_tier1_name_plural]"
+		if(2)
+			if(singular)
+				return "/the [currency_tier2_name]"
+			else
+				return "/the [currency_tier2_name_plural]"
+		if(3)
+			if(singular)
+				return "/the [currency_tier3_name]"
+			else
+				return "/the [currency_tier3_name_plural]"
+
+/datum/controller/subsystem/economy/proc/GetCoinDesc(tier = 1, amount = 1)
+	var/list/descout = list()
+	var/singular
+	var/plural
+	var/unit
+	var/flavor
+	var/t1_equivalent
+	var/t2_equivalent
+	switch(tier)
+		if(1)
+			singular = currency_tier1_name
+			plural = currency_tier1_name_plural
+			flavor = currency_tier1_flavor
+			unit = currency_tier1_unit
+		if(2)
+			singular = currency_tier2_name
+			plural = currency_tier2_name_plural
+			flavor = currency_tier2_flavor
+			unit = currency_tier2_unit
+			t1_equivalent = (amount * currency_tier2_value)
+		if(3)
+			singular = currency_tier3_name
+			plural = currency_tier3_name_plural
+			flavor = currency_tier3_flavor
+			unit = currency_tier3_unit
+			t1_equivalent = (amount * currency_tier3_value)
+			t2_equivalent = (amount * currency_tier2_value)
+	if(amount > 1)
+		descout += "These are [plural] ([unit]). "
+		descout += "They are worth "
+	else
+		descout += "This is \a [singular] ([unit]). "
+		descout += "It is worth "
+	if(t1_equivalent)
+		descout += "[t1_equivalent] [currency_tier1_name_plural] "
+		if(t2_equivalent)
+			descout += "or [t2_equivalent] [currency_tier2_name_plural]. "
+	else
+		"[currency_tier1_value] [unit] per [singular]."
+	descout += "<br>[flavor]"
+	return descout.Join()
+
+/datum/controller/subsystem/economy/proc/format_currency(amount, credits_to_coins = FALSE, full = FALSE, tier = 1)
 	if(credits_to_coins)
 		amount = CREDITS_TO_COINS(amount)
 		amount = floor(amount)
-	if(!full)
-		return "[amount] [currency_unit]"
-	if(amount > 1 || amount < -1)
-		return "[amount] [currency_name_plural]"
-	else
-		return "[amount] [currency_name]"
+	switch(tier)
+		if(1)
+			if(!full)
+				return "[amount] [currency_tier1_unit]"
+			if(amount > 1 || amount < -1)
+				return "[amount] [currency_tier1_name_plural]"
+			else
+				return "[amount] [currency_tier1_name]"
+		if(2)
+			if(!full)
+				return "[amount] [currency_tier2_unit]"
+			if(amount > 1 || amount < -1)
+				return "[amount] [currency_tier2_name_plural]"
+			else
+				return "[amount] [currency_tier2_name]"
+		if(3)
+			if(!full)
+				return "[amount] [currency_tier3_unit]"
+			if(amount > 1 || amount < -1)
+				return "[amount] [currency_tier3_name_plural]"
+			else
+				return "[amount] [currency_tier3_name]"
 
 /// calculates how many days you havent been on the bayou, and returns how much you should lose for not being here for more than a day
 /// ya know, like how scummy mobile games do evil mindgames on their players so they play every day and suck their microtransaction dicks dry
@@ -1603,9 +1717,9 @@ SUBSYSTEM_DEF(economy)
 	data["MyFinished"] = recent_finished
 	data["scanning_mobs_makes_nests_dump_questable_mobs"] = scanning_mobs_makes_nests_dump_questable_mobs
 
-	data["CurrencyUnit"] = SSeconomy.currency_unit
-	data["CurrencyName"] = SSeconomy.currency_name
-	data["CurrencyNamePlural"] = SSeconomy.currency_name_plural
+	data["CurrencyUnit"] = SSeconomy.currency_tier1_unit
+	data["CurrencyName"] = SSeconomy.currency_tier1_name
+	data["CurrencyNamePlural"] = SSeconomy.currency_tier1_name_plural
 	data["ReadmeText"] = QUEST_BOOK_README
 	var/list/toots = list()
 	var/am_top_quester = (LAZYLEN(finished_this_round) >= SSeconomy.highest_completed)
@@ -1763,7 +1877,7 @@ SUBSYSTEM_DEF(economy)
 	money_dialogging = TRUE
 	var/howmuch = input(
 		user,
-		"How many [SSeconomy.currency_name_plural] would you like to withdraw? Max: [round(CREDITS_TO_COINS(unclaimed_points))]",
+		"How many [SSeconomy.currency_tier1_name_plural] would you like to withdraw? Max: [round(CREDITS_TO_COINS(unclaimed_points))]",
 		"$$$ for U",
 		0,
 	) as num|null
@@ -1806,7 +1920,7 @@ SUBSYSTEM_DEF(economy)
 	// 	to_chat(user, span_alert("That cash is worthless!"))
 	// 	return
 
-	// var/sans_representation = "You are holding [coins.amount] [coins.name], totalling [totalvalue] [SSeconomy.currency_name_plural].\n\n If you wish to deposit this into your Guild Account, this involves an 80% tax, meaning that you will deposit [to_deposit] [SSeconomy.currency_name_plural] into your account, and [to_tax] [SSeconomy.currency_name_plural] will [SSeconomy.public_projects]. \n\n
+	// var/sans_representation = "You are holding [coins.amount] [coins.name], totalling [totalvalue] [SSeconomy.currency_tier1_name_plural].\n\n If you wish to deposit this into your Guild Account, this involves an 80% tax, meaning that you will deposit [to_deposit] [SSeconomy.currency_tier1_name_plural] into your account, and [to_tax] [SSeconomy.currency_tier1_name_plural] will [SSeconomy.public_projects]. \n\n
 	// 	The money that is added to your account will be yours, and can be cashed out at any time, tax free. All banked cash will be subject to a [SSeconomy.housing_fee_percent * 100]% housing fee for every galactic cycle (1 real-life day) that you are not in the region (having spawned in on this character at least once that day). 
 	// 	Do you wish to proceed?"
 	// money_dialogging = TRUE
@@ -1833,7 +1947,7 @@ SUBSYSTEM_DEF(economy)
 	coins.value = 0
 	qdel(coins)
 	adjust_funds(round(COINS_TO_CREDITS(totalvalue)), null, FALSE, FALSE)
-	to_chat(user, span_green("You deposited [totalvalue] [SSeconomy.currency_name_plural] into your Guild Account!"))
+	to_chat(user, span_green("You deposited [totalvalue] [SSeconomy.currency_tier1_name_plural] into your Guild Account!"))
 	playsound(user, 'sound/machines/coin_insert.ogg', 80, TRUE)
 	update_static_data(user)
 	// return
@@ -1890,7 +2004,7 @@ SUBSYSTEM_DEF(economy)
 		to_chat(user, span_alert("That ticket is worthless!"))
 		return FALSE
 	playsound(user, 'sound/machines/printer_press_unbirth.ogg', 40, TRUE)
-	to_chat(user, span_green("You deposited a ticket for [CREDITS_TO_COINS(payment)] [SSeconomy.currency_name_plural] into your Guild Account!"))
+	to_chat(user, span_green("You deposited a ticket for [CREDITS_TO_COINS(payment)] [SSeconomy.currency_tier1_name_plural] into your Guild Account!"))
 	qdel(QR)
 	adjust_funds(payment, null, FALSE, FALSE)
 	return TRUE
@@ -2094,7 +2208,7 @@ SUBSYSTEM_DEF(economy)
 	var/total_quests = 0
 	var/total_earned = 0
 
-	var/currency_unit = ":("
+	var/currency_tier1_unit = ":("
 
 /datum/quest_report/New()
 	. = ..()
@@ -2111,7 +2225,7 @@ SUBSYSTEM_DEF(economy)
 		top_earner_total = top_e.overall_banked
 	total_quests = SSeconomy.total_completed
 	total_earned = SSeconomy.total_banked
-	currency_unit = SSeconomy.currency_unit
+	currency_tier1_unit = SSeconomy.currency_tier1_unit
 
 
 /////////////////////////////////////////////////
@@ -2137,9 +2251,9 @@ SUBSYSTEM_DEF(economy)
 /obj/item/card/quest_reward/punch()
 	if(!..())
 		return
-	// name = "Guild Quest voucher - [round(CREDITS_TO_COINS(saleprice))] [SSeconomy.currency_unit] - [span_green("PUNCHED!")]"
+	// name = "Guild Quest voucher - [round(CREDITS_TO_COINS(saleprice))] [SSeconomy.currency_tier1_unit] - [span_green("PUNCHED!")]"
 	// desc = "An OFFICIAL Guild voucher for making this horrible multi-dimensional hellscape just a bit less awful. At least until whatever you killed comes back to life, cus seriously, nothing ever stays dead. 
-	// 	\n\nThis thing is worth [round(CREDITS_TO_COINS(saleprice))] [SSeconomy.currency_unit]! It has been punched, so you've probably already gotten the reward. 
+	// 	\n\nThis thing is worth [round(CREDITS_TO_COINS(saleprice))] [SSeconomy.currency_tier1_unit]! It has been punched, so you've probably already gotten the reward. 
 	// 	It is also worth [SEND_SIGNAL(src, COMSIG_ITEM_GET_RESEARCH_POINTS)] research points, perfect gift for your local scientist!"
 	// return TRUE
 
@@ -2492,13 +2606,13 @@ GLOBAL_DATUM_INIT(qbank_editor, /datum/quest_bank_editor, new)
 		"What message would you like to send when you adjust their bank?\n\
 		TOKENS!\n\
 		:: - everything to the left of :: will be the sender, and everything to the right to be the message!\n\
-		$S$ - Cash change (short): 30[SSeconomy.currency_unit]\n\
-		$F$ - Cash change (full): 30 [SSeconomy.currency_name]\n\
+		$S$ - Cash change (short): 30[SSeconomy.currency_tier1_unit]\n\
+		$F$ - Cash change (full): 30 [SSeconomy.currency_tier1_name]\n\
 		$+-$ - Credited (if cash change is positive) or Deducted (if negative)\n\
 		$tofrom$ - To (if cash change is positive) or From (if negative)\n\
 		$FIN$ - Their final balance after change\n\
 		Your mum :: $S$ has been $+-$ $tofrom$ your QBank account! You now have $FIN$! becomes....\n\
-		Your mum: 30[SSeconomy.currency_unit] has been credited to your QBank account! You now have 30[SSeconomy.currency_unit]!",
+		Your mum: 30[SSeconomy.currency_tier1_unit] has been credited to your QBank account! You now have 30[SSeconomy.currency_tier1_unit]!",
 		"Message",
 		"[myoptions["Message"]]",
 	) as null|message
@@ -2608,7 +2722,7 @@ GLOBAL_DATUM_INIT(qbank_editor, /datum/quest_bank_editor, new)
 		user,
 		"Give/Take how much money to/from [QB.ownername] ([QB.ownerjob])?\n\
 		Enter a number, positive to give, negative to take.\n\
-		Their current balance: [CREDITS_TO_COINS(QB.unclaimed_points)] [SSeconomy.currency_name_plural]",
+		Their current balance: [CREDITS_TO_COINS(QB.unclaimed_points)] [SSeconomy.currency_tier1_name_plural]",
 		"Credit or Debt",
 		"[CREDITS_TO_COINS(QB.unclaimed_points)]",
 	) as null|num // why did I make questmoney be internally credits, and functionally coins? 
