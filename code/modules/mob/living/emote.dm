@@ -1504,6 +1504,7 @@
 			S.slime_mood = slime_mood
 			S.handle_body(H)
 
+/*
 /datum/emote/mood/sneaky
 	key = "slimesneaky"
 	slime_mood = "aslime-mischevous"
@@ -1529,3 +1530,4 @@
 	slime_mood = "aslime-angry"
 
 // Slime end
+*/
