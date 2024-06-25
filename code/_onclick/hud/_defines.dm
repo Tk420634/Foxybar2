@@ -18,18 +18,18 @@
 */
 
 //Lower left, persistent menu
-#define ui_inventory "WEST:5,SOUTH:3"
+#define ui_inventory "WEST:6,SOUTH:3"
 
 //Pop-up inventory
-#define ui_head "WEST:6,NORTH-5:3"
-#define ui_glasses "WEST:6,SOUTH+8:3"
-#define ui_mask "WEST:6,SOUTH+7:3"
-#define ui_ears "WEST:6,SOUTH+6:3"
-#define ui_neck "WEST:6,SOUTH+5:3"
-#define ui_oclothing "WEST:6,SOUTH+4:3"
-#define ui_gloves "WEST:6,SOUTH+3:3"
-#define ui_iclothing "WEST:6,SOUTH+2:3"
-#define ui_shoes "WEST:6,SOUTH+1:3"
+#define ui_head "WEST:6,NORTH-5:1"
+#define ui_glasses "WEST:6,SOUTH+8:1"
+#define ui_mask "WEST:6,SOUTH+7:1"
+#define ui_ears "WEST:6,SOUTH+6:1"
+#define ui_neck "WEST:6,SOUTH+5:1"
+#define ui_oclothing "WEST:6,SOUTH+4:1"
+#define ui_gloves "WEST:6,SOUTH+3:1"
+#define ui_iclothing "WEST:6,SOUTH+2:1"
+#define ui_shoes "WEST:6,SOUTH+1:2"
 
 //Middle left indicators
 #define ui_lingchemdisplay "WEST,CENTER-1:15"
@@ -47,24 +47,24 @@
 #define ui_resistdelay "WEST+7:16,SOUTH+1:17"
 #define ui_overridden_resist "WEST+7:16,SOUTH+1:1"
 #define ui_combat_toggle "WEST+7:16,SOUTH:2"
-#define ui_crafting	"WEST+7:-16,SOUTH:37"
-#define ui_building "WEST+7:-16,SOUTH:3"
-#define ui_language_menu "WEST+7:-16,SOUTH:20"
+#define ui_crafting	"WEST+7:-16,SOUTH:35"
+#define ui_building "WEST+7:-16,SOUTH:2"
+#define ui_language_menu "WEST+7:-16,SOUTH:19"
 
 
 //Right side near hands
-#define ui_wield "CENTER+1:18,SOUTH:3"
+#define ui_wield "CENTER+1:17,SOUTH:4"
 #define ui_acti "CENTER+1:33,SOUTH:3"
 #define ui_pull_resist "CENTER+1:18,SOUTH+1:4" //THIS IS ACTUALLY THE REST BUTTON?  WHAT THE FUCK? ~TK
 #define ui_drop_throw "CENTER+2:33,SOUTH+0:4"
 #define ui_sprintbufferloc "CENTER+3:34,SOUTH:16"
 #define ui_movi "Center+3:33,SOUTH:4"
-#define ui_zonesel "Center+5:2,SOUTH:4"
+#define ui_zonesel "Center+5:2,SOUTH:3"
 #define ui_mood 	"Center-1:5,South+1:11"
 #define ui_health 	"Center+0:0,South+1:0"
-#define ui_stamina "Center+0:25,South+1:18" // replacing internals button
+#define ui_stamina "Center+0:27,South+1:18" // replacing internals button
 #define ui_questbook "CENTER+2:19,SOUTH+1:-12"
-#define ui_questscanner "CENTER+3:22,SOUTH+1:-12"
+#define ui_questscanner "CENTER+3:21,SOUTH+1:-12"
 
 /proc/ui_hand_position(i) //values based on old hand ui positions (CENTER:-/+16,SOUTH:5)
 	var/x_off = -(!(i % 2))
