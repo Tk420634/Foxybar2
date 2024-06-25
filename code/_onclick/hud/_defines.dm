@@ -18,7 +18,7 @@
 */
 
 //Lower left, persistent menu
-#define ui_inventory "WEST:5,SOUTH:5"
+#define ui_inventory "WEST:5,SOUTH:3"
 
 //Pop-up inventory
 #define ui_head "WEST:6,NORTH-5:3"
