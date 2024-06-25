@@ -435,7 +435,7 @@ SUBSYSTEM_DEF(economy)
 		if(t2_equivalent)
 			descout += "or [t2_equivalent] [currency_tier2_name_plural]. "
 	else
-		"[currency_tier1_value] [unit] per [singular]."
+		descout +=	"[currency_tier1_value] [unit] per [singular]."
 	descout += "<br>[flavor]"
 	return descout.Join()
 
