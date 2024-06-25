@@ -2,7 +2,7 @@
 /obj/structure/mirror
 	name = "mirror"
 	desc = "Mirror mirror on the wall, who's the most robust of them all?"
-	icon = 'icons/obj/watercloset.dmi'
+	icon = 'modular_roguetown/misc/structure.dmi'
 	icon_state = "mirror"
 	plane = ABOVE_WALL_PLANE
 	density = FALSE
@@ -40,7 +40,7 @@
 			return	//no tele-grooming
 		if(new_style)
 			H.hair_style = new_style
-		
+
 		new_style = input(user, "Select the second hair style", "Grooming")  as null|anything in GLOB.hair_styles_list
 		if(new_style)
 			H.dna.features["hair_style_2"] = new_style
@@ -117,7 +117,8 @@
 /obj/structure/mirror/magic
 	name = "magic mirror"
 	desc = "Turn and face the strange... face."
-	icon_state = "magic_mirror"
+	icon = 'modular_coyote/icons/objects/miscellaneous.dmi'
+	icon_state = "mirror"
 	var/list/races_blacklist = list("skeleton", "agent", "angel", "military_synth", "memezombies", "clockwork golem servant", "android", "synth", "mush", "zombie", "memezombie")
 	var/list/choosable_races = list()
 
