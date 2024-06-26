@@ -83,6 +83,13 @@
 	icon_state = "woolbed"
 	max_integrity = 80
 
+/obj/structure/bed/wooden
+	name = "wood bed"
+	desc = "Wood bed. Not clean; but restable."
+	buildstacktype = /obj/item/stack/sheet/mineral/wood
+	icon_state = "woolbed"
+	max_integrity = 80
+
 /obj/structure/bed/oldalt
 	name = "hay bed"
 	desc = "A hay bed; the cornerstone of all peasant bedhouses."
