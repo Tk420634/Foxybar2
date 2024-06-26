@@ -1,1 +1,2 @@
-sound/f13/anythinggoes.ogg
+sound/cb-music/holymountain.ogg
+sound/cb-music/thoumaidens.ogg
