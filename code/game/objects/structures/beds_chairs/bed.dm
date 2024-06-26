@@ -10,8 +10,8 @@
 /obj/structure/bed
 	name = "bed"
 	desc = "This is used to lie in, sleep in or strap on."
-	icon_state = "bed"
-	icon = 'icons/fallout/objects/furniture/chairs_and_beds.dmi'
+	icon_state = "shitbed"
+	icon = 'modular_roguetown/misc/structure.dmi'
 	anchored = TRUE
 	can_buckle = TRUE
 	buckle_lying = TRUE
@@ -76,30 +76,30 @@
  * Wooden beds and old beds - Use wood for low tech like Oasis and Legion. Old for ruins.
  */
 
-/obj/structure/bed/wooden
-	name = "wooden bed"
-	desc = "Wooden frame with a mattress"
+/obj/structure/bed/old
+	name = "wool bed"
+	desc = "Wood, wool. Not clean; but restable."
 	buildstacktype = /obj/item/stack/sheet/mineral/wood
-	icon_state = "bed_wood"
+	icon_state = "woolbed"
 	max_integrity = 80
 
-/obj/structure/bed/old
-	name = "ancient bed"
-	desc = "Filthy beyond belief."
-	icon_state = "bed_dirty"
+/obj/structure/bed/oldalt
+	name = "hay bed"
+	desc = "A hay bed; the cornerstone of all peasant bedhouses."
+	icon_state = "haybed"
 	max_integrity = 50
 
-/obj/structure/bed/club
+/obj/structure/bed/inn
 	name = "bed"
-	desc = "A vibrant pink and purple mattress cast in a thick metal frame."
-	icon_state = "bed_club"
+	desc = "A clean inn bed."
+	icon_state = "innbed"
 	max_integrity = 150
 
 // Obsolete
-/obj/structure/bed/oldalt
-	name = "ancient bed"
-	desc = "Filthy beyond belief."
-	icon_state = "bed_dirty"
+/obj/structure/bed/alt
+	name = "old bed"
+	desc = "Rickety old bed. Is it safe to sleep in this...?"
+	icon_state = "shitbed2"
 	max_integrity = 50
 
 /*
@@ -292,3 +292,4 @@
 	icon = 'icons/obj/rollerbed.dmi'
 	icon_state = "bedrollrolled"
 	w_class = WEIGHT_CLASS_SMALL // So you don't have to struggle with it! Besides, bedrolls can get pretty small.
+
