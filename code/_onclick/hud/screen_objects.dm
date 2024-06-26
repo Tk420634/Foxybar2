@@ -63,11 +63,13 @@
 	usr.swap_hand()
 	return 1
 
+
 /atom/movable/screen/craft
 	name = "crafting menu"
 	icon = 'icons/fallout/UI/screen_fallout2.dmi'
 	icon_state = "craft"
 	screen_loc = ui_crafting
+
 
 /atom/movable/screen/area_creator
 	name = "create new area"
@@ -969,6 +971,9 @@
 /atom/movable/screen/healthdoll
 	name = "health doll"
 	screen_loc = ui_healthdoll
+	//shhh it's not real
+	alpha = 0 
+	mouse_opacity = 0
 
 /atom/movable/screen/mood
 	name = "mood"
