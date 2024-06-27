@@ -192,6 +192,20 @@
 	item_state = "wooden_chair"
 	origin_type = /obj/structure/chair/wood/dining
 
+// fantasy chairs - KNOTTINGHAM
+
+/obj/structure/chair/wood/ham
+	icon = 'modular_roguetown/misc/structure.dmi'
+	icon_state = "chair3"
+
+/obj/structure/chair/wood/ham/green
+	icon_state = "chair1"
+
+/obj/structure/chair/wood/ham/red
+	icon_state = "chair2"
+
+
+
 // Winged wooden chair
 /obj/structure/chair/wood/wings
 	desc = "An antique wooden chair of distinctive design. Creaky."
