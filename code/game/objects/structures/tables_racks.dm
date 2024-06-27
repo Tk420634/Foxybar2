@@ -738,6 +738,20 @@
 /obj/structure/rack/shelf_wood/modern
 	icon_state = "shelf_wood_modern"
 
+/obj/structure/rack/rack_forest
+	name = "wooden rack"
+	desc = "It looks rather sturdy."
+	icon = 'modular_roguetown/misc/structure.dmi'
+	icon_state = "rack"
+	layer = TABLE_LAYER
+	density = TRUE
+	anchored = TRUE
+	pass_flags = PASSTABLE | LETPASSTHROW
+	pass_flags_self = PASSTABLE | LETPASSTHROW
+	max_integrity = 30
+	attack_hand_speed = CLICK_CD_MELEE
+	attack_hand_is_action = TRUE
+
 /obj/structure/rack
 	name = "rack"
 	desc = "Different from the Medieval version."

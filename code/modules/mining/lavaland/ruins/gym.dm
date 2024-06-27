@@ -97,7 +97,8 @@
 /obj/structure/punching_bag/dummy
 	name = "straw target"
 	desc = "A training dummy made of straw, for training."
-	icon_state = "target_dummy"
+	icon = 'modular_roguetown/misc/structure.dmi'
+	icon_state = "p_dummy"
 
 
 /obj/structure/stacklifter
