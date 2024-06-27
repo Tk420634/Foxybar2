@@ -61,8 +61,8 @@
 
 /obj/structure/bed/double
 	name = "double bed"
-	icon_state = "doublebed"
-	var/base_icon = "doublebed"
+	icon_state = "double"
+	var/base_icon = "double"
 
 /obj/structure/bed/double/post_buckle_mob(mob/living/M as mob)
 	if(M.buckled == src)
@@ -99,7 +99,7 @@
 /obj/structure/bed/inn
 	name = "bed"
 	desc = "A clean inn bed."
-	icon_state = "innbed"
+	icon_state = "inn_bed"
 	max_integrity = 150
 
 // Obsolete
