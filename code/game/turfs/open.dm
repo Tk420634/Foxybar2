@@ -89,11 +89,30 @@
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "cobble"
 	baseturfs = /turf/open/indestructible/cobble
-	footstep = FOOTSTEP_FLOOR
+	footstep = FOOTSTEP_STONE
 	barefootstep = FOOTSTEP_HARD_BAREFOOT
 	clawfootstep = FOOTSTEP_HARD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	tiled_dirt = FALSE
+
+/turf/open/indestructible/cobble/dark
+	icon_state = "cobblestone1"
+	icon = 'modular_Roguetown/roguefloor.dmi'
+	footstep = FOOTSTEP_STONE
+	barefootstep = FOOTSTEP_HARD_BAREFOOT
+	clawfootstep = FOOTSTEP_HARD_CLAW
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+
+/turf/open/indestructible/cobble/dark/Initialize()
+	. = ..()
+	icon_state = "cobblestone[rand(1,3)]"
+
+/turf/open/indestructible/cobble/dark/path
+	icon_state = "cobblerock"
+	footstep = FOOTSTEP_STONE
+	barefootstep = FOOTSTEP_HARD_BAREFOOT
+	clawfootstep = FOOTSTEP_HARD_CLAW
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
 /turf/open/indestructible/necropolis
 	name = "necropolis floor"

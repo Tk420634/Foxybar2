@@ -9,10 +9,10 @@
 /area/f13/wasteland)
 "an" = (
 /obj/effect/turf_decal/weather/dirt{
+	alpha = 160;
 	color = "#88CC88";
 	dir = 2;
-	light_color = null;
-	alpha = 160
+	light_color = null
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
 	barefootstep = "grass";
@@ -59,8 +59,8 @@
 	name = "TODO - open area for plant picking"
 	},
 /obj/structure/flora/grass/wasteland{
-	icon_state = "tall_grass_3";
-	color = "#33BB33"
+	color = "#33BB33";
+	icon_state = "tall_grass_3"
 	},
 /obj/effect/decal/cleanable/dirt/dust{
 	color = "#997950"
@@ -179,6 +179,9 @@
 	},
 /turf/open/indestructible/ground/outside/graveldirt,
 /area/f13/wasteland)
+"co" = (
+/turf/open/indestructible/cobble/dark,
+/area/f13/wasteland)
 "cr" = (
 /turf/open/floor/plating/f13/outside/roof/wood,
 /area/f13/wasteland)
@@ -226,8 +229,8 @@
 /area/f13/wasteland)
 "de" = (
 /obj/structure/flora/grass/wasteland{
-	icon_state = "tall_grass_3";
-	color = "#33BB33"
+	color = "#33BB33";
+	icon_state = "tall_grass_3"
 	},
 /obj/effect/decal/cleanable/dirt/dust{
 	color = "#997950"
@@ -241,8 +244,8 @@
 /area/f13/wasteland)
 "dh" = (
 /obj/structure/flora/grass/wasteland{
-	icon_state = "tall_grass_3";
-	color = "#33BB33"
+	color = "#33BB33";
+	icon_state = "tall_grass_3"
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
 	barefootstep = "grass";
@@ -256,8 +259,8 @@
 	color = "#997950"
 	},
 /obj/structure/barricade/wooden{
-	mouse_opacity = 0;
-	alpha = 0
+	alpha = 0;
+	mouse_opacity = 0
 	},
 /obj/structure/flora/tree/jungle{
 	color = "#BEBEBE";
@@ -314,8 +317,8 @@
 	color = "#997950"
 	},
 /obj/structure/barricade/wooden{
-	mouse_opacity = 0;
-	alpha = 0
+	alpha = 0;
+	mouse_opacity = 0
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
 	barefootstep = "grass";
@@ -364,8 +367,8 @@
 /area/f13/wasteland)
 "fz" = (
 /obj/structure/flora/chomp/shrub2{
-	icon_state = "thicket5";
 	color = "#888888";
+	icon_state = "thicket5";
 	pixel_y = 2;
 	plane = -2
 	},
@@ -464,8 +467,8 @@
 /area/f13/wasteland)
 "gE" = (
 /obj/structure/barricade/wooden{
-	mouse_opacity = 0;
-	alpha = 0
+	alpha = 0;
+	mouse_opacity = 0
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
 	barefootstep = "grass";
@@ -476,16 +479,16 @@
 /area/f13/wasteland)
 "gK" = (
 /obj/effect/turf_decal/weather/dirt{
+	alpha = 160;
 	color = "#88CC88";
 	dir = 2;
-	light_color = null;
-	alpha = 160
+	light_color = null
 	},
 /obj/effect/turf_decal/weather/dirt{
+	alpha = 160;
 	color = "#88CC88";
 	dir = 4;
-	light_color = null;
-	alpha = 160
+	light_color = null
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
 	barefootstep = "grass";
@@ -529,10 +532,10 @@
 	mouse_opacity = 0
 	},
 /obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
 	color = "#888888";
 	dir = 8;
-	light_color = null;
-	alpha = 180
+	light_color = null
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
 	barefootstep = "grass";
@@ -615,8 +618,8 @@
 /obj/structure/flora/grass/jungle{
 	alpha = 180;
 	color = "#AAAAAA";
-	name = "grass";
-	mouse_opacity = 0
+	mouse_opacity = 0;
+	name = "grass"
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
 	barefootstep = "grass";
@@ -1132,12 +1135,12 @@
 /area/f13/wasteland)
 "oc" = (
 /obj/structure/barricade/wooden{
-	mouse_opacity = 0;
-	alpha = 0
+	alpha = 0;
+	mouse_opacity = 0
 	},
 /obj/structure/barricade/wooden{
-	mouse_opacity = 0;
-	alpha = 0
+	alpha = 0;
+	mouse_opacity = 0
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
 	barefootstep = "grass";
@@ -1154,10 +1157,10 @@
 /area/f13/wasteland)
 "om" = (
 /obj/effect/turf_decal/weather/dirt{
+	alpha = 160;
 	color = "#88CC88";
 	dir = 2;
-	light_color = null;
-	alpha = 160
+	light_color = null
 	},
 /obj/effect/decal/cleanable/dirt/dust{
 	color = "#997950"
@@ -1186,8 +1189,8 @@
 /area/f13/wasteland)
 "oK" = (
 /obj/structure/barricade/wooden{
-	mouse_opacity = 0;
-	alpha = 0
+	alpha = 0;
+	mouse_opacity = 0
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
 	barefootstep = "grass";
@@ -1274,20 +1277,20 @@
 /obj/structure/flora/grass/jungle{
 	alpha = 180;
 	color = "#AAAAAA";
-	name = "grass";
-	mouse_opacity = 0
+	mouse_opacity = 0;
+	name = "grass"
 	},
 /obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
 	color = "#888888";
 	dir = 8;
-	light_color = null;
-	alpha = 180
+	light_color = null
 	},
 /obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
 	color = "#888888";
 	dir = 2;
-	light_color = null;
-	alpha = 180
+	light_color = null
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
 	barefootstep = "grass";
@@ -1301,8 +1304,8 @@
 	color = "#997950"
 	},
 /obj/structure/flora/grass/wasteland{
-	icon_state = "tall_grass_3";
-	color = "#33BB33"
+	color = "#33BB33";
+	icon_state = "tall_grass_3"
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
 	barefootstep = "grass";
@@ -1348,16 +1351,16 @@
 	color = "#997950"
 	},
 /obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
 	color = "#888888";
 	dir = 2;
-	light_color = null;
-	alpha = 180
+	light_color = null
 	},
 /obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
 	color = "#888888";
 	dir = 8;
-	light_color = null;
-	alpha = 180
+	light_color = null
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
 	barefootstep = "grass";
@@ -1391,16 +1394,16 @@
 	mouse_opacity = 0
 	},
 /obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
 	color = "#888888";
 	dir = 8;
-	light_color = null;
-	alpha = 180
+	light_color = null
 	},
 /obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
 	color = "#888888";
 	dir = 2;
-	light_color = null;
-	alpha = 180
+	light_color = null
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
 	barefootstep = "grass";
@@ -1419,8 +1422,8 @@
 /area/f13/wasteland)
 "rG" = (
 /obj/structure/barricade/wooden{
-	mouse_opacity = 0;
-	alpha = 0
+	alpha = 0;
+	mouse_opacity = 0
 	},
 /obj/structure/flora/tree/jungle{
 	color = "#BEBEBE";
@@ -1597,8 +1600,8 @@
 	mouse_opacity = 0
 	},
 /obj/structure/barricade/wooden{
-	mouse_opacity = 0;
-	alpha = 0
+	alpha = 0;
+	mouse_opacity = 0
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
 	barefootstep = "grass";
@@ -1796,14 +1799,14 @@
 /area/f13/wasteland)
 "xj" = (
 /obj/effect/turf_decal/weather/dirt{
+	alpha = 160;
 	color = "#88CC88";
 	dir = 2;
-	light_color = null;
-	alpha = 160
+	light_color = null
 	},
 /obj/structure/flora/grass/wasteland{
-	icon_state = "tall_grass_3";
-	color = "#33BB33"
+	color = "#33BB33";
+	icon_state = "tall_grass_3"
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
 	barefootstep = "grass";
@@ -1817,8 +1820,8 @@
 	color = "#997950"
 	},
 /obj/structure/flora/grass/wasteland{
-	icon_state = "tall_grass_3";
-	color = "#33BB33"
+	color = "#33BB33";
+	icon_state = "tall_grass_3"
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
 	barefootstep = "grass";
@@ -1829,10 +1832,10 @@
 /area/f13/wasteland)
 "xz" = (
 /obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
 	color = "#888888";
 	dir = 8;
-	light_color = null;
-	alpha = 180
+	light_color = null
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
 	barefootstep = "grass";
@@ -1965,20 +1968,20 @@
 /area/f13/wasteland)
 "zp" = (
 /obj/effect/turf_decal/weather/dirt{
+	alpha = 160;
 	color = "#88CC88";
 	dir = 2;
-	light_color = null;
-	alpha = 160
+	light_color = null
 	},
 /obj/effect/turf_decal/weather/dirt{
+	alpha = 160;
 	color = "#88CC88";
 	dir = 4;
-	light_color = null;
-	alpha = 160
+	light_color = null
 	},
 /obj/structure/flora/grass/wasteland{
-	icon_state = "tall_grass_3";
-	color = "#33BB33"
+	color = "#33BB33";
+	icon_state = "tall_grass_3"
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
 	barefootstep = "grass";
@@ -1993,10 +1996,10 @@
 /area/f13/wasteland)
 "zE" = (
 /obj/structure/signpost{
+	desc = "This signpost has an arrow facing to the south and says 'Mines' on it in a barely legible scrawl.";
 	icon = 'modular_roguetown/misc/structure.dmi';
 	icon_state = "signwrote";
-	name = "Mine Entrance";
-	desc = "This signpost has an arrow facing to the south and says 'Mines' on it in a barely legible scrawl."
+	name = "Mine Entrance"
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
 	barefootstep = "grass";
@@ -2133,12 +2136,12 @@
 /area/f13/wasteland)
 "Ch" = (
 /obj/structure/barricade/wooden{
-	mouse_opacity = 0;
-	alpha = 0
+	alpha = 0;
+	mouse_opacity = 0
 	},
 /obj/structure/barricade/wooden{
-	mouse_opacity = 0;
-	alpha = 0
+	alpha = 0;
+	mouse_opacity = 0
 	},
 /obj/structure/flora/tree/jungle{
 	color = "#BEBEBE";
@@ -2192,8 +2195,8 @@
 	mouse_opacity = 0
 	},
 /obj/structure/barricade/wooden{
-	mouse_opacity = 0;
-	alpha = 0
+	alpha = 0;
+	mouse_opacity = 0
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
 	barefootstep = "grass";
@@ -2204,10 +2207,10 @@
 /area/f13/wasteland)
 "CY" = (
 /obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
 	color = "#888888";
 	dir = 2;
-	light_color = null;
-	alpha = 180
+	light_color = null
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
 	barefootstep = "grass";
@@ -2753,8 +2756,8 @@
 /area/f13/wasteland)
 "KW" = (
 /obj/structure/flora/grass/wasteland{
-	icon_state = "tall_grass_3";
-	color = "#33BB33"
+	color = "#33BB33";
+	icon_state = "tall_grass_3"
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
 	barefootstep = "grass";
@@ -2849,12 +2852,12 @@
 /area/f13/wasteland)
 "Mq" = (
 /obj/structure/barricade/wooden{
-	mouse_opacity = 0;
-	alpha = 0
+	alpha = 0;
+	mouse_opacity = 0
 	},
 /obj/structure/barricade/wooden{
-	mouse_opacity = 0;
-	alpha = 0
+	alpha = 0;
+	mouse_opacity = 0
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
 	barefootstep = "grass";
@@ -3042,8 +3045,8 @@
 	mouse_opacity = 0
 	},
 /obj/structure/barricade/wooden{
-	mouse_opacity = 0;
-	alpha = 0
+	alpha = 0;
+	mouse_opacity = 0
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
 	barefootstep = "grass";
@@ -3146,14 +3149,14 @@
 /obj/structure/flora/grass/jungle{
 	alpha = 180;
 	color = "#AAAAAA";
-	name = "grass";
-	mouse_opacity = 0
+	mouse_opacity = 0;
+	name = "grass"
 	},
 /obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
 	color = "#888888";
 	dir = 2;
-	light_color = null;
-	alpha = 180
+	light_color = null
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
 	barefootstep = "grass";
@@ -3164,10 +3167,10 @@
 /area/f13/wasteland)
 "QV" = (
 /obj/structure/signpost{
+	desc = "South West - Mine, West - Crossways, North West - Dungeon";
 	icon = 'modular_roguetown/misc/structure.dmi';
 	icon_state = "signwrote";
-	name = "wooden sign";
-	desc = "South West - Mine, West - Crossways, North West - Dungeon"
+	name = "wooden sign"
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
 	barefootstep = "grass";
@@ -3181,6 +3184,9 @@
 /turf/open/indestructible/ground/outside/ruins{
 	icon_state = "rubbleslab"
 	},
+/area/f13/wasteland)
+"Ro" = (
+/turf/open/indestructible/cobble/dark/path,
 /area/f13/wasteland)
 "Rt" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -3258,6 +3264,10 @@
 	name = "deep river water"
 	},
 /area/f13/wasteland)
+"SM" = (
+/obj/structure/simple_door/metal/barred,
+/turf/open/indestructible/cobble/dark,
+/area/f13/wasteland)
 "Td" = (
 /obj/effect/decal/cleanable/dirt/dust{
 	color = "#997950"
@@ -3319,17 +3329,17 @@
 /area/f13/wasteland)
 "TH" = (
 /obj/effect/turf_decal/weather/dirt{
+	alpha = 160;
 	color = "#88CC88";
 	dir = 2;
-	light_color = null;
-	alpha = 160
+	light_color = null
 	},
 /obj/effect/decal/cleanable/dirt/dust{
 	color = "#997950"
 	},
 /obj/structure/flora/grass/wasteland{
-	icon_state = "tall_grass_3";
-	color = "#33BB33"
+	color = "#33BB33";
+	icon_state = "tall_grass_3"
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
 	barefootstep = "grass";
@@ -3698,8 +3708,8 @@
 /obj/structure/flora/grass/jungle{
 	alpha = 180;
 	color = "#AAAAAA";
-	name = "grass";
-	mouse_opacity = 0
+	mouse_opacity = 0;
+	name = "grass"
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
 	barefootstep = "grass";
@@ -3713,12 +3723,12 @@
 	color = "#997950"
 	},
 /obj/structure/barricade/wooden{
-	mouse_opacity = 0;
-	alpha = 0
+	alpha = 0;
+	mouse_opacity = 0
 	},
 /obj/structure/barricade/wooden{
-	mouse_opacity = 0;
-	alpha = 0
+	alpha = 0;
+	mouse_opacity = 0
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
 	barefootstep = "grass";
@@ -3747,16 +3757,16 @@
 	mouse_opacity = 0
 	},
 /obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
 	color = "#888888";
 	dir = 8;
-	light_color = null;
-	alpha = 180
+	light_color = null
 	},
 /obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
 	color = "#888888";
 	dir = 2;
-	light_color = null;
-	alpha = 180
+	light_color = null
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
 	barefootstep = "grass";
@@ -49215,10 +49225,10 @@ oJ
 oJ
 oJ
 iJ
-Kh
-Kh
-Kh
-Kh
+co
+co
+Ro
+co
 iJ
 oJ
 Tq
@@ -49471,11 +49481,11 @@ oJ
 oJ
 oJ
 oJ
-RS
-Kh
-Kh
-Kh
-Kh
+SM
+co
+Ro
+Ro
+Ro
 RS
 Kh
 Kh
@@ -49728,11 +49738,11 @@ oJ
 oJ
 oJ
 oJ
-RS
-Kh
-Kh
-Kh
-Kh
+SM
+co
+Ro
+co
+co
 RS
 Kh
 Kh
@@ -51521,21 +51531,21 @@ fI
 iJ
 iJ
 iJ
-jP
-jP
-jP
-jP
-jP
-jP
-jP
-jP
-jP
-jP
-jP
-jP
-jP
-jP
-jP
+co
+co
+co
+co
+co
+co
+Ro
+co
+co
+co
+co
+co
+co
+co
+co
 iJ
 fI
 fI
@@ -51785,14 +51795,14 @@ iJ
 iJ
 iJ
 iJ
-oJ
-iJ
-iJ
-iJ
-iJ
-iJ
 jP
-jP
+iJ
+iJ
+iJ
+iJ
+iJ
+co
+co
 iJ
 iJ
 fI
@@ -52048,8 +52058,8 @@ oJ
 oJ
 iJ
 iJ
-jP
-jP
+co
+co
 iJ
 iJ
 fI
@@ -52305,8 +52315,8 @@ oJ
 oJ
 iJ
 iJ
-jP
-jP
+co
+co
 iJ
 iJ
 fI
@@ -52562,9 +52572,9 @@ oJ
 oJ
 iJ
 iJ
-jP
-jP
-jP
+co
+co
+co
 iJ
 iJ
 fI
@@ -52819,10 +52829,10 @@ oJ
 oJ
 iJ
 iJ
-jP
-jP
-jP
-jP
+co
+co
+co
+co
 iJ
 fI
 fI
@@ -53076,10 +53086,10 @@ oJ
 oJ
 iJ
 iJ
-iJ
-jP
-jP
-jP
+Ro
+Ro
+co
+co
 iJ
 fI
 fI
@@ -53332,11 +53342,11 @@ oJ
 oJ
 oJ
 iJ
-jP
-iJ
-jP
-jP
-jP
+Ro
+Ro
+Ro
+co
+co
 iJ
 fI
 fI
@@ -53591,9 +53601,9 @@ oJ
 iJ
 iJ
 iJ
-jP
-jP
-jP
+co
+co
+co
 iJ
 fI
 fI
@@ -53850,7 +53860,7 @@ iJ
 iJ
 iJ
 iJ
-jP
+co
 iJ
 fI
 fI
@@ -54107,7 +54117,7 @@ oJ
 oJ
 oJ
 iJ
-jP
+co
 iJ
 fI
 fI
