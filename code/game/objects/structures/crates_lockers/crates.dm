@@ -276,3 +276,34 @@
 	..()
 	for(var/i in 1 to 5)
 		new /obj/item/coin/silver(src)
+
+
+// KNOTTINGHAM CHESTS
+
+/obj/structure/closet/crate/ham
+	name = "wooden chest"
+	desc = "A wooden chest. Used for storing things."
+	icon = 'modular_roguetown/misc/structure.dmi'
+	icon_state = "chest1"
+
+
+/obj/structure/closet/crate/ham/one
+	icon_state = "chest2"
+
+/obj/structure/closet/crate/ham/two
+	icon_state = "chest3"
+
+/obj/structure/closet/crate/ham/three
+	icon_state = "chest1s"
+
+/obj/structure/closet/crate/ham/four
+	icon_state = "chest2s"
+
+/obj/structure/closet/crate/ham/five
+	icon_state = "chest3s"
+
+/obj/structure/closet/crate/ham/six
+	icon_state = "chestweird1"
+
+/obj/structure/closet/crate/ham/seven
+	icon_state = "chestweird2"
