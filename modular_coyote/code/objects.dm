@@ -116,6 +116,12 @@
 	icon_state = "cardboardsteal"
 	icon = 'modular_coyote/icons/objects/sign.dmi'
 
+/obj/structure/sign/wood
+	name = "wooden sign"
+	icon_state = "signwrote"
+	icon = 'modular_roguetown/misc/structure.dmi'
+
+
 //Gas Pumps
 
 /obj/structure/gas_pump
