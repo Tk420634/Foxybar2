@@ -351,63 +351,24 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 
 	)
 	var/list/quirks_good_common = list(
-		/datum/quirk/night_vision,
-		/datum/quirk/empath,
 		/datum/quirk/spiritual,
 		/datum/quirk/alcohol_tolerance,
-		/datum/quirk/nukalover,
-		/datum/quirk/drunkhealing,
-		/datum/quirk/playdead,
-		/datum/quirk/improved_heal,
-		/datum/quirk/builder,
 		/datum/quirk/brickwall,
-		/datum/quirk/freerunning,
-		/datum/quirk/light_step,
 
 	)
 	var/list/quirks_good_uncommon = list(
-		/datum/quirk/night_vision,
 		/datum/quirk/empath,
 		/datum/quirk/spiritual,
 		/datum/quirk/alcohol_tolerance,
-		/datum/quirk/nukalover,
 		/datum/quirk/drunkhealing,
-		/datum/quirk/playdead,
-		/datum/quirk/improved_heal,
-		/datum/quirk/builder,
-		/datum/quirk/brickwall,
-		/datum/quirk/freerunning,
-		/datum/quirk/light_step,
-		/datum/quirk/shocking,
-		/datum/quirk/telepathy,
-		/datum/quirk/armblader,
-		/datum/quirk/tentaclearm,
-
 	)
 	var/list/quirks_good_rare = list(
-		/datum/quirk/night_vision,
 		/datum/quirk/empath,
 		/datum/quirk/spiritual,
 		/datum/quirk/alcohol_tolerance,
-		/datum/quirk/nukalover,
 		/datum/quirk/drunkhealing,
-		/datum/quirk/playdead,
-		/datum/quirk/improved_heal,
-		/datum/quirk/builder,
 		/datum/quirk/brickwall,
-		/datum/quirk/freerunning,
-		/datum/quirk/light_step,
-		/datum/quirk/shocking,
-		/datum/quirk/telepathy,
-		/datum/quirk/armblader,
-		/datum/quirk/tentaclearm,
-		/datum/quirk/bowtrained,
-		/datum/quirk/masterrifleman,
-		/datum/quirk/wandproficient,
-		/datum/quirk/night_vision_greater,
-		/datum/quirk/nohunger,
-		/*/datum/quirk/artifact_identify,*/// Artifacts take 5 seconds to identify, to be upgraded eventually
-
+		/datum/quirk/bowtrained
 	)
 
 	var/list/prefixes_speed_good = list()

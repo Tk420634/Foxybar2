@@ -7,17 +7,13 @@
 	value = 0
 	category = "Food Quirks"
 	mechanics = "You don't get disgusted from anything, but you still suffer chemical side effects."
-	conflicts = list(
-		/datum/quirk/pineapple_liker,
-		/datum/quirk/pineapple_hater,
-		/datum/quirk/deviant_tastes,
-		/datum/quirk/nukalover,
-	)
+	conflicts = list()
 	mob_trait = TRAIT_AGEUSIA
 	gain_text = span_notice("You can't taste anything!")
 	lose_text = span_notice("You can taste again!")
 	medical_record_text = "Patient suffers from ageusia and is incapable of tasting food or reagents."
 
+/*
 /datum/quirk/no_chocolate
 	name = "Chocolate intolerance"
 	desc = "Your metabolism finds chocolate rather disagreeable."
@@ -30,6 +26,7 @@
 	lose_text = span_notice("You feel like it's safe to eat chocolate again")
 	medical_record_text = "Patient has an aversion to theobromine, and therefore cannot have chocolate."
 
+
 /datum/quirk/white_woman
 	name = "Peanutbutter difficulties"
 	desc = "Your tongue has difficulty handling the adhesiveness of peanut butter"
@@ -41,6 +38,7 @@
 	gain_text = span_notice("Your tongue lacks the manipulation to properly eat peanut butter.")
 	lose_text = span_notice("Your tongue is skilled at taking on sticky peanut butter.")
 	medical_record_text = "Patient's tongue lacks the dexterity required to eat peanut butter."
+
 
 /datum/quirk/autobrew //sugary foods create ethanol
 	name = "Autobrewery syndrome"
@@ -66,6 +64,7 @@
 	lose_text = span_notice("Well who cares about deco anyways?")
 	medical_record_text = "Patient seems to be rather stuck up."
 	mob_trait = TRAIT_SNOB
+*/
 
 /* Temporarily removed for reworking, god this thing is WAY too busy. ~TK // reworked into multiple other trait options, here for example purposes now - bear
 /quirk/fev
@@ -89,6 +88,7 @@
 	H.health += 30
 */
 
+/*
 /datum/quirk/pineapple_liker
 	name = "Ananas Affinity"
 	desc = "You find yourself greatly enjoying fruits of the ananas genus. You can't seem to ever get enough of their sweet goodness!"
@@ -98,7 +98,6 @@
 	conflicts = list(
 		/datum/quirk/no_taste,
 		/datum/quirk/pineapple_hater,
-		/datum/quirk/nukalover,
 	)
 	gain_text = span_notice("You feel an intense craving for pineapple.")
 	lose_text = span_notice("Your feelings towards pineapples seem to return to a lukewarm state.")
@@ -140,7 +139,9 @@
 	if(H)
 		var/datum/species/species = H.dna.species
 		species.disliked_food &= ~PINEAPPLE
+*/
 
+/*
 /datum/quirk/deviant_tastes
 	name = "Deviant Tastes"
 	desc = "You dislike food that most people enjoy, and find delicious what they don't."
@@ -167,6 +168,7 @@
 		var/datum/species/species = H.dna.species
 		species.liked_food = initial(species.liked_food)
 		species.disliked_food = initial(species.disliked_food)
+*/
 
 /datum/quirk/monochromatic
 	name = "Monochromacy"
@@ -189,6 +191,7 @@
 	if(quirk_holder)
 		quirk_holder.remove_client_colour(/datum/client_colour/monochrome)
 
+/*
 /datum/quirk/agroeater
 	name = "Aggressive Metabolism"
 	desc = "You gain natural healing from eating food, but your metabolism is aggressively fast, causing you to eat alot of food"
@@ -215,7 +218,7 @@
 	mob_trait = TRAIT_MASO
 	gain_text = span_notice("You desire to be hurt.")
 	lose_text = span_notice("Pain has become less exciting for you.")
-
+*/
 
 /datum/quirk/alcohol_intolerance
 	name = "Alcohol Intolerance"
@@ -240,6 +243,7 @@
 		var/datum/species/species = H.dna.species
 		species.disliked_food &= ~ALCOHOL
 
+/*
 /datum/quirk/longtimer
 	name = "Scarred" //Renamed to be more clear what it is, u ugly af ~TK
 	desc = "You've been around for a long time and seen more than your fair share of action, suffering some pretty nasty scars along the way. For whatever reason, you've declined to get them removed or augmented."
@@ -254,9 +258,11 @@
 	/// the maximum amount of scars we can generate
 	var/max_scars = 7
 
+
 /datum/quirk/longtimer/on_spawn()
 	var/mob/living/carbon/C = quirk_holder
 	C.generate_fake_scars(rand(min_scars, max_scars))
+*/
 
 /*
  * A status effect used for preventing caltrop message spam
@@ -344,10 +350,7 @@
 	category = "Lifepath Quirks"
 	mechanics = "You spawn in overweight and full, this also limits your movement quirks out of Freerunning, Light Step, and Quick Walking. Good if you plan on bleeding a lot near round start, I guess."
 	mob_trait = TRAIT_FAT
-	conflicts = list(
-		/datum/quirk/freerunning,
-		/datum/quirk/light_step,
-	)
+	conflicts = list()
 	gain_text = span_notice("You feel blubbery!")
 	//no lose_text cause why would there be?
 
@@ -362,9 +365,7 @@
 	value = 0
 	category = "Food Quirks"
 	mechanics = "You are mechanically disgusted by eating meat."
-	conflicts = list(
-		/datum/quirk/horrifying_tastes,
-		)
+	conflicts = list()
 	gain_text = span_notice("You feel repulsion at the idea of eating meat.")
 	lose_text = span_notice("You feel like eating meat isn't that bad.  Might could even go for a cheeseburger.")
 	medical_record_text = "Patient reports a vegetarian diet."
@@ -433,6 +434,7 @@
 	hydra.visible_message(span_notice("[hydra.name] alters their portrayed identity, appearing as [selhead] instead."), \
 							span_notice("You are now talking as [selhead]!"), ignored_mobs=owner)
 
+/*
 /datum/quirk/sheltered
 	name = "Sheltered"
 	desc = "For one reason or another, you either can't or haven't learned English."
@@ -577,7 +579,9 @@
 	var/mob/living/H = quirk_holder
 	if(!QDELETED(H))
 		H.remove_language(/datum/language/technorussian)
+*/
 
+/*
 /datum/quirk/in_heat
 	name = "ERP Receptive"
 	desc = "Your character, for whatever reason, is PASSIVELY seeking out attention from those who match your OOC Prefences. Remember to set your OOC notes!"
@@ -597,6 +601,7 @@
 	conflicts = list()
 	mob_trait = TRAIT_HEAT_DETECT
 	human_only = FALSE
+*/
 
 /datum/quirk/shy
 	name = "OOCly Shy"
@@ -608,6 +613,7 @@
 	mob_trait = TRAIT_SHY
 	human_only = FALSE
 
+/*
 /datum/quirk/pvefocus
 	name = "PVE Focused"
 	desc = "Your gameplay focus is on PVE.  While you may occasionally partake of PVP, and understand that sometimes it pops up quite quickly and that YOUR ACTIONS ARE YOUR OWN IF YOU CHOOSE TO ENGAGE. This quirk lets others know that you generally would prefer not to be involved in player versus player scenarios."
@@ -627,6 +633,7 @@
 	conflicts = list()
 	mob_trait = TRAIT_PVPFOC
 	human_only = FALSE
+*/
 
 /datum/quirk/loocapproach
 	name = "L/OOC Approach"
@@ -638,6 +645,7 @@
 	mob_trait = TRAIT_OOCAPP
 	human_only = FALSE
 
+/*
 /datum/quirk/pvpande
 	name = "PVP/PVE Accepting"
 	desc = "You are down for PVP & PVE Scenarios.  The wastes are violent, and you are down bad for Miss Violencia. Be it PVP or PVE this quirk lets others know you're ready to R U M B L E."
@@ -647,6 +655,7 @@
 	conflicts = list()
 	mob_trait = TRAIT_COMBATSWITCH
 	human_only = FALSE
+*/
 
 /*/datum/quirk/smol
 	name = "Scoopable!"
@@ -669,6 +678,7 @@
 		quirk_holder.RemoveElement(/datum/element/mob_holder) // undog
 */ //Inate trait with all humans now
 
+/*
 /datum/quirk/cat
 	name = "A cat!"
 	desc = "You identify as a cat! (Mostly to help identify your species mechanically)"
@@ -802,7 +812,9 @@
 	if(!human_holder.equip_to_slot_if_possible(folder, SLOT_IN_BACKPACK, disable_warning = TRUE, bypass_equip_delay_self = TRUE))
 		if(!human_holder.put_in_hands(folder))
 			folder.forceMove(get_turf(human_holder))
+*/
 
+/*
 /datum/quirk/lick_heal
 	name = "Innate healing - Saliva"
 	desc = "You got that dog in you, your licks straight up heal the wounded. Somehow. Don't think about it too hard."
@@ -815,6 +827,7 @@
 	lose_text = span_danger("The tingle in your mouth fades.")
 	locked = FALSE
 	human_only = FALSE
+*/
 
 /datum/quirk/touch_heal
 	name = "Innate healing - Magic"
@@ -829,6 +842,7 @@
 	locked = FALSE
 	human_only = FALSE
 
+/*
 /datum/quirk/tend_heal
 	name = "Innate healing - Triage"
 	desc = "You keep a tiny kit of medical supplies stashed away for emergencies."
@@ -841,9 +855,11 @@
 	lose_text = span_danger("You lost your triage kit...")
 	locked = FALSE
 	human_only = FALSE
+*/
 
 //Fennys insane RP quirks
 
+/*
 /datum/quirk/rpfocused
 	name = "Roleplay Seeking"
 	desc = "You are actively seeking out people who also are seeking roleplay that isn't necessarily erotic in nature. With this you will be able to see the other Roleplay related quirks on others."
@@ -995,6 +1011,7 @@
 	conflicts = list()
 	mob_trait = TRAIT_ERPSWITCH
 	human_only = FALSE
+*/
 
 /datum/quirk/erpflirty
 	name = "ERP Seeking - Flirty"
@@ -1009,6 +1026,7 @@
 
 //Adventure Traits
 
+/*
 /datum/quirk/advseeker
 	name = "Adventure Seeking"
 	desc = "You keep an eye out for the type of person who sees this swampy wasteland as a way to grow famous and rich.  Preferably both."
@@ -1365,13 +1383,17 @@
 	gain_text = span_notice("You feel seen!")
 	lose_text = span_notice("You feel hidden")
 
+*/
+
 /obj/item/clothing/proc/FixClothesFit()
 	set name = "Fix Fit"
 	SEND_SIGNAL(src, COMSIG_CLOTHING_FIX, usr)
 	verbs -= /obj/item/clothing/proc/FixClothesFit
 
+
 #define	CLOTHING_FIX_TIME_MIN 10 MINUTES
 #define CLOTHING_FIX_TIME_MAX 15 MINUTES 
+
 
 /datum/quirk/dan_nicki
 	name = "Big Boobs"

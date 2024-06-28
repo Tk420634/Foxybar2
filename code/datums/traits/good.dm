@@ -150,30 +150,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	lose_text = span_danger("You don't feel as resistant to alcohol anymore. Somehow.")
 	medical_record_text = "Patient demonstrates a high tolerance for alcohol."
 
-/datum/quirk/horrifying_tastes
-	name = "Cannibal"
-	desc = "You eat people. Consuming human flesh doesn't bother you, and dishes such as longpork stew will heal you. Probably don't tell your neighbor. ((This is an OOC trait and should only be found out in character and not through technology.))"
-	mob_trait = TRAIT_LONGPORKLOVER
-	value = 0
-	category = "Food Quirks"
-	mechanics = "Allows you to eat human flesh without being disgusted."
-	conflicts = list(/datum/quirk/vegetarian)
-	gain_text = span_notice("You have an insatiable hunger for the flesh of your fellow man.")
-	lose_text = span_notice("The terrible hunger fades - you feel peace at last.")
-
-/datum/quirk/horrifying_tastes/add()
-	var/mob/living/carbon/human/H = quirk_holder
-	var/datum/species/species = H.dna.species
-	species.liked_food |= LONGPORK
-	species.disliked_food &= ~LONGPORK
-
-/datum/quirk/horrifying_tastes/remove()
-	var/mob/living/carbon/human/H = quirk_holder
-	if(H)
-		var/datum/species/species = H.dna.species
-		species.liked_food &= ~LONGPORK
-		species.disliked_food |= LONGPORK
-
+/*
 /datum/quirk/tribal
 	name = "Former Tribal"
 	desc = "You used to be part of one of the tribes scattered throughout the wasteland. You may have some additional skills as a result. Allowing you to make some tribal medical supplies. Advanced tech still confuses you though."
@@ -203,7 +180,9 @@ GLOBAL_LIST_INIT(security_expert, list(
 		REMOVE_TRAIT(H, TRAIT_MACHINE_SPIRITS, "Former Tribal")
 		REMOVE_TRAIT(H, TRAIT_TRIBAL, "Former Tribal")
 		H.mind.learned_recipes -= GLOB.former_tribal_recipes
+*/
 
+/* Want to maybe use this with other things, but not as it is.
 /datum/quirk/apathetic
 	name = "Apathetic"
 	desc = "You just don't care as much as other people. That's nice to have in a place like this, I guess."
@@ -233,6 +212,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 		var/datum/component/mood/mood = quirk_holder.GetComponent(/datum/component/mood)
 		if(mood)
 			mood.mood_modifier = 1 //Change this once/if species get their own mood modifiers.
+*/
 
 /datum/quirk/drunkhealing
 	name = "Drunken Resilience"
@@ -252,12 +232,13 @@ GLOBAL_LIST_INIT(security_expert, list(
 	value = 0
 	category = "Emotional Quirks"
 	mechanics = "You can read other peoples moods and see what intent they are in."
-	conflicts = list(/datum/quirk/apathetic)
+	conflicts = list()
 	mob_trait = TRAIT_EMPATH
 	gain_text = span_notice("You feel in tune with those around you.")
 	lose_text = span_danger("You feel isolated from others.")
 	medical_record_text = "Patient is highly perceptive of and sensitive to social cues, or may possibly have ESP. Further testing needed."
 
+/*
 /datum/quirk/freerunning
 	name = "Freerunning"
 	desc = "You're great at quick moves! You climb tables more quickly and land gracefully when falling from one floor up. You can also climb some walls!"
@@ -275,6 +256,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	gain_text = span_notice("You feel lithe on your feet! (Alt click walls to climb them!)")
 	lose_text = span_danger("You don't seem to be able to jump as high as you used to.")
 	medical_record_text = "Patient scored highly on cardio tests."
+*/
 
 
 /datum/quirk/tackler
@@ -284,10 +266,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	category = "Movement Quirks"
 	mechanics = "You are able to jump short distances with throw enabled and an empty hand, hitting people will tackle them, leaning towards poor results for you."
 	conflicts = list(
-		/datum/quirk/clumsy,
 		/datum/quirk/overweight,
-		/datum/quirk/tacklerapex,
-		/datum/quirk/tackleradv
 	)
 	mob_trait = TRAIT_TACKLER
 	gain_text = span_notice("Your legs feel stronger.")
@@ -306,7 +285,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 )
 
 
-
+/*
 /datum/quirk/tackleradv
 	name = "Advanced Leaper"
 	desc = "You are able to leap long distances with ease."
@@ -363,6 +342,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 		skill_mod = 3, \
 		min_distance = 0 \
 )
+*/
 
 /datum/quirk/friendly
 	name = "Friendly"
@@ -371,7 +351,6 @@ GLOBAL_LIST_INIT(security_expert, list(
 	category = "Emotional Quirks"
 	mechanics = "Your hugs give a bonus mood boost on top of the normal boost from hugging."
 	conflicts = list(
-		/datum/quirk/apathetic,
 		/datum/quirk/depression,
 		/datum/quirk/pessimist,
 	) //apathetic, and the negative emotional quirks
@@ -381,6 +360,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	mood_quirk = TRUE
 	medical_record_text = "Patient demonstrates low-inhibitions for physical contact and well-developed arms. Requesting another doctor take over this case."
 
+/*
 /datum/quirk/jolly
 	name = "Mood - Sanguine"
 	desc = "You sometimes just feel happy, for no reason at all. Gives mood buffs, occasionally."
@@ -400,6 +380,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 /datum/quirk/jolly/on_process()
 	if(prob(0.05))
 		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "jolly", /datum/mood_event/jolly)
+*/
 
 /datum/quirk/optimist
 	name = "Mood - Optimist"
@@ -408,10 +389,8 @@ GLOBAL_LIST_INIT(security_expert, list(
 	category = "Emotional Quirks"
 	mechanics = "You have a small chance every game tick to gain a decent mood boost. This can effect speed, and even how hard it is to put you down in crit."
 	conflicts = list(
-		/datum/quirk/apathetic,
 		/datum/quirk/depression,
 		/datum/quirk/pessimist,
-		/datum/quirk/jolly,
 	)
 	mob_trait = TRAIT_OPTIMIST
 	mood_quirk = TRUE
@@ -421,7 +400,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	if(prob(0.05))
 		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "optimist", /datum/mood_event/optimism)
 
-
+/*
 /datum/quirk/light_step
 	name = "Light Step"
 	desc = "You walk with a gentle step; stepping on sharp objects is quieter, less painful and you won't leave footprints behind you."
@@ -436,8 +415,10 @@ GLOBAL_LIST_INIT(security_expert, list(
 	gain_text = span_notice("You walk with a little more litheness.")
 	lose_text = span_danger("You start tromping around like a barbarian.")
 	medical_record_text = "Patient's dexterity belies a strong capacity for stealth."
+*/
 
-/*/datum/quirk/treasurehunter 
+/*
+/datum/quirk/treasurehunter 
 	name = "Treasure Hunter" //Used for digging up loot spawners, you can already do this with beastmaster rat, this just streamlines it
 	desc = "You are skilled at digging up resources from underground, requiring nothing but your bare hands, mouth, or a trusty shovel!" 
 	value = 22
@@ -481,6 +462,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	else
 		H.update_icons()
 
+/*
 /datum/quirk/magehand
 	name = "Mage hand"
 	desc = "You gain the ability to use the magehand, a spell to manipulate things around you, and create sparkles!"
@@ -501,6 +483,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 		H.regenerate_icons()
 	else
 		H.update_icons()
+*/
 
 /* //placeholder test concluded
 /datum/quirk/wizard
@@ -523,6 +506,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	H.regenerate_icons()
 */
 
+/*
 /datum/quirk/selfaware
 	name = "Self-Aware"
 	desc = "You know your body well, and can accurately assess the extent of your wounds. Sort of like being a medical scanner for yourself."
@@ -536,7 +520,9 @@ GLOBAL_LIST_INIT(security_expert, list(
 	gain_text = span_notice("You feel deeply aware of your body.")
 	lose_text = span_danger("You lose touch with yourself.")
 	medical_record_text = "Patient demonstrates an uncanny knack for self-diagnosis."
+*/
 
+/*
 /datum/quirk/skittish
 	name = "Skittish"
 	desc = "You are just the skittish sort. Tending to disappear when the lights turn on, or jumping when you hear a leaf crunch."
@@ -550,6 +536,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	gain_text = span_notice("You feel like hiding all of a sudden.")
 	lose_text = span_danger("You feel comfortable with the world, so much for hiding.")
 	medical_record_text = "Patient demonstrates a high aversion to danger and has described hiding in containers out of fear."
+*/
 
 /datum/quirk/spiritual
 	name = "Spiritual"
@@ -566,6 +553,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	medical_record_text = "Patient reports a belief in a higher power."
 	human_only = FALSE
 
+/*
 /datum/quirk/tagger
 	name = "Tagger"
 	desc = "You're an experienced artist. Or, at least you know how to make every drop of paint count."
@@ -638,6 +626,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	var/mob/living/H = quirk_holder
 	new /obj/machinery/workbench(H)
 	new /obj/machinery/chem_master/primitive(H)
+*/
 
 /datum/quirk/gunsmith
 	name = "Weaponsmith - Basic"
@@ -681,6 +670,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	lose_text = span_danger("You seem less adept at crafting masterworks.")
 	medical_record_text = "Patient appears to be a well renowned gunsmith."
 
+/*
 /datum/quirk/voracious
 	name = "Bottomless Stomach"
 	desc = "Nothing gets between you and your food. You eat twice as fast as everyone else!"
@@ -692,7 +682,9 @@ GLOBAL_LIST_INIT(security_expert, list(
 	gain_text = span_notice("You feel HONGRY.")
 	lose_text = span_danger("You no longer feel HONGRY.")
 	medical_record_text = "Patient demonstrates a disturbing capacity for eating. Please, make sure they don't eat my lunch again."
+*/
 
+/*
 /datum/quirk/bloodpressure
 	name = "Extra Blood"
 	desc = "You've a treated form of Polycythemia vera that increases the total blood volume inside of you as well as the rate of replenishment!"
@@ -714,7 +706,9 @@ GLOBAL_LIST_INIT(security_expert, list(
 /datum/quirk/bloodpressure/remove()
 	if(quirk_holder)
 		quirk_holder.blood_ratio = 1
+*/
 
+//Can be turned into an alchemist quirk?
 /datum/quirk/tribal_tech
 	name = "Primitive Tech"
 	desc = "You're able to use primitive technology."
@@ -731,6 +725,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	locked = TRUE
 	human_only = FALSE
 
+/*
 /datum/quirk/dna_whiz
 	name = "Dna Whiz"
 	desc = "You can sequence plant genomes with a snap of your fingers!"
@@ -746,8 +741,9 @@ GLOBAL_LIST_INIT(security_expert, list(
 	mob_trait = TRAIT_DNAWHIZ
 	gain_text = span_notice("You know how plants work!")
 	lose_text = span_danger("You forgot how plants work... somehow.")
+*/
 
-
+/*
 /datum/quirk/night_vision
 	name = "Dark Vision - Minor"
 	desc = "You can see a small distance around you in full darkness compared to most people by two whole tiles."
@@ -791,7 +787,9 @@ GLOBAL_LIST_INIT(security_expert, list(
 
 /datum/quirk/night_vision_greater/remove()
 	quirk_holder.update_sight()
+*/
 
+/*
 /datum/quirk/nukalover
 	name = "Cola Fiend"
 	desc = "You just can't get enough of that hyper-sweetened, tooth-rotting, waistline-widening, pancreas-pummeling sodapop! \
@@ -829,6 +827,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 		var/obj/item/organ/sodie_organ/gibb = H.getorganslot(ORGAN_SLOT_SODIE_ORGAN)
 		if(gibb)
 			qdel(gibb)
+*/
 
 /datum/quirk/prisonpocket
 	name = "Sleight of Hand"
@@ -855,6 +854,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	if(soh)
 		qdel(soh)
 
+//Butcher quirk
 /datum/quirk/trapper
 	name = "Trapper"
 	desc = "As an experienced hunter and trapper you know your way around butchering animals for their products."
@@ -862,7 +862,6 @@ GLOBAL_LIST_INIT(security_expert, list(
 	category = "Lifepath Quirks"
 	mechanics = "You get double the amount of usable materials when you butcher with a sharp object via harm intent."
 	conflicts = list(
-		/datum/quirk/nonviolent,
 	)
 	mob_trait = TRAIT_TRAPPER
 	gain_text = span_notice("You learn the secrets of butchering!")
@@ -878,10 +877,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	category = "Melee Quirks"
 	mechanics = "You do an extra 10 damage with all melee attacks."
 	conflicts = list( //little leagues, and the negative quriks
-		/datum/quirk/nonviolent,
 		/datum/quirk/littleleagues,
-		/datum/quirk/gentle,
-		/datum/quirk/wimpy,
 	)
 	mob_trait = TRAIT_BIG_LEAGUES
 	gain_text = span_notice("You feel like swinging for the fences!")
@@ -897,10 +893,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	category = "Melee Quirks"
 	mechanics = "You do an extra 5 damage with all melee attacks."
 	conflicts = list(
-		/datum/quirk/nonviolent,
 		/datum/quirk/bigleagues,
-		/datum/quirk/gentle,
-		/datum/quirk/wimpy,
 	)
 	mob_trait = TRAIT_LITTLE_LEAGUES
 	gain_text = span_notice("You feel like swinging for the outfield!")
@@ -909,6 +902,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	locked = FALSE
 	human_only = FALSE
 
+/*
 /datum/quirk/chemwhiz
 	name = "Chem Whiz"
 	desc = "You've been playing around with chemicals all your life. You know how to use chemistry machinery."
@@ -939,7 +933,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	var/mob/living/carbon/human/H = quirk_holder
 	if(H)
 		H.mind.learned_recipes -= GLOB.chemwhiz_recipes
-
+*/
 
 /datum/quirk/pa_wear
 	name = "Power Armor Crafting"
@@ -948,9 +942,6 @@ GLOBAL_LIST_INIT(security_expert, list(
 	category = "Lifepath Quirks"
 	mechanics = "You can craft powerarmor, anyone can wear it though."
 	conflicts = list(
-		/datum/quirk/dumb,
-		/datum/quirk/luddite,
-		/datum/quirk/primitive,
 	)
 	mob_trait = TRAIT_PA_WEAR
 	gain_text = span_notice("You realize how to use Power Armor.")
@@ -958,6 +949,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	medical_record_text = "Patient claims to wear a powerful suit of metal."
 	locked = FALSE
 
+/*
 /datum/quirk/hard_yards
 	name = "Mobility - Wasteland Trekker"
 	desc = "You've spent a lot of time wandering the wastes, and for your hard work you out pace most folks when travelling across them."
@@ -994,6 +986,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	lose_text = span_danger("The world beneath your heels suddenly feels like tugging you down...")
 	medical_record_text = "Patient describes going on walks."
 	locked = FALSE
+*/
 
 /datum/quirk/lifegiver
 	name = "Health - Tough"
@@ -1003,8 +996,6 @@ GLOBAL_LIST_INIT(security_expert, list(
 	mechanics = "You have +10 health. What this actually means is that you need to take ten more points of damage before you go into crit."
 	conflicts = list(
 		/datum/quirk/lifegiverplus,
-		/datum/quirk/flimsy,
-		/datum/quirk/veryflimsy,
 	)
 	mob_trait = TRAIT_LIFEGIVER
 	gain_text = span_notice("You feel more durable.")
@@ -1026,8 +1017,6 @@ GLOBAL_LIST_INIT(security_expert, list(
 	mechanics = "You have +20 health. What this actually means is you need to take 20 more points of damage before you go into crit."
 	conflicts = list(
 		/datum/quirk/lifegiver,
-		/datum/quirk/flimsy,
-		/datum/quirk/veryflimsy,
 	)
 	mob_trait = TRAIT_LIFEGIVERPLUS
 	gain_text = span_notice("You feel incredibly durable.")
@@ -1041,6 +1030,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	H.maxHealth += 20
 	H.health += 20
 
+/*
 /datum/quirk/iron_fist
 	name = "Fists of Iron"
 	desc = "You have fists of kung-fury! Increases unarmed damage."
@@ -1084,6 +1074,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	var/mob/living/carbon/human/H = quirk_holder
 	H.dna.species.punchdamagelow = STEEL_FIST_PUNCH_DAMAGE_LOW
 	H.dna.species.punchdamagehigh = STEEL_FIST_PUNCH_DAMAGE_MAX
+*/
 
 /datum/quirk/surgerylow
 	name = "Minor Surgery"
@@ -1136,6 +1127,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	locked = FALSE
 	human_only = FALSE
 
+/*
 /datum/quirk/explosive_crafting
 	name = "Explosives Crafting"
 	desc = "You have strong feelings about the future of industrial society."
@@ -1166,7 +1158,9 @@ GLOBAL_LIST_INIT(security_expert, list(
 	if(H)
 		H.mind.learned_recipes -= GLOB.basic_explosive_recipes
 		H.mind.learned_recipes -= GLOB.adv_explosive_recipes
+*/
 
+/*
 /datum/quirk/improved_heal
 	name = "Improved Innate Healing"
 	desc = "You have a deeper reservoir for innate healing, whether it's through magic, medical tending, or licking. Check the neutral traits for these abilities."
@@ -1182,6 +1176,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	medical_record_text = "Patient exudes a rather invigorating aura. Further study is required."
 	locked = FALSE
 	human_only = FALSE
+*/
 
 /*
 /datum/quirk/lick_bandage
@@ -1243,6 +1238,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 		H.mind.learned_recipes -= GLOB.adv_explosive_recipes
 */
 
+/*
 /datum/quirk/whitelegstraditions
 	name = "Post Apocalyptic Tribal Traditions"
 	desc = "You remember how to make your peoples ancient garments after all this time."
@@ -1413,6 +1409,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	if(!QDELETED(H))
 		REMOVE_TRAIT(H, TRAIT_BONEDANCER_TRAD, "Bone Dancer Traditions")
 	H.mind.learned_recipes -= GLOB.bonedancer_traditions_recipes
+*/
 
 /datum/quirk/brickwall
 	name = "Brick wall"
@@ -1474,6 +1471,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	lose_text = span_danger("You no longer feel like you could probably live in a microwave while its on.")
 	locked =  FALSE */
 
+/*
 /datum/quirk/radimmuneish
 	name = "Radiation - Mostly Immune"
 	desc = "Gieger Counters are for suckers, mostly."
@@ -1523,6 +1521,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	lose_text = span_danger("GOD YOU WANT A BURGER SO BAD.")
 	medical_record_text = "Patient NEVER eats their food."
 	locked =  FALSE
+*/
 
 /*
 /datum/quirk/thickskin
@@ -1540,6 +1539,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	locked =  TRUE
 */
 
+/*
 /datum/quirk/quickercarry
 	name = "Quicker Carry"
 	desc = "You're better than most people when it comes to carrying people!"
@@ -1569,7 +1569,9 @@ GLOBAL_LIST_INIT(security_expert, list(
 	lose_text = span_danger("You're ability to carry folk seems massively diminished.")
 	medical_record_text = "Patient appears to haul bodies around."
 	locked =  FALSE
+*/
 
+/*
 /datum/quirk/builder
 	name = "Experienced Builder"
 	desc = "You're good at putting stuff together!"
@@ -1628,6 +1630,8 @@ GLOBAL_LIST_INIT(security_expert, list(
 	gain_text = span_notice("You feel like you can punch anything!")
 	lose_text = span_danger("Your fists seem to lose their punching finesse.")
 	medical_record_text = "Patient appears to have incredibly dense muscles in their fist."
+*/
+
 
 /datum/quirk/silentstep
 	name = "Silent Step"
@@ -1638,13 +1642,13 @@ GLOBAL_LIST_INIT(security_expert, list(
 	mechanics = "Your footsteps never make noise."
 	conflicts = list(
 		/datum/quirk/overweight,
-		/datum/quirk/clumsy,
 	)
 	gain_text = span_notice("Your footsteps fade away.")
 	lose_text = span_danger("You're pretty sure that's the sound of your asscheeks clapping, but it might be footsteps.")
 	medical_record_text = "Patient appears to always walk on their toes."
 	locked =  FALSE
 
+/*
 /datum/quirk/deadeye
 	name = "Dead Eye"
 	desc = "When you hit your target, you frequently hit your target's vital points more often than not."
@@ -1682,7 +1686,9 @@ GLOBAL_LIST_INIT(security_expert, list(
 	medical_record_text = "Patient repeatedly scores baskets in the trashcan."
 	locked =  FALSE
 	human_only = FALSE
+*/
 
+//Should go to all the 'combat' classes
 /datum/quirk/bowtrained
 	name = "Bow Trained"
 	desc = "You've trained quite a bit with bows of many types."
@@ -1690,8 +1696,6 @@ GLOBAL_LIST_INIT(security_expert, list(
 	category = "Ranged Quirks"
 	mechanics = "You don't need to press z to pull the string back on a bow, instead you can just spam click to fire rapidly."
 	conflicts = list(
-		/datum/quirk/clumsy,
-		/datum/quirk/masterrifleman,
 	)
 	mob_trait = TRAIT_AUTO_DRAW
 	gain_text = span_notice("You feel like all that training with bows has paid off.")
@@ -1700,6 +1704,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	locked =  FALSE
 	human_only = FALSE
 
+/*
 /datum/quirk/masterrifleman
 	name = "Bolt Worker"
 	desc = "You've spent a lot of time working the bolt of a rifle, or the pump action of a shotgun. Your skill allows you to click to work the action instead of doing it manually."
@@ -1747,6 +1752,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	lose_text = span_danger("You feel that laying down in a field of gunfire may not be such a good idea after all.")
 	medical_record_text = "Patient has failed heart monitoring tests multiple times."
 	locked =  FALSE
+*/
 
 /datum/quirk/packrat
 	name = "Packrat"
@@ -1757,6 +1763,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	conflicts = list()
 	mob_trait = TRAIT_PACKRAT
 
+/*
 /datum/quirk/ratfriend
 	name = "Beast Friend - Rats"
 	desc = "Rats and wild mice of all kind outright ignore you now."
@@ -1980,6 +1987,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	gain_text = span_notice("You feel SUPER pumped up!")
 	lose_text = span_danger("You no longer have the giga zoomies...")
 	medical_record_text = "Patient is full of way too much energy, and has not stopped running around my office as of writing."
+*/
 
 /*/datum/quirk/artifact_identify
 	name = "Artifact Hunter"
@@ -1995,6 +2003,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	locked =  FALSE
 	human_only = FALSE*/ // Artifacts are identified in 5 seconds, potential change in the future to let you spawn with an artifact
 
+/*
 /datum/quirk/armblader
 	name = "Arm Blader"
 	desc = "Through some genetic quirk you have access to horrifying arm blades made out of bone with the *armblade verb."
@@ -2008,7 +2017,6 @@ GLOBAL_LIST_INIT(security_expert, list(
 	lose_text = span_danger("Your arm feels lighter...")
 	medical_record_text = "Patient appears to possess a knife, somehow."
 	human_only = FALSE
-
 
 /datum/quirk/mantisblade
 	name = "Cybernetic Arm Blader"
@@ -2936,3 +2944,4 @@ GLOBAL_LIST_INIT(security_expert, list(
 	var/mob/living/carbon/human/H = quirk_holder
 	if(H?.mind)
 		H.mind.learned_recipes -= GLOB.security_expert
+*/

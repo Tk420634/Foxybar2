@@ -16,10 +16,6 @@
 	category = "Food Quirks"
 	mechanics = "You can *lick clams to extract their meat and eat it, like some kind of wierd bird rat."
 	conflicts = list(
-		/datum/quirk/no_taste,
-		/datum/quirk/pineapple_hater,
-		/datum/quirk/nukalover,
-		/datum/quirk/deviant_tastes,
 	)
 	mob_trait = TRAIT_CLAM_TONGUE
 	gain_text = span_notice("No clam can resist zhe pointyness of your tongue!")
@@ -33,10 +29,6 @@
 	category = "Food Quirks"
 	mechanics = "Clam meat and juice gives you a significant mood boost!"
 	conflicts = list(
-		/datum/quirk/no_taste,
-		/datum/quirk/pineapple_hater,
-		/datum/quirk/nukalover,
-		/datum/quirk/deviant_tastes,
 	)
 	mob_trait = TRAIT_CLAM_LOVER
 	gain_text = span_notice("Zhe clams, zhey call to you...")
@@ -62,9 +54,6 @@
 	mechanics = "Combines the effects of Clam Tongue, Clam Lover, and Clam Fisher quirks."
 	conflicts = list(
 		/datum/quirk/no_taste,
-		/datum/quirk/pineapple_hater,
-		/datum/quirk/nukalover,
-		/datum/quirk/deviant_tastes,
 	)
 	mob_trait = list(
 		TRAIT_CLAM_TONGUE,
