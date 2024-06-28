@@ -128,6 +128,10 @@
 /obj/structure/statue/bos/ladyright,
 /turf/open/indestructible/ground/outside/civ/woodalt,
 /area/f13/wasteland)
+"bZ" = (
+/obj/item/melee/onehanded/knife/throwing,
+/turf/open/indestructible/ground/outside/graveldirt,
+/area/f13/wasteland)
 "cr" = (
 /turf/open/floor/plating/f13/outside/roof/wood,
 /area/f13/wasteland)
@@ -493,9 +497,34 @@
 	color = "#777777"
 	},
 /area/f13/wasteland)
+"ko" = (
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/structure/flora/twig3,
+/turf/open/indestructible/ground/outside/civ/grass3{
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	color = "#555555";
+	footstep = "grass"
+	},
+/area/f13/wasteland)
 "ks" = (
-/obj/structure/falsewall/wood{
-	color = "#CBCBCB"
+/obj/structure/signpost{
+	icon = 'modular_roguetown/misc/structure.dmi';
+	icon_state = "signwrote"
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
 	barefootstep = "grass";
@@ -724,30 +753,6 @@
 	},
 /turf/open/indestructible/ground/outside/civ/woodalt,
 /area/f13/wasteland)
-"pK" = (
-/obj/effect/decal/cleanable/dirt/dust{
-	color = "#997950"
-	},
-/obj/effect/decal/cleanable/dirt/dust{
-	color = "#997950"
-	},
-/obj/effect/decal/cleanable/dirt/dust{
-	color = "#997950"
-	},
-/obj/effect/decal/cleanable/dirt/dust{
-	color = "#997950"
-	},
-/obj/effect/decal/cleanable/dirt/dust{
-	color = "#997950"
-	},
-/obj/structure/flora/twig3,
-/turf/open/indestructible/ground/outside/civ/grass3{
-	barefootstep = "grass";
-	clawfootstep = "grass";
-	color = "#555555";
-	footstep = "grass"
-	},
-/area/f13/wasteland)
 "pO" = (
 /obj/effect/turf_decal/weather/dirtcorner{
 	color = "#888888";
@@ -800,7 +805,7 @@
 "sw" = (
 /obj/item/paper{
 	color = "red";
-	name = "TODO - ???"
+	name = "TODO - unknown job area"
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
 	barefootstep = "grass";
@@ -879,10 +884,6 @@
 	},
 /obj/structure/closet/crate/wicker,
 /turf/open/floor/plating/f13/outside/roof/wood,
-/area/f13/wasteland)
-"tO" = (
-/obj/item/melee/onehanded/knife/throwing,
-/turf/open/indestructible/ground/outside/graveldirt,
 /area/f13/wasteland)
 "tT" = (
 /obj/effect/decal/cleanable/dirt/dust{
@@ -1008,6 +1009,15 @@
 	color = "#997950"
 	},
 /obj/structure/flora/tree_timber,
+/turf/open/indestructible/ground/outside/civ/grass3{
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	color = "#555555";
+	footstep = "grass"
+	},
+/area/f13/wasteland)
+"wb" = (
+/obj/structure/flora/twig2,
 /turf/open/indestructible/ground/outside/civ/grass3{
 	barefootstep = "grass";
 	clawfootstep = "grass";
@@ -1194,15 +1204,6 @@
 	color = "#777777"
 	},
 /area/f13/wasteland)
-"AA" = (
-/obj/structure/flora/twig3,
-/turf/open/indestructible/ground/outside/civ/grass3{
-	barefootstep = "grass";
-	clawfootstep = "grass";
-	color = "#555555";
-	footstep = "grass"
-	},
-/area/f13/wasteland)
 "AC" = (
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland)
@@ -1213,6 +1214,15 @@
 	pixel_y = 12
 	},
 /turf/open/indestructible/ground/inside/dirt,
+/area/f13/wasteland)
+"AX" = (
+/obj/structure/flora/twig3,
+/turf/open/indestructible/ground/outside/civ/grass3{
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	color = "#555555";
+	footstep = "grass"
+	},
 /area/f13/wasteland)
 "Bc" = (
 /obj/structure/simple_door/wood,
@@ -1256,6 +1266,15 @@
 	color = "#A1BFFF";
 	density = 1;
 	name = "deep river water"
+	},
+/area/f13/wasteland)
+"Bz" = (
+/obj/structure/flora/twig,
+/turf/open/indestructible/ground/outside/civ/grass3{
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	color = "#555555";
+	footstep = "grass"
 	},
 /area/f13/wasteland)
 "BV" = (
@@ -1312,18 +1331,6 @@
 	},
 /turf/open/indestructible/ground/outside/civ/woodalt,
 /area/f13/wasteland)
-"Dc" = (
-/obj/effect/decal/cleanable/dirt/dust{
-	color = "#997950"
-	},
-/obj/structure/flora/twig3,
-/turf/open/indestructible/ground/outside/civ/grass3{
-	barefootstep = "grass";
-	clawfootstep = "grass";
-	color = "#555555";
-	footstep = "grass"
-	},
-/area/f13/wasteland)
 "De" = (
 /obj/structure/destructible/tribal_torch/wall/lit,
 /turf/open/indestructible/ground/outside/civ/woodalt,
@@ -1345,15 +1352,6 @@
 	pixel_y = 25
 	},
 /turf/open/floor/plating/f13/outside/roof/wood,
-/area/f13/wasteland)
-"Dv" = (
-/obj/structure/flora/twig2,
-/turf/open/indestructible/ground/outside/civ/grass3{
-	barefootstep = "grass";
-	clawfootstep = "grass";
-	color = "#555555";
-	footstep = "grass"
-	},
 /area/f13/wasteland)
 "DP" = (
 /obj/structure/window/fulltile/civ/redsandstone_windownew_full,
@@ -1511,15 +1509,6 @@
 /obj/effect/decal/cleanable/dirt/dust{
 	color = "#997950"
 	},
-/turf/open/indestructible/ground/outside/civ/grass3{
-	barefootstep = "grass";
-	clawfootstep = "grass";
-	color = "#555555";
-	footstep = "grass"
-	},
-/area/f13/wasteland)
-"GK" = (
-/obj/structure/flora/twig,
 /turf/open/indestructible/ground/outside/civ/grass3{
 	barefootstep = "grass";
 	clawfootstep = "grass";
@@ -1863,18 +1852,6 @@
 /obj/structure/railing/wooden_fencing,
 /turf/open/indestructible/ground/outside/ruins{
 	icon_state = "rubbleslab"
-	},
-/area/f13/wasteland)
-"NK" = (
-/obj/structure/signpost{
-	icon = 'modular_roguetown/misc/structure.dmi';
-	icon_state = "signwrote"
-	},
-/turf/open/indestructible/ground/outside/civ/grass3{
-	barefootstep = "grass";
-	clawfootstep = "grass";
-	color = "#555555";
-	footstep = "grass"
 	},
 /area/f13/wasteland)
 "NM" = (
@@ -2390,6 +2367,18 @@
 /area/f13/wasteland)
 "XN" = (
 /turf/open/indestructible/ground/inside/dirt,
+/area/f13/wasteland)
+"Yc" = (
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/structure/flora/twig3,
+/turf/open/indestructible/ground/outside/civ/grass3{
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	color = "#555555";
+	footstep = "grass"
+	},
 /area/f13/wasteland)
 "Yl" = (
 /obj/machinery/smartfridge/bottlerack,
@@ -16708,7 +16697,7 @@ oJ
 oJ
 oJ
 oJ
-NK
+ks
 oJ
 oJ
 nM
@@ -21320,7 +21309,7 @@ oJ
 nM
 nM
 oJ
-NK
+ks
 oJ
 oJ
 oJ
@@ -24191,7 +24180,7 @@ Io
 oJ
 gm
 LF
-tO
+bZ
 oJ
 LF
 yP
@@ -25476,7 +25465,7 @@ tT
 oJ
 XC
 oJ
-GK
+Bz
 oJ
 hX
 Io
@@ -25735,7 +25724,7 @@ tT
 tT
 hv
 oJ
-Dv
+wb
 oJ
 Td
 GI
@@ -26761,7 +26750,7 @@ oJ
 cP
 nM
 nM
-pK
+ko
 tT
 tT
 nM
@@ -27532,7 +27521,7 @@ oJ
 oJ
 oJ
 oJ
-Dc
+Yc
 nM
 nM
 tT
@@ -33961,7 +33950,7 @@ aC
 oJ
 oJ
 UH
-AA
+AX
 oJ
 oJ
 oJ
@@ -46787,13 +46776,13 @@ Tq
 Tq
 Tq
 oJ
-gm
-gm
-gm
-iV
-gm
-gm
-Io
+oJ
+oJ
+oJ
+oJ
+oJ
+oJ
+oJ
 oJ
 oJ
 oJ
@@ -47044,14 +47033,14 @@ Tq
 Tq
 Tq
 oJ
-gm
-jh
-LF
-LF
-LF
-yP
 oJ
-hv
+oJ
+oJ
+oJ
+oJ
+oJ
+oJ
+oJ
 oJ
 oJ
 oJ
@@ -47301,14 +47290,14 @@ Tq
 Tq
 oJ
 oJ
-gm
-LF
-LF
-LF
-LF
-gm
-LF
-LF
+oJ
+oJ
+oJ
+oJ
+oJ
+oJ
+oJ
+oJ
 oJ
 oJ
 oJ
@@ -47558,14 +47547,14 @@ Tq
 Tq
 oJ
 oJ
-gm
-LF
-LF
-LF
-LF
-iq
-LF
-LF
+oJ
+oJ
+oJ
+oJ
+oJ
+oJ
+oJ
+oJ
 oJ
 oJ
 oJ
@@ -47815,14 +47804,14 @@ Tq
 oJ
 oJ
 oJ
-gm
-LF
-LF
-LF
-LF
-gm
-LF
-LF
+oJ
+oJ
+oJ
+oJ
+oJ
+oJ
+oJ
+oJ
 oJ
 oJ
 oJ
@@ -48072,13 +48061,13 @@ oJ
 oJ
 oJ
 oJ
-gm
-LF
-LF
-LF
-LF
-yP
-Io
+oJ
+oJ
+oJ
+oJ
+oJ
+oJ
+oJ
 oJ
 oJ
 oJ
@@ -48329,12 +48318,12 @@ oJ
 oJ
 oJ
 oJ
-gm
-LF
-LF
-LF
-LF
-gm
+oJ
+oJ
+oJ
+oJ
+oJ
+oJ
 oJ
 oJ
 oJ
@@ -48586,14 +48575,14 @@ oJ
 oJ
 oJ
 oJ
-gm
-Or
-gm
-ks
-Or
-gm
 oJ
-Io
+oJ
+oJ
+oJ
+oJ
+oJ
+oJ
+oJ
 oJ
 oJ
 oJ
@@ -48845,11 +48834,11 @@ oJ
 oJ
 oJ
 oJ
-hX
 oJ
 oJ
-hX
-hv
+oJ
+oJ
+oJ
 oJ
 oJ
 oJ
@@ -49101,13 +49090,13 @@ oJ
 oJ
 oJ
 oJ
-Io
 oJ
 oJ
 oJ
 oJ
 oJ
-tT
+oJ
+oJ
 oJ
 oJ
 oJ
@@ -49156,12 +49145,12 @@ fI
 fI
 oJ
 oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
+uP
+uP
+uP
+uP
+uP
+uP
 Kh
 PW
 GT
@@ -49361,10 +49350,10 @@ oJ
 oJ
 oJ
 oJ
-hX
-Io
-nM
-GI
+oJ
+oJ
+oJ
+oJ
 oJ
 oJ
 oJ
@@ -49413,12 +49402,12 @@ fI
 fI
 fI
 oJ
+uP
 oJ
 oJ
 oJ
 oJ
-oJ
-oJ
+uP
 Kh
 PW
 uP
@@ -49670,12 +49659,12 @@ iJ
 fI
 fI
 oJ
+uP
+uP
 oJ
 oJ
 oJ
-oJ
-oJ
-oJ
+uP
 Kh
 PW
 uP
@@ -49926,13 +49915,13 @@ iJ
 iJ
 fI
 fI
-fI
+oJ
+oJ
+uP
 oJ
 oJ
 oJ
-oJ
-oJ
-oJ
+uP
 Kh
 PW
 bz
@@ -50185,9 +50174,9 @@ fI
 fI
 fI
 oJ
+uP
 oJ
-oJ
-oJ
+sw
 oJ
 oJ
 Kh
@@ -50442,11 +50431,11 @@ iJ
 fI
 fI
 oJ
+uP
+uP
 oJ
 oJ
-oJ
-oJ
-oJ
+uP
 Kh
 PW
 uP
@@ -50698,12 +50687,12 @@ iJ
 iJ
 fI
 fI
-fI
 oJ
 oJ
+uP
 oJ
 oJ
-oJ
+uP
 Kh
 PW
 uP
@@ -50957,10 +50946,10 @@ fI
 fI
 fI
 oJ
+uP
 oJ
 oJ
-oJ
-oJ
+uP
 Kh
 PW
 uP
@@ -51214,10 +51203,10 @@ iJ
 fI
 fI
 oJ
-oJ
-oJ
-oJ
-oJ
+uP
+uP
+uP
+uP
 Kh
 PW
 uP
@@ -51470,7 +51459,7 @@ jP
 iJ
 fI
 fI
-fI
+oJ
 oJ
 oJ
 oJ
