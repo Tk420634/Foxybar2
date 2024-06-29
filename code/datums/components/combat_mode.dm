@@ -86,7 +86,7 @@
 		else
 			to_chat(source, self_message)
 		if(playsound)
-			source.playsound_local(source, 'sound/misc/ui_toggle_vats.ogg', 50, FALSE, pressure_affected = FALSE) //Sound from interbay!
+			source.playsound_local(source, 'modular_coyote/sound/combatintent/gong.ogg', 50, FALSE, pressure_affected = FALSE)
 	RegisterSignal(source, COMSIG_MOB_CLIENT_MOUSEMOVE,PROC_REF(onMouseMove))
 	RegisterSignal(source, COMSIG_MOVABLE_MOVED,PROC_REF(on_move))
 	if(hud_icon)
@@ -114,8 +114,6 @@
 			source.visible_message(span_warning("[source] relaxes [source.p_their()] stance."), self_message)
 		else
 			to_chat(source, self_message)
-		if(playsound)
-			source.playsound_local(source, 'sound/misc/ui_toggleoff.ogg', 50, FALSE, pressure_affected = FALSE) //Slightly modified version of the toggleon sound!
 	UnregisterSignal(source, list(COMSIG_MOB_CLIENT_MOUSEMOVE, COMSIG_MOVABLE_MOVED))
 	if(hud_icon)
 		hud_icon.combat_on = FALSE
