@@ -7,6 +7,18 @@
 	footstep = "grass"
 	},
 /area/f13/wasteland)
+"am" = (
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/outside/civ/grass3{
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	color = "#555555";
+	footstep = "grass"
+	},
+/area/f13/wasteland)
 "an" = (
 /obj/effect/turf_decal/weather/dirt{
 	alpha = 160;
@@ -37,6 +49,28 @@
 	footstep = "grass"
 	},
 /area/f13/wasteland)
+"aB" = (
+/obj/structure/nest/gecko,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "aC" = (
 /obj/structure/flora/tree/jungle{
 	color = "#BEBEBE";
@@ -61,6 +95,44 @@
 /obj/structure/railing/wooden_fencing,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/ruins,
+/area/f13/wasteland)
+"aH" = (
+/obj/structure/nest/gecko,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"aL" = (
+/obj/structure/flora/tree/jungle{
+	color = "#BEBEBE";
+	mouse_opacity = 0
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/turf/open/indestructible/ground/outside/civ/grass3{
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	color = "#555555";
+	footstep = "grass"
+	},
 /area/f13/wasteland)
 "aO" = (
 /obj/item/paper{
@@ -130,6 +202,22 @@
 "bb" = (
 /turf/open/space/basic,
 /area/f13/wasteland)
+"bj" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "bk" = (
 /obj/structure/railing/wood/post{
 	pixel_x = 14
@@ -141,6 +229,18 @@
 	color = "#845f58"
 	},
 /turf/open/indestructible/ground/outside/civ/woodalt,
+/area/f13/wasteland)
+"bo" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 1
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "bv" = (
 /obj/effect/fake_stairs/west{
@@ -193,11 +293,41 @@
 	},
 /turf/open/indestructible/ground/outside/graveldirt,
 /area/f13/wasteland)
+"cj" = (
+/obj/structure/nest/gecko,
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "co" = (
 /turf/open/indestructible/cobble/dark,
 /area/f13/wasteland)
 "cr" = (
 /turf/open/floor/plating/f13/outside/roof/wood,
+/area/f13/wasteland)
+"cu" = (
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "cw" = (
 /obj/structure/railing/wooden_fencing,
@@ -211,6 +341,16 @@
 	light_color = null;
 	name = "pond water"
 	},
+/area/f13/wasteland)
+"cz" = (
+/mob/living/simple_animal/hostile/gecko/tribal/hunter{
+	name = "lizardfolk hunter";
+	retreat_distance = 2
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "cF" = (
 /obj/structure/haybale,
@@ -235,6 +375,26 @@
 	color = "#555555";
 	footstep = "grass"
 	},
+/area/f13/wasteland)
+"cT" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/structure/cave/support{
+	pixel_y = 18;
+	icon_state = "support_beams";
+	anchored = 1;
+	layer = 3
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "cZ" = (
 /obj/structure/deployable_barricade/wooden,
@@ -268,6 +428,31 @@
 	footstep = "grass"
 	},
 /area/f13/wasteland)
+"dp" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"du" = (
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "dJ" = (
 /obj/effect/decal/cleanable/dirt/dust{
 	color = "#997950"
@@ -293,6 +478,54 @@
 	pixel_y = 13
 	},
 /turf/open/floor/plating/f13/outside/roof/wood,
+/area/f13/wasteland)
+"dM" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"ea" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/structure/nest/gecko,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"eb" = (
+/obj/structure/simple_door/tentflap_cloth{
+	color = "#666666"
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/structure/decoration/rag{
+	icon_state = "skin"
+	},
+/obj/structure/decoration/rag,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "eg" = (
 /obj/structure/flora/chomp/bush5{
@@ -326,6 +559,39 @@
 	footstep = "grass"
 	},
 /area/f13/wasteland)
+"ev" = (
+/obj/structure/nest/gecko,
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/structure/cave/support{
+	pixel_y = 26;
+	icon_state = "support_wall";
+	anchored = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "ex" = (
 /obj/effect/decal/cleanable/dirt/dust{
 	color = "#997950"
@@ -341,6 +607,28 @@
 	footstep = "grass"
 	},
 /area/f13/wasteland)
+"eI" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/structure/cave/support{
+	pixel_y = 26;
+	icon_state = "support_wall";
+	anchored = 1
+	},
+/obj/structure/decoration/rag{
+	desc = "A string of bones and skulls.<br>A common warning from tribals and raiders to outsiders.";
+	icon_state = "skulls";
+	name = "skulls";
+	pixel_y = 26
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"eR" = (
+/obj/effect/decal/cleanable/blood/drip,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "eU" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
@@ -348,6 +636,18 @@
 	},
 /obj/structure/chair/wood,
 /turf/open/indestructible/ground/outside/civ/woodalt,
+/area/f13/wasteland)
+"eW" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "fg" = (
 /obj/item/paper{
@@ -369,6 +669,23 @@
 	name = "moat water"
 	},
 /area/f13/wasteland)
+"fl" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "fo" = (
 /obj/structure/table/wood/settler{
 	dir = 5;
@@ -378,6 +695,29 @@
 /turf/open/indestructible/ground/outside/civ/woodalt{
 	color = "#777777"
 	},
+/area/f13/wasteland)
+"fr" = (
+/obj/structure/nest/gecko,
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 4
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "fz" = (
 /obj/structure/flora/chomp/shrub2{
@@ -411,6 +751,29 @@
 	footstep = "grass"
 	},
 /area/f13/wasteland)
+"fF" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/structure/cave/support{
+	pixel_y = 18;
+	icon_state = "support_beams";
+	anchored = 1;
+	layer = 3
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/blood/gibs,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "fI" = (
 /turf/open/indestructible/ground/outside/water{
 	density = 1;
@@ -418,9 +781,90 @@
 	name = "moat water"
 	},
 /area/f13/wasteland)
+"fM" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/turf/open/indestructible/ground/outside/water{
+	color = "#7E6355"
+	},
+/area/f13/wasteland)
+"fO" = (
+/obj/structure/simple_door/tentflap_cloth{
+	color = "#666666"
+	},
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/structure/decoration/rag{
+	icon_state = "skin"
+	},
+/obj/structure/decoration/rag,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "fS" = (
 /obj/structure/closet/crate/ham,
 /turf/open/indestructible/ground/outside/civ/woodalt,
+/area/f13/wasteland)
+"fY" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/structure/cave/stalagmite{
+	icon_state = "stalagmite4"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"gc" = (
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/dugpit,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "gd" = (
 /obj/structure/flora/tree/jungle{
@@ -436,6 +880,25 @@
 	mouse_opacity = 0
 	},
 /turf/open/space/basic,
+/area/f13/wasteland)
+"gl" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/cobweb/cobweb2{
+	plane = -12.9
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "gm" = (
 /obj/structure/falsewall/wood{
@@ -599,6 +1062,23 @@
 	footstep = "grass"
 	},
 /area/f13/wasteland)
+"hy" = (
+/obj/structure/flora/grass/jungle{
+	alpha = 180;
+	color = "#AAAAAA";
+	mouse_opacity = 0;
+	name = "grass"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/outside/civ/grass3{
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	color = "#555555";
+	footstep = "grass"
+	},
+/area/f13/wasteland)
 "hK" = (
 /obj/structure/fluff/hedge,
 /obj/structure/barricade/bars{
@@ -642,6 +1122,49 @@
 	footstep = "grass"
 	},
 /area/f13/wasteland)
+"hY" = (
+/obj/structure/nest/gecko,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"il" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/structure/cave/support{
+	pixel_y = 26;
+	icon_state = "support_wall_broken";
+	anchored = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "iq" = (
 /obj/structure/simple_door/room/dirty{
 	name = "dirty door"
@@ -659,6 +1182,39 @@
 	barefootstep = "grass";
 	clawfootstep = "grass";
 	color = "#888888";
+	footstep = "grass"
+	},
+/area/f13/wasteland)
+"iv" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/structure/cave/support{
+	pixel_y = 26;
+	icon_state = "support_wall_broken";
+	anchored = 1
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"iG" = (
+/obj/effect/decal/remains/human,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/outside/civ/grass3{
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	color = "#555555";
 	footstep = "grass"
 	},
 /area/f13/wasteland)
@@ -707,6 +1263,28 @@
 /turf/open/indestructible/ground/outside/civ/woodalt{
 	color = "#CACACA"
 	},
+/area/f13/wasteland)
+"jq" = (
+/obj/structure/nest/gecko,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "jr" = (
 /obj/structure/spacevine,
@@ -768,10 +1346,65 @@
 	footstep = "grass"
 	},
 /area/f13/wasteland)
+"jK" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 4
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "jP" = (
 /turf/open/indestructible/ground/outside/gravel{
 	color = "#777777"
 	},
+/area/f13/wasteland)
+"jQ" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888"
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"jR" = (
+/obj/structure/nest/gecko,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "jT" = (
 /obj/effect/decal/cleanable/dirt/dust{
@@ -784,6 +1417,61 @@
 	color = "#777777";
 	footstep = "grass"
 	},
+/area/f13/wasteland)
+"jV" = (
+/mob/living/simple_animal/hostile/gecko/tribal/warrior{
+	name = "lizardfolk warrior"
+	},
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/outside/civ/grass3{
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	color = "#555555";
+	footstep = "grass"
+	},
+/area/f13/wasteland)
+"jY" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"kc" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"kj" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/structure/decoration/rag{
+	desc = "A string of bones and skulls.<br>A common warning from tribals and raiders to outsiders.";
+	icon_state = "skulls";
+	name = "skulls";
+	pixel_y = 26
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "kn" = (
 /obj/effect/decal/cleanable/dirt/dust{
@@ -845,6 +1533,73 @@
 	color = "#555555";
 	footstep = "grass"
 	},
+/area/f13/wasteland)
+"kN" = (
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/structure/flora/branch,
+/turf/open/indestructible/ground/outside/civ/grass3{
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	color = "#555555";
+	footstep = "grass"
+	},
+/area/f13/wasteland)
+"kY" = (
+/mob/living/simple_animal/hostile/gecko/tribal/warrior{
+	name = "lizardfolk warrior"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"ld" = (
+/obj/structure/flora/grass/jungle{
+	alpha = 180;
+	color = "#AAAAAA";
+	mouse_opacity = 0;
+	name = "grass"
+	},
+/obj/effect/decal/cleanable/blood/drip,
+/turf/open/indestructible/ground/outside/civ/grass3{
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	color = "#555555";
+	footstep = "grass"
+	},
+/area/f13/wasteland)
+"lg" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/structure/cave/support{
+	pixel_y = 26;
+	icon_state = "support_wall";
+	anchored = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/structure/decoration/rag{
+	desc = "A string of bones and skulls.<br>A common warning from tribals and raiders to outsiders.";
+	icon_state = "skulls";
+	name = "skulls";
+	pixel_y = 26
+	},
+/obj/effect/decal/cleanable/blood/gibs,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "lm" = (
 /obj/structure/chair/wood/ham/green{
@@ -1029,12 +1784,98 @@
 	},
 /turf/open/indestructible/ground/outside/civ/woodalt,
 /area/f13/wasteland)
+"mn" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 4
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"mp" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/structure/cave/support{
+	pixel_y = 18;
+	icon_state = "support_beams";
+	anchored = 1;
+	layer = 3
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"mq" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888"
+	},
+/obj/structure/cave/support{
+	pixel_y = 18;
+	icon_state = "support_beams";
+	anchored = 1;
+	layer = 3
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/structure/nest/gecko,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "mr" = (
 /obj/structure/chair/wood{
 	dir = 8;
 	pixel_y = -3
 	},
 /turf/open/indestructible/ground/outside/civ/woodalt,
+/area/f13/wasteland)
+"ms" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"mv" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/decal/remains/human,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "mB" = (
 /obj/structure/railing/wooden_fencing{
@@ -1086,6 +1927,78 @@
 	dir = 8
 	},
 /turf/open/floor/carpet/royalblack,
+/area/f13/wasteland)
+"nb" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/structure/cave/support{
+	pixel_y = 18;
+	icon_state = "support_beams";
+	anchored = 1;
+	layer = 3
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"ne" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/turf/open/indestructible/ground/outside/water{
+	color = "#7E6355"
+	},
+/area/f13/wasteland)
+"nf" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/turf/open/indestructible/ground/outside/water{
+	color = "#7E6355"
+	},
 /area/f13/wasteland)
 "nj" = (
 /turf/open/indestructible/ground/outside/civ/woodalt,
@@ -1194,6 +2107,91 @@
 	},
 /turf/open/indestructible/ground/outside/civ/woodalt,
 /area/f13/wasteland)
+"oz" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 1
+	},
+/obj/effect/decal/remains/human,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/item/pickaxe,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"oC" = (
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/outside/civ/grass3{
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	color = "#555555";
+	footstep = "grass"
+	},
+/area/f13/wasteland)
+"oE" = (
+/mob/living/simple_animal/hostile/gecko/tribal/warrior{
+	name = "lizardfolk warrior"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/outside/civ/grass3{
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	color = "#555555";
+	footstep = "grass"
+	},
+/area/f13/wasteland)
+"oG" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"oH" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/structure/cave/support{
+	pixel_y = 26;
+	icon_state = "support_wall_broken";
+	anchored = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "oJ" = (
 /turf/open/indestructible/ground/outside/civ/grass3{
 	barefootstep = "grass";
@@ -1272,6 +2270,37 @@
 	footstep = "grass"
 	},
 /area/f13/wasteland)
+"pf" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/blood/gibs,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"pj" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "pp" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/open/indestructible/ground/outside/civ/grass3{
@@ -1341,6 +2370,33 @@
 	name = "pond water"
 	},
 /area/f13/wasteland)
+"pR" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "pW" = (
 /obj/effect/decal/cleanable/dirt/dust{
 	color = "#997950"
@@ -1352,6 +2408,43 @@
 	color = "#777777";
 	footstep = "grass"
 	},
+/area/f13/wasteland)
+"qa" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"qb" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/structure/cave/support{
+	pixel_y = 18;
+	icon_state = "support_beams";
+	anchored = 1;
+	layer = 3
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "qn" = (
 /obj/effect/decal/cleanable/dirt/dust{
@@ -1379,6 +2472,15 @@
 	footstep = "grass"
 	},
 /area/f13/wasteland)
+"qz" = (
+/obj/effect/decal/cleanable/blood/drip,
+/turf/open/indestructible/ground/outside/civ/grass3{
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	color = "#555555";
+	footstep = "grass"
+	},
+/area/f13/wasteland)
 "qI" = (
 /obj/effect/decal/cleanable/dirt/dust{
 	color = "#997950"
@@ -1397,6 +2499,20 @@
 	color = "#555555";
 	footstep = "grass"
 	},
+/area/f13/wasteland)
+"qK" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "qL" = (
 /obj/structure/flora/ausbushes/grassybush{
@@ -1422,6 +2538,65 @@
 	footstep = "grass"
 	},
 /area/f13/wasteland)
+"qS" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"qU" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"rd" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"rf" = (
+/turf/closed/mineral/indestructible{
+	color = "#5C4033"
+	},
+/area/f13/wasteland)
 "rp" = (
 /obj/effect/decal/cleanable/dirt/dust{
 	color = "#997950"
@@ -1429,6 +2604,30 @@
 /turf/open/indestructible/ground/outside/civ/woodalt{
 	color = "#CACACA"
 	},
+/area/f13/wasteland)
+"rt" = (
+/obj/structure/simple_door/tentflap_cloth{
+	color = "#666666"
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/structure/decoration/rag{
+	icon_state = "skin"
+	},
+/obj/structure/decoration/rag,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "rG" = (
 /obj/structure/barricade/wooden{
@@ -1445,6 +2644,50 @@
 	color = "#555555";
 	footstep = "grass"
 	},
+/area/f13/wasteland)
+"rO" = (
+/obj/structure/simple_door/tentflap_cloth{
+	color = "#666666"
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/structure/decoration/rag{
+	icon_state = "skin"
+	},
+/obj/structure/decoration/rag,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"rT" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888"
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 1
+	},
+/obj/structure/cave/stalagmite{
+	icon_state = "stalagmite5"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "rU" = (
 /obj/effect/decal/cleanable/dirt/dust{
@@ -1524,6 +2767,57 @@
 "sW" = (
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
+"tf" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/cobweb/cobweb2{
+	plane = -12.9
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"ti" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"tl" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/item/pickaxe,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "tq" = (
 /obj/structure/deployable_barricade/wooden{
 	dir = 1;
@@ -1552,6 +2846,22 @@
 	footstep = "grass"
 	},
 /area/f13/wasteland)
+"tA" = (
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "tD" = (
 /obj/structure/deployable_barricade/wooden,
 /obj/structure/railing/wooden_fencing{
@@ -1560,6 +2870,45 @@
 	},
 /obj/structure/closet/crate/wicker,
 /turf/open/floor/plating/f13/outside/roof/wood,
+/area/f13/wasteland)
+"tF" = (
+/obj/structure/flora/ausbushes/grassybush{
+	color = "#bbbbbb";
+	mouse_opacity = 0
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/outside/civ/grass3{
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	color = "#555555";
+	footstep = "grass"
+	},
+/area/f13/wasteland)
+"tO" = (
+/obj/structure/simple_door/tentflap_cloth{
+	color = "#666666"
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/structure/decoration/rag{
+	icon_state = "skin"
+	},
+/obj/structure/decoration/rag,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "tR" = (
 /obj/structure/flora/tree/jungle{
@@ -1581,6 +2930,23 @@
 	color = "#555555";
 	footstep = "grass"
 	},
+/area/f13/wasteland)
+"tX" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "tY" = (
 /obj/structure/barricade/wooden/planks{
@@ -1620,6 +2986,20 @@
 	footstep = "grass"
 	},
 /area/f13/wasteland)
+"ur" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/structure/cave/stalagmite{
+	icon_state = "stalagmite2"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "uw" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#888888";
@@ -1641,8 +3021,98 @@
 "uy" = (
 /turf/closed/mineral/random/labormineral,
 /area/f13/wasteland)
+"uB" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"uL" = (
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/structure/cave/support{
+	pixel_y = 26;
+	icon_state = "support_wall_broken";
+	anchored = 1
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"uN" = (
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/structure/cave/support{
+	pixel_y = 26;
+	icon_state = "support_wall";
+	anchored = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/blood/gibs,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "uP" = (
 /turf/closed/wall/f13/tentwall,
+/area/f13/wasteland)
+"uX" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888"
+	},
+/obj/effect/decal/cleanable/blood/drip,
+/obj/structure/cave/stalagmite,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"vf" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 4
+	},
+/obj/structure/cave/stalagmite,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "vg" = (
 /obj/item/blacksmith/woodrod,
@@ -1652,6 +3122,45 @@
 	color = "#555555";
 	footstep = "grass"
 	},
+/area/f13/wasteland)
+"vh" = (
+/obj/structure/simple_door/tentflap_cloth{
+	color = "#666666"
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/structure/decoration/rag{
+	icon_state = "skin"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"vm" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/cobweb/cobweb2{
+	plane = -12.9
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "vn" = (
 /obj/effect/decal/cleanable/dirt/dust{
@@ -1690,6 +3199,22 @@
 	light_color = null;
 	name = "pond water"
 	},
+/area/f13/wasteland)
+"vI" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/blood/gibs,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "vJ" = (
 /turf/closed/wall/mineral/wood,
@@ -1735,6 +3260,28 @@
 	footstep = "grass"
 	},
 /area/f13/wasteland)
+"wd" = (
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/structure/cave/support{
+	pixel_y = 26;
+	icon_state = "support_wall";
+	anchored = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "wt" = (
 /obj/structure/table/wood/settler{
 	dir = 1;
@@ -1751,6 +3298,21 @@
 /obj/structure/railing/wood/post{
 	layer = 4.2;
 	pixel_x = 14
+	},
+/turf/open/indestructible/ground/outside/civ/grass3{
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	color = "#555555";
+	footstep = "grass"
+	},
+/area/f13/wasteland)
+"wP" = (
+/obj/structure/flora/chomp/bush5{
+	color = "#444444";
+	mouse_opacity = 0
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
 	},
 /turf/open/indestructible/ground/outside/civ/grass3{
 	barefootstep = "grass";
@@ -1818,6 +3380,28 @@
 	footstep = "grass"
 	},
 /area/f13/wasteland)
+"xi" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 4
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "xj" = (
 /obj/effect/turf_decal/weather/dirt{
 	alpha = 160;
@@ -1851,6 +3435,17 @@
 	footstep = "grass"
 	},
 /area/f13/wasteland)
+"xv" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "xz" = (
 /obj/effect/turf_decal/weather/dirt{
 	alpha = 180;
@@ -1869,9 +3464,35 @@
 /obj/item/blacksmith/chain,
 /turf/open/indestructible/ground/outside/graveldirt,
 /area/f13/wasteland)
+"xD" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/structure/cave/stalagmite{
+	icon_state = "stalagmite2"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "xJ" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/civ/woodalt,
+/area/f13/wasteland)
+"xR" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/decal/remains/human,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "xU" = (
 /obj/effect/turf_decal/weather/splineplain{
@@ -1936,12 +3557,73 @@
 	footstep = "grass"
 	},
 /area/f13/wasteland)
+"yj" = (
+/obj/structure/nest/gecko{
+	pixel_y = 17
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"ym" = (
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/decal/remains/human,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"yo" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888"
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/water{
+	color = "#7E6355"
+	},
+/area/f13/wasteland)
 "yr" = (
 /obj/structure/reagent_dispensers/keg/hearty_punch,
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 4
 	},
 /turf/open/indestructible/ground/outside/civ/woodalt,
+/area/f13/wasteland)
+"yC" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "yE" = (
 /obj/structure/table/wood/settler{
@@ -1981,11 +3663,44 @@
 	footstep = "grass"
 	},
 /area/f13/wasteland)
+"zh" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "zn" = (
 /turf/closed/indestructible/riveted/boss{
 	color = "#9999FF";
 	name = "temple wall"
 	},
+/area/f13/wasteland)
+"zo" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "zp" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -2011,6 +3726,36 @@
 	footstep = "grass"
 	},
 /area/f13/wasteland)
+"zr" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/dugpit,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"zA" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirtcorner,
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "zC" = (
 /obj/structure/punching_bag/dummy,
 /turf/open/indestructible/ground/outside/gravel,
@@ -2022,6 +3767,36 @@
 	icon_state = "signwrote";
 	name = "Mine Entrance"
 	},
+/turf/open/indestructible/ground/outside/civ/grass3{
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	color = "#555555";
+	footstep = "grass"
+	},
+/area/f13/wasteland)
+"zG" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"zN" = (
+/obj/structure/flora/chomp/bush5{
+	color = "#444444";
+	mouse_opacity = 0
+	},
+/obj/effect/decal/cleanable/blood/drip,
 /turf/open/indestructible/ground/outside/civ/grass3{
 	barefootstep = "grass";
 	clawfootstep = "grass";
@@ -2050,6 +3825,34 @@
 	color = "#555555";
 	footstep = "grass"
 	},
+/area/f13/wasteland)
+"Ah" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 4
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "AC" = (
 /turf/open/indestructible/ground/outside/gravel,
@@ -2115,6 +3918,31 @@
 	name = "deep river water"
 	},
 /area/f13/wasteland)
+"Bq" = (
+/obj/structure/nest/gecko{
+	pixel_y = 19
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"By" = (
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/item/pickaxe,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "Bz" = (
 /obj/structure/flora/twig,
 /turf/open/indestructible/ground/outside/civ/grass3{
@@ -2135,6 +3963,42 @@
 	color = "#888888";
 	footstep = "grass"
 	},
+/area/f13/wasteland)
+"BR" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 4
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"BU" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "BV" = (
 /obj/structure/flora/tree/jungle/small,
@@ -2175,6 +4039,55 @@
 	footstep = "grass"
 	},
 /area/f13/wasteland)
+"Ck" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/item/pickaxe,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"Co" = (
+/obj/structure/nest/gecko,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"Cq" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/structure/cave/support{
+	pixel_y = 26;
+	icon_state = "support_wall_broken";
+	anchored = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "Cx" = (
 /obj/structure/table/wood/settler,
 /obj/structure/destructible/tribal_torch/wall/lit{
@@ -2182,6 +4095,33 @@
 	light_color = "#f4e3b0"
 	},
 /turf/open/indestructible/ground/outside/civ/woodalt,
+/area/f13/wasteland)
+"CB" = (
+/obj/structure/simple_door/tentflap_cloth{
+	color = "#666666"
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/structure/decoration/rag,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"CC" = (
+/obj/structure/nest/gecko,
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "CG" = (
 /obj/structure/flora/tree/jungle{
@@ -2210,6 +4150,72 @@
 	},
 /turf/open/indestructible/ground/outside/civ/woodalt,
 /area/f13/wasteland)
+"CK" = (
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/structure/cave/support{
+	pixel_y = 26;
+	icon_state = "support_wall";
+	anchored = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/structure/decoration/rag{
+	desc = "A string of bones and skulls.<br>A common warning from tribals and raiders to outsiders.";
+	icon_state = "skulls";
+	name = "skulls";
+	pixel_y = 26
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"CL" = (
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"CN" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 4
+	},
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/structure/cave/support{
+	pixel_y = 18;
+	icon_state = "support_beams";
+	anchored = 1;
+	layer = 3
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "CQ" = (
 /obj/structure/flora/tree/jungle{
 	color = "#BEBEBE";
@@ -2225,6 +4231,23 @@
 	color = "#555555";
 	footstep = "grass"
 	},
+/area/f13/wasteland)
+"CW" = (
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "CY" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -2262,6 +4285,88 @@
 	},
 /turf/open/floor/plating/f13/outside/roof/wood,
 /area/f13/wasteland)
+"Dw" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/blood/drip,
+/obj/structure/cave/support{
+	pixel_y = 26;
+	icon_state = "support_wall_broken";
+	anchored = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"DB" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"DL" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/structure/decoration/rag{
+	desc = "A string of bones and skulls.<br>A common warning from tribals and raiders to outsiders.";
+	icon_state = "skulls";
+	name = "skulls";
+	pixel_y = 26
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"DM" = (
+/obj/structure/simple_door/tentflap_cloth{
+	color = "#666666"
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/structure/decoration/rag,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/structure/decoration/rag{
+	icon_state = "skin"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "DP" = (
 /obj/structure/window/fulltile/civ/redsandstone_windownew_full,
 /obj/structure/curtain/directional/east{
@@ -2273,6 +4378,34 @@
 /obj/structure/closet/crate/ham/four,
 /turf/open/indestructible/ground/outside/civ/woodalt,
 /area/f13/wasteland)
+"DX" = (
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"Eb" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/structure/cave/support{
+	pixel_y = 26;
+	icon_state = "support_wall";
+	anchored = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/structure/decoration/rag{
+	desc = "A string of bones and skulls.<br>A common warning from tribals and raiders to outsiders.";
+	icon_state = "skulls";
+	name = "skulls";
+	pixel_y = 26
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "Ee" = (
 /obj/structure/window/fulltile/civ/redsandstone_windownew_full,
 /turf/open/floor/plating/f13/outside/roof/wood,
@@ -2280,6 +4413,43 @@
 "Ei" = (
 /obj/structure/well_foundation,
 /obj/structure/sink/well,
+/turf/open/indestructible/ground/outside/civ/grass3{
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	color = "#555555";
+	footstep = "grass"
+	},
+/area/f13/wasteland)
+"Es" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/turf/open/indestructible/ground/outside/water{
+	color = "#7E6355"
+	},
+/area/f13/wasteland)
+"Eu" = (
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/structure/flora/branch,
 /turf/open/indestructible/ground/outside/civ/grass3{
 	barefootstep = "grass";
 	clawfootstep = "grass";
@@ -2306,6 +4476,21 @@
 	light_color = null;
 	name = "pond water"
 	},
+/area/f13/wasteland)
+"ET" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "EX" = (
 /obj/structure/well_foundation{
@@ -2339,6 +4524,43 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/wasteland)
+"FA" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"FB" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/blood/gibs,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "FF" = (
 /obj/item/paper{
 	color = "red";
@@ -2357,6 +4579,108 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/ruins,
+/area/f13/wasteland)
+"FT" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/turf/open/indestructible/ground/outside/water{
+	color = "#7E6355"
+	},
+/area/f13/wasteland)
+"Gb" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888"
+	},
+/obj/effect/decal/remains/human,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"Gd" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 4
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"Gf" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888"
+	},
+/obj/structure/cave/stalagmite{
+	icon_state = "stalagmite5"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"Gi" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"Gj" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "Gm" = (
 /turf/closed/mineral/indestructible,
@@ -2417,6 +4741,18 @@
 	name = "pond water"
 	},
 /area/f13/wasteland)
+"Gv" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "Gw" = (
 /obj/structure/barricade/tentclothcorner{
 	dir = 1
@@ -2464,6 +4800,15 @@
 	footstep = "grass"
 	},
 /area/f13/wasteland)
+"GD" = (
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "GF" = (
 /obj/structure/simple_door/tentflap_cloth{
 	pixel_y = -3
@@ -2507,6 +4852,31 @@
 	footstep = "grass"
 	},
 /area/f13/wasteland)
+"GL" = (
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/structure/cave/support{
+	pixel_y = 18;
+	icon_state = "support_beams";
+	anchored = 1;
+	layer = 3
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/structure/decoration/rag{
+	desc = "A string of bones and skulls.<br>A common warning from tribals and raiders to outsiders.";
+	icon_state = "skulls";
+	name = "skulls";
+	pixel_y = 14
+	},
+/obj/effect/decal/cleanable/blood/gibs,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "GR" = (
 /obj/structure/flora/grass/jungle/b{
 	pixel_x = -12;
@@ -2537,6 +4907,16 @@
 	footstep = "grass"
 	},
 /area/f13/wasteland)
+"Hd" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/turf/open/indestructible/ground/outside/water{
+	color = "#7E6355"
+	},
+/area/f13/wasteland)
 "Hk" = (
 /obj/structure/flora/tree/jungle{
 	color = "#BEBEBE";
@@ -2564,6 +4944,28 @@
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
+"HC" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/structure/cave/support{
+	pixel_y = 26;
+	icon_state = "support_wall_broken";
+	anchored = 1
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "HE" = (
 /obj/structure/flora/ausbushes/grassybush{
 	color = "#bbbbbb";
@@ -2580,11 +4982,69 @@
 /obj/structure/bed,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/wasteland)
+"HI" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"HJ" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"HT" = (
+/obj/effect/decal/remains/human,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "HW" = (
 /obj/structure/campfire/standing,
 /turf/closed/wall/mineral/brick/old{
 	color = "#888888"
 	},
+/area/f13/wasteland)
+"Ie" = (
+/obj/structure/simple_door/tentflap_cloth{
+	color = "#666666"
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/structure/decoration/rag,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "If" = (
 /obj/structure/destructible/tribal_torch/wall/lit,
@@ -2618,6 +5078,45 @@
 	color = "#555555";
 	footstep = "grass"
 	},
+/area/f13/wasteland)
+"Is" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"Iu" = (
+/obj/structure/flora/branch_broken,
+/turf/open/indestructible/ground/outside/civ/grass3{
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	color = "#555555";
+	footstep = "grass"
+	},
+/area/f13/wasteland)
+"Iv" = (
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "IC" = (
 /obj/structure/rack/rack_forest{
@@ -2656,6 +5155,27 @@
 	footstep = "grass"
 	},
 /area/f13/wasteland)
+"IP" = (
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888"
+	},
+/obj/structure/cave/support{
+	pixel_y = 18;
+	icon_state = "support_beams";
+	anchored = 1;
+	layer = 3
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "IQ" = (
 /obj/structure/barricade/bars,
 /turf/open/indestructible/ground/outside/civ/woodalt,
@@ -2668,6 +5188,21 @@
 	},
 /obj/item/reagent_containers/food/drinks/shaker,
 /turf/open/indestructible/ground/outside/civ/woodalt,
+/area/f13/wasteland)
+"IV" = (
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/blood/drip,
+/turf/open/indestructible/ground/outside/civ/grass3{
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	color = "#555555";
+	footstep = "grass"
+	},
 /area/f13/wasteland)
 "Jn" = (
 /obj/structure/closet/crate/ham/four,
@@ -2735,6 +5270,64 @@
 	icon_state = "rubbleslab"
 	},
 /area/f13/wasteland)
+"JT" = (
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/blood/drip,
+/turf/open/indestructible/ground/outside/civ/grass3{
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	color = "#555555";
+	footstep = "grass"
+	},
+/area/f13/wasteland)
+"JV" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"JZ" = (
+/obj/structure/flora/ausbushes/grassybush{
+	color = "#bbbbbb";
+	mouse_opacity = 0
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/outside/civ/grass3{
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	color = "#555555";
+	footstep = "grass"
+	},
+/area/f13/wasteland)
 "Kg" = (
 /obj/structure/closet/fridge{
 	pixel_x = -6
@@ -2765,6 +5358,57 @@
 	},
 /turf/open/indestructible/ground/outside/civ/woodalt,
 /area/f13/wasteland)
+"Ko" = (
+/obj/structure/simple_door/tentflap_cloth{
+	color = "#666666"
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/structure/decoration/rag,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"KF" = (
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/closed/mineral/indestructible{
+	color = "#5C4033"
+	},
+/area/f13/wasteland)
+"KO" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/blood/drip,
+/obj/structure/cave/support{
+	pixel_y = 18;
+	icon_state = "support_beams";
+	anchored = 1;
+	layer = 3
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "KR" = (
 /obj/structure/sink{
 	dir = 8;
@@ -2774,6 +5418,25 @@
 /obj/structure/table/wood/settler,
 /obj/structure/destructible/tribal_torch/wall/lit,
 /turf/open/indestructible/ground/outside/civ/woodalt,
+/area/f13/wasteland)
+"KV" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/blood/gibs,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "KW" = (
 /obj/structure/flora/grass/wasteland{
@@ -2797,6 +5460,37 @@
 	density = 1;
 	name = "deep river water"
 	},
+/area/f13/wasteland)
+"Li" = (
+/obj/structure/flora/tree/jungle{
+	color = "#BEBEBE";
+	mouse_opacity = 0
+	},
+/turf/closed/mineral/indestructible{
+	color = "#5C4033"
+	},
+/area/f13/wasteland)
+"LC" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"LD" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "LF" = (
 /turf/open/indestructible/ground/outside/civ/woodalt{
@@ -2853,6 +5547,25 @@
 "Mh" = (
 /obj/item/clothing/suit/armor/outfit/overalls/blacksmith,
 /turf/open/indestructible/ground/outside/graveldirt,
+/area/f13/wasteland)
+"Mj" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/structure/cave/stalagmite{
+	icon_state = "stalagmite5"
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "Mm" = (
 /turf/closed/wall/mineral/brick/old{
@@ -2911,12 +5624,90 @@
 	color = "#777777"
 	},
 /area/f13/wasteland)
+"MB" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"MJ" = (
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "MY" = (
 /obj/structure/flora/tree/jungle{
 	color = "#BEBEBE";
 	mouse_opacity = 0
 	},
 /turf/open/indestructible/ground/outside/graveldirt,
+/area/f13/wasteland)
+"MZ" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/structure/cave/stalagmite{
+	icon_state = "stalagmite1"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"Nc" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/structure/cave/support{
+	pixel_y = 18;
+	icon_state = "support_beams";
+	anchored = 1;
+	layer = 3
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "Ng" = (
 /obj/machinery/chem_dispenser/drinks/beer/fullupgrade{
@@ -2934,6 +5725,65 @@
 	color = "#888888";
 	footstep = "grass"
 	},
+/area/f13/wasteland)
+"Ns" = (
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/structure/cave/support{
+	pixel_y = 18;
+	icon_state = "support_beams";
+	anchored = 1;
+	layer = 3
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"Nv" = (
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/structure/cave/support{
+	pixel_y = 18;
+	icon_state = "support_beams";
+	anchored = 1;
+	layer = 3
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"NF" = (
+/obj/structure/simple_door/tentflap_cloth{
+	color = "#666666"
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/structure/decoration/rag,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "NI" = (
 /mob/living/simple_animal/hostile/gecko/tribal/warrior{
@@ -2954,11 +5804,56 @@
 	name = "pond water"
 	},
 /area/f13/wasteland)
+"NN" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/structure/cave/stalagmite{
+	icon_state = "stalagmite2"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/structure/cave/support{
+	pixel_y = 26;
+	icon_state = "support_wall";
+	anchored = 1
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"NO" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "NR" = (
 /obj/structure/closet/crate/ham/four,
 /turf/open/indestructible/ground/outside/civ/woodalt{
 	color = "#777777"
 	},
+/area/f13/wasteland)
+"NX" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/decal/remains/human,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "Of" = (
 /obj/structure/railing/wood/post{
@@ -2979,6 +5874,54 @@
 	light_color = null;
 	name = "pond water"
 	},
+/area/f13/wasteland)
+"Oj" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"On" = (
+/obj/structure/ladder/unbreakable{
+	height = null;
+	icon = 'modular_coyote/icons/objects/animal_spawners.dmi';
+	icon_state = "cave_den";
+	id = "tribalcamp2";
+	name = "damp tunnel";
+	pixel_y = 21
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/structure/cave/support{
+	pixel_y = -11;
+	icon_state = "boards_drought_ns-4";
+	anchored = 1
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "Or" = (
 /obj/structure/window/fulltile/wood,
@@ -3055,6 +5998,22 @@
 	footstep = "grass"
 	},
 /area/f13/wasteland)
+"OX" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 4
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/decal/remains/human,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "OY" = (
 /obj/structure/flora/tree/jungle{
 	color = "#BEBEBE";
@@ -3075,6 +6034,58 @@
 	footstep = "grass"
 	},
 /area/f13/wasteland)
+"Pd" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"Pf" = (
+/obj/structure/nest/gecko,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"Pg" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 4
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"Pj" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "Pk" = (
 /obj/structure/railing/wood,
 /turf/open/indestructible/ground/outside/civ/grass3{
@@ -3090,6 +6101,18 @@
 	pixel_y = 25
 	},
 /turf/open/floor/plating/f13/outside/roof/wood,
+/area/f13/wasteland)
+"Pp" = (
+/obj/structure/nest/gecko,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "Pt" = (
 /obj/structure/railing/wood{
@@ -3110,8 +6133,49 @@
 	footstep = "grass"
 	},
 /area/f13/wasteland)
+"Pw" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 4
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888"
+	},
+/obj/structure/cave/support{
+	pixel_y = 18;
+	icon_state = "support_beams";
+	anchored = 1;
+	layer = 3
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "PW" = (
 /turf/open/indestructible/cobble/side,
+/area/f13/wasteland)
+"Qc" = (
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "Qj" = (
 /obj/effect/turf_decal/siding/wood{
@@ -3141,6 +6205,18 @@
 	},
 /turf/open/indestructible/ground/outside/graveldirt,
 /area/f13/wasteland)
+"Qr" = (
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/blood/drip,
+/turf/open/indestructible/ground/outside/civ/grass3{
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	color = "#555555";
+	footstep = "grass"
+	},
+/area/f13/wasteland)
 "Qs" = (
 /obj/effect/decal/cleanable/dirt/dust{
 	color = "#997950"
@@ -3165,6 +6241,65 @@
 	name = "pond water"
 	},
 /area/f13/wasteland)
+"Qz" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888"
+	},
+/obj/structure/cave/support{
+	pixel_y = 26;
+	icon_state = "support_wall";
+	anchored = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"QA" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/decal/remains/human,
+/obj/structure/cave/stalagmite{
+	icon_state = "stalagmite2"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"QC" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/structure/cave/support{
+	pixel_y = 18;
+	icon_state = "support_beams";
+	anchored = 1;
+	layer = 3
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/blood/gibs,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "QJ" = (
 /obj/structure/flora/grass/jungle{
 	alpha = 180;
@@ -3185,6 +6320,22 @@
 	footstep = "grass"
 	},
 /area/f13/wasteland)
+"QO" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "QV" = (
 /obj/structure/signpost{
 	desc = "South West - Mine, West - Crossways, North West - Dungeon";
@@ -3199,11 +6350,34 @@
 	footstep = "grass"
 	},
 /area/f13/wasteland)
+"QZ" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "Rf" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/ruins{
 	icon_state = "rubbleslab"
 	},
+/area/f13/wasteland)
+"Rk" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/decal/remains/human,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "Ro" = (
 /turf/open/indestructible/cobble/dark/path,
@@ -3226,6 +6400,22 @@
 	name = "pond water"
 	},
 /area/f13/wasteland)
+"Rw" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "RI" = (
 /obj/structure/deployable_barricade/wooden{
 	dir = 4
@@ -3245,6 +6435,22 @@
 	},
 /turf/open/indestructible/ground/outside/civ/woodalt,
 /area/f13/wasteland)
+"RT" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "RU" = (
 /obj/structure/flora/tree/jungle/small,
 /turf/open/indestructible/ground/outside/civ/grass3{
@@ -3253,6 +6459,27 @@
 	color = "#888888";
 	footstep = "grass"
 	},
+/area/f13/wasteland)
+"Sf" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/structure/cave/support{
+	pixel_y = 26;
+	icon_state = "support_wall";
+	anchored = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "Si" = (
 /turf/open/floor/plating/f13/inside/gravel,
@@ -3280,9 +6507,60 @@
 	name = "deep river water"
 	},
 /area/f13/wasteland)
+"SF" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/structure/cave/support{
+	pixel_y = 26;
+	icon_state = "support_wall_broken";
+	anchored = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "SM" = (
 /obj/structure/simple_door/metal/barred,
 /turf/open/indestructible/cobble/dark,
+/area/f13/wasteland)
+"SU" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/structure/nest/gecko,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"SX" = (
+/obj/effect/decal/remains/human,
+/turf/open/indestructible/ground/outside/civ/grass3{
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	color = "#555555";
+	footstep = "grass"
+	},
 /area/f13/wasteland)
 "Td" = (
 /obj/effect/decal/cleanable/dirt/dust{
@@ -3300,6 +6578,23 @@
 	color = "#555555";
 	footstep = "grass"
 	},
+/area/f13/wasteland)
+"Tf" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "Th" = (
 /obj/effect/decal/cleanable/dirt/dust{
@@ -3333,6 +6628,35 @@
 	color = "#555555";
 	footstep = "grass"
 	},
+/area/f13/wasteland)
+"Ti" = (
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"Tk" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 1
+	},
+/obj/effect/decal/remains/human,
+/obj/structure/cave/support{
+	pixel_y = 18;
+	icon_state = "support_beams";
+	anchored = 1;
+	layer = 3
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "Tq" = (
 /turf/open/indestructible/ground/outside/graveldirt,
@@ -3405,6 +6729,63 @@
 	footstep = "grass"
 	},
 /area/f13/wasteland)
+"Um" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"Un" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 4
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"Uu" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 4
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 1
+	},
+/obj/structure/cave/stalagmite{
+	icon_state = "stalagmite4"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"Uv" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 1
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "Uy" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 1;
@@ -3433,6 +6814,27 @@
 	color = "#555555";
 	footstep = "grass"
 	},
+/area/f13/wasteland)
+"UL" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "UO" = (
 /obj/effect/decal/cleanable/dirt/dust{
@@ -3464,9 +6866,70 @@
 	},
 /turf/open/indestructible/ground/outside/civ/woodalt,
 /area/f13/wasteland)
+"Vj" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/decal/remains/human,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"Vq" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"Vw" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "Vy" = (
 /obj/structure/bed/wooden,
 /turf/open/indestructible/ground/outside/civ/woodalt,
+/area/f13/wasteland)
+"VI" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 4
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"VO" = (
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "VS" = (
 /obj/structure/chair/wood/ham{
@@ -3493,8 +6956,42 @@
 	name = "pond water"
 	},
 /area/f13/wasteland)
+"Wi" = (
+/obj/structure/nest/gecko,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/structure/cave/support{
+	pixel_y = 18;
+	icon_state = "support_beams";
+	anchored = 1;
+	layer = 3
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "Wk" = (
 /turf/closed/mineral/random/high_chance,
+/area/f13/wasteland)
+"Wp" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "Wv" = (
 /obj/effect/decal/cleanable/dirt/dust{
@@ -3511,6 +7008,25 @@
 	footstep = "grass"
 	},
 /area/f13/wasteland)
+"Wx" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "WE" = (
 /obj/structure/rack/shelf_wood{
 	density = 0;
@@ -3520,6 +7036,22 @@
 	pixel_y = 35
 	},
 /turf/open/indestructible/ground/outside/civ/woodalt,
+/area/f13/wasteland)
+"WG" = (
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "WK" = (
 /obj/structure/fluff/hedge,
@@ -3581,6 +7113,26 @@
 	name = "pond water"
 	},
 /area/f13/wasteland)
+"Xq" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "Xt" = (
 /obj/effect/decal/cleanable/dirt/dust{
 	color = "#997950"
@@ -3606,6 +7158,21 @@
 	color = "#555555";
 	footstep = "grass"
 	},
+/area/f13/wasteland)
+"Xv" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/structure/nest/gecko{
+	pixel_y = 17
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "Xy" = (
 /obj/structure/railing/wood{
@@ -3668,6 +7235,19 @@
 "XN" = (
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/wasteland)
+"XR" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "Yc" = (
 /obj/effect/decal/cleanable/dirt/dust{
 	color = "#997950"
@@ -3718,6 +7298,20 @@
 	},
 /turf/open/indestructible/ground/outside/civ/woodalt,
 /area/f13/wasteland)
+"YS" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "YV" = (
 /obj/effect/decal/cleanable/dirt/dust{
 	color = "#997950"
@@ -3753,6 +7347,22 @@
 	color = "#555555";
 	footstep = "grass"
 	},
+/area/f13/wasteland)
+"Zc" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "Zk" = (
 /obj/effect/decal/cleanable/dirt/dust{
@@ -3805,6 +7415,77 @@
 	footstep = "grass"
 	},
 /area/f13/wasteland)
+"ZD" = (
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"ZH" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 4
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"ZJ" = (
+/obj/structure/cave/stalagmite{
+	icon_state = "stalagmite4"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"ZK" = (
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/mob/living/simple_animal/hostile/gecko/tribal/hunter{
+	name = "lizardfolk hunter";
+	retreat_distance = 2
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/outside/civ/grass3{
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	color = "#555555";
+	footstep = "grass"
+	},
+/area/f13/wasteland)
+"ZS" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
 "ZX" = (
 /obj/effect/decal/cleanable/dirt/dust{
 	color = "#997950"
@@ -3814,6 +7495,21 @@
 	},
 /turf/open/indestructible/ground/outside/civ/woodalt{
 	color = "#CACACA"
+	},
+/area/f13/wasteland)
+"ZZ" = (
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/outside/civ/grass3{
+	barefootstep = "grass";
+	clawfootstep = "grass";
+	color = "#555555";
+	footstep = "grass"
 	},
 /area/f13/wasteland)
 
@@ -11078,24 +14774,24 @@ aC
 aC
 aC
 UH
+ay
+ay
+ay
+ay
+gs
+UH
+UH
+UH
+UH
+UH
+UH
+UH
+UH
 UH
 UH
 UH
 UH
 ay
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-UH
 oJ
 oJ
 UH
@@ -11335,29 +15031,29 @@ aC
 aC
 oJ
 oJ
+UH
+ay
+ay
+UH
+UH
+UH
+UH
+UH
+UH
+UH
+UH
+UH
+UH
+UH
+UH
+UH
+UH
+UH
 oJ
 UH
 UH
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
+UH
+UH
 oJ
 oJ
 oJ
@@ -11592,29 +15288,29 @@ aC
 aC
 oJ
 oJ
+ay
+UH
+UH
+UH
+UH
+UH
+UH
+UH
+UH
+UH
+UH
+UH
+UH
+UH
+UH
+UH
+UH
 UH
 oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
+UH
+UH
+UH
+UH
 oJ
 oK
 oK
@@ -11849,31 +15545,31 @@ aC
 UH
 oJ
 oJ
+ay
+UH
+UH
+UH
+UH
+UH
+UH
+UH
+UH
+UH
+UH
+UH
+UH
+UH
+UH
+UH
+UH
 UH
 oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
+UH
+UH
+ay
+ay
+UH
+UH
 oK
 oJ
 UH
@@ -12104,33 +15800,33 @@ aC
 aC
 aC
 UH
-oJ
-oJ
 UH
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
+UH
+UH
+rf
+rf
+rf
+rf
+rf
+rf
+rf
+rf
+rf
+rf
+rf
+rf
+rf
+rf
+rf
+rf
+rf
+Gm
+tR
+UH
+ay
+ay
+UH
+UH
 oK
 oJ
 UH
@@ -12361,33 +16057,33 @@ aC
 aC
 aC
 UH
-oJ
-oJ
 UH
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-oJ
-oJ
-oJ
-oJ
-oJ
+UH
+UH
+rf
+rf
+CK
+gc
+WG
+CW
+UL
+rf
+rf
+cj
+tA
+Ti
+Nc
+rf
+rf
+rf
+rf
+rf
+rf
+rf
+UH
+UH
+UH
+UH
 oK
 oK
 UH
@@ -12620,31 +16316,31 @@ aC
 UH
 oJ
 UH
+UH
+rf
+rf
+rd
+By
+xD
+fM
+Zc
+rf
+rf
+Es
+Vj
+ur
+zA
+rt
+UL
+rf
+rf
+rf
+rf
+rf
+rf
 oJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-oJ
-oJ
-oJ
-oJ
-oJ
+UH
+UH
 oJ
 oK
 oJ
@@ -12878,31 +16574,31 @@ UH
 oJ
 UH
 UH
-vJ
+rf
+rf
+Co
+Vw
+Pw
+SU
+qa
+rf
+rf
+SF
+vI
+ne
+Zc
+rf
+Gi
+Ti
+ZD
+Ti
+yj
+rf
+rf
 oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-vJ
-vJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-vJ
-vJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
+UH
+UH
+UH
 oK
 oJ
 ay
@@ -13134,32 +16830,32 @@ aC
 UH
 oJ
 UH
+UH
+rf
+rf
+NN
+fM
+qU
+HT
+nb
+rf
+rf
+gl
+mq
+mv
+FA
+rf
+Eb
+NX
+Xv
+vf
+QZ
+rf
+rf
 oJ
-vJ
-oJ
-vJ
-vJ
-vJ
-vJ
-oJ
-vJ
-vJ
-oJ
-vJ
-vJ
-oJ
-vJ
-vJ
-vJ
-oJ
-vJ
-vJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
+UH
+UH
+UH
 oK
 oJ
 ay
@@ -13391,32 +17087,32 @@ aC
 UH
 oJ
 UH
+UH
+rf
+rf
+vm
+zh
+HJ
+DB
+Wp
+rf
+rf
+rf
+rf
+rf
+rf
+rf
+qU
+nb
+fM
+QC
+QZ
+rf
+rf
+Gm
 oJ
-vJ
-oJ
-vJ
-vJ
-vJ
-vJ
-oJ
-vJ
-vJ
-oJ
-vJ
-vJ
-oJ
-vJ
-vJ
-vJ
-oJ
-vJ
-vJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
+UH
+UH
 oK
 oJ
 ay
@@ -13648,29 +17344,29 @@ aC
 UH
 oJ
 UH
-oJ
-vJ
-oJ
-oJ
-vJ
-oJ
-oJ
-vJ
-vJ
-vJ
-oJ
-vJ
-vJ
-oJ
-vJ
-vJ
-vJ
-oJ
-vJ
-vJ
-oJ
-oJ
-oJ
+UH
+rf
+rf
+rf
+rf
+rf
+eb
+rf
+rf
+rf
+CL
+zG
+zG
+zG
+NF
+mn
+uX
+jK
+oz
+pj
+rf
+rf
+Gm
 oJ
 oJ
 oJ
@@ -13905,33 +17601,33 @@ aC
 UH
 oJ
 UH
+UH
+rf
+rf
+rf
+rf
+rf
+Gv
+Qc
+CW
+tA
+pR
+rf
+rf
+rf
+rf
+iv
+fM
+KO
+fM
+Zc
+rf
+rf
+Gm
 oJ
-vJ
-vJ
-oJ
-oJ
-oJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
+UH
+UH
+UH
 oK
 oJ
 ay
@@ -14162,33 +17858,33 @@ aC
 UH
 oJ
 UH
+UH
+rf
+rf
+rf
+rf
+rf
+oH
+Ns
+fM
+QA
+pj
+rf
+rf
+rf
+rf
+uB
+yC
+jQ
+yC
+xi
+rf
+rf
+Gm
 oJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
+UH
+UH
+UH
 oK
 oJ
 UH
@@ -14419,33 +18115,33 @@ aC
 UH
 oJ
 UH
+UH
+rf
+ev
+VO
+MJ
+rf
+jq
+tX
+BR
+fM
+Zc
+rf
+HC
+Tf
+rf
+eb
+rf
+rf
+rf
+eb
+rf
+rf
+Gm
 oJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-vJ
-vJ
-vJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
+UH
+UH
+UH
 oK
 oJ
 UH
@@ -14675,34 +18371,34 @@ aC
 aC
 UH
 oJ
+UH
+UH
+rf
+fY
+ne
+pf
+tO
+Ah
+fM
+IP
+aH
+qa
+rf
+qU
+BU
+zG
+qS
+rf
+rf
+rf
+tf
+UL
+rf
+Gm
 oJ
-oJ
-vJ
-vJ
-oJ
-oJ
-oJ
-oJ
-oJ
-vJ
-vJ
-oJ
-oJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
+UH
+UH
+UH
 oK
 oJ
 UH
@@ -14932,34 +18628,34 @@ aC
 UH
 UH
 UH
+UH
+UH
+rf
+Gb
+qb
+Uu
+rf
+Qz
+zh
+HJ
+dM
+Wp
+rf
+RT
+Mj
+rf
+rf
+rf
+rf
+rf
+rf
+Zc
+rf
+Gm
 oJ
-oJ
-vJ
-oJ
-oJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-oJ
-oJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
+UH
+UH
+UH
 oK
 oJ
 UH
@@ -15189,34 +18885,34 @@ aC
 UH
 UH
 UH
+UH
+UH
+rf
+il
+FT
+aB
+rf
+rf
+rf
+rf
+Xq
+rf
+rf
+rf
+rf
+rf
+rf
+rf
+rf
+rf
+CL
+qS
+rf
+Gm
 oJ
-oJ
-vJ
-vJ
-oJ
-oJ
-oJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-oJ
-oJ
-vJ
-vJ
-vJ
-vJ
-vJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
+UH
+UH
+UH
 oK
 oJ
 UH
@@ -15446,34 +19142,34 @@ aC
 UH
 UH
 oJ
+UH
+UH
+rf
+Hd
+yo
+rf
+rf
+rf
+rf
+rf
+Zc
+rf
+rf
+rf
+rf
+rf
+rf
+rf
+rf
+CL
+qS
+rf
+rf
+Gm
 oJ
-oJ
-vJ
-vJ
-vJ
-vJ
-oJ
-oJ
-oJ
-vJ
-vJ
-vJ
-vJ
-oJ
-oJ
-oJ
-oJ
-oJ
-vJ
-vJ
-vJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
+UH
+UH
+UH
 oK
 oJ
 UH
@@ -15703,34 +19399,34 @@ bL
 ay
 UH
 UH
+UH
+UH
+rf
+rf
+rf
+rf
+wd
+ym
+Tf
+rf
+uB
+rO
+Pg
+yC
+fr
+yC
+BR
+rf
+rf
+Zc
+rf
+rf
+rf
+Gm
 oJ
-oJ
-vJ
-oJ
-oJ
-oJ
-oJ
-vJ
-vJ
-vJ
-vJ
-vJ
-oJ
-oJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
+UH
+UH
+UH
 oK
 oJ
 UH
@@ -15960,34 +19656,34 @@ bL
 ay
 UH
 UH
+UH
+UH
+rf
+rf
+rf
+rf
+RT
+mp
+pj
+rf
+Zc
+rf
+Cq
+fM
+fF
+fM
+du
+rf
+rf
+Rw
+ZH
+rf
+rf
+Gm
 oJ
-oJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
+UH
+UH
+UH
 oK
 oJ
 UH
@@ -16217,35 +19913,35 @@ UH
 UH
 UH
 oJ
+UH
+UH
+rf
+rf
+rf
+rf
+rf
+rf
+vh
+rf
+Zc
+rf
+Gi
+HI
+rT
+OX
+tl
+rf
+rf
+rf
+Zc
+rf
+rf
+Gm
 oJ
-oJ
-vJ
-oJ
-vJ
-vJ
-vJ
-vJ
-oJ
-vJ
-vJ
-oJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
+Xb
+Xb
+Xb
+nM
 oJ
 oJ
 oJ
@@ -16474,39 +20170,39 @@ UH
 UH
 UH
 oJ
+UH
+UH
+rf
+rf
+rf
+uN
+Iv
+fM
+ET
+Ie
+oG
+rf
+qU
+GL
+fM
+Pp
+QZ
+rf
+rf
+rf
+Zc
+rf
+rf
+rf
+rf
+Vq
+VI
+sW
+nM
+am
+nM
 oJ
-oJ
-vJ
-oJ
-vJ
-vJ
-vJ
-oJ
-oJ
-vJ
-vJ
-oJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-BV
-oJ
-oJ
-oJ
-oJ
-oJ
+nM
 oJ
 oJ
 oJ
@@ -16731,39 +20427,39 @@ UH
 UH
 UH
 oJ
-oJ
-oJ
-vJ
-oJ
-vJ
-vJ
-oJ
-oJ
-vJ
-vJ
-vJ
-oJ
-oJ
-vJ
-oJ
-oJ
-oJ
-oJ
-vJ
-vJ
-vJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
+UH
+UH
+rf
+rf
+rf
+MB
+CC
+dp
+qa
+rf
+rf
+rf
+gl
+qK
+yC
+Gd
+Wp
+rf
+rf
+rf
+Zc
+rf
+rf
+rf
+rf
+rf
+DL
+sW
+tT
+DX
+am
+qz
+nM
 oJ
 oJ
 oJ
@@ -16988,40 +20684,40 @@ UH
 UH
 UH
 oJ
-oJ
-oJ
-vJ
-oJ
-oJ
-oJ
-vJ
-vJ
-vJ
-vJ
-vJ
-oJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-Io
-oJ
-oJ
-oJ
-oJ
-hv
+UH
+UH
+rf
+rf
+rf
+ti
+Vw
+CN
+LC
+Tf
+rf
+rf
+rf
+rf
+rf
+DM
+rf
+rf
+rf
+rf
+vm
+zG
+zG
+Ie
+ZS
+Gj
+Uv
+DX
+tF
+oE
+tT
+qz
+Eu
+zN
 oJ
 oJ
 oJ
@@ -17245,45 +20941,45 @@ UH
 UH
 UH
 oJ
+UH
+UH
+rf
+rf
+rf
+bj
+fM
+eW
+ZJ
+QZ
+rf
+rf
+rf
+rf
+SF
+zo
+yC
+Un
+QO
+rf
+rf
+rf
+rf
+rf
+RT
+Um
+HT
+cz
+Td
+nM
+oJ
+ld
+nM
 oJ
 oJ
-vJ
-oJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-oJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-hX
-oJ
-oJ
-oJ
-oJ
+nM
 BV
-oJ
-oJ
+nM
+nM
 oJ
 oJ
 oJ
@@ -17502,45 +21198,45 @@ UH
 UH
 UH
 oJ
+UH
+UH
+rf
+rf
+rf
+Gf
+Gj
+Tk
+Pf
+YS
+rf
+rf
+rf
+rf
+ea
+QZ
+nf
+Wi
+QZ
+rf
+rf
+rf
+rf
+rf
+rf
+Vq
+VI
+DX
+tT
+DX
+SX
+nM
+DX
 oJ
+nM
+nM
 oJ
-vJ
-oJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
+nM
+nM
 oJ
 oJ
 oJ
@@ -17758,46 +21454,46 @@ aC
 UH
 UH
 UH
-oJ
-oJ
-oJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-vJ
-vJ
-vJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
+UH
+UH
+rf
+rf
+rf
+rf
+Sf
+xv
+Vw
+jY
+Wp
+rf
+rf
+rf
+rf
+gl
+tX
+yC
+HJ
+Wp
+rf
+rf
+rf
+rf
+rf
+rf
+rf
+kj
+GD
+jV
+nM
 oJ
 nM
 nM
+tT
+tT
 oJ
+am
 oJ
-oJ
-oJ
-oJ
+nM
 oJ
 oJ
 oJ
@@ -18015,45 +21711,45 @@ aC
 UH
 UH
 UH
-oJ
-oJ
-oJ
-vJ
-vJ
-vJ
-vJ
-vJ
-oJ
-oJ
-vJ
-vJ
-oJ
-vJ
-vJ
-oJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
+UH
+UH
+rf
+rf
+rf
+rf
+rf
+Ko
+rf
+rf
+rf
+rf
+rf
+rf
+rf
+rf
+rf
+rf
+rf
+rf
+rf
+rf
+rf
+rf
+rf
+rf
+XR
+NO
+eR
+Td
+tT
+DX
 nM
 nM
-oJ
-oJ
-oJ
-oJ
 nM
 tT
 tT
-tT
+Td
+Td
 oJ
 oJ
 oJ
@@ -18273,43 +21969,43 @@ UH
 UH
 oJ
 UH
-oJ
-oJ
-vJ
-vJ
-oJ
-oJ
-oJ
-oJ
-vJ
-vJ
-vJ
-oJ
-vJ
-vJ
-oJ
-oJ
-vJ
-vJ
-vJ
-vJ
-vJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
+UH
+rf
+rf
+uL
+Pj
+rf
+Zc
+rf
+rf
+rf
+rf
+rf
+rf
+rf
+rf
+rf
+Li
+Li
+Li
+Li
+UH
+UH
+UH
+aL
+dp
+Uv
+DX
+kY
+iG
 nM
+ZK
 nM
-nM
-oJ
-oJ
-oJ
-nM
-nM
+tT
+tT
+Iu
+tT
+Td
 oJ
 tT
 nM
@@ -18530,43 +22226,43 @@ UH
 UH
 oJ
 UH
+UH
+rf
+rf
+On
+QZ
+rf
+uB
+fO
+CW
+tA
+WG
+Nv
+Oj
+rf
+rf
 oJ
-oJ
-vJ
-vJ
-oJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-oJ
-vJ
-vJ
-oJ
-vJ
-oJ
-oJ
-vJ
-vJ
-vJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
+UH
+UH
+UH
+UH
+UH
+UH
+UH
+UH
+sW
+cu
+GD
+tT
+DX
 oJ
 nM
-nM
-nM
 oJ
+kN
+oC
+oC
 nM
+tT
 nM
 nM
 nM
@@ -18787,43 +22483,43 @@ UH
 UH
 oJ
 UH
+UH
+rf
+KF
+eI
+Is
+rf
+Zc
+rf
+rf
+MB
+QZ
+fM
+Zc
+rf
+rf
 oJ
+UH
+UH
+UH
+UH
+UH
+UH
+UH
+UH
 oJ
-vJ
-vJ
-oJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-oJ
-oJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-oJ
-oJ
-oJ
-oJ
-oJ
-hv
-oJ
-Io
-oJ
+nM
+wP
+tT
+JZ
+nM
 BV
+Td
+ZZ
+tT
+tT
+hy
 nM
-oJ
-nM
-nM
-hX
-oJ
 nM
 nM
 nM
@@ -19044,41 +22740,41 @@ UH
 UH
 oJ
 UH
+UH
+rf
+rf
+CB
+rf
+rf
+Ko
+rf
+rf
+Dw
+Pd
+xR
+Bq
+rf
+rf
 oJ
-oJ
-vJ
-vJ
-oJ
-oJ
-oJ
-oJ
-oJ
-vJ
-vJ
-vJ
-oJ
-oJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
+UH
+UH
+UH
+UH
+UH
+UH
+UH
+UH
 oJ
 oJ
 oJ
 oJ
 oJ
+nM
 oJ
 oJ
 oJ
+oJ
+nM
 oJ
 oJ
 oJ
@@ -19301,30 +22997,30 @@ UH
 UH
 oJ
 UH
+UH
+rf
+fl
+LD
+WG
+CW
+Wx
+rf
+rf
+ti
+cT
+Um
+kc
+rf
+rf
 oJ
-oJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-oJ
-oJ
-oJ
+UH
+UH
+UH
+UH
+UH
+UH
+UH
+UH
 oJ
 oJ
 oJ
@@ -19558,30 +23254,30 @@ UH
 UH
 oJ
 UH
+UH
+rf
+KV
+MZ
+pj
+fM
+ms
+rf
+rf
+lg
+fM
+eW
+YS
+rf
+rf
 oJ
-oJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-vJ
-oJ
-oJ
-oJ
+UH
+UH
+UH
+UH
+UH
+UH
+UH
+UH
 oJ
 UH
 UH
@@ -19625,7 +23321,7 @@ oJ
 oJ
 nM
 nM
-oJ
+qz
 oJ
 oJ
 oJ
@@ -19815,30 +23511,30 @@ UH
 UH
 oJ
 UH
+UH
+rf
+Cq
+fM
+Gi
+Gj
+bo
+rf
+rf
+JV
+hY
+HJ
+Wp
+rf
+rf
 oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
+UH
+UH
+UH
+UH
+UH
+UH
+UH
+UH
 oJ
 UH
 bb
@@ -20072,30 +23768,30 @@ UH
 UH
 oJ
 UH
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
+UH
+rf
+zr
+Gj
+FB
+Pf
+QZ
+rf
+rf
+rf
+rf
+rf
+rf
+rf
+rf
 oJ
 UH
 UH
+UH
+UH
+UH
+UH
+ay
+ay
 UH
 aC
 aC
@@ -20329,20 +24025,20 @@ UH
 UH
 UH
 oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
+UH
+rf
+jR
+Ck
+MZ
+Rk
+Wp
+rf
+rf
+Li
+rf
+rf
+rf
+rf
 oJ
 oJ
 oJ
@@ -20586,20 +24282,20 @@ UH
 UH
 UH
 oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
+UH
+rf
+rf
+rf
+rf
+rf
+rf
+Gm
+Gm
+UH
+UH
+UH
+UH
+UH
 oJ
 UH
 UH
@@ -20649,8 +24345,8 @@ hX
 oJ
 oJ
 oJ
-nM
-oJ
+Qr
+qz
 oJ
 oJ
 oJ
@@ -20843,14 +24539,14 @@ UH
 UH
 oJ
 oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
-oJ
+UH
+rf
+rf
+rf
+rf
+rf
+Li
+UH
 oJ
 oJ
 oJ
@@ -21100,11 +24796,11 @@ UH
 UH
 UH
 oJ
-oJ
-oJ
-oJ
-oJ
-oJ
+UH
+UH
+UH
+UH
+UH
 oJ
 oJ
 oJ
@@ -21420,7 +25116,7 @@ tT
 Td
 tT
 tT
-nM
+Qr
 nM
 nM
 nM
@@ -21683,7 +25379,7 @@ nM
 nM
 nM
 nM
-oJ
+qz
 oJ
 oJ
 oJ
@@ -22445,7 +26141,7 @@ oJ
 Ag
 oJ
 oJ
-nM
+Qr
 oJ
 oJ
 nM
@@ -22702,13 +26398,13 @@ oJ
 oJ
 yR
 nM
-oJ
-oJ
+qz
+qz
 oJ
 NI
 oJ
 oJ
-nM
+Qr
 nM
 nM
 tT
@@ -22961,12 +26657,12 @@ oJ
 oJ
 oJ
 oJ
+qz
 oJ
 oJ
 oJ
-oJ
-oJ
-oJ
+qz
+qz
 nM
 nM
 oJ
@@ -24001,7 +27697,7 @@ oJ
 oJ
 oJ
 oJ
-tT
+IV
 Td
 tT
 nM
@@ -27121,7 +30817,7 @@ oJ
 wb
 oJ
 Td
-GI
+JT
 tT
 nM
 oJ
@@ -27371,7 +31067,7 @@ Ui
 nG
 Xt
 Td
-tT
+IV
 Td
 Td
 tT
@@ -27630,7 +31326,7 @@ GI
 Xt
 Xt
 GI
-nM
+Qr
 nG
 Wv
 tT
@@ -28398,7 +32094,7 @@ UH
 oJ
 oJ
 oJ
-nM
+Qr
 tT
 wa
 tT
@@ -28660,7 +32356,7 @@ US
 nM
 oJ
 tT
-nM
+Qr
 GI
 Td
 nM
