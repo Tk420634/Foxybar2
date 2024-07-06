@@ -142,6 +142,24 @@
 		SOUND_LOOP_ENTRY('sound/f13ambience/bird_8.ogg', 10 SECONDS, 1),
 	)
 
+/datum/looping_sound/ambient/critters/birds/two/birdharder
+	chance = 40
+	vary = FALSE
+	vary_direction = TRUE
+	volume = SOUND_LOOP_VOL_RANGE(30, 50)
+	direct = TRUE
+	loop_delay = 2 MINUTES
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/f13ambience/bird_1.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/bird_2.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/bird_3.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/bird_4.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/bird_5.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/bird_6.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/bird_7.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/bird_8.ogg', 10 SECONDS, 1),
+	)
+
 /datum/looping_sound/ambient/critters/birds/louder
 	chance = 80
 	loop_delay = 0
@@ -519,3 +537,15 @@
 		SOUND_LOOP_ENTRY('sound/f13ambience/creek_07.ogg', 2 SECONDS, 10),
 		SOUND_LOOP_ENTRY('sound/f13ambience/creek_08.ogg', 2 SECONDS, 10),
 		)
+
+/datum/looping_sound/ambient/kf/forestmusic
+	chance = 80
+	vary = FALSE
+	volume = SOUND_LOOP_VOL_RANGE(40, 70)
+	direct = TRUE
+	loop_delay = 1 MINUTES
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('modular_coyote/sound/kfmusic/kf-ambimusic-1.ogg', 130 SECONDS, 1),
+		SOUND_LOOP_ENTRY('modular_coyote/sound/kfmusic/kf-ambimusic-2.ogg', 130 SECONDS, 1),
+		
+	)
