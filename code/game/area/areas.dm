@@ -16,7 +16,7 @@ GLOBAL_LIST_INIT(area_weather_list, list(WEATHER_ALL))
 	plane = BLACKNESS_PLANE //Keeping this on the default plane, GAME_PLANE, will make area overlays fail to render on FLOOR_PLANE.
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	invisibility = INVISIBILITY_LIGHTING
-
+	alpha = 50
 	var/safe_town
 
 	/// Set in New(); preserves the name set by the map maker, even if renamed by the Blueprints.
@@ -46,7 +46,7 @@ GLOBAL_LIST_INIT(area_weather_list, list(WEATHER_ALL))
 	var/considered_hull_exterior = FALSE
 
 	var/fire = null
-	var/atmos = TRUE
+	var/atmos = FALSE
 	var/atmosalm = FALSE
 	var/poweralm = TRUE
 	var/lightswitch = TRUE
@@ -55,7 +55,7 @@ GLOBAL_LIST_INIT(area_weather_list, list(WEATHER_ALL))
 	var/beauty = 0 // Beauty average per open turf in the area
 	var/beauty_threshold = 150 //If a room is too big it doesn't have beauty.
 
-	var/requires_power = TRUE
+	var/requires_power = FALSE
 	/// This gets overridden to 1 for space in area/Initialize().
 	var/always_unpowered = FALSE
 
