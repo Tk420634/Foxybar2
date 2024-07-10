@@ -20,7 +20,7 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 		ART_RARITY_UNIQUE = 0,
 	)
 
-	var/spawn_chance = 1 // chance for an artifact to spawn per tick
+	var/spawn_chance = 0.000000000000000000000000000000000000000001 // chance for an artifact to spawn per tick
 	var/use_valid_ball_spawner_chance = 50 // chance for an artifact to use a valid ball spawner
 
 	var/list/buffs_by_rarity = list(
@@ -368,7 +368,6 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 		/datum/quirk/alcohol_tolerance,
 		/datum/quirk/drunkhealing,
 		/datum/quirk/brickwall,
-		/datum/quirk/bowtrained
 	)
 
 	var/list/prefixes_speed_good = list()

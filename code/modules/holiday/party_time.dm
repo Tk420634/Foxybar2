@@ -26,7 +26,7 @@
 
 /datum/holiday/weekly/potluck/celebrate()
 	. = ..()
-	world.TgsTargetedChatBroadcast("<@&1147595783147880568> Come on down for the Knotingham Forest meet, greet, n' eat!  Gather in new folks, won't be so lonely if you're all new together!  Let's get y'all settled in!", FALSE)
+	world.TgsTargetedChatBroadcast("<@&1147595783147880568> Come on down for the the Bar at the End of the Universe meet, greet, n' eat!  Gather in new folks, won't be so lonely if you're all new together!  Let's get y'all settled in!", FALSE)
 	START_PROCESSING(SSevents, src) // I love processing nonprocessing subsystems
 
 /datum/holiday/weekly/potluck/greet()

@@ -220,6 +220,7 @@
 	lose_text = span_notice("Pain has become less exciting for you.")
 */
 
+/*
 /datum/quirk/alcohol_intolerance
 	name = "Alcohol Intolerance"
 	desc = "You take toxin damage from alcohol rather than getting drunk."
@@ -242,6 +243,7 @@
 	if(H)
 		var/datum/species/species = H.dna.species
 		species.disliked_food &= ~ALCOHOL
+*/
 
 /*
 /datum/quirk/longtimer
@@ -827,7 +829,7 @@
 	lose_text = span_danger("The tingle in your mouth fades.")
 	locked = FALSE
 	human_only = FALSE
-*/
+
 
 /datum/quirk/touch_heal
 	name = "Innate healing - Magic"
@@ -842,7 +844,7 @@
 	locked = FALSE
 	human_only = FALSE
 
-/*
+
 /datum/quirk/tend_heal
 	name = "Innate healing - Triage"
 	desc = "You keep a tiny kit of medical supplies stashed away for emergencies."

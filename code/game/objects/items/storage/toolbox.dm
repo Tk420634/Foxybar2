@@ -81,8 +81,8 @@ GLOBAL_LIST_EMPTY(rubber_toolbox_icons)
 	new /obj/item/wrench(src)
 	new /obj/item/weldingtool(src)
 	new /obj/item/crowbar(src)
-//	new /obj/item/analyzer(src)		// Knotingham Forest Edit, due to disabled atmos, analyzers are useless.
-	new /obj/item/multitool(src)	// Knotingham Forest Edit, no need to gatekeep the multitool?
+//	new /obj/item/analyzer(src)		// the Bar at the End of the Universe Edit, due to disabled atmos, analyzers are useless.
+	new /obj/item/multitool(src)	// the Bar at the End of the Universe Edit, no need to gatekeep the multitool?
 	new /obj/item/wirecutters(src)
 
 /obj/item/storage/toolbox/mechanical/old

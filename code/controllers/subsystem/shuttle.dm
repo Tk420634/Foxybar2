@@ -85,7 +85,7 @@ SUBSYSTEM_DEF(shuttle)
 		supply_packs[P.type] = P
 
 	initial_load()
-	// Not used on Knotingham Forest.
+	// Not used on the Bar at the End of the Universe.
 //	if(!arrivals)
 //		WARNING("No /obj/docking_port/mobile/arrivals placed on the map!")
 	if(!emergency)

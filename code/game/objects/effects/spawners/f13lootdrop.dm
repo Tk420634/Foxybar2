@@ -2387,7 +2387,7 @@ there should be very few of these spawns on the whole map. finding one should be
 				/obj/item/stack/crafting/goodparts/three = 2
 				)
 */
-// Updated money spawners to era match to Knotingham Forest's date, 2222. ~TK420634
+// Updated money spawners to era match to the Bar at the End of the Universe's date, 2222. ~TK420634
 // Also, fuck this multi-tiered way of trying to spawn money into the game.  Cludged together crap, my dude.
 
 

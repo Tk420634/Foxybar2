@@ -144,7 +144,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	value = 14
 	category = "Food Quirks"
 	mechanics = "Booze only delivers 70% of its alcohol power."
-	conflicts = list(/datum/quirk/alcohol_intolerance)
+	conflicts = list()
 	mob_trait = TRAIT_ALCOHOL_TOLERANCE
 	gain_text = span_notice("You feel like you could drink a whole keg!")
 	lose_text = span_danger("You don't feel as resistant to alcohol anymore. Somehow.")
@@ -220,7 +220,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	value = 14
 	category = "Food Quirks"
 	mechanics = "When drunk you slowly heal damage from all groups except wounds & bloodloss."
-	conflicts = list(/datum/quirk/alcohol_intolerance)
+	conflicts = list()
 	mob_trait = TRAIT_DRUNK_HEALING
 	gain_text = span_notice("You feel like a drink would do you good.")
 	lose_text = span_danger("You no longer feel like drinking would ease your pain.")
@@ -628,6 +628,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	new /obj/machinery/chem_master/primitive(H)
 */
 
+/*
 /datum/quirk/gunsmith
 	name = "Weaponsmith - Basic"
 	desc = "You know how to make various weapons, protective vests, gun mods, and can now forge weapons at an anvil. The list is too large to try and put here."
@@ -669,6 +670,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	gain_text = span_notice("Your smithed weapons will now be of masterwork quality.")
 	lose_text = span_danger("You seem less adept at crafting masterworks.")
 	medical_record_text = "Patient appears to be a well renowned gunsmith."
+*/
 
 /*
 /datum/quirk/voracious
@@ -706,7 +708,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 /datum/quirk/bloodpressure/remove()
 	if(quirk_holder)
 		quirk_holder.blood_ratio = 1
-*/
+
 
 //Can be turned into an alchemist quirk?
 /datum/quirk/tribal_tech
@@ -725,7 +727,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	locked = TRUE
 	human_only = FALSE
 
-/*
+
 /datum/quirk/dna_whiz
 	name = "Dna Whiz"
 	desc = "You can sequence plant genomes with a snap of your fingers!"
@@ -854,6 +856,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	if(soh)
 		qdel(soh)
 
+/*
 //Butcher quirk
 /datum/quirk/trapper
 	name = "Trapper"
@@ -869,6 +872,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	medical_record_text = "Patient often describes how they clean and skin animals."
 	locked = FALSE
 	human_only = FALSE
+
 
 /datum/quirk/bigleagues
 	name = "Melee - Big Leagues"
@@ -902,7 +906,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	locked = FALSE
 	human_only = FALSE
 
-/*
+
 /datum/quirk/chemwhiz
 	name = "Chem Whiz"
 	desc = "You've been playing around with chemicals all your life. You know how to use chemistry machinery."
@@ -933,7 +937,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	var/mob/living/carbon/human/H = quirk_holder
 	if(H)
 		H.mind.learned_recipes -= GLOB.chemwhiz_recipes
-*/
+
 
 /datum/quirk/pa_wear
 	name = "Power Armor Crafting"
@@ -949,7 +953,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	medical_record_text = "Patient claims to wear a powerful suit of metal."
 	locked = FALSE
 
-/*
+
 /datum/quirk/hard_yards
 	name = "Mobility - Wasteland Trekker"
 	desc = "You've spent a lot of time wandering the wastes, and for your hard work you out pace most folks when travelling across them."
@@ -986,7 +990,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	lose_text = span_danger("The world beneath your heels suddenly feels like tugging you down...")
 	medical_record_text = "Patient describes going on walks."
 	locked = FALSE
-*/
+
 
 /datum/quirk/lifegiver
 	name = "Health - Tough"
@@ -1030,7 +1034,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	H.maxHealth += 20
 	H.health += 20
 
-/*
+
 /datum/quirk/iron_fist
 	name = "Fists of Iron"
 	desc = "You have fists of kung-fury! Increases unarmed damage."
@@ -1074,7 +1078,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	var/mob/living/carbon/human/H = quirk_holder
 	H.dna.species.punchdamagelow = STEEL_FIST_PUNCH_DAMAGE_LOW
 	H.dna.species.punchdamagehigh = STEEL_FIST_PUNCH_DAMAGE_MAX
-*/
+
 
 /datum/quirk/surgerylow
 	name = "Minor Surgery"
@@ -1127,7 +1131,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	locked = FALSE
 	human_only = FALSE
 
-/*
+
 /datum/quirk/explosive_crafting
 	name = "Explosives Crafting"
 	desc = "You have strong feelings about the future of industrial society."
@@ -1686,7 +1690,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	medical_record_text = "Patient repeatedly scores baskets in the trashcan."
 	locked =  FALSE
 	human_only = FALSE
-*/
+
 
 //Should go to all the 'combat' classes
 /datum/quirk/bowtrained
@@ -1704,7 +1708,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	locked =  FALSE
 	human_only = FALSE
 
-/*
+
 /datum/quirk/masterrifleman
 	name = "Bolt Worker"
 	desc = "You've spent a lot of time working the bolt of a rifle, or the pump action of a shotgun. Your skill allows you to click to work the action instead of doing it manually."
@@ -1752,7 +1756,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	lose_text = span_danger("You feel that laying down in a field of gunfire may not be such a good idea after all.")
 	medical_record_text = "Patient has failed heart monitoring tests multiple times."
 	locked =  FALSE
-*/
+
 
 /datum/quirk/packrat
 	name = "Packrat"
@@ -1763,7 +1767,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	conflicts = list()
 	mob_trait = TRAIT_PACKRAT
 
-/*
+
 /datum/quirk/ratfriend
 	name = "Beast Friend - Rats"
 	desc = "Rats and wild mice of all kind outright ignore you now."
