@@ -263,11 +263,10 @@
 		AREA_SOUND('sound/f13ambience/bird_8.ogg', 10 SECONDS))
 
 	ambience_area = list(
-		/datum/looping_sound/ambient/town,
-		/datum/looping_sound/ambient/general,
 		/datum/looping_sound/ambient/swamp/quiet,
 		/datum/looping_sound/ambient/critters/birds,
 		/datum/looping_sound/ambient/critters/birds/crow,
+		/datum/looping_sound/ambient/fb/parkinglot
 		)
 	weather_tags = list(WEATHER_SAFE)
 	outdoors = TRUE
@@ -283,6 +282,25 @@
 /area/f13/wasteland/city/newboston/bar
 	name = "New Boston Bar"
 	icon_state = "alcohol"
+
+	ambience_area = list(
+		/datum/looping_sound/ambient/fb/bar,
+		/datum/looping_sound/ambient/woodcreak,
+		/datum/looping_sound/ambient/lightbulb,
+		)
+	outdoors = FALSE
+
+/area/f13/fb/bar
+	name = "Foxy Bar"
+	icon_state = "alcohol"
+
+	ambience_area = list(
+		/datum/looping_sound/ambient/fb/bar,
+		/datum/looping_sound/ambient/woodcreak,
+		/datum/looping_sound/ambient/lightbulb,
+		/datum/looping_sound/ambient/fb/brownnoise,
+		/datum/looping_sound/ambient/fb/fannoise
+		)
 	outdoors = FALSE
 
 /area/f13/wasteland/city/newboston/bank

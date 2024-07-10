@@ -440,7 +440,7 @@
 	chance = 100
 	vary = FALSE
 	vary_direction = TRUE
-	volume = SOUND_LOOP_VOL_RANGE(100, 100)
+	volume = SOUND_LOOP_VOL_RANGE(40, 60)
 	direct = TRUE
 	loop_delay = 0 SECONDS
 	mid_sounds = list(
@@ -549,3 +549,46 @@
 		SOUND_LOOP_ENTRY('modular_coyote/sound/kfmusic/kf-ambimusic-2.ogg', 130 SECONDS, 1),
 		
 	)
+
+/datum/looping_sound/ambient/fb/parkinglot
+	chance = 100
+	vary = FALSE
+	volume = SOUND_LOOP_VOL_RANGE(50, 70)
+	direct = TRUE
+	loop_delay = 2 MINUTES
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/ambience/parkinglotambi.ogg', 124 SECONDS, 1),
+		
+	)
+
+/datum/looping_sound/ambient/fb/bar
+	chance = 100
+	vary = FALSE
+	volume = SOUND_LOOP_VOL_RANGE(100, 100)
+	direct = TRUE
+	loop_delay = 50 SECONDS
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/ambience/barambience.ogg', 69 SECONDS, 1),
+	)
+
+/datum/looping_sound/ambient/fb/brownnoise
+	chance = 100
+	vary = FALSE
+	volume = SOUND_LOOP_VOL_RANGE(100, 100)
+	direct = TRUE
+	loop_delay = 25 SECONDS
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/f13ambience/brownnoise.ogg', 30 SECONDS, 10),
+	)
+
+
+/datum/looping_sound/ambient/fb/fannoise
+	chance = 100
+	vary = FALSE
+	volume = SOUND_LOOP_VOL_RANGE(100, 100)
+	direct = TRUE
+	loop_delay = 8 SECONDS
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/f13ambience/fanoffright.ogg', 9 SECONDS, 10),
+	)
+
