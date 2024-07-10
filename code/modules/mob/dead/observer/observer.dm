@@ -138,6 +138,16 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 	grant_all_languages()
 	show_data_huds()
 	data_huds_on = 1
+	INVOKE_ASYNC(src, PROC_REF(slam_dunk_to_main_menu))
+
+/mob/dead/observer/proc/slam_dunk_to_main_menu()
+	if(check_rights(R_ADMIN, FALSE))
+		return
+	if(ckey)
+		abandon_mob()
+		return
+	sleep(1 SECONDS)
+	INVOKE_ASYNC(src, PROC_REF(slam_dunk_to_main_menu))
 
 /mob/dead/observer/get_photo_description(obj/item/camera/camera)
 	if(!invisibility || camera.see_ghosts)
@@ -278,7 +288,7 @@ Works together with spawning an observer, noted above.
 	if(!key || key[1] == "@" || (sig_flags & COMPONENT_BLOCK_GHOSTING))
 		return //mob has no key, is an aghost or some component hijacked.
 	stop_sound_channel(CHANNEL_HEARTBEAT) //Stop heartbeat sounds because You Are A Ghost Now
-	var/mob/dead/observer/ghost = new(get_turf(src), src)	// Transfer safety to observer spawning proc.
+	var/mob/dead/observer/ghost = new(get_turf(src), src)	// Transfer safety to observer spawning proc.7
 	SStgui.on_transfer(src, ghost) // Transfer NanoUIs.
 	ghost.can_reenter_corpse = can_reenter_corpse || (sig_flags & COMPONENT_FREE_GHOSTING)
 	if (client && client.prefs && client.prefs.auto_ooc)
@@ -416,6 +426,11 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 			destination = get_step(destination, WEST)
 
 		abstract_move(destination)//Get out of closets and such as a ghost
+	if(check_rights(R_ADMIN, FALSE))
+		return
+	if(ckey)
+		abandon_mob()
+		return
 
 /mob/dead/observer/verb/reenter_corpse()
 	set category = "Ghost"

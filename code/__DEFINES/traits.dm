@@ -378,6 +378,8 @@
 #define TRAIT_CLAM_LOVER "clam_lover"
 #define TRAIT_CLAM_FISHER "clam_fisher"
 
+#define TRAIT_NO_PVP_EVER "no_pvp_ever"
+
 // mobility flag traits
 // IN THE FUTURE, IT WOULD BE NICE TO DO SOMETHING SIMILAR TO https://github.com/tgstation/tgstation/pull/48923/files (ofcourse not nearly the same because I have my.. thoughts on it)
 // BUT FOR NOW, THESE ARE HOOKED TO DO update_mobility() VIA COMSIG IN living_mobility.dm

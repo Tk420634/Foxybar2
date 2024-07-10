@@ -66,7 +66,7 @@
 		output += "<p><a href='byond://?src=[REF(src)];fit_viewport_lobby=1)'>(Fit Viewport)</a></p>"
 	else
 		output += "<p><a href='byond://?src=[REF(src)];directory=1'>View Character Directory</a></p>"
-		output += "<p><a href='byond://?src=[REF(src)];late_join=1'>Come on down!</a></p>"
+		output += "<p><a href='byond://?src=[REF(src)];late_join=1'>Join in!</a></p>"
 		//output += "<p>[LINKIFY_READY("Observe", PLAYER_READY_TO_OBSERVE)]</p>"
 		output += "<p><a href='byond://?src=[REF(src)];refresh_chat=1)'>(Fix Chat Window)</a></p>"
 		output += "<p><a href='byond://?src=[REF(src)];fit_viewport_lobby=1)'>(Fit Viewport)</a></p>"
