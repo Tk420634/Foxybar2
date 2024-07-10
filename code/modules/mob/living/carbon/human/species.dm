@@ -1772,14 +1772,14 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(user.limb_destroyer)
 			target.dismembering_strike(user, affecting.body_zone)
 
-		if(atk_verb == ATTACK_EFFECT_KICK)//kicks deal 1.5x raw damage + 0.5x stamina damage
-			target.apply_damage(damage*1.5, attack_type, affecting, armor_block)
-			target.apply_damage(damage*0.5, STAMINA, affecting, armor_block)
-			log_combat(user, target, "kicked")
-		else//other attacks deal full raw damage + 2x in stamina damage
-			target.apply_damage(damage, attack_type, affecting, armor_block)
-			target.apply_damage(damage*2, STAMINA, affecting, armor_block)
-			log_combat(user, target, "punched")
+		target.apply_damage(damage, STAMINA, affecting, armor_block)
+		log_combat(user, target, "punched")
+		// if(atk_verb == ATTACK_EFFECT_KICK)//kicks deal 1.5x raw damage + 0.5x stamina damage
+		// 	target.apply_damage(damage*1.5, attack_type, affecting, armor_block)
+		// 	target.apply_damage(damage*0.5, STAMINA, affecting, armor_block)
+		// 	log_combat(user, target, "kicked")
+		// else//other attacks deal full raw damage + 2x in stamina damage
+		// 	target.apply_damage(damage, attack_type, affecting, armor_block)
 
 		if((target.stat != DEAD) && damage >= user.dna.species.punchstunthreshold)
 			if((punchedstam > 50) && prob(punchedstam*0.5)) //If our punch victim has been hit above the threshold, and they have more than 50 stamina damage, roll for stun, probability of 1% per 2 stamina damage
@@ -1794,11 +1794,11 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 				target.forcesay(GLOB.hit_appends)
 				log_combat(user, target, "got a stun punch with their previous punch")
 
-				if(HAS_TRAIT(user, TRAIT_KI_VAMPIRE) && !HAS_TRAIT(target, TRAIT_NOBREATH) && (punchedbrute < 100)) //If we're a ki vampire we also sap them of lifeforce, but only if they're not too beat up. Also living organics only.
-					user.adjustBruteLoss(-5)
-					user.adjustFireLoss(-5)
-					user.adjustStaminaLoss(-20)
-					target.adjustBruteLoss(20)
+				// if(HAS_TRAIT(user, TRAIT_KI_VAMPIRE) && !HAS_TRAIT(target, TRAIT_NOBREATH) && (punchedbrute < 100)) //If we're a ki vampire we also sap them of lifeforce, but only if they're not too beat up. Also living organics only.
+				// 	user.adjustBruteLoss(-5)
+				// 	user.adjustFireLoss(-5)
+				// 	user.adjustStaminaLoss(-20)
+				// 	target.adjustBruteLoss(20)
 
 		else if(!(target.mobility_flags & MOBILITY_STAND))
 			target.forcesay(GLOB.hit_appends)

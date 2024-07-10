@@ -6,8 +6,15 @@
 
 // The default UI style is the first one in the list
 GLOBAL_LIST_INIT(available_ui_styles, list(
-	"Cludgey" = 'icons/mob/screen_clockwork.dmi',
-
+	"Fallout" = 'icons/fallout/UI/screen_fallout2.dmi', // Fallout 2 Pip-boy style UI. Walk the wasteland with style. -Pebbles
+	"Darkout" = 'icons/fallout/UI/screen_fallout2_dark.dmi', // The original Fallout 2 pipboy UI, dark
+	"Midnight" = 'icons/mob/screen_midnight.dmi',
+	"Retro" = 'icons/mob/screen_retro.dmi',
+	"Plasmafire" = 'icons/mob/screen_plasmafire.dmi',
+	"Slimecore" = 'icons/mob/screen_slimecore.dmi',
+	"Operative" = 'icons/mob/screen_operative.dmi',
+	"Clockwork" = 'icons/mob/screen_clockwork.dmi',
+	"Minimal" = 'icons/mob/screen_minimal.dmi'
 ))
 
 /proc/ui_style2icon(ui_style)
@@ -63,6 +70,7 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 	var/atom/movable/screen/aooc_hud_button
 	var/atom/movable/screen/newbie_hud_button
 	var/atom/movable/screen/chardir_hud_button
+	var/atom/movable/screen/pvp_focus_toggle/pvp_focus_toggle
 
 	// subtypes can override this to force a specific UI style
 	var/ui_style
@@ -119,6 +127,10 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 	down = null
 	sleep_hud_button = null
 	triage = null
+	aooc_hud_button = null
+	newbie_hud_button = null
+	chardir_hud_button = null
+	pvp_focus_toggle = null
 
 	QDEL_LIST_ASSOC_VAL(plane_masters)
 	QDEL_LIST(screenoverlays)

@@ -1,18 +1,9 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "abA" = (
-/obj/structure/railing{
-	color = "#A47449";
-	layer = 4;
-	pixel_y = -2
+/obj/effect/turf_decal/siding/wood{
+	dir = 4;
+	color = "#3B2B1A"
 	},
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "smokey fog";
-	mouse_opacity = 0;
-	layer = 2.9
-	},
-/obj/structure/chair/stool/retro/tan,
 /obj/effect/turf_decal/siding/wood{
 	dir = 1;
 	color = "#3B2B1A"
@@ -37,12 +28,6 @@
 	color = "#779999"
 	},
 /area/f13/wasteland/city/newboston/bar)
-"ach" = (
-/obj/machinery/telecomms/server/presets/ncr,
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
 "adh" = (
 /obj/structure/spacevine{
 	icon = 'icons/effects/effects.dmi';
@@ -80,8 +65,19 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/wasteland/city/newboston/bar)
 "aff" = (
-/obj/machinery/telecomms/server/presets/security,
-/turf/open/floor/circuit/telecomms/mainframe,
+/obj/machinery/telecomms/server/presets/ranger,
+/turf/open/floor/plasteel/f13{
+	icon_state = "darkrustysolid"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
+"afL" = (
+/obj/structure/flora/rock/pile/largejungle,
+/obj/structure/flora/rock/pile/largejungle{
+	icon_state = "bush3";
+	pixel_y = -6;
+	layer = 3.0
+	},
+/turf/open/indestructible/ground/inside/dirt,
 /area/f13/wasteland/city/newboston/outdoors)
 "agk" = (
 /obj/effect/decal/cleanable/glitter/blue{
@@ -121,21 +117,45 @@
 	},
 /area/f13/wasteland/city/newboston/bar)
 "ahF" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 4;
-	color = "#3B2B1A"
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "smokey fog";
+	mouse_opacity = 0;
+	layer = 2.9
 	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 1;
 	color = "#3B2B1A"
 	},
-/turf/open/floor/carpet/purple,
+/turf/open/floor/wood_worn,
 /area/f13/wasteland/city/newboston/bar)
 "akT" = (
 /obj/effect/landmark/latejoin,
+/obj/machinery/light/small{
+	dir = 1;
+	light_color = "red";
+	pixel_y = 22
+	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontalbottomborderbottom0"
 	},
+/area/f13/wasteland/city/newboston/outdoors)
+"aoR" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4;
+	color = "#3B2B1A"
+	},
+/obj/effect/turf_decal/siding/wood{
+	color = "#3B2B1A"
+	},
+/turf/open/floor/wood_worn,
+/area/f13/wasteland/city/newboston/bar)
+"apF" = (
+/obj/effect/turf_decal/stripes/asteroid/corner{
+	dir = 8
+	},
+/turf/open/floor/circuit/telecomms/mainframe,
 /area/f13/wasteland/city/newboston/outdoors)
 "avK" = (
 /obj/structure/curtain{
@@ -148,6 +168,24 @@
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
+/area/f13/wasteland/city/newboston/bar)
+"awD" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "smokey fog";
+	mouse_opacity = 0;
+	layer = 2.9
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#3B2B1A"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8;
+	color = "#3B2B1A"
+	},
+/turf/open/floor/wood_worn,
 /area/f13/wasteland/city/newboston/bar)
 "ays" = (
 /obj/structure/chair/sofa/corp/right{
@@ -162,9 +200,20 @@
 	color = "#779999"
 	},
 /area/f13/wasteland/city/newboston/bar)
-"aBY" = (
-/turf/open/floor/circuit/telecomms/mainframe,
+"azu" = (
+/obj/effect/landmark/start/f13/barkeep,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontalbottomborderbottom2left"
+	},
 /area/f13/wasteland/city/newboston/outdoors)
+"aBY" = (
+/obj/structure/sign/poster/contraband/pinup_couch{
+	pixel_y = 32
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/wasteland/city/newboston/bar)
 "aEB" = (
 /obj/machinery/light/small{
 	color = "#444499";
@@ -187,47 +236,63 @@
 	color = "#99BBBB"
 	},
 /area/f13/wasteland/city/newboston/bar)
+"aFk" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	dir = 4
+	},
+/obj/machinery/telecomms/broadcaster/preset_right,
+/turf/open/floor/circuit/telecomms/mainframe,
+/area/f13/wasteland/city/newboston/outdoors)
+"aJA" = (
+/obj/structure/curtain{
+	color = "#c40e0e"
+	},
+/obj/effect/fake_stairs/west{
+	color = "#845f58"
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/wasteland/city/newboston/bar)
 "aLE" = (
 /obj/effect/decal/cleanable/glitter/white{
 	color = "#884444"
 	},
 /turf/open/floor/carpet/royalblack,
 /area/f13/wasteland/city/newboston/bar)
-"aLO" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 9
-	},
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/f13/wasteland/city/newboston/outdoors)
-"aQA" = (
+"aTn" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4;
 	color = "#3B2B1A"
 	},
 /obj/effect/turf_decal/siding/wood{
+	dir = 1;
 	color = "#3B2B1A"
 	},
-/turf/open/floor/wood_worn,
-/area/f13/wasteland/city/newboston/bar)
-"aTZ" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 4
+/turf/open/floor/wood_common{
+	color = "#99BBBB"
 	},
-/obj/machinery/telecomms/receiver/preset_right,
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/f13/wasteland/city/newboston/outdoors)
-"aUs" = (
-/obj/machinery/telecomms/server/presets/den,
+/area/f13/wasteland/city/newboston/bar)
+"aZA" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#3B2B1A"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4;
+	color = "#3B2B1A"
+	},
+/turf/open/floor/wood_common{
+	color = "#99BBBB"
+	},
+/area/f13/wasteland/city/newboston/bar)
+"bbJ" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	dir = 8
+	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
-"bad" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#3B2B1A"
-	},
-/turf/open/floor/carpet/royalblack,
-/area/f13/wasteland/city/newboston/bar)
 "bcw" = (
 /obj/structure/simple_door/room{
 	name = "storage"
@@ -241,6 +306,12 @@
 	name = "dirty floor"
 	},
 /area/f13/wasteland/city/newboston/bar)
+"bfR" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/grass{
+	color = "#777777"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
 "bgG" = (
 /obj/structure/table/abductor,
 /turf/open/floor/wood_common{
@@ -253,14 +324,6 @@
 	icon_state = "horizontaltopbordertop2"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
-"bnr" = (
-/obj/machinery/light/floor{
-	light_color = "#883388";
-	pixel_x = 26;
-	pixel_y = -7
-	},
-/turf/open/floor/wood_worn,
-/area/f13/wasteland/city/newboston/bar)
 "bpA" = (
 /obj/effect/decal/cleanable/glitter/white{
 	color = "#884444"
@@ -268,65 +331,29 @@
 /obj/structure/table/abductor,
 /turf/open/floor/carpet/purple,
 /area/f13/wasteland/city/newboston/bar)
-"bte" = (
-/obj/structure/flora/ausbushes/grassybush,
-/turf/open/indestructible/ground/outside/water,
-/area/f13/wasteland/city/newboston/outdoors)
 "btj" = (
 /obj/effect/decal/cleanable/glitter/pink,
 /obj/structure/table/abductor,
 /turf/open/floor/carpet/purple,
 /area/f13/wasteland/city/newboston/bar)
 "bxY" = (
-/obj/structure/railing/corner{
-	dir = 4;
-	color = "#A47449";
-	pixel_y = 8
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
 	},
-/obj/structure/curtain{
-	color = "#c40e0e";
-	open = 0
-	},
-/obj/effect/decal/cleanable/glitter/pink,
-/obj/structure/table/abductor,
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "smokey fog";
-	mouse_opacity = 0;
-	layer = 2.9;
-	opacity = 1
-	},
-/turf/open/floor/carpet/purple,
-/area/f13/wasteland/city/newboston/bar)
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland/city/newboston/outdoors)
 "bzc" = (
-/obj/structure/closet/cabinet/anchored,
-/obj/item/clothing/under/f13/mprostitute,
-/obj/item/clothing/under/f13/fprostitute,
-/obj/item/clothing/under/f13/erpdress,
-/obj/item/clothing/under/dress/corset,
-/obj/item/clothing/under/misc/stripper,
-/obj/item/clothing/under/misc/stripper/green,
-/obj/item/clothing/under/misc/stripper/mankini,
-/obj/item/clothing/under/maid,
-/obj/item/clothing/under/janimaid,
-/obj/item/clothing/head/maid,
-/obj/item/clothing/accessory/maidapron,
-/obj/item/clothing/suit/armor/outfit/overalls/sexymaid,
-/obj/effect/turf_decal/siding/wood{
-	dir = 1;
-	color = "#3B2B1A"
+/obj/effect/turf_decal/stripes/asteroid/line{
+	dir = 5
 	},
-/turf/open/floor/carpet/orange,
-/area/f13/wasteland/city/newboston/bar)
+/obj/machinery/telecomms/bus/preset_two,
+/turf/open/floor/circuit/telecomms/mainframe,
+/area/f13/wasteland/city/newboston/outdoors)
 "bAd" = (
 /obj/structure/railing{
 	color = "#A47449";
 	dir = 1;
 	pixel_y = 8
-	},
-/obj/machinery/light/floor{
-	light_color = "#883388"
 	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
@@ -337,37 +364,26 @@
 	},
 /turf/open/floor/carpet/purple,
 /area/f13/wasteland/city/newboston/bar)
-"bAT" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 8;
-	color = "#3B2B1A"
-	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#3B2B1A"
-	},
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
-/area/f13/wasteland/city/newboston/bar)
 "bBZ" = (
 /obj/effect/decal/marking,
 /turf/closed/indestructible/f13/matrix,
 /area/f13/wasteland/city/newboston/outdoors)
-"bKi" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 8;
-	color = "#3B2B1A"
-	},
-/turf/open/floor/wood_common{
-	color = "#779999"
+"bIX" = (
+/obj/machinery/autolathe,
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/sheet/glass/fifty,
+/turf/open/floor/f13{
+	color = "#ffe9de";
+	icon_state = "darkrusty";
+	name = "dirty floor"
 	},
 /area/f13/wasteland/city/newboston/bar)
-"bLo" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 6
-	},
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/f13/wasteland/city/newboston/outdoors)
 "bNh" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -383,11 +399,6 @@
 	icon_state = "horizontaltopbordertop2left"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
-"bRc" = (
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
 "bUG" = (
 /obj/structure/window/fulltile/wood{
 	layer = 3
@@ -397,30 +408,50 @@
 	},
 /turf/open/floor/wood_common,
 /area/f13/wasteland/city/newboston/bar)
+"bXW" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "smokey fog";
+	mouse_opacity = 0;
+	layer = 2.9
+	},
+/obj/effect/turf_decal/siding/wood{
+	color = "#3B2B1A"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8;
+	color = "#3B2B1A"
+	},
+/turf/open/floor/wood_worn,
+/area/f13/wasteland/city/newboston/bar)
 "cdu" = (
 /obj/structure/table/abductor{
 	density = 0
 	},
 /turf/open/floor/carpet/purple,
 /area/f13/wasteland/city/newboston/bar)
-"cgI" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/lamp_post/doubles/bent{
-	dir = 4;
-	density = 0;
-	pixel_y = -14;
-	pixel_x = -42;
-	light_range = 16
+"cdA" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
 	},
-/obj/machinery/light{
-	light_color = "#e8eaff";
-	dir = 1;
-	pixel_y = 64;
-	pixel_x = 17;
-	plane = -6
+/obj/structure/flora/ausbushes/leafybush{
+	pixel_x = 4;
+	alpha = 80;
+	mouse_opacity = 0
 	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontalbottomborderbottom0"
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland/city/newboston/outdoors)
+"cgn" = (
+/obj/item/toy/tennis/blue{
+	density = 1;
+	mouse_opacity = 0;
+	alpha = 0;
+	anchored = 1
+	},
+/turf/open/indestructible/ground/outside/road{
+	color = "#999999";
+	icon_state = "horizontaltopborderbottom0"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
 "cht" = (
@@ -429,11 +460,9 @@
 	color = "#779999"
 	},
 /area/f13/wasteland/city/newboston/bar)
-"ckd" = (
-/obj/machinery/telecomms/processor/preset_two,
-/obj/machinery/light/floor,
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
+"cnb" = (
+/turf/open/floor/grass{
+	color = "#777777"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
 "cuN" = (
@@ -442,26 +471,21 @@
 	},
 /area/f13/wasteland/city/newboston/outdoors)
 "cvh" = (
-/obj/effect/decal/cleanable/glitter/white{
-	color = "#884444"
-	},
-/obj/machinery/light/small{
-	dir = 8;
-	pixel_y = 13;
-	light_color = "#884444";
-	light_power = 2;
-	light_range = 2;
-	color = "#884444"
-	},
-/obj/structure/chair/sofa/corp/right{
-	color = "#BED0FD";
-	dir = 4
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "smokey fog";
+	mouse_opacity = 0;
+	layer = 2.9
 	},
 /obj/effect/turf_decal/siding/wood{
-	dir = 8;
+	dir = 4;
 	color = "#3B2B1A"
 	},
-/turf/open/floor/carpet/purple,
+/obj/effect/turf_decal/siding/wood{
+	color = "#3B2B1A"
+	},
+/turf/open/floor/wood_worn,
 /area/f13/wasteland/city/newboston/bar)
 "cwC" = (
 /obj/effect/landmark/start/f13/wastelander,
@@ -478,8 +502,21 @@
 /turf/open/floor/carpet/royalblack,
 /area/f13/wasteland/city/newboston/bar)
 "cAt" = (
+/obj/structure/chair/stool/retro/backed{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8;
+	color = "#3B2B1A"
+	},
+/turf/open/floor/carpet/royalblack,
+/area/f13/wasteland/city/newboston/bar)
+"cAY" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4;
+	color = "#3B2B1A"
+	},
+/obj/effect/turf_decal/siding/wood{
 	color = "#3B2B1A"
 	},
 /turf/open/floor/wood_common{
@@ -495,45 +532,26 @@
 	color = "#779999"
 	},
 /area/f13/wasteland/city/newboston/bar)
-"cLm" = (
-/obj/structure/sign/painting/library{
-	pixel_x = -32
+"cQG" = (
+/obj/structure/dresser{
+	pixel_x = -15;
+	density = 0
 	},
-/obj/item/kirbyplants/random,
 /obj/machinery/light/small{
-	color = "#444499";
 	dir = 8;
-	light_color = "#444499";
+	pixel_y = 13;
+	light_color = "#884444";
 	light_power = 2;
 	light_range = 2;
-	pixel_y = 13
+	color = "#884444"
 	},
-/turf/open/floor/wood_common{
-	color = "#779999"
+/obj/effect/turf_decal/siding/wood{
+	dir = 8;
+	color = "#3B2B1A"
 	},
+/turf/open/floor/carpet/purple,
 /area/f13/wasteland/city/newboston/bar)
-"cQX" = (
-/obj/machinery/telecomms/server/presets/legion,
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/f13/wasteland/city/newboston/outdoors)
-"cTO" = (
-/obj/machinery/telecomms/server/presets/engineering,
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/f13/wasteland/city/newboston/outdoors)
-"dcH" = (
-/obj/effect/turf_decal/stripes/asteroid/corner{
-	dir = 8
-	},
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/f13/wasteland/city/newboston/outdoors)
-"dcM" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 8
-	},
-/obj/machinery/telecomms/receiver/preset_left,
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/f13/wasteland/city/newboston/outdoors)
-"dkE" = (
+"cRl" = (
 /obj/structure/spacevine{
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
@@ -542,14 +560,48 @@
 	layer = 2.9
 	},
 /obj/effect/turf_decal/siding/wood{
+	dir = 8;
+	color = "#3B2B1A"
+	},
+/turf/open/floor/wood_worn,
+/area/f13/wasteland/city/newboston/bar)
+"cWl" = (
+/obj/machinery/telecomms/server/presets/supply,
+/turf/open/floor/plasteel/f13{
+	icon_state = "darkrustysolid"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
+"dcH" = (
+/obj/structure/flora/chomp/thicket2{
+	color = "#224422"
+	},
+/turf/open/floor/grass{
+	color = "#777777"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
+"ddh" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "smokey fog";
+	mouse_opacity = 0;
+	layer = 2.9
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4;
+	color = "#3B2B1A"
+	},
+/obj/effect/turf_decal/siding/wood{
 	dir = 1;
 	color = "#3B2B1A"
 	},
 /turf/open/floor/wood_worn,
 /area/f13/wasteland/city/newboston/bar)
-"dli" = (
-/obj/structure/nest/frog,
-/turf/open/indestructible/ground/outside/water,
+"dpG" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	dir = 9
+	},
+/turf/open/floor/circuit/telecomms/mainframe,
 /area/f13/wasteland/city/newboston/outdoors)
 "dCS" = (
 /obj/structure/spacevine{
@@ -568,37 +620,6 @@
 	icon_state = "horizontalbottomborderbottom2"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
-"dHN" = (
-/obj/effect/landmark/start/f13/barkeep,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontalbottomborderbottom2left"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
-"dIq" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 1
-	},
-/obj/machinery/ntnet_relay,
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/f13/wasteland/city/newboston/outdoors)
-"dJK" = (
-/obj/machinery/recycler,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "outerborder - E"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
-"dJP" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 8;
-	color = "#3B2B1A"
-	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#3B2B1A"
-	},
-/turf/open/floor/wood_common{
-	color = "#99BBBB"
-	},
-/area/f13/wasteland/city/newboston/bar)
 "dME" = (
 /obj/structure/chair/stool/retro/backed,
 /obj/effect/turf_decal/siding/wood{
@@ -607,38 +628,61 @@
 	},
 /turf/open/floor/carpet/royalblack,
 /area/f13/wasteland/city/newboston/bar)
-"dOq" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "smokey fog";
-	mouse_opacity = 0;
-	layer = 2.9
-	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#3B2B1A"
-	},
+"dOV" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8;
 	color = "#3B2B1A"
 	},
-/turf/open/floor/wood_worn,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#3B2B1A"
+	},
+/turf/open/floor/wood_common{
+	color = "#99BBBB"
+	},
 /area/f13/wasteland/city/newboston/bar)
+"dPZ" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	dir = 8
+	},
+/obj/machinery/telecomms/server/presets/bos,
+/turf/open/floor/circuit/telecomms/mainframe,
+/area/f13/wasteland/city/newboston/outdoors)
+"dRv" = (
+/obj/structure/sign/painting/library{
+	pixel_x = -32
+	},
+/obj/structure/railing{
+	color = "#A47449";
+	layer = 4;
+	pixel_y = -2
+	},
+/obj/effect/decal/cleanable/glitter/pink,
+/obj/structure/chair/stool/retro/tan,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#3B2B1A"
+	},
+/turf/open/floor/carpet/purple,
+/area/f13/wasteland/city/newboston/bar)
+"dSz" = (
+/obj/effect/turf_decal/stripes/asteroid/line,
+/turf/open/floor/circuit/telecomms/mainframe,
+/area/f13/wasteland/city/newboston/outdoors)
 "dUG" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalrightborderright3"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
 "dXY" = (
-/obj/structure/sign/painting/library{
-	pixel_x = -32
-	},
 /obj/structure/railing{
 	color = "#A47449";
 	dir = 1;
 	pixel_y = 8
 	},
-/obj/effect/decal/cleanable/glitter/pink,
+/obj/machinery/light/floor{
+	light_color = "#883388"
+	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
 	},
@@ -654,60 +698,39 @@
 	color = "#779999"
 	},
 /area/f13/wasteland/city/newboston/bar)
+"ecT" = (
+/obj/effect/landmark/start/f13/wastelander,
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/wasteland/city/newboston/outdoors)
 "edK" = (
-/obj/item/lipstick/random{
-	pixel_y = 10;
-	pixel_x = 10
+/obj/machinery/telecomms/server/presets/responders,
+/turf/open/floor/plasteel/f13{
+	icon_state = "darkrustysolid"
 	},
-/obj/item/restraints/handcuffs/fake/kinky,
-/obj/item/clothing/neck/petcollar{
-	pixel_x = -6;
-	pixel_y = 8
+/area/f13/wasteland/city/newboston/outdoors)
+"efM" = (
+/obj/item/fishingrod,
+/obj/structure/flora/rock/pile/largejungle,
+/obj/structure/flora/grass/coyote/one,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
 	},
-/obj/structure/table/wood/settler,
-/obj/effect/turf_decal/siding/wood{
-	dir = 8;
-	color = "#3B2B1A"
+/turf/open/indestructible/ground/inside/dirt,
+/area/f13/wasteland/city/newboston/outdoors)
+"eip" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/ausbushes/brflowers{
+	light_color = "#008080";
+	light_power = 3;
+	light_range = 2
 	},
-/turf/open/floor/carpet/purple,
-/area/f13/wasteland/city/newboston/bar)
+/turf/open/floor/grass{
+	color = "#777777"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
 "eis" = (
-/obj/structure/railing/corner{
-	color = "#A47449";
-	pixel_y = -1
-	},
-/obj/structure/curtain{
-	color = "#c40e0e";
-	open = 0
-	},
-/obj/effect/decal/cleanable/glitter/pink,
-/obj/structure/table/abductor,
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "smokey fog";
-	mouse_opacity = 0;
-	layer = 2.9;
-	opacity = 1
-	},
-/turf/open/floor/carpet/purple,
-/area/f13/wasteland/city/newboston/bar)
-"ekb" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "smokey fog";
-	mouse_opacity = 0;
-	layer = 2.9
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 8;
-	color = "#3B2B1A"
-	},
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
-/area/f13/wasteland/city/newboston/bar)
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland/city/newboston/outdoors)
 "ekg" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/lamp_post/doubles/bent{
@@ -728,44 +751,6 @@
 	icon_state = "outerbordercorner - E"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
-"eow" = (
-/obj/structure/chair/stool/retro/backed{
-	dir = 4
-	},
-/obj/machinery/light/floor{
-	light_color = "#883388"
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 8;
-	color = "#3B2B1A"
-	},
-/turf/open/floor/carpet/royalblack,
-/area/f13/wasteland/city/newboston/bar)
-"eoG" = (
-/obj/effect/decal/cleanable/glitter/white{
-	color = "#884444"
-	},
-/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_y = 17;
-	pixel_x = -8
-	},
-/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_x = -8;
-	pixel_y = 7
-	},
-/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_y = 4
-	},
-/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_x = 8;
-	pixel_y = 12
-	},
-/obj/structure/table/abductor,
-/obj/effect/turf_decal/siding/wood{
-	color = "#3B2B1A"
-	},
-/turf/open/floor/carpet/royalblack,
-/area/f13/wasteland/city/newboston/bar)
 "esa" = (
 /obj/structure/chair/sofa/corp/left{
 	dir = 8;
@@ -782,34 +767,11 @@
 	color = "#779999"
 	},
 /area/f13/wasteland/city/newboston/bar)
-"etF" = (
-/obj/machinery/telecomms/processor/preset_one,
-/obj/machinery/light/floor,
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
 "ewn" = (
-/obj/structure/curtain{
-	color = "#c40e0e";
-	open = 0
+/obj/effect/turf_decal/stripes/asteroid/line{
+	dir = 9
 	},
-/obj/effect/decal/cleanable/glitter/pink,
-/obj/structure/table/abductor,
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "smokey fog";
-	mouse_opacity = 0;
-	layer = 2.9;
-	opacity = 1
-	},
-/turf/open/floor/carpet/purple,
-/area/f13/wasteland/city/newboston/bar)
-"eyf" = (
-/obj/effect/turf_decal/stripes/asteroid/corner{
-	dir = 1
-	},
+/obj/machinery/telecomms/bus/preset_one,
 /turf/open/floor/circuit/telecomms/mainframe,
 /area/f13/wasteland/city/newboston/outdoors)
 "eAc" = (
@@ -838,6 +800,10 @@
 	icon_state = "horizontalbottomborderbottom2left"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
+"eEU" = (
+/obj/effect/turf_decal/stripes/asteroid/corner,
+/turf/open/floor/circuit/telecomms/mainframe,
+/area/f13/wasteland/city/newboston/outdoors)
 "eHQ" = (
 /obj/structure/spacevine{
 	icon = 'icons/effects/effects.dmi';
@@ -857,13 +823,12 @@
 	},
 /area/f13/wasteland/city/newboston/outdoors)
 "eMT" = (
-/obj/structure/railing{
-	color = "#A47449";
-	dir = 4;
-	pixel_x = 2
+/obj/item/fishingrod,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
 	},
-/turf/open/floor/carpet/purple,
-/area/f13/wasteland/city/newboston/bar)
+/turf/open/indestructible/ground/inside/dirt,
+/area/f13/wasteland/city/newboston/outdoors)
 "ePQ" = (
 /obj/effect/decal/cleanable/glitter/blue{
 	color = "#444499"
@@ -881,12 +846,6 @@
 	},
 /turf/open/floor/carpet/black,
 /area/f13/wasteland/city/newboston/bar)
-"eQA" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 10
-	},
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/f13/wasteland/city/newboston/outdoors)
 "eUg" = (
 /obj/machinery/light/small{
 	color = "#444499";
@@ -910,6 +869,17 @@
 	color = "#779999"
 	},
 /area/f13/wasteland/city/newboston/bar)
+"eYJ" = (
+/obj/item/toy/tennis/blue{
+	density = 1;
+	mouse_opacity = 0;
+	alpha = 0;
+	anchored = 1
+	},
+/turf/open/indestructible/ground/outside/road{
+	color = "#999999"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
 "faD" = (
 /obj/structure/spacevine{
 	icon = 'icons/effects/effects.dmi';
@@ -951,20 +921,6 @@
 	icon_state = "verticalrightborderright2bottom"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
-"fio" = (
-/obj/effect/landmark/start/f13/wastelander/clubworker,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaltopbordertop2"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
-"fjp" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#3B2B1A"
-	},
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
-/area/f13/wasteland/city/newboston/bar)
 "fmT" = (
 /obj/machinery/vending/cigarette{
 	density = 0;
@@ -974,22 +930,52 @@
 	color = "#779999"
 	},
 /area/f13/wasteland/city/newboston/bar)
-"fpY" = (
-/obj/item/toy/tennis/blue{
-	density = 1;
-	mouse_opacity = 0;
-	alpha = 0;
-	anchored = 1
+"fvo" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	dir = 10
 	},
-/turf/open/indestructible/ground/outside/road{
-	color = "#999999"
-	},
+/obj/machinery/telecomms/bus/preset_four,
+/turf/open/floor/circuit/telecomms/mainframe,
 /area/f13/wasteland/city/newboston/outdoors)
 "fxb" = (
 /obj/effect/landmark/latejoin,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop2right"
 	},
+/area/f13/wasteland/city/newboston/outdoors)
+"fzg" = (
+/obj/structure/table/abductor,
+/obj/structure/sign/painting/library{
+	pixel_x = 32
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4;
+	color = "#3B2B1A"
+	},
+/turf/open/floor/carpet/royalblack,
+/area/f13/wasteland/city/newboston/bar)
+"fzC" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "smokey fog";
+	mouse_opacity = 0;
+	layer = 2.9
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4;
+	color = "#3B2B1A"
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/wasteland/city/newboston/bar)
+"fDb" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	dir = 8
+	},
+/obj/machinery/telecomms/broadcaster/preset_left,
+/turf/open/floor/circuit/telecomms/mainframe,
 /area/f13/wasteland/city/newboston/outdoors)
 "fDO" = (
 /obj/effect/landmark/latejoin,
@@ -1009,14 +995,16 @@
 	name = "dirty floor"
 	},
 /area/f13/wasteland/city/newboston/bar)
-"fMj" = (
-/obj/machinery/telecomms/server/presets/responders,
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
+"fOk" = (
+/obj/structure/sign/poster/contraband/pinup_bed{
+	pixel_y = 32
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontalbottomborderbottom3"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
-"fOM" = (
-/obj/machinery/telecomms/hub/preset,
+"fRv" = (
+/obj/machinery/telecomms/server/presets/science,
 /turf/open/floor/circuit/telecomms/mainframe,
 /area/f13/wasteland/city/newboston/outdoors)
 "fUR" = (
@@ -1035,6 +1023,26 @@
 	color = "#779999"
 	},
 /area/f13/wasteland/city/newboston/bar)
+"ggt" = (
+/obj/machinery/light/small{
+	color = "#444499";
+	dir = 8;
+	light_color = "#444499";
+	light_power = 2;
+	light_range = 2;
+	pixel_y = 13
+	},
+/obj/effect/turf_decal/siding/wood{
+	color = "#3B2B1A"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8;
+	color = "#3B2B1A"
+	},
+/turf/open/floor/wood_common{
+	color = "#99BBBB"
+	},
+/area/f13/wasteland/city/newboston/bar)
 "gkC" = (
 /obj/structure/simple_door/room,
 /obj/item/lock_bolt{
@@ -1043,13 +1051,6 @@
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
-/area/f13/wasteland/city/newboston/bar)
-"gml" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 4;
-	color = "#3B2B1A"
-	},
-/turf/closed/wall/mineral/brick,
 /area/f13/wasteland/city/newboston/bar)
 "gmW" = (
 /obj/structure/spacevine{
@@ -1066,18 +1067,17 @@
 	mouse_opacity = 0;
 	layer = 2.9
 	},
+/obj/machinery/light/floor{
+	light_color = "#444499";
+	color = "#444499"
+	},
 /turf/open/floor/wood_worn,
 /area/f13/wasteland/city/newboston/bar)
 "gnx" = (
-/obj/structure/railing{
-	color = "#A47449";
-	dir = 1;
-	pixel_y = 8
+/obj/effect/turf_decal/siding/wood{
+	dir = 4;
+	color = "#3B2B1A"
 	},
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 1
-	},
-/obj/structure/chair/stool/retro/tan,
 /obj/effect/turf_decal/siding/wood{
 	color = "#3B2B1A"
 	},
@@ -1128,9 +1128,6 @@
 	layer = 4;
 	pixel_y = -2
 	},
-/obj/machinery/light/floor{
-	light_color = "#883388"
-	},
 /obj/structure/spacevine{
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
@@ -1152,33 +1149,28 @@
 	icon_state = "horizontaltopborderbottom0"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
-"gzx" = (
-/obj/structure/flora/ausbushes/reedbush{
-	pixel_y = 7
+"gGC" = (
+/obj/effect/landmark/latejoin,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaltopbordertop0"
 	},
-/turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland/city/newboston/outdoors)
-"gBv" = (
-/obj/structure/sign/painting/library{
-	pixel_x = 32
+"gLq" = (
+/obj/machinery/telecomms/processor/preset_three,
+/obj/machinery/light/floor,
+/turf/open/floor/plasteel/f13{
+	icon_state = "darkrustysolid"
 	},
-/obj/machinery/light/small{
-	color = "#444499";
-	dir = 4;
-	light_color = "#444499";
-	light_power = 2;
-	light_range = 2;
-	pixel_y = 13
+/area/f13/wasteland/city/newboston/outdoors)
+"gNj" = (
+/obj/structure/railing{
+	color = "#A47449";
+	layer = 4;
+	pixel_y = -2
 	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 4;
-	color = "#3B2B1A"
+/obj/machinery/light/floor{
+	light_color = "#883388"
 	},
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
-/area/f13/wasteland/city/newboston/bar)
-"gDq" = (
 /obj/structure/spacevine{
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
@@ -1186,27 +1178,6 @@
 	mouse_opacity = 0;
 	layer = 2.9
 	},
-/obj/effect/landmark/start/f13/wastelander/clubworker,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaltopbordertop2left"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
-"gGC" = (
-/obj/effect/landmark/latejoin,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaltopbordertop0"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
-"gNj" = (
-/obj/structure/sign/painting/library{
-	pixel_x = -32
-	},
-/obj/structure/railing{
-	color = "#A47449";
-	layer = 4;
-	pixel_y = -2
-	},
-/obj/effect/decal/cleanable/glitter/pink,
 /obj/structure/chair/stool/retro/tan,
 /obj/effect/turf_decal/siding/wood{
 	dir = 1;
@@ -1214,32 +1185,19 @@
 	},
 /turf/open/floor/carpet/purple,
 /area/f13/wasteland/city/newboston/bar)
-"gSq" = (
+"gOe" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#3B2B1A"
+	},
+/turf/open/floor/wood_worn,
+/area/f13/wasteland/city/newboston/bar)
+"gVS" = (
 /obj/effect/turf_decal/stripes/asteroid/line{
 	dir = 6
 	},
 /obj/machinery/telecomms/bus/preset_three,
 /turf/open/floor/circuit/telecomms/mainframe,
-/area/f13/wasteland/city/newboston/outdoors)
-"gTG" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 8
-	},
-/obj/machinery/telecomms/server/presets/bos,
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/f13/wasteland/city/newboston/outdoors)
-"gUn" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 8;
-	color = "#3B2B1A"
-	},
-/turf/open/floor/wood_worn,
-/area/f13/wasteland/city/newboston/bar)
-"gYu" = (
-/obj/machinery/light/floor,
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
-	},
 /area/f13/wasteland/city/newboston/outdoors)
 "gYw" = (
 /obj/effect/turf_decal/siding/wood{
@@ -1253,17 +1211,36 @@
 /turf/open/floor/carpet/royalblack,
 /area/f13/wasteland/city/newboston/bar)
 "hbT" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "smokey fog";
+	mouse_opacity = 0;
+	layer = 2.9
+	},
 /obj/effect/turf_decal/siding/wood{
-	dir = 1;
+	color = "#3B2B1A"
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/wasteland/city/newboston/bar)
+"hdN" = (
+/obj/structure/table/abductor,
+/obj/structure/sign/painting/library{
+	pixel_x = 32
+	},
+/obj/structure/sign/poster/contraband/robust_softdrinks{
+	pixel_x = 32
+	},
+/obj/effect/turf_decal/siding/wood{
 	color = "#3B2B1A"
 	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 4;
 	color = "#3B2B1A"
 	},
-/turf/open/floor/wood_common{
-	color = "#99BBBB"
-	},
+/turf/open/floor/carpet/royalblack,
 /area/f13/wasteland/city/newboston/bar)
 "hfS" = (
 /obj/machinery/light{
@@ -1276,43 +1253,11 @@
 	color = "#779999"
 	},
 /area/f13/wasteland/city/newboston/bar)
-"hhr" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 8
-	},
-/obj/machinery/telecomms/server/presets/enclave,
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/f13/wasteland/city/newboston/outdoors)
 "his" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "outerborder - N"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
-"hiO" = (
-/obj/item/kirbyplants/random,
-/obj/effect/turf_decal/siding/wood{
-	color = "#3B2B1A"
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 4;
-	color = "#3B2B1A"
-	},
-/turf/open/floor/wood_common{
-	color = "#99BBBB"
-	},
-/area/f13/wasteland/city/newboston/bar)
-"hiY" = (
-/obj/machinery/jukebox,
-/obj/effect/turf_decal/siding/wood{
-	dir = 1;
-	color = "#3B2B1A"
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 4;
-	color = "#3B2B1A"
-	},
-/turf/open/floor/carpet/royalblack,
-/area/f13/wasteland/city/newboston/bar)
 "hov" = (
 /obj/machinery/light/sign/heaven{
 	pixel_y = 34
@@ -1336,6 +1281,27 @@
 	icon_state = "horizontaltopbordertop2left"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
+"hoG" = (
+/obj/structure/sign/poster/contraband/pinup_bed{
+	pixel_x = -32
+	},
+/obj/structure/piano/fancy,
+/obj/effect/turf_decal/siding/wood{
+	dir = 8;
+	color = "#3B2B1A"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#3B2B1A"
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/wasteland/city/newboston/bar)
+"hqa" = (
+/obj/structure/nest/frog,
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland/city/newboston/outdoors)
 "hun" = (
 /obj/machinery/light/small{
 	color = "#444499";
@@ -1357,10 +1323,14 @@
 	color = "#99BBBB"
 	},
 /area/f13/wasteland/city/newboston/bar)
-"hvX" = (
-/obj/machinery/light/floor,
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/f13/wasteland/city/newboston/outdoors)
+"hwv" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#3B2B1A"
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/wasteland/city/newboston/bar)
 "hAy" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop2left"
@@ -1391,12 +1361,7 @@
 	name = "dirty floor"
 	},
 /area/f13/wasteland/city/newboston/bar)
-"hJJ" = (
-/turf/open/indestructible/ground/outside/gravel{
-	color = "#AAAAAA"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
-"hQS" = (
+"hEt" = (
 /obj/structure/chair/sofa/corp/left{
 	color = "#BED0FD";
 	dir = 4
@@ -1404,6 +1369,53 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8;
 	color = "#3B2B1A"
+	},
+/turf/open/floor/carpet/purple,
+/area/f13/wasteland/city/newboston/bar)
+"hFw" = (
+/obj/machinery/telecomms/server/presets/den,
+/turf/open/floor/plasteel/f13{
+	icon_state = "darkrustysolid"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
+"hHE" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#3B2B1A"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4;
+	color = "#3B2B1A"
+	},
+/turf/open/floor/wood_common{
+	color = "#99BBBB"
+	},
+/area/f13/wasteland/city/newboston/bar)
+"hJJ" = (
+/obj/structure/sink/greyscale{
+	dir = 4;
+	pixel_y = 10;
+	pixel_x = 12
+	},
+/obj/structure/table/abductor,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4;
+	color = "#3B2B1A"
+	},
+/obj/structure/sign/flag_texas{
+	pixel_x = 32
+	},
+/turf/open/floor/carpet/royalblack,
+/area/f13/wasteland/city/newboston/bar)
+"hQS" = (
+/obj/effect/decal/cleanable/glitter/white{
+	color = "#884444"
+	},
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 4;
+	pixel_y = 8;
+	pixel_x = 2
 	},
 /turf/open/floor/carpet/purple,
 /area/f13/wasteland/city/newboston/bar)
@@ -1419,6 +1431,26 @@
 	icon_state = "outerborder - E"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
+"ifs" = (
+/obj/structure/sign/painting/library{
+	pixel_x = 32
+	},
+/obj/machinery/light/small{
+	color = "#444499";
+	dir = 4;
+	light_color = "#444499";
+	light_power = 2;
+	light_range = 2;
+	pixel_y = 13
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4;
+	color = "#3B2B1A"
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/wasteland/city/newboston/bar)
 "iku" = (
 /obj/machinery/light/small{
 	color = "#444499";
@@ -1429,55 +1461,53 @@
 	},
 /turf/open/floor/carpet/purple,
 /area/f13/wasteland/city/newboston/bar)
+"inX" = (
+/obj/item/lipstick/random{
+	pixel_y = 10;
+	pixel_x = 10
+	},
+/obj/item/restraints/handcuffs/fake/kinky,
+/obj/item/clothing/neck/petcollar{
+	pixel_x = -6;
+	pixel_y = 8
+	},
+/obj/structure/table/wood/settler,
+/obj/effect/turf_decal/siding/wood{
+	dir = 8;
+	color = "#3B2B1A"
+	},
+/turf/open/floor/carpet/purple,
+/area/f13/wasteland/city/newboston/bar)
+"isr" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland/city/newboston/outdoors)
 "iub" = (
 /obj/machinery/door/unpowered/securedoor,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
 /area/f13/wasteland/city/newboston/bar)
-"iyo" = (
-/obj/structure/table/abductor,
-/obj/structure/sign/painting/library{
-	pixel_x = 32
+"iuL" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	dir = 5
 	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 4;
-	color = "#3B2B1A"
-	},
-/turf/open/floor/carpet/royalblack,
-/area/f13/wasteland/city/newboston/bar)
-"iAY" = (
-/obj/machinery/telecomms/server/presets/ranger,
+/turf/open/floor/circuit/telecomms/mainframe,
+/area/f13/wasteland/city/newboston/outdoors)
+"iDj" = (
+/obj/machinery/telecomms/server/presets/legion,
+/turf/open/floor/circuit/telecomms/mainframe,
+/area/f13/wasteland/city/newboston/outdoors)
+"iJV" = (
+/obj/machinery/telecomms/processor/preset_two,
+/obj/machinery/light/floor,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
-"iEX" = (
-/obj/machinery/telecomms/server/presets/khans,
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/f13/wasteland/city/newboston/outdoors)
-"iLI" = (
-/obj/effect/landmark/start/f13/wastelander/clubworker,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaltopbordertop2right"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
-"iSv" = (
-/obj/machinery/telecomms/server/presets/common,
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/f13/wasteland/city/newboston/outdoors)
-"iVQ" = (
-/obj/structure/table/abductor,
-/turf/open/floor/carpet/purple,
-/area/f13/wasteland/city/newboston/bar)
-"iZM" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "smokey fog";
-	mouse_opacity = 0;
-	layer = 2.9
-	},
+"iNU" = (
 /obj/structure/spacevine{
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
@@ -1486,19 +1516,77 @@
 	layer = 2.9
 	},
 /obj/effect/turf_decal/siding/wood{
-	dir = 4;
+	dir = 8;
+	color = "#3B2B1A"
+	},
+/obj/effect/turf_decal/siding/wood{
 	color = "#3B2B1A"
 	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
 /area/f13/wasteland/city/newboston/bar)
-"jcm" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 1
+"iPP" = (
+/obj/machinery/light/small{
+	color = "#444499";
+	dir = 8;
+	light_color = "#444499";
+	light_power = 2;
+	light_range = 2;
+	pixel_y = 13
 	},
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/f13/wasteland/city/newboston/outdoors)
+/obj/effect/turf_decal/siding/wood{
+	dir = 8;
+	color = "#3B2B1A"
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/wasteland/city/newboston/bar)
+"iVm" = (
+/obj/machinery/chem_dispenser/drinks/fullupgrade{
+	dir = 8;
+	pixel_y = -1;
+	pixel_x = 14
+	},
+/obj/structure/table/abductor,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4;
+	color = "#3B2B1A"
+	},
+/turf/open/floor/carpet/royalblack,
+/area/f13/wasteland/city/newboston/bar)
+"iVQ" = (
+/obj/structure/table/abductor,
+/turf/open/floor/carpet/purple,
+/area/f13/wasteland/city/newboston/bar)
+"iYl" = (
+/obj/structure/closet/cabinet/anchored,
+/obj/item/clothing/under/fancy_red_formaldress,
+/obj/item/clothing/under/dress/blacktango,
+/obj/item/clothing/under/costume/singer/yellow,
+/obj/item/clothing/under/dress/westernbustle,
+/obj/item/clothing/under/misc/black_dress,
+/obj/item/clothing/under/f13/campfollowerfemale,
+/obj/item/clothing/under/f13/campfollowermale,
+/obj/machinery/light/small{
+	dir = 8;
+	pixel_y = 13;
+	light_color = "#884444";
+	light_power = 2;
+	light_range = 2;
+	color = "#884444"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8;
+	color = "#3B2B1A"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#3B2B1A"
+	},
+/turf/open/floor/carpet/orange,
+/area/f13/wasteland/city/newboston/bar)
 "jfm" = (
 /obj/structure/sign/painting/library{
 	pixel_x = -32
@@ -1515,18 +1603,6 @@
 	color = "#779999"
 	},
 /area/f13/wasteland/city/newboston/bar)
-"jfA" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#3B2B1A"
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 4;
-	color = "#3B2B1A"
-	},
-/turf/open/floor/wood_common{
-	color = "#99BBBB"
-	},
-/area/f13/wasteland/city/newboston/bar)
 "jgV" = (
 /obj/machinery/light/small{
 	color = "#444499";
@@ -1541,28 +1617,126 @@
 	},
 /area/f13/wasteland/city/newboston/bar)
 "jjA" = (
-/obj/structure/fence/pole_b{
-	pixel_y = 7
+/obj/effect/decal/cleanable/glitter/white{
+	color = "#884444"
 	},
-/obj/structure/fence/pole_t{
-	pixel_y = 36
+/obj/machinery/light/small{
+	dir = 8;
+	pixel_y = 13;
+	light_color = "#884444";
+	light_power = 2;
+	light_range = 2;
+	color = "#884444"
 	},
-/obj/structure/table/abductor,
+/obj/structure/chair/sofa/corp/right{
+	color = "#BED0FD";
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8;
+	color = "#3B2B1A"
+	},
 /turf/open/floor/carpet/purple,
 /area/f13/wasteland/city/newboston/bar)
 "jqA" = (
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland/city/newboston/outdoors)
-"jSP" = (
+"jzx" = (
+/obj/structure/flora/ausbushes/brflowers{
+	light_color = "#008080";
+	light_power = 3;
+	light_range = 2
+	},
+/turf/open/floor/grass{
+	color = "#777777"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
+"jBL" = (
+/obj/structure/sink{
+	icon_state = "water";
+	name = "water";
+	pixel_x = -1;
+	pixel_y = 12;
+	plane = 0
+	},
+/obj/structure/sink{
+	icon_state = "water";
+	name = "water";
+	pixel_x = 5;
+	pixel_y = 15;
+	plane = 0
+	},
+/obj/structure/sink{
+	icon_state = "water";
+	name = "water";
+	pixel_x = -6;
+	pixel_y = 7;
+	plane = 0
+	},
+/obj/structure/sink{
+	icon_state = "water";
+	name = "water";
+	pixel_x = -6;
+	pixel_y = 15;
+	plane = 0
+	},
+/obj/structure/sink{
+	icon_state = "water";
+	name = "water";
+	pixel_x = 5;
+	pixel_y = 7;
+	plane = 0
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	layer = 2
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	layer = 2;
+	pixel_x = 18
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	layer = 2;
+	pixel_x = 18;
+	pixel_y = -14
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	layer = 2;
+	pixel_y = -14
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	layer = 2;
+	pixel_y = -14;
+	pixel_x = -19
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	layer = 2;
+	pixel_x = -17
+	},
 /obj/effect/turf_decal/weather/dirt{
-	dir = 1
+	dir = 4
 	},
-/obj/structure/flora/ausbushes/leafybush{
-	pixel_x = 4;
-	alpha = 80;
-	mouse_opacity = 0
+/turf/open/indestructible/ground/outside/water/running{
+	name = "tribe river";
+	color = "#A1BFFF"
 	},
-/turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland/city/newboston/outdoors)
 "jSX" = (
 /obj/structure/sink/greyscale{
@@ -1576,86 +1750,15 @@
 	name = "dirty floor"
 	},
 /area/f13/wasteland/city/newboston/bar)
-"kcI" = (
-/obj/structure/table/wood/settler,
-/obj/item/stack/sheet/mineral/wood/fifty,
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
-/area/f13/wasteland/city/newboston/bar)
-"klQ" = (
-/obj/effect/landmark/start/f13/wastelander,
+"jYn" = (
+/obj/effect/landmark/start/f13/barkeep,
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaltopbordertop0"
+	icon_state = "horizontalbottomborderbottom0"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
-"kop" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 4;
-	color = "#3B2B1A"
-	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#3B2B1A"
-	},
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
-/area/f13/wasteland/city/newboston/bar)
-"krL" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "smokey fog";
-	mouse_opacity = 0;
-	layer = 2.9
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 4;
-	color = "#3B2B1A"
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 1;
-	color = "#3B2B1A"
-	},
-/turf/open/floor/wood_worn,
-/area/f13/wasteland/city/newboston/bar)
-"kub" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "smokey fog";
-	mouse_opacity = 0;
-	layer = 2.9
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 4;
-	color = "#3B2B1A"
-	},
-/turf/open/floor/wood_worn,
-/area/f13/wasteland/city/newboston/bar)
-"kwk" = (
-/obj/structure/chair/stool/retro/backed{
-	dir = 4
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 8;
-	color = "#3B2B1A"
-	},
-/turf/open/floor/carpet/royalblack,
-/area/f13/wasteland/city/newboston/bar)
-"kzR" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/turf/open/indestructible/ground/outside/water,
-/area/f13/wasteland/city/newboston/outdoors)
-"kDI" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 4;
-	color = "#3B2B1A"
-	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#3B2B1A"
+"jYx" = (
+/obj/structure/sign/poster/contraband/pinup_shower{
+	pixel_y = 32
 	},
 /obj/effect/decal/cleanable/glitter/blue{
 	color = "#444499";
@@ -1665,8 +1768,58 @@
 	color = "#779999"
 	},
 /area/f13/wasteland/city/newboston/bar)
-"kFZ" = (
-/obj/machinery/telecomms/server/presets/science,
+"kcI" = (
+/obj/structure/table/wood/settler,
+/obj/item/stack/sheet/mineral/wood/fifty,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/wasteland/city/newboston/bar)
+"kgD" = (
+/obj/machinery/telecomms/server/presets/common,
+/turf/open/floor/circuit/telecomms/mainframe,
+/area/f13/wasteland/city/newboston/outdoors)
+"kjJ" = (
+/obj/effect/landmark/start/f13/wastelander/clubworker,
+/obj/structure/chair/bench{
+	pixel_y = 12
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontalbottomborderbottom3"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
+"kke" = (
+/obj/structure/sign/poster/contraband/pinup_pink{
+	pixel_y = 32
+	},
+/obj/effect/landmark/start/f13/barkeep,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontalbottomborderbottom2right"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
+"klQ" = (
+/obj/effect/landmark/start/f13/wastelander,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaltopbordertop0"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
+"kuO" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/tree/jungle{
+	pixel_x = -40;
+	pixel_y = 0;
+	density = 0;
+	mouse_opacity = 0
+	},
+/turf/open/floor/grass{
+	color = "#777777"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
+"kFu" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	dir = 4
+	},
+/obj/machinery/telecomms/server/presets/command,
 /turf/open/floor/circuit/telecomms/mainframe,
 /area/f13/wasteland/city/newboston/outdoors)
 "kMU" = (
@@ -1682,9 +1835,48 @@
 	color = "#999999"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
-"kUS" = (
-/obj/structure/sign/poster/contraband/pinup_shower{
-	pixel_y = 32
+"kWD" = (
+/obj/structure/table/wood/settler,
+/obj/item/stack/sheet/cloth/ten,
+/obj/item/stack/sheet/leather/ten,
+/obj/item/stack/sheet/hay/five,
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/wasteland/city/newboston/bar)
+"lcS" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#3B2B1A"
+	},
+/turf/open/floor/carpet/royalblack,
+/area/f13/wasteland/city/newboston/bar)
+"lel" = (
+/obj/structure/lamp_post{
+	dir = 8;
+	light_range = 16
+	},
+/obj/machinery/light{
+	light_color = "#e8eaff";
+	dir = 1;
+	pixel_y = 78;
+	pixel_x = -25;
+	plane = -6
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticalrightborderright0"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
+"ljD" = (
+/obj/machinery/telecomms/server/presets/khans,
+/turf/open/floor/circuit/telecomms/mainframe,
+/area/f13/wasteland/city/newboston/outdoors)
+"llj" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4;
+	color = "#3B2B1A"
+	},
+/obj/effect/turf_decal/siding/wood{
+	color = "#3B2B1A"
 	},
 /obj/effect/decal/cleanable/glitter/blue{
 	color = "#444499";
@@ -1694,7 +1886,51 @@
 	color = "#779999"
 	},
 /area/f13/wasteland/city/newboston/bar)
-"kVA" = (
+"llK" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	dir = 1
+	},
+/turf/open/floor/circuit/telecomms/mainframe,
+/area/f13/wasteland/city/newboston/outdoors)
+"lpN" = (
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticalleftborderleft1"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
+"lzu" = (
+/turf/open/floor/circuit/telecomms/mainframe,
+/area/f13/wasteland/city/newboston/outdoors)
+"lzG" = (
+/obj/structure/simple_door/room,
+/obj/structure/table/abductor,
+/obj/item/lock_bolt{
+	dir = 8
+	},
+/turf/open/floor/wood_fancy/wood_fancy_dark,
+/area/f13/wasteland/city/newboston/bar)
+"lEK" = (
+/obj/structure/flora/ausbushes/reedbush{
+	pixel_y = 7
+	},
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland/city/newboston/outdoors)
+"lHZ" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland/city/newboston/outdoors)
+"lIe" = (
+/obj/structure/flora/rock/pile/largejungle,
+/obj/structure/flora/grass/coyote/one,
+/turf/open/indestructible/ground/inside/dirt,
+/area/f13/wasteland/city/newboston/outdoors)
+"lNg" = (
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticalleftborderleft3"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
+"lQh" = (
 /obj/item/reagent_containers/food/drinks/shaker{
 	pixel_y = 12;
 	pixel_x = -6
@@ -1715,191 +1951,113 @@
 	},
 /turf/open/floor/carpet/royalblack,
 /area/f13/wasteland/city/newboston/bar)
-"kWD" = (
-/obj/structure/table/wood/settler,
-/obj/item/stack/sheet/cloth/ten,
-/obj/item/stack/sheet/leather/ten,
-/obj/item/stack/sheet/hay/five,
-/turf/open/floor/wood_common{
-	color = "#779999"
+"lRV" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
 	},
-/area/f13/wasteland/city/newboston/bar)
-"kWL" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "smokey fog";
-	mouse_opacity = 0;
-	layer = 2.9
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 8;
-	color = "#3B2B1A"
-	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#3B2B1A"
-	},
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
-/area/f13/wasteland/city/newboston/bar)
-"lel" = (
-/obj/structure/lamp_post{
-	dir = 8;
-	light_range = 16
-	},
-/obj/machinery/light{
-	light_color = "#e8eaff";
-	dir = 1;
-	pixel_y = 78;
-	pixel_x = -25;
-	plane = -6
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalrightborderright0"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
-"lpN" = (
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalleftborderleft1"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
-"ltr" = (
-/obj/effect/landmark/start/f13/wastelander/clubworker,
-/obj/structure/chair/bench{
-	pixel_y = 12
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontalbottomborderbottom2"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
-"lyo" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 4;
-	color = "#3B2B1A"
-	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#3B2B1A"
-	},
-/turf/open/floor/carpet/purple,
-/area/f13/wasteland/city/newboston/bar)
-"lzu" = (
-/obj/structure/railing{
-	color = "#A47449";
-	dir = 8;
-	pixel_y = 5;
-	pixel_x = -3
-	},
-/obj/structure/chair/stool/retro/tan,
-/obj/effect/turf_decal/siding/wood{
-	dir = 4;
-	color = "#3B2B1A"
-	},
-/turf/open/floor/carpet/purple,
-/area/f13/wasteland/city/newboston/bar)
-"lzG" = (
-/obj/structure/simple_door/room,
-/obj/structure/table/abductor,
-/obj/item/lock_bolt{
-	dir = 8
-	},
-/turf/open/floor/wood_fancy/wood_fancy_dark,
-/area/f13/wasteland/city/newboston/bar)
-"lBs" = (
-/obj/effect/landmark/start/f13/wastelander/clubworker,
-/obj/structure/chair/bench{
-	pixel_y = 12
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontalbottomborderbottom3"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
-"lLV" = (
-/obj/effect/turf_decal/weather/dirt,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland/city/newboston/outdoors)
-"lMi" = (
-/obj/structure/sign/poster/contraband/pinup_bed{
-	pixel_y = 32
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontalbottomborderbottom3"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
-"lNg" = (
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalleftborderleft3"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
-"lQh" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 4
-	},
-/obj/machinery/telecomms/server/presets/command,
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/f13/wasteland/city/newboston/outdoors)
-"lRY" = (
-/obj/effect/turf_decal/stripes/asteroid/corner,
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/f13/wasteland/city/newboston/outdoors)
 "lSC" = (
-/obj/structure/dresser{
-	pixel_x = -15;
-	density = 0
-	},
-/obj/machinery/light/small{
-	dir = 8;
-	pixel_y = 13;
-	light_color = "#884444";
-	light_power = 2;
-	light_range = 2;
-	color = "#884444"
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 8;
-	color = "#3B2B1A"
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 4;
+	pixel_x = 2
 	},
 /turf/open/floor/carpet/purple,
 /area/f13/wasteland/city/newboston/bar)
-"mbZ" = (
-/obj/machinery/light/floor{
-	light_color = "#883388"
+"lUO" = (
+/obj/structure/decoration/vent/rusty{
+	color = "#aaaaFE";
+	alpha = 50
+	},
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland/city/newboston/outdoors)
+"lXt" = (
+/obj/structure/railing/corner{
+	dir = 4;
+	color = "#A47449";
+	pixel_y = 8
+	},
+/obj/structure/curtain{
+	color = "#c40e0e";
+	open = 0
+	},
+/obj/effect/decal/cleanable/glitter/pink,
+/obj/structure/table/abductor,
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "smokey fog";
+	mouse_opacity = 0;
+	layer = 2.9;
+	opacity = 1
+	},
+/turf/open/floor/carpet/purple,
+/area/f13/wasteland/city/newboston/bar)
+"maZ" = (
+/obj/item/kirbyplants/random,
+/obj/effect/turf_decal/siding/wood{
+	color = "#3B2B1A"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4;
+	color = "#3B2B1A"
 	},
 /turf/open/floor/wood_common{
-	color = "#779999"
+	color = "#99BBBB"
 	},
 /area/f13/wasteland/city/newboston/bar)
+"mbZ" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/turf/open/indestructible/ground/inside/dirt,
+/area/f13/wasteland/city/newboston/outdoors)
 "mdh" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontalbottomborderbottom0"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
 "meo" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "smokey fog";
-	mouse_opacity = 0;
-	layer = 2.9
-	},
 /obj/effect/turf_decal/siding/wood{
-	dir = 4;
+	dir = 1;
 	color = "#3B2B1A"
 	},
 /obj/effect/turf_decal/siding/wood{
+	dir = 4;
 	color = "#3B2B1A"
 	},
 /turf/open/floor/wood_worn,
 /area/f13/wasteland/city/newboston/bar)
-"mqF" = (
+"mip" = (
+/turf/open/indestructible/ground/inside/dirt,
+/area/f13/wasteland/city/newboston/outdoors)
+"msa" = (
+/obj/item/storage/box/drinkingglasses{
+	pixel_y = 3;
+	pixel_x = 1
+	},
+/obj/item/storage/box/drinkingglasses{
+	pixel_y = 6;
+	pixel_x = -9
+	},
+/obj/structure/table/abductor,
+/obj/machinery/light/small{
+	color = "#444499";
+	dir = 4;
+	light_color = "#444499";
+	light_power = 2;
+	light_range = 2;
+	pixel_y = 13
+	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 4;
 	color = "#3B2B1A"
 	},
-/turf/open/floor/wood_worn,
+/turf/open/floor/carpet/royalblack,
 /area/f13/wasteland/city/newboston/bar)
 "mtY" = (
 /obj/structure/chair/sofa/corp/right{
@@ -1942,91 +2100,38 @@
 	color = "#779999"
 	},
 /area/f13/wasteland/city/newboston/bar)
-"mDL" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 9
-	},
-/obj/machinery/telecomms/bus/preset_one,
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/f13/wasteland/city/newboston/outdoors)
-"mDM" = (
-/obj/machinery/telecomms/processor/preset_three,
-/obj/machinery/light/floor,
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
-"mFX" = (
-/obj/structure/table/abductor,
-/obj/structure/sign/painting/library{
-	pixel_x = 32
-	},
-/obj/structure/sign/poster/contraband/robust_softdrinks{
-	pixel_x = 32
-	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#3B2B1A"
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 4;
-	color = "#3B2B1A"
-	},
-/turf/open/floor/carpet/royalblack,
-/area/f13/wasteland/city/newboston/bar)
-"mGX" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "smokey fog";
-	mouse_opacity = 0;
-	layer = 2.9
-	},
-/obj/effect/turf_decal/huge/heaven,
-/turf/open/floor/wood_worn,
-/area/f13/wasteland/city/newboston/bar)
-"mHS" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 8
-	},
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
-"mML" = (
-/obj/item/kirbyplants/random,
+"mGF" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8;
 	color = "#3B2B1A"
 	},
 /obj/effect/turf_decal/siding/wood{
-	dir = 1;
 	color = "#3B2B1A"
 	},
 /turf/open/floor/wood_common{
-	color = "#99BBBB"
+	color = "#779999"
 	},
 /area/f13/wasteland/city/newboston/bar)
+"mNp" = (
+/obj/effect/turf_decal/weather/dirt,
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland/city/newboston/outdoors)
 "mOz" = (
-/obj/structure/closet/cabinet/anchored,
-/obj/item/clothing/under/fancy_red_formaldress,
-/obj/item/clothing/under/dress/blacktango,
-/obj/item/clothing/under/costume/singer/yellow,
-/obj/item/clothing/under/dress/westernbustle,
-/obj/item/clothing/under/misc/black_dress,
-/obj/item/clothing/under/f13/campfollowerfemale,
-/obj/item/clothing/under/f13/campfollowermale,
-/obj/machinery/light/small{
-	dir = 8;
-	pixel_y = 13;
-	light_color = "#884444";
-	light_power = 2;
-	light_range = 2;
-	color = "#884444"
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 8;
-	color = "#3B2B1A"
-	},
+/obj/structure/table/wood/settler,
+/obj/item/melee/onehanded/slavewhip,
+/obj/item/melee/chainofcommand/tailwhip/kitty,
+/obj/item/cane,
+/obj/item/restraints/handcuffs,
+/obj/item/restraints/handcuffs/fake/kinky,
+/obj/item/clothing/neck/petcollar,
+/obj/item/clothing/neck/spikecollar,
+/obj/item/clothing/neck/sapphirecollar,
+/obj/item/clothing/neck/rubycollar,
+/obj/item/clothing/neck/petcollar/locked,
+/obj/item/clothing/neck/petcollar/leather,
+/obj/item/clothing/neck/petcollar/choker,
+/obj/item/clothing/neck/heartcollar,
+/obj/item/clothing/mask/muzzle,
 /obj/effect/turf_decal/siding/wood{
 	dir = 1;
 	color = "#3B2B1A"
@@ -2034,8 +2139,17 @@
 /turf/open/floor/carpet/orange,
 /area/f13/wasteland/city/newboston/bar)
 "mSr" = (
-/obj/effect/turf_decal/weather/dirt,
-/turf/open/indestructible/ground/outside/water,
+/obj/machinery/light/floor,
+/turf/open/floor/plasteel/f13{
+	icon_state = "darkrustysolid"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
+"mWI" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	dir = 4
+	},
+/obj/machinery/telecomms/receiver/preset_right,
+/turf/open/floor/circuit/telecomms/mainframe,
 /area/f13/wasteland/city/newboston/outdoors)
 "nbY" = (
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -2073,6 +2187,10 @@
 	color = "#779999"
 	},
 /area/f13/wasteland/city/newboston/bar)
+"nsz" = (
+/obj/machinery/telecomms/server/presets/service,
+/turf/open/floor/circuit/telecomms/mainframe,
+/area/f13/wasteland/city/newboston/outdoors)
 "nuu" = (
 /obj/structure/spacevine{
 	icon = 'icons/effects/effects.dmi';
@@ -2084,13 +2202,6 @@
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalleftborderleft2bottom"
 	},
-/area/f13/wasteland/city/newboston/outdoors)
-"nuI" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 10
-	},
-/obj/machinery/telecomms/bus/preset_four,
-/turf/open/floor/circuit/telecomms/mainframe,
 /area/f13/wasteland/city/newboston/outdoors)
 "nwa" = (
 /obj/structure/spacevine{
@@ -2111,23 +2222,38 @@
 	color = "#779999"
 	},
 /area/f13/wasteland/city/newboston/bar)
+"nyA" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4;
+	color = "#3B2B1A"
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/wasteland/city/newboston/bar)
+"nPu" = (
+/obj/effect/landmark/start/f13/wastelander/clubworker,
+/obj/structure/chair/bench{
+	pixel_y = 12
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontalbottomborderbottom2"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
 "nQS" = (
 /obj/effect/landmark/latejoin,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "outerborder - S"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
-"nWd" = (
-/obj/structure/flora/chomp/bones/lrock4,
-/turf/open/indestructible/ground/outside/water,
+"nVa" = (
+/obj/machinery/telecomms/server/presets/town,
+/turf/open/floor/circuit/telecomms/mainframe,
 /area/f13/wasteland/city/newboston/outdoors)
-"nXC" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 1;
-	color = "#3B2B1A"
-	},
-/turf/open/floor/wood_worn,
-/area/f13/wasteland/city/newboston/bar)
+"nVF" = (
+/obj/structure/flora/rock/pile/largejungle,
+/turf/open/indestructible/ground/inside/dirt,
+/area/f13/wasteland/city/newboston/outdoors)
 "ocQ" = (
 /obj/structure/spacevine{
 	icon = 'icons/effects/effects.dmi';
@@ -2144,22 +2270,18 @@
 	icon_state = "horizontalbottomborderbottom0"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
-"ohm" = (
-/obj/effect/turf_decal/stripes/asteroid/line,
-/obj/machinery/telecomms/message_server,
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/f13/wasteland/city/newboston/outdoors)
-"ohF" = (
-/obj/machinery/telecomms/processor/preset_four,
-/obj/machinery/light/floor,
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
+"ohS" = (
+/obj/machinery/jukebox,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#3B2B1A"
 	},
-/area/f13/wasteland/city/newboston/outdoors)
-"oiu" = (
-/obj/effect/landmark/start/f13/wastelander,
-/turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/wasteland/city/newboston/outdoors)
+/obj/effect/turf_decal/siding/wood{
+	dir = 4;
+	color = "#3B2B1A"
+	},
+/turf/open/floor/carpet/royalblack,
+/area/f13/wasteland/city/newboston/bar)
 "okV" = (
 /obj/structure/chair/folding{
 	dir = 4
@@ -2182,6 +2304,91 @@
 	icon_state = "horizontaltopbordertop2"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
+"orp" = (
+/obj/structure/sink{
+	icon_state = "water";
+	name = "water";
+	pixel_x = -1;
+	pixel_y = 12;
+	plane = 0
+	},
+/obj/structure/sink{
+	icon_state = "water";
+	name = "water";
+	pixel_x = 5;
+	pixel_y = 15;
+	plane = 0
+	},
+/obj/structure/sink{
+	icon_state = "water";
+	name = "water";
+	pixel_x = -6;
+	pixel_y = 7;
+	plane = 0
+	},
+/obj/structure/sink{
+	icon_state = "water";
+	name = "water";
+	pixel_x = -6;
+	pixel_y = 15;
+	plane = 0
+	},
+/obj/structure/sink{
+	icon_state = "water";
+	name = "water";
+	pixel_x = 5;
+	pixel_y = 7;
+	plane = 0
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	layer = 2
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	layer = 2;
+	pixel_x = 18
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	layer = 2;
+	pixel_x = 18;
+	pixel_y = -14
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	layer = 2;
+	pixel_y = -14
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	layer = 2;
+	pixel_y = -14;
+	pixel_x = -19
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "steam";
+	layer = 2;
+	pixel_x = -17
+	},
+/obj/effect/turf_decal/weather/dirt,
+/turf/open/indestructible/ground/outside/water/running{
+	name = "tribe river";
+	color = "#A1BFFF"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
 "orZ" = (
 /obj/machinery/processor,
 /turf/open/floor/f13{
@@ -2190,22 +2397,15 @@
 	name = "dirty floor"
 	},
 /area/f13/wasteland/city/newboston/bar)
-"ouH" = (
-/obj/machinery/light/small{
-	color = "#444499";
-	dir = 8;
-	light_color = "#444499";
-	light_power = 2;
-	light_range = 2;
-	pixel_y = 13
+"ouY" = (
+/obj/structure/fence/pole_b{
+	pixel_y = 7
 	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 8;
-	color = "#3B2B1A"
+/obj/structure/fence/pole_t{
+	pixel_y = 36
 	},
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
+/obj/structure/table/abductor,
+/turf/open/floor/carpet/purple,
 /area/f13/wasteland/city/newboston/bar)
 "oKw" = (
 /obj/structure/chair/stool/retro/backed{
@@ -2261,25 +2461,18 @@
 	color = "#779999"
 	},
 /area/f13/wasteland/city/newboston/bar)
-"piu" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
+"pwT" = (
+/obj/structure/sign/painting/library{
+	pixel_x = -32
 	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/turf/open/indestructible/ground/outside/water,
-/area/f13/wasteland/city/newboston/outdoors)
-"prY" = (
+/obj/item/kirbyplants/random,
 /obj/effect/turf_decal/siding/wood{
-	dir = 1;
+	dir = 8;
 	color = "#3B2B1A"
 	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 4;
-	color = "#3B2B1A"
+/turf/open/floor/wood_common{
+	color = "#779999"
 	},
-/turf/open/floor/wood_worn,
 /area/f13/wasteland/city/newboston/bar)
 "pxC" = (
 /obj/structure/table/abductor,
@@ -2306,6 +2499,13 @@
 	},
 /turf/open/floor/carpet/black,
 /area/f13/wasteland/city/newboston/bar)
+"pGx" = (
+/obj/machinery/telecomms/processor/preset_one,
+/obj/machinery/light/floor,
+/turf/open/floor/plasteel/f13{
+	icon_state = "darkrustysolid"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
 "pMf" = (
 /obj/effect/decal/cleanable/glitter/white{
 	color = "#884444"
@@ -2315,39 +2515,65 @@
 "pQh" = (
 /turf/open/floor/carpet/royalblack,
 /area/f13/wasteland/city/newboston/bar)
-"pWN" = (
-/obj/effect/landmark/start/f13/barkeep,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontalbottomborderbottom0"
+"pSY" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "smokey fog";
+	mouse_opacity = 0;
+	layer = 2.9
+	},
+/obj/item/toy/tennis/blue{
+	density = 1;
+	mouse_opacity = 0;
+	alpha = 0;
+	anchored = 1
+	},
+/turf/open/indestructible/ground/outside/road{
+	color = "#999999"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
-"qeV" = (
-/obj/effect/turf_decal/stripes/asteroid/corner{
-	dir = 4
+"qjR" = (
+/obj/structure/flora/chomp/bones/lrock4,
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland/city/newboston/outdoors)
+"qwR" = (
+/obj/machinery/recycler,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "outerborder - E"
 	},
-/turf/open/floor/circuit/telecomms/mainframe,
 /area/f13/wasteland/city/newboston/outdoors)
 "qxx" = (
-/obj/structure/table/wood/settler,
-/obj/item/melee/onehanded/slavewhip,
-/obj/item/melee/chainofcommand/tailwhip/kitty,
-/obj/item/cane,
-/obj/item/restraints/handcuffs,
-/obj/item/restraints/handcuffs/fake/kinky,
-/obj/item/clothing/neck/petcollar,
-/obj/item/clothing/neck/spikecollar,
-/obj/item/clothing/neck/sapphirecollar,
-/obj/item/clothing/neck/rubycollar,
-/obj/item/clothing/neck/petcollar/locked,
-/obj/item/clothing/neck/petcollar/leather,
-/obj/item/clothing/neck/petcollar/choker,
-/obj/item/clothing/neck/heartcollar,
-/obj/item/clothing/mask/muzzle,
+/obj/structure/closet/cabinet/anchored,
+/obj/item/clothing/under/f13/mprostitute,
+/obj/item/clothing/under/f13/fprostitute,
+/obj/item/clothing/under/f13/erpdress,
+/obj/item/clothing/under/dress/corset,
+/obj/item/clothing/under/misc/stripper,
+/obj/item/clothing/under/misc/stripper/green,
+/obj/item/clothing/under/misc/stripper/mankini,
+/obj/item/clothing/under/maid,
+/obj/item/clothing/under/janimaid,
+/obj/item/clothing/head/maid,
+/obj/item/clothing/accessory/maidapron,
+/obj/item/clothing/suit/armor/outfit/overalls/sexymaid,
 /obj/effect/turf_decal/siding/wood{
 	dir = 1;
 	color = "#3B2B1A"
 	},
 /turf/open/floor/carpet/orange,
+/area/f13/wasteland/city/newboston/bar)
+"qAX" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4;
+	color = "#3B2B1A"
+	},
+/obj/effect/turf_decal/siding/wood{
+	color = "#3B2B1A"
+	},
+/turf/open/floor/wood_common{
+	color = "#99BBBB"
+	},
 /area/f13/wasteland/city/newboston/bar)
 "qCA" = (
 /turf/open/floor/f13{
@@ -2375,66 +2601,54 @@
 	icon_state = "outerbordercorner - W"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
-"qNN" = (
-/obj/machinery/autolathe,
-/obj/item/stack/sheet/metal/fifty,
-/obj/item/stack/sheet/metal/fifty,
-/obj/item/stack/sheet/metal/fifty,
-/obj/item/stack/sheet/metal/fifty,
-/obj/item/stack/sheet/glass/fifty,
-/obj/item/stack/sheet/glass/fifty,
-/obj/item/stack/sheet/glass/fifty,
-/obj/item/stack/sheet/glass/fifty,
-/turf/open/floor/f13{
-	color = "#ffe9de";
-	icon_state = "darkrusty";
-	name = "dirty floor"
+"qLB" = (
+/obj/machinery/telecomms/server/presets/security,
+/turf/open/floor/circuit/telecomms/mainframe,
+/area/f13/wasteland/city/newboston/outdoors)
+"qQu" = (
+/obj/structure/sign/poster/contraband/pinup_ride{
+	pixel_y = 32
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "smokey fog";
+	mouse_opacity = 0;
+	layer = 2.9
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
 	},
 /area/f13/wasteland/city/newboston/bar)
-"rcC" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
+"qSj" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	dir = 4
 	},
+/turf/open/floor/plasteel/f13{
+	icon_state = "darkrustysolid"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
+"qZW" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	dir = 10
+	},
+/turf/open/floor/circuit/telecomms/mainframe,
+/area/f13/wasteland/city/newboston/outdoors)
+"rbl" = (
 /obj/structure/flora/ausbushes/grassybush,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland/city/newboston/outdoors)
-"reN" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#3B2B1A"
+"rbU" = (
+/turf/open/floor/plasteel/f13{
+	icon_state = "darkrustysolid"
 	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 8;
-	color = "#3B2B1A"
-	},
-/turf/open/floor/wood_worn,
-/area/f13/wasteland/city/newboston/bar)
+/area/f13/wasteland/city/newboston/outdoors)
 "rnf" = (
 /turf/open/floor/carpet/purple,
 /area/f13/wasteland/city/newboston/bar)
 "roB" = (
-/obj/effect/decal/cleanable/glitter/white{
-	color = "#884444"
-	},
-/obj/structure/chair/stool/retro/backed{
-	dir = 4
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 8;
-	color = "#3B2B1A"
-	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#3B2B1A"
-	},
-/turf/open/floor/carpet/royalblack,
-/area/f13/wasteland/city/newboston/bar)
-"rsh" = (
-/obj/effect/landmark/start/f13/wastelander/clubworker,
-/obj/structure/chair/bench{
-	pixel_y = 12
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontalbottomborderbottom0"
-	},
+/obj/machinery/telecomms/hub/preset,
+/turf/open/floor/circuit/telecomms/mainframe,
 /area/f13/wasteland/city/newboston/outdoors)
 "rvy" = (
 /obj/structure/spacevine{
@@ -2460,57 +2674,39 @@
 	name = "dirty floor"
 	},
 /area/f13/wasteland/city/newboston/bar)
+"rBJ" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland/city/newboston/outdoors)
 "rDF" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontalbottomborderbottom2right"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
-"rMD" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 8;
-	color = "#3B2B1A"
-	},
-/obj/effect/decal/cleanable/glitter/blue{
-	color = "#444499";
-	layer = 3
-	},
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
-/area/f13/wasteland/city/newboston/bar)
-"rNu" = (
-/obj/structure/curtain{
-	color = "#c40e0e"
-	},
-/obj/effect/fake_stairs/west{
-	color = "#845f58"
-	},
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
-/area/f13/wasteland/city/newboston/bar)
-"rOK" = (
+"rGK" = (
 /obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 5
+	dir = 8
 	},
+/obj/machinery/telecomms/receiver/preset_left,
 /turf/open/floor/circuit/telecomms/mainframe,
 /area/f13/wasteland/city/newboston/outdoors)
+"rNu" = (
+/obj/effect/landmark/start/f13/wastelander/clubworker,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaltopbordertop2"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
 "rTA" = (
-/obj/structure/railing{
-	color = "#A47449";
-	dir = 8;
-	pixel_x = -3
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
 	},
-/obj/machinery/light/floor{
-	light_color = "#883388"
-	},
-/obj/structure/chair/stool/retro/tan,
-/obj/effect/turf_decal/siding/wood{
-	dir = 4;
-	color = "#3B2B1A"
-	},
-/turf/open/floor/carpet/purple,
-/area/f13/wasteland/city/newboston/bar)
+/turf/open/indestructible/ground/inside/dirt,
+/area/f13/wasteland/city/newboston/outdoors)
 "rWC" = (
 /obj/machinery/vending/cola/red{
 	density = 0;
@@ -2523,30 +2719,59 @@
 "rYw" = (
 /turf/closed,
 /area)
+"rZT" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/structure/flora/ausbushes/grassybush,
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland/city/newboston/outdoors)
 "sbi" = (
 /turf/closed/indestructible/f13/matrix,
 /area/f13/wasteland/city/newboston/outdoors)
-"sdV" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 4
+"sel" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8;
+	color = "#3B2B1A"
 	},
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
+/turf/open/floor/wood_worn,
+/area/f13/wasteland/city/newboston/bar)
+"seA" = (
+/obj/structure/railing/corner{
+	color = "#A47449";
+	pixel_y = -1
 	},
-/area/f13/wasteland/city/newboston/outdoors)
-"snc" = (
-/obj/structure/sink/greyscale{
-	dir = 4;
-	pixel_y = 10;
-	pixel_x = 12
+/obj/structure/curtain{
+	color = "#c40e0e";
+	open = 0
 	},
+/obj/effect/decal/cleanable/glitter/pink,
 /obj/structure/table/abductor,
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "smokey fog";
+	mouse_opacity = 0;
+	layer = 2.9;
+	opacity = 1
+	},
+/turf/open/floor/carpet/purple,
+/area/f13/wasteland/city/newboston/bar)
+"shG" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 4;
 	color = "#3B2B1A"
 	},
-/obj/structure/sign/flag_texas{
-	pixel_x = 32
+/turf/closed/wall/mineral/brick,
+/area/f13/wasteland/city/newboston/bar)
+"skf" = (
+/obj/structure/chair/stool/retro/backed,
+/obj/machinery/light/floor{
+	light_color = "#883388"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#3B2B1A"
 	},
 /turf/open/floor/carpet/royalblack,
 /area/f13/wasteland/city/newboston/bar)
@@ -2578,26 +2803,14 @@
 	color = "#999999"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
+"ste" = (
+/obj/machinery/telecomms/server/presets/engineering,
+/turf/open/floor/circuit/telecomms/mainframe,
+/area/f13/wasteland/city/newboston/outdoors)
 "sxE" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop1"
 	},
-/area/f13/wasteland/city/newboston/outdoors)
-"syd" = (
-/obj/structure/sign/poster/contraband/pinup_pink{
-	pixel_y = 32
-	},
-/obj/effect/landmark/start/f13/barkeep,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontalbottomborderbottom2right"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
-"sAg" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 5
-	},
-/obj/machinery/telecomms/bus/preset_two,
-/turf/open/floor/circuit/telecomms/mainframe,
 /area/f13/wasteland/city/newboston/outdoors)
 "sCW" = (
 /obj/structure/sign/painting/library{
@@ -2619,126 +2832,21 @@
 	icon_state = "horizontaltopbordertop2right"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
-"sTd" = (
-/obj/structure/bonfire/prelit,
-/turf/open/indestructible/ground/outside/gravel{
-	color = "#AAAAAA"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
 "sXl" = (
-/obj/structure/decoration/vent/rusty{
-	color = "#aaaaFE";
-	alpha = 50
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8;
+	pixel_x = -3
 	},
-/turf/open/indestructible/ground/outside/water,
-/area/f13/wasteland/city/newboston/outdoors)
-"sYD" = (
-/obj/structure/sink{
-	icon_state = "water";
-	name = "water";
-	pixel_x = -1;
-	pixel_y = 12;
-	plane = 0
+/obj/machinery/light/floor{
+	light_color = "#883388"
 	},
-/obj/structure/sink{
-	icon_state = "water";
-	name = "water";
-	pixel_x = 5;
-	pixel_y = 15;
-	plane = 0
-	},
-/obj/structure/sink{
-	icon_state = "water";
-	name = "water";
-	pixel_x = -6;
-	pixel_y = 7;
-	plane = 0
-	},
-/obj/structure/sink{
-	icon_state = "water";
-	name = "water";
-	pixel_x = -6;
-	pixel_y = 15;
-	plane = 0
-	},
-/obj/structure/sink{
-	icon_state = "water";
-	name = "water";
-	pixel_x = 5;
-	pixel_y = 7;
-	plane = 0
-	},
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "steam";
-	layer = 2
-	},
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "steam";
-	layer = 2;
-	pixel_x = 18
-	},
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "steam";
-	layer = 2;
-	pixel_x = 18;
-	pixel_y = -14
-	},
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "steam";
-	layer = 2;
-	pixel_y = -14
-	},
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "steam";
-	layer = 2;
-	pixel_y = -14;
-	pixel_x = -19
-	},
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "steam";
-	layer = 2;
-	pixel_x = -17
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/turf/open/indestructible/ground/outside/water/running{
-	name = "tribe river";
-	color = "#A1BFFF"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
-"tdz" = (
-/obj/structure/sign/poster/contraband/pinup_couch{
-	pixel_y = 32
-	},
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
-/area/f13/wasteland/city/newboston/bar)
-"teC" = (
+/obj/structure/chair/stool/retro/tan,
 /obj/effect/turf_decal/siding/wood{
 	dir = 4;
 	color = "#3B2B1A"
 	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 1;
-	color = "#3B2B1A"
-	},
-/turf/open/floor/wood_common{
-	color = "#99BBBB"
-	},
+/turf/open/floor/carpet/purple,
 /area/f13/wasteland/city/newboston/bar)
 "tkO" = (
 /turf/open/indestructible/ground/outside/road{
@@ -2746,20 +2854,8 @@
 	icon_state = "horizontaltopborderbottom0"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
-"tnx" = (
-/obj/effect/turf_decal/stripes/asteroid/line,
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/f13/wasteland/city/newboston/outdoors)
 "tot" = (
-/obj/structure/sign/poster/contraband/pinup_bed{
-	pixel_x = -32
-	},
-/obj/structure/piano/fancy,
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
-/area/f13/wasteland/city/newboston/bar)
-"try" = (
+/obj/item/kirbyplants/random,
 /obj/effect/turf_decal/siding/wood{
 	dir = 8;
 	color = "#3B2B1A"
@@ -2796,10 +2892,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/wasteland/city/newboston/bar)
-"tBo" = (
-/obj/machinery/telecomms/server/presets/service,
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/f13/wasteland/city/newboston/outdoors)
 "tCf" = (
 /obj/effect/decal/cleanable/glitter/blue{
 	color = "#444499";
@@ -2812,79 +2904,42 @@
 /turf/open/floor/carpet/black,
 /area/f13/wasteland/city/newboston/bar)
 "tCv" = (
-/obj/item/fishingrod,
-/turf/open/indestructible/ground/outside/gravel{
-	color = "#AAAAAA"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
-"tDM" = (
-/obj/structure/chair/stool/retro/backed,
-/obj/machinery/light/floor{
-	light_color = "#883388"
-	},
 /obj/effect/turf_decal/siding/wood{
-	dir = 1;
+	dir = 4;
 	color = "#3B2B1A"
 	},
-/turf/open/floor/carpet/royalblack,
+/turf/open/floor/wood_worn,
 /area/f13/wasteland/city/newboston/bar)
-"tKv" = (
-/obj/structure/flora/ausbushes/leafybush{
-	pixel_x = 4;
-	alpha = 80;
-	mouse_opacity = 0
-	},
-/turf/open/indestructible/ground/outside/water,
-/area/f13/wasteland/city/newboston/outdoors)
 "tLM" = (
 /turf/open/floor/plating/f13/outside/road{
 	icon_state = "cross1";
 	color = "#999999"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
-"ubS" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 4;
-	color = "#3B2B1A"
+"tSj" = (
+/obj/effect/decal/cleanable/glitter/white{
+	color = "#884444"
 	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#3B2B1A"
-	},
-/turf/open/floor/wood_common{
-	color = "#99BBBB"
-	},
-/area/f13/wasteland/city/newboston/bar)
-"ueB" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "smokey fog";
-	mouse_opacity = 0;
-	layer = 2.9
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 1;
-	color = "#3B2B1A"
+/obj/structure/chair/stool/retro/backed{
+	dir = 4
 	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 8;
 	color = "#3B2B1A"
 	},
-/turf/open/floor/wood_worn,
+/obj/effect/turf_decal/siding/wood{
+	color = "#3B2B1A"
+	},
+/turf/open/floor/carpet/royalblack,
 /area/f13/wasteland/city/newboston/bar)
-"ueH" = (
-/obj/item/toy/tennis/blue{
-	density = 1;
-	mouse_opacity = 0;
-	alpha = 0;
-	anchored = 1
+"tTr" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	dir = 8
 	},
-/turf/open/indestructible/ground/outside/road{
-	color = "#999999";
-	icon_state = "horizontaltopborderbottom0"
-	},
+/obj/machinery/telecomms/server/presets/enclave,
+/turf/open/floor/circuit/telecomms/mainframe,
 /area/f13/wasteland/city/newboston/outdoors)
-"ulN" = (
+"uie" = (
 /obj/structure/spacevine{
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
@@ -2895,21 +2950,64 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8;
 	color = "#3B2B1A"
-	},
-/turf/open/floor/wood_worn,
-/area/f13/wasteland/city/newboston/bar)
-"uyE" = (
-/obj/structure/sign/poster/contraband/pinup_funk{
-	pixel_y = 32
 	},
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
 /area/f13/wasteland/city/newboston/bar)
-"uzz" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
+"ukJ" = (
+/obj/structure/closet/crate/trashcart,
+/turf/open/indestructible/ground/inside/dirt,
+/area/f13/wasteland/city/newboston/outdoors)
+"ukT" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	dir = 4
 	},
+/obj/machinery/telecomms/server/presets/vault,
+/turf/open/floor/circuit/telecomms/mainframe,
+/area/f13/wasteland/city/newboston/outdoors)
+"urh" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/lamp_post/doubles/bent{
+	dir = 4;
+	density = 0;
+	pixel_y = -14;
+	pixel_x = -42;
+	light_range = 16
+	},
+/obj/machinery/light{
+	light_color = "#e8eaff";
+	dir = 1;
+	pixel_y = 64;
+	pixel_x = 17;
+	plane = -6
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontalbottomborderbottom0"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
+"usf" = (
+/obj/effect/landmark/start/f13/wastelander/clubworker,
+/obj/structure/chair/bench{
+	pixel_y = 12
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontalbottomborderbottom0"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
+"uvk" = (
+/obj/effect/turf_decal/stripes/asteroid/line,
+/obj/machinery/telecomms/message_server,
+/turf/open/floor/circuit/telecomms/mainframe,
+/area/f13/wasteland/city/newboston/outdoors)
+"uyD" = (
+/obj/structure/flora/ausbushes/reedbush{
+	pixel_y = 7
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/obj/effect/turf_decal/weather/dirt,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland/city/newboston/outdoors)
 "uAb" = (
@@ -2928,7 +3026,7 @@
 	color = "#779999"
 	},
 /area/f13/wasteland/city/newboston/bar)
-"uKE" = (
+"uFL" = (
 /obj/effect/landmark/latejoin,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop1"
@@ -2949,46 +3047,13 @@
 	color = "#99BBBB"
 	},
 /area/f13/wasteland/city/newboston/bar)
-"uRc" = (
-/obj/machinery/telecomms/server/presets/medical,
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
-"uTa" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
+"uWD" = (
+/obj/effect/turf_decal/weather/dirt,
+/obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
-/obj/machinery/telecomms/broadcaster/preset_left,
-/turf/open/floor/circuit/telecomms/mainframe,
+/turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland/city/newboston/outdoors)
-"uVD" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 4
-	},
-/obj/machinery/telecomms/server/presets/vault,
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/f13/wasteland/city/newboston/outdoors)
-"uWD" = (
-/obj/structure/railing{
-	color = "#A47449";
-	dir = 8;
-	pixel_x = -3
-	},
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "smokey fog";
-	mouse_opacity = 0;
-	layer = 2.9
-	},
-/obj/structure/chair/stool/retro/tan,
-/obj/effect/turf_decal/siding/wood{
-	dir = 4;
-	color = "#3B2B1A"
-	},
-/turf/open/floor/carpet/purple,
-/area/f13/wasteland/city/newboston/bar)
 "uWY" = (
 /turf/open/indestructible/ground/outside/road{
 	color = "#999999"
@@ -3017,64 +3082,86 @@
 	icon_state = "outerborder - W"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
+"vlJ" = (
+/obj/effect/turf_decal/stripes/asteroid/corner{
+	dir = 4
+	},
+/turf/open/floor/circuit/telecomms/mainframe,
+/area/f13/wasteland/city/newboston/outdoors)
 "vlV" = (
 /obj/effect/landmark/latejoin,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "outerbordercorner - S"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
-"vwg" = (
-/obj/effect/decal/cleanable/glitter/blue{
-	color = "#444499";
-	layer = 3
-	},
-/turf/open/floor/wood_worn,
-/area/f13/wasteland/city/newboston/bar)
-"vyY" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "smokey fog";
-	mouse_opacity = 0;
-	layer = 2.9
-	},
-/obj/item/toy/tennis/blue{
-	density = 1;
-	mouse_opacity = 0;
-	alpha = 0;
-	anchored = 1
-	},
-/turf/open/indestructible/ground/outside/road{
-	color = "#999999"
-	},
-/area/f13/wasteland/city/newboston/outdoors)
 "vzp" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
+/obj/structure/chair/stool/retro/backed{
 	dir = 4
 	},
-/obj/machinery/telecomms/broadcaster/preset_right,
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/f13/wasteland/city/newboston/outdoors)
-"vFJ" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
+/obj/machinery/light/floor{
+	light_color = "#883388"
 	},
-/turf/open/indestructible/ground/outside/water,
-/area/f13/wasteland/city/newboston/outdoors)
-"vHU" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "smokey fog";
-	mouse_opacity = 0;
-	layer = 2.9
+/obj/effect/turf_decal/siding/wood{
+	dir = 8;
+	color = "#3B2B1A"
 	},
+/turf/open/floor/carpet/royalblack,
+/area/f13/wasteland/city/newboston/bar)
+"vDo" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#3B2B1A"
 	},
+/turf/open/floor/wood_worn,
+/area/f13/wasteland/city/newboston/bar)
+"vEu" = (
+/obj/structure/bed/dogbed,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
+/area/f13/wasteland/city/newboston/bar)
+"vHp" = (
+/obj/effect/decal/cleanable/glitter/white{
+	color = "#884444"
+	},
+/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
+	pixel_y = 17;
+	pixel_x = -8
+	},
+/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
+	pixel_x = -8;
+	pixel_y = 7
+	},
+/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
+	pixel_y = 4
+	},
+/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
+	pixel_x = 8;
+	pixel_y = 12
+	},
+/obj/structure/table/abductor,
+/obj/effect/turf_decal/siding/wood{
+	color = "#3B2B1A"
+	},
+/turf/open/floor/carpet/royalblack,
+/area/f13/wasteland/city/newboston/bar)
+"vJz" = (
+/obj/structure/sign/painting/library{
+	pixel_x = -32
+	},
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 1;
+	pixel_y = 8
+	},
+/obj/effect/decal/cleanable/glitter/pink,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/structure/chair/stool/retro/tan,
+/obj/effect/turf_decal/siding/wood{
+	color = "#3B2B1A"
+	},
+/turf/open/floor/carpet/purple,
 /area/f13/wasteland/city/newboston/bar)
 "vJD" = (
 /obj/effect/decal/marking,
@@ -3083,6 +3170,16 @@
 	color = "#999999"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
+"vKd" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#3B2B1A"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8;
+	color = "#3B2B1A"
+	},
+/turf/open/floor/wood_worn,
+/area/f13/wasteland/city/newboston/bar)
 "vQt" = (
 /obj/structure/rack,
 /obj/item/toy/crayon/spraycan{
@@ -3099,96 +3196,22 @@
 	name = "dirty floor"
 	},
 /area/f13/wasteland/city/newboston/bar)
-"vWI" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#3B2B1A"
+"waC" = (
+/obj/structure/bonfire/prelit,
+/turf/open/indestructible/ground/inside/dirt,
+/area/f13/wasteland/city/newboston/outdoors)
+"wdd" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	dir = 6
 	},
-/turf/open/floor/wood_worn,
-/area/f13/wasteland/city/newboston/bar)
-"vXB" = (
-/obj/structure/sink{
-	icon_state = "water";
-	name = "water";
-	pixel_x = -1;
-	pixel_y = 12;
-	plane = 0
+/turf/open/floor/circuit/telecomms/mainframe,
+/area/f13/wasteland/city/newboston/outdoors)
+"wgU" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	dir = 1
 	},
-/obj/structure/sink{
-	icon_state = "water";
-	name = "water";
-	pixel_x = 5;
-	pixel_y = 15;
-	plane = 0
-	},
-/obj/structure/sink{
-	icon_state = "water";
-	name = "water";
-	pixel_x = -6;
-	pixel_y = 7;
-	plane = 0
-	},
-/obj/structure/sink{
-	icon_state = "water";
-	name = "water";
-	pixel_x = -6;
-	pixel_y = 15;
-	plane = 0
-	},
-/obj/structure/sink{
-	icon_state = "water";
-	name = "water";
-	pixel_x = 5;
-	pixel_y = 7;
-	plane = 0
-	},
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "steam";
-	layer = 2
-	},
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "steam";
-	layer = 2;
-	pixel_x = 18
-	},
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "steam";
-	layer = 2;
-	pixel_x = 18;
-	pixel_y = -14
-	},
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "steam";
-	layer = 2;
-	pixel_y = -14
-	},
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "steam";
-	layer = 2;
-	pixel_y = -14;
-	pixel_x = -19
-	},
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "steam";
-	layer = 2;
-	pixel_x = -17
-	},
-/obj/effect/turf_decal/weather/dirt,
-/turf/open/indestructible/ground/outside/water/running{
-	name = "tribe river";
-	color = "#A1BFFF"
-	},
+/obj/machinery/ntnet_relay,
+/turf/open/floor/circuit/telecomms/mainframe,
 /area/f13/wasteland/city/newboston/outdoors)
 "wjZ" = (
 /obj/structure/mirror{
@@ -3202,55 +3225,71 @@
 	},
 /turf/open/floor/carpet/purple,
 /area/f13/wasteland/city/newboston/bar)
-"wmf" = (
-/obj/item/storage/box/drinkingglasses{
-	pixel_y = 3;
-	pixel_x = 1
+"wlx" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "smokey fog";
+	mouse_opacity = 0;
+	layer = 2.9
 	},
-/obj/item/storage/box/drinkingglasses{
-	pixel_y = 6;
-	pixel_x = -9
-	},
-/obj/structure/table/abductor,
-/obj/machinery/light/small{
-	color = "#444499";
-	dir = 4;
-	light_color = "#444499";
-	light_power = 2;
-	light_range = 2;
-	pixel_y = 13
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "smokey fog";
+	mouse_opacity = 0;
+	layer = 2.9
 	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 4;
 	color = "#3B2B1A"
 	},
-/turf/open/floor/carpet/royalblack,
-/area/f13/wasteland/city/newboston/bar)
-"wmD" = (
-/obj/machinery/telecomms/server/presets/town,
-/turf/open/floor/circuit/telecomms/mainframe,
-/area/f13/wasteland/city/newboston/outdoors)
-"wsM" = (
-/obj/structure/bed/dogbed,
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
+/area/f13/wasteland/city/newboston/bar)
+"wnw" = (
+/obj/machinery/telecomms/server/presets/medical,
+/turf/open/floor/plasteel/f13{
+	icon_state = "darkrustysolid"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
+"wqx" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8;
+	pixel_x = -3
+	},
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "smokey fog";
+	mouse_opacity = 0;
+	layer = 2.9
+	},
+/obj/structure/chair/stool/retro/tan,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4;
+	color = "#3B2B1A"
+	},
+/turf/open/floor/carpet/purple,
+/area/f13/wasteland/city/newboston/bar)
+"wqW" = (
+/obj/effect/decal/cleanable/glitter/blue{
+	color = "#444499";
+	layer = 3
+	},
+/obj/machinery/light/floor{
+	light_color = "#444499";
+	color = "#444499"
+	},
+/turf/open/floor/wood_worn,
 /area/f13/wasteland/city/newboston/bar)
 "wum" = (
 /obj/effect/landmark/start/f13/wastelander,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalleftborderleft2"
 	},
-/area/f13/wasteland/city/newboston/outdoors)
-"wvs" = (
-/obj/structure/flora/ausbushes/reedbush{
-	pixel_y = 7
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/obj/effect/turf_decal/weather/dirt,
-/turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland/city/newboston/outdoors)
 "wxN" = (
 /obj/structure/spacevine{
@@ -3264,25 +3303,56 @@
 	color = "#999999"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
-"wKq" = (
-/obj/machinery/light/small{
-	color = "#444499";
-	dir = 8;
-	light_color = "#444499";
-	light_power = 2;
-	light_range = 2;
-	pixel_y = 13
-	},
-/obj/effect/turf_decal/siding/wood{
-	color = "#3B2B1A"
-	},
+"wyJ" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8;
 	color = "#3B2B1A"
 	},
 /turf/open/floor/wood_common{
-	color = "#99BBBB"
+	color = "#779999"
 	},
+/area/f13/wasteland/city/newboston/bar)
+"wEo" = (
+/obj/machinery/telecomms/server/presets/ncr,
+/turf/open/floor/plasteel/f13{
+	icon_state = "darkrustysolid"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
+"wIz" = (
+/obj/structure/flora/ausbushes/leafybush{
+	pixel_x = 4;
+	alpha = 80;
+	mouse_opacity = 0
+	},
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland/city/newboston/outdoors)
+"wJX" = (
+/obj/structure/sign/poster/contraband/pinup_funk{
+	pixel_y = 32
+	},
+/turf/open/floor/wood_common{
+	color = "#779999"
+	},
+/area/f13/wasteland/city/newboston/bar)
+"wPR" = (
+/obj/effect/turf_decal/stripes/asteroid/corner{
+	dir = 1
+	},
+/turf/open/floor/circuit/telecomms/mainframe,
+/area/f13/wasteland/city/newboston/outdoors)
+"wRL" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8;
+	pixel_y = 5;
+	pixel_x = -3
+	},
+/obj/structure/chair/stool/retro/tan,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4;
+	color = "#3B2B1A"
+	},
+/turf/open/floor/carpet/purple,
 /area/f13/wasteland/city/newboston/bar)
 "wTs" = (
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -3301,6 +3371,20 @@
 	icon_state = "verticalrightborderright2bottom"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
+"xga" = (
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "smokey fog";
+	mouse_opacity = 0;
+	layer = 2.9
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4;
+	color = "#3B2B1A"
+	},
+/turf/open/floor/wood_worn,
+/area/f13/wasteland/city/newboston/bar)
 "xlf" = (
 /obj/structure/chair/stool/retro/backed{
 	dir = 8
@@ -3313,11 +3397,21 @@
 	color = "#99BBBB"
 	},
 /area/f13/wasteland/city/newboston/bar)
-"xnl" = (
-/obj/structure/closet/crate/trashcart,
-/turf/open/indestructible/ground/outside/gravel{
-	color = "#AAAAAA"
+"xlm" = (
+/obj/machinery/light/floor{
+	light_color = "#444499";
+	color = "#444499"
 	},
+/turf/open/floor/wood_worn,
+/area/f13/wasteland/city/newboston/bar)
+"xnF" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland/city/newboston/outdoors)
 "xoy" = (
 /obj/effect/decal/cleanable/glitter/blue{
@@ -3328,6 +3422,16 @@
 "xpa" = (
 /turf/closed/wall/mineral/brick,
 /area/f13/wasteland/city/newboston/bar)
+"xqD" = (
+/obj/machinery/light/small{
+	dir = 1;
+	light_color = "red";
+	pixel_y = 22
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontalbottomborderbottom2right"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
 "xwb" = (
 /obj/effect/decal/cleanable/glitter/blue{
 	color = "#444499";
@@ -3336,19 +3440,6 @@
 /turf/open/floor/wood_common{
 	color = "#779999"
 	},
-/area/f13/wasteland/city/newboston/bar)
-"xxh" = (
-/obj/machinery/chem_dispenser/drinks/fullupgrade{
-	dir = 8;
-	pixel_y = -1;
-	pixel_x = 14
-	},
-/obj/structure/table/abductor,
-/obj/effect/turf_decal/siding/wood{
-	dir = 4;
-	color = "#3B2B1A"
-	},
-/turf/open/floor/carpet/royalblack,
 /area/f13/wasteland/city/newboston/bar)
 "xyb" = (
 /obj/structure/chair/stool/retro/backed{
@@ -3362,12 +3453,23 @@
 	color = "#99BBBB"
 	},
 /area/f13/wasteland/city/newboston/bar)
-"xAy" = (
-/obj/machinery/telecomms/server/presets/supply,
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
+"xyd" = (
+/obj/structure/curtain{
+	color = "#c40e0e";
+	open = 0
 	},
-/area/f13/wasteland/city/newboston/outdoors)
+/obj/effect/decal/cleanable/glitter/pink,
+/obj/structure/table/abductor,
+/obj/structure/spacevine{
+	icon = 'icons/effects/effects.dmi';
+	icon_state = "smoke";
+	name = "smokey fog";
+	mouse_opacity = 0;
+	layer = 2.9;
+	opacity = 1
+	},
+/turf/open/floor/carpet/purple,
+/area/f13/wasteland/city/newboston/bar)
 "xCL" = (
 /obj/structure/spacevine{
 	icon = 'icons/effects/effects.dmi';
@@ -3378,10 +3480,19 @@
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland/city/newboston/outdoors)
-"xPo" = (
-/obj/structure/sign/poster/contraband/pinup_ride{
-	pixel_y = 32
+"xHE" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8;
+	color = "#3B2B1A"
 	},
+/obj/effect/turf_decal/siding/wood{
+	color = "#3B2B1A"
+	},
+/turf/open/floor/wood_common{
+	color = "#99BBBB"
+	},
+/area/f13/wasteland/city/newboston/bar)
+"xNF" = (
 /obj/structure/spacevine{
 	icon = 'icons/effects/effects.dmi';
 	icon_state = "smoke";
@@ -3389,23 +3500,21 @@
 	mouse_opacity = 0;
 	layer = 2.9
 	},
-/turf/open/floor/wood_common{
-	color = "#779999"
+/obj/effect/landmark/start/f13/wastelander/clubworker,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaltopbordertop2left"
 	},
-/area/f13/wasteland/city/newboston/bar)
+/area/f13/wasteland/city/newboston/outdoors)
+"xOJ" = (
+/obj/effect/landmark/start/f13/wastelander/clubworker,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaltopbordertop2right"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
 "xPQ" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalrightborderright1"
 	},
-/area/f13/wasteland/city/newboston/outdoors)
-"xQn" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland/city/newboston/outdoors)
 "xQu" = (
 /obj/effect/decal/marking,
@@ -3418,54 +3527,25 @@
 	color = "#999999"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
-"xRe" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/turf/open/indestructible/ground/outside/water,
-/area/f13/wasteland/city/newboston/outdoors)
 "xWe" = (
 /turf/closed/indestructible/f13/obsidian,
 /area/f13/wasteland/city/newboston/outdoors)
 "xZc" = (
-/obj/effect/decal/cleanable/glitter/white{
-	color = "#884444"
+/obj/machinery/light/floor,
+/turf/open/floor/circuit/telecomms/mainframe,
+/area/f13/wasteland/city/newboston/outdoors)
+"ygg" = (
+/obj/machinery/telecomms/processor/preset_four,
+/obj/machinery/light/floor,
+/turf/open/floor/plasteel/f13{
+	icon_state = "darkrustysolid"
 	},
-/obj/structure/railing{
-	color = "#A47449";
-	dir = 4;
-	pixel_y = 8;
-	pixel_x = 2
-	},
-/turf/open/floor/carpet/purple,
-/area/f13/wasteland/city/newboston/bar)
-"ycR" = (
-/obj/structure/spacevine{
-	icon = 'icons/effects/effects.dmi';
-	icon_state = "smoke";
-	name = "smokey fog";
-	mouse_opacity = 0;
-	layer = 2.9
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 4;
-	color = "#3B2B1A"
-	},
-/turf/open/floor/wood_common{
-	color = "#779999"
-	},
-/area/f13/wasteland/city/newboston/bar)
+/area/f13/wasteland/city/newboston/outdoors)
 "ygG" = (
 /obj/effect/spawner/lootdrop/f13/foodspawner,
 /obj/structure/table/abductor,
 /turf/open/floor/carpet/royalblack,
 /area/f13/wasteland/city/newboston/bar)
-"yla" = (
-/turf/open/indestructible/ground/outside/water,
-/area/f13/wasteland/city/newboston/outdoors)
 
 (1,1,1) = {"
 xWe
@@ -3727,15 +3807,15 @@ rYw
 (2,1,1) = {"
 xWe
 xWe
-etF
-mDL
-dcM
-gTG
-mHS
-hhr
-uTa
-nuI
-ohF
+pGx
+ewn
+rGK
+dPZ
+bbJ
+tTr
+fDb
+fvo
+ygg
 xWe
 xWe
 xWe
@@ -3984,15 +4064,15 @@ rYw
 (3,1,1) = {"
 xWe
 xWe
-aLO
-qeV
-aBY
-aBY
-gYu
-aBY
-aBY
-eyf
-eQA
+dpG
+vlJ
+lzu
+lzu
+mSr
+lzu
+lzu
+wPR
+qZW
 xWe
 xWe
 xWe
@@ -4241,15 +4321,15 @@ rYw
 (4,1,1) = {"
 xWe
 xWe
-jcm
-iSv
-iEX
-uRc
-aBY
-iAY
-kFZ
-tBo
-tnx
+llK
+kgD
+ljD
+wnw
+lzu
+aff
+fRv
+nsz
+dSz
 xWe
 xWe
 xWe
@@ -4498,15 +4578,15 @@ rYw
 (5,1,1) = {"
 xWe
 xWe
-dIq
-aUs
-hvX
-bRc
-fOM
-bRc
-hvX
-xAy
-ohm
+wgU
+hFw
+xZc
+rbU
+roB
+rbU
+xZc
+cWl
+uvk
 xWe
 xWe
 xWe
@@ -4755,15 +4835,15 @@ rYw
 (6,1,1) = {"
 xWe
 xWe
-jcm
-cTO
-cQX
-ach
-aBY
-fMj
-aff
-wmD
-tnx
+llK
+ste
+iDj
+wEo
+lzu
+edK
+qLB
+nVa
+dSz
 xWe
 xWe
 xWe
@@ -4787,7 +4867,7 @@ xWe
 xWe
 bBZ
 uWY
-uWY
+fUR
 kMU
 tLM
 uWY
@@ -5012,15 +5092,15 @@ rYw
 (7,1,1) = {"
 xWe
 xWe
-rOK
-dcH
-aBY
-aBY
-gYu
-aBY
-aBY
-lRY
-bLo
+iuL
+apF
+lzu
+lzu
+mSr
+lzu
+lzu
+eEU
+wdd
 xWe
 xWe
 xWe
@@ -5269,15 +5349,15 @@ rYw
 (8,1,1) = {"
 xWe
 xWe
-ckd
-sAg
-aTZ
-lQh
-sdV
-uVD
-vzp
-gSq
-mDM
+iJV
+bzc
+mWI
+kFu
+qSj
+ukT
+aFk
+gVS
+gLq
 xWe
 xWe
 xWe
@@ -6073,7 +6153,7 @@ xWe
 sbi
 oLs
 jqA
-oiu
+ecT
 klQ
 tkO
 wxN
@@ -6309,20 +6389,20 @@ xWe
 xWe
 xWe
 xWe
-xWe
-xWe
-xWe
-xWe
-xWe
-xWe
-xWe
-xWe
-xWe
-xWe
-xWe
-xWe
-xWe
-xWe
+xpa
+xpa
+xpa
+xpa
+xpa
+xpa
+xpa
+xpa
+xpa
+xpa
+xpa
+xpa
+xpa
+xpa
 xWe
 xWe
 xWe
@@ -6330,7 +6410,7 @@ xWe
 sbi
 oLs
 jqA
-oiu
+ecT
 klQ
 tkO
 wxN
@@ -6555,30 +6635,30 @@ rYw
 xWe
 xWe
 xWe
-xRe
-kzR
-kzR
-kzR
-kzR
-lLV
-xWe
-xWe
+lRV
+bxY
+bxY
+bxY
+bxY
+uWD
+mbZ
+mip
 xpa
 xpa
 xpa
 xpa
+iYl
+wjZ
+wjZ
+wjZ
+cQG
+inX
+hEt
+jjA
 xpa
-xpa
-xpa
-xpa
-xpa
-xpa
-xpa
-xpa
-xpa
-xpa
-xpa
-xpa
+tot
+uQa
+ggt
 xpa
 xpa
 xpa
@@ -6812,37 +6892,37 @@ rYw
 xWe
 xWe
 xWe
-uzz
-yla
-tKv
-bte
-yla
-mSr
-hJJ
-hJJ
+lHZ
+eis
+wIz
+rbl
+eis
+mNp
+mbZ
+mip
 xpa
 goB
 ffh
 xpa
 mOz
-wjZ
-wjZ
-wjZ
+rnf
+rnf
+rnf
 lSC
-edK
+lSC
 hQS
-cvh
+iku
 xpa
-mML
-uQa
-wKq
+ngx
+bgG
+oKw
 xpa
-try
+dOV
 uQa
 hun
 xpa
 akT
-uKE
+uFL
 gzw
 eAQ
 srN
@@ -7069,14 +7149,14 @@ rYw
 xWe
 xWe
 xWe
-rcC
-yla
-yla
-dli
-bte
-mSr
-tCv
-hJJ
+rZT
+eis
+eis
+hqa
+rbl
+mNp
+eMT
+mip
 xpa
 adu
 xoy
@@ -7084,31 +7164,31 @@ xpa
 qxx
 rnf
 rnf
-rnf
-eMT
-eMT
-xZc
-iku
+bNh
+bpA
+cdu
+uAb
+pMf
+xpa
+aTn
+xlf
+qAX
 xpa
 ngx
 bgG
 oKw
-xpa
-ngx
-bgG
-oKw
-xpa
+bUG
 mdh
 sxE
-ueH
-fpY
-fpY
+cgn
+eYJ
+eYJ
 wxN
 uWY
 uWY
-fpY
-fpY
-fpY
+eYJ
+eYJ
+eYJ
 mdh
 gGC
 sbi
@@ -7326,35 +7406,35 @@ rYw
 xWe
 xWe
 xWe
-jSP
-yla
-tKv
-nWd
-sXl
-mSr
-hJJ
-hJJ
+cdA
+eis
+wIz
+qjR
+lUO
+mNp
+mbZ
+mip
 xpa
 xoy
 tAv
 xpa
-bzc
-rnf
-rnf
-bNh
-bpA
-cdu
-uAb
-pMf
 xpa
-teC
+gkC
+xpa
+xpa
+lzG
+xpa
+xpa
+xpa
+xpa
+aJA
+aJA
+aJA
+xpa
+aTn
 xlf
-ubS
-xpa
-teC
-xlf
-ubS
-xpa
+qAX
+bUG
 eBd
 hox
 gzw
@@ -7583,36 +7663,36 @@ rYw
 xWe
 xWe
 xWe
-uzz
-yla
-gzx
-yla
-tKv
-vXB
-tCv
-hJJ
+lHZ
+eis
+lEK
+eis
+wIz
+orp
+eMT
+mip
 xpa
 gkC
 xpa
 xpa
+jgV
+uie
 xpa
-gkC
+lXt
+xyd
+seA
 xpa
+hoG
+pwT
+wyJ
+wyJ
+wyJ
 xpa
-lzG
+aJA
+aJA
+aJA
 xpa
-xpa
-xpa
-xpa
-rNu
-rNu
-rNu
-xpa
-rNu
-rNu
-rNu
-xpa
-lMi
+fOk
 fdf
 tkO
 uWY
@@ -7840,34 +7920,34 @@ rYw
 xWe
 xWe
 xWe
-xQn
-vFJ
-sYD
-piu
-vFJ
-wvs
-hJJ
-hJJ
+xnF
+isr
+jBL
+rBJ
+isr
+uyD
+mbZ
+mip
 iub
-ekb
+uie
 nwa
 nwa
+uFG
+rvy
+dRv
+btj
+iVQ
+btj
+vJz
+guP
 jgV
-ekb
-xpa
-bxY
-ewn
-eis
-xpa
-tot
-cLm
-ekb
-bKi
-rMD
-ouH
-bKi
-bKi
-kWL
+uFG
+uFG
+xwb
+iPP
+wyJ
+wyJ
+iNU
 xpa
 hov
 hAy
@@ -7880,7 +7960,7 @@ uWY
 fUR
 fUR
 fUR
-cgI
+urh
 gGC
 sbi
 xWe
@@ -8097,40 +8177,40 @@ rYw
 xWe
 xWe
 xWe
-xWe
-xWe
-xWe
-hJJ
-tCv
-hJJ
-hJJ
-hJJ
+kuO
+eip
+bfR
+bfR
+efM
+rTA
+mip
+mip
 xpa
 xpa
 xpa
 xpa
-uyE
-rvy
+aBY
+xwb
 gNj
-btj
 iVQ
-btj
+ouY
+iVQ
 dXY
-guP
-rvy
-uFG
-rvy
 rvy
 rvy
 uFG
 rvy
-vHU
+rvy
+rvy
+uFG
+rvy
+hbT
 xpa
 adh
 cuN
-ueH
-fpY
-fpY
+cgn
+eYJ
+eYJ
 uWY
 uWY
 uWY
@@ -8354,37 +8434,37 @@ rYw
 xWe
 xWe
 xWe
-xWe
-xWe
-xWe
-hJJ
-hJJ
-hJJ
-hJJ
-sTd
+cnb
+cnb
+dcH
+afL
+mip
+mip
+mip
+mip
 xpa
 ePQ
 agk
 xpa
-tdz
-xwb
+qQu
+uFG
 gyr
+pxC
 iVQ
-jjA
 iVQ
 bAd
 rvy
 uFG
-ueB
-ulN
-gUn
-gUn
-dOq
+awD
+cRl
+sel
+sel
+bXW
 uFG
-fjp
+hwv
 bUG
-rsh
-iLI
+usf
+xOJ
 gzw
 eAQ
 fUR
@@ -8611,37 +8691,37 @@ rYw
 xWe
 xWe
 xWe
-xWe
-hJJ
-hJJ
-hJJ
-hJJ
-xWe
-xWe
-xWe
+dcH
+cnb
+lIe
+mip
+mip
+mip
+mip
+mip
 xpa
 tCf
 pBI
 xpa
-xPo
-uFG
-abA
-pxC
-iVQ
-iVQ
-gnx
+wJX
 rvy
-ueB
-hTW
+abA
+wqx
+sXl
+wRL
+gnx
+niY
+awD
+xlm
 txY
 hTW
 hTW
 gmW
-reN
-fjp
+vKd
+hwv
 bUG
 ocQ
-fio
+rNu
 tkO
 uWY
 uWY
@@ -8868,34 +8948,34 @@ rYw
 xWe
 xWe
 xWe
-xWe
-hJJ
-hJJ
-hJJ
-hJJ
-xWe
-xWe
-xWe
+jzx
+afL
+mip
+mip
+mip
+mip
+mip
+waC
 xpa
 fbp
 fbp
 xpa
 uFG
-rvy
+uFG
+uFG
+uFG
+uFG
+uFG
+uFG
+uFG
 ahF
-uWD
-rTA
-lzu
-lyo
-niY
-dkE
 txY
 hTW
-bnr
-mGX
 hTW
-vWI
-fjp
+txY
+hTW
+vDo
+hwv
 iub
 eBd
 cuN
@@ -9125,17 +9205,17 @@ rYw
 xWe
 xWe
 xWe
-xWe
-hJJ
-hJJ
+nVF
+lIe
+mip
 xpa
 xpa
 xpa
 xpa
 xpa
 xpa
-ekb
-bKi
+uie
+wyJ
 jfm
 uFG
 uFG
@@ -9145,14 +9225,14 @@ cht
 uFG
 uFG
 uFG
-nXC
+gOe
 txY
 hTW
 txY
 hTW
 txY
-vWI
-fjp
+vDo
+hwv
 xpa
 dCS
 fdf
@@ -9165,7 +9245,7 @@ uWY
 uWY
 wxN
 wxN
-cgI
+urh
 fxb
 sbi
 xWe
@@ -9382,9 +9462,9 @@ rYw
 xWe
 xWe
 xWe
-xWe
-hJJ
-hJJ
+mip
+mip
+mip
 xpa
 abR
 sCW
@@ -9402,14 +9482,14 @@ uFG
 uFG
 uFG
 uFG
-prY
-hTW
-hTW
-hTW
-hTW
-vwg
 meo
-vHU
+xlm
+hTW
+hTW
+hTW
+wqW
+cvh
+hbT
 iub
 wTs
 hAy
@@ -9639,9 +9719,9 @@ rYw
 xWe
 xWe
 xWe
-xWe
-hJJ
-hJJ
+mip
+mip
+mip
 xpa
 dZA
 guP
@@ -9652,24 +9732,24 @@ fmT
 xwb
 uFG
 gYw
-kwk
-eow
-kwk
-kwk
-eow
-roB
+cAt
+vzp
+cAt
+cAt
+vzp
+tSj
 xwb
 uFG
-krL
-kub
-mqF
-kub
-aQA
+ddh
+xga
+tCv
+xga
+aoR
 uFG
-vHU
+hbT
 bUG
-lBs
-iLI
+kjJ
+xOJ
 tkO
 uWY
 uWY
@@ -9896,16 +9976,16 @@ rYw
 xWe
 xWe
 xWe
-xWe
-hJJ
-hJJ
+mip
+mip
+mip
 xpa
 pgU
 uFG
 uFG
 mBj
 xpa
-kUS
+jYx
 rvy
 uFG
 dME
@@ -9923,10 +10003,10 @@ rvy
 uFG
 rvy
 nwa
-vHU
+hbT
 bUG
-ltr
-gDq
+nPu
+xNF
 gzw
 fUR
 fUR
@@ -10153,36 +10233,36 @@ rYw
 xWe
 xWe
 xWe
-xWe
-hJJ
-hJJ
+mip
+mip
+mip
 xpa
 kWD
 uFG
 uFG
 uFG
 cCu
-ycR
-ycR
-cAt
-tDM
+fzC
+fzC
+nyA
+skf
 hRl
 aLE
 pQh
 pQh
 pQh
-eoG
-mbZ
-eUg
-cAt
-ycR
-iZM
-gBv
-cAt
-cAt
-kDI
+vHp
+uFG
+uFG
+uFG
+uFG
+uFG
+ifs
+nyA
+nyA
+llj
 xpa
-syd
+kke
 opB
 eHQ
 uWY
@@ -10193,7 +10273,7 @@ uWY
 uWY
 uWY
 wxN
-cgI
+urh
 gGC
 sbi
 xWe
@@ -10410,9 +10490,9 @@ rYw
 xWe
 xWe
 xWe
-xWe
-hJJ
-hJJ
+mip
+mip
+mip
 xpa
 xpa
 xpa
@@ -10428,18 +10508,18 @@ pQh
 pQh
 pQh
 pQh
-bad
+lcS
 uFG
+eUg
+nyA
+fzC
+wlx
+shG
+avK
+avK
+avK
 xpa
-avK
-avK
-avK
-gml
-avK
-avK
-avK
-xpa
-pWN
+jYn
 fdf
 gzw
 fUR
@@ -10667,36 +10747,36 @@ rYw
 xWe
 xWe
 xWe
-xWe
-hJJ
-hJJ
-xnl
-xnl
-hJJ
-hJJ
+mip
+mip
+mip
+ukJ
+ukJ
+mip
+mip
 xpa
 soW
 ays
-bAT
+mGF
 xpa
-hiY
-iyo
-kVA
-xxh
-snc
-wmf
-mFX
-wsM
+ohS
+fzg
+lQh
+iVm
+hJJ
+msa
+hdN
+vEu
 xpa
-try
+avK
+avK
+avK
+xpa
+dOV
 xyb
-dJP
-xpa
-try
-xyb
-dJP
-xpa
-dHN
+xHE
+bUG
+azu
 oWN
 eHQ
 wxN
@@ -10704,9 +10784,9 @@ uWY
 uWY
 wxN
 uWY
-fpY
-vyY
-fpY
+eYJ
+pSY
+eYJ
 mdh
 bhg
 sbi
@@ -10924,17 +11004,17 @@ rYw
 xWe
 xWe
 xWe
-xWe
-hJJ
-hJJ
-hJJ
-hJJ
-hJJ
-hJJ
+mip
+mip
+mip
+mip
+mip
+mip
+mip
 xpa
 gan
 oQP
-fjp
+hwv
 xpa
 xpa
 xpa
@@ -10945,14 +11025,14 @@ xpa
 xpa
 bcw
 xpa
-ngx
-bgG
-oKw
+dOV
+xyb
+xHE
 xpa
 ngx
 bgG
 oKw
-xpa
+bUG
 eJV
 sIE
 gzw
@@ -11191,7 +11271,7 @@ xWe
 xpa
 mtY
 esa
-kop
+cAY
 xpa
 okV
 qCA
@@ -11202,15 +11282,15 @@ qCA
 qCA
 qCA
 xpa
-aEB
-xlf
-jfA
+ngx
+bgG
+oKw
 xpa
-hbT
+hHE
 aht
-hiO
+maZ
 xpa
-rDF
+xqD
 qFF
 xPQ
 neR
@@ -11452,22 +11532,22 @@ xpa
 xpa
 orZ
 fDY
-qNN
+bIX
 vQt
 hBy
 ryu
 jSX
 mvt
 xpa
+aEB
+xlf
+aZA
 xpa
 xpa
 xpa
 xpa
 xpa
-xpa
-xpa
-xpa
-dJK
+qwR
 lpN
 lpN
 lpN
@@ -11716,9 +11796,9 @@ xpa
 xpa
 xpa
 xpa
-xWe
-xWe
-xWe
+xpa
+xpa
+xpa
 xWe
 xWe
 xWe

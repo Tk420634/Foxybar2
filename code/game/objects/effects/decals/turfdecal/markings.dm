@@ -158,6 +158,7 @@
 /obj/effect/turf_decal/huge/heaven
 	icon = 'icons/turf/decalshuge.dmi'
 	icon_state = "heaven"
+	pixel_x = -18
 
 /obj/effect/turf_decal/huge/massfusion
 	icon = 'icons/turf/decalshuge.dmi'

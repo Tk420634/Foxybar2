@@ -21,15 +21,21 @@
 #define ui_inventory "WEST:6,SOUTH:3"
 
 //Pop-up inventory
-#define ui_head "WEST:6,NORTH-5:1"
-#define ui_glasses "WEST:6,SOUTH+8:1"
-#define ui_mask "WEST:6,SOUTH+7:1"
-#define ui_ears "WEST:6,SOUTH+6:1"
-#define ui_neck "WEST:6,SOUTH+5:1"
-#define ui_oclothing "WEST:6,SOUTH+4:1"
-#define ui_gloves "WEST:6,SOUTH+3:1"
-#define ui_iclothing "WEST:6,SOUTH+2:1"
-#define ui_shoes "WEST:6,SOUTH+1:2"
+
+//top row
+#define ui_head "WEST+1:8,SOUTH+3:11"
+#define ui_glasses "WEST:6,SOUTH+3:11"
+#define ui_ears "WEST+2:10,SOUTH+3:11"
+
+//middle row
+#define ui_neck "WEST:6,SOUTH+2:9"
+#define ui_mask "WEST+1:8,SOUTH+2:9"
+#define ui_gloves "WEST+2:10,SOUTH+2:9"
+
+//bottom row
+#define ui_oclothing "WEST+1:8,SOUTH+1:7"
+#define ui_iclothing "WEST:6,SOUTH+1:7"
+#define ui_shoes "WEST+2:10,SOUTH+1:7"
 
 //Middle left indicators
 #define ui_lingchemdisplay "WEST,CENTER-1:15"
@@ -41,9 +47,9 @@
 #define ui_sstore1 "WEST+1:6,SOUTH:3"
 #define ui_id "WEST+2:6,SOUTH:3"
 #define ui_belt "WEST+3:5,SOUTH:3"
-#define ui_back "WEST+4:4,SOUTH:3"
-#define ui_storage1 "WEST+5:4,SOUTH:3"
-#define ui_storage2 "WEST+6,SOUTH:3"
+#define ui_back "WEST+6,SOUTH:3"
+#define ui_storage2 "WEST+4:4,SOUTH:3"
+#define ui_storage1 "WEST+5:2,SOUTH:3"
 #define ui_resistdelay "WEST+7:16,SOUTH+1:17"
 #define ui_overridden_resist "WEST+7:16,SOUTH+1:1"
 #define ui_combat_toggle "WEST+7:16,SOUTH:2"
@@ -59,12 +65,14 @@
 #define ui_drop_throw "CENTER+2:33,SOUTH+0:4"
 #define ui_sprintbufferloc "CENTER+3:34,SOUTH:16"
 #define ui_movi "Center+3:33,SOUTH:4"
-#define ui_zonesel "Center+5:2,SOUTH:3"
+#define ui_zonesel "Center+5:2,SOUTH:3:1"
 #define ui_mood 	"Center-1:5,South+1:11"
-#define ui_health 	"Center+0:0,South+1:0"
+#define ui_healthdoll 	"Center+0:0,South+2:-19"
+#define ui_health 	"Center+0:0,South+1:-2"
 #define ui_stamina "Center+0:27,South+1:18" // replacing internals button
 #define ui_questbook "CENTER+2:19,SOUTH+1:-12"
 #define ui_questscanner "CENTER+3:21,SOUTH+1:-12"
+#define ui_pull_stop "CENTER+4:6,SOUTH+1:-11"
 
 /proc/ui_hand_position(i) //values based on old hand ui positions (CENTER:-/+16,SOUTH:5)
 	var/x_off = -(!(i % 2))
@@ -111,7 +119,7 @@
 //Lower right, persistent menu
 
 
-#define ui_pull_stop "EAST-1:28,SOUTH+1:24"
+
 
 
 
@@ -132,11 +140,11 @@
 
 
 //Middle right (status indicators)
-#define ui_healthdoll 			"EAST-1:28,		CENTER-1:13"
 #define ui_internal 			"EAST-1:28,		SOUTH+3:11"//CIT CHANGE - moves internal icon up a little bit to accommodate for the stamina meter
 
-#define ui_character_actions	"EAST-1:28,		SOUTH+1:2"
-#define ui_bayou				"EAST-1:28,		SOUTH+0:2" //Character directory
+#define ui_character_actions	"EAST-1:28, SOUTH+1:2"
+#define ui_bayou				"EAST-1:28, SOUTH+0:2" //Character directory
+#define ui_pvpbuttons			"EAST-1:28, SOUTH+1:18" //slut directory
 
 //living
 #define ui_living_pull "EAST-1:28,CENTER-2:15"

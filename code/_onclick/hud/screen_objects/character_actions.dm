@@ -122,3 +122,57 @@
 /atom/movable/screen/chardir_hud_button/Click(location,control,params)
 	if(usr.client)
 		usr.client.show_character_directory()
+
+/atom/movable/screen/pvp_focus_toggle
+	name = "PVP focus On/Off"
+	icon = 'icons/mob/screen_gen.dmi'
+	icon_state = "pvp_blank"
+	screen_loc = ui_pvpbuttons
+	var/mytobe
+
+/atom/movable/screen/pvp_focus_toggle/Initialize(mapload)
+	. = ..()
+	update_icon()
+
+/atom/movable/screen/pvp_focus_toggle/Click(location,control,params)
+	if(!usr.client || !ismob(usr))
+		return
+
+	var/changeto = PVP_NEUTRAL
+	var/_y = text2num(params2list(params)["icon-y"])
+	if(_y>=25) // PVP focus on
+		if(HAS_TRAIT(usr, TRAIT_PVPFOC))
+			changeto = PVP_NEUTRAL
+		else
+			if(HAS_TRAIT(usr, TRAIT_NO_PVP_EVER))
+				to_chat(usr, span_alert("Your role/quirks/setup doesn't allow for PVP!"))
+				return
+			changeto = PVP_YES
+	else if(_y>=17) // PVP opt out on
+		if(HAS_TRAIT(usr, TRAIT_PVEFOC))
+			changeto = PVP_NEUTRAL
+		else
+			changeto = PVP_NO
+	usr.SetPVPflag(changeto, TRUE)
+
+/atom/movable/screen/pvp_focus_toggle/proc/update_intento(towhat)
+	mytobe = towhat
+	update_icon()
+
+/atom/movable/screen/pvp_focus_toggle/update_overlays()
+	. = ..()
+	var/mutable_appearance/top = mutable_appearance('icons/mob/screen_gen.dmi')
+	var/mutable_appearance/bottom = mutable_appearance('icons/mob/screen_gen.dmi')
+	switch(mytobe)
+		if(PVP_NEUTRAL)
+			top.icon_state = "pvp_top_off"
+			bottom.icon_state = "pvp_bottom_off"
+		if(PVP_YES)
+			top.icon_state = "pvp_top_on"
+			bottom.icon_state = "pvp_bottom_off"
+		if(PVP_NO)
+			top.icon_state = "pvp_top_off"
+			bottom.icon_state = "pvp_bottom_on"
+	. += top
+	. += bottom
+
