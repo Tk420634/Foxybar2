@@ -4,7 +4,6 @@
 	belt = /obj/item/supplykit
 	shoes = /obj/item/clothing/shoes/sandal
 	gloves = /obj/item/clothing/gloves/f13/handwraps
-	r_pocket = /obj/item/storage/fancy/flare_pouch
 	backpack = /obj/item/storage/backpack/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	id = null

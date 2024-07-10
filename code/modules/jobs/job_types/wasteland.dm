@@ -62,9 +62,7 @@ Raider
 
 /datum/outfit/job/wasteland/f13raider/pre_equip(mob/living/carbon/human/H)
 	. = ..()
-	r_pocket = pick(
-		/obj/item/storage/fancy/flare_pouch, \
-		/obj/item/storage/fancy/flare_pouch/glowstick)
+
 	uniform = pick(
 		/obj/item/clothing/under/f13/merca, \
 		/obj/item/clothing/under/f13/mercc, \
@@ -864,26 +862,15 @@ Raider
 
 	id = null
 	ears = null
-	l_pocket = /obj/item/storage/wallet/stash/low
-	//r_pocket = /obj/item/storage/fancy/flare_pouch
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
-	box = /obj/item/storage/survivalkit
-	box_two = /obj/item/storage/survivalkit/medical
 	backpack_contents = list(
-		///obj/item/reagent_containers/hypospray/medipen/stimpak, //we don't need this big advantage to being a wastelander instead of citizen
-		///obj/item/reagent_containers/hypospray/medipen/stimpak,
 		/obj/item/pda = 1,
-		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/card/id/selfassign,
-		/obj/item/radio/headset
 		)
 
 /datum/outfit/job/wasteland/f13wastelander/pre_equip(mob/living/carbon/human/H)
 	..()
-	r_pocket = pick(
-		/obj/item/storage/fancy/flare_pouch, \
-		/obj/item/storage/fancy/flare_pouch/glowstick)
 	uniform = pick(
 		/obj/item/clothing/under/f13/settler, \
 		/obj/item/clothing/under/f13/brahminm, \
@@ -1218,8 +1205,6 @@ Raider
 	id =	/obj/item/card/id/silver
 	ears = /obj/item/radio/headset
 	belt = /obj/item/supplykit
-	l_pocket = /obj/item/storage/wallet/stash/low
-	//r_pocket = /obj/item/storage/fancy/flare_pouch
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	box = /obj/item/storage/survivalkit
@@ -1233,9 +1218,6 @@ Raider
 
 /datum/outfit/job/wasteland/f13wastelander/pre_equip(mob/living/carbon/human/H)
 	..()
-	r_pocket = pick(
-		/obj/item/storage/fancy/flare_pouch, \
-		/obj/item/storage/fancy/flare_pouch/glowstick)
 	uniform = pick(
 		/obj/item/clothing/under/f13/settler, \
 		/obj/item/clothing/under/f13/brahminm, \
@@ -1254,8 +1236,6 @@ Raider
 	jobtype = /datum/job/wasteland/f13raider
 	id = null
 	belt = /obj/item/supplykit
-	l_pocket = /obj/item/storage/wallet/stash/low
-	r_pocket = /obj/item/storage/fancy/flare_pouch
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	box = /obj/item/storage/survivalkit
@@ -1445,7 +1425,7 @@ Raider
 	uniform = 		/obj/item/clothing/under/f13/chaplain
 	gloves =		/obj/item/clothing/gloves/fingerless
 	shoes = 		/obj/item/clothing/shoes/jackboots
-	r_pocket = 		/obj/item/storage/fancy/flare_pouch
+
 
 	backpack =		/obj/item/storage/backpack/cultpack
 	satchel = 		/obj/item/storage/backpack/cultpack
@@ -1811,7 +1791,7 @@ Raider
 	uniform = /obj/item/clothing/under/f13/settler
 	shoes = /obj/item/clothing/shoes/sandal
 	gloves = /obj/item/clothing/gloves/f13/handwraps
-	r_pocket = /obj/item/storage/fancy/flare_pouch
+
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	box = /obj/item/storage/survivalkit/tribal
@@ -2259,7 +2239,7 @@ Raider
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	gloves = /obj/item/clothing/gloves/f13/military
 	belt = /obj/item/supplykit
-	r_pocket = /obj/item/storage/fancy/flare_pouch
+
 	backpack_contents = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/restraints/handcuffs = 2,
@@ -2361,8 +2341,6 @@ Raider
 	id = /obj/item/card/id/dogtag/ranger
 	ears = /obj/item/radio/headset/headset_town/lawman
 	belt = /obj/item/supplykit
-	l_pocket = /obj/item/storage/wallet/stash/low
-	r_pocket = /obj/item/storage/fancy/flare_pouch
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	box = /obj/item/storage/survivalkit
