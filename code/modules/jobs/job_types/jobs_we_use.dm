@@ -59,7 +59,7 @@
 	description = "Yeah, lets go get something to drink yeah?"
 	supervisors = "fate"
 	selection_color = "#dddddd"
-	paycheck = 50
+	paycheck = 100
 	outfit = /datum/outfit/job/wasteland/f13wastelander
 	access = list()
 	minimal_access = list()
@@ -187,6 +187,9 @@
 	flag = F13BARKEEP	
 	description = "Time to go to work, serve drinks and have a good time!"
 	supervisors = "fate"
+	paycheck = 150
+	total_positions = 2
+	spawn_positions = 2
 	outfit = /datum/outfit/job/den/f13barkeep
 	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
 	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
@@ -221,6 +224,7 @@
 	flag = F13CLUBWORKER
 	department_head = list("Club Worker")
 	head_announce = list("Security")
+	paycheck = 50
 	faction = FACTION_CLUB
 	social_faction = FACTION_CLUB
 	description = "You're a worker at Heavens Night, be you a maid that cleans up, an escort, a dancer, or a waiter/waitress.  Your job is to service the customer!"
