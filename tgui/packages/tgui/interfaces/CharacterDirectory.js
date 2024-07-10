@@ -47,7 +47,7 @@ export const CharacterDirectory = (props, context) => {
       width={1280}
       height={600}
       theme="ntos"
-      title="Knotingham Forest Yellow Pages"
+      title="the Bar at the End of the Universe Yellow Pages"
       resizable>
       <Window.Content
         style={{
