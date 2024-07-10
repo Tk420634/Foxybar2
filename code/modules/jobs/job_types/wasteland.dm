@@ -864,7 +864,6 @@ Raider
 
 	id = null
 	ears = null
-	belt = /obj/item/supplykit
 	l_pocket = /obj/item/storage/wallet/stash/low
 	//r_pocket = /obj/item/storage/fancy/flare_pouch
 	backpack = /obj/item/storage/backpack/satchel/explorer

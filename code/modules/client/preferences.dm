@@ -629,7 +629,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 			dat += "<h3>Body</h3>"
 			
-			//dat += "<b>Species:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=species;task=input'>[pref_species.name]</a><BR>"
+			dat += "<b>Species:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=species;task=input'>[pref_species.name]</a><BR>"
 			
 			if(LAZYLEN(pref_species.alt_prefixes))
 				dat += "<b>Alt Appearance:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=species_alt_prefix;task=input'>[alt_appearance ? alt_appearance : "Select"]</a><BR>"

@@ -100,18 +100,9 @@
 	name = "Club Worker"
 	jobtype = /datum/job/townfolk/club_worker
 	id =	/obj/item/card/id/selfassign
-	ears = /obj/item/radio/headset/headset_town
-	belt = /obj/item/supplykit
-	l_pocket = /obj/item/storage/wallet/stash/high
-	r_pocket = /obj/item/flashlight/flare
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
-	box = /obj/item/storage/survivalkit
-	box_two = /obj/item/storage/survivalkit/medical
 	backpack_contents = list(
-		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/pda = 1,
-		/obj/item/cool_book/hnguide,
-		///obj/item/card/id/selfassign,
 		)
 

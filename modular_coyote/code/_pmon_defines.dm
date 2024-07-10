@@ -61,7 +61,7 @@ GLOBAL_LIST_EMPTY(advanced_mob_list)
 ///List of available spawnpoints for creatures to choose from when spawning
 GLOBAL_LIST_INIT(creature_spawnpoints, list(
 	"New Boston" = /obj/effect/landmark/start/f13/settler,
-	"Wasteland" = /obj/effect/landmark/start/f13/wastelander,
+	"Foxy Bar" = /obj/effect/landmark/start/f13/wastelander,
 	"Ashdown" = /obj/effect/landmark/start/f13/ashdown
 	))
 

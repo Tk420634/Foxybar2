@@ -14,23 +14,11 @@ here's a tip, go search DEFINES/access.dm
 /datum/outfit/job/den
 	name = "New Boston Default Template"
 	ears = /obj/item/radio/headset/headset_town
-	belt = /obj/item/supplykit
+
 	id = /obj/item/card/id/dogtag/town
 	uniform = /obj/item/clothing/under/f13/settler
 	shoes = /obj/item/clothing/shoes/jackboots
 	backpack = /obj/item/storage/backpack/satchel/explorer
-	//r_pocket = /obj/item/storage/fancy/flare_pouch
-	backpack_contents = list(
-		/obj/item/storage/pill_bottle/chem_tin/radx,
-		/obj/item/storage/wallet/stash/low = 1,
-		/obj/item/melee/onehanded/knife/hunting = 1
-		)
-
-/datum/outfit/job/den/pre_equip(mob/living/carbon/human/H)
-	..()
-	r_pocket = pick(
-		/obj/item/storage/fancy/flare_pouch, \
-		/obj/item/storage/fancy/flare_pouch/glowstick)
 
 
 
@@ -51,7 +39,7 @@ here's a tip, go search DEFINES/access.dm
 		/obj/item/hatchet=1,
 		/obj/item/shovel/spade=1,
 		/obj/item/pda=1,
-		/obj/item/supplykit)
+	)
 	shoes = 		/obj/item/clothing/shoes/workboots
 
 /datum/outfit/job/den/f13settler/pre_equip(mob/living/carbon/human/H)
@@ -82,7 +70,6 @@ here's a tip, go search DEFINES/access.dm
 	belt = /obj/item/storage/bag/ore
 	shoes = /obj/item/clothing/shoes/jackboots
 	backpack_contents = list(
-		/obj/item/supplykit,
 		/obj/item/pda = 1,
 		)
 
@@ -151,7 +138,6 @@ here's a tip, go search DEFINES/access.dm
 	name = "Doctor"
 	jobtype = /datum/job/townfolk/f13dendoc
 	chemwhiz = TRUE
-	belt = /obj/item/supplykit
 	ears = /obj/item/radio/headset/headset_town/medical
 	uniform = /obj/item/clothing/under/f13/medic
 	neck = /obj/item/clothing/neck/stethoscope
@@ -191,7 +177,6 @@ here's a tip, go search DEFINES/access.dm
 /datum/outfit/job/den/f13settler
 	name = "Citizen"
 	jobtype = /datum/job/townfolk/citizen
-	belt = /obj/item/supplykit
 	id = /obj/item/card/id/dogtag/town
 	uniform = /obj/item/clothing/under/f13/settler
 	shoes = /obj/item/clothing/shoes/jackboots
@@ -442,7 +427,6 @@ here's a tip, go search DEFINES/access.dm
 	id =	/obj/item/card/id/silver
 	chemwhiz =	TRUE
 	backpack =	/obj/item/storage/backpack/medic
-	belt = /obj/item/supplykit
 	satchel =	/obj/item/storage/backpack/satchel/med
 	duffelbag =	/obj/item/storage/backpack/duffelbag/med
 	gloves = /obj/item/pda
@@ -458,7 +442,6 @@ here's a tip, go search DEFINES/access.dm
 /datum/outfit/job/den/nashcurator
 	name = "Librarian"
 	jobtype = /datum/job/townfolk/librarian
-	belt = /obj/item/supplykit
 	id = /obj/item/card/id/dogtag/town
 	uniform = /obj/item/clothing/under/f13/settler
 	ears = /obj/item/radio/headset/headset_town/guild
@@ -486,12 +469,8 @@ here's a tip, go search DEFINES/access.dm
 	jobtype = /datum/job/townfolk/f13barkeep
 	uniform = /obj/item/clothing/under/f13/bartenderalt
 	id = /obj/item/card/id/dogtag/town
-	ears = /obj/item/radio/headset/headset_town/guild
-	belt = /obj/item/supplykit
 	shoes = /obj/item/clothing/shoes/workboots/mining
 	backpack = /obj/item/storage/backpack/satchel/leather
-	gloves = /obj/item/pda
-	l_pocket = /obj/item/storage/wallet/stash/mid
 	backpack_contents = list(
 		/obj/item/book/manual/nuka_recipes = 1,
 		/obj/item/pda

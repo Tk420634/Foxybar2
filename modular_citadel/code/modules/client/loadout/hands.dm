@@ -1,15 +1,35 @@
 /datum/gear/hands
 	category = LOADOUT_CATEGORY_HANDS
 	slot = SLOT_HANDS
-	cost = 1
+	cost = 0
+
+/datum/gear/hands/briefcase/crafted
+	name = "briefcase"
+	path = /obj/item/storage/briefcase/crafted
+
+/datum/gear/hands/toolbox/mechanical/old
+	name = "rusty blue toolbox"
+
 
 /datum/gear/hands/cane
 	name = "cane"
 	path = /obj/item/cane
 
+/datum/gear/hands/cigarettes
+	name = "cigarette pack"
+	path = /obj/item/storage/fancy/cigarettes
+
 /datum/gear/hands/dice
 	name = "dice bag"
 	path = /obj/item/storage/box/dice
+
+/datum/gear/hands/eightball
+	name = "magic eightball"
+	path = /obj/item/toy/eightball
+
+/datum/gear/hands/matches
+	name = "matchbox"
+	path = /obj/item/storage/box/matches
 
 /datum/gear/hands/silver_ring
 	name = "Silver Ring"
@@ -19,22 +39,145 @@
 	name = "Gold Ring"
 	path = /obj/item/clothing/gloves/ring
 
+/datum/gear/hands/plasma_ring
+	name = "Plasma Ring"
+	path = /obj/item/clothing/gloves/ring/plasma
+
+
+/datum/gear/hands/diamond_ring
+	name = "Diamond Ring"
+	path = /obj/item/clothing/gloves/ring/diamond
+
+/datum/gear/hands/bluespace_ring
+	name = "Bluespace Ring"
+	path = /obj/item/clothing/gloves/ring/bluespace
+
+/datum/gear/hands/cheaplighter
+	name = "cheap lighter"
+	path = /obj/item/lighter/greyscale
+
 /datum/gear/hands/cards
 	name = "playing cards"
 	path = /obj/item/toy/cards/deck
 
+/datum/gear/hands/wallet
+	name = "wallet"
+	path = /obj/item/storage/wallet
+
+/datum/gear/hands/flask
+	name = "flask"
+	path = /obj/item/reagent_containers/food/drinks/flask
+
+/datum/gear/hands/zippolighter
+	name = "zippo lighter"
+	path = /obj/item/lighter
+
+/datum/gear/hands/zippolighter/fusion
+	name = "fusion zippo"
+	path = /obj/item/lighter/fusion
+
+/datum/gear/hands/zippolighter/royalgold
+	name = "royal zippo"
+	path = /obj/item/lighter/royalgold
+
+/datum/gear/hands/zippolighter/iconic
+	name = "iconic zippo"
+	path = /obj/item/lighter/iconic
+
+/datum/gear/hands/zippolighter/ian
+	name = "ian zippo"
+	path = /obj/item/lighter/ian
+
+/datum/gear/hands/zippolighter/holy
+	name = "holy zippo"
+	path = /obj/item/lighter/holy
+
+/datum/gear/hands/zippolighter/fox
+	name = "fox zippo"
+	path = /obj/item/lighter/fox
+
+/datum/gear/hands/zippolighter/rainbow
+	name = "rainbow zippo"
+	path = /obj/item/lighter/rainbow
+
+/datum/gear/hands/zippolighter/heart
+	name = "heart zippo"
+	path = /obj/item/lighter/heart
+
+/datum/gear/hands/zippolighter/moff
+	name = "moff zippo"
+	path = /obj/item/lighter/moff
+
+/datum/gear/hands/zippolighter/bullet
+	name = "Bullet zippo"
+	path = /obj/item/lighter/bullet
+
 /datum/gear/hands/bible
 	name = "Bible"
 	path = /obj/item/storage/book/bible
+
+/datum/gear/hands/beeplushie
+	name = "Bee Plushie"
+	path = /obj/item/toy/plush/beeplushie
+
+/datum/gear/hands/cobpipe
+	name = "corn cob pipe"
+	path = /obj/item/clothing/mask/cigarette/pipe/cobpipe
+
+/datum/gear/hands/extendpipe
+	name = "cigarette pipe"
+	path = /obj/item/clothing/mask/cigarette/pipe/cigarpipe
+
+/datum/gear/hands/cigar
+	name = "cigar"
+	path = /obj/item/clothing/mask/cigarette/cigar
 	cost = 0
+
+/datum/gear/hands/lipstick
+	name = "red lipstick"
+	path = "/obj/item/lipstick"
+
+/datum/gear/hands/lipstickpurple
+	name = "purple lipstick"
+	path = /obj/item/lipstick/purple
+
+/datum/gear/hands/lipstickjade
+	name = "jade lipstick"
+	path = /obj/item/lipstick/jade
+
+/datum/gear/hands/lipstickblack
+	name = "black lipstick"
+	path = /obj/item/lipstick/black
 
 /datum/gear/hands/carpetdelivery
 	name = "Carpet Delivery Service"
 	path = /obj/item/choice_beacon/box/carpet
 
+/datum/gear/hands/livestockdelivery
+	name = "Pet Delivery Service"
+	path = /obj/item/choice_beacon/pet
+
+/datum/gear/hands/plushiedelivery
+	name = "Plushie Delivery Service"
+	path = /obj/item/choice_beacon/box/plushie
+
+/datum/gear/hands/plushiedelivery2
+	name = "Another Plushie Delivery Service"
+	path = /obj/item/choice_beacon/box/plushie
+
+/datum/gear/hands/plushiedelivery3
+	name = "Yet A Third Plushie Delivery Service"
+	path = /obj/item/choice_beacon/box/plushie
+
+/*
 /datum/gear/hands/shield/buckler
 	name = "Wooden Buckler"
 	path = /obj/item/shield/riot/buckler
+	cost = 2
+
+/datum/gear/hands/shield/buckler/stopsign
+	name = "Stopsign Shield"
+	path = /obj/item/shield/riot/buckler/stop
 	cost = 2
 
 /datum/gear/hands/shield/kiteshield
@@ -47,9 +190,19 @@
 	path = /obj/item/shield/coyote/bucklertwo
 	cost = 2
 
+/datum/gear/hands/shield/egyptianshield
+	name = "Dusty Shield"
+	path = /obj/item/shield/coyote/egyptianshield
+	cost = 2
+
 /datum/gear/hands/shield/semioval
 	name = "Semioval Metal Shield"
 	path = /obj/item/shield/coyote/semioval
+	cost = 2
+
+/datum/gear/hands/shield/romanbuckler
+	name = "Skirmisher's Buckler"
+	path = /obj/item/shield/coyote/romanbuckler
 	cost = 2
 
 /datum/gear/hands/shield/ironshieldfour
@@ -92,6 +245,37 @@
 	path = /obj/item/shield/coyote/redbuckler
 	cost = 2
 
+/datum/gear/hands/shield/chitinbuckler
+	name = "Fire Ant Buckler"
+	path = /obj/item/shield/coyote/chitinbuckler
+	cost = 2
+
+/datum/gear/hands/shield/chitinshield
+	name = "Fire Ant Shield"
+	path = /obj/item/shield/coyote/chitinshield
+	cost = 2
+
+/datum/gear/hands/shield/brahminleathershield
+	name = "Brahmin Leather Shield"
+	path = /obj/item/shield/coyote/brahminleathershield
+	cost = 2
+
+
+/datum/gear/hands/shield/roughshield
+	name = "Rough Shield"
+	path = /obj/item/shield/coyote/roughshield
+	cost = 2
+
+/datum/gear/hands/shield/scutum
+	name = "Scutum"
+	path = /obj/item/shield/coyote/scutum
+	cost = 2
+
+
+/datum/gear/hands/shield/chimalli
+	name = "Chimalli"
+	path = /obj/item/shield/coyote/chimalli
+	cost = 2
 
 /datum/gear/hands/shield/owlshield
 	name = "Owl Shield"
@@ -112,8 +296,12 @@
 	name = "Iron Crusader Shield"
 	path = /obj/item/shield/coyote/crusader
 	cost = 2
+	*/
+
+/datum/gear/hands/defib/carbattery
+	name = "Primitive Defib"
+	path = /obj/item/defibrillator/primitive
 
 /datum/gear/hands/bedroll
 	name = "bedroll"
 	path = /obj/item/roller/bedroll
-	cost = 1

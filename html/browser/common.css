@@ -6,7 +6,7 @@ body
 	background: #000000;
 	color: #00dd00;
 	font-size: 16px;
-	font-family: 'Almendra';
+	font-family: 'VT323', Courier;
 	color: #2fc22f;
 	line-height: 170%;
 }
@@ -149,7 +149,7 @@ h4
 	animation: scroll 0.25s 1;
 	clear: both;
 	padding: 16px;
-	font-family: "Almendra";
+	font-family: Verdana, Geneva, sans-serif;
 	
 }
 

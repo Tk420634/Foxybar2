@@ -52,14 +52,14 @@
 /// Wastelander
 /// As basic as it gets, no masters, no obligations, just you and the wasteland, how fun
 /datum/job/wasteland/f13wastelander
-	title = "Wastelander"
+	title = "Customer"
 	flag = F13WASTELANDER
 	total_positions = -1
 	spawn_positions = -1
-	description = "The most broad and open role, you have arrived in the region for purposes known only to you. If you're new, the settlement of Nash to the Midwest may prove a valuable first stop. Try to make a living for yourself - or simply survive - and craft your own unique story."
+	description = "Yeah, lets go get something to drink yeah?"
 	supervisors = "fate"
 	selection_color = "#dddddd"
-	paycheck = 0 // Wastelanders are paid in the form of loot and barter
+	paycheck = 50
 	outfit = /datum/outfit/job/wasteland/f13wastelander
 	access = list()
 	minimal_access = list()
@@ -185,8 +185,8 @@
 /datum/job/townfolk/f13barkeep
 	title = "Barkeep"
 	flag = F13BARKEEP	
-	description = "You are a barkeep, responsible for the operation of the local tavern. You are the backbone of the settlement, providing drinks and entertainment for the community. Your work is essential to the survival of New Boston."
-	supervisors = "the Adventurers Guild"
+	description = "Time to go to work, serve drinks and have a good time!"
+	supervisors = "fate"
 	outfit = /datum/outfit/job/den/f13barkeep
 	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
 	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
@@ -223,8 +223,8 @@
 	head_announce = list("Security")
 	faction = FACTION_CLUB
 	social_faction = FACTION_CLUB
-	description = "You are a worker at the Heaven's Night club, providing entertainment and relief to the patrons of the establishment. You are the backbone of the settlement, to provide carnal morale to the hardworking townsfolk. Your work is essential to the survival of New Boston."
-	supervisors = "the Adventurers Guild, your customers, and the Manager"
+	description = "You're a worker at Heavens Night, be you a maid that cleans up, an escort, a dancer, or a waiter/waitress.  Your job is to service the customer!"
+	supervisors = "The Regional Manager. You know, that asshole who is never around?"
 	selection_color = "#df80af"
 	outfit = /datum/outfit/job/heavensnight/f13clubworker
 	access = list(ACCESS_CLUB)
