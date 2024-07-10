@@ -1,2 +1,2 @@
-sound/cb-music/holymountain.ogg
-sound/cb-music/thoumaidens.ogg
+sound/f13ambience/foxybar.ogg
+
