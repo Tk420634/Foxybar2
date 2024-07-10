@@ -170,6 +170,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	lose_text = span_notice("You feel awake again.")
 	medical_record_text = "Patient has abnormal sleep study results and is difficult to wake up."
 
+/*
 /datum/quirk/brainproblems
 	name = "Brain Tumor"
 	desc = "You have a little friend in your brain that keeps growing back! Mannitol will keep it at bay, but it can't be cured!"
@@ -199,7 +200,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	if((bdam > 25) && COOLDOWN_FINISHED(src, annoying_message))
 		COOLDOWN_START(src, annoying_message, 3 MINUTES)
 		to_chat(quirk_holder, span_danger("I really need some mannitol!"))
-
+*/
 /*
 /datum/quirk/nearsighted //t. errorage
 	name = "Nearsighted - Corrected"
@@ -259,7 +260,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 /datum/quirk/badeyes/add()
 	quirk_holder.become_mega_nearsighted(ROUNDSTART_TRAIT)
 
-
+/*
 /datum/quirk/nyctophobia
 	name = "Phobia - The Dark"
 	desc = "As far as you can remember, you've always been afraid of the dark. While in the dark without a light source, you instinctually act careful, and constantly feel a sense of dread."
@@ -280,6 +281,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 			to_chat(quirk_holder, span_warning("Easy, easy, take it slow... you're in the dark..."))
 			quirk_holder.toggle_move_intent()
 		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "nyctophobia", /datum/mood_event/nyctophobia)
+*/
 
 /datum/quirk/lightless
 	name = "Light Sensitivity"
@@ -287,7 +289,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	value = -22
 	category = "Vision Quirks"
 	mechanics = "While in bright light without sunglasses, you get a negative moodlet and your eyes go blurry. Are you part molerat?"
-	conflicts = list(/datum/quirk/nyctophobia)
+	conflicts = list()
 	gain_text = span_danger("The light begins to hurt your eyes...")
 	lose_text = span_notice("Your eyes no longer sting in the light.")
 	medical_record_text = "Patient has acute light sensitivity, and insists it is physically harmful."
@@ -314,7 +316,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	value = -33 // This can kill you, which is extremely bad, and makes city play somewhat impossible
 	category = "Health Quirks"
 	mechanics = "While in the light, you slowly wither away, but the reverse happens in the dark, healing you and giving you nutrition."
-	conflicts = list(/datum/quirk/nyctophobia)
+	conflicts = list()
 
 /datum/quirk/lightburning/add()
 	var/mob/living/carbon/human/H = quirk_holder

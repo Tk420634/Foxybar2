@@ -368,7 +368,6 @@ PROCESSING_SUBSYSTEM_DEF(artifacts)
 		/datum/quirk/alcohol_tolerance,
 		/datum/quirk/drunkhealing,
 		/datum/quirk/brickwall,
-		/datum/quirk/bowtrained
 	)
 
 	var/list/prefixes_speed_good = list()
