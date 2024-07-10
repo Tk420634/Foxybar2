@@ -1,0 +1,4207 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"an" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"aw" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/turf/open/indestructible/ground/outside/water{
+	color = "#7E6355"
+	},
+/area/kf/knottinghamdungeon)
+"az" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"aC" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 4
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/decal/remains/human,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"aR" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/decal/remains/human,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"bd" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/structure/cave/stalagmite{
+	icon_state = "stalagmite4"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"bv" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/turf/open/indestructible/ground/outside/water{
+	color = "#7E6355"
+	},
+/area/kf/knottinghamdungeon)
+"bO" = (
+/obj/structure/simple_door/tentflap_cloth{
+	color = "#666666"
+	},
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/structure/decoration/rag{
+	icon_state = "skin"
+	},
+/obj/structure/decoration/rag,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"cc" = (
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"cs" = (
+/turf/closed/mineral/indestructible{
+	color = "#5C4033"
+	},
+/area/kf/knottinghamdungeon)
+"cE" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"cG" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/decal/remains/human,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"dE" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"dW" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888"
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 1
+	},
+/obj/structure/cave/stalagmite{
+	icon_state = "stalagmite5"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"eb" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"eg" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"eu" = (
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"eB" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"fq" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirtcorner,
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"fN" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"fS" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/structure/cave/support{
+	pixel_y = 18;
+	icon_state = "support_beams";
+	anchored = 1;
+	layer = 3
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"hc" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/structure/cave/support{
+	pixel_y = 18;
+	icon_state = "support_beams";
+	anchored = 1;
+	layer = 3
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/blood/gibs,
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"hD" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/structure/cave/support{
+	pixel_y = 26;
+	icon_state = "support_wall_broken";
+	anchored = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"hF" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"if" = (
+/obj/structure/nest/gecko,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"iM" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/structure/cave/stalagmite{
+	icon_state = "stalagmite1"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"iQ" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"iU" = (
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/structure/cave/support{
+	pixel_y = 18;
+	icon_state = "support_beams";
+	anchored = 1;
+	layer = 3
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"ji" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"ju" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"jv" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/structure/cave/support{
+	pixel_y = 26;
+	icon_state = "support_wall";
+	anchored = 1
+	},
+/turf/open/indestructible/ground/outside/water{
+	color = "#7E6355"
+	},
+/area/kf/knottinghamdungeon)
+"jD" = (
+/obj/structure/ladder/unbreakable{
+	height = null;
+	icon = 'modular_coyote/icons/objects/animal_spawners.dmi';
+	icon_state = "cave_den";
+	id = "tribalcamp2";
+	name = "damp tunnel";
+	pixel_y = 21
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/structure/cave/support{
+	pixel_y = -11;
+	icon_state = "boards_drought_ns-4";
+	anchored = 1
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"jV" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/turf/open/indestructible/ground/outside/water{
+	color = "#7E6355"
+	},
+/area/kf/knottinghamdungeon)
+"kd" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 4
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"kg" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 4
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"kt" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/blood/gibs,
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"ky" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"kW" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"lh" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 4
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 1
+	},
+/obj/structure/cave/stalagmite{
+	icon_state = "stalagmite4"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"lD" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"lE" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 1
+	},
+/obj/effect/decal/remains/human,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"mf" = (
+/obj/structure/cave/support{
+	pixel_y = 18;
+	icon_state = "support_beams";
+	anchored = 1;
+	layer = 3
+	},
+/turf/open/indestructible/ground/outside/water{
+	color = "#7E6355"
+	},
+/area/kf/knottinghamdungeon)
+"mq" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"mr" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 4
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"mD" = (
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/structure/cave/support{
+	pixel_y = 26;
+	icon_state = "support_wall_broken";
+	anchored = 1
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"mQ" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"mW" = (
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"nP" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/decal/remains/human,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"nX" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"oi" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888"
+	},
+/obj/structure/cave/support{
+	pixel_y = 18;
+	icon_state = "support_beams";
+	anchored = 1;
+	layer = 3
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/structure/nest/gecko,
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"oq" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888"
+	},
+/obj/effect/decal/cleanable/blood/drip,
+/obj/structure/cave/stalagmite,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"oE" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"oI" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/turf/open/indestructible/ground/outside/water{
+	color = "#7E6355"
+	},
+/area/kf/knottinghamdungeon)
+"oK" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/blood/drip,
+/obj/structure/cave/support{
+	pixel_y = 18;
+	icon_state = "support_beams";
+	anchored = 1;
+	layer = 3
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"oS" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 1
+	},
+/obj/effect/decal/remains/human,
+/obj/structure/cave/support{
+	pixel_y = 18;
+	icon_state = "support_beams";
+	anchored = 1;
+	layer = 3
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"pd" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 4
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"pz" = (
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"pL" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 4
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"qj" = (
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/decal/remains/human,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"rq" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"rF" = (
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/structure/cave/stalagmite{
+	icon_state = "stalagmite2"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"rG" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"rM" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/turf/open/indestructible/ground/outside/water{
+	color = "#7E6355"
+	},
+/area/kf/knottinghamdungeon)
+"sl" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"sA" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/blood/gibs,
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"sC" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/structure/cave/support{
+	pixel_y = 26;
+	icon_state = "support_wall_broken";
+	anchored = 1
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"sD" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/decal/remains/human,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"sX" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/turf/open/indestructible/ground/outside/water{
+	color = "#7E6355"
+	},
+/area/kf/knottinghamdungeon)
+"td" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/structure/cave/support{
+	pixel_y = 26;
+	icon_state = "support_wall_broken";
+	anchored = 1
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"tp" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/structure/cave/support{
+	pixel_y = 18;
+	icon_state = "support_beams";
+	anchored = 1;
+	layer = 3
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"tq" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 1
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"tv" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"tz" = (
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/turf/open/indestructible/ground/outside/water{
+	color = "#7E6355"
+	},
+/area/kf/knottinghamdungeon)
+"ub" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/structure/cave/support{
+	pixel_y = 26;
+	icon_state = "support_wall_broken";
+	anchored = 1
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"ug" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/turf/open/indestructible/ground/outside/water{
+	color = "#7E6355"
+	},
+/area/kf/knottinghamdungeon)
+"ux" = (
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"uC" = (
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"vB" = (
+/obj/structure/nest/gecko,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"vG" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"vU" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/structure/cave/support{
+	pixel_y = 26;
+	icon_state = "support_wall";
+	anchored = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/structure/decoration/rag{
+	desc = "A string of bones and skulls.<br>A common warning from tribals and raiders to outsiders.";
+	icon_state = "skulls";
+	name = "skulls";
+	pixel_y = 26
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"wA" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/turf/open/indestructible/ground/outside/water{
+	color = "#7E6355"
+	},
+/area/kf/knottinghamdungeon)
+"wV" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 4
+	},
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/structure/cave/support{
+	pixel_y = 18;
+	icon_state = "support_beams";
+	anchored = 1;
+	layer = 3
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"wY" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"xg" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 1
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"xw" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/turf/open/indestructible/ground/outside/water{
+	color = "#7E6355"
+	},
+/area/kf/knottinghamdungeon)
+"xE" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"xM" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"ya" = (
+/obj/structure/nest/gecko,
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"yc" = (
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/structure/cave/support{
+	pixel_y = 26;
+	icon_state = "support_wall";
+	anchored = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"yp" = (
+/obj/structure/nest/gecko,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"yv" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"yA" = (
+/obj/structure/nest/gecko,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"yL" = (
+/obj/structure/cave/stalagmite{
+	icon_state = "stalagmite4"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"yS" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"yW" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/structure/cave/stalagmite{
+	icon_state = "stalagmite5"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"zg" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 4
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"zQ" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/structure/cave/support{
+	pixel_y = 26;
+	icon_state = "support_wall_broken";
+	anchored = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"Aa" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"Ag" = (
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/structure/cave/support{
+	pixel_y = 18;
+	icon_state = "support_beams";
+	anchored = 1;
+	layer = 3
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"Av" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"Ay" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"AN" = (
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"Bi" = (
+/obj/effect/decal/remains/human,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/turf/open/indestructible/ground/outside/water{
+	color = "#7E6355"
+	},
+/area/kf/knottinghamdungeon)
+"Bj" = (
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"BJ" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/structure/cave/support{
+	pixel_y = 18;
+	icon_state = "support_beams";
+	anchored = 1;
+	layer = 3
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"BQ" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/structure/cave/support{
+	pixel_y = 26;
+	icon_state = "support_wall_broken";
+	anchored = 1
+	},
+/obj/effect/decal/remains/human,
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"BT" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"Cs" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 4
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"CJ" = (
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"Dy" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"DN" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/blood/gibs,
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"DV" = (
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"Ea" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"EB" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/decal/remains/human,
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"EE" = (
+/obj/structure/nest/gecko,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"EN" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/structure/cave/support{
+	pixel_y = 26;
+	icon_state = "support_wall";
+	anchored = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"ET" = (
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"EZ" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/cobweb/cobweb2{
+	plane = -12.9
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"Fa" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"Fi" = (
+/obj/structure/simple_door/tentflap_cloth{
+	color = "#666666"
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/structure/decoration/rag,
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"Fq" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/blood/gibs,
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"FC" = (
+/obj/structure/simple_door/tentflap_cloth{
+	color = "#666666"
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/structure/decoration/rag{
+	icon_state = "skin"
+	},
+/obj/structure/decoration/rag,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"FQ" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888"
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"Ga" = (
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/structure/cave/support{
+	pixel_y = 26;
+	icon_state = "support_wall";
+	anchored = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/blood/gibs,
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"Gb" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"Ge" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888"
+	},
+/obj/structure/cave/stalagmite{
+	icon_state = "stalagmite5"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"GD" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"GE" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"Ha" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"Hc" = (
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/structure/cave/support{
+	pixel_y = 26;
+	icon_state = "support_wall_broken";
+	anchored = 1
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"Hi" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"Hy" = (
+/obj/structure/nest/gecko,
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"HF" = (
+/obj/structure/nest/gecko,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"HN" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/turf/open/indestructible/ground/outside/water{
+	color = "#7E6355"
+	},
+/area/kf/knottinghamdungeon)
+"HR" = (
+/obj/structure/simple_door/tentflap_cloth{
+	color = "#666666"
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/structure/decoration/rag{
+	icon_state = "skin"
+	},
+/obj/structure/decoration/rag,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"HV" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"HY" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888"
+	},
+/obj/structure/cave/support{
+	pixel_y = 26;
+	icon_state = "support_wall";
+	anchored = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"IM" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"Ju" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/structure/nest/gecko{
+	pixel_y = 17
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"JA" = (
+/obj/structure/simple_door/tentflap_cloth{
+	color = "#666666"
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/structure/decoration/rag,
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"JO" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/structure/cave/stalagmite{
+	icon_state = "stalagmite2"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"Kq" = (
+/obj/structure/nest/gecko,
+/obj/structure/cave/support{
+	pixel_y = 18;
+	icon_state = "support_beams";
+	anchored = 1;
+	layer = 3
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/structure/decoration/rag{
+	desc = "A string of bones and skulls.<br>A common warning from tribals and raiders to outsiders.";
+	icon_state = "skulls";
+	name = "skulls";
+	pixel_y = 14
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"KC" = (
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888"
+	},
+/obj/structure/cave/support{
+	pixel_y = 18;
+	icon_state = "support_beams";
+	anchored = 1;
+	layer = 3
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"KE" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/blood/drip,
+/obj/structure/cave/support{
+	pixel_y = 26;
+	icon_state = "support_wall_broken";
+	anchored = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"Lf" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/decal/remains/human,
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 1
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"Lh" = (
+/turf/closed/mineral/random/low_chance{
+	color = "#6C5043"
+	},
+/area/kf/knottinghamdungeon)
+"Lp" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"Lr" = (
+/obj/structure/simple_door/tentflap_cloth{
+	color = "#666666"
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/structure/decoration/rag{
+	icon_state = "skin"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"Lt" = (
+/obj/structure/nest/gecko,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"Lv" = (
+/obj/structure/simple_door/tentflap_cloth{
+	color = "#666666"
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/structure/decoration/rag,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/structure/decoration/rag{
+	icon_state = "skin"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"LJ" = (
+/obj/structure/simple_door/tentflap_cloth{
+	color = "#666666"
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/structure/decoration/rag{
+	icon_state = "skin"
+	},
+/obj/structure/decoration/rag,
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"LN" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"LZ" = (
+/obj/structure/nest/gecko{
+	pixel_y = 19
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"Me" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"Mi" = (
+/obj/structure/nest/gecko{
+	pixel_y = 8
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"Mq" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"Mz" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/structure/nest/gecko,
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"MK" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/structure/cave/support{
+	pixel_y = 18;
+	icon_state = "support_beams";
+	anchored = 1;
+	layer = 3
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/blood/gibs,
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"MZ" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/structure/cave/support{
+	pixel_y = 26;
+	icon_state = "support_wall";
+	anchored = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/structure/decoration/rag{
+	desc = "A string of bones and skulls.<br>A common warning from tribals and raiders to outsiders.";
+	icon_state = "skulls";
+	name = "skulls";
+	pixel_y = 26
+	},
+/obj/effect/decal/cleanable/blood/gibs,
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"Nt" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"Nz" = (
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"NB" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/turf/open/indestructible/ground/outside/water{
+	color = "#7E6355"
+	},
+/area/kf/knottinghamdungeon)
+"NI" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"NR" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"NX" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 4
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 1
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"Of" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 4
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"Oo" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"OJ" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"ON" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"Pu" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888"
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"Pw" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/structure/cave/support{
+	pixel_y = 18;
+	icon_state = "support_beams";
+	anchored = 1;
+	layer = 3
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"PT" = (
+/obj/structure/simple_door/tentflap_cloth{
+	color = "#666666"
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/structure/decoration/rag,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"Qh" = (
+/obj/structure/nest/gecko{
+	pixel_y = 17
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"Qy" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888"
+	},
+/obj/effect/decal/remains/human,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"Ra" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/item/pickaxe,
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"RF" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/decal/remains/human,
+/obj/structure/cave/stalagmite{
+	icon_state = "stalagmite2"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"RI" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/structure/cave/support{
+	pixel_y = 18;
+	icon_state = "support_beams";
+	anchored = 1;
+	layer = 3
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"RJ" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/structure/cave/support{
+	pixel_y = 26;
+	icon_state = "support_wall_broken";
+	anchored = 1
+	},
+/obj/structure/decoration/rag{
+	desc = "A string of bones and skulls.<br>A common warning from tribals and raiders to outsiders.";
+	icon_state = "skulls";
+	name = "skulls";
+	pixel_y = 26
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/turf/open/indestructible/ground/outside/water{
+	color = "#7E6355"
+	},
+/area/kf/knottinghamdungeon)
+"RR" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/turf/open/indestructible/ground/outside/water{
+	color = "#7E6355"
+	},
+/area/kf/knottinghamdungeon)
+"RU" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/structure/cave/support{
+	pixel_y = 26;
+	icon_state = "support_wall_broken";
+	anchored = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"Sh" = (
+/obj/structure/nest/gecko,
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 4
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"SP" = (
+/obj/structure/simple_door/tentflap_cloth{
+	color = "#666666"
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/structure/decoration/rag,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"Tg" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/structure/cave/support{
+	pixel_y = 18;
+	icon_state = "support_beams";
+	anchored = 1;
+	layer = 3
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"Ti" = (
+/obj/structure/nest/gecko,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/structure/cave/support{
+	pixel_y = 18;
+	icon_state = "support_beams";
+	anchored = 1;
+	layer = 3
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"Tj" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 4
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"Tw" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/structure/cave/support{
+	pixel_y = 26;
+	icon_state = "support_wall";
+	anchored = 1
+	},
+/obj/structure/decoration/rag{
+	desc = "A string of bones and skulls.<br>A common warning from tribals and raiders to outsiders.";
+	icon_state = "skulls";
+	name = "skulls";
+	pixel_y = 26
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"UQ" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"UT" = (
+/obj/structure/nest/gecko,
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/structure/cave/support{
+	pixel_y = 26;
+	icon_state = "support_wall";
+	anchored = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"Vy" = (
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/structure/cave/support{
+	pixel_y = 18;
+	icon_state = "support_beams";
+	anchored = 1;
+	layer = 3
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/obj/structure/decoration/rag{
+	desc = "A string of bones and skulls.<br>A common warning from tribals and raiders to outsiders.";
+	icon_state = "skulls";
+	name = "skulls";
+	pixel_y = 14
+	},
+/obj/effect/decal/cleanable/blood/gibs,
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"VJ" = (
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 4
+	},
+/obj/structure/cave/stalagmite,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"VL" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"VU" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"WT" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"Xr" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 8
+	},
+/obj/effect/decal/remains/human,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"XA" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"XL" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"YJ" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/structure/cave/support{
+	pixel_y = 26;
+	icon_state = "support_wall";
+	anchored = 1
+	},
+/turf/open/indestructible/ground/outside/water{
+	color = "#7E6355"
+	},
+/area/kf/knottinghamdungeon)
+"YK" = (
+/obj/structure/simple_door/tentflap_cloth{
+	color = "#666666"
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/structure/decoration/rag{
+	icon_state = "skin"
+	},
+/obj/structure/decoration/rag,
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"Za" = (
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/closed/mineral/indestructible{
+	color = "#5C4033"
+	},
+/area/kf/knottinghamdungeon)
+"Zh" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"Zw" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/obj/structure/cave/support{
+	pixel_y = 26;
+	icon_state = "support_wall_broken";
+	anchored = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"Zz" = (
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888";
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"ZC" = (
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 4;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 1;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirtcorner{
+	color = "#888888"
+	},
+/obj/effect/decal/cleanable/dirt/dust{
+	color = "#997950"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/kf/knottinghamdungeon)
+"ZR" = (
+/obj/effect/turf_decal/weather/dirt{
+	alpha = 180;
+	color = "#888888";
+	dir = 8;
+	light_color = null
+	},
+/obj/effect/turf_decal/weather/dirt{
+	color = "#888888";
+	dir = 2;
+	light_color = null
+	},
+/turf/open/indestructible/ground/outside/water{
+	color = "#7E6355"
+	},
+/area/kf/knottinghamdungeon)
+
+(1,1,1) = {"
+cs
+cs
+cs
+cs
+cs
+cs
+cs
+Lh
+Lh
+Lh
+ya
+Zz
+AN
+Tg
+cs
+cs
+cs
+cs
+cs
+cs
+cs
+"}
+(2,1,1) = {"
+cs
+cs
+cs
+cs
+cs
+cs
+cs
+Lh
+cs
+cs
+ug
+Xr
+JO
+fq
+HR
+XL
+cs
+cs
+cs
+cs
+cs
+"}
+(3,1,1) = {"
+cs
+cs
+cs
+cs
+cs
+Hc
+uC
+pL
+rF
+cs
+RU
+kt
+xw
+lD
+cs
+NR
+AN
+pz
+AN
+Qh
+cs
+"}
+(4,1,1) = {"
+cs
+cs
+cs
+cs
+cs
+aw
+wA
+BJ
+wY
+cs
+EZ
+oi
+sD
+GD
+cs
+vU
+cG
+Ju
+VJ
+VU
+cs
+"}
+(5,1,1) = {"
+cs
+cs
+mD
+xM
+cs
+YJ
+oI
+rq
+rG
+cs
+cs
+cs
+cs
+cs
+cs
+ky
+fS
+jV
+hc
+VU
+cs
+"}
+(6,1,1) = {"
+cs
+cs
+jD
+VU
+cs
+cs
+cs
+cs
+cs
+cs
+Nz
+xE
+xE
+xE
+JA
+NX
+oq
+kd
+lE
+Ha
+cs
+"}
+(7,1,1) = {"
+cs
+Za
+Tw
+rG
+cs
+cs
+eg
+mW
+uC
+Zz
+cE
+cs
+cs
+cs
+cs
+td
+jV
+oK
+jV
+lD
+cs
+"}
+(8,1,1) = {"
+cs
+cs
+Fi
+cs
+cs
+cs
+hD
+Ag
+jV
+RF
+Ha
+cs
+cs
+cs
+cs
+eb
+nX
+FQ
+nX
+Of
+cs
+"}
+(9,1,1) = {"
+cs
+cs
+UT
+uC
+Bj
+cs
+if
+iQ
+kg
+jV
+lD
+cs
+sC
+WT
+cs
+YK
+cs
+cs
+cs
+YK
+cs
+"}
+(10,1,1) = {"
+cs
+cs
+bd
+xw
+DN
+LJ
+zg
+jV
+KC
+vB
+OJ
+cs
+Ra
+mQ
+Gb
+mr
+cs
+cs
+cs
+lD
+cs
+"}
+(11,1,1) = {"
+cs
+cs
+Qy
+tp
+lh
+cs
+HY
+oE
+HV
+Aa
+LN
+cs
+Lp
+yW
+cs
+eB
+Gb
+jV
+cs
+lD
+cs
+"}
+(12,1,1) = {"
+cs
+cs
+zQ
+bv
+EE
+cs
+cs
+cs
+cs
+sl
+cs
+cs
+cs
+cs
+cs
+lD
+cs
+cs
+cs
+lD
+cs
+"}
+(13,1,1) = {"
+cs
+cs
+NB
+rM
+cs
+cs
+cs
+cs
+cs
+lD
+cs
+cs
+cs
+cs
+cs
+lD
+cs
+cs
+cs
+lD
+cs
+"}
+(14,1,1) = {"
+cs
+cs
+cs
+cs
+cs
+yc
+qj
+WT
+cs
+eb
+xE
+xE
+FC
+Cs
+nX
+Sh
+nX
+Tj
+cs
+lD
+cs
+"}
+(15,1,1) = {"
+cs
+cs
+cs
+cs
+cs
+Lp
+RI
+Ha
+cs
+lD
+cs
+cs
+cs
+Zw
+jV
+MK
+jV
+DV
+cs
+lD
+cs
+"}
+(16,1,1) = {"
+cs
+cs
+cs
+cs
+cs
+cs
+cs
+Lr
+cs
+lD
+cs
+cs
+cs
+NR
+GE
+dW
+aC
+OJ
+cs
+lD
+cs
+"}
+(17,1,1) = {"
+cs
+cs
+cs
+cs
+Ga
+eu
+jV
+tv
+SP
+Dy
+cs
+cs
+cs
+ky
+Vy
+jV
+yp
+VU
+cs
+lD
+cs
+"}
+(18,1,1) = {"
+cs
+cs
+cs
+cs
+yv
+Hy
+XA
+OJ
+cs
+cs
+cs
+cs
+cs
+EZ
+ju
+nX
+pd
+LN
+cs
+lD
+cs
+"}
+(19,1,1) = {"
+cs
+cs
+cs
+cs
+hF
+Zh
+wV
+IM
+WT
+cs
+cs
+cs
+cs
+cs
+cs
+cs
+Lv
+cs
+cs
+Fa
+xE
+"}
+(20,1,1) = {"
+cs
+cs
+cs
+cs
+Av
+jV
+ji
+yL
+VU
+cs
+cs
+cs
+cs
+RU
+yS
+nX
+Nt
+ON
+cs
+lD
+cs
+"}
+(21,1,1) = {"
+cs
+cs
+cs
+cs
+Ge
+Oo
+oS
+yA
+Me
+cs
+cs
+cs
+cs
+Mz
+wY
+sX
+Ti
+VU
+cs
+lD
+cs
+"}
+(22,1,1) = {"
+cs
+cs
+cs
+cs
+EN
+Ea
+Zh
+mq
+LN
+cs
+cs
+cs
+cs
+EZ
+iQ
+nX
+Mq
+LN
+cs
+lD
+cs
+"}
+(23,1,1) = {"
+cs
+cs
+cs
+cs
+cs
+PT
+cs
+cs
+cs
+cs
+cs
+cs
+cs
+cs
+cs
+cs
+Lv
+cs
+cs
+lD
+cs
+"}
+(24,1,1) = {"
+cs
+cs
+cs
+cs
+cs
+lD
+cs
+cs
+cs
+cs
+cs
+cs
+cs
+cs
+cs
+cs
+lD
+cs
+cs
+lD
+cs
+"}
+(25,1,1) = {"
+cs
+cs
+cs
+cs
+cs
+eb
+bO
+ux
+Zz
+ET
+iU
+UQ
+cs
+cs
+cs
+cs
+lD
+cs
+cs
+ub
+cs
+"}
+(26,1,1) = {"
+cs
+cs
+cs
+cs
+cs
+lD
+cs
+cs
+yv
+VU
+jV
+lD
+cs
+cs
+cs
+cs
+lD
+cs
+cs
+Ay
+cs
+"}
+(27,1,1) = {"
+cs
+cs
+cs
+cs
+cs
+PT
+cs
+cs
+KE
+BT
+nP
+LZ
+cs
+jv
+tz
+ZR
+kW
+cs
+cs
+Ay
+cs
+"}
+(28,1,1) = {"
+cs
+fN
+cc
+ET
+ux
+NI
+cs
+cs
+hF
+Pw
+az
+VL
+cs
+RR
+mf
+Bi
+Mi
+cs
+cs
+vG
+cs
+"}
+(29,1,1) = {"
+cs
+sA
+iM
+Ha
+jV
+kW
+cs
+cs
+MZ
+jV
+ji
+CJ
+cs
+RJ
+HN
+oI
+Pu
+Gb
+HR
+tq
+cs
+"}
+(30,1,1) = {"
+cs
+Zw
+jV
+NR
+Oo
+xg
+cs
+cs
+ZC
+Lt
+HV
+an
+JA
+XA
+Kq
+XA
+Lf
+cs
+cs
+cs
+cs
+"}
+(31,1,1) = {"
+cs
+NR
+Oo
+Fq
+yA
+VU
+cs
+cs
+cs
+cs
+cs
+cs
+cs
+BQ
+dE
+EB
+Hi
+cs
+cs
+cs
+cs
+"}
+(32,1,1) = {"
+cs
+HF
+Zh
+iM
+aR
+LN
+cs
+cs
+cs
+cs
+cs
+cs
+cs
+cs
+cs
+cs
+cs
+cs
+cs
+cs
+cs
+"}
