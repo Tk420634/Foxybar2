@@ -443,21 +443,24 @@ SUBSYSTEM_DEF(ticker)
 	if(m)
 		to_chat(world, "<span class='purple'><b>Tip of the round: </b>[html_encode(m)]</span>")
 
+
 ///Sends a game tip to everyone and then queues up another tip.
 /datum/controller/subsystem/ticker/proc/send_midround_tip(override)
-	if(!LAZYLEN(tips_list))
-		tips_list = world.file2list("strings/tips.txt")
-	var/m
-	if(isnull(override) && IsRoundInProgress())//Only send the tip if the round has started. Shouldn't ever be a problem unless something broke.
-		if(LAZYLEN(tips_list))
-			m = pick(tips_list)
-	else if(override)
-		m = override
-	if(m)
-		to_chat(world, "<span class='purple'><b>Tip: </b>[html_encode(m)]</span>")
-	// Queue up the next tip even if it didn't send one so long as it was an organic tip that wasn't sent by an admin.
-	if(isnull(override))
-		addtimer(CALLBACK(src,PROC_REF(send_midround_tip)), midround_tip_interval*(rand(5,15)*0.1))//Random tip interval of +- 50% the average
+	return
+	// if(!LAZYLEN(tips_list))
+	// 	tips_list = world.file2list("strings/tips.txt")
+	// var/m
+	// if(isnull(override) && IsRoundInProgress())//Only send the tip if the round has started. Shouldn't ever be a problem unless something broke.
+	// 	if(LAZYLEN(tips_list))
+	// 		m = pick(tips_list)
+	// else if(override)
+	// 	m = override
+	// if(m)
+	// 	to_chat(world, "<span class='purple'><b>Tip: </b>[html_encode(m)]</span>")
+	// // Queue up the next tip even if it didn't send one so long as it was an organic tip that wasn't sent by an admin.
+	// if(isnull(override))
+	// 	addtimer(CALLBACK(src,PROC_REF(send_midround_tip)), midround_tip_interval*(rand(5,15)*0.1))//Random tip interval of +- 50% the average
+
 
 /datum/controller/subsystem/ticker/proc/check_queue()
 	var/hpc = CONFIG_GET(number/hard_popcap)

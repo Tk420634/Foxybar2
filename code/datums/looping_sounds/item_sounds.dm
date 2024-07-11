@@ -48,7 +48,7 @@
 			return null
 	return ..(starttime, mid_sounds[danger])
 
-/datum/looping_sound/geiger/stop(atom/remove_thing, kill = FALSE)
+/datum/looping_sound/geiger/stop(atom/remove_thing, kill = FALSE, nuke_sound_for_thing = FALSE)
 	. = ..()
 	last_radiation = 0
 

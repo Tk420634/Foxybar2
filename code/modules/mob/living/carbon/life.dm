@@ -594,76 +594,85 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 	if(hallucination)
 		handle_hallucinations()
 
-	if(drunkenness)
-		drunkenness *= 0.96
-		if(drunkenness >= 6)
-			SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "drunk", /datum/mood_event/drunk)
-			jitteriness = max(jitteriness - 3, 0)
-			if(HAS_TRAIT(src, TRAIT_DRUNK_HEALING))
-				adjustBruteLoss(-0.12, FALSE)
-				adjustFireLoss(-0.06, FALSE)
-		else
-			SEND_SIGNAL(src, COMSIG_CLEAR_MOOD_EVENT, "drunk")
-			clear_alert("drunk")
-			drunkenness = max(drunkenness - 0.2, 0)
-			
-		if(mind && (mind.assigned_role == "Scientist" || mind.assigned_role == "Research Director"))
-			if(SSresearch.science_tech)
-				if(drunkenness >= 12.9 && drunkenness <= 13.8)
-					drunkenness = round(drunkenness, 0.01)
-					var/ballmer_percent = 0
-					if(drunkenness == 13.35) // why run math if I dont have to
-						ballmer_percent = 1
-					else
-						ballmer_percent = (-abs(drunkenness - 13.35) / 0.9) + 1
-					if(prob(5))
-						say(pick(GLOB.ballmer_good_msg), forced = "ballmer")
-					SSresearch.science_tech.add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = BALLMER_POINTS * ballmer_percent))
-				if(drunkenness > 26) // by this point you're into windows ME territory
-					if(prob(5))
-						SSresearch.science_tech.remove_point_list(list(TECHWEB_POINT_TYPE_GENERIC = BALLMER_POINTS))
-						say(pick(GLOB.ballmer_windows_me_msg), forced = "ballmer")
+	handle_drunkenness()
 
-		if(drunkenness >= 41)
-			if(prob(25))
-				confused += 2
-			Dizzy(10)
-			if(HAS_TRAIT(src, TRAIT_DRUNK_HEALING)) // effects stack with lower tiers
-				adjustBruteLoss(-0.3, FALSE)
-				adjustFireLoss(-0.15, FALSE)
+/mob/living/carbon/proc/handle_drunkenness()
+	if(!drunkenness)
+		return
 
-		if(drunkenness >= 51)
-			if(prob(5))
-				confused += 10
-				vomit()
-			Dizzy(25)
+	drunkenness *= 0.9975
+	if(drunkenness >= 6)
+		SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "drunk", /datum/mood_event/drunk)
+		jitteriness = max(jitteriness - 3, 0)
+		if(HAS_TRAIT(src, TRAIT_DRUNK_HEALING))
+			adjustBruteLoss(-0.12, FALSE)
+			adjustFireLoss(-0.06, FALSE)
+	else
+		SEND_SIGNAL(src, COMSIG_CLEAR_MOOD_EVENT, "drunk")
+		clear_alert("drunk")
+		drunkenness = max(drunkenness - 0.2, 0)
 
-		if(drunkenness >= 61)
-			if(prob(50))
-				blur_eyes(5)
-			if(HAS_TRAIT(src, TRAIT_DRUNK_HEALING))
-				adjustBruteLoss(-0.4, FALSE)
-				adjustFireLoss(-0.2, FALSE)
+	if(drunkenness >= 41)
+		if(prob(25))
+			confused += 2
+		Dizzy(10)
+		if(HAS_TRAIT(src, TRAIT_DRUNK_HEALING)) // effects stack with lower tiers
+			adjustBruteLoss(-0.3, FALSE)
+			adjustFireLoss(-0.15, FALSE)
 
-		if(drunkenness >= 71)
+	if(drunkenness >= 51)
+		if(prob(5))
+			confused += 10
+			vomit()
+		Dizzy(25)
+
+	if(drunkenness >= 61)
+		if(prob(50))
 			blur_eyes(5)
+		if(HAS_TRAIT(src, TRAIT_DRUNK_HEALING))
+			adjustBruteLoss(-0.4, FALSE)
+			adjustFireLoss(-0.2, FALSE)
 
-		if(drunkenness >= 81)
-			adjustToxLoss(0.2)
-			if(prob(5) && !stat)
-				to_chat(src, span_warning("Maybe you should lie down for a bit..."))
+	if(drunkenness >= 71)
+		blur_eyes(5)
 
-		if(drunkenness >= 91)
-			adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.4, 60)
-			if(prob(20) && !stat)
-				if(SSshuttle.emergency.mode == SHUTTLE_DOCKED && is_station_level(z)) //QoL mainly
-					to_chat(src, span_warning("You're so tired... but you can't miss that shuttle..."))
+	if(drunkenness >= 81)
+		adjustToxLoss(0.2)
+		if(prob(5) && !stat)
+			to_chat(src, span_warning("Maybe you should lie down for a bit..."))
+
+	if(drunkenness >= 91)
+		adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.4, 60)
+		if(prob(20) && !stat)
+			if(SSshuttle.emergency.mode == SHUTTLE_DOCKED && is_station_level(z)) //QoL mainly
+				to_chat(src, span_warning("You're so tired... but you can't miss that shuttle..."))
+			else
+				to_chat(src, span_warning("Just a quick nap..."))
+				Sleeping(900)
+
+	if(drunkenness >= 101)
+		adjustToxLoss(-1) //Let's be honest you shouldn't be alive by now
+
+
+/* 
+	if(mind && (mind.assigned_role == "Scientist" || mind.assigned_role == "Research Director"))
+		if(SSresearch.science_tech)
+			if(drunkenness >= 12.9 && drunkenness <= 13.8)
+				drunkenness = round(drunkenness, 0.01)
+				var/ballmer_percent = 0
+				if(drunkenness == 13.35) // why run math if I dont have to
+					ballmer_percent = 1
 				else
-					to_chat(src, span_warning("Just a quick nap..."))
-					Sleeping(900)
+					ballmer_percent = (-abs(drunkenness - 13.35) / 0.9) + 1
+				if(prob(5))
+					say(pick(GLOB.ballmer_good_msg), forced = "ballmer")
+				SSresearch.science_tech.add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = BALLMER_POINTS * ballmer_percent))
+			if(drunkenness > 26) // by this point you're into windows ME territory
+				if(prob(5))
+					SSresearch.science_tech.remove_point_list(list(TECHWEB_POINT_TYPE_GENERIC = BALLMER_POINTS))
+					say(pick(GLOB.ballmer_windows_me_msg), forced = "ballmer")
+ */
 
-		if(drunkenness >= 101)
-			adjustToxLoss(-1) //Let's be honest you shouldn't be alive by now
 
 //used in human and monkey handle_environment()
 /mob/living/carbon/proc/natural_bodytemperature_stabilization()

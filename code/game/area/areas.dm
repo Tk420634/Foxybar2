@@ -7,6 +7,8 @@ GLOBAL_LIST_EMPTY(area_sound_loops)
 /// List of weather tags and their respective areas
 GLOBAL_LIST_INIT(area_weather_list, list(WEATHER_ALL))
 
+GLOBAL_VAR_INIT(areas_kill_ambience_for_players_when_players_move_from_one_area_to_another, TRUE)
+
 /area
 	level = null
 	name = "Space"
@@ -666,6 +668,10 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 	if(!L)
 		return
 	if(!LAZYLEN(ambientmusic))
+		if(GLOB.areas_kill_ambience_for_players_when_players_move_from_one_area_to_another)
+			L.stop_sound_channel(CHANNEL_AMBIENT_MUSIC)
+			L.stop_sound_channel(CHANNEL_AMBIENT_LOOP)
+			L.stop_sound_channel(CHANNEL_AMBIENT_SOUND)
 		return 
 	if(type in L.client.area_musics)
 		return
@@ -685,7 +691,13 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 	SEND_SOUND(play_to, to_play)
 
 /area/proc/addremove_to_soundloop(mob/living/player, add = TRUE)
+	if(!isliving(player))
+		return
 	if(!ambience_area)
+		if(GLOB.areas_kill_ambience_for_players_when_players_move_from_one_area_to_another)
+			player.stop_sound_channel(CHANNEL_AMBIENT_MUSIC)
+			player.stop_sound_channel(CHANNEL_AMBIENT_LOOP)
+			player.stop_sound_channel(CHANNEL_AMBIENT_SOUND)
 		return
 	if(!islist(ambience_area))
 		ambience_area = null
@@ -703,7 +715,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 		if(add)
 			our_loop.start(player)
 		else
-			our_loop.stop(player, kill = FALSE)
+			our_loop.stop(player, kill = FALSE, nuke_sound_for_thing = GLOB.areas_kill_ambience_for_players_when_players_move_from_one_area_to_another)
 
 ///Divides total beauty in the room by roomsize to allow us to get an average beauty per tile.
 /area/proc/update_beauty()

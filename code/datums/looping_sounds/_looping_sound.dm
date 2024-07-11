@@ -74,9 +74,15 @@
 /// Areas use output_atoms differently, as a list of players to play the sound to. If we stop it as normal and kill it, itll stop playing to all mobs who were listening!
 /// To sum up: If the output_atoms are *playing* the sound, kill should = true
 /// If the output_atoms are *listening* to the sound, kill should = false
-/datum/looping_sound/proc/stop(atom/remove_thing, kill = TRUE)
+/datum/looping_sound/proc/stop(atom/remove_thing, kill = TRUE, nuke_sound_for_thing = FALSE)
 	on_stop()
 	if(remove_thing)
+		if(nuke_sound_for_thing)
+			if(isplayer(remove_thing))
+				if(ismob(remove_thing))
+					if(isnum(channel))
+						var/mob/they = remove_thing
+						they.stop_sound_channel(src.channel)
 		output_atoms -= remove_thing
 		UnregisterSignal(remove_thing, COMSIG_PARENT_PREQDELETED)
 	if(LAZYLEN(output_atoms) && !kill)

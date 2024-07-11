@@ -256,7 +256,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	gain_text = span_notice("You feel lithe on your feet! (Alt click walls to climb them!)")
 	lose_text = span_danger("You don't seem to be able to jump as high as you used to.")
 	medical_record_text = "Patient scored highly on cardio tests."
-*/
+
 
 
 /datum/quirk/tackler
@@ -285,7 +285,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 )
 
 
-/*
+
 /datum/quirk/tackleradv
 	name = "Advanced Leaper"
 	desc = "You are able to leap long distances with ease."
