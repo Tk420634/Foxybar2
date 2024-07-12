@@ -4345,6 +4345,26 @@
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/fb/park)
+"sRo" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8;
+	color = "#3B2B1A"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#3B2B1A"
+	},
+/obj/effect/overlay/fog/fog2{
+	plane = -2;
+	pixel_y = 0
+	},
+/obj/structure/decoration/clock/active{
+	pixel_y = 26
+	},
+/turf/open/floor/wood_common{
+	color = "#99BBBB"
+	},
+/area/f13/fb/bar)
 "sXl" = (
 /obj/structure/chair/stool/retro/backed,
 /obj/effect/turf_decal/siding/wood{
@@ -13191,7 +13211,7 @@ bPG
 bPG
 hHE
 bPG
-fDO
+sRo
 nyA
 bUG
 bPG
