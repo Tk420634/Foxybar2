@@ -95,6 +95,7 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 	holder = null
 
 /datum/reagent/proc/pre_react(mob/living/M, method=TOUCH, reac_volume, show_message = 1, touch_protection = 0)
+	SEND_SIGNAL(M, COMSIG_CARBON_REAGENT_PRE_ADD, src, method, reac_volume)
 	return 1
 
 /datum/reagent/proc/reaction_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1, touch_protection = 0)

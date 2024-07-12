@@ -14,13 +14,12 @@
 
 /obj/effect/sound_emitter/Initialize()
 	. = ..()
-	return INITIALIZE_HINT_QDEL
-	//if(!ispath(snd))
-	//	return
-	//if(synchronize)
-	//	soundify()
-	//else
-	//	unique_soundify()
+	if(!ispath(snd))
+		return
+	if(synchronize)
+		soundify()
+	else
+		unique_soundify()
 
 /obj/effect/sound_emitter/Destroy()
 	SSweather.remove_sound_rock(src, snd)
@@ -43,7 +42,7 @@
 	if(ispath(override, /datum/looping_sound))
 		SSweather.remove_sound_rock(src, snd)
 		snd = override
-	SSweather.add_sound_rock(src, snd)
+	SSweather.add_sound_rock(src, snd) // yes, ssweather
 
 /obj/effect/sound_emitter/debug
 	name = "sound emitter (debug)"

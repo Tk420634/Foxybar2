@@ -374,6 +374,7 @@
 #define COMSIG_CARBON_EMBED_REMOVAL "item_embed_remove_safe"		// called when removing a given item from a mob, from mob/living/carbon/remove_embedded_object(mob/living/carbon/target, /obj/item)
 
 #define COMSIG_CARBON_REAGENT_POST_LIFE "carbon_reagent_post_life" // (datum/source, datum/reagent/R)
+#define COMSIG_CARBON_REAGENT_PRE_ADD "carbon_reagent_pre_add" // (datum/source, datum/reagent/R)
 // /mob/living/silicon signals
 #define COMSIG_ROBOT_UPDATE_ICONS "robot_update_icons"			//from base of robot/update_icons(): ()
 

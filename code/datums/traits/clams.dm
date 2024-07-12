@@ -559,6 +559,7 @@
 	var/yinglet_love = TRUE
 
 /datum/reagent/consumable/clam_meat/pre_react(mob/living/M, method=TOUCH, reac_volume, show_message = 1, touch_protection = 0)
+	. = ..()
 	if(!HAS_TRAIT(M, TRAIT_CLAM_LOVER))
 		return
 	taste_description = span_love("delicious clam")
@@ -607,6 +608,7 @@
 	ghoulfriendly = TRUE
 
 /datum/reagent/consumable/clam_juice/pre_react(mob/living/M, method=TOUCH, reac_volume, show_message = 1, touch_protection = 0)
+	. = ..()
 	if(!HAS_TRAIT(M, TRAIT_CLAM_LOVER))
 		return
 	taste_description = span_love("clam juice")
@@ -627,6 +629,7 @@
 	var/yinglet_love = TRUE
 
 /datum/reagent/consumable/clammato_juice/pre_react(mob/living/M, method=TOUCH, reac_volume, show_message = 1, touch_protection = 0)
+	. = ..()
 	if(!HAS_TRAIT(M, TRAIT_CLAM_LOVER))
 		return
 	taste_description = "[span_love("clam")] and tomato juice"

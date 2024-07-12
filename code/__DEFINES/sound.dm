@@ -1,22 +1,23 @@
 //max channel is 1024. Only go lower from here, because byond tends to pick the first availiable channel to play sounds on
-#define CHANNEL_LOBBYMUSIC 1024
-#define CHANNEL_ADMIN 1023
-#define CHANNEL_VOX 1022
-#define CHANNEL_JUKEBOX 1021
+#define CHANNEL_LOBBYMUSIC    1024
+#define CHANNEL_ADMIN         1023
+#define CHANNEL_VOX           1022
+#define CHANNEL_JUKEBOX       1021
 // THERE IS A REASON FOR THIS GAP !! its this -v
 #define CHANNEL_JUKEBOX_START 1016 //The gap between this and CHANNEL_JUKEBOX determines the amount of free jukebox channels. This currently allows 6 jukebox channels to exist.
-#define CHANNEL_JUSTICAR_ARK 1015
-#define CHANNEL_HEARTBEAT 1014 //sound channel for heartbeats
+#define CHANNEL_JUSTICAR_ARK  1015
+#define CHANNEL_HEARTBEAT     1014 //sound channel for heartbeats
 #define CHANNEL_AMBIENT_MUSIC 1013
 #define CHANNEL_AMBIENT_SOUND 1012
-#define CHANNEL_AMBIENT_LOOP 1011
-#define CHANNEL_BICYCLE 1010
+#define CHANNEL_AMBIENT_LOOP  1011
+#define CHANNEL_BICYCLE       1010
 
 //CIT CHANNELS - TRY NOT TO REGRESS cus i have unbirth set to noplz
-#define CHANNEL_PRED 1009
-#define CHANNEL_PREY 1008
-#define CHANNEL_PREYLOOP_SQUISH 1007
-#define CHANNEL_PREYLOOP_HEARTBEAT 1006
+#define CHANNEL_PRED                1009
+#define CHANNEL_PREY                1008
+#define CHANNEL_PREYLOOP_SQUISH     1007
+#define CHANNEL_PREYLOOP_HEARTBEAT  1006
+#define CHANNELS_RESERVED_ABOVE     1005
 
 ///Default range of a sound.
 #define SOUND_RANGE 17
@@ -49,7 +50,9 @@
 //THIS SHOULD ALWAYS BE THE LOWEST ONE!
 //KEEP IT UPDATED
 
-#define CHANNEL_HIGHEST_AVAILABLE 1010
+#define CHANNEL_HIGHEST_AVAILABLE 800 // I think we can live with *just* 800 channels
+#define CHANNEL_LOOP_LOWEST 801
+#define CHANNEL_LOOP_HIGHEST 1004
 
 #define MAX_INSTRUMENT_CHANNELS (128 * 6)
 

@@ -562,13 +562,13 @@
 	set name = "Respawn"
 	set category = "OOC"
 
-	/* check respawn is on */
-	if(CONFIG_GET(flag/norespawn))
-		return
-	/* check player is actually dead */
-	if((stat != DEAD || !( SSticker )))
-		to_chat(usr, span_boldnotice("You must be dead to use this!"))
-		return
+	// /* check respawn is on */
+	// if(CONFIG_GET(flag/norespawn))
+	// 	return
+	// /* check player is actually dead */
+	// if((stat != DEAD || !( SSticker )))
+	// 	to_chat(usr, span_boldnotice("You must be dead to use this!"))
+	// 	return
 
 	var/is_admin = check_rights_for(src.client, R_ADMIN)
 	var/test = world.time - src.timeofdeath //How long dead for in deciseconds -- src can either be the corpse or ghost

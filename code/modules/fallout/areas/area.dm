@@ -63,7 +63,7 @@
 	ambience_area = list(
 		/datum/looping_sound/ambient/city,
 		/datum/looping_sound/ambient/critters,
-		/datum/looping_sound/ambient/general,
+	
 		/datum/looping_sound/ambient/swamp/quiet,
 		/datum/looping_sound/ambient/critters/birds,
 		/datum/looping_sound/ambient/critters/birds/crow,
@@ -75,7 +75,7 @@
 	icon_state = "green"
 	ambience_area = list(
 		/datum/looping_sound/ambient/town,
-		/datum/looping_sound/ambient/general,
+
 		/datum/looping_sound/ambient/swamp/quiet,
 		/datum/looping_sound/ambient/critters/birds,
 		/datum/looping_sound/ambient/critters/birds/crow,
@@ -88,7 +88,7 @@
 	name = "Building"
 	icon_state = "building"
 	ambience_area = list(
-		/datum/looping_sound/ambient/general,
+		
 		/datum/looping_sound/ambient/woodcreak,
 		)
 	weather_tags = null
@@ -99,7 +99,7 @@
 	icon_state = "black"
 	requires_power = TRUE
 	ambience_area = list(
-		/datum/looping_sound/ambient/general,
+		
 		/datum/looping_sound/ambient/woodcreak,
 		/datum/looping_sound/ambient/lightbulb,
 		)
@@ -108,7 +108,7 @@
 	name = "Hospital Building"
 	icon_state = "hospital"
 	ambience_area = list(
-		/datum/looping_sound/ambient/general,
+	
 		/datum/looping_sound/ambient/woodcreak,
 		/datum/looping_sound/ambient/building/hospital,
 		)
@@ -118,7 +118,7 @@
 	name = "Church Building"
 	icon_state = "green"
 	ambience_area = list(
-		/datum/looping_sound/ambient/general,
+	
 		/datum/looping_sound/ambient/woodcreak,
 		/datum/looping_sound/ambient/building/church,
 		)
@@ -127,7 +127,7 @@
 	name = "Tribal Camp"
 	icon_state = "orange"
 	ambience_area = list(
-		/datum/looping_sound/ambient/general,
+	
 		/datum/looping_sound/ambient/woodcreak,
 		/datum/looping_sound/ambient/torch,
 		/datum/looping_sound/ambient/building/sulphurtribe,
@@ -137,7 +137,7 @@
 	name = "Tribal Cave"
 	icon_state = "purple"
 	ambience_area = list(
-		/datum/looping_sound/ambient/general,
+	
 		/datum/looping_sound/ambient/woodcreak,
 		/datum/looping_sound/ambient/torch,
 		/datum/looping_sound/ambient/building/sulphurtribe,
@@ -176,7 +176,7 @@
 	icon_state = "blue"
 	ambience_area = list(
 		/datum/looping_sound/ambient/sewers,
-		/datum/looping_sound/ambient/general,
+	
 		/datum/looping_sound/ambient/steam,
 		)
 	ambientmusic = null
@@ -188,7 +188,7 @@
 	icon_state = "caves"
 	requires_power = TRUE
 	ambience_area = list(
-		/datum/looping_sound/ambient/general,
+
 		/datum/looping_sound/ambient/cave,
 		/datum/looping_sound/ambient/tunnel,
 	)
@@ -200,7 +200,7 @@
 	environment = 21
 	grow_chance = 25
 	ambience_area = list(
-		/datum/looping_sound/ambient/general,
+	
 		/datum/looping_sound/ambient/building,
 		/datum/looping_sound/ambient/cave,
 		/datum/looping_sound/ambient/tunnel,
@@ -234,15 +234,13 @@
 	icon_state = "newboston"
 	safe_town = TRUE
 	ambience_area = list(
-		/datum/looping_sound/ambient/general,
 		/datum/looping_sound/ambient/woodcreak,
 		)
 	ambientsounds = list(
 		AREA_SOUND('sound/f13ambience/dog_distant_1.ogg', 10 SECONDS),
 		AREA_SOUND('sound/f13ambience/dog_distant_2.ogg', 10 SECONDS),
 		AREA_SOUND('sound/f13ambience/dog_distant_3.ogg', 10 SECONDS),
-		AREA_SOUND('sound/f13ambience/ambigen_1.ogg', 10 SECONDS),
-		AREA_SOUND('sound/f13ambience/ambigen_2.ogg', 10 SECONDS))
+	)
 	weather_tags = null
 	outdoors = FALSE
 
@@ -263,11 +261,10 @@
 		AREA_SOUND('sound/f13ambience/bird_8.ogg', 10 SECONDS))
 
 	ambience_area = list(
-		/datum/looping_sound/ambient/town,
-		/datum/looping_sound/ambient/general,
 		/datum/looping_sound/ambient/swamp/quiet,
 		/datum/looping_sound/ambient/critters/birds,
 		/datum/looping_sound/ambient/critters/birds/crow,
+		/datum/looping_sound/ambient/fb/parkinglot
 		)
 	weather_tags = list(WEATHER_SAFE)
 	outdoors = TRUE
@@ -283,7 +280,49 @@
 /area/f13/wasteland/city/newboston/bar
 	name = "New Boston Bar"
 	icon_state = "alcohol"
+
+	ambience_area = list(
+		/datum/looping_sound/ambient/fb/bar,
+		/datum/looping_sound/ambient/woodcreak,
+		/datum/looping_sound/ambient/lightbulb,
+		)
 	outdoors = FALSE
+
+/area/f13/fb/bar
+	name = "Foxy Bar"
+	icon_state = "alcohol"
+
+	ambience_area = list(
+		/datum/looping_sound/ambient/fb/bar,
+		/datum/looping_sound/ambient/woodcreak,
+		/datum/looping_sound/ambient/lightbulb,
+		/datum/looping_sound/ambient/fb/brownnoise,
+		/datum/looping_sound/ambient/fb/fannoise
+		)
+	outdoors = FALSE
+	
+/area/f13/fb/park
+	name = "Foxy Park"
+	icon_state = "green"
+	ambientsounds = list(
+		AREA_SOUND('sound/f13ambience/dog_distant_1.ogg', 10 SECONDS),
+		AREA_SOUND('sound/f13ambience/dog_distant_2.ogg', 10 SECONDS),
+		AREA_SOUND('sound/f13ambience/dog_distant_3.ogg', 10 SECONDS),
+		AREA_SOUND('sound/f13ambience/bird_1.ogg', 10 SECONDS),
+		AREA_SOUND('sound/f13ambience/bird_2.ogg', 10 SECONDS),
+		AREA_SOUND('sound/f13ambience/bird_3.ogg', 10 SECONDS),
+		AREA_SOUND('sound/f13ambience/bird_4.ogg', 10 SECONDS),
+		AREA_SOUND('sound/f13ambience/bird_5.ogg', 10 SECONDS),
+		AREA_SOUND('sound/f13ambience/bird_6.ogg', 10 SECONDS),
+		AREA_SOUND('sound/f13ambience/bird_7.ogg', 10 SECONDS),
+		AREA_SOUND('sound/f13ambience/bird_8.ogg', 10 SECONDS))
+
+	ambience_area = list(
+		/datum/looping_sound/ambient/swamp/quiet,
+		/datum/looping_sound/ambient/critters/birds,
+		/datum/looping_sound/ambient/critters/birds/crow,
+	)
+
 
 /area/f13/wasteland/city/newboston/bank
 	name = "New Boston Bank"

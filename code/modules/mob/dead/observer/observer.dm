@@ -146,7 +146,7 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 	if(ckey)
 		abandon_mob()
 		return
-	sleep(1 SECONDS)
+	sleep(0.5 SECONDS)
 	INVOKE_ASYNC(src, PROC_REF(slam_dunk_to_main_menu))
 
 /mob/dead/observer/get_photo_description(obj/item/camera/camera)
@@ -332,72 +332,78 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	set category = "OOC"
 	set name = "Ghost"
 	set desc = "Relinquish your life and enter the land of the dead."
+	set hidden = TRUE
 
-	var/penalty = 3 MINUTES
-	var/roundstart_quit_limit = 3 MINUTES
-	if(world.time < roundstart_quit_limit)
-		penalty += roundstart_quit_limit - world.time
-	if(SSautotransfer.can_fire && SSautotransfer.maxvotes)
-		var/maximumRoundEnd = SSautotransfer.starttime + SSautotransfer.voteinterval * SSautotransfer.maxvotes
-		if(penalty - SSshuttle.realtimeofstart > maximumRoundEnd + SSshuttle.emergencyCallTime + SSshuttle.emergencyDockTime + SSshuttle.emergencyEscapeTime)
-			penalty = CANT_REENTER_ROUND
+	abandon_mob()
+	// if(stat == DEAD)
+	// 	return
+	// var/penalty = 3 MINUTES
+	// var/roundstart_quit_limit = 3 MINUTES
+	// if(world.time < roundstart_quit_limit)
+	// 	penalty += roundstart_quit_limit - world.time
+	// if(SSautotransfer.can_fire && SSautotransfer.maxvotes)
+	// 	var/maximumRoundEnd = SSautotransfer.starttime + SSautotransfer.voteinterval * SSautotransfer.maxvotes
+	// 	if(penalty - SSshuttle.realtimeofstart > maximumRoundEnd + SSshuttle.emergencyCallTime + SSshuttle.emergencyDockTime + SSshuttle.emergencyEscapeTime)
+	// 		penalty = CANT_REENTER_ROUND
 
-	var/sig_flags = SEND_SIGNAL(src, COMSIG_MOB_GHOSTIZE, (stat == DEAD) ? TRUE : FALSE, FALSE, (stat == DEAD)? penalty : 0, (stat == DEAD)? TRUE : FALSE)
+	// var/sig_flags = SEND_SIGNAL(src, COMSIG_MOB_GHOSTIZE, (stat == DEAD) ? TRUE : FALSE, FALSE, (stat == DEAD)? penalty : 0, (stat == DEAD)? TRUE : FALSE)
 
-	if(sig_flags & COMPONENT_BLOCK_GHOSTING)
-		return
+	// if(sig_flags & COMPONENT_BLOCK_GHOSTING)
+	// 	return
 
-	if(sig_flags & COMPONENT_DO_NOT_PENALIZE_GHOSTING)
-		penalty = 0
+	// if(sig_flags & COMPONENT_DO_NOT_PENALIZE_GHOSTING)
+	// 	penalty = 0
 
-	if(stat != DEAD)
-		succumb()
-	if(stat == DEAD || sig_flags & COMPONENT_FREE_GHOSTING)
-		ghostize(1)
-	else
-		var/response
-		if(istype(src, /mob/living/simple_animal))
-			response = alert(src, "Are you -sure- you want to ghost?\n(You are a simplemob. You'll be locked out from returning to a simplemob for [DisplayTimeText(penalty)].)","Are you sure you want to ghost?","Ghost","Stay in body")
-		else
-			response = alert(src, "Are you -sure- you want to ghost?\n(You are alive. If you ghost whilst alive you won't be able to re-enter this round [penalty ? "or play ghost roles [penalty == CANT_REENTER_ROUND ? "until the round is over" : "for the next [DisplayTimeText(penalty)]"]" : ""]! You can't change your mind so choose wisely!!)","Are you sure you want to ghost?","Ghost","Stay in body")
-		if(response != "Ghost")
-			return	//didn't want to ghost after-all
-		if(istype(loc, /obj/machinery/cryopod))
-			var/obj/machinery/cryopod/C = loc
-			C.despawn_occupant()
-		else
-			ghostize(FALSE, penalize = TRUE, voluntary = TRUE) //FALSE parameter is so we can never re-enter our body, "Charlie, you can never come baaaack~" :3
+	// if(stat != DEAD)
+	// 	succumb()
+	// if(stat == DEAD || sig_flags & COMPONENT_FREE_GHOSTING)
+	// 	ghostize(1)
+	// else
+	// 	var/response
+	// 	if(istype(src, /mob/living/simple_animal))
+	// 		response = alert(src, "Are you -sure- you want to ghost?\n(You are a simplemob. You'll be locked out from returning to a simplemob for [DisplayTimeText(penalty)].)","Are you sure you want to ghost?","Ghost","Stay in body")
+	// 	else
+	// 		response = alert(src, "Are you -sure- you want to ghost?\n(You are alive. If you ghost whilst alive you won't be able to re-enter this round [penalty ? "or play ghost roles [penalty == CANT_REENTER_ROUND ? "until the round is over" : "for the next [DisplayTimeText(penalty)]"]" : ""]! You can't change your mind so choose wisely!!)","Are you sure you want to ghost?","Ghost","Stay in body")
+	// 	if(response != "Ghost")
+	// 		return	//didn't want to ghost after-all
+	// 	if(istype(loc, /obj/machinery/cryopod))
+	// 		var/obj/machinery/cryopod/C = loc
+	// 		C.despawn_occupant()
+	// 	else
+	// 		ghostize(FALSE, penalize = TRUE, voluntary = TRUE) //FALSE parameter is so we can never re-enter our body, "Charlie, you can never come baaaack~" :3
 
 
 /mob/camera/verb/ghost()
 	set category = "OOC"
 	set name = "Ghost"
 	set desc = "Relinquish your life and enter the land of the dead."
+	set hidden = TRUE
 
-	var/sig_flags = SEND_SIGNAL(src, COMSIG_MOB_GHOSTIZE, FALSE, FALSE)
+	abandon_mob()
+	// var/sig_flags = SEND_SIGNAL(src, COMSIG_MOB_GHOSTIZE, FALSE, FALSE)
 
-	if(sig_flags & COMPONENT_BLOCK_GHOSTING)
-		return
+	// if(sig_flags & COMPONENT_BLOCK_GHOSTING)
+	// 	return
 
-	var/penalty = 3 MINUTES
-	var/roundstart_quit_limit = 3 MINUTES
-	if(world.time < roundstart_quit_limit)
-		penalty += roundstart_quit_limit - world.time
-	if(SSautotransfer.can_fire && SSautotransfer.maxvotes)
-		var/maximumRoundEnd = SSautotransfer.starttime + SSautotransfer.voteinterval * SSautotransfer.maxvotes
-		if(penalty - SSshuttle.realtimeofstart > maximumRoundEnd + SSshuttle.emergencyCallTime + SSshuttle.emergencyDockTime + SSshuttle.emergencyEscapeTime)
-			penalty = CANT_REENTER_ROUND
+	// var/penalty = 3 MINUTES
+	// var/roundstart_quit_limit = 3 MINUTES
+	// if(world.time < roundstart_quit_limit)
+	// 	penalty += roundstart_quit_limit - world.time
+	// if(SSautotransfer.can_fire && SSautotransfer.maxvotes)
+	// 	var/maximumRoundEnd = SSautotransfer.starttime + SSautotransfer.voteinterval * SSautotransfer.maxvotes
+	// 	if(penalty - SSshuttle.realtimeofstart > maximumRoundEnd + SSshuttle.emergencyCallTime + SSshuttle.emergencyDockTime + SSshuttle.emergencyEscapeTime)
+	// 		penalty = CANT_REENTER_ROUND
 
-	if(sig_flags & COMPONENT_DO_NOT_PENALIZE_GHOSTING)
-		penalty = 0
+	// if(sig_flags & COMPONENT_DO_NOT_PENALIZE_GHOSTING)
+	// 	penalty = 0
 
-	if(sig_flags & COMPONENT_FREE_GHOSTING)
-		ghostize(1)
-	else
-		var/response = alert(src, "Are you -sure- you want to ghost?\n(You are alive. If you ghost whilst alive you won't be able to re-enter this round [penalty ? "or play ghost roles [penalty == CANT_REENTER_ROUND ? "until the round is over" : "for the next [DisplayTimeText(penalty)]"]" : ""]! You can't change your mind so choose wisely!!)","Are you sure you want to ghost?","Ghost","Stay in body")
-		if(response != "Ghost")
-			return
-		ghostize(0, penalize = TRUE)
+	// if(sig_flags & COMPONENT_FREE_GHOSTING)
+	// 	ghostize(1)
+	// else
+	// 	var/response = alert(src, "Are you -sure- you want to ghost?\n(You are alive. If you ghost whilst alive you won't be able to re-enter this round [penalty ? "or play ghost roles [penalty == CANT_REENTER_ROUND ? "until the round is over" : "for the next [DisplayTimeText(penalty)]"]" : ""]! You can't change your mind so choose wisely!!)","Are you sure you want to ghost?","Ghost","Stay in body")
+	// 	if(response != "Ghost")
+	// 		return
+	// 	ghostize(0, penalize = TRUE)
 
 
 

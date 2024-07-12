@@ -1,11 +1,13 @@
 // Areas.dm
 
-/// so we dont have to initialize a sound loop datum for every fucking area in the game
+/// so we dont have to initialize a sound loop datum for every forking area in the game
 /// might have the sound effect that everyone hears the same sound at once, hopefully
 GLOBAL_LIST_EMPTY(area_sound_loops)
 
 /// List of weather tags and their respective areas
 GLOBAL_LIST_INIT(area_weather_list, list(WEATHER_ALL))
+
+GLOBAL_VAR_INIT(areas_kill_ambience_for_players_when_players_move_from_one_area_to_another, TRUE)
 
 /area
 	level = null
@@ -150,7 +152,7 @@ GLOBAL_LIST_INIT(area_weather_list, list(WEATHER_ALL))
 	///How much radiation to give to every player in this area, per tick
 	var/rads_per_second
 
-/*Adding a wizard area teleport list because motherfucking lag -- Urist*/
+/*Adding a wizard area teleport list because motherforking lag -- Urist*/
 /*I am far too lazy to make it a proper list of areas so I'll just make it run the usual telepot routine at the start of the game*/
 GLOBAL_LIST_EMPTY(teleportlocs)
 
@@ -292,7 +294,6 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 				A.power_environ = FALSE
 			INVOKE_ASYNC(A,PROC_REF(power_change))
 	STOP_PROCESSING(SSobj, src)
-	QDEL_NULL(ambience_area)
 	remove_from_weather_list()
 	return ..()
 
@@ -306,7 +307,8 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 			continue
 		/// First one to use a sound loop initializes it
 		if(!(loopy in GLOB.area_sound_loops))
-			GLOB.area_sound_loops[loopy] = new loopy(list(), FALSE)
+			var/datum/looping_sound/loopy2 = new loopy(list(), FALSE)
+			GLOB.area_sound_loops[loopy] = loopy2
 
 /// converts the area music list into an area music list
 /area/proc/initialize_music()
@@ -647,22 +649,45 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 		return
 
 	do_area_blurb(L)
+	update_ambient_stuff(L, OldLoc)
 
 	// Ambience goes down here -- make sure to list each area separately for ease of adding things in later, thanks! Note: areas adjacent to each other should have the same sounds to prevent cutoff when possible.- LastyScratch
-	if(L.client && L.client.prefs.toggles & SOUND_SHIP_AMBIENCE)
-		if(islist(ambience_area))
-			addremove_to_soundloop(L, TRUE)
+	// if(LAZYLEN(ambientsounds) && !COOLDOWN_TIMELEFT(L.client, area_sound_effect_cooldown) && prob(35))
+	// 	var/sounds_to_play = pick(ambientsounds)
+	// 	var/sound_delay = rand(1 SECONDS, 15 SECONDS)
+	// 	var/sound/S = sound(sounds_to_play[SL_FILE_PATH], repeat = 0, wait = 0, volume = 25, channel = SSsounds.random_available_channel())
+	// 	addtimer(CALLBACK(src,PROC_REF(play_ambient_sound_delayed), S, L), sound_delay, TIMER_STOPPABLE)
+	// 	COOLDOWN_START(L.client, area_sound_effect_cooldown, sounds_to_play[SL_FILE_LENGTH] + sound_delay)
 
-		if(LAZYLEN(ambientsounds) && !COOLDOWN_TIMELEFT(L.client, area_sound_effect_cooldown) && prob(35))
-			var/sounds_to_play = pick(ambientsounds)
-			var/sound_delay = rand(1 SECONDS, 15 SECONDS)
-			var/sound/S = sound(sounds_to_play[SL_FILE_PATH], repeat = 0, wait = 0, volume = 25, channel = SSsounds.random_available_channel())
-			addtimer(CALLBACK(src,PROC_REF(play_ambient_sound_delayed), S, L), sound_delay, TIMER_STOPPABLE)
-			COOLDOWN_START(L.client, area_sound_effect_cooldown, sounds_to_play[SL_FILE_LENGTH] + sound_delay)
 
-		ambient_music_start(L)
+/area/proc/update_ambient_stuff(atom/movable/M, atom/OldLoc)
+	if(!isliving(M))
+		return
+	var/mob/living/L = M
+	/// first, have the previous area clean up their sound loops
+	var/area/there = get_area(OldLoc)
+	if(there)
+		there.cleanup_ambience(L, src)
+	/// then, have the new area (us) set up the ambience
+	/// there are three types of ambience: music, sounds, and sound loops
+	ambient_music_start(L)
+	addremove_to_soundloop(L, TRUE)
 
-/area/proc/ambient_music_start(mob/living/L) //fortuna add. re-implements ambient music. Dan add. re-re-reimplements ambient music
+/area/proc/cleanup_ambience(mob/living/L, area/entering)
+	if(!isliving(L))
+		return
+	if(LAZYLEN(ambience_area))
+		for(var/loopy in ambience_area)
+			if(loopy in entering.ambience_area)
+				continue // don't stop the sound loop if the new area has it too
+			var/datum/looping_sound/our_loop = GLOB.area_sound_loops[loopy]
+			if(!istype(our_loop))
+				continue
+			our_loop.stop(L, kill = FALSE)
+	if(LAZYLEN(ambientmusic))
+		L.stop_sound_channel(CHANNEL_AMBIENT_MUSIC)
+
+/area/proc/ambient_music_start(mob/living/L) //fortuna add. re-implements ambient music. Dan add. re-re-reimplements ambient music. Dan add. un-re-re-reimplements ambient music
 	if(!L)
 		return
 	if(!LAZYLEN(ambientmusic))
@@ -675,22 +700,23 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 		music_to_play = LAZYACCESS(ambientmusic, LAZYLEN(ambientmusic))
 		if(!music_to_play) // no fallback
 			return
-	var/sound_delay = rand(1 SECONDS, 15 SECONDS)
+	// var/sound_delay = rand(1 SECONDS, 15 SECONDS)
 	var/sound/S = sound(music_to_play, repeat = TRUE, wait = 0, volume = 25, channel = CHANNEL_AMBIENT_MUSIC)
-	addtimer(CALLBACK(src, PROC_REF(play_ambient_sound_delayed), S, L), sound_delay, TIMER_STOPPABLE)
+	// addtimer(CALLBACK(src, PROC_REF(play_ambient_sound_delayed), S, L), sound_delay, TIMER_STOPPABLE)
+	play_ambient_sound_delayed(S, L)
 	L.client.SoundQuery()
-	COOLDOWN_START(L.client, area_music_cooldown, S.len + sound_delay)
+	// COOLDOWN_START(L.client, area_music_cooldown, S.len + sound_delay)
 
 /area/proc/play_ambient_sound_delayed(sound/to_play, mob/living/play_to)
 	SEND_SOUND(play_to, to_play)
 
 /area/proc/addremove_to_soundloop(mob/living/player, add = TRUE)
+	if(!isliving(player))
+		return
 	if(!ambience_area)
 		return
 	if(!islist(ambience_area))
 		ambience_area = null
-		return
-	if(!isliving(player))
 		return
 	for(var/loopy in ambience_area)
 		var/datum/looping_sound/our_loop = GLOB.area_sound_loops[loopy]
@@ -716,14 +742,6 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 	beauty = totalbeauty / areasize
 
 /area/Exited(atom/movable/M)
-	SEND_SIGNAL(src, COMSIG_AREA_EXITED, M)
-	SEND_SIGNAL(M, COMSIG_EXIT_AREA, src) //The atom that exits the area
-	addremove_to_soundloop(M, FALSE)
-	if(isliving(M))
-		var/mob/living/L = M
-		if(L.client)
-			if(type in L.client.area_musics)
-				L.stop_sound_channel(CHANNEL_AMBIENT_MUSIC)
 
 /area/proc/setup(a_name)
 	name = a_name

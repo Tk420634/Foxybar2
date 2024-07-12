@@ -11,6 +11,9 @@
 	max_loops		(num)				The max amount of loops to run for.
 	direct			(bool)				If true plays directly to provided atoms instead of from them
 */
+
+GLOBAL_LIST_EMPTY(available_sound_channels)
+
 /datum/looping_sound
 	var/list/atom/output_atoms = list()
 	var/list/mid_sounds
@@ -29,11 +32,17 @@
 	var/extra_range = 0
 	var/falloff
 	var/channel
+	var/managed
 
 	var/timerid
 	var/init_timerid
 
 /datum/looping_sound/New(list/_output_atoms=list(), start_immediately=FALSE, _direct)
+	if(!LAZYLEN(GLOB.available_sound_channels))
+		GLOB.available_sound_channels = list()
+		for(var/i in CHANNEL_LOOP_LOWEST to CHANNEL_LOOP_HIGHEST)
+			GLOB.available_sound_channels += i
+
 	if(!mid_sounds)
 		WARNING("A looping sound datum was created without sounds to play.")
 		return
@@ -42,6 +51,9 @@
 		output_atoms |= _output_atoms
 	if(_direct)
 		direct = _direct
+
+	if(managed)
+		channel = pick_n_take(GLOB.available_sound_channels)
 
 	if(start_immediately)
 		start()
@@ -74,9 +86,13 @@
 /// Areas use output_atoms differently, as a list of players to play the sound to. If we stop it as normal and kill it, itll stop playing to all mobs who were listening!
 /// To sum up: If the output_atoms are *playing* the sound, kill should = true
 /// If the output_atoms are *listening* to the sound, kill should = false
-/datum/looping_sound/proc/stop(atom/remove_thing, kill = TRUE)
+/datum/looping_sound/proc/stop(atom/remove_thing, kill = TRUE, nuke_sound_for_thing = FALSE)
 	on_stop()
 	if(remove_thing)
+		if(managed && isnum(channel) && isliving(remove_thing))
+			var/mob/they = remove_thing
+			if(they.client)
+				they.stop_sound_channel(channel)
 		output_atoms -= remove_thing
 		UnregisterSignal(remove_thing, COMSIG_PARENT_PREQDELETED)
 	if(LAZYLEN(output_atoms) && !kill)
@@ -122,6 +138,7 @@
 		else
 			S.channel = SSsounds.random_available_channel()
 		if(vary_direction)
+			S.y = rand(-10, 10)
 			S.x = rand(-10, 10)
 			S.z = rand(-10, 10)
 	if(islist(volume))

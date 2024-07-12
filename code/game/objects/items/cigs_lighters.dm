@@ -214,17 +214,17 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 
 /obj/item/clothing/mask/cigarette/process()
-	var/turf/location = get_turf(src)
+	// var/turf/location = get_turf(src)
 	var/mob/living/M = loc
 	if(isliving(loc))
 		M.IgniteMob()
-	smoketime--
-	if(smoketime < 1)
-		new type_butt(location)
-		if(ismob(loc))
-			to_chat(M, span_notice("Your [name] goes out."))
-		qdel(src)
-		return
+	// smoketime--
+	// if(smoketime < 1)
+	// 	new type_butt(location)
+	// 	if(ismob(loc))
+	// 		to_chat(M, span_notice("Your [name] goes out."))
+	// 	qdel(src)
+	// 	return
 	open_flame()
 	if(reagents && reagents.total_volume)
 		handle_reagents()
@@ -233,7 +233,6 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	if(lit)
 		user.visible_message(span_notice("[user] calmly drops and treads on \the [src], putting it out instantly."))
 		new type_butt(user.loc)
-		new /obj/effect/decal/cleanable/ash(user.loc)
 		qdel(src)
 	. = ..()
 
@@ -587,7 +586,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 /obj/item/lighter/proc/set_lit(new_lit)
 	lit = new_lit
 	if(lit)
-		force = 5
+		force = 1
 		damtype = "fire"
 		hitsound = 'sound/items/welder.ogg'
 		attack_verb = list("burnt", "singed")
@@ -621,8 +620,6 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 				if(prot || prob(75))
 					user.visible_message("After a few attempts, [user] manages to light [src].", span_notice("After a few attempts, you manage to light [src]."))
 				else
-					var/hitzone = user.held_index_to_dir(user.active_hand_index) == "r" ? BODY_ZONE_PRECISE_R_HAND : BODY_ZONE_PRECISE_L_HAND
-					user.apply_damage(5, BURN, hitzone)
 					user.visible_message(span_warning("After a few attempts, [user] manages to light [src] - however, [user.p_they()] burn [user.p_their()] finger in the process."), span_warning("You burn yourself while lighting the lighter!"))
 					SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "burnt_thumb", /datum/mood_event/burnt_thumb)
 

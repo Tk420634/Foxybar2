@@ -90,32 +90,32 @@
 
 /turf/open/indestructible/ground/outside/dirt
 	spawnPlants = TRUE
-	spawnHiddenStashes = TRUE
-	greeble = OUTSIDE_JUNK_DISTRIBUTION
+	// spawnHiddenStashes = TRUE
+	// greeble = OUTSIDE_JUNK_DISTRIBUTION
 
 /turf/open/indestructible/ground/outside/savannah
 	spawnPlants = TRUE
-	spawnHiddenStashes = TRUE
-	greeble = OUTSIDE_JUNK_DISTRIBUTION
+	// spawnHiddenStashes = TRUE
+	// greeble = OUTSIDE_JUNK_DISTRIBUTION
 
 /turf/open/indestructible/ground/outside/dirt_s
 	spawnPlants = TRUE
-	spawnHiddenStashes = TRUE
-	greeble = OUTSIDE_JUNK_DISTRIBUTION
+	// spawnHiddenStashes = TRUE
+	// greeble = OUTSIDE_JUNK_DISTRIBUTION
 
 /turf/open/indestructible/ground/outside/grass_s
 	spawnPlants = TRUE
-	spawnHiddenStashes = TRUE
-	greeble = OUTSIDE_JUNK_DISTRIBUTION
+	// spawnHiddenStashes = TRUE
+	// greeble = OUTSIDE_JUNK_DISTRIBUTION
 
 /turf/open/indestructible/ground/outside/desert
 	spawnPlants = TRUE
-	spawnHiddenStashes = TRUE
-	greeble = OUTSIDE_JUNK_DISTRIBUTION
+	// spawnHiddenStashes = TRUE
+	// greeble = OUTSIDE_JUNK_DISTRIBUTION
 
 /turf/open/floor/plating/f13/outside/desert
 	spawnPlants = TRUE
-	spawnHiddenStashes = TRUE
-	greeble = OUTSIDE_JUNK_DISTRIBUTION
+	// spawnHiddenStashes = TRUE
+	// greeble = OUTSIDE_JUNK_DISTRIBUTION
 
 #undef OUTSIDE_JUNK_DISTRIBUTION
