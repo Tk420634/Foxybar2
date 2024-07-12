@@ -2044,7 +2044,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		Iwound_bonus = CANT_WOUND
 
 	var/weakness = H.check_weakness(I, user)
-	apply_damage(totitemdamage * weakness, I.damtype, def_zone, armor_block, H, wound_bonus = Iwound_bonus, bare_wound_bonus = I.bare_wound_bonus, sharpness = I.get_sharpness(), damage_threshold = dt)
+	apply_damage(totitemdamage * weakness, /* I.damtype */ STAMINA, def_zone, armor_block, H, wound_bonus = Iwound_bonus, bare_wound_bonus = I.bare_wound_bonus, sharpness = I.get_sharpness(), damage_threshold = dt)
 
 
 	H.send_item_attack_message(I, user, hit_area, affecting, totitemdamage)
