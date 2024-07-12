@@ -1211,9 +1211,6 @@
 	},
 /area/f13/caves)
 "tF" = (
-/obj/machinery/computer/slot_machine{
-	pixel_y = 16
-	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 1;
 	color = "#3B2B1A"
@@ -1222,6 +1219,10 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 4;
 	color = "#3B2B1A"
+	},
+/obj/machinery/computer/slot_machine{
+	pixel_y = 16;
+	density = 0
 	},
 /turf/open/floor/carpet/black,
 /area/f13/fb/bar)
@@ -1540,14 +1541,15 @@
 	},
 /area/f13/fb/bar)
 "yx" = (
-/obj/machinery/computer/slot_machine{
-	pixel_y = 16
-	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 1;
 	color = "#3B2B1A"
 	},
 /obj/structure/chair/stool/retro/tan,
+/obj/machinery/computer/slot_machine{
+	pixel_y = 16;
+	density = 0
+	},
 /turf/open/floor/carpet/black,
 /area/f13/fb/bar)
 "yH" = (
@@ -1938,10 +1940,6 @@
 	color = "#3B2B1A"
 	},
 /obj/structure/chair/stool/retro/tan,
-/obj/machinery/computer/slot_machine{
-	pixel_y = 16;
-	density = 0
-	},
 /turf/open/floor/carpet/black,
 /area/f13/fb/bar)
 "Do" = (
