@@ -615,7 +615,7 @@
 					if(istype(humanc.get_item_by_slot(SLOT_WEAR_ID), /obj/item/card/id/selfassign))
 						var/obj/item/card/id/selfassign/id = humanc.get_item_by_slot(SLOT_WEAR_ID)
 						to_chat(i, span_nicegreen("You hear through the grapevine that [humanc.name] the [id.assignment] may be poking around the bar."))
-
+					
 					else if(istype(humanc.get_item_by_slot(SLOT_WEAR_ID), /obj/item/pda))
 						var/obj/item/pda/id = humanc.get_item_by_slot(SLOT_WEAR_ID)
 						to_chat(i, span_nicegreen("You hear through the grapevine that [humanc.name] the [id.ownjob] may be poking around the bar."))

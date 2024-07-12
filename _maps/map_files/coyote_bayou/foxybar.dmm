@@ -125,14 +125,12 @@
 /turf/open/floor/carpet/royalblack,
 /area/f13/fb/bar)
 "amj" = (
-/obj/structure/flora/rock/pile/largejungle,
-/obj/structure/flora/rock/pile/largejungle{
-	icon_state = "bush3";
-	pixel_y = -6;
-	layer = 3.0
+/obj/effect/overlay/fog/fog2{
+	plane = -2
 	},
-/turf/open/indestructible/ground/inside/dirt{
-	color = "#AAAAAA"
+/obj/machinery/gear_painter,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontalbottomborderbottom0"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
 "aoR" = (
@@ -895,6 +893,17 @@
 	icon_state = "verticalleftborderleft1"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
+"dEp" = (
+/obj/structure/table/abductor,
+/obj/effect/overlay/fog/fog2{
+	plane = -2
+	},
+/obj/structure/curtain{
+	color = "#c40e0e";
+	open = 0
+	},
+/turf/open/floor/carpet/purple,
+/area/f13/fb/bar)
 "dIZ" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
@@ -2319,8 +2328,15 @@
 /turf/open/floor/carpet/royalblack,
 /area/f13/fb/bar)
 "jfm" = (
-/obj/structure/pondlily_big,
-/turf/open/indestructible/ground/outside/water,
+/obj/structure/flora/rock/pile/largejungle,
+/obj/structure/flora/rock/pile/largejungle{
+	icon_state = "bush3";
+	pixel_y = -6;
+	layer = 3.0
+	},
+/turf/open/indestructible/ground/inside/dirt{
+	color = "#AAAAAA"
+	},
 /area/f13/wasteland/city/newboston/outdoors)
 "jgV" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -2641,13 +2657,11 @@
 /turf/open/floor/carpet/purple,
 /area/f13/fb/bar)
 "kJR" = (
-/obj/structure/car/rubbish3{
-	density = 0;
-	mouse_opacity = 0
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
 	},
-/turf/open/indestructible/ground/inside/dirt{
-	color = "#AAAAAA"
-	},
+/obj/structure/pondlily_small,
+/turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland/city/newboston/outdoors)
 "kMU" = (
 /obj/structure/sign/painting/library{
@@ -3079,13 +3093,13 @@
 	},
 /area/f13/wasteland/city/newboston/outdoors)
 "mSG" = (
-/obj/machinery/light/small{
-	dir = 1;
-	light_color = "red";
-	pixel_y = 22
-	},
 /obj/effect/overlay/fog/fog2{
 	plane = -2
+	},
+/obj/machinery/light/small{
+	color = "#FF0000";
+	light_color = "#FF0000";
+	dir = 1
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontalbottomborderbottom2right"
@@ -3451,10 +3465,7 @@
 	},
 /area/f13/fb/bar)
 "peK" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/obj/structure/pondlily_small,
+/obj/structure/pondlily_big,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland/city/newboston/outdoors)
 "pfj" = (
@@ -3529,14 +3540,13 @@
 	},
 /area/f13/wasteland/city/newboston/outdoors)
 "pHi" = (
-/obj/machinery/light/small{
-	dir = 1;
-	light_color = "red";
-	pixel_y = 22
-	},
-/obj/machinery/gear_painter,
 /obj/effect/overlay/fog/fog2{
 	plane = -2
+	},
+/obj/machinery/light/small{
+	color = "#FF0000";
+	light_color = "#FF0000";
+	dir = 1
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontalbottomborderbottom0"
@@ -3968,6 +3978,19 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
+"rlR" = (
+/obj/effect/overlay/fog/fog2{
+	plane = -2
+	},
+/obj/machinery/light/small{
+	color = "#FF0000";
+	light_color = "#FF0000";
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontalbottomborderbottom2"
+	},
+/area/f13/wasteland/city/newboston/outdoors)
 "rnf" = (
 /obj/effect/turf_decal/weather/dirt{
 	color = "#a98c5d";
@@ -4140,6 +4163,10 @@
 	},
 /area/f13/fb/park)
 "rTA" = (
+/obj/structure/car/rubbish3{
+	density = 0;
+	mouse_opacity = 0
+	},
 /turf/open/indestructible/ground/inside/dirt{
 	color = "#AAAAAA"
 	},
@@ -5199,16 +5226,10 @@
 	},
 /area/f13/wasteland/city/newboston/outdoors)
 "wqx" = (
-/obj/structure/table/abductor,
-/obj/effect/overlay/fog/fog2{
-	plane = -2
+/turf/open/indestructible/ground/inside/dirt{
+	color = "#AAAAAA"
 	},
-/obj/structure/curtain{
-	color = "#c40e0e";
-	open = 0
-	},
-/turf/open/floor/carpet/purple,
-/area/f13/fb/bar)
+/area/f13/wasteland/city/newboston/outdoors)
 "wqW" = (
 /obj/structure/lamp_post/doubles/bent{
 	dir = 4;
@@ -8787,7 +8808,7 @@ bxY
 bxY
 uWD
 dcH
-rTA
+wqx
 bPG
 bPG
 bPG
@@ -8809,7 +8830,7 @@ bPG
 bPG
 bPG
 bPG
-mdh
+amj
 bcw
 nbY
 wum
@@ -9041,10 +9062,10 @@ lHZ
 eis
 wIz
 rbl
-jfm
+peK
 mNp
 dcH
-rTA
+wqx
 bPG
 lQh
 vmu
@@ -9295,13 +9316,13 @@ xNF
 xNF
 xWe
 rZT
-jfm
+peK
 eis
 hqa
 rbl
 mNp
 eMT
-rTA
+wqx
 bPG
 pBI
 gkC
@@ -9558,7 +9579,7 @@ qjR
 lUO
 mNp
 dcH
-rTA
+wqx
 bPG
 gkC
 xyd
@@ -9808,14 +9829,14 @@ xNF
 xNF
 xNF
 xWe
-peK
+kJR
 eis
 lEK
 eis
 wIz
 mNp
 eMT
-rTA
+wqx
 bPG
 aoR
 bPG
@@ -10072,7 +10093,7 @@ rBJ
 isr
 uyD
 dcH
-rTA
+wqx
 xpa
 bAd
 wxN
@@ -10081,7 +10102,7 @@ wxN
 wxN
 bPG
 glE
-wqx
+dEp
 glE
 bPG
 cKA
@@ -10328,8 +10349,8 @@ bBZ
 bBZ
 cxK
 faD
-rTA
-rTA
+wqx
+wqx
 bPG
 bPG
 bPG
@@ -10582,11 +10603,11 @@ xWe
 xlm
 xlm
 mbZ
-amj
-rTA
-rTA
-rTA
-rTA
+jfm
+wqx
+wqx
+wqx
+wqx
 bPG
 brw
 tot
@@ -10839,11 +10860,11 @@ xWe
 mbZ
 xlm
 lIe
-rTA
-rTA
-rTA
-rTA
-rTA
+wqx
+wqx
+wqx
+wqx
+wqx
 bPG
 jJY
 hdN
@@ -11095,11 +11116,11 @@ xNF
 xWe
 spF
 eUg
-rTA
-rTA
-rTA
-rTA
-rTA
+wqx
+wqx
+wqx
+wqx
+wqx
 bga
 bPG
 lSC
@@ -11352,7 +11373,7 @@ xNF
 xWe
 tLM
 lIe
-rTA
+wqx
 bPG
 bPG
 bPG
@@ -11379,7 +11400,7 @@ orZ
 qQu
 iVQ
 bPG
-eJV
+rlR
 inX
 tkO
 uWY
@@ -11608,8 +11629,8 @@ xNF
 xNF
 xWe
 rvy
-rTA
-rTA
+wqx
+wqx
 bPG
 qAX
 kMU
@@ -11864,9 +11885,9 @@ xNF
 xNF
 xNF
 xWe
-kJR
 rTA
-rTA
+wqx
+wqx
 bPG
 xaI
 cKA
@@ -12122,8 +12143,8 @@ xNF
 xNF
 xWe
 fDd
-rTA
-rTA
+wqx
+wqx
 bPG
 agk
 wxN
@@ -12379,8 +12400,8 @@ xNF
 xNF
 xWe
 aJR
-rTA
-rTA
+wqx
+wqx
 bPG
 ygG
 yeQ
@@ -12635,9 +12656,9 @@ xNF
 xNF
 xNF
 xWe
-rTA
-rTA
-rTA
+wqx
+wqx
+wqx
 bPG
 bPG
 bPG
@@ -12892,13 +12913,13 @@ xNF
 xNF
 xNF
 xWe
-rTA
-rTA
-rTA
+wqx
+wqx
+wqx
 ukJ
 ukJ
-rTA
-rTA
+wqx
+wqx
 bPG
 bhg
 llj
@@ -13150,12 +13171,12 @@ xNF
 xNF
 xWe
 uBr
-rTA
-rTA
-rTA
-rTA
-rTA
-rTA
+wqx
+wqx
+wqx
+wqx
+wqx
+wqx
 bPG
 fxb
 pNr

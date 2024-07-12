@@ -4,7 +4,7 @@
 	icon = 'icons/obj/clothing/glasses.dmi'
 	w_class = WEIGHT_CLASS_SMALL
 	flags_cover = GLASSESCOVERSEYES
-	slot_flags = INV_SLOTBIT_EYES
+	slot_flags = INV_SLOTBIT_EYES | INV_SLOTBIT_EARS //push those babies up into that hair, sugar
 	strip_delay = 20
 	equip_delay_other = 25
 	resistance_flags = NONE
