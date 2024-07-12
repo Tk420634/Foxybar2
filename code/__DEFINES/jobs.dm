@@ -6,7 +6,7 @@
 #define FACTION_BROTHERHOOD "BOS"
 #define FACTION_OASIS "Town"
 #define FACTION_ENCLAVE "Enclave"
-#define FACTION_WASTELAND "Wastelander"
+#define FACTION_WASTELAND ""
 #define FACTION_TEACHER "Texarkana Rangers"
 #define FACTION_RAIDERS "Raiders"
 #define FACTION_TRIBE "Tribe"
