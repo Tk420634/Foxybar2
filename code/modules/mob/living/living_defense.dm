@@ -166,7 +166,7 @@
 			return TRUE
 		var/dtype = BRUTE
 
-		dtype = I.damtype
+		dtype = STAMINA /* I.damtype */
 
 		if(!blocked)
 			if(!nosell_hit)
