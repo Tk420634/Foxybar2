@@ -258,11 +258,7 @@
 	return amountthesame
 
 /obj/machinery/computer/slot_machine/proc/give_money(amt)
-	var/turf/here = get_turf(src)
-	var/obj/item/stack/f13Cash/caps/money = locate(/obj/item/stack/f13Cash/caps) in here
-	if(!money)
-		money = new /obj/item/stack/f13Cash/caps(here)
-	money.amount += amt
+	balance += amt
 
 #undef SEVEN
 #undef SPIN_TIME
