@@ -41,11 +41,19 @@
 	},
 /area/f13/caves)
 "ar" = (
-/obj/structure/simple_door/repaired,
-/obj/item/lock_bolt{
-	dir = 1
-	},
+/obj/structure/simple_door/room,
+/obj/item/lock_bolt,
 /turf/open/floor/plasteel/neutral,
+/area/f13/fb/bar)
+"aw" = (
+/obj/machinery/computer/arcade{
+	density = 0
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#3B2B1A"
+	},
+/turf/open/floor/carpet/black,
 /area/f13/fb/bar)
 "aH" = (
 /obj/structure/curtain{
@@ -105,10 +113,19 @@
 	},
 /turf/open/floor/carpet/black,
 /area/f13/fb/bar)
-"cs" = (
-/turf/closed{
-	icon_state = "black"
+"bp" = (
+/obj/structure/window/fulltile/wood{
+	layer = 3
 	},
+/turf/open/floor/wood_common/wood_common_dark,
+/area/f13/fb/bar)
+"bH" = (
+/obj/item/kirbyplants/random,
+/turf/open/floor/plasteel/neutral,
+/area/f13/fb/bar)
+"cs" = (
+/obj/structure/table/glass,
+/turf/open/floor/carpet/red,
 /area/f13/fb/bar)
 "cK" = (
 /obj/structure/chair/bench{
@@ -151,6 +168,9 @@
 /turf/open/floor/plasteel/neutral,
 /area/f13/fb/bar)
 "dS" = (
+/obj/effect/overlay/fog/fog2{
+	plane = -2
+	},
 /turf/closed/indestructible/f13/obsidian,
 /area/f13/caves)
 "dU" = (
@@ -264,6 +284,17 @@
 	light_color = "#BAF8FF"
 	},
 /area/f13/caves)
+"gb" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#3B2B1A"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8;
+	color = "#3B2B1A"
+	},
+/turf/open/floor/carpet/black,
+/area/f13/fb/bar)
 "gc" = (
 /obj/structure/spacevine{
 	icon = 'icons/effects/effects.dmi';
@@ -339,6 +370,13 @@
 	},
 /turf/open/floor/carpet/black,
 /area/f13/fb/bar)
+"gn" = (
+/obj/effect/decal/cleanable/glitter/white{
+	color = "#884444"
+	},
+/obj/structure/chair/stool/retro/tan,
+/turf/open/floor/carpet/black,
+/area/f13/fb/bar)
 "gr" = (
 /obj/machinery/light/small{
 	color = "#444499";
@@ -405,16 +443,35 @@
 	light_color = "#BAF8FF"
 	},
 /area/f13/caves)
-"ha" = (
+"gI" = (
 /obj/machinery/vending/cola/red{
 	density = 0;
-	pixel_y = 27
+	pixel_y = 16
 	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 1;
 	color = "#3B2B1A"
 	},
 /turf/open/floor/carpet/black,
+/area/f13/fb/bar)
+"ha" = (
+/obj/machinery/door/unpowered/securedoor,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#3B2B1A"
+	},
+/turf/open/floor/carpet/red,
+/area/f13/fb/bar)
+"hc" = (
+/obj/machinery/light/small{
+	color = "#444499";
+	dir = 8;
+	light_color = "#444499";
+	light_power = 2;
+	light_range = 2;
+	pixel_y = 13
+	},
+/turf/open/floor/plasteel/neutral,
 /area/f13/fb/bar)
 "hj" = (
 /obj/effect/turf_decal/siding/wood{
@@ -457,18 +514,14 @@
 /turf/open/floor/carpet/black,
 /area/f13/fb/bar)
 "iA" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/chair/sofa/corp{
-	pixel_y = 12;
-	color = "#363636";
-	pixel_x = 8
+/obj/machinery/light/small{
+	light_power = 2;
+	light_range = 2;
+	light_color = "#E1D5D5";
+	color = "#E1D5D5";
+	dir = 1
 	},
-/obj/structure/chair/sofa/corp{
-	pixel_y = 12;
-	color = "#363636";
-	pixel_x = -8
-	},
-/turf/open/floor/carpet/black,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/f13/fb/bar)
 "iD" = (
 /obj/structure/table/wood/settler,
@@ -478,14 +531,8 @@
 /turf/open/floor/carpet/royalblue,
 /area/f13/fb/bar)
 "iF" = (
-/obj/structure/toilet{
-	dir = 8
-	},
-/obj/structure/toilet_paper{
-	pixel_y = 17
-	},
-/turf/open/floor/plasteel/neutral,
-/area/f13/fb/bar)
+/turf/closed/indestructible/f13/obsidian,
+/area/f13/caves)
 "iO" = (
 /obj/structure/table/abductor,
 /turf/open/floor/carpet/black{
@@ -559,16 +606,25 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "kf" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/table/abductor{
-	density = 0;
-	pixel_y = 8
+/turf/open/floor/wood_common/wood_common_dark,
+/area/f13/fb/bar)
+"ki" = (
+/obj/structure/table/glass,
+/obj/effect/turf_decal/siding/wood{
+	dir = 8;
+	color = "#3B2B1A"
 	},
-/turf/open/floor/carpet/black,
+/turf/open/floor/carpet/red,
 /area/f13/fb/bar)
 "kF" = (
 /turf/closed/wall/mineral/brick,
 /area/f13/caves)
+"ln" = (
+/obj/structure/chair/wood/wings{
+	dir = 4
+	},
+/turf/open/floor/carpet/red,
+/area/f13/fb/bar)
 "lB" = (
 /obj/item/kirbyplants/random,
 /obj/machinery/light/small{
@@ -681,15 +737,12 @@
 /turf/open/floor/carpet/black,
 /area/f13/fb/bar)
 "nc" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/chair/sofa/corp/corner{
-	pixel_y = 12;
-	color = "#363636";
-	dir = 4;
-	pixel_x = -8
+/obj/machinery/vending/coffee,
+/obj/item/storage/box/drinkingglasses{
+	pixel_y = 19;
+	pixel_x = -6
 	},
-/obj/machinery/light/floor,
-/turf/open/floor/carpet/black,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/f13/fb/bar)
 "nh" = (
 /obj/structure/flora/chomp/potplant2,
@@ -823,6 +876,15 @@
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
+"pc" = (
+/obj/structure/toilet{
+	dir = 8
+	},
+/obj/structure/toilet_paper{
+	pixel_y = 17
+	},
+/turf/open/floor/plasteel/neutral,
+/area/f13/fb/bar)
 "pd" = (
 /obj/effect/turf_decal/siding/wood{
 	color = "#3B2B1A"
@@ -838,6 +900,17 @@
 	},
 /turf/open/floor/carpet/black,
 /area/f13/fb/bar)
+"pj" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8;
+	color = "#3B2B1A"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#3B2B1A"
+	},
+/turf/open/floor/carpet/red,
+/area/f13/fb/bar)
 "pq" = (
 /obj/structure/table/abductor,
 /obj/item/dice/d6{
@@ -848,6 +921,7 @@
 	pixel_y = 0;
 	pixel_x = -5
 	},
+/obj/item/storage/bag/tray/dice_cup,
 /turf/open/floor/carpet/black{
 	color = "#CCCCCC"
 	},
@@ -951,32 +1025,17 @@
 	color = "#CCCCCC"
 	},
 /area/f13/fb/bar)
-"ru" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/chair/sofa/corp{
-	pixel_y = 12;
-	color = "#363636";
-	pixel_x = 8
+"rk" = (
+/obj/structure/sink/greyscale{
+	dir = 8;
+	pixel_y = 3;
+	pixel_x = -13
 	},
-/turf/open/floor/carpet/black,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/f13/fb/bar)
-"rB" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#3B2B1A"
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 8;
-	color = "#3B2B1A"
-	},
-/obj/machinery/light/small{
-	color = "#444499";
-	dir = 8;
-	light_color = "#444499";
-	light_power = 2;
-	light_range = 2;
-	pixel_y = 13
-	},
-/turf/open/floor/carpet/black,
+"ru" = (
+/obj/structure/closet/crate/bin,
+/turf/open/floor/plasteel/neutral,
 /area/f13/fb/bar)
 "rM" = (
 /obj/machinery/light/small{
@@ -1038,6 +1097,23 @@
 	},
 /turf/open/floor/carpet/blue,
 /area/f13/fb/bar)
+"su" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4;
+	color = "#3B2B1A"
+	},
+/turf/open/floor/carpet/red,
+/area/f13/fb/bar)
+"sv" = (
+/obj/effect/turf_decal/siding/wood{
+	color = "#3B2B1A"
+	},
+/obj/effect/decal/cleanable/glitter/blue{
+	color = "#444499";
+	layer = 3
+	},
+/turf/open/floor/carpet/black,
+/area/f13/fb/bar)
 "sx" = (
 /obj/structure/glowshroom{
 	color = "green"
@@ -1049,25 +1125,21 @@
 /area/f13/caves)
 "sD" = (
 /obj/effect/turf_decal/siding/wood{
-	dir = 4;
 	color = "#3B2B1A"
 	},
 /obj/effect/turf_decal/siding/wood{
-	dir = 1;
+	dir = 8;
 	color = "#3B2B1A"
 	},
-/obj/structure/table/abductor,
 /obj/machinery/light/small{
 	color = "#444499";
-	dir = 1;
+	dir = 8;
 	light_color = "#444499";
 	light_power = 2;
 	light_range = 2;
 	pixel_y = 13
 	},
-/turf/open/floor/carpet/black{
-	color = "#CCCCCC"
-	},
+/turf/open/floor/carpet/black,
 /area/f13/fb/bar)
 "ta" = (
 /obj/structure/chair/f13chair1{
@@ -1094,14 +1166,11 @@
 /turf/open/floor/carpet/black,
 /area/f13/fb/bar)
 "tg" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#3B2B1A"
+/obj/structure/simple_door/repaired,
+/obj/item/lock_bolt{
+	dir = 1
 	},
-/obj/effect/decal/cleanable/glitter/blue{
-	color = "#444499";
-	layer = 3
-	},
-/turf/open/floor/carpet/black,
+/turf/open/floor/plasteel/neutral,
 /area/f13/fb/bar)
 "tq" = (
 /obj/structure/flora/chomp/thicket2,
@@ -1274,47 +1343,14 @@
 	},
 /area/f13/fb/bar)
 "vv" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/chair/sofa/corp{
-	pixel_y = 12;
-	color = "#363636";
-	dir = 4;
-	pixel_x = -8
-	},
-/obj/structure/chair/sofa/corp/right{
-	dir = 4;
-	color = "#363636";
-	pixel_x = -8
-	},
-/obj/machinery/light/small{
-	color = "#444499";
-	dir = 8;
-	light_color = "#444499";
-	light_power = 2;
-	light_range = 2;
-	pixel_y = 13
-	},
-/turf/open/floor/carpet/black,
+/turf/open/floor/carpet/red,
 /area/f13/fb/bar)
 "vC" = (
-/obj/structure/sink{
-	pixel_x = -8;
-	pixel_y = 24
+/obj/machinery/door/unpowered/securedoor,
+/obj/effect/turf_decal/siding/wood{
+	color = "#3B2B1A"
 	},
-/obj/structure/mirror{
-	layer = 4;
-	pixel_x = -8;
-	pixel_y = 31
-	},
-/obj/structure/mirror{
-	pixel_x = 8;
-	pixel_y = 31
-	},
-/obj/structure/sink{
-	pixel_x = 8;
-	pixel_y = 24
-	},
-/turf/open/floor/plasteel/neutral,
+/turf/open/floor/carpet/red,
 /area/f13/fb/bar)
 "vI" = (
 /obj/machinery/light/small{
@@ -1327,19 +1363,11 @@
 /turf/open/floor/plasteel/neutral,
 /area/f13/fb/bar)
 "vU" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/chair/sofa/corp{
-	pixel_y = 12;
-	color = "#363636";
-	dir = 8;
-	pixel_x = 8
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#3B2B1A"
 	},
-/obj/structure/chair/sofa/corp/left{
-	dir = 8;
-	color = "#363636";
-	pixel_x = 8
-	},
-/turf/open/floor/carpet/black,
+/turf/open/floor/carpet/red,
 /area/f13/fb/bar)
 "vX" = (
 /obj/structure/chair/sofa{
@@ -1350,6 +1378,18 @@
 	color = "#3B2B1A"
 	},
 /turf/open/floor/carpet/black,
+/area/f13/fb/bar)
+"wn" = (
+/obj/structure/chair/wood/wings,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#3B2B1A"
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8;
+	color = "#3B2B1A"
+	},
+/turf/open/floor/carpet/red,
 /area/f13/fb/bar)
 "ws" = (
 /obj/structure/spacevine{
@@ -1378,14 +1418,8 @@
 	},
 /area/f13/caves)
 "wM" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/chair/sofa/corp/corner{
-	pixel_y = 12;
-	pixel_x = 8;
-	color = "#363636"
-	},
-/obj/machinery/light/floor,
-/turf/open/floor/carpet/black,
+/obj/item/kirbyplants/random,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/f13/fb/bar)
 "wR" = (
 /obj/structure/table/abductor,
@@ -1396,16 +1430,43 @@
 /turf/open/floor/carpet/black,
 /area/f13/fb/bar)
 "xd" = (
-/obj/structure/simple_door/room,
-/obj/item/lock_bolt,
-/turf/open/floor/plasteel/neutral,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4;
+	color = "#3B2B1A"
+	},
+/obj/item/kirbyplants/random,
+/turf/open/floor/carpet/red,
 /area/f13/fb/bar)
 "xI" = (
-/obj/effect/overlay/fog/fog2{
-	plane = -2
+/obj/structure/bed/wooden,
+/obj/effect/spawner/lootdrop/bedsheet,
+/obj/structure/railing/wood/post{
+	pixel_x = 16;
+	pixel_y = 2;
+	plane = -6
 	},
-/turf/closed/indestructible/f13/obsidian,
-/area/f13/caves)
+/obj/structure/railing/wood/post{
+	pixel_x = -13;
+	pixel_y = 1;
+	plane = -6
+	},
+/obj/structure/curtain{
+	color = "#5c131b";
+	layer = 5;
+	pixel_x = 2;
+	pixel_y = -3
+	},
+/obj/structure/rug/mat{
+	color = "#CC4444";
+	layer = 6;
+	pixel_x = 2;
+	pixel_y = 15
+	},
+/obj/effect/turf_decal/siding/wood{
+	color = "#3B2B1A"
+	},
+/turf/open/floor/carpet/blue,
+/area/f13/fb/bar)
 "xS" = (
 /obj/item/kirbyplants/random,
 /obj/effect/turf_decal/siding/wood{
@@ -1449,7 +1510,23 @@
 /turf/open/floor/carpet/royalblue,
 /area/f13/fb/bar)
 "yr" = (
-/obj/item/kirbyplants/random,
+/obj/structure/sink{
+	pixel_x = -8;
+	pixel_y = 24
+	},
+/obj/structure/mirror{
+	layer = 4;
+	pixel_x = -8;
+	pixel_y = 31
+	},
+/obj/structure/mirror{
+	pixel_x = 8;
+	pixel_y = 31
+	},
+/obj/structure/sink{
+	pixel_x = 8;
+	pixel_y = 24
+	},
 /turf/open/floor/plasteel/neutral,
 /area/f13/fb/bar)
 "ys" = (
@@ -1532,6 +1609,20 @@
 	light_color = "#BAF8FF"
 	},
 /area/f13/caves)
+"yU" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4;
+	color = "#3B2B1A"
+	},
+/obj/machinery/light/small{
+	light_power = 2;
+	light_range = 2;
+	light_color = "#E1D5D5";
+	color = "#E1D5D5";
+	dir = 4
+	},
+/turf/open/floor/carpet/red,
+/area/f13/fb/bar)
 "za" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 8;
@@ -1702,22 +1793,6 @@
 	light_color = "#BAF8FF"
 	},
 /area/f13/caves)
-"AS" = (
-/obj/effect/decal/cleanable/glitter/blue{
-	color = "#444499";
-	layer = 3
-	},
-/obj/machinery/computer/arcade{
-	pixel_y = 16;
-	density = 0
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 1;
-	color = "#3B2B1A"
-	},
-/obj/structure/chair/stool/retro/tan,
-/turf/open/floor/carpet/black,
-/area/f13/fb/bar)
 "Bb" = (
 /obj/structure/closet/crate/bin,
 /obj/effect/turf_decal/siding/wood{
@@ -1853,6 +1928,22 @@
 	},
 /turf/open/floor/plasteel/neutral,
 /area/f13/fb/bar)
+"Dg" = (
+/obj/machinery/computer/slot_machine{
+	pixel_y = 16;
+	density = 0
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#3B2B1A"
+	},
+/obj/structure/chair/stool/retro/tan,
+/obj/machinery/computer/slot_machine{
+	pixel_y = 16;
+	density = 0
+	},
+/turf/open/floor/carpet/black,
+/area/f13/fb/bar)
 "Do" = (
 /obj/structure/glowshroom/shadowshroom,
 /obj/effect/overlay/fog/fog2{
@@ -1883,27 +1974,21 @@
 /turf/open/floor/carpet/blue,
 /area/f13/fb/bar)
 "DS" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 1;
-	color = "#3B2B1A"
+/obj/structure/table/glass,
+/obj/machinery/chem_dispenser/drinks/fullupgrade{
+	pixel_y = 17
 	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 8;
-	color = "#3B2B1A"
-	},
-/turf/open/floor/carpet/black,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/f13/fb/bar)
 "Ec" = (
-/obj/machinery/computer/arcade{
-	pixel_y = 16;
-	density = 0
+/obj/machinery/light/small{
+	light_power = 2;
+	light_range = 2;
+	light_color = "#E1D5D5";
+	color = "#E1D5D5";
+	dir = 8
 	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 1;
-	color = "#3B2B1A"
-	},
-/obj/structure/chair/stool/retro/tan,
-/turf/open/floor/carpet/black,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/f13/fb/bar)
 "Eh" = (
 /obj/structure/rug/big/rug_yellow{
@@ -1925,6 +2010,12 @@
 	color = "#3B2B1A"
 	},
 /turf/open/floor/carpet/black,
+/area/f13/fb/bar)
+"Ex" = (
+/obj/structure/chair/wood/wings{
+	dir = 8
+	},
+/turf/open/floor/carpet/red,
 /area/f13/fb/bar)
 "EF" = (
 /obj/machinery/light/small{
@@ -1956,11 +2047,16 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "EQ" = (
-/obj/structure/decoration/vent,
-/obj/structure/urinal{
-	pixel_y = 25
+/turf/open/floor/wood_common/wood_common_dark,
+/area/f13/caves)
+"EU" = (
+/obj/machinery/light/small{
+	light_power = 2;
+	light_range = 2;
+	light_color = "#E1D5D5";
+	color = "#E1D5D5"
 	},
-/turf/open/floor/plasteel/neutral,
+/turf/open/floor/carpet/red,
 /area/f13/fb/bar)
 "Fg" = (
 /obj/effect/turf_decal/siding/wood{
@@ -2074,20 +2170,16 @@
 /turf/open/floor/carpet/black,
 /area/f13/fb/bar)
 "HT" = (
-/obj/machinery/light/small{
-	color = "#444499";
-	dir = 8;
-	light_color = "#444499";
-	light_power = 2;
-	light_range = 2;
-	pixel_y = 13
+/obj/structure/decoration/vent,
+/obj/structure/urinal{
+	pixel_y = 25
 	},
 /turf/open/floor/plasteel/neutral,
 /area/f13/fb/bar)
 "Ib" = (
 /obj/machinery/vending/cigarette{
 	density = 0;
-	pixel_y = 25
+	pixel_y = 13
 	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 1;
@@ -2282,6 +2374,13 @@
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
+"Oq" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8;
+	color = "#3B2B1A"
+	},
+/turf/open/floor/carpet/red,
+/area/f13/fb/bar)
 "Ou" = (
 /obj/machinery/light/small{
 	color = "#444499";
@@ -2393,6 +2492,7 @@
 	dir = 1;
 	color = "#3B2B1A"
 	},
+/obj/structure/table/abductor,
 /obj/machinery/light/small{
 	color = "#444499";
 	dir = 1;
@@ -2406,8 +2506,14 @@
 	},
 /area/f13/fb/bar)
 "PZ" = (
-/obj/structure/closet/crate/bin,
-/turf/open/floor/plasteel/neutral,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#3B2B1A"
+	},
+/obj/machinery/computer/arcade{
+	density = 0
+	},
+/turf/open/floor/carpet/black,
 /area/f13/fb/bar)
 "Qe" = (
 /turf/open/transparent/openspace,
@@ -2596,7 +2702,6 @@
 /obj/structure/sign/painting/library{
 	pixel_x = -32
 	},
-/obj/item/kirbyplants/random,
 /obj/effect/turf_decal/siding/wood{
 	dir = 1;
 	color = "#3B2B1A"
@@ -2615,6 +2720,11 @@
 	light_power = 2;
 	light_range = 2;
 	pixel_y = 13
+	},
+/obj/machinery/mineral/wasteland_vendor/special{
+	pixel_y = 14;
+	pixel_x = 5;
+	density = 0
 	},
 /turf/open/floor/carpet/black,
 /area/f13/fb/bar)
@@ -2781,7 +2891,7 @@
 	},
 /obj/structure/rug/carpet4{
 	layer = 1;
-	pixel_y = 16
+	pixel_y = 19
 	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 8;
@@ -2799,35 +2909,30 @@
 "Xr" = (
 /turf/open/indestructible,
 /area/f13/wasteland)
+"Xy" = (
+/obj/structure/chair/stool/retro/tan,
+/turf/open/floor/carpet/black,
+/area/f13/fb/bar)
 "XH" = (
-/obj/structure/bed/wooden,
-/obj/effect/spawner/lootdrop/bedsheet,
-/obj/structure/railing/wood/post{
-	pixel_x = 16;
-	pixel_y = 2;
-	plane = -6
-	},
-/obj/structure/railing/wood/post{
-	pixel_x = -13;
-	pixel_y = 1;
-	plane = -6
-	},
-/obj/structure/curtain{
-	color = "#5c131b";
-	layer = 5;
-	pixel_x = 2;
-	pixel_y = -3
-	},
-/obj/structure/rug/mat{
-	color = "#CC4444";
-	layer = 6;
-	pixel_x = 2;
-	pixel_y = 15
-	},
 /obj/effect/turf_decal/siding/wood{
+	dir = 4;
 	color = "#3B2B1A"
 	},
-/turf/open/floor/carpet/blue,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1;
+	color = "#3B2B1A"
+	},
+/obj/machinery/light/small{
+	color = "#444499";
+	dir = 1;
+	light_color = "#444499";
+	light_power = 2;
+	light_range = 2;
+	pixel_y = 13
+	},
+/turf/open/floor/carpet/black{
+	color = "#CCCCCC"
+	},
 /area/f13/fb/bar)
 "XN" = (
 /obj/effect/turf_decal/siding/wood{
@@ -2962,13 +3067,8 @@
 	},
 /area/f13/caves)
 "YQ" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/chair/sofa/corp{
-	pixel_y = 12;
-	color = "#363636";
-	pixel_x = -8
-	},
-/turf/open/floor/carpet/black,
+/obj/structure/table/glass,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/f13/fb/bar)
 "Za" = (
 /obj/structure/sign/poster/contraband/pinup_bed,
@@ -3026,19 +3126,19 @@ nZ
 nZ
 nZ
 nZ
-cs
-cs
-cs
-cs
-cs
-cs
-cs
-cs
-cs
-cs
-cs
-cs
-cs
+nZ
+nZ
+nZ
+nZ
+nZ
+nZ
+nZ
+nZ
+nZ
+nZ
+nZ
+nZ
+nZ
 nZ
 nZ
 nZ
@@ -3283,19 +3383,19 @@ nZ
 nZ
 nZ
 nZ
-cs
-cs
-cs
-cs
-cs
-cs
-cs
-cs
-cs
-cs
-cs
-cs
-cs
+nZ
+nZ
+nZ
+nZ
+nZ
+nZ
+nZ
+nZ
+nZ
+nZ
+nZ
+nZ
+nZ
 nZ
 nZ
 nZ
@@ -3540,19 +3640,19 @@ nZ
 nZ
 nZ
 nZ
-cs
-cs
-cs
-cs
-cs
-cs
-cs
-cs
-cs
-cs
-cs
-cs
-cs
+nZ
+nZ
+nZ
+nZ
+nZ
+nZ
+nZ
+nZ
+nZ
+nZ
+nZ
+nZ
+nZ
 nZ
 nZ
 nZ
@@ -3797,19 +3897,19 @@ nZ
 nZ
 nZ
 nZ
-cs
-cs
-cs
-cs
-cs
-cs
-cs
-cs
-cs
-cs
-cs
-cs
-cs
+nZ
+nZ
+nZ
+nZ
+nZ
+nZ
+nZ
+nZ
+nZ
+nZ
+nZ
+nZ
+nZ
 nZ
 nZ
 nZ
@@ -4054,19 +4154,19 @@ nZ
 nZ
 nZ
 nZ
-cs
-cs
-cs
-cs
-cs
-cs
-cs
-cs
-cs
-cs
-cs
-cs
-cs
+il
+il
+il
+il
+il
+il
+il
+il
+nZ
+nZ
+nZ
+nZ
+nZ
 nZ
 nZ
 nZ
@@ -4311,19 +4411,19 @@ nZ
 nZ
 nZ
 nZ
-cs
-cs
-cs
-cs
-cs
-cs
-cs
-cs
-cs
-cs
-cs
-cs
-cs
+il
+YQ
+rk
+Ec
+kf
+wn
+ki
+il
+nZ
+nZ
+nZ
+nZ
+nZ
 nZ
 nZ
 nZ
@@ -4569,18 +4669,18 @@ nZ
 nZ
 nZ
 il
+DS
+kf
+YQ
+kf
+vU
+Ex
 il
-il
-il
-il
-cs
-cs
-cs
-cs
-cs
-cs
-cs
-cs
+nZ
+nZ
+nZ
+nZ
+nZ
 nZ
 nZ
 nZ
@@ -4827,17 +4927,17 @@ nZ
 nZ
 il
 nc
-vv
-zr
+kf
+YQ
+kf
+vU
+EU
 il
-cs
-cs
-cs
-cs
-cs
-cs
-cs
-cs
+nZ
+nZ
+nZ
+nZ
+nZ
 nZ
 nZ
 nZ
@@ -5071,11 +5171,11 @@ nZ
 nZ
 nZ
 il
-EQ
+HT
 dD
 il
 Dd
-PZ
+ru
 il
 dD
 vI
@@ -5084,17 +5184,17 @@ nZ
 nZ
 il
 YQ
+YQ
+YQ
 kf
-zr
+vU
+ln
 il
-cs
-cs
-cs
-cs
-cs
-cs
-cs
-cs
+nZ
+nZ
+nZ
+nZ
+nZ
 nZ
 nZ
 nZ
@@ -5328,13 +5428,13 @@ nZ
 nZ
 nZ
 il
-EQ
+HT
 dD
-xd
+ar
 dD
 dD
 il
-iF
+pc
 dD
 il
 il
@@ -5342,16 +5442,16 @@ il
 il
 iA
 kf
-zr
+kf
+kf
+vU
+cs
 il
-cs
-cs
-cs
-cs
-cs
-cs
-cs
-cs
+nZ
+nZ
+nZ
+nZ
+nZ
 nZ
 nZ
 nZ
@@ -5585,7 +5685,7 @@ nZ
 nZ
 nZ
 il
-EQ
+HT
 dD
 il
 il
@@ -5595,20 +5695,20 @@ il
 IQ
 il
 Dd
-PZ
-il
 ru
-kf
-zr
 il
-cs
-cs
-cs
-cs
-cs
-cs
-cs
-cs
+kf
+pj
+Oq
+Oq
+vv
+Ex
+il
+nZ
+nZ
+nZ
+nZ
+nZ
 nZ
 nZ
 nZ
@@ -5842,30 +5942,30 @@ nZ
 nZ
 nZ
 il
-EQ
+HT
 EF
 il
-HT
+hc
 dD
 UA
 dD
 dD
-xd
+ar
 dD
 dD
 il
 wM
 vU
-zr
+vv
+su
+yU
+xd
 il
-cs
-cs
-cs
-cs
-cs
-cs
-cs
-cs
+nZ
+nZ
+nZ
+nZ
+nZ
 nZ
 nZ
 nZ
@@ -6088,33 +6188,33 @@ nZ
 nZ
 nZ
 nZ
-xI
-xI
-xI
-xI
-xI
-xI
-xI
+dS
+dS
+dS
+dS
+dS
+dS
+dS
 nZ
 nZ
 nZ
 il
-EQ
+HT
 dD
 il
-iF
+pc
 dD
 il
-vC
+yr
 EF
 il
 il
 il
 il
-il
-il
-JZ
-il
+bp
+ha
+vC
+bp
 il
 il
 il
@@ -6344,25 +6444,25 @@ nZ
 nZ
 nZ
 nZ
+iF
 dS
-xI
 Vk
 ah
 gw
 rV
-xI
-xI
+dS
+dS
 nZ
 nZ
 nZ
 il
-EQ
+HT
 EF
 il
 il
 il
 il
-vC
+yr
 dD
 il
 ns
@@ -6601,28 +6701,28 @@ nZ
 nZ
 nZ
 nZ
-dS
+iF
 Oz
 fR
 SP
 Hn
 mG
 XQ
+dS
+nZ
+nZ
+nZ
+il
+yr
+Kp
+il
+gb
+sD
+il
+yr
+Kp
+il
 xI
-nZ
-nZ
-nZ
-il
-vC
-Kp
-il
-DS
-rB
-il
-vC
-Kp
-il
-XH
 Ql
 OD
 nX
@@ -6858,21 +6958,21 @@ nZ
 nZ
 nZ
 nZ
-dS
+iF
 YD
 Um
 AR
 Cd
 yM
 zK
-xI
+dS
 nZ
 nZ
 nZ
 il
-yr
+bH
 dD
-ar
+tg
 nX
 hj
 Qg
@@ -7115,14 +7215,14 @@ nZ
 nZ
 nZ
 nZ
-dS
+iF
 mF
 Bt
 tJ
 Vo
 ws
 tM
-xI
+dS
 nZ
 nZ
 nZ
@@ -7372,14 +7472,14 @@ nZ
 nZ
 nZ
 nZ
-dS
+iF
 gc
 IC
 yH
 Yu
 zB
 fT
-xI
+dS
 nZ
 nZ
 nZ
@@ -7629,21 +7729,21 @@ nZ
 nZ
 nZ
 nZ
+iF
 dS
-xI
 ws
 Ps
 tv
 xX
-xI
-xI
+dS
+dS
 nZ
 nZ
 nZ
 nZ
 nZ
 il
-ha
+gI
 zr
 zr
 zr
@@ -7887,13 +7987,13 @@ nZ
 nZ
 nZ
 nZ
-xI
+dS
 nT
 Oo
 Oo
 kb
 nh
-xI
+dS
 nZ
 nZ
 nZ
@@ -8144,21 +8244,21 @@ nZ
 nZ
 nZ
 nZ
-xI
+dS
 oT
 XW
 XW
 XW
 sx
-xI
-xI
-xI
+dS
+dS
+dS
 nZ
 nZ
 nZ
 il
-AS
-LE
+aw
+gn
 zr
 qA
 oD
@@ -8173,7 +8273,7 @@ zr
 hj
 eu
 DJ
-XH
+xI
 il
 nX
 Vq
@@ -8401,7 +8501,7 @@ nZ
 nZ
 nZ
 nZ
-xI
+dS
 EM
 XW
 XW
@@ -8409,13 +8509,13 @@ XW
 XW
 za
 CA
-xI
-xI
+dS
+dS
 nZ
 nZ
 il
-Ec
-zr
+PZ
+Xy
 zr
 zr
 zr
@@ -8427,7 +8527,7 @@ il
 nX
 zr
 zr
-tg
+sv
 il
 Za
 il
@@ -8658,7 +8758,7 @@ nZ
 nZ
 nZ
 nZ
-xI
+dS
 Fq
 cK
 cK
@@ -8667,12 +8767,12 @@ XW
 XW
 XW
 tq
-xI
+dS
 nZ
 nZ
 il
-Ec
-zr
+PZ
+Xy
 zr
 zr
 zr
@@ -8915,16 +9015,16 @@ nZ
 nZ
 nZ
 nZ
-xI
-xI
+dS
+dS
 aR
 Tm
 Rp
-xI
+dS
 Pq
 XW
 Do
-xI
+dS
 kF
 kF
 Za
@@ -9173,11 +9273,11 @@ nZ
 nZ
 nZ
 nZ
-xI
-xI
-xI
-xI
-xI
+dS
+dS
+dS
+dS
+dS
 uA
 XW
 xY
@@ -9434,12 +9534,12 @@ nZ
 nZ
 nZ
 nZ
-xI
+dS
 rc
 XW
 xY
 IW
-WW
+EQ
 WW
 zr
 zr
@@ -9691,11 +9791,11 @@ nZ
 nZ
 nZ
 nZ
-xI
-xI
+dS
+dS
 ze
 Ys
-dS
+iF
 kF
 kF
 il
@@ -9949,14 +10049,14 @@ nZ
 nZ
 nZ
 nZ
-dS
-dS
-dS
-dS
+iF
+iF
+iF
+iF
 nZ
 nZ
 il
-yx
+Dg
 zr
 hj
 il
@@ -10731,11 +10831,11 @@ tF
 Jp
 Fg
 il
-sD
+PA
 Ri
 Kb
 il
-PA
+XH
 oA
 EK
 il

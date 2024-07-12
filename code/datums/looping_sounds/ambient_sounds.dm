@@ -11,7 +11,7 @@
 	direct = TRUE
 	/// Here used as time between rolls for sounds happening
 	loop_delay = 5 SECONDS
-	channel = CHANNEL_AMBIENT_SOUND
+	managed = TRUE
 
 // random bullshit used for testing
 /datum/looping_sound/ambient/debug
@@ -546,6 +546,7 @@
 	direct = TRUE
 	loop_delay = 1 MINUTES
 	channel = CHANNEL_AMBIENT_MUSIC
+	managed = FALSE
 	mid_sounds = list(
 		SOUND_LOOP_ENTRY('modular_coyote/sound/kfmusic/kf-ambimusic-1.ogg', 130 SECONDS, 1),
 		SOUND_LOOP_ENTRY('modular_coyote/sound/kfmusic/kf-ambimusic-2.ogg', 130 SECONDS, 1),
@@ -559,7 +560,6 @@
 	direct = TRUE
 	loop_delay = 2 MINUTES
 	chance = 100
-	channel = CHANNEL_AMBIENT_SOUND
 	mid_sounds = list(
 		SOUND_LOOP_ENTRY('sound/ambience/parkinglotambi.ogg', 124 SECONDS, 1),
 	)
@@ -571,7 +571,6 @@
 	direct = TRUE
 	chance = 100
 	loop_delay = 50 SECONDS
-	channel = CHANNEL_AMBIENT_SOUND
 	mid_sounds = list(
 		SOUND_LOOP_ENTRY('sound/ambience/barambience.ogg', 69 SECONDS, 1),
 		SOUND_LOOP_ENTRY('sound/ambience/barambience.ogg', 69 SECONDS, 1),
@@ -585,7 +584,6 @@
 	direct = TRUE
 	loop_delay = 25 SECONDS
 	chance = 100
-	channel = CHANNEL_AMBIENT_LOOP
 	mid_sounds = list(
 		SOUND_LOOP_ENTRY('sound/f13ambience/brownnoise.ogg', 30 SECONDS, 10),
 		SOUND_LOOP_ENTRY('sound/f13ambience/brownnoise.ogg', 30 SECONDS, 10),
@@ -599,7 +597,6 @@
 	volume = SOUND_LOOP_VOL_RANGE(100, 100)
 	direct = TRUE
 	loop_delay = 8 SECONDS
-	channel = CHANNEL_AMBIENT_LOOP
 	chance = 100
 	mid_sounds = list(
 		SOUND_LOOP_ENTRY('sound/f13ambience/fanoffright.ogg', 9 SECONDS, 10),

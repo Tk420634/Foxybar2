@@ -628,7 +628,7 @@ GLOBAL_LIST_INIT(personalitytrait2description, list(
 	else if(!HAS_TRAIT(user, TRAIT_PVEFOC) && HAS_TRAIT(src, TRAIT_PVPFOC))
 		. += span_alert("[t_He] [t_has] is looking for PVP encounters! If you're looking for a fight, they're the one to go to!")
 
-
+	. += span_green("Right click and select flirt with me to [span_love("maybe get my attention!~")]")
 	. += span_green("Ctrl-Shift click me for [span_love("special interactions!~")]")
 
 	if(has_status_effect(STATUS_EFFECT_ADMINSLEEP))
