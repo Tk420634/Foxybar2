@@ -31,7 +31,6 @@
 		/datum/looping_sound/ambient/swamp,
 		/datum/looping_sound/ambient/critters/birds,
 		/datum/looping_sound/ambient/critters/birds/crow,
-		/datum/looping_sound/ambient/critters/frogs,
 		/datum/looping_sound/ambient/forest,
 	)
 	outdoors = 1
@@ -61,9 +60,7 @@
 	name = "City"
 	icon_state = "yellow"
 	ambience_area = list(
-		/datum/looping_sound/ambient/city,
 		/datum/looping_sound/ambient/critters,
-	
 		/datum/looping_sound/ambient/swamp/quiet,
 		/datum/looping_sound/ambient/critters/birds,
 		/datum/looping_sound/ambient/critters/birds/crow,

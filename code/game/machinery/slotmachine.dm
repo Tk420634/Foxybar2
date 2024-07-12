@@ -8,7 +8,7 @@
 #define SMALL_PRIZE 25
 #define BIG_PRIZE 50
 #define DEFAULT_JACKPOT 100
-#define SPIN_TIME 60 //As always, deciseconds.
+#define SPIN_TIME 50 //As always, deciseconds.
 #define REEL_DEACTIVATE_DELAY 7
 #define SEVEN "<font color='red'>7</font>"
 #define MAX_CASH_STACK_AMOUNT 15000 // This should be the currencies max limit.
@@ -159,7 +159,7 @@
 
 	visible_message(span_notice("[user] pulls the lever and the slot machine starts spinning!"))
 	//we put the sound here, so it plays when you pull the lever 
-	playsound(src, 'sound/machines/slotmachine.ogg', 100, TRUE, -1)
+	playsound(src, 'sound/machines/slotmachine.ogg.ogg', 100, TRUE, -1)
 
 	balance -= SPIN_PRICE
 	money += SPIN_PRICE
@@ -216,30 +216,31 @@
 
 	if(reels[1][2] + reels[2][2] + reels[3][2] + reels[4][2] + reels[5][2] == "[SEVEN][SEVEN][SEVEN][SEVEN][SEVEN]")
 		visible_message("<b>[src]</b> says, 'JACKPOT! You win [money] coins!'")
-		playsound(src, 'sound/machines/jackpot.ogg', 70, TRUE, -1)
+		playsound(src, 'sound/machines/jackpot.ogg', 50, TRUE, -1)
 		jackpots += 1
-		give_money(money)
+		drop_caps(money)
 		money = 0
 
 	else if(linelength == 5)
 		visible_message("<b>[src]</b> says, 'Big Winner! You win [BIG_PRIZE] coins!'")
-		playsound(src, 'sound/machines/bigwin.ogg', 70, TRUE, -1)
-		give_money(BIG_PRIZE)
+		playsound(src, 'sound/machines/bigwin.ogg', 50, TRUE, -1)
+		drop_caps(BIG_PRIZE)
 
 	else if(linelength == 4)
 		visible_message("<b>[src]</b> says, 'Winner! You win [SMALL_PRIZE] coins!'")
-		playsound(src, 'sound/machines/smallwin.ogg', 70, TRUE, -1)
-		give_money(SMALL_PRIZE)
+		playsound(src, 'sound/machines/smallwin.ogg', 50, TRUE, -1)
+		drop_caps(SMALL_PRIZE)
 
 	else if(linelength == 3)
 		to_chat(user, span_notice("You win three free games!"))
-		give_money(SPIN_PRICE * 4)
-		playsound(src, 'sound/machines/smallwin.ogg', 70, TRUE, -1)
+		drop_caps(SPIN_PRICE * 4)
+		playsound(src, 'sound/machines/smallwin.ogg', 50, TRUE, -1)
 		money = max(money - SPIN_PRICE * 4, money)
 
 	else
 		to_chat(user, span_warning("No luck!"))
 		playsound(src, 'sound/machines/fail.ogg', 100, TRUE, -1)
+
 /obj/machinery/computer/slot_machine/proc/get_lines()
 	var/amountthesame
 	for(var/i = 1, i <= 3, i++)
@@ -258,11 +259,7 @@
 	return amountthesame
 
 /obj/machinery/computer/slot_machine/proc/give_money(amt)
-	var/turf/here = get_turf(src)
-	var/obj/item/stack/f13Cash/caps/money = locate(/obj/item/stack/f13Cash/caps) in here
-	if(!money)
-		money = new /obj/item/stack/f13Cash/caps(here)
-	money.amount += amt
+	balance += amt
 
 #undef SEVEN
 #undef SPIN_TIME
