@@ -24,7 +24,7 @@
 	if(!inspiration_available)
 		return
 	if(morale_time > world.time)
-		to_chat(user, span_warning("I amn't feeling inspired enough to flourish [src] again yet."))
+		to_chat(user, span_warning("I am not feeling inspired enough to flourish [src] again yet."))
 		return
 	user.visible_message("<span class='big notice'>[user] flourishes [src]!</span>", \
 	span_notice("I raise [src] skywards, inspiring your allies!"))

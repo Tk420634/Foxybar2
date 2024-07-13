@@ -1686,7 +1686,7 @@ GLOBAL_LIST_INIT(gun_yeet_words, list(
 	if(istype(I2, /obj/item/gun))
 		G2 = I2
 	if(!G && !G2)
-		to_chat(src, span_warning("I amn't holding a gun you can reload!"))
+		to_chat(src, span_warning("I am not holding a gun you can reload!"))
 		return FALSE
 	G?.Reload(src)
 	if(get_inactive_held_item() == G2)//recheck this again because it might have changed since we reloaded the active hand gun.

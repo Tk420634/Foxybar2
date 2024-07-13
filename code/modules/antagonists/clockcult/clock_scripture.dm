@@ -80,7 +80,7 @@ Judgement 5 converts
 	if(!invoker || !slab || invoker.get_active_held_item() != slab)
 		return FALSE
 	if(!is_servant_of_ratvar(invoker, requires_full_power))
-		to_chat(invoker, span_warning("I amn't strongly connected enough to Ratvar to invoke this!"))
+		to_chat(invoker, span_warning("I am not strongly connected enough to Ratvar to invoke this!"))
 		return FALSE
 	if(!invoker.can_speak_vocal())
 		to_chat(invoker, span_warning("I am unable to speak the words of the scripture!"))

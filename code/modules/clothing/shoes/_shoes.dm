@@ -152,7 +152,7 @@
 		return
 
 	if(!in_range(user, our_guy))
-		to_chat(user, span_warning("I amn't close enough to interact with [src]'s laces!"))
+		to_chat(user, span_warning("I am not close enough to interact with [src]'s laces!"))
 		return
 
 	if(user == loc && tied != SHOES_TIED) // if they're our own shoes, go tie-wards
