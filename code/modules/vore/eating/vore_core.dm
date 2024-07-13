@@ -463,7 +463,7 @@
 /datum/component/vore/proc/perform_the_nom(atom/movable/movable_prey, mob/living/living_pred, obj/vore_belly/belly)
 	VORE_MASTER
 	if(!voremode)
-		to_chat(master, span_alert("I amn't in Vore Intent! You can toggle this on in your vore tab."))
+		to_chat(master, span_alert("I am not in Vore Intent! You can toggle this on in your vore tab."))
 		return
 	if(!movable_prey)
 		to_chat(master, span_phobia("I tried to eat someone, but they apparently don't exist? This might be a bug."))

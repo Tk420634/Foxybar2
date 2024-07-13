@@ -114,6 +114,11 @@
 
 //// Cigarettes here, they dont need a special category
 
+/datum/gear/backpack/cigarettes/vape
+	name = "Vape"
+	path = /obj/item/clothing/mask/vape
+	cost = 0
+
 /datum/gear/backpack/cigarettes/cigpack_improper
 	name = "cigarette pack"
 	path = /obj/item/storage/fancy/cigarettes
@@ -129,7 +134,7 @@
 /datum/gear/backpack/cigarettes/cigpack_greytort
 	name = "Grey Tortoise Smokes"
 	path = /obj/item/storage/fancy/cigarettes/cigpack_greytort
-	cost = 2
+	cost = 0
 
 /datum/gear/backpack/cigarettes/carp_classic
 	name = "Carp Classic Smokes"

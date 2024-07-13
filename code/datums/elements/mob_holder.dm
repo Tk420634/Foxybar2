@@ -41,7 +41,7 @@
 	if(isanimal(user))
 		var/mob/living/simple_animal/S = user
 		if(!S.dextrous)
-			to_chat(user, span_warning("I amn't dextrous enough to do that!"))
+			to_chat(user, span_warning("I am not dextrous enough to do that!"))
 			return FALSE
 	else if(!ishuman(user))
 		return FALSE

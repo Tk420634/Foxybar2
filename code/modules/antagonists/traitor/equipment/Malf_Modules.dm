@@ -20,7 +20,7 @@ GLOBAL_LIST_INIT(blacklisted_malf_machines, typecacheof(list(
 //The malf AI action subtype. All malf actions are subtypes of this.
 /datum/action/innate/ai
 	name = "AI Action"
-	desc = "I amn't entirely sure what this does, but it's very beepy and boopy."
+	desc = "I am not entirely sure what this does, but it's very beepy and boopy."
 	background_icon_state = "bg_tech_blue"
 	icon_icon = 'icons/mob/actions/actions_AI.dmi'
 	check_flags = AB_CHECK_CONSCIOUS //can't doomsday if dead.

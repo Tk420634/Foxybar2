@@ -134,6 +134,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	STOP_PROCESSING(SSobj, src)
 	. = ..()
 
+
 /obj/item/clothing/mask/cigarette/attackby(obj/item/W, mob/user, params)
 	if(!lit && smoketime > 0)
 		playsound(src, 'sound/f13items/cig_light.ogg', 100, TRUE, extrarange = SOUND_DISTANCE(4))

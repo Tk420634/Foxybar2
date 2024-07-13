@@ -41,7 +41,7 @@
 /* FEV reagents */
 /datum/reagent/toxin/FEV_solution
 	name = "master FEV solution"
-	description = "I amn't meant to see this..?"
+	description = "I am not meant to see this..?"
 	color = "#00FF00"
 	toxpwr = 0
 	overdose_threshold = 18 // So, someone drinking 20 units will FOR SURE get overdosed

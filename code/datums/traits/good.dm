@@ -959,7 +959,7 @@ GLOBAL_LIST_INIT(security_expert, list(
 	desc = "You've spent a lot of time wandering the wastes, and for your hard work you out pace most folks when travelling across them."
 	value = 55
 	category = "Movement Quirks"
-	mechanics = "I amn't slowed at all by going off roads or paths."
+	mechanics = "I am not slowed at all by going off roads or paths."
 	conflicts = list(
 		/datum/quirk/soft_yards,
 		/datum/quirk/slower,

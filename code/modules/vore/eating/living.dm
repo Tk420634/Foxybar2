@@ -25,7 +25,7 @@
 		return
 	var/obj/vore_belly/vb = loc
 	if(!vb.is_in_belly(src))
-		to_chat(src, span_phobia("I amn't in that belly! This might be a bug!"))
+		to_chat(src, span_phobia("I am not in that belly! This might be a bug!"))
 		return
 	var/confirm = alert(
 		src, 

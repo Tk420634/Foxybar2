@@ -60,7 +60,7 @@ This file contains the cult dagger and rune list code
 	if(!rune_to_scribe)
 		return
 	if(!iscultist(user, initial(rune_to_scribe.requires_full_power)))
-		to_chat(user, span_warning("I amn't strongly connected enough to Nar'sie to do draw this."))
+		to_chat(user, span_warning("I am not strongly connected enough to Nar'sie to do draw this."))
 		return
 	if(initial(rune_to_scribe.req_keyword))
 		chosen_keyword = stripped_input(user, "Enter a keyword for the new rune.", "Words of Power")

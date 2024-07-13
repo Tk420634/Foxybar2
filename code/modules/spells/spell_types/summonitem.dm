@@ -34,7 +34,7 @@
 
 			if(!marked_item)
 				if(hand_items)
-					message = span_caution("I amn't holding anything that can be marked for recall.")
+					message = span_caution("I am not holding anything that can be marked for recall.")
 				else
 					message = span_notice("I must hold the desired item in your hands to mark it for recall.")
 

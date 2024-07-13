@@ -99,7 +99,7 @@
 	if(isanimal(master))
 		var/mob/living/simple_animal/merpimal = master
 		if(!merpimal.dextrous)
-			var/urnotdextrous = "I amn't dextrous enough to MERP!"
+			var/urnotdextrous = "I am not dextrous enough to MERP!"
 			switch(rand(1,6))
 				if(1)
 					urnotdextrous += " You might break something sensitive!"
@@ -113,7 +113,7 @@
 					urnotdextrous += " Maybe you can just be friends?"
 				if(6)
 					urnotdextrous += " You can watch, though!"
-			to_chat(master, span_warning("I amn't dextrous enough to MERP! You might break something sensitive!"))
+			to_chat(master, span_warning("I am not dextrous enough to MERP! You might break something sensitive!"))
 			return
 
 	if(master.get_active_held_item())

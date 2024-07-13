@@ -496,7 +496,7 @@
 		I.equip_to_best_slot(src)
 
 	else  //Are we empty handed?
-		storage = get_item_by_slot(SLOT_BACK)
+		storage = get_item_by_slot(SLOT_MASK)
 		if(storage)  //Are we carrying something in this storage slot?
 			if(!istype(storage, /obj/item/flashlight))  //this is my personal preference, basically it ignores returning flashlights on your hands, why? because it's silly otherwise!
 				if(!SEND_SIGNAL(storage, COMSIG_CONTAINS_STORAGE))  //Is this NOT a storage item? (we don't want to return a pouch or something in our hands, only items that have no storage)
