@@ -604,3 +604,31 @@
 		SOUND_LOOP_ENTRY('sound/f13ambience/fanoffright.ogg', 9 SECONDS, 10),
 	)
 
+/datum/looping_sound/ambient/fb/bar_bacon
+	chance = 100
+	vary = FALSE
+	volume = SOUND_LOOP_VOL_RANGE(100, 100)
+	direct = TRUE
+	loop_delay = 0 SECONDS
+	chance = 100
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/f13ambience/bar/cool_bar_ambience_raw_01.ogg', 8 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/bar/cool_bar_ambience_raw_02.ogg', 6 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/bar/cool_bar_ambience_raw_03.ogg', 11 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/bar/cool_bar_ambience_raw_04.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/bar/cool_bar_ambience_raw_05.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/bar/cool_bar_ambience_raw_06.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/bar/cool_bar_ambience_raw_07.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/bar/cool_bar_ambience_raw_08.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/bar/cool_bar_ambience_raw_09.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/bar/cool_bar_ambience_raw_10.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/bar/cool_bar_ambience_raw_11.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/bar/cool_bar_ambience_raw_12.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/bar/cool_bar_ambience_raw_13.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/bar/cool_bar_ambience_raw_14.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/bar/cool_bar_ambience_raw_15.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/bar/cool_bar_ambience_raw_16.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/bar/cool_bar_ambience_raw_17.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/bar/cool_bar_ambience_raw_18.ogg', 10 SECONDS, 1),
+	)
+
