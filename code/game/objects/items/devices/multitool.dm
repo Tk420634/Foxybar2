@@ -60,7 +60,7 @@
 /obj/item/multitool/attack_self(mob/user)
 	if(selected_io)
 		selected_io = null
-		to_chat(user, span_notice("You clear the wired connection from the multitool."))
+		to_chat(user, span_notice("I clear the wired connection from the multitool."))
 	update_icon()
 
 /obj/item/multitool/update_icon_state()
@@ -86,13 +86,13 @@
 			return
 		io.connect_pin(selected_io)
 
-		to_chat(user, span_notice("You connect \the [selected_io.holder]'s [selected_io.name] to \the [io.holder]'s [io.name]."))
+		to_chat(user, span_notice("I connect \the [selected_io.holder]'s [selected_io.name] to \the [io.holder]'s [io.name]."))
 		selected_io.holder.interact(user) // This is to update the UI.
 		selected_io = null
 
 	else
 		selected_io = io
-		to_chat(user, span_notice("You link \the multitool to \the [selected_io.holder]'s [selected_io.name] data channel."))
+		to_chat(user, span_notice("I link \the multitool to \the [selected_io.holder]'s [selected_io.name] data channel."))
 
 	update_icon()
 
@@ -173,7 +173,7 @@
 /obj/item/multitool/ai_detect/proc/toggle_hud(mob/user)
 	hud_on = !hud_on
 	if(user)
-		to_chat(user, span_notice("You toggle the ai detection HUD on [src] [hud_on ? "on" : "off"]."))
+		to_chat(user, span_notice("I toggle the ai detection HUD on [src] [hud_on ? "on" : "off"]."))
 	if(hud_on)
 		show_hud(user)
 	else

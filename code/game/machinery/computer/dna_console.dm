@@ -145,7 +145,7 @@
 /obj/machinery/computer/scan_consolenew/examine(mob/user)
 	. = ..()
 	if(!HAS_TRAIT(user, TRAIT_CHEMWHIZ))
-		. += "You don't know how this works, you're not enough of a [span_notice("whiz")]."
+		. += "I don't know how this works, you're not enough of a [span_notice("whiz")]."
 
 
 /obj/machinery/computer/scan_consolenew/attackby(obj/item/I, mob/user, params)
@@ -154,9 +154,9 @@
 		if(LAZYLEN(stored_chromosomes) < max_chromosomes)
 			I.forceMove(src)
 			stored_chromosomes += I
-			to_chat(user, span_notice("You insert [I]."))
+			to_chat(user, span_notice("I insert [I]."))
 		else
-			to_chat(user, span_warning("You cannot store any more chromosomes!"))
+			to_chat(user, span_warning("I cannot store any more chromosomes!"))
 		return
 
 	// Insert data disk if console disk slot is empty
@@ -170,7 +170,7 @@
 			eject_disk(user)
 		// Set the new diskette.
 		diskette = I
-		to_chat(user, span_notice("You insert [I]."))
+		to_chat(user, span_notice("I insert [I]."))
 		return
 
 	// Recycle non-activator used injectors
@@ -188,7 +188,7 @@
 						stored_chromosomes += CM
 						to_chat(user,span_notice("[capitalize(CM.name)] added to storage."))
 					else
-						to_chat(user, span_warning("You cannot store any more chromosomes!"))
+						to_chat(user, span_warning("I cannot store any more chromosomes!"))
 						to_chat(user, span_notice("[capitalize(CM.name)] added on top of the console."))
 				else
 					to_chat(user, span_notice("There was not enough genetic data to extract a viable chromosome."))
@@ -229,7 +229,7 @@
 	// We can also do some general state processing here too as it's a good
 	//  indication that a player is using the console.
 	if(!HAS_TRAIT(user, TRAIT_CHEMWHIZ))
-		to_chat(user, span_alert("You don't know how this works, you're not enough of a [span_notice("whiz")]."))
+		to_chat(user, span_alert("I don't know how this works, you're not enough of a [span_notice("whiz")]."))
 		return
 
 	var/scanner_op = scanner_operational()
@@ -2009,7 +2009,7 @@
 	if(!diskette)
 		return
 
-	to_chat(user, span_notice("You eject [diskette] from [src]."))
+	to_chat(user, span_notice("I eject [diskette] from [src]."))
 
 	// Reset the state to console storage.
 	tgui_view_state["storageMode"] = "console"

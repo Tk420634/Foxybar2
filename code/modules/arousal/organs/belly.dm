@@ -286,7 +286,7 @@ GLOBAL_LIST_INIT(belly_descriptors, list(
 /// belly
 /obj/item/organ/genital/belly
 	name = "belly"
-	desc = "You see a belly on their midsection."
+	desc = "I see a belly on their midsection."
 	icon_state = "belly"
 	icon = 'icons/obj/genitals/belly.dmi'
 	zone = BODY_ZONE_CHEST
@@ -343,7 +343,7 @@ GLOBAL_LIST_INIT(belly_descriptors, list(
 	var/rounded_size = clamp(size, BELLY_SIZE_MIN, BELLY_SIZE_MAX)
 	if(size < 0)//I don't actually know what round() does to negative numbers, so to be safe!!fixed
 		if(owner)
-			to_chat(owner, span_warning("You feel your [shape_kind] shrink down to an ordinary size."))
+			to_chat(owner, span_warning("I feel your [shape_kind] shrink down to an ordinary size."))
 		QDEL_IN(src, 1)
 		return
 
@@ -351,9 +351,9 @@ GLOBAL_LIST_INIT(belly_descriptors, list(
 		var/mob/living/carbon/human/H = owner
 		var/r_prev_size = round(prev_size)
 		if (rounded_size > r_prev_size)
-			to_chat(H, span_warning("Your [pick(GLOB.belly_descriptors["belly_descriptors"])] [pick(GLOB.belly_descriptors["grow"])] larger."))
+			to_chat(H, span_warning("My [pick(GLOB.belly_descriptors["belly_descriptors"])] [pick(GLOB.belly_descriptors["grow"])] larger."))
 		else if (rounded_size < r_prev_size)
-			to_chat(H, span_warning("Your [pick(GLOB.belly_descriptors["belly_descriptors"])] [pick(GLOB.belly_descriptors["grow"])] smaller."))
+			to_chat(H, span_warning("My [pick(GLOB.belly_descriptors["belly_descriptors"])] [pick(GLOB.belly_descriptors["grow"])] smaller."))
 
 /obj/item/organ/genital/belly/update_appearance()
 	//Reflect the size of dat belly on examine.
@@ -362,7 +362,7 @@ GLOBAL_LIST_INIT(belly_descriptors, list(
 	var/belly_prefix = belly_prefix_list[shape]
 	var/list/belly_suffix_list = pick(GLOB.belly_descriptors["belly_suffix"][bellysize])
 	var/belly_suffix = belly_suffix_list[shape]
-	desc = "You see \a [belly_prefix] [belly_suffix]."
+	desc = "I see \a [belly_prefix] [belly_suffix]."
 	icon_state = "belly"
 	//if(owner?.dna?.features["belly_color"])
 	//	color = "#[owner.dna.features["belly_color"]]"

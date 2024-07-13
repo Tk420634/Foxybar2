@@ -340,14 +340,14 @@ GLOBAL_LIST_INIT(special_phrases, list(
 	if(!can_run_emote(user, TRUE, intentional))
 		return FALSE
 	if(jobban_isbanned(user, "emote"))	// emote ban
-		to_chat(user, "You cannot send emotes (banned).")
+		to_chat(user, "I cannot send emotes (banned).")
 		return FALSE
 	else if(user.client && user.client.prefs.muted & MUTE_IC)	// muted
-		to_chat(user, "You cannot send IC messages (muted).")
+		to_chat(user, "I cannot send IC messages (muted).")
 		return FALSE
 
 	if(isnull(user.special_a))
-		to_chat(user, span_phobia("You arent special."))
+		to_chat(user, span_phobia("I amnt special."))
 		to_chat(user, span_notice("Mainly because you're playing a mob withough any special skills. This is probably a bug~"))
 		return FALSE
 
@@ -432,14 +432,14 @@ GLOBAL_LIST_INIT(special_phrases, list(
 	if(!can_run_emote(user, TRUE, intentional))
 		return FALSE
 	if(jobban_isbanned(user, "emote"))	// emote ban
-		to_chat(user, "You cannot send emotes (banned).")
+		to_chat(user, "I cannot send emotes (banned).")
 		return FALSE
 	else if(user.client && user.client.prefs.muted & MUTE_IC)	// muted
-		to_chat(user, "You cannot send IC messages (muted).")
+		to_chat(user, "I cannot send IC messages (muted).")
 		return FALSE
 
 	if(isnull(user.special_a))
-		to_chat(user, span_phobia("You arent special."))
+		to_chat(user, span_phobia("I amnt special."))
 		to_chat(user, span_notice("Mainly because you're playing a mob withough any special skills. This is probably a bug~"))
 		return FALSE
 
@@ -579,5 +579,5 @@ GLOBAL_LIST_INIT(special_phrases, list(
 		loser = usr
 		loser_result = usr_result
 
-	to_chat(winner, span_green("You won the [skill] contest! ([winner_result] vs [loser_result])"))
-	to_chat(loser, span_alert("You lost the [skill] contest! ([loser_result] vs [winner_result])"))
+	to_chat(winner, span_green("I won the [skill] contest! ([winner_result] vs [loser_result])"))
+	to_chat(loser, span_alert("I lost the [skill] contest! ([loser_result] vs [winner_result])"))

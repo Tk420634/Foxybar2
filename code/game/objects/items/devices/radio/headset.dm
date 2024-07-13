@@ -518,7 +518,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	user.set_machine(src)
 	if (istype(W,/obj/item/headsetupgrader))
 		if (!bowman)
-			to_chat(user,span_notice("You upgrade [src]."))
+			to_chat(user,span_notice("I upgrade [src]."))
 			bowmanize()
 			qdel(W)
 	if(istype(W, /obj/item/screwdriver) && !factionized) //Fortuna edit. Radio management
@@ -537,7 +537,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 					keyslot2 = null
 
 			recalculateChannels()
-			to_chat(user, span_notice("You pop out the encryption keys in the headset."))
+			to_chat(user, span_notice("I pop out the encryption keys in the headset."))
 
 		else
 			to_chat(user, span_warning("This headset doesn't have any unique encryption keys!  How useless..."))
@@ -586,7 +586,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 		return
 	if (command)
 		use_command = !use_command
-		to_chat(user, span_notice("You toggle high-volume mode [use_command ? "on" : "off"]."))
+		to_chat(user, span_notice("I toggle high-volume mode [use_command ? "on" : "off"]."))
 		return TRUE
 
 /obj/item/radio/headset/proc/bowmanize()

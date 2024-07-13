@@ -40,7 +40,7 @@
 			else
 				examine_list += span_notice("It's wearing a fearsome carapace entirely composed of [upgrade_name] - its pilot must be an experienced monster hunter.")
 		else
-			examine_list += span_notice("You could probably use high-quality metal parts to reinforce it.")
+			examine_list += span_notice("I could probably use high-quality metal parts to reinforce it.")
 	else
 		if(amount)
 			examine_list += span_notice("It has been strengthened with [amount]/[maxamount] [upgrade_name].")
@@ -51,7 +51,7 @@
 	if(!istype(I,upgrade_item))
 		return
 	if(amount >= maxamount)
-		to_chat(user, span_warning("You can't improve [parent] any further!"))
+		to_chat(user, span_warning("I can't improve [parent] any further!"))
 		return
 
 	if(istype(I,/obj/item/stack))
@@ -69,9 +69,9 @@
 	if(ismecha(O))
 		var/obj/mecha/R = O
 		R.update_icon()
-		to_chat(user, span_info("You strengthen [R], improving its resistance against melee, bullet and laser damage."))
+		to_chat(user, span_info("I strengthen [R], improving its resistance against melee, bullet and laser damage."))
 	else
-		to_chat(user, span_info("You strengthen [O], improving its resistance against attacks."))
+		to_chat(user, span_info("I strengthen [O], improving its resistance against attacks."))
 
 
 /datum/component/armor_plate/proc/dropplates(datum/source, force)

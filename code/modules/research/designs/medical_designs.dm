@@ -1041,7 +1041,7 @@
 
 /datum/design/reaction_chamber
 	name = "Plumbing Reaction Chamber"
-	desc = "You can set a list of allowed reagents and amounts. Once the chamber has these reagents, will let the products through."
+	desc = "I can set a list of allowed reagents and amounts. Once the chamber has these reagents, will let the products through."
 	id = "reaction_chamber"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 1000, /datum/material/glass = 500)

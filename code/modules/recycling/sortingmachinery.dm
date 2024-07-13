@@ -34,7 +34,7 @@
 
 	else if(istype(W, /obj/item/pen))
 		if(!user.is_literate())
-			to_chat(user, span_notice("You scribble illegibly on the side of [src]!"))
+			to_chat(user, span_notice("I scribble illegibly on the side of [src]!"))
 			return
 		var/str = stripped_input(user, "Label text?", "Set label", "", MAX_NAME_LEN)
 		if(!user.canUseTopic(src, BE_CLOSE))
@@ -52,7 +52,7 @@
 			giftwrapped = TRUE
 			icon_state = "gift[icon_state]"
 		else
-			to_chat(user, span_warning("You need more paper!"))
+			to_chat(user, span_warning("I need more paper!"))
 	else
 		return ..()
 
@@ -61,17 +61,17 @@
 		var/atom/movable/AM = loc //can't unwrap the wrapped container if it's inside something.
 		AM.relay_container_resist(user, O)
 		return
-	to_chat(user, span_notice("You lean on the back of [O] and start pushing to rip the wrapping around it."))
+	to_chat(user, span_notice("I lean on the back of [O] and start pushing to rip the wrapping around it."))
 	if(do_after(user, 50, target = O))
 		if(!user || user.stat != CONSCIOUS || user.loc != O || O.loc != src )
 			return
-		to_chat(user, span_notice("You successfully removed [O]'s wrapping !"))
+		to_chat(user, span_notice("I successfully removed [O]'s wrapping !"))
 		O.forceMove(loc)
 		playsound(src.loc, 'sound/items/poster_ripped.ogg', 50, 1)
 		qdel(src)
 	else
 		if(user.loc == src) //so we don't get the message if we resisted multiple times and succeeded.
-			to_chat(user, span_warning("You fail to remove [O]'s wrapping!"))
+			to_chat(user, span_warning("I fail to remove [O]'s wrapping!"))
 
 
 /obj/item/smallDelivery
@@ -120,7 +120,7 @@
 
 	else if(istype(W, /obj/item/pen))
 		if(!user.is_literate())
-			to_chat(user, span_notice("You scribble illegibly on the side of [src]!"))
+			to_chat(user, span_notice("I scribble illegibly on the side of [src]!"))
 			return
 		var/str = stripped_input(user, "Label text?", "Set label", "", MAX_NAME_LEN)
 		if(!user.canUseTopic(src, BE_CLOSE))
@@ -138,7 +138,7 @@
 			giftwrapped = 1
 			user.visible_message("[user] wraps the package in festive paper!")
 		else
-			to_chat(user, span_warning("You need more paper!"))
+			to_chat(user, span_warning("I need more paper!"))
 
 
 /obj/item/destTagger

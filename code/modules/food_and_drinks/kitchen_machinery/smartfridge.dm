@@ -91,7 +91,7 @@
 
 		if(accept_check(O))
 			load(O)
-			user.visible_message(span_notice("[user] adds \the [O] to \the [src]."), span_notice("You add \the [O] to \the [src]."))
+			user.visible_message(span_notice("[user] adds \the [O] to \the [src]."), span_notice("I add \the [O] to \the [src]."))
 			updateUsrDialog()
 			if (visible_contents)
 				update_icon()
@@ -112,10 +112,10 @@
 			if(loaded)
 				if(contents.len >= max_n_of_items)
 					user.visible_message(span_notice("[user] loads \the [src] with \the [O]."), \
-									span_notice("You fill \the [src] with \the [O]."))
+									span_notice("I fill \the [src] with \the [O]."))
 				else
 					user.visible_message(span_notice("[user] loads \the [src] with \the [O]."), \
-										span_notice("You load \the [src] with \the [O]."))
+										span_notice("I load \the [src] with \the [O]."))
 				if(O.contents.len > 0)
 					to_chat(user, span_warning("Some items are refused."))
 				if (visible_contents)

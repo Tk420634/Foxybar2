@@ -1034,7 +1034,7 @@ Fence
 	if(LAZYLEN(GLOB.wasteland_vendor_shop_list))
 		price = GLOB.wasteland_vendor_shop_list[WVM_SCRAPPER][src.type]
 	else
-		pricetext = span_red("You aren't sure how much this is worth.")
+		pricetext = span_red("I amn't sure how much this is worth.")
 	if(price > 0)
 		switch(price)
 			if(0.001 to 0.999)

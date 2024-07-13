@@ -6,8 +6,8 @@
 	zone = BODY_ZONE_PRECISE_GROIN
 	slot = ORGAN_SLOT_TESTICLES
 	size = BALLS_SIZE_MIN
-	arousal_verb = "Your balls ache a little"
-	unarousal_verb = "Your balls finally stop aching, again"
+	arousal_verb = "My balls ache a little"
+	unarousal_verb = "My balls finally stop aching, again"
 	linked_organ_slot = ORGAN_SLOT_PENIS
 	genital_flags = CAN_MASTURBATE_WITH|MASTURBATE_LINKED_ORGAN|GENITAL_FLUID_PRODUCTION|UPDATE_OWNER_APPEARANCE|GENITAL_CAN_RECOLOR|GENITAL_CAN_RESHAPE|GENITAL_CAN_RESIZE
 	var/size_name = "average"
@@ -34,7 +34,7 @@
 	if(!linked_organ && !update_link())
 		return FALSE
 	return ..()
-	// in memoriam "Your balls finally feel full, again." ??-2020
+	// in memoriam "My balls finally feel full, again." ??-2020
 
 /obj/item/organ/genital/testicles/upon_link()
 	update_size()
@@ -61,7 +61,7 @@
 	var/icon_shape = S ? S.icon_state : "single"
 	icon_state = "testicles_[icon_shape]_[size]"
 	var/lowershape = lowertext(shape)
-	desc = "You see \a [size_name] [lowershape]."
+	desc = "I see \a [size_name] [lowershape]."
 	if(owner)
 		if(owner.dna.species.use_skintones)
 			if(ishuman(owner)) // Check before recasting type, although someone fucked up if you're not human AND have use_skintones somehow...
@@ -91,11 +91,11 @@
 	return "Just fine"
 
 /obj/item/organ/genital/testicles/on_arouse()
-	owner?.show_message(span_userlove("You feel your testicles fill with burning need!"))
+	owner?.show_message(span_userlove("I feel your testicles fill with burning need!"))
 	. = ..()
 
 /obj/item/organ/genital/testicles/on_unarouse()
-	owner?.show_message(span_userlove("Your testicles feel empty."))
+	owner?.show_message(span_userlove("My testicles feel empty."))
 	. = ..()
 
 /// Returns its respective sprite accessory from the global list (full of init'd types, hopefully)

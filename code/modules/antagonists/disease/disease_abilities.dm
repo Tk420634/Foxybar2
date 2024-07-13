@@ -177,9 +177,9 @@ new /datum/disease_ability/symptom/powerful/youth
 	if(!L)
 		return FALSE
 	if(L.stat != CONSCIOUS)
-		to_chat(D, span_warning("Your host must be conscious to cough."))
+		to_chat(D, span_warning("My host must be conscious to cough."))
 		return FALSE
-	to_chat(D, span_notice("You force [L.real_name] to cough."))
+	to_chat(D, span_notice("I force [L.real_name] to cough."))
 	L.emote("cough")
 	if(L.CanSpreadAirborneDisease()) //don't spread germs if they covered their mouth
 		var/datum/disease/advance/sentient_disease/SD = D.hosts[L]
@@ -211,9 +211,9 @@ new /datum/disease_ability/symptom/powerful/youth
 	if(!L)
 		return FALSE
 	if(L.stat != CONSCIOUS)
-		to_chat(D, span_warning("Your host must be conscious to sneeze."))
+		to_chat(D, span_warning("My host must be conscious to sneeze."))
 		return FALSE
-	to_chat(D, span_notice("You force [L.real_name] to sneeze."))
+	to_chat(D, span_notice("I force [L.real_name] to sneeze."))
 	L.emote("sneeze")
 	if(L.CanSpreadAirborneDisease()) //don't spread germs if they covered their mouth
 		var/datum/disease/advance/sentient_disease/SD = D.hosts[L]

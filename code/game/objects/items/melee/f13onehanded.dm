@@ -354,8 +354,8 @@
 /obj/item/melee/onehanded/knife/cosmicdirty/attackby(obj/item/C, mob/user, params)
 	if(istype(C, /obj/item/crafting/abraxo))
 		user.visible_message("[user] begins cleaning the blade of the [src].", \
-				span_notice("You begin scrubbing the [src] with Abraxo. Smells nice."), \
-				span_italic("You hear faint sounds of scrubbing."))
+				span_notice("I begin scrubbing the [src] with Abraxo. Smells nice."), \
+				span_italic("I hear faint sounds of scrubbing."))
 		playsound(get_turf(src), 'sound/FermiChem/heatdam.ogg', 50, TRUE)
 		if(!do_after(user, 60, TRUE, src))
 			return
@@ -380,8 +380,8 @@
 /obj/item/melee/onehanded/knife/cosmic/welder_act(mob/living/user, obj/item/I)
 	if(I.use_tool(src, user, 20, volume=50, amount=15))
 		user.visible_message("[user] heats up the blade of the [src].", \
-				span_notice("You heat up the [src] until the blade glows!"), \
-				span_italic("You hear faint sounds of a welder working."))
+				span_notice("I heat up the [src] until the blade glows!"), \
+				span_italic("I hear faint sounds of a welder working."))
 		new /obj/item/melee/onehanded/knife/cosmicheated(drop_location())
 		qdel(src)
 		return
@@ -543,7 +543,7 @@
 /obj/item/melee/classic_baton/proc/get_silicon_stun_description(mob/living/target, mob/living/user)
 	. = list()
 	.["visible"] = span_danger("[user] pulses [target]'s sensors with the baton!")
-	.["local"] = span_danger("You pulse [target]'s sensors with the baton!")
+	.["local"] = span_danger("I pulse [target]'s sensors with the baton!")
 	return .
 
 // Are we applying any special effects when we stun to carbon
@@ -971,7 +971,7 @@ y
 
 /obj/item/melee/unarmed/powerfist/attack(mob/living/target, mob/living/user, attackchain_flags = NONE)
 	if(HAS_TRAIT(user, TRAIT_PACIFISM))
-		to_chat(user, span_warning("You don't want to harm other living beings!"))
+		to_chat(user, span_warning("I don't want to harm other living beings!"))
 		return FALSE
 	var/turf/T = get_turf(src)
 	if(!T)
@@ -979,7 +979,7 @@ y
 	var/totalitemdamage = target.pre_attacked_by(src, user)
 	SSdamage.damage_mob(user, target, totalitemdamage)
 	target.visible_message(span_danger("[user]'s powerfist lets out a loud hiss as [user.p_they()] punch[user.p_es()] [target.name]!"), \
-		span_userdanger("You cry out in pain as [user]'s punch flings you backwards!"))
+		span_userdanger("I cry out in pain as [user]'s punch flings you backwards!"))
 	new /obj/effect/temp_visual/kinetic_blast(target.loc)
 	playsound(loc, 'sound/weapons/resonator_blast.ogg', 50, 1)
 	playsound(loc, 'sound/weapons/genhit2.ogg', 50, 1)
@@ -1143,9 +1143,9 @@ CODE FOR BLEEDING STACK
 
 /obj/item/melee/handfan/proc/get_on_off_description()
 	if(on)
-		return span_alert("You open the fan with a smooth flicking motion.")
+		return span_alert("I open the fan with a smooth flicking motion.")
 	else
-		return span_notice("You collapse the fan with a smooth flicking motion.")
+		return span_notice("I collapse the fan with a smooth flicking motion.")
 
 /obj/item/melee/handfan/examine()
 

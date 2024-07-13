@@ -20,6 +20,6 @@
 				return 1
 		if(N_ADRENALINE)
 			if(!a_boost)
-				to_chat(H, span_danger("You do not have any more adrenaline boosters."))
+				to_chat(H, span_danger("I do not have any more adrenaline boosters."))
 				return 1
 	return (s_coold)//Returns the value of the variable which counts down to zero.

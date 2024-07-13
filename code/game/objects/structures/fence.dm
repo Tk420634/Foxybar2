@@ -73,14 +73,14 @@
 		var/current_stage = hole_size
 
 		user.visible_message(span_danger("\The [user] starts cutting through \the [src] with \the [W]."),\
-		span_danger("You start cutting through \the [src] with \the [W]."))
+		span_danger("I start cutting through \the [src] with \the [W]."))
 
 		if(do_after(user, CUT_TIME*W.toolspeed, target = src))
 			if(current_stage == hole_size)
 				switch(++hole_size)
 					if(MEDIUM_HOLE)
 						visible_message(span_notice("\The [user] cuts into \the [src] some more."))
-						to_chat(user, span_info("You could probably fit yourself through that hole now. Although climbing through would be much faster if you made it even bigger."))
+						to_chat(user, span_info("I could probably fit yourself through that hole now. Although climbing through would be much faster if you made it even bigger."))
 						climbable = TRUE
 						W.play_tool_sound(user, 20)
 					if(LARGE_HOLE)
@@ -103,29 +103,29 @@
 		var/obj/item/stack/rods/rods = W
 		switch(hole_size)
 			if(NO_HOLE)
-				to_chat(user, span_warning("You cannot repair \the [src] any further!"))
+				to_chat(user, span_warning("I cannot repair \the [src] any further!"))
 				return
 			if(MEDIUM_HOLE)
 				if(rods.get_amount() < 2)
-					to_chat(user, span_warning("You need at least two rods to repair \the [src]!"))
+					to_chat(user, span_warning("I need at least two rods to repair \the [src]!"))
 					return
-				to_chat(user, span_notice("You start repairing \the [src]..."))
+				to_chat(user, span_notice("I start repairing \the [src]..."))
 				if(do_after(user, 20, target = src))
 					if(rods.get_amount() < 2)
 						return
 					rods.use(2)
-					to_chat(user, span_notice("You completely repair the hole in \the [src]."))
+					to_chat(user, span_notice("I completely repair the hole in \the [src]."))
 					hole_size = NO_HOLE
 			if(LARGE_HOLE)
 				if(rods.get_amount() < 2)
-					to_chat(user, span_warning("You need at least two rods to repair \the [src]!"))
+					to_chat(user, span_warning("I need at least two rods to repair \the [src]!"))
 					return
-				to_chat(user, span_notice("You start repairing \the [src]..."))
+				to_chat(user, span_notice("I start repairing \the [src]..."))
 				if(do_after(user, 20, target = src))
 					if(rods.get_amount() < 2)
 						return
 					rods.use(2)
-					to_chat(user, span_notice("You repair a bit of the hole in \the [src]."))
+					to_chat(user, span_notice("I repair a bit of the hole in \the [src]."))
 					hole_size = MEDIUM_HOLE
 
 		update_cut_status()

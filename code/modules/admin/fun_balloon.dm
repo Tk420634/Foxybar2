@@ -58,7 +58,7 @@
 		var/mob/C = pick_n_take(candidates)
 		var/mob/living/body = pick_n_take(bodies)
 
-		to_chat(body, "Your mob has been taken over by a ghost!")
+		to_chat(body, "My mob has been taken over by a ghost!")
 		message_admins("[key_name_admin(C)] has taken control of ([key_name_admin(body)])")
 		body.ghostize(0)
 		C.transfer_ckey(body)
@@ -120,7 +120,7 @@
 
 	var/mob/living/L = AM
 	if(L.pulling && istype(L.pulling, /obj/item/bodypart/head))
-		to_chat(L, "Your offering is accepted. You may pass.")
+		to_chat(L, "My offering is accepted. You may pass.")
 		qdel(L.pulling)
 		var/turf/LA = get_turf(pick(warp_points))
 		L.forceMove(LA)
@@ -129,7 +129,7 @@
 		for(var/obj/item/twohanded/chainsaw in L)
 			qdel(chainsaw)
 	else
-		to_chat(L, "You are not yet worthy of passing. Drag a severed head to the barrier to be allowed entry to the hall of champions.")
+		to_chat(L, "I am not yet worthy of passing. Drag a severed head to the barrier to be allowed entry to the hall of champions.")
 
 /obj/effect/landmark/shuttle_arena_safe
 	name = "hall of champions"

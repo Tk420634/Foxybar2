@@ -47,7 +47,7 @@
 
 /obj/item/reagent_containers/food/snacks/grown/pumpkin/attackby(obj/item/W as obj, mob/user as mob, params)
 	if(W.get_sharpness())
-		user.show_message(span_notice("You carve a face into [src]!"), MSG_VISUAL)
+		user.show_message(span_notice("I carve a face into [src]!"), MSG_VISUAL)
 		new /obj/item/clothing/head/hardhat/pumpkinhead(user.loc)
 		qdel(src)
 		return
@@ -83,7 +83,7 @@
 
 /obj/item/reagent_containers/food/snacks/grown/blumpkin/attackby(obj/item/W as obj, mob/user as mob, params)
 	if(W.get_sharpness())
-		user.show_message(span_notice("You carve a face into [src]!"), MSG_VISUAL)
+		user.show_message(span_notice("I carve a face into [src]!"), MSG_VISUAL)
 		new /obj/item/clothing/head/hardhat/pumpkinhead/blumpkin(user.loc)
 		qdel(src)
 		return

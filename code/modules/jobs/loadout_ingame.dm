@@ -10,7 +10,7 @@
 	var/datum/component/loadout_selector/LS = GetComponent(/datum/component/loadout_selector)
 	if (!istype(LS))
 		//Error message, shouldn't be seen but just incase
-		to_chat(src, ("You have either already selected a loadout, or have no options."))
+		to_chat(src, ("I have either already selected a loadout, or have no options."))
 
 		//If they don't have it, they shouldn't have this verb either
 		disable_loadout_select(src)
@@ -25,7 +25,7 @@
 	//Delay the notification message for a few seconds so players are less likely to miss it
 	spawn(5 SECONDS)
 		to_chat(src, ("-------------------------------------------"))
-		to_chat(src, ("Your job has additional loadout options you can choose from. Use the Loadout Selector in your hands, or the Select Loadout verb in the IC menu to choose your additional equipment."))
+		to_chat(src, ("My job has additional loadout options you can choose from. Use the Loadout Selector in your hands, or the Select Loadout verb in the IC menu to choose your additional equipment."))
 		to_chat(src, ("-------------------------------------------"))
 	verbs += /mob/proc/select_loadout
 	var/datum/component/loadout_selector/LS = AddComponent(/datum/component/loadout_selector) //Create the loadout selecting component

@@ -14,8 +14,8 @@
 	volume = 50
 	//Possible_states has the reagent id as key and a list of, in order, the icon_state, the name and the desc as values. Used in the on_reagent_change(changetype) to change names, descs and sprites.
 	var/list/possible_states = list(
-		/datum/reagent/consumable/ketchup = list("ketchup", "ketchup bottle", "You feel more American already."),
-		/datum/reagent/consumable/capsaicin = list("hotsauce", "hotsauce bottle", "You can almost TASTE the stomach ulcers now!"),
+		/datum/reagent/consumable/ketchup = list("ketchup", "ketchup bottle", "I feel more American already."),
+		/datum/reagent/consumable/capsaicin = list("hotsauce", "hotsauce bottle", "I can almost TASTE the stomach ulcers now!"),
 		/datum/reagent/consumable/enzyme = list("enzyme", "universal enzyme bottle", "Used in cooking various dishes"),
 		/datum/reagent/consumable/soysauce = list("soysauce", "soy sauce bottle", "A salty soy-based flavoring"),
 		/datum/reagent/consumable/frostoil = list("coldsauce", "coldsauce bottle", "Leaves the tongue numb in its passage"),
@@ -38,7 +38,7 @@
 		return 0
 
 	if(M == user)
-		user.visible_message(span_notice("[user] swallows some of contents of \the [src]."), span_notice("You swallow some of contents of \the [src]."))
+		user.visible_message(span_notice("[user] swallows some of contents of \the [src]."), span_notice("I swallow some of contents of \the [src]."))
 	else
 		user.visible_message(span_warning("[user] attempts to feed [M] from [src]."))
 		if(!do_mob(user, M))
@@ -69,7 +69,7 @@
 			return
 
 		var/trans = target.reagents.trans_to(src, amount_per_transfer_from_this, log = TRUE)
-		to_chat(user, span_notice("You fill [src] with [trans] units of the contents of [target]."))
+		to_chat(user, span_notice("I fill [src] with [trans] units of the contents of [target]."))
 
 	//Something like a glass or a food item. Player probably wants to transfer TO it.
 	else if(target.is_drainable() || istype(target, /obj/item/reagent_containers/food/snacks))
@@ -80,7 +80,7 @@
 			to_chat(user, span_warning("you can't add anymore to [target]!"))
 			return
 		var/trans = src.reagents.trans_to(target, amount_per_transfer_from_this, log = TRUE)
-		to_chat(user, span_notice("You transfer [trans] units of the condiment to [target]."))
+		to_chat(user, span_notice("I transfer [trans] units of the condiment to [target]."))
 
 /obj/item/reagent_containers/food/condiment/on_reagent_change(changetype)
 	if(!possible_states.len)
@@ -142,9 +142,9 @@
 		return
 	if(isturf(target))
 		if(!reagents.has_reagent(/datum/reagent/consumable/sodiumchloride, 2))
-			to_chat(user, span_warning("You don't have enough salt to make a pile!"))
+			to_chat(user, span_warning("I don't have enough salt to make a pile!"))
 			return
-		user.visible_message(span_notice("[user] shakes some salt onto [target]."), span_notice("You shake some salt onto [target]."))
+		user.visible_message(span_notice("[user] shakes some salt onto [target]."), span_notice("I shake some salt onto [target]."))
 		reagents.remove_reagent(/datum/reagent/consumable/sodiumchloride, 2)
 		new/obj/effect/decal/cleanable/salt(target)
 		return
@@ -167,7 +167,7 @@
 
 /obj/item/reagent_containers/food/condiment/milk
 	name = "milk"
-	desc = "You hope it hasn't expired, but its likely."
+	desc = "I hope it hasn't expired, but its likely."
 	icon_state = "milk"
 	item_state = "carton"
 	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
@@ -280,8 +280,8 @@
 	volume = 10
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list()
-	possible_states = list(/datum/reagent/consumable/ketchup = list("condi_ketchup", "Ketchup", "You feel more American already."),
-						/datum/reagent/consumable/capsaicin = list("condi_hotsauce", "Hotsauce", "You can almost TASTE the stomach ulcers now!"),
+	possible_states = list(/datum/reagent/consumable/ketchup = list("condi_ketchup", "Ketchup", "I feel more American already."),
+						/datum/reagent/consumable/capsaicin = list("condi_hotsauce", "Hotsauce", "I can almost TASTE the stomach ulcers now!"),
 						/datum/reagent/consumable/soysauce = list("condi_soysauce", "Soy Sauce", "A salty soy-based flavoring"),
 						/datum/reagent/consumable/frostoil = list("condi_frostoil", "Coldsauce", "Leaves the tongue numb in it's passage"),
 						/datum/reagent/consumable/sodiumchloride = list("condi_salt", "Salt Shaker", "Salt. From the West Coast, presumably"),
@@ -303,15 +303,15 @@
 	//You can tear the bag open above food to put the condiments on it, obviously.
 	if(istype(target, /obj/item/reagent_containers/food/snacks))
 		if(!reagents.total_volume)
-			to_chat(user, span_warning("You tear open [src], but there's nothing in it."))
+			to_chat(user, span_warning("I tear open [src], but there's nothing in it."))
 			qdel(src)
 			return
 		if(target.reagents.total_volume >= target.reagents.maximum_volume)
-			to_chat(user, span_warning("You tear open [src], but [target] is stacked so high that it just drips off!") )
+			to_chat(user, span_warning("I tear open [src], but [target] is stacked so high that it just drips off!") )
 			qdel(src)
 			return
 		else
-			to_chat(user, span_notice("You tear open [src] above [target] and the condiments drip onto it."))
+			to_chat(user, span_notice("I tear open [src] above [target] and the condiments drip onto it."))
 			src.reagents.trans_to(target, amount_per_transfer_from_this, log = TRUE)
 			qdel(src)
 

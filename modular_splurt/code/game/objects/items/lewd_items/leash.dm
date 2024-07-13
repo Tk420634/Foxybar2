@@ -49,12 +49,12 @@ Icons, maybe?
 	RegisterSignal(owner, COMSIG_LIVING_RESIST,PROC_REF(owner_resist))
 	redirect_component = owner
 	if(!owner.stat)
-		to_chat(owner, span_userdanger("You have been leashed!"))
+		to_chat(owner, span_userdanger("I have been leashed!"))
 	return ..()
 
 //This lets the pet resist their leash
 /datum/status_effect/leash_pet/proc/owner_resist()
-	to_chat(owner, "You reach for the hook on your collar...")
+	to_chat(owner, "I reach for the hook on your collar...")
 	//Determine how long it takes to remove the leash
 	var/deleash = 15
 	//if(owner.get_item_by_slot(SLOT_HANDCUFFED))  //Commented out because there is no clear way to make this proc BEFORE decuff on resist.
@@ -114,7 +114,7 @@ Icons, maybe?
 				leash_pet.add_movespeed_modifier(MOVESPEED_ID_LEASH)
 			for(var/mob/viewing in viewers(user, null))
 				if(viewing == leash_master)
-					to_chat(leash_master, span_warning("You have hooked a leash onto [leash_pet]!"))
+					to_chat(leash_master, span_warning("I have hooked a leash onto [leash_pet]!"))
 				else
 					viewing.show_message(span_warning("[leash_pet] has been leashed by [leash_master]!"), 1)
 			if(leash_pet.has_status_effect(/datum/status_effect/leash_dom)) //Pet leashed themself. They are not the dom
@@ -127,7 +127,7 @@ Icons, maybe?
 				if(!(leash_pet.get_item_by_slot(ITEM_SLOT_NECK))) //The pet has slipped their collar and is not the pet anymore.
 					for(var/mob/viewing in viewers(user, null))
 						viewing.show_message(span_notice("[leash_pet] has slipped out of their collar!!"), 1)
-					to_chat(leash_pet, span_notice("You have slipped out of your collar!"))
+					to_chat(leash_pet, span_notice("I have slipped out of your collar!"))
 					to_chat(loc, span_notice("[leash_pet] has slipped out of their collar!"))
 					leash_pet.remove_status_effect(/datum/status_effect/leash_pet)
 
@@ -149,7 +149,7 @@ Icons, maybe?
 					return
 
 	else //No collar, no fun
-		var/leash_message = pick("Your pet needs a collar")
+		var/leash_message = pick("My pet needs a collar")
 		to_chat(user, span_notice("[leash_message]"))
 
 //Called when the leash is used in hand
@@ -208,7 +208,7 @@ Icons, maybe?
 			if(viewing == leash_master)
 				to_chat(leash_master, span_warning("The leash snapped free from your pet!"))
 			if(viewing == leash_pet)
-				to_chat(leash_pet, span_warning("Your leash has popped from your collar!"))
+				to_chat(leash_pet, span_warning("My leash has popped from your collar!"))
 			else
 				viewing.show_message(span_warning("[leash_break_message]"), 1)
 		leash_pet.apply_effect(20, EFFECT_KNOCKDOWN, 0)
@@ -315,7 +315,7 @@ Icons, maybe?
 		var/leash_break_message = "The leash snapped free from [leash_pet]!"
 		for(var/mob/viewing in viewers(leash_pet, null))
 			if(viewing == leash_pet)
-				to_chat(leash_pet, span_warning("Your leash has popped from your collar!"))
+				to_chat(leash_pet, span_warning("My leash has popped from your collar!"))
 			else
 				viewing.show_message(span_warning("[leash_break_message]"), 1)
 		leash_pet.apply_effect(20, EFFECT_KNOCKDOWN, 0)

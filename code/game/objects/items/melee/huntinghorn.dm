@@ -120,13 +120,13 @@
 		currentnote = LOW_NOTE
 	switch(currentnote)
 		if(LOW_NOTE)
-			to_chat(user, span_info("You prepare a low note."))
+			to_chat(user, span_info("I prepare a low note."))
 			return
 		if(MID_NOTE)
-			to_chat(user, span_info("You prepare a middle note."))
+			to_chat(user, span_info("I prepare a middle note."))
 			return
 		if(HIGH_NOTE)
-			to_chat(user, span_info("You prepare a high note."))
+			to_chat(user, span_info("I prepare a high note."))
 			return
 
 /// When we wield a HH, wait for a delay before starting to record notes.
@@ -152,7 +152,7 @@
 	if(readytoplay)
 		to_chat(user, span_info("You're ready to perform!"))
 	else
-		to_chat(user, span_info("You relax, finished with your performance for now."))
+		to_chat(user, span_info("I relax, finished with your performance for now."))
 	currentsongs.Cut()
 	notes.Cut()
 
@@ -199,13 +199,13 @@
 /obj/item/huntinghorn/proc/perform(mob/user)
 	// or maybe not?
 	if(!currentsongs.len)
-		to_chat(user, "You haven't prepared any songs!")
+		to_chat(user, "I haven't prepared any songs!")
 		return
 	// Okay, let's get started.
 	if(do_after(user, 4 SECONDS, needhand = FALSE, target = src, public_progbar = TRUE))
 		// We did it! let's apply all the effects now.
 		for(var/datum/huntinghornsong/song in currentsongs)
-			to_chat(user, span_info("You play the [capitalize(song.name)]!"))
+			to_chat(user, span_info("I play the [capitalize(song.name)]!"))
 			// and play the audio.
 			var/sound/performsound = sound('sound/huntinghorn/guitarrifshort.wav')
 			performsound.volume = 50

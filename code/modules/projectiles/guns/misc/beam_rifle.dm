@@ -103,13 +103,13 @@
 			zoom_lock = 0
 		switch(zoom_lock)
 			if(ZOOM_LOCK_AUTOZOOM_FREEMOVE)
-				to_chat(owner, span_boldnotice("You switch [src]'s zooming processor to free directional."))
+				to_chat(owner, span_boldnotice("I switch [src]'s zooming processor to free directional."))
 			if(ZOOM_LOCK_AUTOZOOM_ANGLELOCK)
-				to_chat(owner, span_boldnotice("You switch [src]'s zooming processor to locked directional."))
+				to_chat(owner, span_boldnotice("I switch [src]'s zooming processor to locked directional."))
 			if(ZOOM_LOCK_CENTER_VIEW)
-				to_chat(owner, span_boldnotice("You switch [src]'s zooming processor to center mode."))
+				to_chat(owner, span_boldnotice("I switch [src]'s zooming processor to center mode."))
 			if(ZOOM_LOCK_OFF)
-				to_chat(owner, span_boldnotice("You disable [src]'s zooming system."))
+				to_chat(owner, span_boldnotice("I disable [src]'s zooming system."))
 		reset_zooming()
 	else
 		return ..()
@@ -162,7 +162,7 @@
 		projectile_setting_pierce = FALSE
 		return
 	projectile_setting_pierce = !projectile_setting_pierce
-	to_chat(user, span_boldnotice("You set \the [src] to [projectile_setting_pierce? "pierce":"impact"] mode."))
+	to_chat(user, span_boldnotice("I set \the [src] to [projectile_setting_pierce? "pierce":"impact"] mode."))
 	aiming_beam()
 
 /obj/item/gun/energy/beam_rifle/Initialize()

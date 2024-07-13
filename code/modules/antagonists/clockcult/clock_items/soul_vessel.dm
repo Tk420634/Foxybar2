@@ -8,7 +8,7 @@
 	icon_state = "soul_vessel"
 	req_access = list()
 	braintype = "Servant"
-	begin_activation_message = span_brass("You activate the cogwheel. It hitches and stalls as it begins spinning.")
+	begin_activation_message = span_brass("I activate the cogwheel. It hitches and stalls as it begins spinning.")
 	success_message = span_brass("The cogwheel's rotation smooths out as the soul vessel activates.")
 	fail_message = span_warning("The cogwheel creaks and grinds to a halt. Maybe you could try again?")
 	new_role = "Soul Vessel"
@@ -50,7 +50,7 @@
 
 /obj/item/mmi/posibrain/soul_vessel/attack_self(mob/living/user)
 	if(!is_servant_of_ratvar(user))
-		to_chat(user, span_warning("You fiddle around with [src], to no avail."))
+		to_chat(user, span_warning("I fiddle around with [src], to no avail."))
 		return FALSE
 	..()
 
@@ -101,7 +101,7 @@
 	braintype = picked_name
 	brainmob.timeofhostdeath = H.timeofdeath
 	user.visible_message(span_warning("[user] presses [src] to [H]'s head, ripping through the skull and carefully extracting the brain!"), \
-	span_brass("You extract [H]'s consciousness from [H.p_their()] body, trapping it in the soul vessel."))
+	span_brass("I extract [H]'s consciousness from [H.p_their()] body, trapping it in the soul vessel."))
 	transfer_personality(H)
 	brainmob.fully_replace_character_name(null, "[braintype] [H.real_name]")
 	name = "[initial(name)] ([brainmob.name])"

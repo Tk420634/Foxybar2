@@ -15,7 +15,7 @@
 	. = ..()
 	RegisterSignal(user, COMSIG_ATOM_DIR_CHANGE,PROC_REF(rotate))
 	listeningTo = user
-	user.visible_message(span_notice("[user] holds [src] up to [user.p_their()] eyes."), span_notice("You hold [src] up to your eyes."))
+	user.visible_message(span_notice("[user] holds [src] up to [user.p_their()] eyes."), span_notice("I hold [src] up to your eyes."))
 	item_state = "binoculars_wielded"
 	user.regenerate_icons()
 	if(!user?.client)
@@ -28,7 +28,7 @@
 	if(is_above_level(T.z)) //higher elevation equals higher view range
 		src.zoom_out_amt = 19
 		src.zoom_amt = 10
-		to_chat(user,"You see the horizon more clearly from this elevation.")
+		to_chat(user,"I see the horizon more clearly from this elevation.")
 	else if(!is_above_level(T.z))
 		src.zoom_out_amt = 6
 		src.zoom_amt = 10
@@ -71,7 +71,7 @@
 		UnregisterSignal(user, COMSIG_MOVABLE_MOVED)
 		UnregisterSignal(user, COMSIG_ATOM_DIR_CHANGE)
 		listeningTo = null
-	user.visible_message(span_notice("[user] lowers [src]."), span_notice("You lower [src]."))
+	user.visible_message(span_notice("[user] lowers [src]."), span_notice("I lower [src]."))
 	item_state = "binoculars"
 	user.regenerate_icons()
 	if(user && user.client)

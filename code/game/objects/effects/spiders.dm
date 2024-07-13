@@ -46,7 +46,7 @@
 		if(istype(mover.pulledby, /mob/living/simple_animal/hostile/poison/giant_spider))
 			return TRUE
 		if(prob(50))
-			to_chat(mover, span_danger("You get stuck in \the [src] for a moment."))
+			to_chat(mover, span_danger("I get stuck in \the [src] for a moment."))
 			return FALSE
 	else if(istype(mover, /obj/item/projectile))
 		return prob(30)
@@ -69,7 +69,7 @@
 		if(mover.pulledby == allowed_mob)
 			return TRUE
 		if(prob(50))
-			to_chat(mover, span_danger("You get stuck in \the [src] for a moment."))
+			to_chat(mover, span_danger("I get stuck in \the [src] for a moment."))
 			return FALSE
 		return TRUE
 	else if(istype(mover, /obj/item/projectile))
@@ -161,7 +161,7 @@
 	. = ..()
 	if(user.a_intent != INTENT_HELP)
 		user.do_attack_animation(src)
-		user.visible_message(span_warning("[user] splats [src]."), span_warning("You splat [src]."), span_italic("You hear a splat..."))
+		user.visible_message(span_warning("[user] splats [src]."), span_warning("I splat [src]."), span_italic("I hear a splat..."))
 		playsound(loc, 'sound/effects/snap.ogg', 25)
 		qdel(src)
 		return TRUE
@@ -183,7 +183,7 @@
 			var/obj/machinery/atmospherics/components/unary/vent_pump/exit_vent = pick(vents)
 			if(prob(50))
 				visible_message("<B>[src] scrambles into the ventilation ducts!</B>", \
-								span_italic("You hear something scampering through the ventilation ducts."))
+								span_italic("I hear something scampering through the ventilation ducts."))
 
 			spawn(rand(20,60))
 				forceMove(exit_vent)
@@ -196,7 +196,7 @@
 						return
 
 					if(prob(50))
-						audible_message(span_italic("You hear something scampering through the ventilation ducts."))
+						audible_message(span_italic("I hear something scampering through the ventilation ducts."))
 					sleep(travel_time)
 
 					if(!exit_vent || exit_vent.welded)
@@ -256,8 +256,8 @@
 
 /obj/structure/spider/cocoon/container_resist(mob/living/user)
 	var/breakout_time = 600
-	to_chat(user, span_notice("You struggle against the tight bonds... (This will take about [DisplayTimeText(breakout_time)].)"))
-	visible_message("You see something struggling and writhing in \the [src]!")
+	to_chat(user, span_notice("I struggle against the tight bonds... (This will take about [DisplayTimeText(breakout_time)].)"))
+	visible_message("I see something struggling and writhing in \the [src]!")
 	if(do_after(user,(breakout_time), target = src))
 		if(!user || user.stat != CONSCIOUS || user.loc != src)
 			return

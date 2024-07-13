@@ -50,12 +50,12 @@
 	src.min_distance = min_distance
 
 	var/mob/living/carbon/P = parent
-	to_chat(P, span_notice("You are now able to launch tackles! You can do so by activating throw intent, and clicking on your target with an empty hand."))
+	to_chat(P, span_notice("I am now able to launch tackles! You can do so by activating throw intent, and clicking on your target with an empty hand."))
 	addtimer(CALLBACK(src,PROC_REF(resetTackle)), max(base_knockdown, 3 SECONDS), TIMER_STOPPABLE)
 
 /datum/component/tackler/Destroy()
 	var/mob/living/carbon/P = parent
-	to_chat(P, span_notice("You can no longer tackle."))
+	to_chat(P, span_notice("I can no longer tackle."))
 	P.tackling = FALSE
 	..()
 
@@ -82,11 +82,11 @@
 		return
 
 	if(user.restrained())
-		to_chat(user, span_warning("You need free use of your hands to tackle!"))
+		to_chat(user, span_warning("I need free use of your hands to tackle!"))
 		return
 
 	if(!(user.mobility_flags & MOBILITY_STAND))
-		to_chat(user, span_warning("You must be standing to tackle!"))
+		to_chat(user, span_warning("I must be standing to tackle!"))
 		return
 
 	if(user.tackling)
@@ -94,7 +94,7 @@
 		return
 
 	if(user.has_status_effect(STATUS_EFFECT_TASED)) // can't tackle if you just got tased
-		to_chat(user, span_warning("You can't tackle while tased!"))
+		to_chat(user, span_warning("I can't tackle while tased!"))
 		return
 
 	user.face_atom(A)
@@ -109,9 +109,9 @@
 
 	var/leap_word = iscatperson(user) ? "pounce" : "leap" ///If cat, "pounce" instead of "leap".
 	if(can_see(user, A, 7))
-		user.visible_message(span_warning("[user] [leap_word]s at [A]!"), span_danger("You [leap_word] at [A]!"))
+		user.visible_message(span_warning("[user] [leap_word]s at [A]!"), span_danger("I [leap_word] at [A]!"))
 	else
-		user.visible_message(span_warning("[user] [leap_word]s!"), span_danger("You [leap_word]!"))
+		user.visible_message(span_warning("[user] [leap_word]s!"), span_danger("I [leap_word]!"))
 
 	if(get_dist(user, A) < min_distance)
 		A = get_ranged_target_turf(user, get_dir(user, A), min_distance) //TODO: this only works in cardinals/diagonals, make it work with in-betweens too!
@@ -169,7 +169,7 @@
 
 	switch(roll)
 		if(-INFINITY to -5)
-			user.visible_message(span_danger("[user] botches [user.p_their()] [tackle_word] and slams [user.p_their()] head into [target], knocking [user.p_them()]self silly!"), span_userdanger("You botch your [tackle_word] and slam your head into [target], knocking yourself silly!"), target)
+			user.visible_message(span_danger("[user] botches [user.p_their()] [tackle_word] and slams [user.p_their()] head into [target], knocking [user.p_them()]self silly!"), span_userdanger("I botch your [tackle_word] and slam your head into [target], knocking yourself silly!"), target)
 			to_chat(target, span_userdanger("[user] botches [user.p_their()] [tackle_word] and slams [user.p_their()] head into you, knocking [user.p_them()]self silly!"))
 
 			user.Paralyze(30)
@@ -179,14 +179,14 @@
 			user.gain_trauma(/datum/brain_trauma/mild/concussion)
 
 		if(-4 to -2) // glancing blow at best
-			user.visible_message(span_warning("[user] lands a weak [tackle_word] on [target], briefly knocking [target.p_them()] off-balance!"), span_userdanger("You land a weak [tackle_word] on [target], briefly knocking [target.p_them()] off-balance!"), target)
+			user.visible_message(span_warning("[user] lands a weak [tackle_word] on [target], briefly knocking [target.p_them()] off-balance!"), span_userdanger("I land a weak [tackle_word] on [target], briefly knocking [target.p_them()] off-balance!"), target)
 			to_chat(target, span_userdanger("[user] lands a weak [tackle_word] on you, briefly knocking you off-balance!"))
 			user.Knockdown(30)
 			target.adjustStaminaLoss(15)
 			target.apply_status_effect(STATUS_EFFECT_TASED_WEAK, 6 SECONDS)
 
 		if(-1 to 0) // decent hit, both parties are about equally inconvenienced
-			user.visible_message(span_warning("[user] lands a passable [tackle_word] on [target], sending them both tumbling!"), span_userdanger("You land a passable [tackle_word] on [target], sending you both tumbling!"), target)
+			user.visible_message(span_warning("[user] lands a passable [tackle_word] on [target], sending them both tumbling!"), span_userdanger("I land a passable [tackle_word] on [target], sending you both tumbling!"), target)
 			to_chat(target, span_userdanger("[user] lands a passable [tackle_word] on you, sending you both tumbling!"))
 
 			target.adjustStaminaLoss(stamina_cost * 1.5)
@@ -195,7 +195,7 @@
 			target.Knockdown(30)
 
 		if(1 to 2) // solid hit, tackler has a slight advantage
-			user.visible_message(span_warning("[user] lands a solid [tackle_word] on [target], knocking them both down hard!"), span_userdanger("You land a solid [tackle_word] on [target], knocking you both down hard!"), target)
+			user.visible_message(span_warning("[user] lands a solid [tackle_word] on [target], knocking them both down hard!"), span_userdanger("I land a solid [tackle_word] on [target], knocking you both down hard!"), target)
 			to_chat(target, span_userdanger("[user] lands a solid [tackle_word] on you, knocking you both down hard!"))
 
 			target.adjustStaminaLoss(40)
@@ -204,7 +204,7 @@
 			target.Knockdown(20)
 
 		if(3 to 4) // really good hit, the target is definitely worse off here. Without positive modifiers, this is as good a tackle as you can land
-			user.visible_message(span_warning("[user] lands an expert [tackle_word] on [target], knocking [target.p_them()] down hard while landing on [user.p_their()] feet with a passive grip!"), span_userdanger("You land an expert [tackle_word] on [target], knocking [target.p_them()] down hard while landing on your feet with a passive grip!"), target)
+			user.visible_message(span_warning("[user] lands an expert [tackle_word] on [target], knocking [target.p_them()] down hard while landing on [user.p_their()] feet with a passive grip!"), span_userdanger("I land an expert [tackle_word] on [target], knocking [target.p_them()] down hard while landing on your feet with a passive grip!"), target)
 			to_chat(target, span_userdanger("[user] lands an expert [tackle_word] on you, knocking you down hard and maintaining a passive grab!"))
 
 			user.SetKnockdown(0)
@@ -217,7 +217,7 @@
 				target.grabbedby(user)
 
 		if(5 to INFINITY) // absolutely BODIED
-			user.visible_message(span_warning("[user] lands a monster [tackle_word] on [target], knocking [target.p_them()] senseless and applying an aggressive pin!"), span_userdanger("You land a monster [tackle_word] on [target], knocking [target.p_them()] senseless and applying an aggressive pin!"), target)
+			user.visible_message(span_warning("[user] lands a monster [tackle_word] on [target], knocking [target.p_them()] senseless and applying an aggressive pin!"), span_userdanger("I land a monster [tackle_word] on [target], knocking [target.p_them()] senseless and applying an aggressive pin!"), target)
 			to_chat(target, span_userdanger("[user] lands a monster [tackle_word] on you, knocking you senseless and aggressively pinning you!"))
 
 			user.SetKnockdown(0)
@@ -276,19 +276,19 @@
 		if(-INFINITY to 1)
 			user.visible_message(
 				span_warning("[user] rams into [hit] with a flying tackle!"), 
-				span_userdanger("You rams into [hit] with a flying tackle!"), 
+				span_userdanger("I rams into [hit] with a flying tackle!"), 
 				ignored_mobs = list(hit))
 			to_chat(hit, span_userdanger("[user] rams into you!"))
 		if(1.1 to 3)
 			user.visible_message(
 				span_warning("[user] slams into [hit] with a deadly charge!"), 
-				span_userdanger("You slam into [hit] with a deadly charge!"), 
+				span_userdanger("I slam into [hit] with a deadly charge!"), 
 				ignored_mobs = list(hit))
 			to_chat(hit, span_userdanger("[user] slams into you!"))
 		if(3.1 to INFINITY)
 			user.visible_message(
 				span_warning("[user] CRASHES into [hit] with an atomic clothesline!"), 
-				span_userdanger("You CRASH into [hit] with a atomic clothesline!"), 
+				span_userdanger("I CRASH into [hit] with a atomic clothesline!"), 
 				ignored_mobs = list(hit))
 			to_chat(hit, span_userdanger("[user] CRASHES into you!"))
 	playsound(user, 'sound/effects/flesh_impact_1.ogg', 60, TRUE)
@@ -340,19 +340,19 @@
 		if(-INFINITY to 1)
 			user.visible_message(
 				span_warning("[user] rams into [hit] with a flying tackle!"), 
-				span_userdanger("You rams into [hit] with a flying tackle!"), 
+				span_userdanger("I rams into [hit] with a flying tackle!"), 
 				ignored_mobs = list(hit))
 			to_chat(hit, span_userdanger("[user] rams into you!"))
 		if(1.1 to 3)
 			user.visible_message(
 				span_warning("[user] slams into [hit] with a deadly charge!"), 
-				span_userdanger("You slam into [hit] with a deadly charge!"), 
+				span_userdanger("I slam into [hit] with a deadly charge!"), 
 				ignored_mobs = list(hit))
 			to_chat(hit, span_userdanger("[user] slams into you!"))
 		if(3.1 to INFINITY)
 			user.visible_message(
 				span_warning("[user] CRASHES into [hit] with an powerful dropkick!"), 
-				span_userdanger("You CRASH into [hit] with a powerful dropkick!"), 
+				span_userdanger("I CRASH into [hit] with a powerful dropkick!"), 
 				ignored_mobs = list(hit))
 			to_chat(hit, span_userdanger("[user] CRASHES into you!"))
 	playsound(user, 'sound/effects/flesh_impact_1.ogg', 60, TRUE)
@@ -506,7 +506,7 @@
 		if(99 to INFINITY)
 			// Used to cripple you with severe brain trauma, while fun in the code, very unfun in-game if you got unlucky and there were no doctors
 			// Now it's just a worse variation than the second worse one. Be careful around trees
-			user.visible_message(span_danger("[user] slams face-first into [hit] at an awkward angle! Holy shit!"), span_userdanger("You slam face-first into [hit] at an awkward angle! Holy shit!"))
+			user.visible_message(span_danger("[user] slams face-first into [hit] at an awkward angle! Holy shit!"), span_userdanger("I slam face-first into [hit] at an awkward angle! Holy shit!"))
 			user.adjustStaminaLoss(30)
 			user.adjustBruteLoss(80)
 			user.Unconscious(100)
@@ -520,7 +520,7 @@
 			user.clear_fullscreen("flash", 4.5)
 
 		if(94 to 98)
-			user.visible_message(span_danger("[user] slams face-first into [hit] with a concerning squish, immediately going limp!"), span_userdanger("You slam face-first into [hit], and immediately lose consciousness!"))
+			user.visible_message(span_danger("[user] slams face-first into [hit] with a concerning squish, immediately going limp!"), span_userdanger("I slam face-first into [hit], and immediately lose consciousness!"))
 			user.adjustStaminaLoss(100)
 			user.adjustBruteLoss(30)
 			user.Unconscious(100)
@@ -531,7 +531,7 @@
 			user.clear_fullscreen("flash", 3.5)
 
 		if(84 to 93)
-			user.visible_message(span_danger("[user] slams head-first into [hit], suffering major cranial trauma!"), span_userdanger("You slam head-first into [hit], and the world explodes around you!"))
+			user.visible_message(span_danger("[user] slams head-first into [hit], suffering major cranial trauma!"), span_userdanger("I slam head-first into [hit], and the world explodes around you!"))
 			user.adjustStaminaLoss(30)
 			user.adjustBruteLoss(30)
 			user.confused += 15
@@ -544,7 +544,7 @@
 			user.clear_fullscreen("flash", 2.5)
 
 		if(64 to 83)
-			user.visible_message(span_danger("[user] slams hard into [hit], knocking [user.p_them()] senseless!"), span_userdanger("You slam hard into [hit], knocking yourself senseless!"))
+			user.visible_message(span_danger("[user] slams hard into [hit], knocking [user.p_them()] senseless!"), span_userdanger("I slam hard into [hit], knocking yourself senseless!"))
 			user.adjustStaminaLoss(30)
 			user.adjustBruteLoss(10)
 			user.confused += 10
@@ -552,7 +552,7 @@
 			shake_camera(user, 3, 4)
 
 		if(1 to 63)
-			user.visible_message(span_danger("[user] slams into [hit]!"), span_userdanger("You slam into [hit]!"))
+			user.visible_message(span_danger("[user] slams into [hit]!"), span_userdanger("I slam into [hit]!"))
 			user.adjustStaminaLoss(20)
 			user.adjustBruteLoss(10)
 			user.DefaultCombatKnockdown(30)
@@ -564,7 +564,7 @@
 /datum/component/tackler/proc/resetTackle()
 	var/mob/living/carbon/P = parent
 	P.tackling = FALSE
-	to_chat(P, span_green("You can tackle again!"))
+	to_chat(P, span_green("I can tackle again!"))
 	QDEL_NULL(tackle)
 	UnregisterSignal(parent, COMSIG_MOVABLE_MOVED)
 
@@ -584,10 +584,10 @@
 		user.adjustStaminaLoss(10 * speed)
 		user.DefaultCombatKnockdown(40)
 		user.Paralyze(5)
-		user.visible_message(span_danger("[user] slams into [W] and shatters it, shredding [user.p_them()]self with glass!"), span_userdanger("You slam into [W] and shatter it, shredding yourself with glass!"))
+		user.visible_message(span_danger("[user] slams into [W] and shatters it, shredding [user.p_them()]self with glass!"), span_userdanger("I slam into [W] and shatter it, shredding yourself with glass!"))
 
 	else
-		user.visible_message(span_danger("[user] slams into [W] like a bug, then slowly slides off it!"), span_userdanger("You slam into [W] like a bug, then slowly slide off it!"))
+		user.visible_message(span_danger("[user] slams into [W] like a bug, then slowly slides off it!"), span_userdanger("I slam into [W] like a bug, then slowly slide off it!"))
 		user.Paralyze(2)
 		user.DefaultCombatKnockdown(20)
 		W.take_damage(20 * speed, attacked_by = user)
@@ -631,7 +631,7 @@
 		else
 			HOW_big_of_a_miss_did_we_just_make = ", making a ginormous mess!" // an extra exclamation point!! for emphasis!!!
 
-	owner.visible_message(span_danger("[owner] trips over [kevved] and slams into it face-first[HOW_big_of_a_miss_did_we_just_make]!"), span_userdanger("You trip over [kevved] and slam into it face-first[HOW_big_of_a_miss_did_we_just_make]!"))
+	owner.visible_message(span_danger("[owner] trips over [kevved] and slams into it face-first[HOW_big_of_a_miss_did_we_just_make]!"), span_userdanger("I trip over [kevved] and slam into it face-first[HOW_big_of_a_miss_did_we_just_make]!"))
 	owner.adjustStaminaLoss(20 + messes.len * 2)
 	owner.adjustBruteLoss(10 + messes.len)
 	owner.Paralyze(2 * messes.len)

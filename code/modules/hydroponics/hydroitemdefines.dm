@@ -15,13 +15,13 @@
 /obj/item/plant_analyzer/attack_self(mob/user)
 	. = ..()
 	scan_mode = !scan_mode
-	to_chat(user, span_notice("You switch [src] to [scan_mode == PLANT_SCANMODE_CHEMICALS ? "scan for chemical reagents and traits" : "scan for plant growth statistics"]."))
+	to_chat(user, span_notice("I switch [src] to [scan_mode == PLANT_SCANMODE_CHEMICALS ? "scan for chemical reagents and traits" : "scan for plant growth statistics"]."))
 
 /obj/item/plant_analyzer/attack(mob/living/M, mob/living/carbon/human/user)
 	//Checks if target is a podman
 	if(ispodperson(M))
 		user.visible_message(span_notice("[user] analyzes [M]'s vitals."), \
-							span_notice("You analyze [M]'s vitals."))
+							span_notice("I analyze [M]'s vitals."))
 		if(scan_mode== PLANT_SCANMODE_STATS)
 			healthscan(user, M, advanced = TRUE)
 		else

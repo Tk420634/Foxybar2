@@ -97,14 +97,14 @@
 /obj/structure/noticeboard/attackby(obj/item/O, mob/user, params)
 	if(istype(O, /obj/item/paper) || istype(O, /obj/item/photo))
 		if(!allowed(user))
-			to_chat(user, span_info("You are not authorized to add notices"))
+			to_chat(user, span_info("I am not authorized to add notices"))
 			return
 		if(notices < noticeLimit)
 			if(!user.transferItemToLoc(O, src))
 				return
 			notices++
 			update_icon()
-			to_chat(user, span_notice("You pin the [O] to the noticeboard."))
+			to_chat(user, span_notice("I pin the [O] to the noticeboard."))
 		else
 			to_chat(user, span_notice("The notice board is full"))
 	else

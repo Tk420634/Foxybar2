@@ -91,7 +91,7 @@
 	I.play_tool_sound(src)
 	if(generator)
 		disconnectFromGenerator()
-	to_chat(user, span_notice("You [anchored?"secure":"unsecure"] [src]."))
+	to_chat(user, span_notice("I [anchored?"secure":"unsecure"] [src]."))
 
 
 	var/obj/machinery/atmospherics/node1 = nodes[1]
@@ -142,7 +142,7 @@
 	if(generator)
 		disconnectFromGenerator()
 	mode = !mode
-	to_chat(user, span_notice("You set [src] to [mode?"cold":"hot"] mode."))
+	to_chat(user, span_notice("I set [src] to [mode?"cold":"hot"] mode."))
 	return TRUE
 
 /obj/machinery/atmospherics/components/binary/circulator/screwdriver_act(mob/user, obj/item/I)
@@ -150,7 +150,7 @@
 		return TRUE
 	panel_open = !panel_open
 	I.play_tool_sound(src)
-	to_chat(user, span_notice("You [panel_open?"open":"close"] the panel on [src]."))
+	to_chat(user, span_notice("I [panel_open?"open":"close"] the panel on [src]."))
 	return TRUE
 
 /obj/machinery/atmospherics/components/binary/circulator/crowbar_act(mob/user, obj/item/I)
@@ -187,5 +187,5 @@
 		return
 
 	flipped = !flipped
-	to_chat(usr, span_notice("You flip [src]."))
+	to_chat(usr, span_notice("I flip [src]."))
 	update_icon()

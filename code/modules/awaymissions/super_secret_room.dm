@@ -25,7 +25,7 @@
 
 	switch(times_spoken_to)
 		if(0)
-			SpeakPeace(list("Welcome to the error handling room.","Something's goofed up bad to send you here.","You should probably tell an admin what you were doing, or make a bug report."))
+			SpeakPeace(list("Welcome to the error handling room.","Something's goofed up bad to send you here.","I should probably tell an admin what you were doing, or make a bug report."))
 			for(var/obj/structure/signpost/salvation/S in orange(7))
 				S.invisibility = 0
 				var/datum/effect_system/smoke_spread/smoke = new
@@ -74,11 +74,11 @@
 			the_ride.name = "Overextending The Joke: Second Place"
 			the_ride.desc = "There's a point where this needed to stop, and we've clearly passed it."
 		if(252)
-			SpeakPeace(list("You know what this means right?", "Of course it's not over!", "The question becomes now is it more impressive to solider on to an unknown finish, or to have to common sense to stop here?"))
+			SpeakPeace(list("I know what this means right?", "Of course it's not over!", "The question becomes now is it more impressive to solider on to an unknown finish, or to have to common sense to stop here?"))
 		if(666)
-			SpeakPeace(list("The darkness in your heart won't be filled by simple platitudes.","You won't stop now, you're in this to the end.", "Will you reach the finish line before the round ends?"))
+			SpeakPeace(list("The darkness in your heart won't be filled by simple platitudes.","I won't stop now, you're in this to the end.", "Will you reach the finish line before the round ends?"))
 		if(1000)
-			SpeakPeace(list("The ends exists somewhere beyond meaningful milestones.", "There will be no more messages until then.", "You disgust me."))
+			SpeakPeace(list("The ends exists somewhere beyond meaningful milestones.", "There will be no more messages until then.", "I disgust me."))
 		if(5643)
 			SSmedals.UnlockMedal(MEDAL_TIMEWASTE, user.client)
 			var/obj/item/reagent_containers/food/drinks/trophy/gold_cup/never_ends = new(get_turf(user))
@@ -118,7 +118,7 @@
 
 /obj/item/rupee
 	name = "weird crystal"
-	desc = "Your excitement boils away as you realize it's just colored glass. Why would someone hoard these things?"
+	desc = "My excitement boils away as you realize it's just colored glass. Why would someone hoard these things?"
 	icon = 'icons/obj/economy.dmi'
 	icon_state = "rupee"
 	w_class = WEIGHT_CLASS_SMALL

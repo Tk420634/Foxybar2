@@ -27,7 +27,7 @@
 		to_chat(user, span_warning("They are not ready smell something so pungent yet, I should wait a moment."))
 		return
 	if(!user.IsAdvancedToolUser())
-		to_chat(user, span_warning("You don't know how to use [src]!"))
+		to_chat(user, span_warning("I don't know how to use [src]!"))
 		return
 	if(!iscarbon(target))
 		to_chat(user, span_warning("Do smelling salts even work on that?"))
@@ -69,7 +69,7 @@
 	if(!do_after(user, time_to_use, target = revived_mob))
 		in_use = FALSE
 		return
-	user.visible_message(span_notice("[user] starts waving [src] under [revived_mob]'s nose."), span_warning("You wave [src] under [revived_mob]'s nose."))
+	user.visible_message(span_notice("[user] starts waving [src] under [revived_mob]'s nose."), span_warning("I wave [src] under [revived_mob]'s nose."))
 	var/time_since_death = world.time - revived_mob.timeofdeath
 	// past this much time the patient is unrecoverable
 	// (in deciseconds)

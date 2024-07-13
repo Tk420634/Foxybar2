@@ -25,7 +25,7 @@
 	switch(mode)
 		if(WIRE)
 			selected_io = io
-			to_chat(user, span_notice("You attach a data wire to \the [selected_io.holder]'s [selected_io.name] data channel."))
+			to_chat(user, span_notice("I attach a data wire to \the [selected_io.holder]'s [selected_io.name] data channel."))
 			mode = WIRING
 			update_icon()
 		if(WIRING)
@@ -41,7 +41,7 @@
 				return
 			selected_io.connect_pin(io)
 
-			to_chat(user, span_notice("You connect \the [selected_io.holder]'s [selected_io.name] to \the [io.holder]'s [io.name]."))
+			to_chat(user, span_notice("I connect \the [selected_io.holder]'s [selected_io.name] to \the [io.holder]'s [io.name]."))
 			mode = WIRE
 			update_icon()
 			selected_io.holder.interact(user) // This is to update the UI.
@@ -53,7 +53,7 @@
 				to_chat(user, span_warning("There is nothing connected to \the [selected_io] data channel."))
 				selected_io = null
 				return
-			to_chat(user, span_notice("You prepare to detach a data wire from \the [selected_io.holder]'s [selected_io.name] data channel."))
+			to_chat(user, span_notice("I prepare to detach a data wire from \the [selected_io.holder]'s [selected_io.name] data channel."))
 			mode = UNWIRING
 			update_icon()
 			return
@@ -82,18 +82,18 @@
 			mode = UNWIRE
 		if(WIRING)
 			if(selected_io)
-				to_chat(user, span_notice("You decide not to wire the data channel."))
+				to_chat(user, span_notice("I decide not to wire the data channel."))
 			selected_io = null
 			mode = WIRE
 		if(UNWIRE)
 			mode = WIRE
 		if(UNWIRING)
 			if(selected_io)
-				to_chat(user, span_notice("You decide not to disconnect the data channel."))
+				to_chat(user, span_notice("I decide not to disconnect the data channel."))
 			selected_io = null
 			mode = UNWIRE
 	update_icon()
-	to_chat(user, span_notice("You set \the [src] to [mode]."))
+	to_chat(user, span_notice("I set \the [src] to [mode]."))
 
 #undef WIRE
 #undef WIRING

@@ -195,14 +195,14 @@
 	if(!anchored)
 		kill_circs()
 	connect_to_network()
-	to_chat(user, span_notice("You [anchored?"secure":"unsecure"] [src]."))
+	to_chat(user, span_notice("I [anchored?"secure":"unsecure"] [src]."))
 	return TRUE
 
 /obj/machinery/power/generator/multitool_act(mob/living/user, obj/item/I)
 	if(!anchored)
 		return
 	find_circs()
-	to_chat(user, span_notice("You update [src]'s circulator links."))
+	to_chat(user, span_notice("I update [src]'s circulator links."))
 	return TRUE
 
 /obj/machinery/power/generator/screwdriver_act(mob/user, obj/item/I)
@@ -210,7 +210,7 @@
 		return TRUE
 	panel_open = !panel_open
 	I.play_tool_sound(src)
-	to_chat(user, span_notice("You [panel_open?"open":"close"] the panel on [src]."))
+	to_chat(user, span_notice("I [panel_open?"open":"close"] the panel on [src]."))
 	return TRUE
 
 /obj/machinery/power/generator/crowbar_act(mob/user, obj/item/I)

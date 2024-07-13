@@ -684,7 +684,7 @@
 					rolelist_dict[initial(path.name) + " ([uppertext(initial(path.team))])"] = path
 				rolelist_dict = list("CANCEL", "FINISH") + rolelist_dict
 				while(!done)
-					to_chat(usr, "You have a total player count of [assoc_value_sum(debug_setup)] in this setup.")
+					to_chat(usr, "I have a total player count of [assoc_value_sum(debug_setup)] in this setup.")
 					var/chosen_role_name = input(usr,"Select a role!","Custom Setup Creation",rolelist_dict[1]) as null|anything in rolelist_dict
 					if(chosen_role_name == "CANCEL")
 						return
@@ -715,20 +715,20 @@
 					return
 				if(GLOB.mafia_signup[C.ckey])
 					GLOB.mafia_signup -= C.ckey
-					to_chat(usr, span_notice("You unregister from Mafia."))
+					to_chat(usr, span_notice("I unregister from Mafia."))
 					return
 				else
 					GLOB.mafia_signup[C.ckey] = C
-					to_chat(usr, span_notice("You sign up for Mafia."))
+					to_chat(usr, span_notice("I sign up for Mafia."))
 				if(phase == MAFIA_PHASE_SETUP)
 					check_signups()
 					try_autostart()
 			if("mf_spectate")
 				if(C.ckey in spectators)
-					to_chat(usr, span_notice("You will no longer get messages from the game."))
+					to_chat(usr, span_notice("I will no longer get messages from the game."))
 					spectators -= C.ckey
 				else
-					to_chat(usr, span_notice("You will now get messages from the game."))
+					to_chat(usr, span_notice("I will now get messages from the game."))
 					spectators += C.ckey
 	if(user_role.game_status == MAFIA_DEAD)
 		return
@@ -752,7 +752,7 @@
 					if(phase != MAFIA_PHASE_NIGHT || user_role.team != MAFIA_TEAM_MAFIA)
 						return
 					vote_for(user_role,target,"Mafia", MAFIA_TEAM_MAFIA)
-					to_chat(user_role.body,"You will vote for [target.body.real_name] for tonights killing.")
+					to_chat(user_role.body,"I will vote for [target.body.real_name] for tonights killing.")
 				else
 					if(!user_role.targeted_actions.Find(params["atype"]))
 						return
@@ -765,21 +765,21 @@
 			if("vote_abstain")
 				if(phase != MAFIA_PHASE_JUDGEMENT || (user_role in judgement_abstain_votes))
 					return
-				to_chat(user_role.body,"You have decided to abstain.")
+				to_chat(user_role.body,"I have decided to abstain.")
 				judgement_innocent_votes -= user_role
 				judgement_guilty_votes -= user_role
 				judgement_abstain_votes += user_role
 			if("vote_innocent")
 				if(phase != MAFIA_PHASE_JUDGEMENT || (user_role in judgement_innocent_votes))
 					return
-				to_chat(user_role.body,"Your vote on [on_trial.body.real_name] submitted as INNOCENT!")
+				to_chat(user_role.body,"My vote on [on_trial.body.real_name] submitted as INNOCENT!")
 				judgement_abstain_votes -= user_role//no fakers, and...
 				judgement_guilty_votes -= user_role//no radical centrism
 				judgement_innocent_votes += user_role
 			if("vote_guilty")
 				if(phase != MAFIA_PHASE_JUDGEMENT || (user_role in judgement_guilty_votes))
 					return
-				to_chat(user_role.body,"Your vote on [on_trial.body.real_name] submitted as GUILTY!")
+				to_chat(user_role.body,"My vote on [on_trial.body.real_name] submitted as GUILTY!")
 				judgement_abstain_votes -= user_role//no fakers, and...
 				judgement_innocent_votes -= user_role//no radical centrism
 				judgement_guilty_votes += user_role

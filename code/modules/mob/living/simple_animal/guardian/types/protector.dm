@@ -55,7 +55,7 @@
 			return
 		else
 			if(istype(summoner.loc, /obj/effect))
-				to_chat(src, span_holoparasite("You moved out of range, and were pulled back! You can only move [range] meters from [summoner.real_name]!"))
+				to_chat(src, span_holoparasite("I moved out of range, and were pulled back! You can only move [range] meters from [summoner.real_name]!"))
 				visible_message(span_danger("\The [src] jumps back to its user."))
 				Recall(TRUE)
 			else

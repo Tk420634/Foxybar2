@@ -99,7 +99,7 @@
 		say("Cannot find user account. Please swipe a valid ID.")
 		return
 	if(!account.has_money(deposit_value))
-		say("You do not possess enough credits.")
+		say("I do not possess enough credits.")
 		return
 	account.adjust_money(-deposit_value) //The money vanishes, not paid to any accounts.
 	SSblackbox.record_feedback("amount", "BEPIS_credits_spent", deposit_value)

@@ -15,7 +15,7 @@ GLOBAL_VAR_INIT(normal_aooc_colour, "#ce254f")
 		return
 
 	if(mob && jobban_isbanned(mob, "OOC"))
-		to_chat(src, span_danger("You have been banned from OOC."))
+		to_chat(src, span_danger("I have been banned from OOC."))
 		return
 
 	if(!holder)
@@ -23,7 +23,7 @@ GLOBAL_VAR_INIT(normal_aooc_colour, "#ce254f")
 			to_chat(src, span_danger("AOOC is currently muted."))
 			return
 		if(prefs.muted & MUTE_OOC)
-			to_chat(src, span_danger("You cannot use AOOC (muted)."))
+			to_chat(src, span_danger("I cannot use AOOC (muted)."))
 			return
 		if(handle_spam_prevention(msg,MUTE_OOC))
 			return
@@ -32,7 +32,7 @@ GLOBAL_VAR_INIT(normal_aooc_colour, "#ce254f")
 			log_admin("[key_name(src)] has attempted to advertise in LOOC: [msg]")
 			return
 		if(mob && HAS_TRAIT(mob, TRAIT_AOOC_MUTE))
-			to_chat(src, span_danger("You cannot use AOOC right now."))
+			to_chat(src, span_danger("I cannot use AOOC right now."))
 			return
 
 	if(QDELETED(src))

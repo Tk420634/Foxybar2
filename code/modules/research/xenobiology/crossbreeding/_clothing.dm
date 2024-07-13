@@ -60,7 +60,7 @@ Slimecrossing Armor
 		set_light_color(newcolor)
 
 /obj/structure/light_prism/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
-	to_chat(user, span_notice("You dispel [src]"))
+	to_chat(user, span_notice("I dispel [src]"))
 	qdel(src)
 
 /datum/action/item_action/change_prism_colour
@@ -93,7 +93,7 @@ Slimecrossing Armor
 		if(!glasses.glasses_color)
 			to_chat(owner, span_warning("The lens is oddly opaque..."))
 			return
-		to_chat(owner, span_notice("You channel nearby light into a glowing, ethereal prism."))
+		to_chat(owner, span_notice("I channel nearby light into a glowing, ethereal prism."))
 		new /obj/structure/light_prism(get_turf(owner), glasses.glasses_color)
 
 /obj/item/clothing/head/peaceflower
@@ -132,21 +132,21 @@ Slimecrossing Armor
 /obj/item/clothing/head/peaceflower/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
 
 	if(slurpinlumens)
-		to_chat(user, span_notice("You are already eating light, be patient."))
+		to_chat(user, span_notice("I am already eating light, be patient."))
 		return
 
 	slurpinlumens = TRUE
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
 		if(src == C.head)
-			to_chat(user, span_notice("You begin channeling the flower to reduce your radiation."))
+			to_chat(user, span_notice("I begin channeling the flower to reduce your radiation."))
 			if(do_after(user, 5 SECONDS, target = C, allow_movement = TRUE))
 				C.reagents?.add_reagent(/datum/reagent/medicine/radaway, 10)
 				slurpinlumens = FALSE
-				to_chat(user, span_notice("Your radiation slowly fades away.."))
+				to_chat(user, span_notice("My radiation slowly fades away.."))
 		slurpinlumens = FALSE
 	else
-		to_chat(user, span_notice("You were interrupted."))
+		to_chat(user, span_notice("I were interrupted."))
 		slurpinlumens = FALSE
 
 	return ..()

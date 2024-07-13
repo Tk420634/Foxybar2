@@ -18,7 +18,7 @@ Chilling extracts:
 		to_chat(user, span_warning("This extract needs to be full of plasma to activate!"))
 		return
 	reagents.remove_reagent(/datum/reagent/toxin/plasma,10)
-	to_chat(user, span_notice("You squeeze the extract, and it absorbs the plasma!"))
+	to_chat(user, span_notice("I squeeze the extract, and it absorbs the plasma!"))
 	playsound(src, 'sound/effects/bubbles.ogg', 50, 1)
 	playsound(src, 'sound/effects/glassbr1.ogg', 50, 1)
 	do_effect(user)
@@ -139,17 +139,17 @@ Chilling extracts:
 		return
 	if(target in allies)
 		allies -= target
-		to_chat(user, span_notice("You unlink [src] with [target]."))
+		to_chat(user, span_notice("I unlink [src] with [target]."))
 	else
 		allies |= target
-		to_chat(user, span_notice("You link [src] with [target]."))
+		to_chat(user, span_notice("I link [src] with [target]."))
 	return
 
 /obj/item/slimecross/chilling/bluespace/do_effect(mob/user)
 	if(allies.len <= 0)
 		to_chat(user, span_warning("[src] is not linked to anyone!"))
 		return
-	to_chat(user, span_notice("You feel [src] pulse as it begins charging bluespace energies..."))
+	to_chat(user, span_notice("I feel [src] pulse as it begins charging bluespace energies..."))
 	active = TRUE
 	for(var/mob/living/M in allies)
 		var/datum/status_effect/slimerecall/S = M.apply_status_effect(/datum/status_effect/slimerecall)
@@ -177,10 +177,10 @@ Chilling extracts:
 		return
 	if(target in allies)
 		allies -= target
-		to_chat(user, span_notice("You unlink [src] with [target]."))
+		to_chat(user, span_notice("I unlink [src] with [target]."))
 	else
 		allies |= target
-		to_chat(user, span_notice("You link [src] with [target]."))
+		to_chat(user, span_notice("I link [src] with [target]."))
 	return
 
 /obj/item/slimecross/chilling/sepia/do_effect(mob/user)

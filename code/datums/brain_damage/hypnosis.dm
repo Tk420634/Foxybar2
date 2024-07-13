@@ -39,9 +39,9 @@
 	//message_admins("[ADMIN_LOOKUPFLW(owner)] was hypnotized with the phrase '[hypnotic_phrase]'.")
 	log_game("[key_name(owner)] was hypnotized with the phrase '[hypnotic_phrase]'.")
 	to_chat(owner, "<span class='reallybig hypnophrase'>[hypnotic_phrase]</span>")
-	to_chat(owner, "<span class='notice'>[pick("You feel your thoughts focusing on this phrase... you can't seem to get it out of your head.",\
-												"Your head hurts, but this is all you can think of. It must be vitally important.",\
-												"You feel a part of your mind repeating this over and over. You need to follow these words.",\
+	to_chat(owner, "<span class='notice'>[pick("I feel your thoughts focusing on this phrase... you can't seem to get it out of your head.",\
+												"My head hurts, but this is all you can think of. It must be vitally important.",\
+												"I feel a part of your mind repeating this over and over. You need to follow these words.",\
 												"Something about this sounds... right, for some reason. You feel like you should follow these words.",\
 												"These words keep echoing in your mind. You find yourself completely fascinated by them.")]</span>")
 	to_chat(owner, "<span class='boldwarning'>You've been hypnotized by this sentence. You must follow these words. If it isn't a clear order, you can freely interpret how to do so,\
@@ -53,7 +53,7 @@
 /datum/brain_trauma/hypnosis/on_lose()
 	//message_admins("[ADMIN_LOOKUPFLW(owner)] is no longer hypnotized with the phrase '[hypnotic_phrase]'.")
 	log_game("[key_name(owner)] is no longer hypnotized with the phrase '[hypnotic_phrase]'.")
-	to_chat(owner, span_userdanger("You suddenly snap out of your hypnosis. The phrase '[hypnotic_phrase]' no longer feels important to you."))
+	to_chat(owner, span_userdanger("I suddenly snap out of your hypnosis. The phrase '[hypnotic_phrase]' no longer feels important to you."))
 	owner.clear_alert("hypnosis")
 	..()
 

@@ -1040,7 +1040,7 @@
 		return
 	var/obj/item/hand_item/splurter/nummers = new(user)
 	if(user.put_in_hands(nummers)) // NOTE: put_in_hand is MUCH different from put_in_hands - NOTE THE S
-		to_chat(user, span_notice("You get ready to do sex to someone!"))
+		to_chat(user, span_notice("I get ready to do sex to someone!"))
 	else
 		qdel(nummers)
 

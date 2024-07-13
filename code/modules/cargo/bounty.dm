@@ -52,7 +52,7 @@ GLOBAL_LIST_EMPTY(bounties_list)
 		"Nice one",
 		"A for Outstanding",
 		"Best in show",
-		"You deserve a medal",
+		"I deserve a medal",
 		"Such good",
 		"Smokin'",
 		"WOW"
@@ -65,7 +65,7 @@ GLOBAL_LIST_EMPTY(bounties_list)
 		"Wow that hit the spot!",
 		"We knew you could do it!",
 		"Good job!",
-		"Your supervisor is very proud of you!",
+		"My supervisor is very proud of you!",
 		"Payment for services rendered, good work!",
 		"Fine work! Here's the pay."
 	)
@@ -227,7 +227,7 @@ GLOBAL_LIST_EMPTY(bounties_list)
 		to_chat(user, span_green("Objective '[BQ.name]' complete! ([number_complete] / [LAZYLEN(wanted_things)])"))
 		playsound(get_turf(user), 'sound/effects/objective_complete.ogg', 90)
 	else
-		to_chat(user, span_green("You turned in a '[thing]'! ([BQ.gotten_amount] / [BQ.needed_amount])"))
+		to_chat(user, span_green("I turned in a '[thing]'! ([BQ.gotten_amount] / [BQ.needed_amount])"))
 		playsound(get_turf(user), 'sound/effects/bleeblee.ogg', 75)
 	if(SEND_SIGNAL(thing, COMSIG_MOB_IS_IMPORTANT))
 		SEND_SIGNAL(thing, COMSIG_ATOM_BUTCHER, user, 70, 0, TRUE, FALSE)
@@ -326,7 +326,7 @@ GLOBAL_LIST_EMPTY(bounties_list)
 		whats_talking = "your radio"
 	var/deafoid = HAS_TRAIT(claimant, TRAIT_DEAF) ? "notice" : "hear"
 	var/payment = get_reward()
-	var/message = "You [deafoid] [whats_talking] say, \"[phrase_congrats(claimant)] [phrase_accomplishment(claimant)]"
+	var/message = "I [deafoid] [whats_talking] say, \"[phrase_congrats(claimant)] [phrase_accomplishment(claimant)]"
 	if(payment <= 10) // one copper
 		message += " And for your valiant efforts, here's a single measly [SSeconomy.currency_tier1_name]. Don't spend it all in one place!\""
 	else
@@ -356,7 +356,7 @@ GLOBAL_LIST_EMPTY(bounties_list)
 
 /datum/bounty/proc/phrase_reward(mob/doer)
 	var/payment = get_reward()
-	var/msg = "You have been awarded [span_green("[SSeconomy.format_currency(payment, TRUE, TRUE)]")]!"
+	var/msg = "I have been awarded [span_green("[SSeconomy.format_currency(payment, TRUE, TRUE)]")]!"
 	return "[msg]"
 
 // If an item sent in the cargo shuttle can satisfy the bounty.

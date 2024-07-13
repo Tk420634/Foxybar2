@@ -70,40 +70,40 @@
 			if(M.health >= 0)
 				if(user.zone_selected == BODY_ZONE_HEAD)
 					user.visible_message(span_notice("[user] playfully boops [M] on the head!"), \
-									span_notice("You playfully boop [M] on the head!"))
+									span_notice("I playfully boop [M] on the head!"))
 					user.do_attack_animation(M, ATTACK_EFFECT_BOOP)
 					playsound(loc, 'sound/weapons/tap.ogg', 50, 1, -1)
 				else if(ishuman(M))
 					if(M.lying)
 						user.visible_message(span_notice("[user] shakes [M] trying to get [M.p_them()] up!"), \
-										span_notice("You shake [M] trying to get [M.p_them()] up!"))
+										span_notice("I shake [M] trying to get [M.p_them()] up!"))
 					else
 						user.visible_message(span_notice("[user] hugs [M] to make [M.p_them()] feel better!"), \
-								span_notice("You hug [M] to make [M.p_them()] feel better!"))
+								span_notice("I hug [M] to make [M.p_them()] feel better!"))
 					if(M.resting && !(M.combat_flags & COMBAT_FLAG_HARD_STAMCRIT))
 						M.set_resting(FALSE, TRUE)
 				else
 					user.visible_message(span_notice("[user] pets [M]!"), \
-							span_notice("You pet [M]!"))
+							span_notice("I pet [M]!"))
 				playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 		if(1)
 			if(M.health >= 0)
 				if(ishuman(M))
 					if(M.lying)
 						user.visible_message(span_notice("[user] shakes [M] trying to get [M.p_them()] up!"), \
-										span_notice("You shake [M] trying to get [M.p_them()] up!"))
+										span_notice("I shake [M] trying to get [M.p_them()] up!"))
 					else if(user.zone_selected == BODY_ZONE_HEAD)
 						user.visible_message(span_warning("[user] bops [M] on the head!"), \
-										span_warning("You bop [M] on the head!"))
+										span_warning("I bop [M] on the head!"))
 						user.do_attack_animation(M, ATTACK_EFFECT_PUNCH)
 					else
 						user.visible_message(span_warning("[user] hugs [M] in a firm bear-hug! [M] looks uncomfortable..."), \
-								span_warning("You hug [M] firmly to make [M.p_them()] feel better! [M] looks uncomfortable..."))
+								span_warning("I hug [M] firmly to make [M.p_them()] feel better! [M] looks uncomfortable..."))
 					if(!CHECK_MOBILITY(M, MOBILITY_STAND) && !(M.combat_flags & COMBAT_FLAG_HARD_STAMCRIT))
 						M.set_resting(FALSE, TRUE)
 				else
 					user.visible_message(span_warning("[user] bops [M] on the head!"), \
-							span_warning("You bop [M] on the head!"))
+							span_warning("I bop [M] on the head!"))
 				playsound(loc, 'sound/weapons/tap.ogg', 50, 1, -1)
 		if(2)
 			if(scooldown < world.time)
@@ -111,15 +111,15 @@
 					if(ishuman(M)||ismonkey(M))
 						M.electrocute_act(5, "[user]", flags = SHOCK_NOGLOVES)
 						user.visible_message(span_userdanger("[user] electrocutes [M] with [user.p_their()] touch!"), \
-							span_danger("You electrocute [M] with your touch!"))
+							span_danger("I electrocute [M] with your touch!"))
 					else
 						if(!iscyborg(M))
 							M.adjustFireLoss(10)
 							user.visible_message(span_userdanger("[user] shocks [M]!"), \
-								span_danger("You shock [M]!"))
+								span_danger("I shock [M]!"))
 						else
 							user.visible_message(span_userdanger("[user] shocks [M]. It does not seem to have an effect"), \
-								span_danger("You shock [M] to no effect."))
+								span_danger("I shock [M] to no effect."))
 					playsound(loc, 'sound/effects/sparks2.ogg', 50, 1, -1)
 					user.cell.charge -= 500
 					scooldown = world.time + 20
@@ -128,10 +128,10 @@
 				if(M.health >= 0)
 					if(ishuman(M))
 						user.visible_message(span_userdanger("[user] crushes [M] in [user.p_their()] grip!"), \
-							span_danger("You crush [M] in your grip!"))
+							span_danger("I crush [M] in your grip!"))
 					else
 						user.visible_message(span_userdanger("[user] crushes [M]!"), \
-								span_danger("You crush [M]!"))
+								span_danger("I crush [M]!"))
 					playsound(loc, 'sound/weapons/smash.ogg', 50, 1, -1)
 					M.adjustBruteLoss(15)
 					user.cell.charge -= 300
@@ -159,7 +159,7 @@
 		mode = "charge"
 	else
 		mode = "draw"
-	to_chat(user, span_notice("You toggle [src] to \"[mode]\" mode."))
+	to_chat(user, span_notice("I toggle [src] to \"[mode]\" mode."))
 	update_icon()
 
 /obj/item/borg/charger/afterattack(obj/item/target, mob/living/silicon/robot/user, proximity_flag)
@@ -173,7 +173,7 @@
 				to_chat(user, span_warning("[M] is unpowered!"))
 				return
 
-			to_chat(user, span_notice("You connect to [M]'s power line..."))
+			to_chat(user, span_notice("I connect to [M]'s power line..."))
 			while(do_after(user, 15, target = M, progress = 0))
 				if(!user || !user.cell || mode != "draw")
 					return
@@ -186,7 +186,7 @@
 
 				M.use_power(200)
 
-			to_chat(user, span_notice("You stop charging yourself."))
+			to_chat(user, span_notice("I stop charging yourself."))
 
 		else if(is_type_in_list(target, charge_items))
 			var/obj/item/stock_parts/cell/cell = target
@@ -206,7 +206,7 @@
 				to_chat(user, span_warning("[target] has no power!"))
 
 
-			to_chat(user, span_notice("You connect to [target]'s power port..."))
+			to_chat(user, span_notice("I connect to [target]'s power port..."))
 
 			while(do_after(user, 15, target = target, progress = 0))
 				if(!user || !user.cell || mode != "draw")
@@ -225,7 +225,7 @@
 					break
 				target.update_icon()
 
-			to_chat(user, span_notice("You stop charging yourself."))
+			to_chat(user, span_notice("I stop charging yourself."))
 
 	else if(is_type_in_list(target, charge_items))
 		var/obj/item/stock_parts/cell/cell = target
@@ -244,7 +244,7 @@
 		if(cell.charge >= cell.maxcharge)
 			to_chat(user, span_warning("[target] is already charged!"))
 
-		to_chat(user, span_notice("You connect to [target]'s power port..."))
+		to_chat(user, span_notice("I connect to [target]'s power port..."))
 
 		while(do_after(user, 15, target = target, progress = 0))
 			if(!user || !user.cell || mode != "charge")
@@ -263,7 +263,7 @@
 				break
 			target.update_icon()
 
-		to_chat(user, span_notice("You stop charging [target]."))
+		to_chat(user, span_notice("I stop charging [target]."))
 
 /obj/item/harmalarm
 	name = "\improper Sonic Harm Prevention Tool"
@@ -402,9 +402,9 @@
 	check_amount()
 
 	if(into_hands)
-		user.visible_message(span_notice("[user] dispenses a treat into the hands of [A]."), span_notice("You dispense a treat into the hands of [A]."), span_italic("You hear a click."))
+		user.visible_message(span_notice("[user] dispenses a treat into the hands of [A]."), span_notice("I dispense a treat into the hands of [A]."), span_italic("I hear a click."))
 	else
-		user.visible_message(span_notice("[user] dispenses a treat."), span_notice("You dispense a treat."), span_italic("You hear a click."))
+		user.visible_message(span_notice("[user] dispenses a treat."), span_notice("I dispense a treat."), span_italic("I hear a click."))
 
 	playsound(src.loc, 'sound/machines/click.ogg', 50, 1)
 	return TRUE
@@ -586,7 +586,7 @@
 	else
 		deactivate_field()
 	update_icon()
-	to_chat(user, span_boldnotice("You [active? "activate":"deactivate"] [src]."))
+	to_chat(user, span_boldnotice("I [active? "activate":"deactivate"] [src]."))
 
 /obj/item/borg/projectile_dampen/update_icon_state()
 	icon_state = "[initial(icon_state)][active]"
@@ -777,7 +777,7 @@
 /obj/item/weapon/gripper/AltClick(mob/user)
 	if(wrapped)
 		wrapped.forceMove(get_turf(wrapped))
-		to_chat(user, span_notice("You drop the [wrapped]."))
+		to_chat(user, span_notice("I drop the [wrapped]."))
 		wrapped = null
 	return ..()
 
@@ -821,12 +821,12 @@
 
 		//We can grab the item, finally.
 		if(grab)
-			to_chat(user, span_notice("You collect \the [I]."))
+			to_chat(user, span_notice("I collect \the [I]."))
 			I.loc = src
 			wrapped = I
 			return
 		else
-			to_chat(user, span_danger("Your gripper cannot hold \the [target]."))
+			to_chat(user, span_danger("My gripper cannot hold \the [target]."))
 
 /obj/item/weapon/gripper/mining
 	name = "shelter capsule deployer"

@@ -44,17 +44,17 @@
 		var/obj/item/stack/cable_coil/C = I
 		I.use_tool(src, user, 0, 1)
 		has_sensor = HAS_SENSORS
-		to_chat(user,span_notice("You repair the suit sensors on [src] with [C]."))
+		to_chat(user,span_notice("I repair the suit sensors on [src] with [C]."))
 		return TRUE
 	if(!(flags_1 & HOLOGRAM_1) && ((I.tool_behaviour == TOOL_WIRECUTTER) || I.get_sharpness()))
 		user.visible_message("[user] begins cutting the [src] apart.", \
-				span_notice("You begin cutting the [src] into strips."), \
-				span_italic("You hear faint sounds of ripping cloth."))
+				span_notice("I begin cutting the [src] into strips."), \
+				span_italic("I hear faint sounds of ripping cloth."))
 		playsound(get_turf(src), 'sound/items/poster_ripped.ogg', 50, TRUE)
 		if(!do_after(user, 60, TRUE, src))
 			return
 		new /obj/item/stack/sheet/cloth (drop_location(), 2)
-		to_chat(user, span_notice("You cut [src] into useful pieces of cloth."))
+		to_chat(user, span_notice("I cut [src] into useful pieces of cloth."))
 		qdel(src)
 		return TRUE
 	if(!attach_accessory(I, user))
@@ -144,7 +144,7 @@
 				return
 
 			if(user && notifyAttach)
-				to_chat(user, span_notice("You attach [I] to [src]."))
+				to_chat(user, span_notice("I attach [I] to [src]."))
 
 			if((flags_inv & HIDEACCESSORY) || (A.flags_inv & HIDEACCESSORY))
 				return TRUE
@@ -188,9 +188,9 @@
 		var/obj/item/clothing/accessory/A = attached_accessory_c
 		attached_accessory_c.detach(src, user)
 		if(user.put_in_hands(A))
-			to_chat(user, span_notice("You detach [A] from [src]."))
+			to_chat(user, span_notice("I detach [A] from [src]."))
 		else
-			to_chat(user, span_notice("You detach [A] from [src] and it falls on the floor."))
+			to_chat(user, span_notice("I detach [A] from [src] and it falls on the floor."))
 
 		if(ishuman(loc))
 			var/mob/living/carbon/human/H = loc
@@ -201,9 +201,9 @@
 		var/obj/item/clothing/accessory/A = attached_accessory_b
 		attached_accessory_b.detach(src, user)
 		if(user.put_in_hands(A))
-			to_chat(user, span_notice("You detach [A] from [src]."))
+			to_chat(user, span_notice("I detach [A] from [src]."))
 		else
-			to_chat(user, span_notice("You detach [A] from [src] and it falls on the floor."))
+			to_chat(user, span_notice("I detach [A] from [src] and it falls on the floor."))
 
 		if(ishuman(loc))
 			var/mob/living/carbon/human/H = loc
@@ -214,9 +214,9 @@
 		var/obj/item/clothing/accessory/A = attached_accessory
 		attached_accessory.detach(src, user)
 		if(user.put_in_hands(A))
-			to_chat(user, span_notice("You detach [A] from [src]."))
+			to_chat(user, span_notice("I detach [A] from [src]."))
 		else
-			to_chat(user, span_notice("You detach [A] from [src] and it falls on the floor."))
+			to_chat(user, span_notice("I detach [A] from [src] and it falls on the floor."))
 
 		if(ishuman(loc))
 			var/mob/living/carbon/human/H = loc
@@ -272,20 +272,20 @@
 	var/list/modes = list("Off", "Binary vitals", "Exact vitals", "Tracking beacon")
 	var/switchMode = input("Select a sensor mode:", "Suit Sensor Mode", modes[sensor_mode + 1]) in modes
 	if(get_dist(usr, src) > 1)
-		to_chat(usr, span_warning("You have moved too far away!"))
+		to_chat(usr, span_warning("I have moved too far away!"))
 		return
 	sensor_mode = modes.Find(switchMode) - 1
 
 	if (src.loc == usr)
 		switch(sensor_mode)
 			if(0)
-				to_chat(usr, span_notice("You disable your suit's remote sensing equipment."))
+				to_chat(usr, span_notice("I disable your suit's remote sensing equipment."))
 			if(1)
-				to_chat(usr, span_notice("Your suit will now only report whether you are alive or dead."))
+				to_chat(usr, span_notice("My suit will now only report whether you are alive or dead."))
 			if(2)
-				to_chat(usr, span_notice("Your suit will now only report your exact vital lifesigns."))
+				to_chat(usr, span_notice("My suit will now only report your exact vital lifesigns."))
 			if(3)
-				to_chat(usr, span_notice("Your suit will now report your exact vital lifesigns as well as your coordinate position."))
+				to_chat(usr, span_notice("My suit will now report your exact vital lifesigns as well as your coordinate position."))
 
 	if(ishuman(loc))
 		var/mob/living/carbon/human/H = loc
@@ -314,7 +314,7 @@
 
 	sensor_mode = SENSOR_COORDS
 
-	to_chat(user, span_notice("Your suit will now report your exact vital lifesigns as well as your coordinate position."))
+	to_chat(user, span_notice("My suit will now report your exact vital lifesigns as well as your coordinate position."))
 
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
@@ -340,12 +340,12 @@
 	if(!can_use(usr))
 		return
 	if(!can_adjust)
-		to_chat(usr, span_warning("You cannot wear this suit any differently!"))
+		to_chat(usr, span_warning("I cannot wear this suit any differently!"))
 		return
 	if(toggle_jumpsuit_adjust())
-		to_chat(usr, span_notice("You adjust the suit to wear it more casually."))
+		to_chat(usr, span_notice("I adjust the suit to wear it more casually."))
 	else
-		to_chat(usr, span_notice("You adjust the suit back to normal."))
+		to_chat(usr, span_notice("I adjust the suit back to normal."))
 	if(ishuman(usr))
 		var/mob/living/carbon/human/H = usr
 		H.update_inv_w_uniform()

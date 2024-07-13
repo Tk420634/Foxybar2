@@ -125,7 +125,7 @@
 	if(istype(W, /obj/item/roller/robo))
 		var/obj/item/roller/robo/R = W
 		if(R.loaded)
-			to_chat(user, span_warning("You already have a roller bed docked!"))
+			to_chat(user, span_warning("I already have a roller bed docked!"))
 			return
 
 		if(has_buckled_mobs())
@@ -137,7 +137,7 @@
 		else
 			R.loaded = src
 			forceMove(R)
-			user.visible_message("[user] collects [src].", span_notice("You collect [src]."))
+			user.visible_message("[user] collects [src].", span_notice("I collect [src]."))
 		return 1
 	else
 		return ..()
@@ -149,7 +149,7 @@
 			return 0
 		if(has_buckled_mobs())
 			return 0
-		usr.visible_message("[usr] collapses \the [src.name].", span_notice("You collapse \the [src.name]."))
+		usr.visible_message("[usr] collapses \the [src.name].", span_notice("I collapse \the [src.name]."))
 		var/obj/structure/bed/roller/B = new foldabletype(get_turf(src))
 		usr.put_in_hands(B)
 		qdel(src)
@@ -184,7 +184,7 @@
 		if(R.loaded)
 			to_chat(user, span_warning("[R] already has a roller bed loaded!"))
 			return
-		user.visible_message(span_notice("[user] loads [src]."), span_notice("You load [src] into [R]."))
+		user.visible_message(span_notice("[user] loads [src]."), span_notice("I load [src] into [R]."))
 		R.loaded = new/obj/structure/bed/roller(R)
 		qdel(src) //"Load"
 		return
@@ -223,7 +223,7 @@
 	if(loaded)
 		var/obj/structure/bed/roller/R = loaded
 		R.forceMove(location)
-		user.visible_message("[user] deploys [loaded].", span_notice("You deploy [loaded]."))
+		user.visible_message("[user] deploys [loaded].", span_notice("I deploy [loaded]."))
 		loaded = null
 	else
 		to_chat(user, span_warning("The dock is empty!"))

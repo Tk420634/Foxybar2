@@ -42,7 +42,7 @@
 			deconvert = prob (5)
 	if(deconvert)
 		M.visible_message(span_notice("[user] reminds [M] that [M]'s soul was already purchased by Nanotrasen!"))
-		to_chat(M, span_boldnotice("You feel that your soul has returned to its rightful owner, Nanotrasen."))
+		to_chat(M, span_boldnotice("I feel that your soul has returned to its rightful owner, Nanotrasen."))
 		M.return_soul()
 	else
 		M.visible_message(span_danger("[user] beats [M] over the head with [src]!"), \
@@ -161,7 +161,7 @@
 	if(istype(P, /obj/item/pen) || istype(P, /obj/item/toy/crayon))
 		attempt_signature(user)
 	else if(istype(P, /obj/item/stamp))
-		to_chat(user, span_notice("You stamp the paper with your rubber stamp, however the ink ignites as you release the stamp."))
+		to_chat(user, span_notice("I stamp the paper with your rubber stamp, however the ink ignites as you release the stamp."))
 	else if(P.get_temperature())
 		user.visible_message(span_danger("[user] brings [P] next to [src], but [src] does not catch fire!"), span_danger("[src] refuses to ignite!"))
 	else
@@ -170,17 +170,17 @@
 /obj/item/paper/contract/infernal/attack(mob/M, mob/living/user)
 	add_fingerprint(user)
 	if(M == user && target == M.mind && M.mind.soulOwner != owner && attempt_signature(user, 1))
-		user.visible_message(span_danger("[user] slices [user.p_their()] wrist with [src], and scrawls [user.p_their()] name in blood."), span_danger("You slice your wrist open and scrawl your name in blood."))
+		user.visible_message(span_danger("[user] slices [user.p_their()] wrist with [src], and scrawls [user.p_their()] name in blood."), span_danger("I slice your wrist open and scrawl your name in blood."))
 		user.blood_volume = max(user.blood_volume - 100, 0)
 	else
 		return ..()
 
 /obj/item/paper/contract/infernal/proc/attempt_signature(mob/living/carbon/human/user, blood = 0)
 	if(!user.IsAdvancedToolUser() || !user.is_literate())
-		to_chat(user, span_notice("You don't know how to read or write."))
+		to_chat(user, span_notice("I don't know how to read or write."))
 		return 0
 	if(user.mind != target)
-		to_chat(user, span_notice("Your signature simply slides off the sheet, it seems this contract is not meant for you to sign."))
+		to_chat(user, span_notice("My signature simply slides off the sheet, it seems this contract is not meant for you to sign."))
 		return 0
 	if(user.mind.soulOwner == owner)
 		to_chat(user, span_notice("This devil already owns your soul, you may not sell it to [owner.p_them()] again."))
@@ -189,17 +189,17 @@
 		to_chat(user, span_notice("This contract has already been signed.  It may not be signed again."))
 		return 0
 	if(!user.mind.hasSoul)
-		to_chat(user, span_notice("You do not possess a soul."))
+		to_chat(user, span_notice("I do not possess a soul."))
 		return 0
 	if(HAS_TRAIT(user, TRAIT_DUMB))
-		to_chat(user, span_notice("You quickly scrawl 'your name' on the contract."))
+		to_chat(user, span_notice("I quickly scrawl 'your name' on the contract."))
 		signIncorrectly()
 		return 0
 	if (contractType == CONTRACT_REVIVE)
-		to_chat(user, span_notice("You are already alive, this contract would do nothing."))
+		to_chat(user, span_notice("I am already alive, this contract would do nothing."))
 		return 0
 	else
-		to_chat(user, span_notice("You quickly scrawl your name on the contract"))
+		to_chat(user, span_notice("I quickly scrawl your name on the contract"))
 		if(fulfillContract(target.current, blood)<=0)
 			to_chat(user, span_notice("But it seemed to have no effect, perhaps even Hell itself cannot grant this boon?"))
 		return 1

@@ -54,7 +54,7 @@
 	R.transfer_fingerprints_to(TP)
 	TP.add_fingerprint(user)
 	TP.setDir(turn(src.dir, -90))
-	user.visible_message("[user] inserts [R].", span_notice("You insert [R]."))
+	user.visible_message("[user] inserts [R].", span_notice("I insert [R]."))
 	qdel(R)
 
 
@@ -82,7 +82,7 @@
 
 					else if(open_status == STATION_TUBE_OPEN)
 						if(pod.contents.len && user.loc != pod)
-							user.visible_message("[user] starts emptying [pod]'s contents onto the floor.", span_notice("You start emptying [pod]'s contents onto the floor..."))
+							user.visible_message("[user] starts emptying [pod]'s contents onto the floor.", span_notice("I start emptying [pod]'s contents onto the floor..."))
 							if(do_after(user, 10, target = src)) //So it doesn't default to close_animation() on fail
 								if(pod && pod.loc == loc)
 									for(var/atom/movable/AM in pod)

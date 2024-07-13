@@ -672,12 +672,12 @@
 
 /datum/emote/living/custom/run_emote(mob/user, params, type_override = null, only_overhead)
 	if(jobban_isbanned(user, "emote"))
-		to_chat(user, "You cannot send custom emotes (banned).")
+		to_chat(user, "I cannot send custom emotes (banned).")
 		return FALSE
 	else if(QDELETED(user))
 		return FALSE
 	else if(user.client && user.client.prefs.muted & MUTE_IC)
-		to_chat(user, "You cannot send IC messages (muted).")
+		to_chat(user, "I cannot send IC messages (muted).")
 		return FALSE
 	else if(!params)
 		var/custom_emote = stripped_multiline_input_or_reflect(user, EMOTE_HEADER_TEXT, "Custom Emote", null, MAX_MESSAGE_LEN)
@@ -753,7 +753,7 @@
 		return
 	var/obj/item/slapper/N = new(user)
 	if(user.put_in_hands(N))
-		to_chat(user, span_notice("You ready your slapping hand."))
+		to_chat(user, span_notice("I ready your slapping hand."))
 	else
 		to_chat(user, span_warning("You're incapable of slapping in your current state."))
 

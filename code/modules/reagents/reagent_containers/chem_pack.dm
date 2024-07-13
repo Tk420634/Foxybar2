@@ -33,7 +33,7 @@
 			ENABLE_BITFIELD(reagents.reagents_holder_flags, DRAWABLE |INJECTABLE )
 			spillable = FALSE
 			sealed = TRUE
-			to_chat(user, span_notice("You seal the bag."))
+			to_chat(user, span_notice("I seal the bag."))
 
 
 /obj/item/reagent_containers/chem_pack/examine()

@@ -124,12 +124,12 @@
 
 /obj/item/candle/attack_self(mob/user)
 	if(!src.lit)
-		to_chat(user, span_notice("You start pushing [src] into the ground..."))
+		to_chat(user, span_notice("I start pushing [src] into the ground..."))
 		if (do_after(user, 20, target=src))
 			qdel(src)
 			new /obj/structure/destructible/tribal_torch(get_turf(user))
 			set_light_color(LIGHT_COLOR_ORANGE)
-			user.visible_message(span_notice("[user] plants [src] firmly in the ground."), span_notice("You plant [src] firmly in the ground."))
+			user.visible_message(span_notice("[user] plants [src] firmly in the ground."), span_notice("I plant [src] firmly in the ground."))
 			return
 	else if(lit)
 		user.visible_message(
@@ -153,8 +153,8 @@
 		return
 	playsound(src.loc, 'sound/machines/click.ogg', 75, 1)
 	user.visible_message("[user.name] attaches [src] to the wall.",
-		span_notice("You attach [src] to the wall."),
-		span_italic("You hear clicking."))
+		span_notice("I attach [src] to the wall."),
+		span_italic("I hear clicking."))
 	var/type_to_make = lit ? /obj/structure/destructible/tribal_torch/wall/lit : /obj/structure/destructible/tribal_torch/wall
 	var/obj/structure/destructible/tribal_torch/wall/wall_torch = new type_to_make (user_turf)
 	wall_torch.dir = ndir

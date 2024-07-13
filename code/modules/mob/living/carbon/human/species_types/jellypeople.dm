@@ -74,7 +74,7 @@
 	if(!our_blood)
 		H.blood_volume += 5
 		H.adjustBruteLoss(5)
-		to_chat(H, span_danger("You feel empty!"))
+		to_chat(H, span_danger("I feel empty!"))
 
 	if(our_blood < (BLOOD_VOLUME_NORMAL * H.blood_ratio))
 		if(H.nutrition >= NUTRITION_LEVEL_STARVING)
@@ -82,7 +82,7 @@
 			H.nutrition -= 2.5
 	if(our_blood < (BLOOD_VOLUME_OKAY*H.blood_ratio))
 		if(prob(5))
-			to_chat(H, span_danger("You feel drained!"))
+			to_chat(H, span_danger("I feel drained!"))
 	if(our_blood < (BLOOD_VOLUME_SYMPTOMS_DEBILITATING*H.blood_ratio))
 		Cannibalize_Body(H)
 	if(regenerate_limbs)
@@ -98,7 +98,7 @@
 		limbs_to_consume -= list(BODY_ZONE_R_ARM, BODY_ZONE_L_ARM)
 	consumed_limb = H.get_bodypart(pick(limbs_to_consume))
 	consumed_limb.drop_limb()
-	to_chat(H, span_userdanger("Your [consumed_limb] is drawn back into your body, unable to maintain its shape!"))
+	to_chat(H, span_userdanger("My [consumed_limb] is drawn back into your body, unable to maintain its shape!"))
 	qdel(consumed_limb)
 	H.blood_volume += 20
 
@@ -124,9 +124,9 @@
 	var/mob/living/carbon/human/H = owner
 	var/list/limbs_to_heal = H.get_missing_limbs()
 	if(limbs_to_heal.len < 1)
-		to_chat(H, span_notice("You feel intact enough as it is."))
+		to_chat(H, span_notice("I feel intact enough as it is."))
 		return
-	to_chat(H, span_notice("You focus intently on your missing [limbs_to_heal.len >= 2 ? "limbs" : "limb"]..."))
+	to_chat(H, span_notice("I focus intently on your missing [limbs_to_heal.len >= 2 ? "limbs" : "limb"]..."))
 	if(H.get_blood(FALSE) >= 40*limbs_to_heal.len+(BLOOD_VOLUME_OKAY*H.blood_ratio))
 		H.regenerate_limbs()
 		H.blood_volume -= 40*limbs_to_heal.len
@@ -208,7 +208,7 @@
 		return
 	if(H.get_blood(FALSE) >= BLOOD_VOLUME_SLIME_SPLIT)
 		if(prob(5))
-			to_chat(H, span_notice("You feel very bloated!"))
+			to_chat(H, span_notice("I feel very bloated!"))
 	else if(H.nutrition >= NUTRITION_LEVEL_WELL_FED)
 		H.blood_volume += 3
 		H.nutrition -= 2.5
@@ -304,7 +304,7 @@
 
 /datum/action/innate/swap_body/Activate()
 	if(!isslimeperson(owner))
-		to_chat(owner, span_warning("You are not a slimeperson."))
+		to_chat(owner, span_warning("I am not a slimeperson."))
 		Remove(owner)
 	else
 		ui_interact(owner)
@@ -431,9 +431,9 @@
 	if(M.current.stat == CONSCIOUS)
 		M.current.visible_message("<span class='notice'>[M.current] \
 			stops moving and starts staring vacantly into space.</span>",
-			span_notice("You stop moving this body..."))
+			span_notice("I stop moving this body..."))
 	else
-		to_chat(M.current, span_notice("You abandon this body..."))
+		to_chat(M.current, span_notice("I abandon this body..."))
 	M.current.transfer_trait_datums(dupe)
 	M.transfer_to(dupe)
 	dupe.visible_message("<span class='notice'>[dupe] blinks and looks \
@@ -799,7 +799,7 @@
 		if(!H.put_in_active_hand(S))
 			S.forceMove(H.drop_location())
 		species.current_extract = null
-		to_chat(H, span_notice("You eject [S]."))
+		to_chat(H, span_notice("I eject [S]."))
 		species.update_slime_actions()
 	else
 		var/obj/item/I = H.get_active_held_item()
@@ -812,10 +812,10 @@
 				return
 			S.forceMove(H)
 			species.current_extract = S
-			to_chat(H, span_notice("You consume [I], and you feel it pulse within you..."))
+			to_chat(H, span_notice("I consume [I], and you feel it pulse within you..."))
 			species.update_slime_actions()
 		else
-			to_chat(H, span_warning("You need to hold an unused slime extract in your active hand!"))
+			to_chat(H, span_warning("I need to hold an unused slime extract in your active hand!"))
 
 /datum/action/innate/use_extract
 	name = "Extract Minor Activation"
@@ -903,7 +903,7 @@
 		return FALSE
 	linked_mobs.Add(M)
 	if(!selflink)
-		to_chat(M, span_notice("You are now connected to [slimelink_owner.real_name]'s Slime Link."))
+		to_chat(M, span_notice("I am now connected to [slimelink_owner.real_name]'s Slime Link."))
 		RegisterSignal(M, COMSIG_MOB_DEATH ,PROC_REF(unlink_mob))
 		RegisterSignal(M, COMSIG_PARENT_QDELETING,PROC_REF(unlink_mob))
 	var/datum/action/innate/linked_speech/action = new(src)
@@ -918,7 +918,7 @@
 	UnregisterSignal(M, list(COMSIG_MOB_DEATH, COMSIG_PARENT_QDELETING))
 	var/datum/action/innate/linked_speech/action = linked_actions[link_id]
 	action.Remove(M)
-	to_chat(M, span_notice("You are no longer connected to [slimelink_owner.real_name]'s Slime Link."))
+	to_chat(M, span_notice("I am no longer connected to [slimelink_owner.real_name]'s Slime Link."))
 	linked_mobs[link_id] = null
 	linked_actions[link_id] = null
 
@@ -991,7 +991,7 @@
 			return
 		log_directed_talk(H, M, msg, LOG_SAY, "slime telepathy")
 		to_chat(M, "<span class='notice'>You hear an alien voice in your head... </span><font color=#008CA2>[msg]</font>")
-		to_chat(H, span_notice("You telepathically said: \"[msg]\" to [M]"))
+		to_chat(H, span_notice("I telepathically said: \"[msg]\" to [M]"))
 		for(var/dead in GLOB.dead_mob_list)
 			if(!isobserver(dead))
 				continue
@@ -1018,18 +1018,18 @@
 	CHECK_DNA_AND_SPECIES(H)
 
 	if(!H.pulling || !isliving(H.pulling) || H.grab_state < GRAB_AGGRESSIVE)
-		to_chat(H, span_warning("You need to aggressively grab someone to link minds!"))
+		to_chat(H, span_warning("I need to aggressively grab someone to link minds!"))
 		return
 
 	var/mob/living/target = H.pulling
 
-	to_chat(H, span_notice("You begin linking [target]'s mind to yours..."))
-	to_chat(target, span_warning("You feel a foreign presence within your mind..."))
+	to_chat(H, span_notice("I begin linking [target]'s mind to yours..."))
+	to_chat(target, span_warning("I feel a foreign presence within your mind..."))
 	if(do_after(H, 60, target = target))
 		if(H.pulling != target || H.grab_state < GRAB_AGGRESSIVE)
 			return
 		if(species.link_mob(target))
-			to_chat(H, span_notice("You connect [target]'s mind to your slime link!"))
+			to_chat(H, span_notice("I connect [target]'s mind to your slime link!"))
 		else
-			to_chat(H, span_warning("You can't seem to link [target]'s mind..."))
+			to_chat(H, span_warning("I can't seem to link [target]'s mind..."))
 			to_chat(target, span_warning("The foreign presence leaves your mind."))

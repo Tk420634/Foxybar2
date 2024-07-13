@@ -54,7 +54,7 @@
 		user.transferItemToLoc(gun,src)
 		installed_gun = gun
 		var/list/gun_properties = gun.get_turret_properties()
-		to_chat(user, span_notice("You slide \the [gun] into the firing mechanism."))
+		to_chat(user, span_notice("I slide \the [gun] into the firing mechanism."))
 		playsound(src, 'sound/items/Crowbar.ogg', 50, 1)
 		stun_projectile = gun_properties["stun_projectile"]
 		stun_projectile_sound = gun_properties["stun_projectile_sound"]
@@ -74,7 +74,7 @@
 /obj/item/integrated_circuit/weaponized/weapon_firing/attack_self(mob/user)
 	if(installed_gun)
 		installed_gun.forceMove(drop_location())
-		to_chat(user, span_notice("You slide \the [installed_gun] out of the firing mechanism."))
+		to_chat(user, span_notice("I slide \the [installed_gun] out of the firing mechanism."))
 		size = initial(size)
 		playsound(src, 'sound/items/Crowbar.ogg', 50, 1)
 		installed_gun = null
@@ -175,7 +175,7 @@
 		if(attached_grenade)
 			to_chat(user, span_warning("There is already a grenade attached!"))
 		else if(user.transferItemToLoc(G,src))
-			user.visible_message(span_warning("\The [user] attaches \a [G] to \the [src]!"), span_notice("You attach \the [G] to \the [src]."))
+			user.visible_message(span_warning("\The [user] attaches \a [G] to \the [src]!"), span_notice("I attach \the [G] to \the [src]."))
 			attach_grenade(G)
 			G.forceMove(src)
 	else
@@ -183,7 +183,7 @@
 
 /obj/item/integrated_circuit/weaponized/grenade/attack_self(mob/user)
 	if(attached_grenade)
-		user.visible_message(span_warning("\The [user] removes \an [attached_grenade] from \the [src]!"), span_notice("You remove \the [attached_grenade] from \the [src]."))
+		user.visible_message(span_warning("\The [user] removes \an [attached_grenade] from \the [src]!"), span_notice("I remove \the [attached_grenade] from \the [src]."))
 		user.put_in_hands(attached_grenade)
 		detach_grenade()
 	else

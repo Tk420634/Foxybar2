@@ -53,7 +53,7 @@
 			if(W.reagents.total_volume >= W.reagents.maximum_volume)
 				to_chat(user, span_notice("[W] is full!"))
 				return
-			to_chat(user, span_notice("You scoop up [src] into [W]!"))
+			to_chat(user, span_notice("I scoop up [src] into [W]!"))
 			reagents.trans_to(W, reagents.total_volume)
 			if(!reagents.total_volume) //scooped up all of it
 				qdel(src)
@@ -64,7 +64,7 @@
 		else
 			var/hotness = W.get_temperature()
 			reagents.expose_temperature(hotness)
-			to_chat(user, span_notice("You heat [name] with [W]!"))
+			to_chat(user, span_notice("I heat [name] with [W]!"))
 	else
 		return ..()
 

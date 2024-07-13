@@ -14,7 +14,7 @@
 	healing_factor = STANDARD_ORGAN_HEALING
 	decay_factor = STANDARD_ORGAN_DECAY
 
-	high_threshold_passed = span_warning("You feel a stange ache in your abdomen, almost like a stitch. This pain is encumbering your movements.")
+	high_threshold_passed = span_warning("I feel a stange ache in your abdomen, almost like a stitch. This pain is encumbering your movements.")
 	high_threshold_cleared = span_notice("The stitching ache in your abdomen passes away, unencumbering your movements.")
 	now_fixed = span_notice("The stabbing pain in your abdomen slowly calms down into a more tolerable ache.")
 
@@ -43,7 +43,7 @@
 	owner.reagents.metabolize(owner, can_overdose=TRUE)
 
 	if(damage > 10 && prob(damage/3))//the higher the damage the higher the probability
-		to_chat(owner, span_warning("You feel a dull pain in your abdomen."))
+		to_chat(owner, span_warning("I feel a dull pain in your abdomen."))
 
 /obj/item/organ/liver/applyOrganDamage(d, maximum = maxHealth)
 	. = ..()

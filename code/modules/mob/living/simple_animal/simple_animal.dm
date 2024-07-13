@@ -260,14 +260,14 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		return
 	if(lazarused)
 		to_chat(user, span_userdanger("[name] has been lazarus injected or tamed by beastmaster! There are special rules for playing as this creature!"))
-		to_chat(user, span_alert("You will be bound to serving a certain person, and very likely will be required to be friendly to Nash and its citizens! Just something to keep in mind!"))
+		to_chat(user, span_alert("I will be bound to serving a certain person, and very likely will be required to be friendly to Nash and its citizens! Just something to keep in mind!"))
 		var/mob/the_master
 		if(isweakref(lazarused_by))
 			the_master = lazarused_by.resolve()
 		if(the_master)
-			to_chat(user, span_alert("Your master will be [the_master.real_name]! Follow their commands at all costs! (within reason of course)"))
+			to_chat(user, span_alert("My master will be [the_master.real_name]! Follow their commands at all costs! (within reason of course)"))
 		else
-			to_chat(user, span_alert("Your master will be Nash and its citizens, protect them at all costs!"))
+			to_chat(user, span_alert("My master will be Nash and its citizens, protect them at all costs!"))
 	var/ghost_role = alert("Hop into [name]? (This is a ghost role, still in development!)","Play as a mob!","Yes, spawn me in!","No, I wanna be a ghost!")
 	if(ghost_role == "No, I wanna be a ghost!" || !loc)
 		return
@@ -303,19 +303,19 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		AddAbility(unmake_a_nest)
 	if(lazarused)
 		to_chat(src, span_userdanger("[name] has been lazarus injected or tamed by beastmaster! There are special rules for playing as this creature!"))
-		to_chat(src, span_alert("You will be bound to serving a certain person, and very likely will be required to be friendly to Nash and its citizens! Just something to keep in mind!"))
+		to_chat(src, span_alert("I will be bound to serving a certain person, and very likely will be required to be friendly to Nash and its citizens! Just something to keep in mind!"))
 		var/mob/the_master
 		if(isweakref(lazarused_by))
 			the_master = lazarused_by.resolve()
 		if(the_master)
-			to_chat(src, span_alert("Your master is [the_master.real_name]! Follow their commands at all costs! (within reason of course)"))
+			to_chat(src, span_alert("My master is [the_master.real_name]! Follow their commands at all costs! (within reason of course)"))
 			log_game("[key_name(src)] has been informed that they ([name]) are lazarus injected/tamed, and will serve [the_master.real_name].")
 			if(mind)
-				mind.store_memory("You have been lazarus injected or tamed by [the_master.real_name], and you're bound to follow their commands! (within reason)")
+				mind.store_memory("I have been lazarus injected or tamed by [the_master.real_name], and you're bound to follow their commands! (within reason)")
 		else
-			to_chat(src, span_alert("Your master is be Nash and its citizens, protect them at all costs!"))
+			to_chat(src, span_alert("My master is be Nash and its citizens, protect them at all costs!"))
 			if(mind)
-				mind.store_memory("You have been lazarus injected or tamed, and are bound to serve the town of Nash and protect its people.")
+				mind.store_memory("I have been lazarus injected or tamed, and are bound to serve the town of Nash and protect its people.")
 			log_game("[key_name(src)] has been informed that they ([name]) are lazarus injected/tamed, and will serve Nash.")
 
 /mob/living/simple_animal/proc/cleared_to_enter(mob/user)
@@ -328,7 +328,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	if(QDELETED(src) || QDELETED(user))
 		return FALSE
 	if(jobban_isbanned(user, ROLE_SYNDICATE))
-		to_chat(user, span_warning("You are jobanned from playing as mobs!"))
+		to_chat(user, span_warning("I am jobanned from playing as mobs!"))
 		return FALSE
 	/*if(!(z in COMMON_Z_LEVELS))
 		to_chat(user, span_warning("[name] is somewhere that blocks them from being ghosted into! Try somewhere aboveground (or not in a dungeon!)"))
@@ -349,7 +349,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	if(GLOB.playmob_cooldowns[user.key][ghost_mob_id] > world.time)
 		var/time_left = GLOB.playmob_cooldowns[user.key][ghost_mob_id] - world.time*/ // No, respawn times are instant
 		//if(check_rights_for(user.client, R_ADMIN))
-		//	to_chat(user, span_green("You shoud be unable to hop into mobs for another [DisplayTimeText(time_left)], but you're special cus you're an admin and you can ghost into mobs whenever you want, also everyone loves you and thinks you're cool."))
+		//	to_chat(user, span_green("I shoud be unable to hop into mobs for another [DisplayTimeText(time_left)], but you're special cus you're an admin and you can ghost into mobs whenever you want, also everyone loves you and thinks you're cool."))
 		//else // yeah no turns out its not a great idea
 		/*to_chat(user, span_warning("You're unable to hop into mobs for another [DisplayTimeText(time_left)]."))
 		return FALSE*/
@@ -490,8 +490,8 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		lazarused = TRUE
 		lazarused_by = WEAKREF(user)
 		if(user.mind)
-			user.mind.store_memory("You were revived by [user.real_name], and thus are compelled to follow their commands and protect them!")
-		show_message(span_userdanger("You were revived by [user.real_name], and are bound to protect them and follow their commands!"))
+			user.mind.store_memory("I were revived by [user.real_name], and thus are compelled to follow their commands and protect them!")
+		show_message(span_userdanger("I were revived by [user.real_name], and are bound to protect them and follow their commands!"))
 		LAZYREMOVE(GLOB.mob_spawners[initial(name)], src)
 		if(!LAZYLEN(GLOB.mob_spawners[initial(name)]))
 			GLOB.mob_spawners -= initial(name)
@@ -689,15 +689,15 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 			if(!prob(chance_to_drop_butchered_thing))
 				if(butcherer && loud && !said_fail)
 					said_fail = TRUE
-					to_chat(butcherer, span_warning("You fail to harvest some of the [initial(rando_bits.name)] from [src]."))
+					to_chat(butcherer, span_warning("I fail to harvest some of the [initial(rando_bits.name)] from [src]."))
 			else if(prob(bonus_chance))
 				if(butcherer && loud)
-					to_chat(butcherer, span_info("You harvest some extra [initial(rando_bits.name)] from [src]!"))
+					to_chat(butcherer, span_info("I harvest some extra [initial(rando_bits.name)] from [src]!"))
 				for(var/i in 1 to 2)
 					butchered_items += new rando_bits (T)
 				if(HAS_TRAIT(butcherer, TRAIT_TRAPPER))
 					if(butcherer)
-						to_chat(butcherer, span_info("Your advanced trapping knowledge allows you to harvest extra [initial(rando_bits.name)] from [src]!"))
+						to_chat(butcherer, span_info("My advanced trapping knowledge allows you to harvest extra [initial(rando_bits.name)] from [src]!"))
 					for(var/i in 1 to 2)
 						butchered_items += new rando_bits (T)
 			else
@@ -902,13 +902,13 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 
 /mob/living/simple_animal/canUseTopic(atom/movable/M, be_close=FALSE, no_dextery=FALSE, no_tk=FALSE)
 	if(incapacitated(allow_crit = TRUE))
-		to_chat(src, span_warning("You can't do that right now!"))
+		to_chat(src, span_warning("I can't do that right now!"))
 		return FALSE
 	if(be_close && !in_range(M, src))
-		to_chat(src, span_warning("You are too far away!"))
+		to_chat(src, span_warning("I am too far away!"))
 		return FALSE
 	if(!(no_dextery || dextrous))
-		to_chat(src, span_warning("You don't have the dexterity to do this!"))
+		to_chat(src, span_warning("I don't have the dexterity to do this!"))
 		return FALSE
 	return TRUE
 
@@ -1189,7 +1189,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 
 /mob/living/simple_animal/proc/unstamcrit()
 	COOLDOWN_RESET(src, stamcrit_timer)
-	to_chat(src, span_notice("You don't feel nearly as exhausted anymore."))
+	to_chat(src, span_notice("I don't feel nearly as exhausted anymore."))
 	DISABLE_BITFIELD(combat_flags, COMBAT_FLAG_HARD_STAMCRIT)
 	filters -= CIT_FILTER_STAMINACRIT
 	walk(src, 0)
@@ -1385,7 +1385,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	if(!mob_armor)
 		mob_armor_description = null
 
-	var/list/descriptors = list("\n" + span_notice("You consider [src]'s resistances...") + "\n")
+	var/list/descriptors = list("\n" + span_notice("I consider [src]'s resistances...") + "\n")
 	///Melee
 	var/melee_armor = mob_armor.getRating("melee")
 	descriptors += span_notice("[p_they(TRUE)] look[p_s()] like [p_they()]")
@@ -1403,7 +1403,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	descriptors += "\n"
 	///Bullet
 	var/bullet_armor = mob_armor.getRating("bullet")
-	descriptors += span_notice("You feel like")
+	descriptors += span_notice("I feel like")
 	switch(bullet_armor)
 		if(-INFINITY to 20)
 			descriptors += span_notice(" a bullet would smash right through [p_them()].")
@@ -1418,7 +1418,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	descriptors += "\n"
 	///Laser
 	var/laser_armor = mob_armor.getRating("laser")
-	descriptors += span_notice("You figure")
+	descriptors += span_notice("I figure")
 	switch(laser_armor)
 		if(-INFINITY to 20)
 			descriptors += span_notice(" a laser would slice through [p_them()] like brahminbutter.")
@@ -1433,7 +1433,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 	descriptors += "\n"
 	///plasma
 	var/plasma_armor = mob_armor.getRating("energy")
-	descriptors += span_notice("You imagine that")
+	descriptors += span_notice("I imagine that")
 	switch(plasma_armor)
 		if(-INFINITY to 20)
 			descriptors += span_notice(" a burst of intense heat would simply burn [p_them()] to a crisp.")
@@ -1497,7 +1497,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 			if(pulling)
 				stop_pulling()
 			if(HAS_TRAIT(src, TRAIT_PACIFISM))
-				to_chat(src, span_notice("You gently let go of [throwable_mob]."))
+				to_chat(src, span_notice("I gently let go of [throwable_mob]."))
 				return
 
 			adjustStaminaLossBuffered(STAM_COST_THROW_MOB * ((throwable_mob.mob_size+1)**2))// throwing an entire person shall be very tiring
@@ -1511,7 +1511,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		dropItemToGround(I)
 
 		if(HAS_TRAIT(src, TRAIT_PACIFISM) && I.throwforce)
-			to_chat(src, span_notice("You set [I] down gently on the ground."))
+			to_chat(src, span_notice("I set [I] down gently on the ground."))
 			return
 
 		adjustStaminaLossBuffered(I.getweight(src, STAM_COST_THROW_MULT, SKILL_THROW_STAM_COST))
@@ -1523,7 +1523,7 @@ GLOBAL_LIST_EMPTY(playmob_cooldowns)
 		if(pulling && grab_state >= GRAB_NECK)
 			power_throw++
 		visible_message(span_danger("[src] throws [thrown_thing][power_throw ? " really hard!" : "."]"), \
-						span_danger("You throw [thrown_thing][power_throw ? " really hard!" : "."]"))
+						span_danger("I throw [thrown_thing][power_throw ? " really hard!" : "."]"))
 		log_message("has thrown [thrown_thing] [power_throw ? "really hard" : ""]", LOG_ATTACK)
 		do_attack_animation(target, no_effect = 1)
 		playsound(loc, 'sound/weapons/punchmiss.ogg', 50, 1, -1)

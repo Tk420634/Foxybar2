@@ -196,7 +196,7 @@
 		msg = "<b>[msg]</b>"
 		vis_dist = DEFAULT_MESSAGE_RANGE
 
-	victim.visible_message(msg, span_userdanger("Your [limb.name] [verbiage]!"), vision_distance = vis_dist)
+	victim.visible_message(msg, span_userdanger("My [limb.name] [verbiage]!"), vision_distance = vis_dist)
 	if(sound_effect)
 		playsound(limb.owner, sound_effect, 70 + 20 * severity, TRUE, ignore_walls = TRUE)
 
@@ -211,10 +211,10 @@
 			if(1 to 6)
 				victim.bleed(blood_bled, TRUE)
 			if(7 to 13)
-//				victim.visible_message(span_danger("Blood droplets fly from the wound in [victim]'s [limb.name]."), span_danger("You cough up a bit of blood from the blow to your [limb.name]."), vision_distance=COMBAT_MESSAGE_RANGE) // combat messages happen often and fast- causing severe client lag
+//				victim.visible_message(span_danger("Blood droplets fly from the wound in [victim]'s [limb.name]."), span_danger("I cough up a bit of blood from the blow to your [limb.name]."), vision_distance=COMBAT_MESSAGE_RANGE) // combat messages happen often and fast- causing severe client lag
 				victim.bleed(blood_bled, TRUE)
 			if(14 to 19)
-//				victim.visible_message(span_danger("A small stream of blood spurts from the wound in [victim]'s [limb.name]!"), span_danger("You spit out a string of blood from the blow to your [limb.name]!"), vision_distance=COMBAT_MESSAGE_RANGE) // combat messages happen often and fast- causing severe client lag
+//				victim.visible_message(span_danger("A small stream of blood spurts from the wound in [victim]'s [limb.name]!"), span_danger("I spit out a string of blood from the blow to your [limb.name]!"), vision_distance=COMBAT_MESSAGE_RANGE) // combat messages happen often and fast- causing severe client lag
 				new /obj/effect/temp_visual/dir_setting/bloodsplatter(victim.loc, victim.dir)
 				victim.bleed(blood_bled)
 			if(20 to INFINITY)
@@ -273,7 +273,7 @@
 	if(victim.bodytemperature < (BODYTEMP_NORMAL - 10))
 		blood_flow -= rand(clot_rate * 0.5, clot_rate)
 		if(prob(5))
-			to_chat(victim, span_notice("You feel the [lowertext(name)] in your [limb.name] firming up from the cold!"))
+			to_chat(victim, span_notice("I feel the [lowertext(name)] in your [limb.name] firming up from the cold!"))
 
 	blood_flow = max(blood_flow, minimum_flow)
 
@@ -351,7 +351,7 @@
 /// Someone is trying to cauterize a wound with a fucking lasergun - unused for now, doesnt work
 /datum/wound/bleed/proc/las_cauterize(obj/item/gun/energy/laser/lasgun, mob/user)
 	var/self_penalty_mult = (user == victim ? 1.25 : 1)
-	user.visible_message(span_warning("[user] begins aiming [lasgun] directly at [victim]'s [limb.name]..."), span_userdanger("You begin aiming [lasgun] directly at [user == victim ? "your" : "[victim]'s"] [limb.name]..."))
+	user.visible_message(span_warning("[user] begins aiming [lasgun] directly at [victim]'s [limb.name]..."), span_userdanger("I begin aiming [lasgun] directly at [user == victim ? "your" : "[victim]'s"] [limb.name]..."))
 	if(!do_after(user, base_treat_time  * self_penalty_mult, target=victim, extra_checks = CALLBACK(src,PROC_REF(still_exists))))
 		return
 	var/damage = lasgun.chambered.BB.damage
@@ -366,11 +366,11 @@
 /// If someone is using a suture to close this cut - unused for now, handled by various other mechanics
 /datum/wound/bleed/proc/suture(obj/item/stack/medical/suture/I, mob/user)
 	var/self_penalty_mult = (user == victim ? 1.2 : 1)
-	user.visible_message(span_notice("[user] begins stitching [victim]'s [limb.name] with [I]..."), span_notice("You begin stitching [user == victim ? "your" : "[victim]'s"] [limb.name] with [I]..."))
+	user.visible_message(span_notice("[user] begins stitching [victim]'s [limb.name] with [I]..."), span_notice("I begin stitching [user == victim ? "your" : "[victim]'s"] [limb.name] with [I]..."))
 
 	if(!do_after(user, base_treat_time * self_penalty_mult, target=victim, extra_checks = CALLBACK(src,PROC_REF(still_exists))))
 		return
-	user.visible_message(span_green("[user] stitches up some of the bleeding on [victim]."), span_green("You stitch up some of the bleeding on [user == victim ? "yourself" : "[victim]"]."))
+	user.visible_message(span_green("[user] stitches up some of the bleeding on [victim]."), span_green("I stitch up some of the bleeding on [user == victim ? "yourself" : "[victim]"]."))
 	var/blood_sutured = I.is_bandage / self_penalty_mult
 	blood_flow -= blood_sutured
 	limb.heal_damage(I.heal_brute, I.heal_burn)
@@ -378,20 +378,20 @@
 	//if(blood_flow > minimum_flow)
 	//	try_treating(I, user)
 	//else if(demotes_to)
-	//	to_chat(user, span_green("You successfully lower the severity of [user == victim ? "your" : "[victim]'s"] cuts."))
+	//	to_chat(user, span_green("I successfully lower the severity of [user == victim ? "your" : "[victim]'s"] cuts."))
 
 
 /// If someone is using either a cautery tool or something with heat to cauterize this cut
 /datum/wound/bleed/proc/tool_cauterize(obj/item/I, mob/user)
 	if(blood_flow <= minimum_flow)
-		to_chat(user, span_danger("You can't cauterize [limb.name] any further, use a bandage and/or a suture!"))
+		to_chat(user, span_danger("I can't cauterize [limb.name] any further, use a bandage and/or a suture!"))
 		return
 	var/self_penalty_mult = (user == victim ? 1.5 : 1)
-	user.visible_message(span_danger("[user] begins cauterizing [victim]'s [limb.name] with [I]..."), span_danger("You begin cauterizing [user == victim ? "your" : "[victim]'s"] [limb.name] with [I]..."))
+	user.visible_message(span_danger("[user] begins cauterizing [victim]'s [limb.name] with [I]..."), span_danger("I begin cauterizing [user == victim ? "your" : "[victim]'s"] [limb.name] with [I]..."))
 	if(!do_after(user, base_treat_time * self_penalty_mult, target=victim, extra_checks = CALLBACK(src,PROC_REF(still_exists))))
 		return
 
-	user.visible_message(span_green("[user] cauterizes some of the bleeding on [victim]."), span_green("You cauterize some of the bleeding on [victim]."))
+	user.visible_message(span_green("[user] cauterizes some of the bleeding on [victim]."), span_green("I cauterize some of the bleeding on [victim]."))
 	limb.receive_damage(burn = 2 + severity, wound_bonus = CANT_WOUND)
 	if(prob(30))
 		victim.emote("scream")
@@ -401,7 +401,7 @@
 	//if(blood_flow > minimum_flow)
 	//	try_treating(I, user)
 	//else if(demotes_to)
-	//	to_chat(user, span_green("You successfully lower the severity of [user == victim ? "your" : "[victim]'s"] cuts."))
+	//	to_chat(user, span_green("I successfully lower the severity of [user == victim ? "your" : "[victim]'s"] cuts."))
 
 /// If someone is licking at their wounds cus they're a cat and that works
 /datum/wound/bleed/proc/lick_wounds(mob/living/carbon/human/user)
@@ -410,23 +410,23 @@
 		return
 
 	if(user.is_mouth_covered())
-		to_chat(user, span_warning("Your mouth is covered, you can't lick [victim]'s wounds!"))
+		to_chat(user, span_warning("My mouth is covered, you can't lick [victim]'s wounds!"))
 		return
 
 	if(!user.getorganslot(ORGAN_SLOT_TONGUE))
-		to_chat(user, span_warning("You can't lick wounds without a tongue!")) // f in chat
+		to_chat(user, span_warning("I can't lick wounds without a tongue!")) // f in chat
 		return
 
 	// transmission is one way patient -> felinid since google said cat saliva is antiseptic or whatever, and also because felinids are already risking getting beaten for this even without people suspecting they're spreading a deathvirus
 	for(var/datum/disease/D in victim.diseases)
 		user.ForceContractDisease(D)
 
-	user.visible_message(span_notice("[user] begins licking the wounds on [victim]'s [limb.name]."), span_notice("You begin licking the wounds on [victim]'s [limb.name]..."), ignored_mobs=victim)
+	user.visible_message(span_notice("[user] begins licking the wounds on [victim]'s [limb.name]."), span_notice("I begin licking the wounds on [victim]'s [limb.name]..."), ignored_mobs=victim)
 	to_chat(victim, "<span class='notice'>[user] begins to lick the wounds on your [limb.name].</span")
 	if(!do_after(user, base_treat_time, target=victim, extra_checks = CALLBACK(src,PROC_REF(still_exists))))
 		return
 
-	user.visible_message(span_notice("[user] licks the wounds on [victim]'s [limb.name]."), span_notice("You lick some of the wounds on [victim]'s [limb.name]"), ignored_mobs=victim)
+	user.visible_message(span_notice("[user] licks the wounds on [victim]'s [limb.name]."), span_notice("I lick some of the wounds on [victim]'s [limb.name]"), ignored_mobs=victim)
 	to_chat(victim, "<span class='green'>[user] licks the wounds on your [limb.name]!</span")
 	blood_flow -= 0.05
 	if(isinsect(victim) || iscatperson(victim) || ismammal(victim) || isdwarf(victim) || ismonkey(victim)) // Yep you can lick monkeys.
@@ -438,4 +438,4 @@
 	//if(blood_flow > minimum_flow)
 	//	try_handling(user)
 	//else if(demotes_to)
-	//	to_chat(user, span_green("You successfully lower the severity of [victim]'s cuts."))
+	//	to_chat(user, span_green("I successfully lower the severity of [victim]'s cuts."))

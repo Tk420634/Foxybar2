@@ -40,7 +40,7 @@
 					return
 				var/obj/item/multitool/M = I
 				M.buffer = src
-				to_chat(user, span_notice("You save the data in the [I.name]'s buffer."))
+				to_chat(user, span_notice("I save the data in the [I.name]'s buffer."))
 				return TRUE
 
 		if(default_deconstruction_crowbar(I))
@@ -210,7 +210,7 @@
 			return
 		if(!usr.canUseTopic(src, BE_CLOSE, ismonkey(usr)))
 			return
-		usr.visible_message(span_notice("[usr] starts closing [src]..."), span_notice("You start closing [src]..."))
+		usr.visible_message(span_notice("[usr] starts closing [src]..."), span_notice("I start closing [src]..."))
 		if(do_after(usr, 30, target = usr))
 			usr.put_in_hands(briefcase)
 			moveToNullspace() //hides it from suitcase contents
@@ -222,7 +222,7 @@
 		if(L.pad == src) //do not attempt to link when already linked
 			return ..()
 		L.pad = src
-		to_chat(user, span_notice("You link [src] to [L]."))
+		to_chat(user, span_notice("I link [src] to [L]."))
 	else
 		return ..()
 
@@ -247,7 +247,7 @@
 	if(!isturf(user.loc)) //no setting up in a locker
 		return
 	add_fingerprint(user)
-	user.visible_message(span_notice("[user] starts setting down [src]..."), span_notice("You start setting up [pad]..."))
+	user.visible_message(span_notice("[user] starts setting down [src]..."), span_notice("I start setting up [pad]..."))
 	if(do_after(user, 30, target = user))
 		pad.forceMove(get_turf(src))
 		pad.closed = FALSE
@@ -260,7 +260,7 @@
 		if(L.pad == src.pad) //do not attempt to link when already linked
 			return ..()
 		L.pad = src.pad
-		to_chat(user, span_notice("You link [pad] to [L]."))
+		to_chat(user, span_notice("I link [pad] to [L]."))
 	else
 		return ..()
 

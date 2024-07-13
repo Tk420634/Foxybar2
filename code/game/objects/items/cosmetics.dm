@@ -33,7 +33,7 @@
 
 /obj/item/lipstick/attack_self(mob/user)
 	cut_overlays()
-	to_chat(user, span_notice("You twist \the [src] [open ? "closed" : "open"]."))
+	to_chat(user, span_notice("I twist \the [src] [open ? "closed" : "open"]."))
 	open = !open
 	if(open)
 		var/mutable_appearance/colored_overlay = mutable_appearance(icon, "lipstick_uncap_color")
@@ -56,20 +56,20 @@
 			to_chat(user, span_warning("Remove [ H == user ? "your" : "[H.p_their()]" ] mask!"))
 			return
 		if(H.lip_style)	//if they already have lipstick on
-			to_chat(user, span_warning("You need to wipe off the old lipstick first!"))
+			to_chat(user, span_warning("I need to wipe off the old lipstick first!"))
 			return
 		if(H == user)
 			user.visible_message(span_notice("[user] does [user.p_their()] lips with \the [src]."), \
-								span_notice("You take a moment to apply \the [src]. Perfect!"))
+								span_notice("I take a moment to apply \the [src]. Perfect!"))
 			H.lip_style = "lipstick"
 			H.lip_color = colour
 			H.update_body()
 		else
 			user.visible_message(span_warning("[user] begins to do [H]'s lips with \the [src]."), \
-								span_notice("You begin to apply \the [src] on [H]'s lips..."))
+								span_notice("I begin to apply \the [src] on [H]'s lips..."))
 			if(do_after(user, 20, target = H))
 				user.visible_message("[user] does [H]'s lips with \the [src].", \
-									span_notice("You apply \the [src] on [H]'s lips."))
+									span_notice("I apply \the [src] on [H]'s lips."))
 				H.lip_style = "lipstick"
 				H.lip_color = colour
 				H.update_body()
@@ -85,15 +85,15 @@
 		if(ishuman(M))
 			var/mob/living/carbon/human/H = M
 			if(H == user)
-				to_chat(user, span_notice("You wipe off the lipstick with [src]."))
+				to_chat(user, span_notice("I wipe off the lipstick with [src]."))
 				H.lip_style = null
 				H.update_body()
 			else
 				user.visible_message(span_warning("[user] begins to wipe [H]'s lipstick off with \the [src]."), \
-									span_notice("You begin to wipe off [H]'s lipstick..."))
+									span_notice("I begin to wipe off [H]'s lipstick..."))
 				if(do_after(user, 10, target = H))
 					user.visible_message("[user] wipes [H]'s lipstick off with \the [src].", \
-										span_notice("You wipe off [H]'s lipstick."))
+										span_notice("I wipe off [H]'s lipstick."))
 					H.lip_style = null
 					H.update_body()
 	else
@@ -137,19 +137,19 @@
 
 			if(H == user) //shaving yourself
 				user.visible_message("[user] starts to shave [user.p_their()] facial hair with [src].", \
-									span_notice("You take a moment to shave your facial hair with [src]..."))
+									span_notice("I take a moment to shave your facial hair with [src]..."))
 				if(do_after(user, 50, target = H))
 					user.visible_message("[user] shaves [user.p_their()] facial hair clean with [src].", \
-										span_notice("You finish shaving with [src]. Fast and clean!"))
+										span_notice("I finish shaving with [src]. Fast and clean!"))
 					shave(H, location)
 			else
 				var/turf/H_loc = H.loc
 				user.visible_message(span_warning("[user] tries to shave [H]'s facial hair with [src]."), \
-									span_notice("You start shaving [H]'s facial hair..."))
+									span_notice("I start shaving [H]'s facial hair..."))
 				if(do_after(user, 50, target = H))
 					if(H_loc == H.loc)
 						user.visible_message(span_warning("[user] shaves off [H]'s facial hair with [src]."), \
-											span_notice("You shave [H]'s facial hair clean off."))
+											span_notice("I shave [H]'s facial hair clean off."))
 						shave(H, location)
 
 		else if(location == BODY_ZONE_HEAD)
@@ -165,19 +165,19 @@
 
 			if(H == user) //shaving yourself
 				user.visible_message("[user] starts to shave [user.p_their()] head with [src].", \
-									span_notice("You start to shave your head with [src]..."))
+									span_notice("I start to shave your head with [src]..."))
 				if(do_after(user, 5, target = H))
 					user.visible_message("[user] shaves [user.p_their()] head with [src].", \
-										span_notice("You finish shaving with [src]."))
+										span_notice("I finish shaving with [src]."))
 					shave(H, location)
 			else
 				var/turf/H_loc = H.loc
 				user.visible_message(span_warning("[user] tries to shave [H]'s head with [src]!"), \
-									span_notice("You start shaving [H]'s head..."))
+									span_notice("I start shaving [H]'s head..."))
 				if(do_after(user, 50, target = H))
 					if(H_loc == H.loc)
 						user.visible_message(span_warning("[user] shaves [H]'s head bald with [src]!"), \
-											span_notice("You shave [H]'s head bald."))
+											span_notice("I shave [H]'s head bald."))
 						shave(H, location)
 		else
 			..()

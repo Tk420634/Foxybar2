@@ -53,7 +53,7 @@
 	if(prob(10))
 		var/atom/T = C
 		T.emp_act(80)
-		to_chat(C, span_warning("You feel a strange tingling sensation come from your core.</b>"))
+		to_chat(C, span_warning("I feel a strange tingling sensation come from your core.</b>"))
 	if(isnull(N))
 		return ..()
 	N.nanite_volume += -10*cached_purity
@@ -80,7 +80,7 @@
 	if(prob(50))
 		var/atom/T = C
 		T.emp_act(80)
-		to_chat(C, span_warning("You feel your hair stand on end as you glow brightly for a moment!</b>"))
+		to_chat(C, span_warning("I feel your hair stand on end as you glow brightly for a moment!</b>"))
 	..()
 
 
@@ -106,7 +106,7 @@
 	C.adjustFireLoss(acidstr/2, 0)
 	if((method==VAPOR) && (!C.wear_mask))
 		if(prob(20))
-			to_chat(C, span_warning("You can feel your lungs burning!</b>"))
+			to_chat(C, span_warning("I can feel your lungs burning!</b>"))
 		C.adjustOrganLoss(ORGAN_SLOT_LUNGS, acidstr*2)
 		C.apply_damage(acidstr/5, BURN, target)
 	C.acid_act(acidstr, volume)
@@ -191,7 +191,7 @@
 		var/obj/item/toy/plush/P = pick(subtypesof(/obj/item/toy/plush))
 		new P(T)
 		M.visible_message(span_warning("[M] suddenly coughs up a [P.name]!</b>"),\
-						span_warning("You feel a lump form in your throat, as you suddenly cough up what seems to be a hairball?</b>"))
+						span_warning("I feel a lump form in your throat, as you suddenly cough up what seems to be a hairball?</b>"))
 		var/T2 = get_random_station_turf()
 		P.throw_at(T2, 8, 1)
 	..()
@@ -201,13 +201,13 @@
 	switch(current_cycle)
 		if(1 to 9)
 			if(prob(20))
-				to_chat(M, span_notice("Your tongue feels... fluffy"))
+				to_chat(M, span_notice("My tongue feels... fluffy"))
 		if(10 to 15)
 			if(prob(10))
-				to_chat(M, "You find yourself unable to supress the desire to meow!")
+				to_chat(M, "I find yourself unable to supress the desire to meow!")
 				M.emote("nya")
 			if(prob(10))
-				to_chat(M, "You find yourself unable to supress the desire to howl!")
+				to_chat(M, "I find yourself unable to supress the desire to howl!")
 				M.emote("awoo")
 			if(prob(20))
 				var/list/seen = M.fov_view() - M //Sound and sight checkers
@@ -215,7 +215,7 @@
 					if(isanimal(victim) || !isliving(victim))
 						seen -= victim
 				if(LAZYLEN(seen))
-					to_chat(M, "You notice [pick(seen)]'s bulge [pick("OwO!", "uwu!")]")
+					to_chat(M, "I notice [pick(seen)]'s bulge [pick("OwO!", "uwu!")]")
 		if(16)
 			T = M.getorganslot(ORGAN_SLOT_TONGUE)
 			var/obj/item/organ/tongue/nT = new /obj/item/organ/tongue/fluffy
@@ -225,10 +225,10 @@
 			to_chat(M, "<span class='big warning'>Your tongue feels... weally fwuffy!!</span>")
 		if(17 to INFINITY)
 			if(prob(5))
-				to_chat(M, "You find yourself unable to supress the desire to meow!")
+				to_chat(M, "I find yourself unable to supress the desire to meow!")
 				M.emote("nya")
 			if(prob(5))
-				to_chat(M, "You find yourself unable to supress the desire to howl!")
+				to_chat(M, "I find yourself unable to supress the desire to howl!")
 				M.emote("awoo")
 			if(prob(5))
 				var/list/seen = M.fov_view() - M //Sound and sight checkers
@@ -236,7 +236,7 @@
 					if(isanimal(victim) || !isliving(victim))
 						seen -= victim
 				if(LAZYLEN(seen))
-					to_chat(M, "You notice [pick(seen)]'s bulge [pick("OwO!", "uwu!")]")
+					to_chat(M, "I notice [pick(seen)]'s bulge [pick("OwO!", "uwu!")]")
 	..()
 
 /datum/reagent/fermi/furranium/on_mob_delete(mob/living/carbon/M)
@@ -245,7 +245,7 @@
 		nT.Remove()
 		qdel(nT)
 		T.Insert(M)
-		to_chat(M, span_notice("You feel your tongue.... unfluffify...?"))
+		to_chat(M, span_notice("I feel your tongue.... unfluffify...?"))
 		M.say("Pleh!")
 	else
 		log_reagent("FERMICHEM: [M] ckey: [M.key]'s tongue has been made permanent")

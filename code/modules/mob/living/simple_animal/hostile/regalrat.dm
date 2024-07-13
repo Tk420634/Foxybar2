@@ -85,7 +85,7 @@
 
 /datum/action/cooldown/coffer
 	name = "Fill Coffers"
-	desc = "Your newly granted regality and poise let you scavenge for lost junk, but more importantly, cheese."
+	desc = "My newly granted regality and poise let you scavenge for lost junk, but more importantly, cheese."
 	icon_icon = 'icons/mob/actions/actions_animal.dmi'
 	background_icon_state = "bg_clock"
 	button_icon_state = "coffer"
@@ -103,11 +103,11 @@
 			new /obj/item/reagent_containers/food/snacks/cheesewedge(T)
 		if(6 to 10)
 			var/pickedcoin = pick(GLOB.ratking_coins)
-			to_chat(owner, span_notice("You find some leftover coins. More for the royal treasury!"))
+			to_chat(owner, span_notice("I find some leftover coins. More for the royal treasury!"))
 			for(var/i = 1 to rand(1,3))
 				new pickedcoin(T)
 		if(11)
-			to_chat(owner, span_notice("You find a... Hunh. This coin doesn't look right."))
+			to_chat(owner, span_notice("I find a... Hunh. This coin doesn't look right."))
 			var/rarecoin = rand(1,2)
 			if (rarecoin == 1)
 				new /obj/item/coin/twoheaded(T)
@@ -115,7 +115,7 @@
 				new /obj/item/coin/antagtoken(T)
 		if(12 to 40)
 			var/pickedtrash = pick(GLOB.ratking_trash)
-			to_chat(owner, span_notice("You just find more garbage and dirt. Lovely, but beneath you now."))
+			to_chat(owner, span_notice("I just find more garbage and dirt. Lovely, but beneath you now."))
 			new /obj/effect/decal/cleanable/dirt(T)
 			new pickedtrash(T)
 		if(41 to 100)
@@ -349,7 +349,7 @@
 	if(istype(user,/mob/living/simple_animal/hostile/rat))
 		var/mob/living/simple_animal/hostile/rat/ratself = user
 		if(ratself.faction_check_mob(src, TRUE))
-			. += span_notice("You both serve the same king.")
+			. += span_notice("I both serve the same king.")
 		else
 			. += span_warning("This fool serves a different king!")
 	else if(istype(user,/mob/living/simple_animal/hostile/regalrat))

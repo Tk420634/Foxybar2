@@ -101,11 +101,11 @@
 /datum/species/golem/plasma/spec_life(mob/living/carbon/human/H)
 	if(H.bodytemperature > 750)
 		if(!boom_warning && H.on_fire)
-			to_chat(H, span_userdanger("You feel like you could blow up at any moment!"))
+			to_chat(H, span_userdanger("I feel like you could blow up at any moment!"))
 			boom_warning = TRUE
 	else
 		if(boom_warning)
-			to_chat(H, span_notice("You feel more stable."))
+			to_chat(H, span_notice("I feel more stable."))
 			boom_warning = FALSE
 
 	if(H.bodytemperature > 850 && H.on_fire && prob(25))
@@ -137,9 +137,9 @@
 	if(ishuman(owner))
 		var/mob/living/carbon/human/H = owner
 		if(H.fire_stacks)
-			to_chat(owner, span_notice("You ignite yourself!"))
+			to_chat(owner, span_notice("I ignite yourself!"))
 		else
-			to_chat(owner, span_warning("You try to ignite yourself, but fail!"))
+			to_chat(owner, span_warning("I try to ignite yourself, but fail!"))
 		H.IgniteMob() //firestacks are already there passively
 
 //Harder to hurt
@@ -408,7 +408,7 @@
 	var/last_teleport = 0
 
 /datum/species/golem/bluespace/proc/reactive_teleport(mob/living/carbon/human/H)
-	H.visible_message(span_warning("[H] teleports!"), span_danger("You destabilize and teleport!"))
+	H.visible_message(span_warning("[H] teleports!"), span_danger("I destabilize and teleport!"))
 	new /obj/effect/particle_effect/sparks(get_turf(H))
 	playsound(get_turf(H), "sparks", 50, 1)
 	do_teleport(H, get_turf(H), 6, asoundin = 'sound/weapons/emitter2.ogg', channel = TELEPORT_CHANNEL_BLUESPACE)
@@ -467,12 +467,12 @@
 
 /datum/action/innate/unstable_teleport/Activate()
 	var/mob/living/carbon/human/H = owner
-	H.visible_message(span_warning("[H] starts vibrating!"), span_danger("You start charging your bluespace core..."))
+	H.visible_message(span_warning("[H] starts vibrating!"), span_danger("I start charging your bluespace core..."))
 	playsound(get_turf(H), 'sound/weapons/flash.ogg', 25, 1)
 	addtimer(CALLBACK(src,PROC_REF(teleport), H), 15)
 
 /datum/action/innate/unstable_teleport/proc/teleport(mob/living/carbon/human/H)
-	H.visible_message(span_warning("[H] disappears in a shower of sparks!"), span_danger("You teleport!"))
+	H.visible_message(span_warning("[H] disappears in a shower of sparks!"), span_danger("I teleport!"))
 	var/datum/effect_system/spark_spread/spark_system = new /datum/effect_system/spark_spread
 	spark_system.set_up(10, 0, src)
 	spark_system.attach(H)
@@ -665,7 +665,7 @@
 		H.unequip_everything()
 		H.forceMove(src)
 		cloth_golem = H
-		to_chat(cloth_golem, span_notice("You start gathering your life energy, preparing to rise again..."))
+		to_chat(cloth_golem, span_notice("I start gathering your life energy, preparing to rise again..."))
 		addtimer(CALLBACK(src,PROC_REF(revive)), revive_time)
 	else
 		return INITIALIZE_HINT_QDEL
@@ -693,7 +693,7 @@
 		cloth_golem.grab_ghost()
 	sleep(20)
 	cloth_golem.forceMove(get_turf(src))
-	cloth_golem.visible_message(span_danger("[src] rises and reforms into [cloth_golem]!"),span_userdanger("You reform into yourself!"))
+	cloth_golem.visible_message(span_danger("[src] rises and reforms into [cloth_golem]!"),span_userdanger("I reform into yourself!"))
 	cloth_golem = null
 	qdel(src)
 
@@ -769,7 +769,7 @@
 		if(M.stat == DEAD)	//F
 			return
 		if(M == H)
-			H.show_message(span_narsiesmall("You cringe with pain as your body rings around you!"), MSG_AUDIBLE)
+			H.show_message(span_narsiesmall("I cringe with pain as your body rings around you!"), MSG_AUDIBLE)
 			H.playsound_local(H, 'sound/effects/gong.ogg', 100, TRUE)
 			H.soundbang_act(2, 0, 100, 1)
 			H.jitteriness += 7
@@ -823,16 +823,16 @@
 		if(last_creation + brother_creation_cooldown > world.time) //no cheesing dork
 			return
 		if(C.amount < 10)
-			to_chat(H, span_warning("You do not have enough cardboard!"))
+			to_chat(H, span_warning("I do not have enough cardboard!"))
 			return FALSE
-		to_chat(H, span_notice("You attempt to create a new cardboard brother."))
+		to_chat(H, span_notice("I attempt to create a new cardboard brother."))
 		if(do_after(user, 30, target = user))
 			if(last_creation + brother_creation_cooldown > world.time) //no cheesing dork
 				return
 			if(!C.use(10))
-				to_chat(H, span_warning("You do not have enough cardboard!"))
+				to_chat(H, span_warning("I do not have enough cardboard!"))
 				return FALSE
-			to_chat(H, span_notice("You create a new cardboard golem shell."))
+			to_chat(H, span_notice("I create a new cardboard golem shell."))
 			create_brother(H.loc)
 
 /datum/species/golem/cardboard/proc/create_brother(location)
@@ -908,9 +908,9 @@
 
 /datum/action/innate/bonechill/Activate()
 	if(world.time < last_use + cooldown)
-		to_chat(owner, span_notice("You aren't ready yet to rattle your bones again"))
+		to_chat(owner, span_notice("I amn't ready yet to rattle your bones again"))
 		return
-	owner.visible_message(span_warning("[owner] rattles [owner.p_their()] bones harrowingly."), span_notice("You rattle your bones"))
+	owner.visible_message(span_warning("[owner] rattles [owner.p_their()] bones harrowingly."), span_notice("I rattle your bones"))
 	last_use = world.time
 	if(prob(snas_chance))
 		playsound(get_turf(owner),'sound/magic/RATTLEMEBONES2.ogg', 100)

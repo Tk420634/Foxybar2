@@ -70,7 +70,7 @@
 		O.screen_loc = inv3.screen_loc
 		. = TRUE
 	else
-		to_chat(src, span_warning("You need to disable a module first!"))
+		to_chat(src, span_warning("I need to disable a module first!"))
 	if(.)
 		O.equipped(src, SLOT_HANDS)
 		O.mouse_opacity = initial(O.mouse_opacity)

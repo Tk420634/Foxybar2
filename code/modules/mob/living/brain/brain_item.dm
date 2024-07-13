@@ -99,7 +99,7 @@
 			brainmob.set_species(ZI.old_species)	//For if the brain is cloned
 	if(!decoy_override && L.mind && L.mind.current)
 		L.mind.transfer_to(brainmob)
-	to_chat(brainmob, span_notice("You feel slightly disoriented. That's normal when you're just a brain."))
+	to_chat(brainmob, span_notice("I feel slightly disoriented. That's normal when you're just a brain."))
 
 /obj/item/organ/brain/attackby(obj/item/O, mob/user, params)
 	user.DelayNextAction(CLICK_CD_MELEE)
@@ -122,12 +122,12 @@
 			to_chat(user, span_warning("There's not enough neurine in [O] to restore [src]!"))
 			return
 
-		user.visible_message(span_notice("[user] starts to pour the contents of [O] onto [src]."), span_notice("You start to slowly pour the contents of [O] onto [src]."))
+		user.visible_message(span_notice("[user] starts to pour the contents of [O] onto [src]."), span_notice("I start to slowly pour the contents of [O] onto [src]."))
 		if(!do_after(user, 60, TRUE, src))
-			to_chat(user, span_warning("You failed to pour [O] onto [src]!"))
+			to_chat(user, span_warning("I failed to pour [O] onto [src]!"))
 			return
 
-		user.visible_message(span_notice("[user] pours the contents of [O] onto [src], causing it to reform its original shape and turn a slightly brighter shade of pink."), span_notice("You pour the contents of [O] onto [src], causing it to reform its original shape and turn a slightly brighter shade of pink."))
+		user.visible_message(span_notice("[user] pours the contents of [O] onto [src], causing it to reform its original shape and turn a slightly brighter shade of pink."), span_notice("I pour the contents of [O] onto [src], causing it to reform its original shape and turn a slightly brighter shade of pink."))
 		setOrganDamage((damage - (0.10 * maxHealth)*(N.volume/10)))	//heals a small amount, and by using "setorgandamage", we clear the failing variable if that was up
 		O.reagents.clear_reagents()
 
@@ -152,12 +152,12 @@
 			to_chat(user, span_warning("There's not enough mannitol in [O] to restore [src]!"))
 			return
 
-		user.visible_message(span_notice("[user] starts to pour the contents of [O] onto [src]."), span_notice("You start to slowly pour the contents of [O] onto [src]."))
+		user.visible_message(span_notice("[user] starts to pour the contents of [O] onto [src]."), span_notice("I start to slowly pour the contents of [O] onto [src]."))
 		if(!do_after(user, 60, TRUE, src))
-			to_chat(user, span_warning("You failed to pour [O] onto [src]!"))
+			to_chat(user, span_warning("I failed to pour [O] onto [src]!"))
 			return
 
-		user.visible_message(span_notice("[user] pours the contents of [O] onto [src], causing it to reform its original shape and turn a slightly brighter shade of pink."), span_notice("You pour the contents of [O] onto [src], causing it to reform its original shape and turn a slightly brighter shade of pink."))
+		user.visible_message(span_notice("[user] pours the contents of [O] onto [src], causing it to reform its original shape and turn a slightly brighter shade of pink."), span_notice("I pour the contents of [O] onto [src], causing it to reform its original shape and turn a slightly brighter shade of pink."))
 		setOrganDamage((damage - (0.05 * maxHealth)*(M.volume/10)))	//heals a small amount, and by using "setorgandamage", we clear the failing variable if that was up
 		O.reagents.clear_reagents()
 		return
@@ -174,7 +174,7 @@
 			else if(organ_flags & ORGAN_FAILING)
 				. += "<span class='info'>It seems to still have a bit of energy within it, but it's rather damaged... You may be able to restore it with some <b>mannitol</b>.</span>"
 			else
-				. += span_info("You can feel the small spark of life still left in this one.")
+				. += span_info("I can feel the small spark of life still left in this one.")
 		else if(organ_flags & ORGAN_FAILING)
 			. += "<span class='info'>It seems particularly lifeless and is rather damaged... You may be able to restore it with some <b>mannitol</b> incase it becomes functional again later.</span>"
 		else
@@ -215,9 +215,9 @@
 
 		if(C != user)
 			to_chat(C, span_notice("[user] inserts [src] into your head."))
-			to_chat(user, span_notice("You insert [src] into [C]'s head."))
+			to_chat(user, span_notice("I insert [src] into [C]'s head."))
 		else
-			to_chat(user, span_notice("You insert [src] into your head.")	)
+			to_chat(user, span_notice("I insert [src] into your head.")	)
 
 		Insert(C)
 	else
@@ -265,11 +265,11 @@
 		if(owner.stat < UNCONSCIOUS) //conscious or soft-crit
 			var/brain_message
 			if(prev_damage < BRAIN_DAMAGE_MILD && damage >= BRAIN_DAMAGE_MILD)
-				brain_message = span_warning("You feel lightheaded.")
+				brain_message = span_warning("I feel lightheaded.")
 			else if(prev_damage < BRAIN_DAMAGE_SEVERE && damage >= BRAIN_DAMAGE_SEVERE)
-				brain_message = span_warning("You feel less in control of your thoughts.")
+				brain_message = span_warning("I feel less in control of your thoughts.")
 			else if(prev_damage < (BRAIN_DAMAGE_DEATH - 20) && damage >= (BRAIN_DAMAGE_DEATH - 20))
-				brain_message = span_warning("You can feel your mind flickering on and off...")
+				brain_message = span_warning("I can feel your mind flickering on and off...")
 
 			if(.)
 				. += "\n[brain_message]"

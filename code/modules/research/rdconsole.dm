@@ -138,7 +138,7 @@ Nothing else in the console has ID requirements.
 		else
 			to_chat(user, span_danger("Machine cannot accept disks in that format."))
 			return
-		to_chat(user, span_notice("You insert [D] into \the [src]!"))
+		to_chat(user, span_notice("I insert [D] into \the [src]!"))
 	else if(!(linked_destroy && linked_destroy.busy) && !(linked_lathe && linked_lathe.busy) && !(linked_imprinter && linked_imprinter.busy))
 		. = ..()
 
@@ -189,7 +189,7 @@ Nothing else in the console has ID requirements.
 	. = ..()
 	if(obj_flags & EMAGGED)
 		return
-	to_chat(user, span_notice("You disable the security protocols[locked? " and unlock the console":""]."))
+	to_chat(user, span_notice("I disable the security protocols[locked? " and unlock the console":""]."))
 	playsound(src, "sparks", 75, 1)
 	obj_flags |= EMAGGED
 	locked = FALSE
@@ -1155,7 +1155,7 @@ Nothing else in the console has ID requirements.
 
 /obj/machinery/computer/rdconsole/core/interact(mob/user)
 	if(HAS_TRAIT(user,TRAIT_FEV))
-		to_chat(user,span_warning("Your hands aren't small enough to use this!"))
+		to_chat(user,span_warning("My hands aren't small enough to use this!"))
 		return FALSE
 	. = ..()
 

@@ -323,7 +323,7 @@
 	if(!..())
 		return
 	if(isliving(M))
-		to_chat(M, span_danger("You are lit on fire from the intense heat of the [name]!"))
+		to_chat(M, span_danger("I am lit on fire from the intense heat of the [name]!"))
 		M.adjust_fire_stacks(seed.potency / 20)
 		if(M.IgniteMob())
 			message_admins("[ADMIN_LOOKUPFLW(user)] set [ADMIN_LOOKUPFLW(M)] on fire with [src] at [AREACOORD(user)]")

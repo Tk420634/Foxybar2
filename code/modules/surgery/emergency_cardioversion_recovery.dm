@@ -16,12 +16,12 @@
 	if(istype(tool, /obj/item/shockpaddles))
 		var/obj/item/shockpaddles/pads = tool
 		if(!pads.wielded)
-			to_chat(user, span_warning("You need to wield the paddles in both hands before you can use them!"))
+			to_chat(user, span_warning("I need to wield the paddles in both hands before you can use them!"))
 			return FALSE
-	display_results(user, target, span_notice("You begin to apply the [tool] onto the heart directly..."),
+	display_results(user, target, span_notice("I begin to apply the [tool] onto the heart directly..."),
 		"[user] begin to prepare the heart for contact with the [tool].",
 		"[user] begin to prepare the heart for contact with the [tool].	")
-	target.notify_ghost_cloning("Your heart is undergoing Emergency Cardioversion Induction Surgery!")
+	target.notify_ghost_cloning("My heart is undergoing Emergency Cardioversion Induction Surgery!")
 	playsound(src, 'sound/machines/defib_charge.ogg', 75, 0)
 
 /datum/surgery_step/ventricular_electrotherapy/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
@@ -33,7 +33,7 @@
 	playsound(src, 'sound/machines/defib_zap.ogg', 75, 1, -1)
 	playsound(src, "bodyfall", 50, 1)
 	if(H.stat != DEAD)
-		display_results(user, target, span_warning("You can't use this procedure on the living! [H]'s body flops madly like a wild fish on the table from the current, and your crazed surgical methods."),
+		display_results(user, target, span_warning("I can't use this procedure on the living! [H]'s body flops madly like a wild fish on the table from the current, and your crazed surgical methods."),
 			span_warning("[user] screws up, causing [H] to flop around violently as they're zapped!"),
 			span_warning("[user] screws up, causing [H] to flop around violently as they're zapped!"))
 		H.emote("scream")
@@ -42,7 +42,7 @@
 		H.SpinAnimation(7, 1)
 		H.Jitter(100)
 		return FALSE
-	display_results(user, target, span_notice("You attach the [tool] to [target]'s heart and prepare to pulse."),
+	display_results(user, target, span_notice("I attach the [tool] to [target]'s heart and prepare to pulse."),
 		"[user] attaches the [tool] to [H]'s heart and prepares to pulse.",
 		"")
 	H.adjustBruteLoss(10)
@@ -69,7 +69,7 @@
 	playsound(src, 'sound/machines/defib_zap.ogg', 75, 1, -1)
 	playsound(src, "bodyfall", 50, 1)
 	var/mob/living/carbon/human/H = target
-	display_results(user, target, span_warning("You screw up, sending a current through their body!"),
+	display_results(user, target, span_warning("I screw up, sending a current through their body!"),
 		span_warning("[user] screws up, causing [H] to flop around violently as they're zapped!"),
 		span_warning("[user] screws up, causing [H] to flop around violently as they're zapped!"))
 	H.electrocute_act(25, (tool), 1, SHOCK_ILLUSION)

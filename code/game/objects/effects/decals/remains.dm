@@ -21,7 +21,7 @@
 	if(do_after(user, 40, target = src))
 		var/atom/find = make_debris()
 		if(find)
-			to_chat(user, span_notice("You find \a [find] in [src]!"))
+			to_chat(user, span_notice("I find \a [find] in [src]!"))
 			if(drop_amount == 0)
 				qdel(src)
 				return
@@ -37,7 +37,7 @@
 	. = list(span_notice("<i>You examine [src] closer, and note the following...</i>"))
 	if(LAZYLEN(debris_result))
 		var/obj/item/show = pick(debris_result)
-		. += span_notice("You think you can see some [initial(show.name)] in it.")
+		. += span_notice("I think you can see some [initial(show.name)] in it.")
 	if(drop_amount && (drop_amount < initial(drop_amount)))
 		. += span_notice("It looks like it has already been picked through somewhat.")
 	return .

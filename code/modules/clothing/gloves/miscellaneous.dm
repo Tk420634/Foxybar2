@@ -287,11 +287,11 @@
 	var/choice = show_radial_menu(user, src, choices, radius = 32, require_near = TRUE)
 	switch(choice)
 		if("Armwarmers")
-			balloon_alert(user, "Your suit changes color.")
+			balloon_alert(user, "My suit changes color.")
 			icon_state = "armwarmer"
 			item_state = "armwarmer"
 		if("Long Armwarmers")
-			balloon_alert(user, "Your suit changes color.")
+			balloon_alert(user, "My suit changes color.")
 			icon_state = "armwarmer_long"
 			item_state = "armwarmer_long"
 		else
@@ -316,11 +316,11 @@
 	var/choice = show_radial_menu(user, src, choices, radius = 32, require_near = TRUE)
 	switch(choice)
 		if("Striped Armwarmers")
-			balloon_alert(user, "Your suit changes color.")
+			balloon_alert(user, "My suit changes color.")
 			icon_state = "armwarmer_striped"
 			item_state = "armwarmer_striped"
 		if("Long Striped Armwarmers")
-			balloon_alert(user, "Your suit changes color.")
+			balloon_alert(user, "My suit changes color.")
 			icon_state = "armwarmer_striped_long"
 			item_state = "armwarmer_striped_long"
 		else

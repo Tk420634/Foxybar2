@@ -55,7 +55,7 @@
 
 /mob/living/simple_animal/bot/cleanbot/proc/deputize(obj/item/W, mob/user)
 	if(in_range(src, user))
-		to_chat(user, span_notice("You attach \the [W] to \the [src]."))
+		to_chat(user, span_notice("I attach \the [W] to \the [src]."))
 		user.transferItemToLoc(W, src)
 		weapon = W
 		weapon_orig_force = weapon.force
@@ -130,7 +130,7 @@
 	oldloc = null
 
 /mob/living/simple_animal/bot/cleanbot/set_custom_texts()
-	text_hack = "You corrupt [name]'s cleaning software."
+	text_hack = "I corrupt [name]'s cleaning software."
 	text_dehack = "[name]'s software has been reset!"
 	text_dehack_fail = "[name] does not seem to respond to your repair code!"
 
@@ -154,7 +154,7 @@
 	if(istype(W, /obj/item/card/id)||istype(W, /obj/item/pda))
 		if(bot_core.allowed(user) && !open && !emagged)
 			locked = !locked
-			to_chat(user, span_notice("You [ locked ? "lock" : "unlock"] \the [src] behaviour controls."))
+			to_chat(user, span_notice("I [ locked ? "lock" : "unlock"] \the [src] behaviour controls."))
 		else
 			if(emagged)
 				to_chat(user, span_warning("ERROR"))
@@ -164,13 +164,13 @@
 				to_chat(user, span_notice("The [src] doesn't seem to respect your authority."))
 
 	else if(istype(W, /obj/item/kitchen/knife) && user.a_intent != INTENT_HARM)
-		to_chat(user, span_notice("You start attaching \the [W] to \the [src]..."))
+		to_chat(user, span_notice("I start attaching \the [W] to \the [src]..."))
 		if(do_after(user, 25, target = src))
 			deputize(W, user)
 
 	else if(istype(W, /obj/item/mop/advanced))
 		if(bot_core.allowed(user) && open && !CHECK_BITFIELD(upgrades,UPGRADE_CLEANER_ADVANCED_MOP))
-			to_chat(user, span_notice("You replace \the [src] old mop with a new better one!"))
+			to_chat(user, span_notice("I replace \the [src] old mop with a new better one!"))
 			upgrades |= UPGRADE_CLEANER_ADVANCED_MOP
 			clean_time = 20 //2.5 the speed!
 			window_name = "Automatic Station Cleaner v2.1 BETA" //New!
@@ -186,7 +186,7 @@
 
 	else if(istype(W, /obj/item/broom))
 		if(bot_core.allowed(user) && open && !CHECK_BITFIELD(upgrades,UPGRADE_CLEANER_BROOM))
-			to_chat(user, span_notice("You add to \the [src] a broom speeding it up!"))
+			to_chat(user, span_notice("I add to \the [src] a broom speeding it up!"))
 			upgrades |= UPGRADE_CLEANER_BROOM
 			base_speed = 1 //2x faster!
 			qdel(W)

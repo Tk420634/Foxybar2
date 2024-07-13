@@ -221,11 +221,11 @@
 			if(rider)
 				to_chat(rider, span_warning("[src] is is not capable of flight."))
 			else
-				to_chat(src, span_warning("You are not Superman."))
+				to_chat(src, span_warning("I am not Superman."))
 		return FALSE
 	if(!(z_move_flags & ZMOVE_IGNORE_OBSTACLES) && !(start.zPassOut(src, direction, destination) && destination.zPassIn(src, direction, start)))
 		if(z_move_flags & ZMOVE_FEEDBACK)
-			to_chat(rider || src, span_warning("You couldn't move there!"))
+			to_chat(rider || src, span_warning("I couldn't move there!"))
 		return FALSE
 	return destination //used by some child types checks and zMove()
 
@@ -529,12 +529,12 @@
 /atom/movable/proc/force_push(atom/movable/AM, force = move_force, direction, silent = FALSE)
 	. = AM.force_pushed(src, force, direction)
 	if(!silent && .)
-		visible_message(span_warning("[src] forcefully pushes against [AM]!"), span_warning("You forcefully push against [AM]!"))
+		visible_message(span_warning("[src] forcefully pushes against [AM]!"), span_warning("I forcefully push against [AM]!"))
 
 /atom/movable/proc/move_crush(atom/movable/AM, force = move_force, direction, silent = FALSE)
 	. = AM.move_crushed(src, force, direction)
 	if(!silent && .)
-		visible_message(span_danger("[src] crushes past [AM]!"), span_danger("You crush [AM]!"))
+		visible_message(span_danger("[src] crushes past [AM]!"), span_danger("I crush [AM]!"))
 
 /atom/movable/proc/move_crushed(atom/movable/pusher, force = MOVE_FORCE_DEFAULT, direction)
 	return FALSE

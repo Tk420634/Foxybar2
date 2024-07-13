@@ -37,10 +37,10 @@
 	if(!active && !(flags_1 & NODECONSTRUCT_1))
 		if(istype(O, /obj/item/wrench))
 			if(!anchored && !isinspace())
-				to_chat(user,span_notice("You secure [src] to the floor."))
+				to_chat(user,span_notice("I secure [src] to the floor."))
 				setAnchored(TRUE)
 			else if(anchored)
-				to_chat(user,span_notice("You unsecure and disconnect [src]."))
+				to_chat(user,span_notice("I unsecure and disconnect [src]."))
 				setAnchored(FALSE)
 			playsound(src, 'sound/items/deconstruct.ogg', 50, 1)
 			return

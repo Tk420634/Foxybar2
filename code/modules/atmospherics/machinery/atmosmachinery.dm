@@ -191,7 +191,7 @@
 
 	var/turf/T = get_turf(src)
 	if (level==1 && isturf(T) && T.intact)
-		to_chat(user, span_warning("You must remove the plating first!"))
+		to_chat(user, span_warning("I must remove the plating first!"))
 		return TRUE
 
 	var/datum/gas_mixture/int_air = return_air()
@@ -201,7 +201,7 @@
 	var/unsafe_wrenching = FALSE
 	var/internal_pressure = int_air.return_pressure()-env_air.return_pressure()
 
-	to_chat(user, span_notice("You begin to unfasten \the [src]..."))
+	to_chat(user, span_notice("I begin to unfasten \the [src]..."))
 
 	if (internal_pressure > 2*ONE_ATMOSPHERE)
 		to_chat(user, span_warning("As you begin unwrenching \the [src] a gush of air blows in your face... maybe you should reconsider?"))
@@ -210,8 +210,8 @@
 	if(I.use_tool(src, user, 20, volume=50))
 		user.visible_message( \
 			"[user] unfastens \the [src].", \
-			span_notice("You unfasten \the [src]."), \
-			span_italic("You hear ratchet."))
+			span_notice("I unfasten \the [src]."), \
+			span_italic("I hear ratchet."))
 		investigate_log("was <span class='warning'>REMOVED</span> by [key_name(usr)]", INVESTIGATE_ATMOS)
 
 		//You unwrenched a pipe full of pressure? Let's splat you into the wall, silly.
@@ -305,7 +305,7 @@
 		if(target_move.can_crawl_through())
 			if(is_type_in_typecache(target_move, GLOB.ventcrawl_machinery))
 				user.forceMove(target_move.loc) //handle entering and so on.
-				user.visible_message(span_notice("You hear something squeezing through the ducts..."), "<span class='notice'>You climb out the ventilation system.")
+				user.visible_message(span_notice("I hear something squeezing through the ducts..."), "<span class='notice'>You climb out the ventilation system.")
 			else
 				var/list/pipenetdiff = returnPipenets() ^ target_move.returnPipenets()
 				if(pipenetdiff.len)
@@ -317,7 +317,7 @@
 					playsound(src, 'sound/machines/ventcrawl.ogg', 50, 1, -3)
 	else if(is_type_in_typecache(src, GLOB.ventcrawl_machinery) && can_crawl_through()) //if we move in a way the pipe can connect, but doesn't - or we're in a vent
 		user.forceMove(loc)
-		user.visible_message(span_notice("You hear something squeezing through the ducts..."), "<span class='notice'>You climb out the ventilation system.")
+		user.visible_message(span_notice("I hear something squeezing through the ducts..."), "<span class='notice'>You climb out the ventilation system.")
 
 /obj/machinery/atmospherics/AltClick(mob/living/L)
 	if(is_type_in_typecache(src, GLOB.ventcrawl_machinery))

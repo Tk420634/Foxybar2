@@ -53,7 +53,7 @@
 
 /obj/item/melee/sickly_blade/attack(mob/living/M, mob/living/user)
 	if(!IS_HERETIC(user))
-		to_chat(user,span_danger("You feel a pulse of some alien intellect lash out at your mind!"))
+		to_chat(user,span_danger("I feel a pulse of some alien intellect lash out at your mind!"))
 		var/mob/living/carbon/human/human_user = user
 		human_user.AdjustParalyzed(5 SECONDS)
 		return FALSE

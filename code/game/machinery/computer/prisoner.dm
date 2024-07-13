@@ -135,7 +135,7 @@
 			var/obj/item/implant/I = locate(href_list["warn"]) in GLOB.tracked_implants
 			if(I && istype(I) && I.imp_in)
 				var/mob/living/R = I.imp_in
-				to_chat(R, span_italic("You hear a voice in your head saying: '[warning]'"))
+				to_chat(R, span_italic("I hear a voice in your head saying: '[warning]'"))
 				log_talk(usr,"[key_name(usr)] sent an implant message to [R]/[R.ckey]: '[warning]'",LOGSAY)
 
 		src.add_fingerprint(usr)

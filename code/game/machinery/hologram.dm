@@ -194,7 +194,7 @@ GLOBAL_LIST_EMPTY(network_holopads)
 			return
 		if (!user.transferItemToLoc(P,src))
 			return
-		to_chat(user,span_notice("You insert [P] into [src]."))
+		to_chat(user,span_notice("I insert [P] into [src]."))
 		disk = P
 		return
 
@@ -244,7 +244,7 @@ GLOBAL_LIST_EMPTY(network_holopads)
 		if("AIrequest")
 			if(last_request + 200 < world.time)
 				last_request = world.time
-				to_chat(usr, span_info("You requested an AI's presence."))
+				to_chat(usr, span_info("I requested an AI's presence."))
 				var/area/area = get_area(src)
 				for(var/mob/living/silicon/ai/AI in GLOB.silicon_mobs)
 					if(!AI.client)
@@ -274,7 +274,7 @@ GLOBAL_LIST_EMPTY(network_holopads)
 					calling = TRUE
 					return TRUE
 			else
-				to_chat(usr, span_warning("You must stand on the holopad to make a call!"))
+				to_chat(usr, span_warning("I must stand on the holopad to make a call!"))
 		if("connectcall")
 			var/datum/holocall/call_to_connect = locate(params["holopad"]) in holo_calls
 			if(!QDELETED(call_to_connect))

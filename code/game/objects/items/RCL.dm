@@ -62,12 +62,12 @@
 		else
 			return
 		update_icon()
-		to_chat(user, span_notice("You add the cables to [src]. It now contains [loaded.amount]."))
+		to_chat(user, span_notice("I add the cables to [src]. It now contains [loaded.amount]."))
 	else if(istype(W, /obj/item/screwdriver))
 		if(!loaded)
 			return
 		if(ghetto && prob(10)) //Is it a ghetto RCL? If so, give it a 10% chance to fall apart
-			to_chat(user, span_warning("You attempt to loosen the securing screws on the side, but it falls apart!"))
+			to_chat(user, span_warning("I attempt to loosen the securing screws on the side, but it falls apart!"))
 			while(loaded.amount > 30) //There are only two kinds of situations: "nodiff" (60,90), or "diff" (31-59, 61-89)
 				var/diff = loaded.amount % 30
 				if(diff)
@@ -79,7 +79,7 @@
 			qdel(src)
 			return
 
-		to_chat(user, span_notice("You loosen the securing screws on the side, allowing you to lower the guiding edge and retrieve the wires."))
+		to_chat(user, span_notice("I loosen the securing screws on the side, allowing you to lower the guiding edge and retrieve the wires."))
 		while(loaded.amount > 30) //There are only two kinds of situations: "nodiff" (60,90), or "diff" (31-59, 61-89)
 			var/diff = loaded.amount % 30
 			if(diff)

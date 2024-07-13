@@ -29,7 +29,7 @@
 				H.reagents.trans_id_to(V, chem.type, chem.volume)
 			playsound(pos, 'sound/effects/splat.ogg', 50, 1)
 			H.visible_message(span_danger("[H] vomits on the floor!"), \
-						span_userdanger("You throw up on the floor!"))
+						span_userdanger("I throw up on the floor!"))
 			return TRUE
 	return ..()
 

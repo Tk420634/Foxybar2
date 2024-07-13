@@ -728,7 +728,7 @@
 		var/mob/living/carbon/human/U = user
 		if(U.job in list("Priestess of Mars"))
 		else
-			to_chat(user, span_userdanger("You invoke the wrath of Mars!"))
+			to_chat(user, span_userdanger("I invoke the wrath of Mars!"))
 			user.emote("scream")
 			user.apply_damage(30, BURN, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
 			user.dropItemToGround(src, TRUE)
@@ -945,7 +945,7 @@ CODE FOR POISON EFFECT
 			to_chat(user, span_warning("[src]'s venom has been used up!"))
 		else
 			if(L.can_inject(user, 1))
-				to_chat(user, span_warning("Your light strike successfully injects venom into [L]'s veins."))
+				to_chat(user, span_warning("My light strike successfully injects venom into [L]'s veins."))
 				. = 1
 
 				add_logs(user, L, "stabbed", src) //left this here, but it may or may not work properly

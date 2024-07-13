@@ -56,14 +56,14 @@
 		H.set_machine(src)
 		if(href_list["school"])
 			if(used)
-				to_chat(H, "You already used this contract!")
+				to_chat(H, "I already used this contract!")
 				return
 			var/list/candidates = pollCandidatesForMob("Do you want to play as a wizard's [href_list["school"]] apprentice?", ROLE_WIZARD, null, ROLE_WIZARD, 150, src, ignore_category = POLL_IGNORE_WIZARD)
 			if(LAZYLEN(candidates))
 				if(QDELETED(src))
 					return
 				if(used)
-					to_chat(H, "You already used this contract!")
+					to_chat(H, "I already used this contract!")
 					return
 				used = TRUE
 				var/mob/dead/observer/C = pick(candidates)
@@ -122,7 +122,7 @@
 	if(!(check_usability(user)))
 		return
 
-	to_chat(user, span_notice("You activate [src] and wait for confirmation."))
+	to_chat(user, span_notice("I activate [src] and wait for confirmation."))
 	var/list/nuke_candidates = pollGhostCandidates("Do you want to play as a syndicate [borg_to_spawn ? "[lowertext(borg_to_spawn)] cyborg":"operative"]?", ROLE_OPERATIVE, null, ROLE_OPERATIVE, 150, POLL_IGNORE_SYNDICATE)
 	if(LAZYLEN(nuke_candidates))
 		if(QDELETED(src) || !check_usability(user))
@@ -211,15 +211,15 @@
 	icon = 'icons/obj/wizard.dmi'
 	icon_state = "vial"
 
-	var/shatter_msg = span_notice("You shatter the bottle, no turning back now!")
-	var/veil_msg = span_warning("You sense a dark presence lurking just beyond the veil...")
+	var/shatter_msg = span_notice("I shatter the bottle, no turning back now!")
+	var/veil_msg = span_warning("I sense a dark presence lurking just beyond the veil...")
 	var/mob/living/demon_type = /mob/living/simple_animal/slaughter
 	var/antag_type = /datum/antagonist/slaughter
 
 
 /obj/item/antag_spawner/slaughter_demon/attack_self(mob/user)
 	if(!is_station_level(user.z))
-		to_chat(user, span_notice("You should probably wait until you reach the station."))
+		to_chat(user, span_notice("I should probably wait until you reach the station."))
 		return
 	if(used)
 		return
@@ -235,7 +235,7 @@
 		playsound(user.loc, 'sound/effects/glassbr1.ogg', 100, 1)
 		qdel(src)
 	else
-		to_chat(user, span_notice("You can't seem to work up the nerve to shatter the bottle. Perhaps you should try again later."))
+		to_chat(user, span_notice("I can't seem to work up the nerve to shatter the bottle. Perhaps you should try again later."))
 
 
 /obj/item/antag_spawner/slaughter_demon/spawn_antag(client/C, turf/T, kind = "", datum/mind/user)
@@ -257,6 +257,6 @@
 	icon_state = "vial"
 	color = "#FF69B4" // HOT PINK
 
-	veil_msg = span_warning("You sense an adorable presence lurking just beyond the veil...")
+	veil_msg = span_warning("I sense an adorable presence lurking just beyond the veil...")
 	demon_type = /mob/living/simple_animal/slaughter/laughter
 	antag_type = /datum/antagonist/slaughter/laughter

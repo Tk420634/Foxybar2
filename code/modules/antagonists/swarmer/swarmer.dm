@@ -19,7 +19,7 @@
 	job_description = "Swarmer"
 	death = FALSE
 	roundstart = FALSE
-	short_desc = "You are a swarmer, a weapon of a long dead civilization."
+	short_desc = "I am a swarmer, a weapon of a long dead civilization."
 	flavour_text = {"
 	<b>You are a swarmer, a weapon of a long dead civilization. Until further orders from your original masters are received, you must continue to consume and replicate.</b>
 	<b>Clicking on any object will try to consume it, either deconstructing it into its components, destroying it, or integrating any materials it has into you if successful.</b>
@@ -46,7 +46,7 @@
 	if(istype(W, /obj/item/screwdriver) && user.a_intent != INTENT_HARM)
 		user.visible_message(span_warning("[usr.name] deactivates [src]."),
 			span_notice("After some fiddling, you find a way to disable [src]'s power source."),
-			span_italic("You hear clicking."))
+			span_italic("I hear clicking."))
 		new /obj/item/deactivated_swarmer(get_turf(src))
 		qdel(src)
 	else
@@ -481,7 +481,7 @@
 	if(resources >= fabrication_cost)
 		resources -= fabrication_cost
 	else
-		to_chat(src, span_warning("You do not have the necessary resources to fabricate this object."))
+		to_chat(src, span_warning("I do not have the necessary resources to fabricate this object."))
 		return 0
 	return new fabrication_object(loc)
 

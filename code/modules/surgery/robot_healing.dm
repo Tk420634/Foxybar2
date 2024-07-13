@@ -57,7 +57,7 @@
 	if(istype(surgery,/datum/surgery/robot_healing))
 		var/datum/surgery/robot_healing/the_surgery = surgery
 		if(!the_surgery.antispam)
-			display_results(user, target, span_notice("You attempt to fix some of [target]'s [woundtype]."),
+			display_results(user, target, span_notice("I attempt to fix some of [target]'s [woundtype]."),
 		span_notice("[user] attempts to fix some of [target]'s [woundtype]."),
 		span_notice("[user] attempts to fix some of [target]'s [woundtype]."))
 
@@ -68,7 +68,7 @@
 				break
 
 /datum/surgery_step/robot_heal/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	var/umsg = "You succeed in fixing some of [target]'s damage" //no period, add initial space to "addons"
+	var/umsg = "I succeed in fixing some of [target]'s damage" //no period, add initial space to "addons"
 	var/tmsg = "[user] fixes some of [target]'s damage" //see above
 	var/urhealedamt_brute = 0
 	if(healsbrute)
@@ -101,7 +101,7 @@
 	return TRUE
 
 /datum/surgery_step/robot_heal/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, span_warning("You screwed up!"),
+	display_results(user, target, span_warning("I screwed up!"),
 		span_warning("[user] screws up!"),
 		span_notice("[user] fixes some of [target]'s damage."), TRUE)
 	var/urdamageamt_brute = 0

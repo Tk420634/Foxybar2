@@ -120,12 +120,12 @@
 			if(!O.tool_start_check(user, amount=0))
 				return
 			user.visible_message("[user] is repairing [src].", \
-							span_notice("You begin repairing [src]..."), \
-							span_italic("You hear welding."))
+							span_notice("I begin repairing [src]..."), \
+							span_italic("I hear welding."))
 			if(O.use_tool(src, user, 40, volume=50))
 				if(!(stat & BROKEN))
 					return
-				to_chat(user, span_notice("You repair [src]."))
+				to_chat(user, span_notice("I repair [src]."))
 				stat &= ~BROKEN
 				obj_integrity = max_integrity
 				update_icon()

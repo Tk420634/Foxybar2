@@ -19,7 +19,7 @@
 	var/spawn_type = /obj/singularity/wizard
 	var/spawn_amt = 1
 	var/activate_descriptor = "reality"
-	var/rend_desc = "You should run now."
+	var/rend_desc = "I should run now."
 	var/spawn_fast = 0 //if 1, ignores checking for mobs on loc before spawning
 
 /obj/item/veilrender/attack_self(mob/user)
@@ -32,7 +32,7 @@
 
 /obj/effect/rend
 	name = "tear in the fabric of reality"
-	desc = "You should run now."
+	desc = "I should run now."
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "rift"
 	density = TRUE
@@ -151,7 +151,7 @@
 	if(!COOLDOWN_FINISHED(src,cooldown))
 		to_chat(user, span_warning("The orb is murky, your power drained."))
 		return
-	to_chat(user, span_notice("Your eyes glaze over. Warmth bathes your body. The mind wanders."))
+	to_chat(user, span_notice("My eyes glaze over. Warmth bathes your body. The mind wanders."))
 	visible_message(span_danger("[user] stares into [src], their eyes glazing over."))
 	user.ghostize(1, voluntary = TRUE)
 	COOLDOWN_START(src, cooldown, cooldown_time)
@@ -161,11 +161,11 @@
 		return ..()
 
 	if(scryden)
-		to_chat(user, span_notice("You are already using [src]."))
+		to_chat(user, span_notice("I am already using [src]."))
 		return
 
 	user.visible_message(span_info("[user] kneels[M == user ? null : " next to [M]"] and holds the [src] infront of them, their eyes beginning to glaze over."), \
-		span_info("You kneel[M == user ? null : " next to [M]"] and let them gaze into the [src]."))
+		span_info("I kneel[M == user ? null : " next to [M]"] and let them gaze into the [src]."))
 
 	scryden = TRUE
 	if(do_after(user, 10 SECONDS, target = M))
@@ -173,7 +173,7 @@
 		to_chat(M, span_notice("As [user]'s holds out the [src] infront of you, you can see yourself staring back like a mirror world.. and then you both come together!"))
 		scryden = FALSE
 	else
-		to_chat(user, span_notice("Your scrying was interrupted."))
+		to_chat(user, span_notice("My scrying was interrupted."))
 		scryden = FALSE
 
 /////////////////////////////////////////Necromantic Stone///////////////////
@@ -271,11 +271,11 @@
 /obj/item/voodoo/attackby(obj/item/I, mob/user, params)
 	if(target && cooldown < world.time)
 		if(I.get_temperature())
-			to_chat(target, span_userdanger("You suddenly feel very hot"))
+			to_chat(target, span_userdanger("I suddenly feel very hot"))
 			target.adjust_bodytemperature(50)
 			GiveHint(target)
 		else if(I.get_sharpness() == SHARP_POINTY)
-			to_chat(target, span_userdanger("You feel a stabbing pain in [parse_zone(user.zone_selected)]!"))
+			to_chat(target, span_userdanger("I feel a stabbing pain in [parse_zone(user.zone_selected)]!"))
 			target.DefaultCombatKnockdown(40)
 			GiveHint(target)
 		else if(istype(I, /obj/item/bikehorn))
@@ -290,7 +290,7 @@
 		if(I.loc == user && istype(I) && I.w_class <= WEIGHT_CLASS_SMALL)
 			if (user.transferItemToLoc(I,src))
 				voodoo_link = I
-				to_chat(user, "You attach [I] to the doll.")
+				to_chat(user, "I attach [I] to the doll.")
 				update_targets()
 
 /obj/item/voodoo/check_eye(mob/user)
@@ -307,7 +307,7 @@
 		if(voodoo_link)
 			target = null
 			voodoo_link.forceMove(drop_location())
-			to_chat(user, span_notice("You remove the [voodoo_link] from the doll."))
+			to_chat(user, span_notice("I remove the [voodoo_link] from the doll."))
 			voodoo_link = null
 			update_targets()
 			return
@@ -325,16 +325,16 @@
 					user.reset_perspective(null)
 					user.unset_machine()
 			if(BODY_ZONE_R_LEG,BODY_ZONE_L_LEG)
-				to_chat(user, span_notice("You move the doll's legs around."))
+				to_chat(user, span_notice("I move the doll's legs around."))
 				var/turf/T = get_step(target,pick(GLOB.cardinals))
 				target.Move(T)
 			if(BODY_ZONE_R_ARM,BODY_ZONE_L_ARM)
 				target.click_random_mob()
 				GiveHint(target)
 			if(BODY_ZONE_HEAD)
-				to_chat(user, span_notice("You smack the doll's head with your hand."))
+				to_chat(user, span_notice("I smack the doll's head with your hand."))
 				target.Dizzy(10)
-				to_chat(target, span_warning("You suddenly feel as if your head was hit with a hammer!"))
+				to_chat(target, span_warning("I suddenly feel as if your head was hit with a hammer!"))
 				GiveHint(target,user)
 		cooldown = world.time + cooldown_time
 
@@ -349,10 +349,10 @@
 /obj/item/voodoo/proc/GiveHint(mob/victim,force=0)
 	if(prob(50) || force)
 		var/way = dir2text(get_dir(victim,get_turf(src)))
-		to_chat(victim, span_notice("You feel a dark presence from [way]"))
+		to_chat(victim, span_notice("I feel a dark presence from [way]"))
 	if(prob(20) || force)
 		var/area/A = get_area(src)
-		to_chat(victim, span_notice("You feel a dark presence from [A.name]"))
+		to_chat(victim, span_notice("I feel a dark presence from [A.name]"))
 
 /obj/item/voodoo/fire_act(exposed_temperature, exposed_volume)
 	if(target)
@@ -398,7 +398,7 @@
 	var/turf/T = get_turf(user)
 	var/area/A = get_area(user)
 	if(!T || !A || A.noteleport)
-		to_chat(user, span_warning("You play \the [src], yet no sound comes out of it... Looks like it won't work here."))
+		to_chat(user, span_warning("I play \the [src], yet no sound comes out of it... Looks like it won't work here."))
 		return
 	on_cooldown = TRUE
 	last_user = user

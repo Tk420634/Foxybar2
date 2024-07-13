@@ -275,7 +275,7 @@
 
 /obj/structure/foamedmetal/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
 	user.do_attack_animation(src, ATTACK_EFFECT_PUNCH)
-	to_chat(user, span_warning("You hit [src] but bounce off it!"))
+	to_chat(user, span_warning("I hit [src] but bounce off it!"))
 	playsound(src.loc, 'sound/weapons/tap.ogg', 100, 1)
 
 /obj/structure/foamedmetal/CanAllowThrough(atom/movable/mover, border_dir)

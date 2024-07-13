@@ -105,7 +105,7 @@
 
 /obj/effect/decal/cleanable/greenglow/ecto
 	name = "ectoplasmic puddle"
-	desc = "You know who to call."
+	desc = "I know who to call."
 	light_power = 2
 
 /obj/effect/decal/cleanable/greenglow
@@ -171,7 +171,7 @@
 
 /obj/effect/decal/cleanable/vomit/old
 	name = "crusty dried vomit"
-	desc = "You try not to look at the chunks, and fail."
+	desc = "I try not to look at the chunks, and fail."
 
 /obj/effect/decal/cleanable/vomit/old/Initialize(mapload, list/datum/disease/diseases)
 	. = ..()

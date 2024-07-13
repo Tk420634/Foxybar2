@@ -60,7 +60,7 @@
 			. += "paperplane_[S]"
 
 /obj/item/paperplane/attack_self(mob/user)
-	to_chat(user, span_notice("You unfold [src]."))
+	to_chat(user, span_notice("I unfold [src]."))
 	var/obj/item/paper/internal_paper_tmp = internalPaper
 	internal_paper_tmp.forceMove(loc)
 	internalPaper = null
@@ -71,7 +71,7 @@
 	if(burn_paper_product_attackby_check(P, user))
 		return
 	if(istype(P, /obj/item/pen) || istype(P, /obj/item/toy/crayon))
-		to_chat(user, span_warning("You should unfold [src] before changing it!"))
+		to_chat(user, span_warning("I should unfold [src] before changing it!"))
 		return
 
 	else if(istype(P, /obj/item/stamp)) 	//we don't randomize stamps on a paperplane
@@ -119,7 +119,7 @@
 		if(!Carbon.iscopy && !Carbon.copied)
 			to_chat(user, span_notice("Take off the carbon copy first."))
 			return
-	to_chat(user, span_notice("You fold [src] into the shape of a plane!"))
+	to_chat(user, span_notice("I fold [src] into the shape of a plane!"))
 	user.temporarilyRemoveItemFromInventory(src)
 	var/obj/item/paperplane/plane_type = /obj/item/paperplane
 	//Origami Master

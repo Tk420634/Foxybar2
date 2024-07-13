@@ -31,7 +31,7 @@
 		to_chat(user, span_danger("Without the hivemind, you would be unfit to rule as queen!"))
 		return 0
 	if(node.recent_queen_death)
-		to_chat(user, span_danger("You are still too burdened with guilt to evolve into a queen."))
+		to_chat(user, span_danger("I am still too burdened with guilt to evolve into a queen."))
 		return 0
 	if(!get_alien_type(/mob/living/carbon/alien/humanoid/royal/queen))
 		var/mob/living/carbon/alien/humanoid/royal/queen/new_xeno = new (user.loc)

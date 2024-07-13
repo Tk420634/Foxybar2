@@ -15,10 +15,10 @@
 /obj/item/reagent_containers/food/snacks/pizzaslice/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/kitchen/rollingpin))
 		if(!isturf(loc))
-			to_chat(user, span_warning("You need to put [src] on a surface to roll it out!"))
+			to_chat(user, span_warning("I need to put [src] on a surface to roll it out!"))
 			return
 		new /obj/item/stack/sheet/pizza(loc)
-		to_chat(user, span_notice("You smoosh [src] into a cheesy sheet."))
+		to_chat(user, span_notice("I smoosh [src] into a cheesy sheet."))
 		qdel(src)
 		return
 	return ..()
@@ -142,7 +142,7 @@
 
 /obj/item/reagent_containers/food/snacks/pizza/sassysage
 	name = "sausage pizza"
-	desc = "You can really smell the sausage."
+	desc = "I can really smell the sausage."
 	icon_state = "sassysagepizza"
 	slice_path = /obj/item/reagent_containers/food/snacks/pizzaslice/sassysage
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 6)
@@ -293,7 +293,7 @@
 
 /obj/item/reagent_containers/food/snacks/pizza/mothic_white_pie
 	name = "mothic white-pie pizza"
-	desc = "You say to-may-to, I say to-mah-to, and we put neither on this pizza."
+	desc = "I say to-may-to, I say to-mah-to, and we put neither on this pizza."
 	icon_state = "white_pie_pizza"
 	list_reagents = list(
 		/datum/reagent/consumable/nutriment = 25,

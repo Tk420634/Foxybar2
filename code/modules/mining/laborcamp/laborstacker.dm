@@ -55,7 +55,7 @@ GLOBAL_LIST(labor_sheet_values)
 			can_go_home = TRUE
 			data["status_info"] = "Goal met!"
 		else
-			data["status_info"] = "You are [(P.goal - P.points)] points away."
+			data["status_info"] = "I am [(P.goal - P.points)] points away."
 	else
 		data["status_info"] = "No Prisoner ID detected."
 		data["id_points"] = 0

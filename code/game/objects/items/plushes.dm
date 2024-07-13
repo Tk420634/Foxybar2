@@ -160,7 +160,7 @@
 /obj/item/toy/plush/attack_self(mob/user)
 	. = ..()
 	if(stuffed || grenade)
-		to_chat(user, span_notice("You pet [src]. D'awww."))
+		to_chat(user, span_notice("I pet [src]. D'awww."))
 		if(grenade && !grenade.active)
 			if(istype(grenade, /obj/item/grenade/chem_grenade))
 				var/obj/item/grenade/chem_grenade/G = grenade
@@ -170,7 +170,7 @@
 			grenade.preprime(user, msg = FALSE, volume = 10)
 		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT,"plushpet", /datum/mood_event/plushpet)
 	else
-		to_chat(user, span_notice("You try to pet [src], but it has no stuffing. Aww..."))
+		to_chat(user, span_notice("I try to pet [src], but it has no stuffing. Aww..."))
 		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT,"plush_nostuffing", /datum/mood_event/plush_nostuffing)
 
 /obj/item/toy/plush/attackby(obj/item/I, mob/living/user, params)
@@ -180,14 +180,14 @@
 				to_chat(user, span_notice("Nothing to do here."))
 				return
 			if(!stuffed)
-				to_chat(user, span_warning("You already murdered it!"))
+				to_chat(user, span_warning("I already murdered it!"))
 				return
-			user.visible_message(span_notice("[user] tears out the stuffing from [src]!"), span_notice("You rip a bunch of the stuffing from [src]. Murderer."))
+			user.visible_message(span_notice("[user] tears out the stuffing from [src]!"), span_notice("I rip a bunch of the stuffing from [src]. Murderer."))
 			I.play_tool_sound(src)
 			stuffed = FALSE
 			SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT,"plushjack", /datum/mood_event/plushjack)
 		else
-			to_chat(user, span_notice("You remove the grenade from [src]."))
+			to_chat(user, span_notice("I remove the grenade from [src]."))
 			user.put_in_hands(grenade)
 			grenade = null
 		return
@@ -200,7 +200,7 @@
 			SEND_SOUND(user, 'sound/weapons/armbomb.ogg')
 			return
 		if(stuffed)
-			to_chat(user, span_warning("You need to remove some stuffing first!"))
+			to_chat(user, span_warning("I need to remove some stuffing first!"))
 			return
 		if(grenade)
 			to_chat(user, span_warning("[src] already has a grenade!"))
@@ -208,7 +208,7 @@
 		if(!user.transferItemToLoc(I, src))
 			return
 		user.visible_message(span_warning("[user] slides [grenade] into [src]."), \
-		span_danger("You slide [I] into [src]."))
+		span_danger("I slide [I] into [src]."))
 		grenade = I
 		var/turf/grenade_turf = get_turf(src)
 		log_game("[key_name(user)] added a grenade ([I.name]) to [src] at [AREACOORD(grenade_turf)].")
@@ -253,7 +253,7 @@
 
 		if(prob(chance))	//did we bag a date?
 			user.visible_message(span_notice("[user] makes [Kisser] kiss [src]!"),
-									span_notice("You make [Kisser] kiss [src]!"))
+									span_notice("I make [Kisser] kiss [src]!"))
 			if(lover)	//who cares for the past, we live in the present
 				lover.heartbreak(src)
 			new_lover(Kisser)
@@ -265,7 +265,7 @@
 	//then comes marriage
 	else if(Kisser.lover == src && Kisser.partner != src)	//need to be lovers (assumes loving is a two way street) but not married (also assumes similar)
 		user.visible_message(span_notice("[user] pronounces [Kisser] and [src] married! D'aw."),
-									span_notice("You pronounce [Kisser] and [src] married!"))
+									span_notice("I pronounce [Kisser] and [src] married!"))
 		new_partner(Kisser)
 		Kisser.new_partner(src)
 
@@ -280,7 +280,7 @@
 	//then comes protection, or abstinence if we are catholic
 	else if(Kisser.partner == src && plush_child)
 		user.visible_message(span_notice("[user] makes [Kisser] nuzzle [src]!"),
-									span_notice("You make [Kisser] nuzzle [src]!"))
+									span_notice("I make [Kisser] nuzzle [src]!"))
 
 	//then oh fuck something unexpected happened
 	else
@@ -544,7 +544,7 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 		clash_target = null
 	else
 		say("NO! I will not be banished again...")
-		P.say(pick("Ha.", "Ra'sha fonn dest.", "You fool. To come here."))
+		P.say(pick("Ha.", "Ra'sha fonn dest.", "I fool. To come here."))
 		playsound(src, 'sound/magic/clockwork/anima_fragment_death.ogg', 62, TRUE, frequency = 2)
 		playsound(P, 'sound/magic/demon_attack1.ogg', 50, TRUE, frequency = 2)
 		explosion(src, 0, 0, 1)
@@ -842,7 +842,7 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 /obj/item/toy/plush/plushling/attack_self(mob/user)
 	if(!user) //hmmmmm
 		return
-	to_chat(user, span_warning("You try to pet the plushie, but recoil as it bites your hand instead! OW!"))
+	to_chat(user, span_warning("I try to pet the plushie, but recoil as it bites your hand instead! OW!"))
 	SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT,"plush_bite", /datum/mood_event/plush_bite)
 	var/mob/living/carbon/human/H = user
 	if(!H)

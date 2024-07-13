@@ -145,7 +145,7 @@
 		if(!user.transferItemToLoc(B, src))
 			return
 		replace_beaker(user, B)
-		to_chat(user, span_notice("You add [B] to [src]."))
+		to_chat(user, span_notice("I add [B] to [src]."))
 		updateUsrDialog()
 		update_icon()
 		return
@@ -181,7 +181,7 @@
 		else
 			visible_message(span_info("[user] whips up some [flavour] icecream."))
 	else
-		to_chat(user, span_warning("You don't have the ingredients to make this!"))
+		to_chat(user, span_warning("I don't have the ingredients to make this!"))
 
 /obj/machinery/icecream_vat/Topic(href, href_list)
 	if(..())

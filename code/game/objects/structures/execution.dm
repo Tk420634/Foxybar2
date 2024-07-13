@@ -14,7 +14,7 @@
 
 /obj/structure/cross/crowbar_act(mob/living/user, obj/item/I)
 	if(has_buckled_mobs())
-		to_chat(user, span_notice("You can't do that while something's on the cross!"))
+		to_chat(user, span_notice("I can't do that while something's on the cross!"))
 		return FALSE
 	if(I.use_tool(src, user, 20, volume=100))
 		deconstruct(TRUE)
@@ -28,7 +28,7 @@
 	if(VIABLE_MOB_CHECK(user.pulling) && user.a_intent == INTENT_GRAB && !has_buckled_mobs())
 		var/mob/living/L = user.pulling
 		if(HAS_TRAIT(user, TRAIT_PACIFISM) && L.stat != DEAD)
-			to_chat(user, span_warning("You don't want to hurt a living creature!"))
+			to_chat(user, span_warning("I don't want to hurt a living creature!"))
 			return
 		if(do_mob(user, src, 120))
 			if(has_buckled_mobs()) //                to prevent spam/queing up attacks
@@ -51,7 +51,7 @@
 			buckle_mob(L, force=1)
 			L.pixel_y = 26
 			L.overlays += image('icons/obj/cross.dmi', "lashing")
-		to_chat(user, span_danger("You can't use that on the cross!"))
+		to_chat(user, span_danger("I can't use that on the cross!"))
 	else if (has_buckled_mobs())
 		for(var/mob/living/L in buckled_mobs)
 			user_unbuckle_mob(L, user)
@@ -68,7 +68,7 @@
 			M.visible_message(\
 				"[user] tries to pull [M] free of the [src]!",\
 				span_notice("[user.name] is trying to pull you off the [src], opening up fresh wounds!"),\
-				span_italic("You hear rope being unraveled."))
+				span_italic("I hear rope being unraveled."))
 			if(!do_after(user, 300, target = src))
 				if(M && M.buckled)
 					M.visible_message(\
@@ -79,12 +79,12 @@
 		else
 			M.visible_message(\
 			span_warning("[M] struggles to break free from the [src]!"),\
-			span_notice("You struggle to break free from the [src], exacerbating your wounds! (Stay still for two minutes.)"),\
-			span_italic("You hear violent scraping and struggling."))
+			span_notice("I struggle to break free from the [src], exacerbating your wounds! (Stay still for two minutes.)"),\
+			span_italic("I hear violent scraping and struggling."))
 			M.adjustBruteLoss(20)
 			if(!do_after(M, 1200, target = src))
 				if(M && M.buckled)
-					to_chat(M, span_warning("You fail to free yourself!"))
+					to_chat(M, span_warning("I fail to free yourself!"))
 				return
 		if(!M.buckled)
 			return
@@ -118,7 +118,7 @@
 
 /obj/structure/gallow/crowbar_act(mob/living/user, obj/item/I)
 	if(has_buckled_mobs())
-		to_chat(user, span_notice("You can't do that while something's on the gallow!"))
+		to_chat(user, span_notice("I can't do that while something's on the gallow!"))
 		return FALSE
 	if(I.use_tool(src, user, 20, volume=100))
 		deconstruct()
@@ -132,7 +132,7 @@
 	if(VIABLE_MOB_CHECK(user.pulling) && user.a_intent == INTENT_GRAB && !has_buckled_mobs())
 		var/mob/living/L = user.pulling
 		if(HAS_TRAIT(user, TRAIT_PACIFISM) && L.stat != DEAD)
-			to_chat(user, span_warning("You don't want to hurt a living creature!"))
+			to_chat(user, span_warning("I don't want to hurt a living creature!"))
 			return
 		if(do_mob(user, src, 120))
 			if(has_buckled_mobs()) //to prevent spam/queing up attacks
@@ -151,7 +151,7 @@
 			L.overlays += image('icons/obj/gallows.dmi', "noose")
 			L.adjustOxyLoss(80)
 			L.losebreath = 200 //there's a noose around your neck, goodluck breathing
-		to_chat(user, span_danger("You can't use that on the gallow!"))
+		to_chat(user, span_danger("I can't use that on the gallow!"))
 	else if (has_buckled_mobs())
 		for(var/mob/living/L in buckled_mobs)
 			user_unbuckle_mob(L, user)
@@ -165,7 +165,7 @@
 			M.visible_message(\
 				"[user] tries to unhang [M] from the [src]!",\
 				span_notice("[user.name] is trying to unhang you off the [src]!"),\
-				span_italic("You hear rope being unraveled."))
+				span_italic("I hear rope being unraveled."))
 			if(!do_after(user, 300, target = src))
 				if(M && M.buckled)
 					M.visible_message(\
@@ -176,12 +176,12 @@
 		else
 			M.visible_message(\
 			span_warning("[M] struggles to break free from the [src]!"),\
-			span_notice("You struggle to break free from the [src], tightening the rope around your neck! (Stay still for two minutes.)"),\
-			span_italic("You hear violent choking and struggling."))
+			span_notice("I struggle to break free from the [src], tightening the rope around your neck! (Stay still for two minutes.)"),\
+			span_italic("I hear violent choking and struggling."))
 			M.adjustOxyLoss(40)
 			if(!do_after(M, 1200, target = src))
 				if(M && M.buckled)
-					to_chat(M, span_warning("You fail to free yourself!"))
+					to_chat(M, span_warning("I fail to free yourself!"))
 				return
 		if(!M.buckled)
 			return

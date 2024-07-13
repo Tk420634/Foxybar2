@@ -48,7 +48,7 @@
 
 /obj/item/inducer/proc/cantbeused(mob/user)
 	if(!user.IsAdvancedToolUser())
-		to_chat(user, span_warning("You don't have the dexterity to use [src]!"))
+		to_chat(user, span_warning("I don't have the dexterity to use [src]!"))
 		return TRUE
 
 	if(!cell)
@@ -65,12 +65,12 @@
 	if(istype(W, /obj/item/screwdriver))
 		W.play_tool_sound(src)
 		if(!opened)
-			to_chat(user, span_notice("You unscrew the battery compartment."))
+			to_chat(user, span_notice("I unscrew the battery compartment."))
 			opened = TRUE
 			update_icon()
 			return
 		else
-			to_chat(user, span_notice("You close the battery compartment."))
+			to_chat(user, span_notice("I close the battery compartment."))
 			opened = FALSE
 			update_icon()
 			return
@@ -79,7 +79,7 @@
 			if(!cell)
 				if(!user.transferItemToLoc(W, src))
 					return
-				to_chat(user, span_notice("You insert [W] into [src]."))
+				to_chat(user, span_notice("I insert [W] into [src]."))
 				cell = W
 				update_icon()
 				return
@@ -116,7 +116,7 @@
 			to_chat(user, span_notice("[A] is fully charged!"))
 			recharging = FALSE
 			return TRUE
-		user.visible_message("[user] starts recharging [A] with [src].",span_notice("You start recharging [A] with [src]."))
+		user.visible_message("[user] starts recharging [A] with [src].",span_notice("I start recharging [A] with [src]."))
 		while(C.charge < C.maxcharge)
 			if(do_after(user, 10, target = user) && cell.charge)
 				done_any = TRUE
@@ -127,7 +127,7 @@
 			else
 				break
 		if(done_any) // Only show a message if we succeeded at least once
-			user.visible_message("[user] recharged [A]!",span_notice("You recharged [A]!"))
+			user.visible_message("[user] recharged [A]!",span_notice("I recharged [A]!"))
 		recharging = FALSE
 		return TRUE
 	recharging = FALSE
@@ -147,7 +147,7 @@
 
 /obj/item/inducer/attack_self(mob/user)
 	if(opened && cell)
-		user.visible_message("[user] removes [cell] from [src]!",span_notice("You remove [cell]."))
+		user.visible_message("[user] removes [cell] from [src]!",span_notice("I remove [cell]."))
 		cell.update_icon()
 		user.put_in_hands(cell)
 		cell = null

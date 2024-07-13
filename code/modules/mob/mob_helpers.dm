@@ -408,7 +408,7 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 			if(affecting.heal_damage(brute_heal, burn_heal, 0, TRUE, FALSE))
 				H.update_damage_overlays()
 			user.visible_message("[user] has fixed some of the [dam ? "dents on" : "burnt wires in"] [H]'s [affecting.name].", \
-			span_notice("You fix some of the [dam ? "dents on" : "burnt wires in"] [H]'s [affecting.name]."))
+			span_notice("I fix some of the [dam ? "dents on" : "burnt wires in"] [H]'s [affecting.name]."))
 			return 1 //successful heal
 		else
 			to_chat(user, span_warning("[affecting] is already in good condition!"))
@@ -438,14 +438,14 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 	LAZYINITLIST(siliconaccessareas)
 	if (area in siliconaccessareas)
 		siliconaccessareas -= area
-		to_chat(src,span_warning("You lost control of [area]!"))
+		to_chat(src,span_warning("I lost control of [area]!"))
 		return FALSE
 	else
 		if (LAZYLEN(siliconaccessareas) < HIJACK_APC_MAX_AMOUNT)
 			siliconaccessareas += area
-			to_chat(src,span_notice("You successfully took control of [area]."))
+			to_chat(src,span_notice("I successfully took control of [area]."))
 		else
-			to_chat(src,span_warning("You are connected to too many APCs! Too many more will fry your brain."))
+			to_chat(src,span_warning("I am connected to too many APCs! Too many more will fry your brain."))
 			return FALSE
 		return TRUE
 
@@ -473,7 +473,7 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 
 	if(LAZYLEN(candidates))
 		var/mob/C = pick(candidates)
-		to_chat(M, "Your mob has been taken over by a ghost!")
+		to_chat(M, "My mob has been taken over by a ghost!")
 		message_admins("[key_name_admin(C)] has taken control of ([key_name_admin(M)])")
 		M.ghostize(FALSE, TRUE)
 		C.transfer_ckey(M, FALSE)
@@ -609,7 +609,7 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 		to_chat(src, span_warning("As you are trying to read [O], you suddenly feel very stupid!"))
 		return
 	if(!is_literate())
-		to_chat(src, span_notice("You try to read [O], but can't comprehend any of it."))
+		to_chat(src, span_notice("I try to read [O], but can't comprehend any of it."))
 		return
 	return TRUE
 
@@ -625,7 +625,7 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 			log_game("[key_name(src)] has removed their PVP flag.")
 			SSpornhud.catalogue_part(src, PHUD_PVP_FLAG, list())
 			if(saypls)
-				to_chat(src, span_notice("You are no longer flagged as looking for or avoiding PVP. Standard PVP rules apply."))
+				to_chat(src, span_notice("I am no longer flagged as looking for or avoiding PVP. Standard PVP rules apply."))
 		if(PVP_YES)
 			if(HAS_TRAIT(src, TRAIT_NO_PVP_EVER))
 				return
@@ -635,7 +635,7 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 			var/image/iggy = image('icons/mob/hud.dmi', src, "pvp_yes")
 			SSpornhud.catalogue_part(src, PHUD_PVP_FLAG, list(iggy))
 			if(saypls)
-				to_chat(src, span_notice("You are now flagged as looking for PVP. Note that you still need to use CI to perform PVP, and \
+				to_chat(src, span_notice("I am now flagged as looking for PVP. Note that you still need to use CI to perform PVP, and \
 					you must respect the preferences of those who do not want to PVP."))
 		if(PVP_NO)
 			REMOVE_TRAIT(src, TRAIT_PVPFOC, ROUNDSTART_TRAIT)
@@ -644,7 +644,7 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 			var/image/iggy = image('icons/mob/hud.dmi', src, "pvp_no")
 			SSpornhud.catalogue_part(src, PHUD_PVP_FLAG, list(iggy))
 			if(saypls)
-				to_chat(src, span_notice("You are now flagged as having opted out of PVP. This means that others are not allowed to engage \
+				to_chat(src, span_notice("I am now flagged as having opted out of PVP. This means that others are not allowed to engage \
 					in PVP with you, nor try to bait you into PVP. This also means that <b>you</b> are not allowed to engage in PVP or do \
 					things that could be considered baiting others into PVP."))
 	if(hud_used && hud_used.pvp_focus_toggle)

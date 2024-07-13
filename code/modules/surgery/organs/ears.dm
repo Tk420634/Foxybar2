@@ -9,8 +9,8 @@
 	healing_factor = STANDARD_ORGAN_HEALING
 	decay_factor = STANDARD_ORGAN_DECAY
 
-	low_threshold_passed = span_info("Your ears begin to resonate with an internal ring sometimes.")
-	now_failing = span_warning("You are unable to hear at all!")
+	low_threshold_passed = span_info("My ears begin to resonate with an internal ring sometimes.")
+	now_failing = span_warning("I am unable to hear at all!")
 	now_fixed = span_info("Noise slowly begins filling your ears once more.")
 	low_threshold_cleared = span_info("The ringing in your ears has died down.")
 

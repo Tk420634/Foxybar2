@@ -63,7 +63,7 @@
 			return FALSE
 	R.performing_rite = TRUE
 	if(!do_after(invoker, cast_time, target = R))
-		to_chat(invoker, span_warning("Your rite is disrupted."))
+		to_chat(invoker, span_warning("My rite is disrupted."))
 		R.performing_rite = FALSE
 		return FALSE
 	. = cast(invoker, T, H)
@@ -71,7 +71,7 @@
 		to_chat(invoker, span_warning(" You fail casting [name]"))
 		post_cast(FALSE)
 	else
-		to_chat(invoker, span_warning("You successfully cast [name]"))
+		to_chat(invoker, span_warning("I successfully cast [name]"))
 		post_cast(TRUE)
 	R.performing_rite = FALSE
 	return
@@ -172,7 +172,7 @@
 		return FALSE
 	target.adjustToxLoss(10 * target.all_wounds.len)
 	QDEL_LIST(target.all_wounds)
-	to_chat(target, span_warning("You feel your wounds heal, but are overcome with deep nausea."))
+	to_chat(target, span_warning("I feel your wounds heal, but are overcome with deep nausea."))
 	new /obj/effect/temp_visual/ratvar/sigil/vitality(T)
 
 //Summons a brass claw implant on the sigil, which can extend a claw that benefits from repeatedly attacking a single target. Can only be cast a limited amount of times.

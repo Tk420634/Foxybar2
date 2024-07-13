@@ -720,7 +720,7 @@
 	//The current tank is the one we just attached, its location is inside the circuit
 	current_tank = I
 	user.transferItemToLoc(I,src)
-	to_chat(user,span_warning("You put the [I.name] inside the tank slot."))
+	to_chat(user,span_warning("I put the [I.name] inside the tank slot."))
 
 	//Set the pin to a weak reference of the current tank
 	push_pressure()
@@ -739,7 +739,7 @@
 		return
 
 	//Remove tank and put in user's hands/location
-	to_chat(user, span_notice("You take [current_tank] out of the tank slot."))
+	to_chat(user, span_notice("I take [current_tank] out of the tank slot."))
 	user.put_in_hands(current_tank)
 	current_tank = null
 

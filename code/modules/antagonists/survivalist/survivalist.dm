@@ -20,7 +20,7 @@
 	owner.announce_objectives()
 
 /datum/antagonist/survivalist/guns
-	greet_message = "Your own safety matters above all else, and the only way to ensure your safety is to stockpile weapons! Grab as many guns as possible, and don't let anyone take them!"
+	greet_message = "My own safety matters above all else, and the only way to ensure your safety is to stockpile weapons! Grab as many guns as possible, and don't let anyone take them!"
 
 /datum/antagonist/survivalist/guns/forge_objectives()
 	var/datum/objective/steal_five_of_type/summon_guns/guns = new

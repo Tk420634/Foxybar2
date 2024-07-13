@@ -208,7 +208,7 @@
 				W.play_tool_sound(src, 75)
 				anchored = TRUE
 				user.visible_message(span_notice("[user.name] secures the [name] to the floor."), \
-					span_notice("You secure the external bolts."))
+					span_notice("I secure the external bolts."))
 				construction_state = PA_CONSTRUCTION_UNWIRED
 				did_something = TRUE
 		if(PA_CONSTRUCTION_UNWIRED)
@@ -216,30 +216,30 @@
 				W.play_tool_sound(src, 75)
 				anchored = FALSE
 				user.visible_message(span_notice("[user.name] detaches the [name] from the floor."), \
-					span_notice("You remove the external bolts."))
+					span_notice("I remove the external bolts."))
 				construction_state = PA_CONSTRUCTION_UNSECURED
 				did_something = TRUE
 			else if(istype(W, /obj/item/stack/cable_coil))
 				if(W.use_tool(src, user, 0, 1))
 					user.visible_message(span_notice("[user.name] adds wires to the [name]."), \
-						span_notice("You add some wires."))
+						span_notice("I add some wires."))
 					construction_state = PA_CONSTRUCTION_PANEL_OPEN
 					did_something = TRUE
 		if(PA_CONSTRUCTION_PANEL_OPEN)
 			if(W.tool_behaviour == TOOL_WIRECUTTER)//TODO:Shock user if its on?
 				user.visible_message(span_notice("[user.name] removes some wires from the [name]."), \
-					span_notice("You remove some wires."))
+					span_notice("I remove some wires."))
 				construction_state = PA_CONSTRUCTION_UNWIRED
 				did_something = TRUE
 			else if(W.tool_behaviour == TOOL_SCREWDRIVER)
 				user.visible_message(span_notice("[user.name] closes the [name]'s access panel."), \
-					span_notice("You close the access panel."))
+					span_notice("I close the access panel."))
 				construction_state = PA_CONSTRUCTION_COMPLETE
 				did_something = TRUE
 		if(PA_CONSTRUCTION_COMPLETE)
 			if(W.tool_behaviour == TOOL_SCREWDRIVER)
 				user.visible_message(span_notice("[user.name] opens the [name]'s access panel."), \
-					span_notice("You open the access panel."))
+					span_notice("I open the access panel."))
 				construction_state = PA_CONSTRUCTION_PANEL_OPEN
 				did_something = TRUE
 

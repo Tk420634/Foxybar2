@@ -7,7 +7,7 @@
 
 /obj/item/clothing/under/pants/classicjeans
 	name = "classic jeans"
-	desc = "You feel cooler already."
+	desc = "I feel cooler already."
 	icon_state = "jeansclassic"
 
 /obj/item/clothing/under/pants/mustangjeans

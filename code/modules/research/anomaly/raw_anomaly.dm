@@ -8,7 +8,7 @@
  */
 /obj/item/raw_anomaly_core
 	name = "raw anomaly core"
-	desc = "You shouldn't be seeing this. Someone screwed up."
+	desc = "I shouldn't be seeing this. Someone screwed up."
 	icon = 'icons/obj/assemblies/new_assemblies.dmi'
 	icon_state = "broken_state"
 
@@ -47,7 +47,7 @@
 
 /obj/item/raw_anomaly_core/random
 	name = "random raw core"
-	desc = "You should not see this!"
+	desc = "I should not see this!"
 	icon_state = "rawcore_bluespace"
 
 /obj/item/raw_anomaly_core/random/Initialize(mapload)

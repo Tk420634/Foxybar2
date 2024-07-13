@@ -3,46 +3,46 @@
 
 /datum/quirk/no_taste
 	name = "Ageusia"
-	desc = "You can't taste anything! Toxic food will still poison you."
+	desc = "I can't taste anything! Toxic food will still poison you."
 	value = 0
 	category = "Food Quirks"
-	mechanics = "You don't get disgusted from anything, but you still suffer chemical side effects."
+	mechanics = "I don't get disgusted from anything, but you still suffer chemical side effects."
 	conflicts = list()
 	mob_trait = TRAIT_AGEUSIA
-	gain_text = span_notice("You can't taste anything!")
-	lose_text = span_notice("You can taste again!")
+	gain_text = span_notice("I can't taste anything!")
+	lose_text = span_notice("I can taste again!")
 	medical_record_text = "Patient suffers from ageusia and is incapable of tasting food or reagents."
 
 /*
 /datum/quirk/no_chocolate
 	name = "Chocolate intolerance"
-	desc = "Your metabolism finds chocolate rather disagreeable."
+	desc = "My metabolism finds chocolate rather disagreeable."
 	value = 0
 	category = "Food Quirks"
-	mechanics = "You take toxin damage from eating chocolate. You know. Like a dog."
+	mechanics = "I take toxin damage from eating chocolate. You know. Like a dog."
 	conflicts = list()
 	mob_trait = TRAIT_NO_CHOCOLATE
-	gain_text = span_notice("You feel like eating chocolate is a bad idea.")
-	lose_text = span_notice("You feel like it's safe to eat chocolate again")
+	gain_text = span_notice("I feel like eating chocolate is a bad idea.")
+	lose_text = span_notice("I feel like it's safe to eat chocolate again")
 	medical_record_text = "Patient has an aversion to theobromine, and therefore cannot have chocolate."
 
 
 /datum/quirk/white_woman
 	name = "Peanutbutter difficulties"
-	desc = "Your tongue has difficulty handling the adhesiveness of peanut butter"
+	desc = "My tongue has difficulty handling the adhesiveness of peanut butter"
 	value = 0
 	category = "Food Quirks"
-	mechanics = "You will lick your lips rapidly and constantly while eating peanut butter. You know. Like a dog."
+	mechanics = "I will lick your lips rapidly and constantly while eating peanut butter. You know. Like a dog."
 	conflicts = list()
 	mob_trait = TRAIT_WHITE_WOMAN
-	gain_text = span_notice("Your tongue lacks the manipulation to properly eat peanut butter.")
-	lose_text = span_notice("Your tongue is skilled at taking on sticky peanut butter.")
+	gain_text = span_notice("My tongue lacks the manipulation to properly eat peanut butter.")
+	lose_text = span_notice("My tongue is skilled at taking on sticky peanut butter.")
 	medical_record_text = "Patient's tongue lacks the dexterity required to eat peanut butter."
 
 
 /datum/quirk/autobrew //sugary foods create ethanol
 	name = "Autobrewery syndrome"
-	desc = "Your natural gut flora ferments many sugary foods and drinks into alcohol."
+	desc = "My natural gut flora ferments many sugary foods and drinks into alcohol."
 	value = 0
 	category = "Food Quirks"
 	mechanics = "Anything with sugar in it turns into alchohol chems in your system, you can take penicillian or eat nonsugary foods to prevent this."
@@ -54,13 +54,13 @@
 
 /datum/quirk/snob
 	name = "Snob"
-	desc = "You care about the finer things, if a room doesn't look nice its just not really worth it, is it?"
+	desc = "I care about the finer things, if a room doesn't look nice its just not really worth it, is it?"
 	value = 0
 	category = "Emotional Quirks"
 	mechanics = "WIP In a perfect world this would adjust your mood on the beauty rating of the room you're in, in reality it does nearly nothing. Gives you a good reason to whine about the feng shui. WIP"
 	conflicts = list(
 	)
-	gain_text = span_notice("You feel like you understand what things should look like.")
+	gain_text = span_notice("I feel like you understand what things should look like.")
 	lose_text = span_notice("Well who cares about deco anyways?")
 	medical_record_text = "Patient seems to be rather stuck up."
 	mob_trait = TRAIT_SNOB
@@ -74,7 +74,7 @@
 	category = ""
 	mechanics = ""
 	conflicts = list()
-	gain_text = span_notice("You feel a burning pain as your DNA is ripped apart, and sewn back together.")
+	gain_text = span_notice("I feel a burning pain as your DNA is ripped apart, and sewn back together.")
 	lose_text = span_notice("The dull metronome of pain that defined your existence has faded.")
 	medical_record_text = "Patient appears to have 'perfect' DNA."
 	mob_trait = TRAIT_FEV
@@ -91,16 +91,16 @@
 /*
 /datum/quirk/pineapple_liker
 	name = "Ananas Affinity"
-	desc = "You find yourself greatly enjoying fruits of the ananas genus. You can't seem to ever get enough of their sweet goodness!"
+	desc = "I find yourself greatly enjoying fruits of the ananas genus. You can't seem to ever get enough of their sweet goodness!"
 	value = 0
 	category = "Food Quirks"
-	mechanics = "You get a mood boost from eating pineapples."
+	mechanics = "I get a mood boost from eating pineapples."
 	conflicts = list(
 		/datum/quirk/no_taste,
 		/datum/quirk/pineapple_hater,
 	)
-	gain_text = span_notice("You feel an intense craving for pineapple.")
-	lose_text = span_notice("Your feelings towards pineapples seem to return to a lukewarm state.")
+	gain_text = span_notice("I feel an intense craving for pineapple.")
+	lose_text = span_notice("My feelings towards pineapples seem to return to a lukewarm state.")
 	medical_record_text = "Patient demonstrates a pathological love of pineapple."
 
 /datum/quirk/pineapple_liker/add()
@@ -116,17 +116,17 @@
 
 /datum/quirk/pineapple_hater
 	name = "Ananas Aversion"
-	desc = "You find yourself greatly detesting fruits of the ananas genus. Serious, how the hell can anyone say these things are good? And what kind of madman would even dare putting it on a pizza!?"
+	desc = "I find yourself greatly detesting fruits of the ananas genus. Serious, how the hell can anyone say these things are good? And what kind of madman would even dare putting it on a pizza!?"
 	value = 0
 	category = "Food Quirks"
-	mechanics = "You really just hate eating pineapples."
+	mechanics = "I really just hate eating pineapples."
 	conflicts = list(
 		/datum/quirk/no_taste,
 		/datum/quirk/pineapple_liker,
 		/datum/quirk/nukalover,
 	)
-	gain_text = span_notice("You find yourself pondering what kind of idiot actually enjoys pineapples...")
-	lose_text = span_notice("Your feelings towards pineapples seem to return to a lukewarm state.")
+	gain_text = span_notice("I find yourself pondering what kind of idiot actually enjoys pineapples...")
+	lose_text = span_notice("My feelings towards pineapples seem to return to a lukewarm state.")
 	medical_record_text = "Patient is correct to think that pineapple is disgusting."
 
 /datum/quirk/pineapple_hater/add()
@@ -144,15 +144,15 @@
 /*
 /datum/quirk/deviant_tastes
 	name = "Deviant Tastes"
-	desc = "You dislike food that most people enjoy, and find delicious what they don't."
+	desc = "I dislike food that most people enjoy, and find delicious what they don't."
 	value = 0
 	category = "Food Quirks"
-	mechanics = "You can eat stuff like bug meat, rats on a stick, and other things of that nature with no mood debuff. Taaastttyyy?"
+	mechanics = "I can eat stuff like bug meat, rats on a stick, and other things of that nature with no mood debuff. Taaastttyyy?"
 	conflicts = list(
 		/datum/quirk/no_taste,
 	)
-	gain_text = span_notice("You start craving something that tastes strange.")
-	lose_text = span_notice("You feel like eating normal food again.")
+	gain_text = span_notice("I start craving something that tastes strange.")
+	lose_text = span_notice("I feel like eating normal food again.")
 	medical_record_text = "Patient demonstrates irregular nutrition preferences."
 
 /datum/quirk/deviant_tastes/add()
@@ -172,10 +172,10 @@
 
 /datum/quirk/monochromatic
 	name = "Monochromacy"
-	desc = "You suffer from full colorblindness, and perceive nearly the entire world in blacks and whites. Sure hope you like Kurasawa movies."
+	desc = "I suffer from full colorblindness, and perceive nearly the entire world in blacks and whites. Sure hope you like Kurasawa movies."
 	value = 0
 	category = "Vision Quirks"
-	mechanics = "Your vision will have no color in it whatsoever. Kind of like a, uh. Dog."
+	mechanics = "My vision will have no color in it whatsoever. Kind of like a, uh. Dog."
 	conflicts = list()
 	medical_record_text = "Patient is afflicted with almost complete color blindness."
 
@@ -194,10 +194,10 @@
 /*
 /datum/quirk/agroeater
 	name = "Aggressive Metabolism"
-	desc = "You gain natural healing from eating food, but your metabolism is aggressively fast, causing you to eat alot of food"
+	desc = "I gain natural healing from eating food, but your metabolism is aggressively fast, causing you to eat alot of food"
 	value = 0 // This heals 71 brute damage in 16 minutes, but also massively increases your hunger rate. Having no hunger is extremely bad
 	category = "Food Quirks"
-	mechanics = "You heal naturally, but if your starving, you no longer heal. Starving is very bad for you."
+	mechanics = "I heal naturally, but if your starving, you no longer heal. Starving is very bad for you."
 	conflicts = list() 
 
 /datum/quirk/agroeater/add()
@@ -210,20 +210,20 @@
 
 /datum/quirk/maso
 	name = "Masochism"
-	desc = "You are aroused by pain."
+	desc = "I am aroused by pain."
 	value = 0
 	category = "Bawdy Quirks"
-	mechanics = "You get a mood boost and aroused by taking pain, though its somewhat limited in this code due to age so it's mostly just from having your ass slapped (disarm intent, target groin, click from behind to do this to others thoug!)"
+	mechanics = "I get a mood boost and aroused by taking pain, though its somewhat limited in this code due to age so it's mostly just from having your ass slapped (disarm intent, target groin, click from behind to do this to others thoug!)"
 	conflicts = list()
 	mob_trait = TRAIT_MASO
-	gain_text = span_notice("You desire to be hurt.")
+	gain_text = span_notice("I desire to be hurt.")
 	lose_text = span_notice("Pain has become less exciting for you.")
 */
 
 /*
 /datum/quirk/alcohol_intolerance
 	name = "Alcohol Intolerance"
-	desc = "You take toxin damage from alcohol rather than getting drunk."
+	desc = "I take toxin damage from alcohol rather than getting drunk."
 	value = 0
 	category = "Food Quirks"
 	mechanics = "Pretty straight forward, liquor makes your ticker flicker. Toxin damage from alchohol."
@@ -252,8 +252,8 @@
 	value = 0
 	category = "Lifepath Quirks"
 	conflicts = list()
-	gain_text = span_notice("Your body has seen better days.")
-	lose_text = span_notice("Your sins may wash away, but those scars are here to stay...")
+	gain_text = span_notice("My body has seen better days.")
+	lose_text = span_notice("My sins may wash away, but those scars are here to stay...")
 	medical_record_text = "Patient has withstood significant physical trauma and declined plastic surgery procedures to heal scarring."
 	/// the minimum amount of scars we can generate
 	var/min_scars = 3
@@ -287,13 +287,13 @@
 	desc = "You've never skipped ass day. You are completely immune to all forms of ass slapping and anyone who tries to slap your rock hard ass usually gets a broken hand."
 	value = 0
 	category = "Bawdy Quirks"
-	mechanics = "Your ass bites back, doing damage to any who dare to slap your glorious behind."
+	mechanics = "My ass bites back, doing damage to any who dare to slap your glorious behind."
 	conflicts = list(
 		/datum/quirk/butter_ass,
 	)
 	mob_trait = TRAIT_STEEL_ASS
-	gain_text = span_notice("Your ass rivals those of golems.")
-	lose_text = span_notice("Your butt feels more squishy and slappable.")
+	gain_text = span_notice("My ass rivals those of golems.")
+	lose_text = span_notice("My butt feels more squishy and slappable.")
 
 /datum/quirk/butter_ass
 	name = "Buns of Thunder"
@@ -310,7 +310,7 @@
 
 /datum/quirk/headpat_hater
 	name = "Distant"
-	desc = "You don't seem to show much care for being touched. Whether it's because you're reserved or due to self control, others touching your head won't make you wag your tail should you possess one, and the action may even attract your ire.."
+	desc = "I don't seem to show much care for being touched. Whether it's because you're reserved or due to self control, others touching your head won't make you wag your tail should you possess one, and the action may even attract your ire.."
 	mob_trait = TRAIT_DISTANT
 	value = 0
 	category = "Bawdy Quirks"
@@ -324,25 +324,25 @@
 
 /datum/quirk/headpat_slut
 	name = "Headpat Lover"
-	desc = "You love the feeling of others touching your head! Maybe a little too much, actually... Others patting your head will provide a bigger mood boost and cause aroused reactions."
+	desc = "I love the feeling of others touching your head! Maybe a little too much, actually... Others patting your head will provide a bigger mood boost and cause aroused reactions."
 	mob_trait = TRAIT_HEADPAT_SLUT
 	value = 0
 	category = "Bawdy Quirks"
-	mechanics = "You get a bigger mood boost from being petted, maybe uh. A bit of a boost to your libido too, it's hard to tell."
+	mechanics = "I get a bigger mood boost from being petted, maybe uh. A bit of a boost to your libido too, it's hard to tell."
 	conflicts = list(
 		/datum/quirk/headpat_hater,
 	)
-	gain_text = span_notice("You crave headpats immensely!")
-	lose_text = span_notice("Your headpats addiction wanes.")
+	gain_text = span_notice("I crave headpats immensely!")
+	lose_text = span_notice("My headpats addiction wanes.")
 	medical_record_text = "Patient seems overly affectionate."
 
 /datum/quirk/oral_fixation
 	name = "Oral Fixation"
-	desc = "You have an urge to put things in your mouth."
+	desc = "I have an urge to put things in your mouth."
 	mob_trait = TRAIT_ORAL_FIXATION
 	value = 0
 	category = "Bawdy Quirks"
-	mechanics = "You can fit any small sized item in your mouth. Small items will muffle your voice. Tiny items wont."
+	mechanics = "I can fit any small sized item in your mouth. Small items will muffle your voice. Tiny items wont."
 	conflicts = list()
 
 /datum/quirk/overweight
@@ -350,10 +350,10 @@
 	desc = "You're particularly fond of food, and join the round being overweight."
 	value = 0
 	category = "Lifepath Quirks"
-	mechanics = "You spawn in overweight and full, this also limits your movement quirks out of Freerunning, Light Step, and Quick Walking. Good if you plan on bleeding a lot near round start, I guess."
+	mechanics = "I spawn in overweight and full, this also limits your movement quirks out of Freerunning, Light Step, and Quick Walking. Good if you plan on bleeding a lot near round start, I guess."
 	mob_trait = TRAIT_FAT
 	conflicts = list()
-	gain_text = span_notice("You feel blubbery!")
+	gain_text = span_notice("I feel blubbery!")
 	//no lose_text cause why would there be?
 
 /datum/quirk/overweight/on_spawn()
@@ -363,13 +363,13 @@
 
 /datum/quirk/vegetarian
 	name = "Vegetarian"
-	desc = "You find the idea of eating meat morally and/or physically repulsive."
+	desc = "I find the idea of eating meat morally and/or physically repulsive."
 	value = 0
 	category = "Food Quirks"
-	mechanics = "You are mechanically disgusted by eating meat."
+	mechanics = "I am mechanically disgusted by eating meat."
 	conflicts = list()
-	gain_text = span_notice("You feel repulsion at the idea of eating meat.")
-	lose_text = span_notice("You feel like eating meat isn't that bad.  Might could even go for a cheeseburger.")
+	gain_text = span_notice("I feel repulsion at the idea of eating meat.")
+	lose_text = span_notice("I feel like eating meat isn't that bad.  Might could even go for a cheeseburger.")
 	medical_record_text = "Patient reports a vegetarian diet."
 
 /datum/quirk/vegetarian/add()
@@ -389,13 +389,13 @@
 
 /datum/quirk/hydra
 	name = "Multiple Identities"
-	desc = "You have multiple identities voices, names, or you are a multi-headed creature."
+	desc = "I have multiple identities voices, names, or you are a multi-headed creature."
 	value = 0
 	category = "Lifepath Quirks"
 	mechanics = "Format your name in a manner similar to Rucks-Tucks-Ducks and you can use the action button to toggle between which will be your character name and voice."
 	conflicts = list()
 	mob_trait = TRAIT_HYDRA_HEADS
-	gain_text = span_notice("You hear other voices inside of your head(s).")
+	gain_text = span_notice("I hear other voices inside of your head(s).")
 	lose_text = span_danger("All of your minds become singular.")
 	medical_record_text = "Patient has multiple heads and personalities affixed to their body."
 
@@ -426,7 +426,7 @@
 	var/mob/living/carbon/human/hydra = owner
 	hydra.real_name = hydra.name_archive
 	hydra.visible_message(span_notice("[hydra.name] speaks with multiple familiar voices overlapping eachother."), \
-							span_notice("You are now talking as [hydra.name_archive]!"), ignored_mobs=owner)
+							span_notice("I am now talking as [hydra.name_archive]!"), ignored_mobs=owner)
 
 /datum/action/innate/hydra/Activate() //I hate this but its needed
 	var/mob/living/carbon/human/hydra = owner
@@ -434,7 +434,7 @@
 	var/selhead = input("Who would you like to speak as?","Heads:") in names
 	hydra.real_name = selhead
 	hydra.visible_message(span_notice("[hydra.name] alters their portrayed identity, appearing as [selhead] instead."), \
-							span_notice("You are now talking as [selhead]!"), ignored_mobs=owner)
+							span_notice("I am now talking as [selhead]!"), ignored_mobs=owner)
 
 /*
 /datum/quirk/sheltered
@@ -442,11 +442,11 @@
 	desc = "For one reason or another, you either can't or haven't learned English."
 	value = 0
 	category = "Language Quirks"
-	mechanics = "You flat out don't know english, the most common langauge of the swampland.  Be wary, this will limit your roleplay potential to some degree if not used properly."
+	mechanics = "I flat out don't know english, the most common langauge of the swampland.  Be wary, this will limit your roleplay potential to some degree if not used properly."
 	conflicts = list()
 	mob_trait = TRAIT_SHELTERED
 	gain_text = span_danger("The words of others begin to blur together...")
-	lose_text = span_notice("You start putting together what people are saying!")
+	lose_text = span_notice("I start putting together what people are saying!")
 	medical_record_text = "Patient has shown an inability to use common speaking languages."
 	human_only = FALSE
 
@@ -464,9 +464,9 @@
 	desc = "You're somehow capable of understanding and speaking the common tribal languages in the area."
 	value = 0
 	category = "Language Quirks"
-	mechanics = "You can speak the language of the swamps, shared with the Mountain River Tribe."
+	mechanics = "I can speak the language of the swamps, shared with the Mountain River Tribe."
 	conflicts = list()
-	gain_text = span_notice("You remember the old ways of your tribe..")
+	gain_text = span_notice("I remember the old ways of your tribe..")
 	lose_text = span_notice("You've forgotten the ways of your ancestors..")
 	human_only = FALSE
 
@@ -485,7 +485,7 @@
 	desc = "You're somehow capable of understanding and speaking Draconic, the dragonkin's tongue."
 	value = 0
 	category = "Language Quirks"
-	mechanics = "You can speak the langauge of dragons, shared with kobolds and maybe cave newts. Hard to tell."
+	mechanics = "I can speak the langauge of dragons, shared with kobolds and maybe cave newts. Hard to tell."
 	conflicts = list()
 	gain_text = span_notice("A deep draconic roar rises within you..")
 	lose_text = span_notice("The roar within you fades away..")
@@ -506,7 +506,7 @@
 	desc = "You're somehow capable of understanding and speaking R'lyehian, language of the Great Old Ones."
 	value = 0
 	category = "Language Quirks"
-	mechanics = "You can speak the language of the Great Old Ones, shared with Shoggoths and many Eldritch Beasts."
+	mechanics = "I can speak the language of the Great Old Ones, shared with Shoggoths and many Eldritch Beasts."
 	conflicts = list()
 	gain_text = span_notice("A deep Eldritch fear rises within you..")
 	lose_text = span_notice("The fear within you fades away..")
@@ -527,9 +527,9 @@
 	desc = "You're somehow capable of understanding and speaking the common pokemon language."
 	value = 0
 	category = "Language Quirks"
-	mechanics = "You can speak the pokemon langage, or at least understand it. Maybe you really are the very best."
+	mechanics = "I can speak the pokemon langage, or at least understand it. Maybe you really are the very best."
 	conflicts = list()
-	gain_text = span_notice("You remember how to speak to pokemon.")
+	gain_text = span_notice("I remember how to speak to pokemon.")
 	lose_text = span_notice("You've forgotten how to speak pokemon.")
 	human_only = FALSE
 
@@ -547,9 +547,9 @@
 	desc = "You're somehow capable of understanding and speaking the Combined Common Nordic Germanic language!"
 	value = 0
 	category = "Language Quirks"
-	mechanics = "You can speak the Combined Common Nordic-Germanic language, or at least understand it. Maybe you really are the very best."
+	mechanics = "I can speak the Combined Common Nordic-Germanic language, or at least understand it. Maybe you really are the very best."
 	conflicts = list()
-	gain_text = span_notice("You remember how to speak to Combined Nordic-Germanic.")
+	gain_text = span_notice("I remember how to speak to Combined Nordic-Germanic.")
 	lose_text = span_notice("You've forgotten how to speak Combined Nordic-Germanic.")
 	human_only = FALSE
 
@@ -567,9 +567,9 @@
 	desc = "You're somehow capable of understanding and speaking the Eastern Slavic Spacer language!"
 	value = 0
 	category = "Language Quirks"
-	mechanics = "You can speak the Eastern Slavic Spacer language or at least understand it. Maybe you really are the very best."
+	mechanics = "I can speak the Eastern Slavic Spacer language or at least understand it. Maybe you really are the very best."
 	conflicts = list()
-	gain_text = span_notice("You remember how to speak Eastern Slavic Spacer!")
+	gain_text = span_notice("I remember how to speak Eastern Slavic Spacer!")
 	lose_text = span_notice("You've forgotten how to speak Eastern Slavic Spacer!")
 	human_only = FALSE
 
@@ -586,7 +586,7 @@
 /*
 /datum/quirk/in_heat
 	name = "ERP Receptive"
-	desc = "Your character, for whatever reason, is PASSIVELY seeking out attention from those who match your OOC Prefences. Remember to set your OOC notes!"
+	desc = "My character, for whatever reason, is PASSIVELY seeking out attention from those who match your OOC Prefences. Remember to set your OOC notes!"
 	value = 0
 	category = "Bawdy Quirks"
 	mechanics = "This trait is a flag for people who have ERP seeking to know that you, right now, are seeking ERP. It's a simple concept, if you just have this quirk you are not going out of our way to look for it, but if it stumbles into your lap well that'd be fine, right?"
@@ -596,7 +596,7 @@
 
 /datum/quirk/heat
 	name = "ERP Seeking"
-	desc = "Your character, for whatever reason, is ACTIVELY seeking out attention from those who match your OOC Preferences. Remember to check peoples OOC notes!"
+	desc = "My character, for whatever reason, is ACTIVELY seeking out attention from those who match your OOC Preferences. Remember to check peoples OOC notes!"
 	value = 0
 	category = "Perceptive Quirks"
 	mechanics = "This Quirk allows you to see other players ERP related quirks when you examine them. Letting you know, at a glance, some of their prefs if they have them set."
@@ -618,7 +618,7 @@
 /*
 /datum/quirk/pvefocus
 	name = "PVE Focused"
-	desc = "Your gameplay focus is on PVE.  While you may occasionally partake of PVP, and understand that sometimes it pops up quite quickly and that YOUR ACTIONS ARE YOUR OWN IF YOU CHOOSE TO ENGAGE. This quirk lets others know that you generally would prefer not to be involved in player versus player scenarios."
+	desc = "My gameplay focus is on PVE.  While you may occasionally partake of PVP, and understand that sometimes it pops up quite quickly and that YOUR ACTIONS ARE YOUR OWN IF YOU CHOOSE TO ENGAGE. This quirk lets others know that you generally would prefer not to be involved in player versus player scenarios."
 	value = 0
 	category = "OOC Quirks"
 	mechanics = "Ya' like fighting geckos, do ya'?"
@@ -628,7 +628,7 @@
 
 /datum/quirk/pvpfocus
 	name = "PVP Focused"
-	desc = "Your gameplay focus is on PVP.  While PVE is basically inescapible in the wastes to even get from point A to point B this lets you opt in to letting others know that when shit starts to hit the fan ICly that violence is on the table for your character."
+	desc = "My gameplay focus is on PVP.  While PVE is basically inescapible in the wastes to even get from point A to point B this lets you opt in to letting others know that when shit starts to hit the fan ICly that violence is on the table for your character."
 	value = 0
 	category = "OOC Quirks"
 	mechanics = "Ya' like fighting people, do ya'?"
@@ -639,7 +639,7 @@
 
 /datum/quirk/loocapproach
 	name = "L/OOC Approach"
-	desc = "You prefer to be approached for Roleplay (Erotic or otherwise) via LOOC/OOC first to help work out a plan for scenes and ideas so that the experiences are a bit more tailored."
+	desc = "I prefer to be approached for Roleplay (Erotic or otherwise) via LOOC/OOC first to help work out a plan for scenes and ideas so that the experiences are a bit more tailored."
 	value = 0
 	category = "OOC Quirks"
 	mechanics = "This quirk should be helpful also for people who like to plan scenes ahead of time. It's a well known fact of SS13 that time always runs short when roleplay is happening and hopefully this can help alleviate that via planning."
@@ -650,7 +650,7 @@
 /*
 /datum/quirk/pvpande
 	name = "PVP/PVE Accepting"
-	desc = "You are down for PVP & PVE Scenarios.  The wastes are violent, and you are down bad for Miss Violencia. Be it PVP or PVE this quirk lets others know you're ready to R U M B L E."
+	desc = "I am down for PVP & PVE Scenarios.  The wastes are violent, and you are down bad for Miss Violencia. Be it PVP or PVE this quirk lets others know you're ready to R U M B L E."
 	value = 0
 	category = "OOC Quirks"
 	mechanics = "Yeah, you're just violent and quirky. We get it."
@@ -664,11 +664,11 @@
 	desc = "Maybe you're really smol, maybe you're just really light, maybe you're *really* into yoga. However it is, carrying you around is just pretty dang easy."
 	value = 0
 	category = "Lifepath Quirks"
-	mechanics = "You can be picked up by others with as simple as an alt + click. Careful, they can stuff you in some vending machines too. Yikes."
+	mechanics = "I can be picked up by others with as simple as an alt + click. Careful, they can stuff you in some vending machines too. Yikes."
 	conflicts = list()
 	mob_trait = TRAIT_SMOL
-	gain_text = span_notice("You feel scoopable! Others can ALT-CLICK you to pick you up!")
-	lose_text = span_notice("You feel a lot less scoopable.")
+	gain_text = span_notice("I feel scoopable! Others can ALT-CLICK you to pick you up!")
+	lose_text = span_notice("I feel a lot less scoopable.")
 	human_only = FALSE
 
 /datum/quirk/smol/add()
@@ -683,80 +683,80 @@
 /*
 /datum/quirk/cat
 	name = "A cat!"
-	desc = "You identify as a cat! (Mostly to help identify your species mechanically)"
+	desc = "I identify as a cat! (Mostly to help identify your species mechanically)"
 	value = 0
 	category = "Identification Quirks"
-	mechanics = "You trigger the cat phobia, amazing."
+	mechanics = "I trigger the cat phobia, amazing."
 	conflicts = list()
 	mob_trait = TRAIT_CAT
 	human_only = FALSE
 
 /datum/quirk/rat
 	name = "A rat!"
-	desc = "You identify as a rat! (Mostly to help identify your species mechanically)"
+	desc = "I identify as a rat! (Mostly to help identify your species mechanically)"
 	value = 0
 	category = "Identification Quirks"
-	mechanics = "You trigger the cat phobia, stellar."
+	mechanics = "I trigger the cat phobia, stellar."
 	conflicts = list()
 	mob_trait = TRAIT_RAT
 	human_only = FALSE
 
 /datum/quirk/spider
 	name = "A spider!"
-	desc = "You identify as a spider! (Mostly to help identify your species mechanically)"
+	desc = "I identify as a spider! (Mostly to help identify your species mechanically)"
 	value = 0
 	category = "Identification Quirks"
-	mechanics = "You trigger the spider phobia, tubular."
+	mechanics = "I trigger the spider phobia, tubular."
 	conflicts = list()
 	mob_trait = TRAIT_SPIDER
 	human_only = FALSE
 
 /datum/quirk/lizard
 	name = "A lizard or reptillian!"
-	desc = "You identify as a lizard/reptillian! (Mostly to help identify your species mechanically)"
+	desc = "I identify as a lizard/reptillian! (Mostly to help identify your species mechanically)"
 	value = 0
 	category = "Identification Quirks"
-	mechanics = "You trigger the lizard phobia, choice."
+	mechanics = "I trigger the lizard phobia, choice."
 	conflicts = list()
 	mob_trait = TRAIT_LIZARD
 	human_only = FALSE
 
 /datum/quirk/robot
 	name = "A robot/synth!"
-	desc = "You identify as a robot/synth! (Mostly to help identify your species mechanically)"
+	desc = "I identify as a robot/synth! (Mostly to help identify your species mechanically)"
 	value = 0
 	category = "Identification Quirks"
-	mechanics = "You trigger the robot phobia, radical."
+	mechanics = "I trigger the robot phobia, radical."
 	conflicts = list()
 	mob_trait = TRAIT_ROBOT
 	human_only = FALSE
 
 /datum/quirk/bird
 	name = "A bird!"
-	desc = "You identify as a bird! (Mostly to help identify your species mechanically)"
+	desc = "I identify as a bird! (Mostly to help identify your species mechanically)"
 	value = 0
 	category = "Identification Quirks"
-	mechanics = "You trigger the bird phobia, magical."
+	mechanics = "I trigger the bird phobia, magical."
 	conflicts = list()
 	mob_trait = TRAIT_BIRD
 	human_only = FALSE
 
 /datum/quirk/dog
 	name = "A dog!"
-	desc = "You identify as a dog! (Mostly to help identify your species mechanically)"
+	desc = "I identify as a dog! (Mostly to help identify your species mechanically)"
 	value = 0
 	category = "Identification Quirks"
-	mechanics = "You trigger the dog phobia, dastardly."
+	mechanics = "I trigger the dog phobia, dastardly."
 	conflicts = list()
 	mob_trait = TRAIT_DOG
 	human_only = FALSE
 
 /datum/quirk/alien
 	name = "An alien!"
-	desc = "You identify as some manner of wierd, uncanny alien! Maybe you're a xenomorph, youre a grey skinned big headded creature, or you're just otherwise otherworldly!"
+	desc = "I identify as some manner of wierd, uncanny alien! Maybe you're a xenomorph, youre a grey skinned big headded creature, or you're just otherwise otherworldly!"
 	value = 0
 	category = "Identification Quirks"
-	mechanics = "You trigger the alien phobia."
+	mechanics = "I trigger the alien phobia."
 	conflicts = list()
 	mob_trait = TRAIT_ALIEN
 	human_only = FALSE
@@ -764,7 +764,7 @@
 
 /datum/quirk/photographer
 	name = "Photographer"
-	desc = "You carry your camera and personal photo album everywhere you go, and your scrapbooks are legendary among your coworkers."
+	desc = "I carry your camera and personal photo album everywhere you go, and your scrapbooks are legendary among your coworkers."
 	value = 0
 	category = "Lifepath Quirks"
 	mechanics = "Like it says, camera and photo album. The album saves between rounds for you to remember all those good times with. Or cry in six months when you come back and see it again."
@@ -772,8 +772,8 @@
 		/datum/quirk/luddite, // fucker'll steal your soul
 	)
 	mob_trait = TRAIT_PHOTOGRAPHER
-	gain_text = span_notice("You know everything about photography.")
-	lose_text = span_danger("You forget how photo cameras work.")
+	gain_text = span_notice("I know everything about photography.")
+	lose_text = span_danger("I forget how photo cameras work.")
 	medical_record_text = "Patient mentions photography as a stress-relieving hobby."
 
 /datum/quirk/photographer/on_spawn()
@@ -794,14 +794,14 @@
 
 /datum/quirk/journalist
 	name = "Journalist"
-	desc = "You carry yourself a pen and a personal folder around, you are known to be the one who records everything."
+	desc = "I carry yourself a pen and a personal folder around, you are known to be the one who records everything."
 	value = 0
 	category = "Lifepath Quirks"
 	mechanics = "Yeah, you get a bunch of junk. Cool thing though, alt click the pen and you can rename stuff. See if you can sell someone a deed to Nash, I double dog dare you."
 	conflicts = list() // you can be an illiterate journalist
 	mob_trait = TRAIT_JOURNALIST
-	gain_text = span_notice("You feel like you need to harrass politicians.")
-	lose_text = span_danger("You forget how to be a journalist. :(")
+	gain_text = span_notice("I feel like you need to harrass politicians.")
+	lose_text = span_danger("I forget how to be a journalist. :(")
 	medical_record_text = ""
 
 /datum/quirk/journalist/on_spawn()
@@ -819,13 +819,13 @@
 /*
 /datum/quirk/lick_heal
 	name = "Innate healing - Saliva"
-	desc = "You got that dog in you, your licks straight up heal the wounded. Somehow. Don't think about it too hard."
+	desc = "I got that dog in you, your licks straight up heal the wounded. Somehow. Don't think about it too hard."
 	value = 0
 	category = "Healer Quirks"
-	mechanics = "You can pull out your tongue with *lick and use it to heal wounds on folks. Drink water to regain uses faster. Just remember that some people do not like being licked to be healed."
+	mechanics = "I can pull out your tongue with *lick and use it to heal wounds on folks. Drink water to regain uses faster. Just remember that some people do not like being licked to be healed."
 	conflicts = list()
 	mob_trait = TRAIT_HEAL_TONGUE
-	gain_text = span_notice("You feel a slight tingle in your mouth.")
+	gain_text = span_notice("I feel a slight tingle in your mouth.")
 	lose_text = span_danger("The tingle in your mouth fades.")
 	locked = FALSE
 	human_only = FALSE
@@ -836,10 +836,10 @@
 	desc = "By the Nine- Wait, wrong game. One way or another you can lay on hands."
 	value = 0
 	category = "Healer Quirks"
-	mechanics = "Your touch has a mild healing effect on burns and bruises. Use *touch to soothe the injuries of yourself or others. Drinking water helps recover from the fatigue of using the spell faster."
+	mechanics = "My touch has a mild healing effect on burns and bruises. Use *touch to soothe the injuries of yourself or others. Drinking water helps recover from the fatigue of using the spell faster."
 	conflicts = list()
 	mob_trait = TRAIT_HEAL_TOUCH
-	gain_text = span_notice("You feel a slight tingle in your hands.")
+	gain_text = span_notice("I feel a slight tingle in your hands.")
 	lose_text = span_danger("The tingle in your palm fades.")
 	locked = FALSE
 	human_only = FALSE
@@ -847,14 +847,14 @@
 
 /datum/quirk/tend_heal
 	name = "Innate healing - Triage"
-	desc = "You keep a tiny kit of medical supplies stashed away for emergencies."
+	desc = "I keep a tiny kit of medical supplies stashed away for emergencies."
 	value = 0
 	category = "Healer Quirks"
 	mechanics = "Use *tend to treat the injuries of yourself or others. Drinking water helps recover your focus."
 	conflicts = list()
 	mob_trait = TRAIT_HEAL_TEND
-	gain_text = span_notice("You feel your triage kit tucked safely in a pocket.")
-	lose_text = span_danger("You lost your triage kit...")
+	gain_text = span_notice("I feel your triage kit tucked safely in a pocket.")
+	lose_text = span_danger("I lost your triage kit...")
 	locked = FALSE
 	human_only = FALSE
 */
@@ -864,7 +864,7 @@
 /*
 /datum/quirk/rpfocused
 	name = "Roleplay Seeking"
-	desc = "You are actively seeking out people who also are seeking roleplay that isn't necessarily erotic in nature. With this you will be able to see the other Roleplay related quirks on others."
+	desc = "I am actively seeking out people who also are seeking roleplay that isn't necessarily erotic in nature. With this you will be able to see the other Roleplay related quirks on others."
 	value = 0
 	category = "Perceptive Quirks"
 	mechanics = "This quirk lets you see other peoples roleplay related traits, pretty simple."
@@ -874,7 +874,7 @@
 
 /datum/quirk/rplongterm
 	name = "Roleplay Seeking - Long Term Focus"
-	desc = "You are seeking out people to have more than one rounds worth of interaction with.  Maybe on the regular if your real world schedules allow it."
+	desc = "I am seeking out people to have more than one rounds worth of interaction with.  Maybe on the regular if your real world schedules allow it."
 	value = 0
 	category = "Roleplay Quirks"
 	mechanics = "Consider passing each other your discords, or something similar. Make a little long term group!  We'd love to see it!"
@@ -884,7 +884,7 @@
 
 /datum/quirk/rpshortterm
 	name = "Roleplay Seeking - Short Term Focus"
-	desc = "You are seeking out people to have occasional interaction with. Pick this if you want more casual quicker roleplay, instead of something that likely needs OOC planning between those involved."
+	desc = "I am seeking out people to have occasional interaction with. Pick this if you want more casual quicker roleplay, instead of something that likely needs OOC planning between those involved."
 	value = 0
 	category = "Roleplay Quirks"
 	mechanics = "Grab and go, go gettem y'all!"
@@ -894,7 +894,7 @@
 
 /datum/quirk/rpserious
 	name = "Roleplay Seeking - Serious Roleplay"
-	desc = "You are seeking out 'Serious' Roleplay with others. This includes things like taking threats realistically and generally really digging into the setting to create believable, and not terribly wacky, situations."
+	desc = "I am seeking out 'Serious' Roleplay with others. This includes things like taking threats realistically and generally really digging into the setting to create believable, and not terribly wacky, situations."
 	value = 0
 	category = "Roleplay Quirks"
 	mechanics = "For more clarification, when we say 'serious' we're implying what some players may know to some degree as a 'higher' roleplay level. Think serious cop drama."
@@ -904,7 +904,7 @@
 
 /datum/quirk/rplight
 	name = "Roleplay Seeking - Light Roleplay"
-	desc = "You are seeing out 'Light' Roleplay with others.  This includes things like generally playing into the wackyness of the game overall.  While we do ask you not to break the 4th wall (too often, anyway) this means you're seeking more silly interactions generally."
+	desc = "I am seeing out 'Light' Roleplay with others.  This includes things like generally playing into the wackyness of the game overall.  While we do ask you not to break the 4th wall (too often, anyway) this means you're seeking more silly interactions generally."
 	value = 0
 	category = "Roleplay Quirks"
 	mechanics = "For more clarification, when we say 'light' we're implying what some players may know to some degree as a 'lower' roleplay level. Think goofy and lighthearted."
@@ -914,7 +914,7 @@
 
 /datum/quirk/rpdaysofourlives
 	name = "Roleplay Seeking - Dramatic Roleplay"
-	desc = "You are seeking out interactions with others that are perhaps a bit overdramatic. Scandalous, gossiping, overly sad or emotional scenes. Think Days of Our Lives, or any Soap Opera. This is not a way around the OOC Drama rule, but it does mean you're seeking IC Drama roleplay!"
+	desc = "I am seeking out interactions with others that are perhaps a bit overdramatic. Scandalous, gossiping, overly sad or emotional scenes. Think Days of Our Lives, or any Soap Opera. This is not a way around the OOC Drama rule, but it does mean you're seeking IC Drama roleplay!"
 	value = 0
 	category = "Roleplay Quirks"
 	mechanics = "For more clarification, when we say 'dramatic' we mean spicier topics. These dramatic moments should also be careful to be kept in IC spaces, remember your IC/OOC barrier peeps."
@@ -924,7 +924,7 @@
 
 /datum/quirk/rpscrubs
 	name = "Roleplay Seeking - Medical Roleplay"
-	desc = "You are seeking out interactions with players that are medical related.  This includes roleplaying treating wounds, or maybe even roleplaying treating them poorly."
+	desc = "I am seeking out interactions with players that are medical related.  This includes roleplaying treating wounds, or maybe even roleplaying treating them poorly."
 	value = 0
 	category = "Roleplay Quirks"
 	mechanics = "For more clarification, when we say 'medical' we don't mean roleplaying out adding every bandage but maybe give this person a little bit more to work with than wandering in and out of medbay like a stooge."
@@ -1031,7 +1031,7 @@
 /*
 /datum/quirk/advseeker
 	name = "Adventure Seeking"
-	desc = "You keep an eye out for the type of person who sees this swampy wasteland as a way to grow famous and rich.  Preferably both."
+	desc = "I keep an eye out for the type of person who sees this swampy wasteland as a way to grow famous and rich.  Preferably both."
 	value = 0
 	category = "Perceptive Quirks"
 	mechanics = "This is a flag quirk that lets you see what other peoples builds are for going out and doing adventure, letting you more easily build your groups strenghths up and check weaknesses."
@@ -1041,7 +1041,7 @@
 
 /datum/quirk/adver
 	name = "Adventurer"
-	desc = "You are one of those people who go about in search of what was in hopes of making what is bigger and better. Or maybe you just focus on making money. It's your call."
+	desc = "I am one of those people who go about in search of what was in hopes of making what is bigger and better. Or maybe you just focus on making money. It's your call."
 	value = 0
 	category = "Adventure Quirks"
 	mechanics = "You're really always on call for a wild time. Wanna go kill some robots later?"
@@ -1136,7 +1136,7 @@
 	category = "Language Quirks"
 	mechanics = "Bark bark, dude."
 	conflicts = list()
-	gain_text = span_notice("You remember how to speak the way of the canine")
+	gain_text = span_notice("I remember how to speak the way of the canine")
 	lose_text = span_notice("You've forgotten how to speak canine..")
 	human_only = FALSE
 
@@ -1156,7 +1156,7 @@
 	category = "Language Quirks"
 	mechanics = "Chitter chitter, nuts, my man."
 	conflicts = list()
-	gain_text = span_notice("You remember how to speak the way of the squirrel")
+	gain_text = span_notice("I remember how to speak the way of the squirrel")
 	lose_text = span_notice("You've forgotten how to speak squirrel..")
 	human_only = FALSE
 
@@ -1177,7 +1177,7 @@
 	category = "Language Quirks"
 	mechanics = "Merp.  Merpmerpmerpmerp. Merp merp merp. Merp merp?"
 	conflicts = list()
-	gain_text = span_notice("You remember how to speak the way of the sergal")
+	gain_text = span_notice("I remember how to speak the way of the sergal")
 	lose_text = span_notice("You've forgotten how to speak sergal..")
 	human_only = FALSE
 
@@ -1198,7 +1198,7 @@
 	category = "Language Quirks"
 	mechanics = "Cheesed to meet you."
 	conflicts = list()
-	gain_text = span_notice("You remember how to speak the way of the mouse")
+	gain_text = span_notice("I remember how to speak the way of the mouse")
 	lose_text = span_notice("You've forgotten how to speak mouse..")
 	human_only = FALSE
 
@@ -1219,7 +1219,7 @@
 	category = "Language Quirks"
 	mechanics = ""
 	conflicts = list()
-	gain_text = span_notice("You remember how to speak the way of the bird")
+	gain_text = span_notice("I remember how to speak the way of the bird")
 	lose_text = span_notice("You've forgotten how to speak bird..")
 	human_only = FALSE
 
@@ -1239,7 +1239,7 @@
 	category = "Language Quirks"
 	mechanics = "Watership down, repeat, Watership down!"
 	conflicts = list()
-	gain_text = span_notice("You remember how to speak the way of the rabbit")
+	gain_text = span_notice("I remember how to speak the way of the rabbit")
 	lose_text = span_notice("You've forgotten how to speak rabbit..")
 	human_only = FALSE
 
@@ -1260,7 +1260,7 @@
 	category = "Language Quirks"
 	mechanics = "It really is A Bugs Life, eh?"
 	conflicts = list()
-	gain_text = span_notice("You remember how to speak the way of the insect")
+	gain_text = span_notice("I remember how to speak the way of the insect")
 	lose_text = span_notice("You've forgotten how to speak insect..")
 	human_only = FALSE
 
@@ -1281,7 +1281,7 @@
 	category = "Language Quirks"
 	mechanics = "Xenomorph pun here."
 	conflicts = list()
-	gain_text = span_notice("You remember how to speak with Xenomorphs.")
+	gain_text = span_notice("I remember how to speak with Xenomorphs.")
 	lose_text = span_notice("You've forgotten how to speak with Xenomorphs.")
 	human_only = FALSE
 
@@ -1301,7 +1301,7 @@
 	category = "Language Quirks"
 	mechanics = "Insert slav meme here"
 	conflicts = list()
-	gain_text = span_notice("You remember how to speak Serbian.")
+	gain_text = span_notice("I remember how to speak Serbian.")
 	lose_text = span_notice("You've forgotten how to speak Serbian.")
 	human_only = FALSE
 
@@ -1321,7 +1321,7 @@
 	category = "Language Quirks"
 	mechanics = "Are you on or are you off?"
 	conflicts = list()
-	gain_text = span_notice("You remember how to speak with televisions.")
+	gain_text = span_notice("I remember how to speak with televisions.")
 	lose_text = span_notice("You've forgotten how to speak with televisions.")
 	human_only = FALSE
 
@@ -1341,7 +1341,7 @@
 	category = "Language Quirks"
 	mechanics = ""
 	conflicts = list()
-	gain_text = span_notice("You speak spanish.")
+	gain_text = span_notice("I speak spanish.")
 	lose_text = span_notice("You've forgotten how to speak spanish.")
 	human_only = FALSE
 
@@ -1361,7 +1361,7 @@
 	category = "Language Quirks"
 	mechanics = "For the Freljord!"
 	conflicts = list()
-	gain_text = span_notice("You remember how to speak Freljordian.")
+	gain_text = span_notice("I remember how to speak Freljordian.")
 	lose_text = span_notice("You've forgotten how to speak Freljordian.")
 	human_only = FALSE
 
@@ -1382,8 +1382,8 @@
 	mechanics = "Face coverings will not hide your identity from others, including flavor text and species"
 	conflicts = list()
 	mob_trait = TRAIT_NOHIDEFACE
-	gain_text = span_notice("You feel seen!")
-	lose_text = span_notice("You feel hidden")
+	gain_text = span_notice("I feel seen!")
+	lose_text = span_notice("I feel hidden")
 
 */
 
@@ -1402,7 +1402,7 @@
 	desc = "If the internet was a thing, people would be looking you up on google."
 	value = 0
 	category = "Bawdy Quirks"
-	mechanics = "You need to fix the fit of your clothes every once in a while, or your breathing will be restricted and you'll take a tiny bit of suffocation damage."
+	mechanics = "I need to fix the fit of your clothes every once in a while, or your breathing will be restricted and you'll take a tiny bit of suffocation damage."
 	conflicts = list()
 	gain_text = span_notice("It's hard to find clothes that fit around your chest.")
 	lose_text = span_notice("The urge to find a tailor disappears.")
@@ -1410,9 +1410,9 @@
 	var/warningtimer = null
 	var/active = FALSE
 	var/datum/status_effect/debuff = /datum/status_effect/dan_nicki
-	var/warning_text = "Your clothes are getting a little tight..."
-	var/unfix_text = "Your clothes feel way too tight to breathe! You'll need to fix their fit using their context menu."
-	var/fix_text = "You feel like you can breathe again. That's much better."
+	var/warning_text = "My clothes are getting a little tight..."
+	var/unfix_text = "My clothes feel way too tight to breathe! You'll need to fix their fit using their context menu."
+	var/fix_text = "I feel like you can breathe again. That's much better."
 	var/drop_text = "Whew... free at last!"
 
 /datum/status_effect/dan_nicki
@@ -1489,17 +1489,17 @@
 
 /datum/quirk/dan_nicki/wreckingballs
 	name = "Big Balls"
-	desc = "You have a hard time finding clothes that fit."
+	desc = "I have a hard time finding clothes that fit."
 	value = 0
 	category = "Bawdy Quirks"
-	mechanics = "You need to fix the fit of your clothes every once in a while, or you'll suffer a speed penalty."
+	mechanics = "I need to fix the fit of your clothes every once in a while, or you'll suffer a speed penalty."
 	conflicts = list()
 	gain_text = span_notice("The heavy swingers between your legs strain your clothes.")
-	lose_text = span_notice("Your clothes feel looser.")
+	lose_text = span_notice("My clothes feel looser.")
 	debuff = /datum/status_effect/wreckingballs
-	warning_text = "Your clothes are getting a little tight..."
-	unfix_text = "Your clothes feel way too tight to move! You'll need to fix their fit using their context menu."
-	fix_text = "You feel like you can move your legs again. That's much better."
+	warning_text = "My clothes are getting a little tight..."
+	unfix_text = "My clothes feel way too tight to move! You'll need to fix their fit using their context menu."
+	fix_text = "I feel like you can move your legs again. That's much better."
 	drop_text = "Whew... free at last!"
 
 /datum/status_effect/wreckingballs
@@ -1523,17 +1523,17 @@
 
 /datum/quirk/dan_nicki/hugecock
 	name = "Big Dick"
-	desc = "You have a HARD time finding clothes that fit."
+	desc = "I have a HARD time finding clothes that fit."
 	value = 0
 	category = "Bawdy Quirks"
-	mechanics = "You need to fix the fit of your clothes every once in a while, or your clothes will be too tight to reach into your pockets."
+	mechanics = "I need to fix the fit of your clothes every once in a while, or your clothes will be too tight to reach into your pockets."
 	conflicts = list()
-	gain_text = span_notice("You feel your clothes stretch around your extra leg.")
-	lose_text = span_notice("Your clothes feel looser.")
+	gain_text = span_notice("I feel your clothes stretch around your extra leg.")
+	lose_text = span_notice("My clothes feel looser.")
 	debuff = /datum/status_effect/hotrod
-	warning_text = "Your clothes are getting a little tight..."
-	unfix_text = "Your clothes feel way too tight to reach into your pockets! You'll need to fix their fit using their context menu."
-	fix_text = "You feel like you can reach into your pockets again. That's much better."
+	warning_text = "My clothes are getting a little tight..."
+	unfix_text = "My clothes feel way too tight to reach into your pockets! You'll need to fix their fit using their context menu."
+	fix_text = "I feel like you can reach into your pockets again. That's much better."
 	drop_text = "Whew... free at last!"
 
 /datum/status_effect/hotrod
@@ -1559,17 +1559,17 @@
 
 /datum/quirk/dan_nicki/cake
 	name = "Big Ass"
-	desc = "You have a hard time getting your clothes on."
+	desc = "I have a hard time getting your clothes on."
 	value = 0
 	category = "Bawdy Quirks"
-	mechanics = "You need to fix the fit of your clothes every once in a while, or they'll become uncomfortable."
+	mechanics = "I need to fix the fit of your clothes every once in a while, or they'll become uncomfortable."
 	conflicts = list()
-	gain_text = span_notice("You feel your lower body being compressed by your clothes.")
-	lose_text = span_notice("Your clothes feel looser.")
+	gain_text = span_notice("I feel your lower body being compressed by your clothes.")
+	lose_text = span_notice("My clothes feel looser.")
 	debuff = /datum/status_effect/toomuchcake
-	warning_text = "Your clothes are getting a little tight..."
-	unfix_text = "Your clothes feel way too tight! You'll need to fix their fit using their context menu."
-	fix_text = "You feel more comfortable in your clothes again. That's much better."
+	warning_text = "My clothes are getting a little tight..."
+	unfix_text = "My clothes feel way too tight! You'll need to fix their fit using their context menu."
+	fix_text = "I feel more comfortable in your clothes again. That's much better."
 	drop_text = "Whew... free at last!"
 
 /datum/status_effect/toomuchcake

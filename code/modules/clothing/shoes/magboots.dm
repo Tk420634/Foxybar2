@@ -29,7 +29,7 @@
 		slowdown = slowdown_active
 	magpulse = !magpulse
 	icon_state = "[magboot_state][magpulse]"
-	to_chat(user, span_notice("You [magpulse ? "enable" : "disable"] the mag-pulse traction system."))
+	to_chat(user, span_notice("I [magpulse ? "enable" : "disable"] the mag-pulse traction system."))
 	if(user)
 		user.update_equipment_speed_mods()
 		user.update_inv_shoes()	//so our mob-overlays update

@@ -50,7 +50,7 @@ Bonus
 		switch(A.stage)
 			if(1, 2)
 				if(prob(base_message_chance) && !suppress_warning)
-					to_chat(M, span_warning("Your eyes itch."))
+					to_chat(M, span_warning("My eyes itch."))
 			if(3, 4)
 				to_chat(M, span_warning("<b>Your eyes burn!</b>"))
 				M.blur_eyes(10)
@@ -63,11 +63,11 @@ Bonus
 				if(prob(eyes.damage - 10 + 1))
 					if(!remove_eyes)
 						if(!HAS_TRAIT(M, TRAIT_BLIND))
-							to_chat(M, span_userdanger("You go blind!"))
+							to_chat(M, span_userdanger("I go blind!"))
 							eyes.applyOrganDamage(eyes.maxHealth)
 					else
-						M.visible_message(span_warning("[M]'s eyes fall off their sockets!"), span_userdanger("Your eyes fall off their sockets!"))
+						M.visible_message(span_warning("[M]'s eyes fall off their sockets!"), span_userdanger("My eyes fall off their sockets!"))
 						eyes.Remove()
 						eyes.forceMove(get_turf(M))
 				else
-					to_chat(M, span_userdanger("Your eyes burn horrifically!"))
+					to_chat(M, span_userdanger("My eyes burn horrifically!"))

@@ -253,7 +253,7 @@
 	ADD_TRAIT(src, TRAIT_NODROP, SHAMEBRERO_TRAIT)
 
 /obj/item/clothing/head/cone
-	desc = "You can leave your friends behind."
+	desc = "I can leave your friends behind."
 	name = "safety cone"
 	icon = 'icons/obj/janitor.dmi'
 	icon_state = "cone"

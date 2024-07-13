@@ -40,7 +40,7 @@
 	// 	if(L.check_submerged() <= 0)
 	// 		return
 	// 	if(!istype(oldloc, /turf/open/water))
-	// 		to_chat(L, span_warning("You get drenched in water!"))
+	// 		to_chat(L, span_warning("I get drenched in water!"))
 	AM.water_act(5)
 	..()
 
@@ -51,7 +51,7 @@
 // 		if(L.check_submerged() <= 0)
 // 			return
 // 		if(!istype(newloc, /turf/open/water))
-// 			to_chat(L, span_warning("You climb out of \the [src]."))
+// 			to_chat(L, span_warning("I climb out of \the [src]."))
 // 	..()
 
 /turf/open/water/AltClick(mob/user)
@@ -61,13 +61,13 @@
 		L.DelayNextAction(CLICK_CD_RANGE)
 		if(!user.incapacitated(allow_crit = TRUE) && Adjacent(user))
 			user.visible_message(span_notice("[L] starts washing in \the [src]."),
-								span_notice("You start washing in \the [src]."),
-								span_notice("You hear splashing water and scrubbing."))
+								span_notice("I start washing in \the [src]."),
+								span_notice("I hear splashing water and scrubbing."))
 			playsound(user,"water_wade",100,TRUE)
 			if(do_after(user,5 SECONDS, TRUE, src, TRUE,allow_movement=FALSE,stay_close=TRUE))
 				give_mob_washies(L)
 				user.visible_message(span_notice("[L] finishes washing in \the [src]."),
-									span_notice("You finish washing in \the [src]."),
+									span_notice("I finish washing in \the [src]."),
 									span_notice("The splashing and scrubbing stops."))
 				playsound(user,"water_wade",100,TRUE)
 

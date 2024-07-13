@@ -34,10 +34,10 @@
 /obj/vertibird/proc/toggleLock(mob/user)
 	if(locked)
 		locked = FALSE
-		to_chat(user, "You unlock the vertibird.")
+		to_chat(user, "I unlock the vertibird.")
 	else
 		locked = TRUE
-		to_chat(user, "You lock the vertibird.")
+		to_chat(user, "I lock the vertibird.")
 
 /obj/vertibird/attackby(obj/item/weapon/W, mob/user, params)
 	if(istype(W, /obj/item/key/vertibird))

@@ -47,7 +47,7 @@
 		to_chat(user, span_warning("There is no core inserted."))
 		return
 	inserted_core.forceMove(get_turf(user))
-	to_chat(user, span_notice("You remove [inserted_core] from [src]."))
+	to_chat(user, span_notice("I remove [inserted_core] from [src]."))
 	user.put_in_hands(inserted_core)
 	inserted_core = null
 
@@ -97,7 +97,7 @@
 			to_chat(user, span_warning("[I] is stuck to your hand."))
 			return
 		inserted_core = I
-		to_chat(user, span_notice("You insert [I] into [src]."))
+		to_chat(user, span_notice("I insert [I] into [src]."))
 		return
 	if(istype(I, /obj/item/transfer_valve))
 		// If they don't have a bomb core inserted, don't let them insert this. If they do, insert and do implosion.
@@ -112,7 +112,7 @@
 			to_chat(user, span_warning("[I] is stuck to your hand."))
 			return
 		inserted_bomb = I
-		to_chat(user, span_notice("You insert [I] and press the start button."))
+		to_chat(user, span_notice("I insert [I] and press the start button."))
 		do_implosion()
 
 /**

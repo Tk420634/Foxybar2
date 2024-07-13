@@ -145,7 +145,7 @@
 			changeto = PVP_NEUTRAL
 		else
 			if(HAS_TRAIT(usr, TRAIT_NO_PVP_EVER))
-				to_chat(usr, span_alert("Your role/quirks/setup doesn't allow for PVP!"))
+				to_chat(usr, span_alert("My role/quirks/setup doesn't allow for PVP!"))
 				return
 			changeto = PVP_YES
 	else if(_y>=17) // PVP opt out on

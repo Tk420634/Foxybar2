@@ -4,7 +4,7 @@
 /obj/item/razor/proc/new_hairstyle(mob/living/carbon/human/H, mob/user, mirror)
 	var/location = user.zone_selected
 	if (H == user && !mirror)
-		to_chat(user, span_warning("You need a mirror to properly style your own hair!"))
+		to_chat(user, span_warning("I need a mirror to properly style your own hair!"))
 		//balloon_alert(user, "need mirror!")
 		return
 	if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
@@ -16,9 +16,9 @@
 		to_chat(user, span_warning("The headgear is in the way!"))
 		//balloon_alert(user, "headgear in the way!")
 		return
-	user.visible_message(span_notice("[user] tries to change [H]'s hairstyle using [src]."), span_notice("You try to change [H]'s hairstyle using [src]."))
+	user.visible_message(span_notice("[user] tries to change [H]'s hairstyle using [src]."), span_notice("I try to change [H]'s hairstyle using [src]."))
 	if(new_style && do_after(user, 6 SECONDS, H))
-		user.visible_message(span_notice("[user] successfully changes [H]'s hairstyle using [src]."), span_notice("You successfully change [H]'s hairstyle using [src]."))
+		user.visible_message(span_notice("[user] successfully changes [H]'s hairstyle using [src]."), span_notice("I successfully change [H]'s hairstyle using [src]."))
 		//H.balloon_alert(user, "changed hairstyle")
 		H.hair_style = new_style
 		H.update_hair()
@@ -26,7 +26,7 @@
 /obj/item/razor/proc/new_facial_hairstyle(mob/living/carbon/human/H, mob/user, var/mirror)
 	var/location = user.zone_selected
 	if(H == user && !mirror)
-		to_chat(user, span_warning("You need a mirror to properly style your own facial hair!"))
+		to_chat(user, span_warning("I need a mirror to properly style your own facial hair!"))
 		//balloon_alert(user, "need mirror!")
 		return
 	if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
@@ -38,9 +38,9 @@
 		to_chat(user, span_warning("The mask is in the way!"))
 		//balloon_alert(user, "mask in the way!")
 		return
-	user.visible_message(span_notice("[user] tries to change [H]'s facial hair style using [src]."), span_notice("You try to change [H]'s facial hair style using [src]."))
+	user.visible_message(span_notice("[user] tries to change [H]'s facial hair style using [src]."), span_notice("I try to change [H]'s facial hair style using [src]."))
 	if(new_style && do_after(user, 6 SECONDS, H))
-		user.visible_message(span_notice("[user] successfully changes [H]'s facial hair style using [src]."), span_notice("You successfully change [H]'s facial hair style using [src]."))
+		user.visible_message(span_notice("[user] successfully changes [H]'s facial hair style using [src]."), span_notice("I successfully change [H]'s facial hair style using [src]."))
 		//H.balloon_alert(user, "changed facial hair style")
 		H.facial_hair_style = new_style
 		H.update_hair()
@@ -99,6 +99,6 @@
 
 /obj/item/handmirror/attack_self(mob/user)
 	ADD_TRAIT(user, TRAIT_SELF_AWARE, "mirror_trait")
-	to_chat(user, span_notice("You look into the mirror"))
+	to_chat(user, span_notice("I look into the mirror"))
 	sleep(15 SECONDS)
 	REMOVE_TRAIT(user, TRAIT_SELF_AWARE, "mirror_trait")

@@ -27,7 +27,7 @@
 	healing_factor = STANDARD_ORGAN_HEALING
 	decay_factor = STANDARD_ORGAN_DECAY
 
-	high_threshold_passed = span_warning("You feel your insides tighten!")
+	high_threshold_passed = span_warning("I feel your insides tighten!")
 	high_threshold_cleared = span_notice("The stitching ache in your abdomen passes away, unencumbering your movements.")
 	now_fixed = span_notice("The stabbing pain in your abdomen slowly calms down into a more tolerable ache.")
 
@@ -72,17 +72,17 @@
 		return
 	COOLDOWN_START(src, last_msg, SODIE_MSG_COOLDOWN)
 	if(CHECK_BITFIELD(healt, SODIEHEAL_KIND_BRUTE))
-		to_chat(owner, span_good("You feel a faint shifting under your skin, and the pain in your bruises dulls a tiny bit."))
+		to_chat(owner, span_good("I feel a faint shifting under your skin, and the pain in your bruises dulls a tiny bit."))
 	if(CHECK_BITFIELD(healt, SODIEHEAL_KIND_BURN))
-		to_chat(owner, span_good("You feel a faint shifting under your skin, and the pain in your burns dulls a tiny bit."))
+		to_chat(owner, span_good("I feel a faint shifting under your skin, and the pain in your burns dulls a tiny bit."))
 	if(CHECK_BITFIELD(healt, SODIEHEAL_KIND_TOX))
-		to_chat(owner, span_good("You feel an odd tingling in your veins, and your nausea subsides a tiny bit."))
+		to_chat(owner, span_good("I feel an odd tingling in your veins, and your nausea subsides a tiny bit."))
 	if(CHECK_BITFIELD(healt, SODIEHEAL_KIND_OXY))
-		to_chat(owner, span_good("You feel an odd opening in your lungs, and your breathing becomes a tiny bit easier."))
+		to_chat(owner, span_good("I feel an odd opening in your lungs, and your breathing becomes a tiny bit easier."))
 	if(CHECK_BITFIELD(healt, SODIEHEAL_KIND_BRAIN))
-		to_chat(owner, span_good("You feel a dull massaging in your brain, and your headache dulls a tiny bit."))
+		to_chat(owner, span_good("I feel a dull massaging in your brain, and your headache dulls a tiny bit."))
 	if(dpletted)
-		to_chat(owner, span_warning("Your organ feels a bit empty, and the sensation subsides. Maybe you should drink more sodie?"))
+		to_chat(owner, span_warning("My organ feels a bit empty, and the sensation subsides. Maybe you should drink more sodie?"))
 
 /obj/item/organ/sodie_organ/applyOrganDamage(d, maximum = maxHealth)
 	. = ..()
@@ -243,7 +243,7 @@
 	owner.reagents.add_reagent(/datum/reagent/medicine/critmed/blood,            5)
 	owner.reagents.add_reagent(/datum/reagent/medicine/critmed/blood/stabilizer, 5)
 	owner.reagents.add_reagent(/datum/reagent/medicine/critmed/runfast,          10)
-	to_chat(owner, span_good("You feel a sudden violent wriggling under your skin, then a rush of adrenaline!"))
+	to_chat(owner, span_good("I feel a sudden violent wriggling under your skin, then a rush of adrenaline!"))
 
 /obj/item/organ/sodie_organ/proc/bank_sauce(datum/source, datum/reagent/sodie) // hey, banksauce, michael here
 	if(!owner || QDELETED(owner) || !istype(sodie))
@@ -285,7 +285,7 @@
 	var/prev_banked_burn = banked_burn
 	banked_burn = round(min(banked_burn + (sodie.sodie_heal_burn  * amount), current_max), 0.01)
 	if(COOLDOWN_FINISHED(src, last_burn_max_msg) && prev_banked_burn < current_max && banked_burn >= current_max)
-		to_chat(owner, span_good("You feel a pleasant chill after that last gulp of sodie."))
+		to_chat(owner, span_good("I feel a pleasant chill after that last gulp of sodie."))
 		COOLDOWN_START(src, last_burn_max_msg, SODIE_MSG_COOLDOWN)
 		ybfffa++ 
 	var/prev_banked_tox = banked_tox
@@ -297,7 +297,7 @@
 	var/prev_banked_oxy = banked_oxy
 	banked_oxy = round(min(banked_oxy + (sodie.sodie_heal_oxy   * amount), current_max), 0.01)
 	if(COOLDOWN_FINISHED(src, last_oxy_max_msg) && prev_banked_oxy < current_max && banked_oxy >= current_max)
-		to_chat(owner, span_good("You feel a bit more energetic after that last gulp of sodie."))
+		to_chat(owner, span_good("I feel a bit more energetic after that last gulp of sodie."))
 		COOLDOWN_START(src, last_oxy_max_msg, SODIE_MSG_COOLDOWN)
 		ybfffa++
 	var/prev_banked_brain = banked_brain
@@ -307,7 +307,7 @@
 		COOLDOWN_START(src, last_brain_max_msg, SODIE_MSG_COOLDOWN)
 		ybfffa++ 
 	if(ybfffa >= 5)
-		to_chat(owner, span_green("Your organ finally feels full again!"))
+		to_chat(owner, span_green("My organ finally feels full again!"))
 	return TRUE
 
 

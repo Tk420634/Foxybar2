@@ -650,17 +650,17 @@
 		return 0
 	else if(istype(I, /obj/item/wrench))
 		if(construction_state == GEAR_SECURE)
-			user.visible_message(span_notice("[user] begins loosening [src]'s cogwheel..."), span_notice("You begin loosening [src]'s cogwheel..."))
+			user.visible_message(span_notice("[user] begins loosening [src]'s cogwheel..."), span_notice("I begin loosening [src]'s cogwheel..."))
 			if(!I.use_tool(src, user, 75, volume=50) || construction_state != GEAR_SECURE)
 				return 1
 			user.visible_message(span_notice("[user] loosens [src]'s cogwheel!"), span_notice("[src]'s cogwheel pops off and dangles loosely."))
 			playsound(src, 'sound/items/deconstruct.ogg', 50, 1)
 			construction_state = GEAR_LOOSE
 		else if(construction_state == GEAR_LOOSE)
-			user.visible_message(span_notice("[user] begins tightening [src]'s cogwheel..."), span_notice("You begin tightening [src]'s cogwheel into place..."))
+			user.visible_message(span_notice("[user] begins tightening [src]'s cogwheel..."), span_notice("I begin tightening [src]'s cogwheel into place..."))
 			if(!I.use_tool(src, user, 75, volume=50) || construction_state != GEAR_LOOSE)
 				return 1
-			user.visible_message(span_notice("[user] tightens [src]'s cogwheel!"), span_notice("You firmly tighten [src]'s cogwheel into place."))
+			user.visible_message(span_notice("[user] tightens [src]'s cogwheel!"), span_notice("I firmly tighten [src]'s cogwheel into place."))
 			playsound(src, 'sound/items/deconstruct.ogg', 50, 1)
 			construction_state = GEAR_SECURE
 		return 1
@@ -669,11 +669,11 @@
 			to_chat(user, span_warning("[src]'s cogwheel is too tightly secured! Your [I.name] can't reach under it!"))
 			return 1
 		else if(construction_state == GEAR_LOOSE)
-			user.visible_message(span_notice("[user] begins slowly lifting off [src]'s cogwheel..."), span_notice("You slowly begin lifting off [src]'s cogwheel..."))
+			user.visible_message(span_notice("[user] begins slowly lifting off [src]'s cogwheel..."), span_notice("I slowly begin lifting off [src]'s cogwheel..."))
 			if(!I.use_tool(src, user, 75, volume=50) || construction_state != GEAR_LOOSE)
 				return 1
 			user.visible_message(span_notice("[user] lifts off [src]'s cogwheel, causing it to fall apart!"), \
-			span_notice("You lift off [src]'s cogwheel, causing it to fall apart!"))
+			span_notice("I lift off [src]'s cogwheel, causing it to fall apart!"))
 			deconstruct(TRUE)
 		return 1
 	return 0

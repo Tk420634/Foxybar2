@@ -68,7 +68,7 @@
 	if(isweakref(he_who_is_valid))
 		var/mob/validie = he_who_is_valid.resolve()
 		if(validie == holder) // picking it back up
-			holder.show_message(span_green("You maintain possession of \the [src]! Protect it at all costs!"))
+			holder.show_message(span_green("I maintain possession of \the [src]! Protect it at all costs!"))
 		else
 			holder.show_message(span_green("You've regained possession of \the [src]! Protect it at all costs!"))
 			log_validball("[worldtime2text()] - [key_name(holder)] took possession of [src] from [key_name(validie)] in [AREACOORD(right_herehere)].")
@@ -142,16 +142,16 @@
 		user.show_message(span_alert("The paper bin is full!"))
 		return FALSE
 	if(!ismob(user))
-		user.show_message(span_alert("You can't!"))
+		user.show_message(span_alert("I can't!"))
 		return FALSE
 	if(!user.canUnEquip(ppr))
-		user.show_message(span_alert("You can't seem to get [ppr] out of your hands!"))
+		user.show_message(span_alert("I can't seem to get [ppr] out of your hands!"))
 		return FALSE
 	if(!user.transferItemToLoc(ppr, src))
 		user.show_message(span_alert("[ppr] didn't go in!"))
 		return FALSE
 	papers += ppr
-	user.show_message(span_notice("You insert [ppr] into [src]!"))
+	user.show_message(span_notice("I insert [ppr] into [src]!"))
 	playsound(src, 'sound/machines/click.ogg', 30, 1)
 	return TRUE
 
@@ -159,26 +159,26 @@
 	if(!user)
 		return
 	if(currently_scanning)
-		user.show_message("You press the SCAN button, and [src] lets out a patient beep!")
+		user.show_message("I press the SCAN button, and [src] lets out a patient beep!")
 		say(span_robot("Scanning in progress, please wait. Error code 3"))
 		return
 	if(!has_paper())
-		user.show_message("You press the SCAN button, and [src] lets out a hungry beep!")
+		user.show_message("I press the SCAN button, and [src] lets out a hungry beep!")
 		say(span_robot("Out of paper. Error code 1"))
 		return
 	var/turf/scan_here = get_turf(user)
 	if(!isturf(scan_here))
-		user.show_message("You press the SCAN button, and [src] lets out an existential beep!")
+		user.show_message("I press the SCAN button, and [src] lets out an existential beep!")
 		say(span_robot("Location invalid!!! Error code IM-CODER2"))
 		return
 	scan_turf = WEAKREF(scan_here)
 	if(!scan_turf)
-		user.show_message("You press the SCAN button, and [src] lets out a weak beep!")
+		user.show_message("I press the SCAN button, and [src] lets out a weak beep!")
 		say(span_robot("Scan failed, location invalid!!! Error code AM-CODER"))
 		return
 	playsound(src, 'sound/machines/whistlebeepalert-cb.ogg', 30, 1)
 	playsound(src, 'sound/machines/pc_process.ogg', 60, 1)
-	user.show_message("You press the SCAN button, and [src] lets out an excited beep!")
+	user.show_message("I press the SCAN button, and [src] lets out an excited beep!")
 	say(span_robot("Scanning for anomalous signals, please wait."))
 	currently_scanning = TRUE
 	addtimer(CALLBACK(src,PROC_REF(read_scan_ping), user), scan_time)
@@ -375,7 +375,7 @@
 /obj/item/pinpointer/validball_finder/attack_self(mob/living/user)
 	if(active)
 		active = FALSE
-		user.visible_message(span_notice("[user] deactivates [user.p_their()] pinpointer."), span_notice("You deactivate your pinpointer."))
+		user.visible_message(span_notice("[user] deactivates [user.p_their()] pinpointer."), span_notice("I deactivate your pinpointer."))
 		playsound(src, 'sound/items/screwdriver2.ogg', 50, 1)
 		target = null //Restarting the pinpointer forces a target reset
 		STOP_PROCESSING(SSfastprocess, src)
@@ -400,7 +400,7 @@
 			return
 
 	active = TRUE
-	user.visible_message(span_notice("[user] activates [user.p_their()] pinpointer."), span_notice("You activate your pinpointer."))
+	user.visible_message(span_notice("[user] activates [user.p_their()] pinpointer."), span_notice("I activate your pinpointer."))
 	playsound(src, 'sound/items/screwdriver2.ogg', 50, 1)
 	START_PROCESSING(SSfastprocess, src)
 	update_icon()

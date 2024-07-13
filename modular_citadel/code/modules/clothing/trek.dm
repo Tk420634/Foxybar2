@@ -83,12 +83,12 @@
 			icon_state = "[initial(icon_state)]_open"
 			item_state = "[initial(item_state)]_open"
 			unbuttoned = 1
-			to_chat(usr,"You unbutton the coat.")
+			to_chat(usr,"I unbutton the coat.")
 		if(1)
 			icon_state = "[initial(icon_state)]"
 			item_state = "[initial(item_state)]"
 			unbuttoned = 0
-			to_chat(usr,"You button up the coat.")
+			to_chat(usr,"I button up the coat.")
 	usr.update_inv_wear_suit()
 
 	//Variants

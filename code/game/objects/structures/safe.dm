@@ -55,9 +55,9 @@ FLOOR SAFES
 		return 1
 	if(user && canhear)
 		if(tumbler_1_pos == tumbler_1_open)
-			to_chat(user, span_italic("You hear a [pick("tonk", "krunk", "plunk")] from [src]."))
+			to_chat(user, span_italic("I hear a [pick("tonk", "krunk", "plunk")] from [src]."))
 		if(tumbler_2_pos == tumbler_2_open)
-			to_chat(user, span_italic("You hear a [pick("tink", "krink", "plink")] from [src]."))
+			to_chat(user, span_italic("I hear a [pick("tink", "krink", "plink")] from [src]."))
 	if(tumbler_1_pos == tumbler_1_open && tumbler_2_pos == tumbler_2_open)
 		if(user)
 			visible_message("<i><b>[pick("Spring", "Sprang", "Sproing", "Clunk", "Krunk")]!</b></i>")
@@ -108,13 +108,13 @@ FLOOR SAFES
 
 	if(href_list["open"])
 		if(check_unlocked())
-			to_chat(user, span_notice("You [open ? "close" : "open"] [src]."))
+			to_chat(user, span_notice("I [open ? "close" : "open"] [src]."))
 			open = !open
 			update_icon()
 			updateUsrDialog()
 			return
 		else
-			to_chat(user, span_warning("You can't [open ? "close" : "open"] [src], the lock is engaged!"))
+			to_chat(user, span_warning("I can't [open ? "close" : "open"] [src], the lock is engaged!"))
 			return
 
 	if(href_list["decrement"])
@@ -122,11 +122,11 @@ FLOOR SAFES
 		if(dial == tumbler_1_pos + 1 || dial == tumbler_1_pos - 71)
 			tumbler_1_pos = decrement(tumbler_1_pos)
 			if(canhear)
-				to_chat(user, span_italic("You hear a [pick("clack", "scrape", "clank")] from [src]."))
+				to_chat(user, span_italic("I hear a [pick("clack", "scrape", "clank")] from [src]."))
 			if(tumbler_1_pos == tumbler_2_pos + 37 || tumbler_1_pos == tumbler_2_pos - 35)
 				tumbler_2_pos = decrement(tumbler_2_pos)
 				if(canhear)
-					to_chat(user, span_italic("You hear a [pick("click", "chink", "clink")] from [src]."))
+					to_chat(user, span_italic("I hear a [pick("click", "chink", "clink")] from [src]."))
 			check_unlocked(user, canhear)
 		updateUsrDialog()
 		return
@@ -136,11 +136,11 @@ FLOOR SAFES
 		if(dial == tumbler_1_pos - 1 || dial == tumbler_1_pos + 71)
 			tumbler_1_pos = increment(tumbler_1_pos)
 			if(canhear)
-				to_chat(user, span_italic("You hear a [pick("clack", "scrape", "clank")] from [src]."))
+				to_chat(user, span_italic("I hear a [pick("clack", "scrape", "clank")] from [src]."))
 			if(tumbler_1_pos == tumbler_2_pos - 37 || tumbler_1_pos == tumbler_2_pos + 35)
 				tumbler_2_pos = increment(tumbler_2_pos)
 				if(canhear)
-					to_chat(user, span_italic("You hear a [pick("click", "chink", "clink")] from [src]."))
+					to_chat(user, span_italic("I hear a [pick("click", "chink", "clink")] from [src]."))
 			check_unlocked(user, canhear)
 		updateUsrDialog()
 		return
@@ -164,7 +164,7 @@ FLOOR SAFES
 			if(!user.transferItemToLoc(I, src))
 				to_chat(user, span_warning("\The [I] is stuck to your hand, you cannot put it in the safe!"))
 				return
-			to_chat(user, span_notice("You put [I] in [src]."))
+			to_chat(user, span_notice("I put [I] in [src]."))
 			updateUsrDialog()
 			return
 		else

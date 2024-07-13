@@ -1250,7 +1250,7 @@
 	if(!can_use(usr))
 		return 0
 
-	to_chat(usr, span_notice("You adjust the [src]."))
+	to_chat(usr, span_notice("I adjust the [src]."))
 	if(src.uniformtoggled)
 		src.icon_state = "[initial(icon_state)]"
 		src.item_state = "[initial(icon_state)]"
@@ -1583,7 +1583,7 @@
 
 /obj/item/clothing/under/f13/police
 	name = "police uniform"
-	desc = "You have the right to remain violent."
+	desc = "I have the right to remain violent."
 	mutantrace_variation = STYLE_DIGITIGRADE
 	icon_state = "retro_police"
 	item_state = "b_suit"

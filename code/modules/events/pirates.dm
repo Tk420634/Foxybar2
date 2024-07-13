@@ -137,7 +137,7 @@
 	SSshuttle.registerTradeBlockade(src)
 	AddComponent(/datum/component/gps, "Nautical Signal")
 	active = TRUE
-	to_chat(user,span_notice("You toggle [src] [active ? "on":"off"]."))
+	to_chat(user,span_notice("I toggle [src] [active ? "on":"off"]."))
 	to_chat(user,span_warning("The scrambling signal can be now tracked by GPS."))
 	START_PROCESSING(SSobj,src)
 
@@ -164,7 +164,7 @@
 /obj/machinery/shuttle_scrambler/proc/dump_loot(mob/user)
 	if(credits_stored)	// Prevents spamming empty holochips
 		new /obj/item/holochip(drop_location(), credits_stored)
-		to_chat(user,span_notice("You retrieve the siphoned credits!"))
+		to_chat(user,span_notice("I retrieve the siphoned credits!"))
 		credits_stored = 0
 	else
 		to_chat(user,span_notice("There's nothing to withdraw."))
@@ -286,7 +286,7 @@
 
 /obj/machinery/piratepad/multitool_act(mob/living/user, obj/item/multitool/I)
 	if (istype(I))
-		to_chat(user, span_notice("You register [src] in [I]s buffer."))
+		to_chat(user, span_notice("I register [src] in [I]s buffer."))
 		I.buffer = src
 		return TRUE
 
@@ -310,7 +310,7 @@
 
 /obj/machinery/computer/piratepad_control/multitool_act(mob/living/user, obj/item/multitool/I)
 	if (istype(I) && istype(I.buffer,/obj/machinery/piratepad))
-		to_chat(user, span_notice("You link [src] with [I.buffer] in [I] buffer."))
+		to_chat(user, span_notice("I link [src] with [I.buffer] in [I] buffer."))
 		pad = I.buffer
 		return TRUE
 

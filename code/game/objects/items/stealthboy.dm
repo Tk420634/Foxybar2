@@ -50,7 +50,7 @@
 		Deactivate(user)
 	cell.add_fingerprint(user)
 	user.put_in_hands(cell)
-	user.show_message(span_notice("You remove [cell]."))
+	user.show_message(span_notice("I remove [cell]."))
 	cell = null
 
 /obj/item/stealthboy/proc/insert_cell(mob/living/user, obj/item/stock_parts/cell/new_cell)
@@ -58,7 +58,7 @@
 		eject_cell(user)
 	if(user.transferItemToLoc(new_cell, src))
 		cell = new_cell
-		to_chat(user, span_notice("You successfully install \the [cell] into [src]."))
+		to_chat(user, span_notice("I successfully install \the [cell] into [src]."))
 
 /obj/item/stealthboy/attackby(obj/item/I, mob/living/carbon/human/user, params)
 	if(istype(I, /obj/item/stock_parts/cell))
@@ -87,7 +87,7 @@
 		user.show_message(span_alert("There's not enough power in [src]'s [cell.name]!"))
 		Deactivate(FALSE)
 		return
-	to_chat(user, span_notice("You activate \The [src]."))
+	to_chat(user, span_notice("I activate \The [src]."))
 	animate(user, alpha = 60, time = 3 SECONDS)
 	START_PROCESSING(SSobj, src)
 	on = TRUE
@@ -98,7 +98,7 @@
 		if(!ishuman(user))
 			return
 	animate(user, alpha = initial(user.alpha), time = 3 SECONDS)
-	to_chat(user, span_notice("You deactivate \The [src]."))
+	to_chat(user, span_notice("I deactivate \The [src]."))
 	STOP_PROCESSING(SSobj, src)
 	on = FALSE
 

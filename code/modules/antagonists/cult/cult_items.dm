@@ -14,7 +14,7 @@
 
 /obj/item/tome/traitor/attack_self(mob/living/user)
 	if(!iscultist(user) && !spent)
-		to_chat(user, span_userdanger("You press your hand onto [src], sinister tendrils of corrupted magic swirling around you. Was this the best of ideas?"))
+		to_chat(user, span_userdanger("I press your hand onto [src], sinister tendrils of corrupted magic swirling around you. Was this the best of ideas?"))
 		if(user.mind.add_antag_datum(/datum/antagonist/cult/neutered/traitor))
 			spent = TRUE
 		else
@@ -71,7 +71,7 @@
 		user.DefaultCombatKnockdown(100)
 		user.dropItemToGround(src, TRUE)
 		user.visible_message(span_warning("A powerful force shoves [user] away from [target]!"), \
-							span_cultlarge("\"You shouldn't play with sharp things. You'll poke someone's eye out.\""))
+							span_cultlarge("\"I shouldn't play with sharp things. You'll poke someone's eye out.\""))
 		if(ishuman(user))
 			var/mob/living/carbon/human/H = user
 			H.apply_damage(rand(force/2, force), BRUTE, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
@@ -162,9 +162,9 @@
 /obj/item/cult_bastard/attack_self(mob/user)
 	dash_toggled = !dash_toggled
 	if(dash_toggled)
-		to_chat(loc, span_notice("You raise [src] and prepare to jaunt with it."))
+		to_chat(loc, span_notice("I raise [src] and prepare to jaunt with it."))
 	else
-		to_chat(loc, span_notice("You lower [src] and prepare to swing it normally."))
+		to_chat(loc, span_notice("I lower [src] and prepare to swing it normally."))
 
 /obj/item/cult_bastard/pickup(mob/living/user)
 	. = ..()
@@ -245,7 +245,7 @@
 
 /datum/action/innate/cult/spin2win
 	name = "Geometer's Fury"
-	desc = "You draw on the power of the sword's ancient runes, spinning it wildly around you as you become immune to most attacks."
+	desc = "I draw on the power of the sword's ancient runes, spinning it wildly around you as you become immune to most attacks."
 	background_icon_state = "bg_demon"
 	button_icon_state = "sintouch"
 	var/cooldown = 0
@@ -520,7 +520,7 @@
 /obj/item/clothing/glasses/hud/health/night/cultblind/equipped(mob/living/user, slot)
 	..()
 	if(!iscultist(user))
-		to_chat(user, span_cultlarge("\"You want to be blind, do you?\""))
+		to_chat(user, span_cultlarge("\"I want to be blind, do you?\""))
 		user.dropItemToGround(src, TRUE)
 		user.Dizzy(30)
 		user.DefaultCombatKnockdown(100)
@@ -535,7 +535,7 @@
 
 /obj/item/shuttle_curse
 	name = "cursed orb"
-	desc = "You peer within this smokey orb and glimpse terrible fates befalling the escape shuttle."
+	desc = "I peer within this smokey orb and glimpse terrible fates befalling the escape shuttle."
 	icon = 'icons/obj/cult.dmi'
 	icon_state ="shuttlecurse"
 	var/static/curselimit = 0
@@ -571,7 +571,7 @@
 		SSshuttle.emergency.setTimer(timer)
 		if(surplus > 0)
 			SSshuttle.block_recall(surplus)
-		to_chat(user, span_danger("You shatter the orb! A dark essence spirals into the air, then disappears."))
+		to_chat(user, span_danger("I shatter the orb! A dark essence spirals into the air, then disappears."))
 		playsound(user.loc, 'sound/effects/glassbr1.ogg', 50, 1)
 		qdel(src)
 		sleep(20)

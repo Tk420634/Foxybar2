@@ -10,7 +10,7 @@
 	var/static/key_cache = list()
 	if(!real_bans_only)
 		if(key_cache[key] >= REALTIMEOFDAY)
-			return list("reason"="concurrent connection attempts", "desc"="You are attempting to connect too fast. Try again.")
+			return list("reason"="concurrent connection attempts", "desc"="I am attempting to connect too fast. Try again.")
 		key_cache[key] = REALTIMEOFDAY+10 //this shouldn't runtime, but if it does, expiry attempts will cover it to ensure genuine connection attemps wont get trapped in limbo
 
 	if (!key || !address || !computer_id)
@@ -46,7 +46,7 @@
 			if (admin)
 				log_admin("The admin [key] has been allowed to bypass the whitelist")
 				message_admins(span_adminnotice("The admin [key] has been allowed to bypass the whitelist"))
-				addclientmessage(ckey,span_adminnotice("You have been allowed to bypass the whitelist"))
+				addclientmessage(ckey,span_adminnotice("I have been allowed to bypass the whitelist"))
 			else
 				log_access("Failed Login: [key] - Not on whitelist")
 				key_cache[key] = 0
@@ -78,7 +78,7 @@
 			if (admin)
 				log_admin("The admin [key] has been allowed to bypass a matching ban on [.["key"]]")
 				message_admins(span_adminnotice("The admin [key] has been allowed to bypass a matching ban on [.["key"]]"))
-				addclientmessage(ckey,span_adminnotice("You have been allowed to bypass a matching ban on [.["key"]]"))
+				addclientmessage(ckey,span_adminnotice("I have been allowed to bypass a matching ban on [.["key"]]"))
 			else
 				log_access("Failed Login: [key] [computer_id] [address] - Banned [.["reason"]]")
 				key_cache[key] = 0
@@ -130,7 +130,7 @@
 				else
 					log_admin("The admin [key] has been allowed to bypass a matching ban on [pkey] (#[banid])")
 					message_admins(span_adminnotice("The admin [key] has been allowed to bypass a matching ban on [pkey] (#[banid])"))
-					addclientmessage(ckey,span_adminnotice("You have been allowed to bypass a matching ban on [pkey] (#[banid])"))
+					addclientmessage(ckey,span_adminnotice("I have been allowed to bypass a matching ban on [pkey] (#[banid])"))
 					continue
 			var/expires = ""
 			if(text2num(duration) > 0)
@@ -215,12 +215,12 @@
 		if (admin)
 			log_admin("The admin [key] has been allowed to bypass a matching host/sticky ban on [bannedckey]")
 			message_admins(span_adminnotice("The admin [key] has been allowed to bypass a matching host/sticky ban on [bannedckey]"))
-			addclientmessage(ckey,span_adminnotice("You have been allowed to bypass a matching host/sticky ban on [bannedckey]"))
+			addclientmessage(ckey,span_adminnotice("I have been allowed to bypass a matching host/sticky ban on [bannedckey]"))
 			key_cache[key] = 0
 			return null
 
 		if (C) //user is already connected!.
-			to_chat(C, "You are about to get disconnected for matching a sticky ban after you connected. If this turns out to be the ban evasion detection system going haywire, we will automatically detect this and revert the matches. if you feel that this is the case, please wait EXACTLY 6 seconds then reconnect using file -> reconnect to see if the match was reversed.")
+			to_chat(C, "I am about to get disconnected for matching a sticky ban after you connected. If this turns out to be the ban evasion detection system going haywire, we will automatically detect this and revert the matches. if you feel that this is the case, please wait EXACTLY 6 seconds then reconnect using file -> reconnect to see if the match was reversed.")
 
 		var/desc = "\nReason:(StickyBan) You, or another user of this computer or connection ([bannedckey]) is banned from playing here. The ban reason is:\n[ban["message"]]\nThis ban was applied by [ban["admin"]]\nThis is a BanEvasion Detection System ban, if you think this ban is a mistake, please wait EXACTLY 6 seconds, then try again before filing an appeal.\n"
 		. = list("reason" = "Stickyban", "desc" = desc)

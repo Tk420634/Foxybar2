@@ -22,7 +22,7 @@
 			return
 
 		if(!target.is_injectable())
-			to_chat(user, span_warning("You cannot directly fill [target]!"))
+			to_chat(user, span_warning("I cannot directly fill [target]!"))
 			return
 
 		var/trans = 0
@@ -53,7 +53,7 @@
 					target.visible_message(span_danger("[user] tries to squirt something into [target]'s eyes, but fails!"), \
 											span_userdanger("[user] tries to squirt something into [target]'s eyes, but fails!"))
 
-					to_chat(user, span_notice("You transfer [trans] unit\s of the solution."))
+					to_chat(user, span_notice("I transfer [trans] unit\s of the solution."))
 					update_icon()
 					return
 			else if(isalien(target)) //hiss-hiss has no eyes!
@@ -68,13 +68,13 @@
 			log_combat(user, M, "squirted", reagents.log_list())
 
 		trans = src.reagents.trans_to(target, amount_per_transfer_from_this, log = TRUE)
-		to_chat(user, span_notice("You transfer [trans] unit\s of the solution."))
+		to_chat(user, span_notice("I transfer [trans] unit\s of the solution."))
 		update_icon()
 
 	else
 
 		if(!target.is_drawable(FALSE)) //No drawing from mobs here
-			to_chat(user, span_notice("You cannot directly remove reagents from [target]."))
+			to_chat(user, span_notice("I cannot directly remove reagents from [target]."))
 			return
 
 		if(!target.reagents.total_volume)
@@ -83,7 +83,7 @@
 
 		var/trans = target.reagents.trans_to(src, amount_per_transfer_from_this, log = TRUE)
 
-		to_chat(user, span_notice("You fill [src] with [trans] unit\s of the solution."))
+		to_chat(user, span_notice("I fill [src] with [trans] unit\s of the solution."))
 
 		update_icon()
 

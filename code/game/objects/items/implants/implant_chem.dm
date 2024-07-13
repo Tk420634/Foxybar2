@@ -67,9 +67,9 @@
 	else
 		injectamount = cause
 	chemholder.reagents.trans_to(R, injectamount)
-	to_chat(R, span_italic("You hear a faint beep."))
+	to_chat(R, span_italic("I hear a faint beep."))
 	if(!chemholder.reagents.total_volume)
-		to_chat(R, span_italic("You hear a faint click from your chest."))
+		to_chat(R, span_italic("I hear a faint click from your chest."))
 		qdel(src)
 
 /obj/item/implantcase/chem

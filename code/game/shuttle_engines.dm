@@ -47,12 +47,12 @@
 				return TRUE
 
 			user.visible_message("[user.name] starts to weld the [name] to the floor.", \
-				span_notice("You start to weld \the [src] to the floor..."), \
-				span_italic("You hear welding."))
+				span_notice("I start to weld \the [src] to the floor..."), \
+				span_italic("I hear welding."))
 
 			if(I.use_tool(src, user, ENGINE_WELDTIME, volume=50))
 				state = ENGINE_WELDED
-				to_chat(user, span_notice("You weld \the [src] to the floor."))
+				to_chat(user, span_notice("I weld \the [src] to the floor."))
 				alter_engine_power(engine_power)
 
 		if(ENGINE_WELDED)
@@ -60,12 +60,12 @@
 				return TRUE
 
 			user.visible_message("[user.name] starts to cut the [name] free from the floor.", \
-				span_notice("You start to cut \the [src] free from the floor..."), \
-				span_italic("You hear welding."))
+				span_notice("I start to cut \the [src] free from the floor..."), \
+				span_italic("I hear welding."))
 
 			if(I.use_tool(src, user, ENGINE_WELDTIME, volume=50))
 				state = ENGINE_WRENCHED
-				to_chat(user, span_notice("You cut \the [src] free from the floor."))
+				to_chat(user, span_notice("I cut \the [src] free from the floor."))
 				alter_engine_power(-engine_power)
 	return TRUE
 

@@ -18,7 +18,7 @@
 			P.add_fingerprint(user)
 			P.forceMove(user.loc)
 			user.put_in_active_hand(P)
-			to_chat(user, span_notice("You take [P] out of \the [src]."))
+			to_chat(user, span_notice("I take [P] out of \the [src]."))
 			numberOfPages--
 			playsound(user.loc, 'sound/items/poster_ripped.ogg', 50, 1)
 			add_fingerprint(user)
@@ -43,7 +43,7 @@
 		P.add_fingerprint(user)
 		P.forceMove(user)
 		user.put_in_active_hand(P)
-		to_chat(user, span_notice("You take [P] out of \the [src]."))
+		to_chat(user, span_notice("I take [P] out of \the [src]."))
 		numberOfPages--
 		playsound(user.loc, 'sound/items/poster_ripped.ogg', 50, 1)
 		add_fingerprint(user)
@@ -120,10 +120,10 @@
 
 /obj/item/fermichem/pHmeter/attack_self(mob/user)
 	if(!scanmode)
-		to_chat(user, span_notice("You switch the chemical analyzer to give a detailed report."))
+		to_chat(user, span_notice("I switch the chemical analyzer to give a detailed report."))
 		scanmode = 1
 	else
-		to_chat(user, span_notice("You switch the chemical analyzer to give a reduced report."))
+		to_chat(user, span_notice("I switch the chemical analyzer to give a reduced report."))
 		scanmode = 0
 
 /obj/item/fermichem/pHmeter/afterattack(atom/A, mob/user, proximity)

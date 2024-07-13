@@ -34,10 +34,10 @@
 		return
 
 	if(I.tool_behaviour == TOOL_SHOVEL || I.tool_behaviour == TOOL_MINING)
-		to_chat(user, span_notice("You start digging..."))
+		to_chat(user, span_notice("I start digging..."))
 
 		if(I.use_tool(parent, user, 40, volume=50))
-			to_chat(user, span_notice("You dig a hole."))
+			to_chat(user, span_notice("I dig a hole."))
 			gets_dug()
 			dug = TRUE
 			SSblackbox.record_feedback("tally", "pick_used_mining", 1, I.type)

@@ -23,7 +23,7 @@
 	if(!T)
 		return FALSE
 	if(isspaceturf(T))
-		to_chat(owner, span_warning("You cannot scribe runes in space!"))
+		to_chat(owner, span_warning("I cannot scribe runes in space!"))
 		return FALSE
 	if(locate(/obj/effect/rune) in T)
 		to_chat(owner, span_cult("There is already a rune here."))

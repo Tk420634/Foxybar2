@@ -26,7 +26,7 @@
 		if(iscarbon(M))
 			hand_items = list(M.get_active_held_item(),M.get_inactive_held_item())
 		if(!hand_items.len)
-			to_chat(M, span_caution("You must hold an item you wish to make your phylactery..."))
+			to_chat(M, span_caution("I must hold an item you wish to make your phylactery..."))
 			return
 
 		var/obj/item/marked_item
@@ -37,7 +37,7 @@
 			if((item.item_flags & ABSTRACT) || HAS_TRAIT(item, TRAIT_NODROP) || SEND_SIGNAL(item, COMSIG_ITEM_IMBUE_SOUL, user))
 				continue
 			marked_item = item
-			to_chat(M, span_warning("You begin to focus your very being into [item]..."))
+			to_chat(M, span_warning("I begin to focus your very being into [item]..."))
 			break
 
 		if(!marked_item)
@@ -47,7 +47,7 @@
 		playsound(user, 'sound/effects/pope_entry.ogg', 100)
 
 		if(!do_after(M, 50, needhand=FALSE, target=marked_item))
-			to_chat(M, span_warning("Your soul snaps back to your body as you stop ensouling [marked_item]!"))
+			to_chat(M, span_warning("My soul snaps back to your body as you stop ensouling [marked_item]!"))
 			return
 
 		marked_item.name = "ensouled [marked_item.name]"
@@ -133,7 +133,7 @@
 	mind.transfer_to(lich)
 	mind.grab_ghost(force=TRUE)
 	lich.hardset_dna(null,null,null,lich.real_name,null, new /datum/species/skeleton/space)
-	to_chat(lich, span_warning("Your bones clatter and shudder as you are pulled back into this world!"))
+	to_chat(lich, span_warning("My bones clatter and shudder as you are pulled back into this world!"))
 	var/turf/body_turf = get_turf(old_body)
 	lich.DefaultCombatKnockdown(200 + 200*resurrections)
 	resurrections++

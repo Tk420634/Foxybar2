@@ -68,7 +68,7 @@
 	var/turf/my_turf = get_turf(owner)
 
 	user.visible_message(span_warning("[user]'s form dissipates into a cloud of mist!"), \
-						span_notice("You disspiate into formless mist."))
+						span_notice("I disspiate into formless mist."))
 
 
 	// Effect Origin

@@ -315,7 +315,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 			. += "[src] is made of fire-retardant materials."
 
 	if (force > 0 || force_unwielded > 0 || force_wielded > 0 || throwforce > 0) //if it does any damage at all, display the thing
-		. += span_notice("You can <a href='?src=[REF(src)];list_melee=1'>estimate</a> its potential as a weapon.")
+		. += span_notice("I can <a href='?src=[REF(src)];list_melee=1'>estimate</a> its potential as a weapon.")
 
 	if(item_flags & (ITEM_CAN_BLOCK | ITEM_CAN_PARRY))
 		var/datum/block_parry_data/data = return_block_parry_datum(block_parry_data)
@@ -411,7 +411,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		return
 	if(loc == user && current_equipped_slot && current_equipped_slot != SLOT_HANDS)
 		if(current_equipped_slot in user.check_obscured_slots())
-			to_chat(src, span_warning("You are unable to unequip that while wearing other garments over it!"))
+			to_chat(src, span_warning("I am unable to unequip that while wearing other garments over it!"))
 			return FALSE
 
 	if(resistance_flags & ON_FIRE)
@@ -426,9 +426,9 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 		if(can_handle_hot)
 			extinguish()
-			to_chat(user, span_notice("You put out the fire on [src]."))
+			to_chat(user, span_notice("I put out the fire on [src]."))
 		else
-			to_chat(user, span_warning("You burn your hand on [src]!"))
+			to_chat(user, span_warning("I burn your hand on [src]!"))
 			var/obj/item/bodypart/affecting = C.get_bodypart("[(user.active_hand_index % 2 == 0) ? "r" : "l" ]_arm")
 			if(affecting && affecting.receive_damage( 0, 5 ))		// 5 burn damage
 				C.update_damage_overlays()
@@ -461,7 +461,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	var/grav = user.has_gravity()
 	if(grav > STANDARD_GRAVITY)
 		var/grav_power = min(3,grav - STANDARD_GRAVITY)
-		to_chat(user,span_notice("You start picking up [src]..."))
+		to_chat(user,span_notice("I start picking up [src]..."))
 		if(!do_mob(user,src,30*grav_power))
 			return
 
@@ -492,7 +492,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 		return
 	if(loc == user && current_equipped_slot && current_equipped_slot != SLOT_HANDS)
 		if(current_equipped_slot in user.check_obscured_slots())
-			to_chat(src, span_warning("You are unable to unequip that while wearing other garments over it!"))
+			to_chat(src, span_warning("I am unable to unequip that while wearing other garments over it!"))
 			return FALSE
 
 
@@ -515,7 +515,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if(!A.has_fine_manipulation)
 		if(src in A.contents) // To stop Aliens having items stuck in their pockets
 			A.dropItemToGround(src)
-		to_chat(user, span_warning("Your claws aren't capable of such fine manipulation!"))
+		to_chat(user, span_warning("My claws aren't capable of such fine manipulation!"))
 		return
 	attack_paw(A)
 
@@ -672,7 +672,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 /obj/item/proc/eyestab(mob/living/carbon/M, mob/living/carbon/user)
 	if(HAS_TRAIT(user, TRAIT_PACIFISM))
-		to_chat(user, span_warning("You don't want to harm [M]!"))
+		to_chat(user, span_warning("I don't want to harm [M]!"))
 		return
 	if(HAS_TRAIT(user, TRAIT_CLUMSY) && prob(50))
 		M = user
@@ -698,11 +698,11 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 			return
 
 	if(isalien(M))//Aliens don't have eyes./N     slimes also don't have eyes!
-		to_chat(user, span_warning("You cannot locate any eyes on this creature!"))
+		to_chat(user, span_warning("I cannot locate any eyes on this creature!"))
 		return
 
 	if(isbrain(M))
-		to_chat(user, span_danger("You cannot locate any organic eyes on this brain!"))
+		to_chat(user, span_danger("I cannot locate any organic eyes on this brain!"))
 		return
 
 	if(IS_STAMCRIT(user))//CIT CHANGE - makes eyestabbing impossible if you're in stamina softcrit
@@ -723,7 +723,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	else
 		user.visible_message( \
 			span_danger("[user] has stabbed [user.p_them()]self in the eyes with [src]!"), \
-			span_userdanger("You stab yourself in the eyes with [src]!") \
+			span_userdanger("I stab yourself in the eyes with [src]!") \
 		)
 	if(is_human_victim)
 		var/mob/living/carbon/human/U = M
@@ -744,20 +744,20 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if(eyes.damage >= 10)
 		M.adjust_blurriness(15)
 		if(M.stat != DEAD)
-			to_chat(M, span_danger("Your eyes start to bleed profusely!"))
+			to_chat(M, span_danger("My eyes start to bleed profusely!"))
 		if(!(HAS_TRAIT(M, TRAIT_BLIND) || HAS_TRAIT(M, TRAIT_NEARSIGHT)))
-			to_chat(M, span_danger("You become nearsighted!"))
+			to_chat(M, span_danger("I become nearsighted!"))
 		M.become_nearsighted(EYE_DAMAGE)
 		if(prob(50))
 			if(M.stat != DEAD)
 				if(M.drop_all_held_items())
-					to_chat(M, span_danger("You drop what you're holding and clutch at your eyes!"))
+					to_chat(M, span_danger("I drop what you're holding and clutch at your eyes!"))
 			M.adjust_blurriness(10)
 			M.Unconscious(20)
 			M.DefaultCombatKnockdown(40)
 		if (prob(eyes.damage - 10 + 1))
 			M.become_blind(EYE_DAMAGE)
-			to_chat(M, span_danger("You go blind!"))
+			to_chat(M, span_danger("I go blind!"))
 
 /obj/item/clean_blood()
 	. = ..()

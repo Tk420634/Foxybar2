@@ -120,22 +120,22 @@
 /obj/item/bodypart/chest/robot/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/stock_parts/cell))
 		if(src.cell)
-			to_chat(user, span_warning("You have already inserted a cell!"))
+			to_chat(user, span_warning("I have already inserted a cell!"))
 			return
 		else
 			if(!user.transferItemToLoc(W, src))
 				return
 			src.cell = W
-			to_chat(user, span_notice("You insert the cell."))
+			to_chat(user, span_notice("I insert the cell."))
 	else if(istype(W, /obj/item/stack/cable_coil))
 		if(src.wired)
-			to_chat(user, span_warning("You have already inserted wire!"))
+			to_chat(user, span_warning("I have already inserted wire!"))
 			return
 		if (W.use_tool(src, user, 0, 1))
 			src.wired = 1
-			to_chat(user, span_notice("You insert the wire."))
+			to_chat(user, span_notice("I insert the wire."))
 		else
-			to_chat(user, span_warning("You need one length of coil to wire it!"))
+			to_chat(user, span_warning("I need one length of coil to wire it!"))
 	else
 		return ..()
 
@@ -184,10 +184,10 @@
 	if(istype(W, /obj/item/assembly/flash/handheld))
 		var/obj/item/assembly/flash/handheld/F = W
 		if(src.flash1 && src.flash2)
-			to_chat(user, span_warning("You have already inserted the eyes!"))
+			to_chat(user, span_warning("I have already inserted the eyes!"))
 			return
 		else if(F.crit_fail)
-			to_chat(user, span_warning("You can't use a broken flash!"))
+			to_chat(user, span_warning("I can't use a broken flash!"))
 			return
 		else
 			if(!user.transferItemToLoc(F, src))
@@ -196,11 +196,11 @@
 				src.flash2 = F
 			else
 				src.flash1 = F
-			to_chat(user, span_notice("You insert the flash into the eye socket."))
+			to_chat(user, span_notice("I insert the flash into the eye socket."))
 	else if(istype(W, /obj/item/crowbar))
 		if(flash1 || flash2)
 			W.play_tool_sound(src)
-			to_chat(user, span_notice("You remove the flash from [src]."))
+			to_chat(user, span_notice("I remove the flash from [src]."))
 			if(flash1)
 				flash1.forceMove(user.loc)
 				flash1 = null

@@ -15,8 +15,8 @@
 	shape = DEF_BREASTS_SHAPE
 	genital_flags = CAN_MASTURBATE_WITH|CAN_CLIMAX_WITH|GENITAL_FLUID_PRODUCTION|GENITAL_CAN_AROUSE|UPDATE_OWNER_APPEARANCE|GENITAL_CAN_RECOLOR|GENITAL_CAN_RESIZE|GENITAL_CAN_RESHAPE
 	masturbation_verb = "massage"
-	arousal_verb = "Your breasts start feeling sensitive"
-	unarousal_verb = "Your breasts no longer feel sensitive"
+	arousal_verb = "My breasts start feeling sensitive"
+	unarousal_verb = "My breasts no longer feel sensitive"
 	orgasm_verb = "leaking"
 	fluid_transfer_factor = 0.5
 	associated_has = CS_BOOB // for cockstring stuff
@@ -93,17 +93,17 @@ GLOBAL_LIST_INIT(massive_breast_descriptors, list(
 	var/lowershape = lowertext(shape)
 	switch(lowershape)
 		if("pair")
-			desc = "You see a pair of breasts."
+			desc = "I see a pair of breasts."
 		if("pair(round)")
-			desc = "You see a pair of breasts."
+			desc = "I see a pair of breasts."
 		if("quad")
-			desc = "You see two pairs of breast, one just under the other."
+			desc = "I see two pairs of breast, one just under the other."
 		if("sextuple")
-			desc = "You see three sets of breasts, running from their chest to their belly."
+			desc = "I see three sets of breasts, running from their chest to their belly."
 		if("udders")
-			desc = "You see a set of crotch milkers, they are udderly fantastic!"
+			desc = "I see a set of crotch milkers, they are udderly fantastic!"
 		else
-			desc = "You see some breasts, they seem to be quite exotic."
+			desc = "I see some breasts, they seem to be quite exotic."
 	if(size in list("huge", "massive", "giga", "impossible"))
 		desc += "\nThey are [pick(GLOB.massive_breast_descriptors)], far beyond any conventional measurement!"
 	else
@@ -163,7 +163,7 @@ GLOBAL_LIST_INIT(massive_breast_descriptors, list(
 	var/rounded_cached = round(cached_size)
 	if(cached_size < 0)//I don't actually know what round() does to negative numbers, so to be safe!!fixed
 		if(owner)
-			to_chat(owner, span_warning("You feel your breasts shrinking away from your body as your chest flattens out."))
+			to_chat(owner, span_warning("I feel your breasts shrinking away from your body as your chest flattens out."))
 		QDEL_IN(src, 1)
 		return
 	switch(rounded_cached)
@@ -178,9 +178,9 @@ GLOBAL_LIST_INIT(massive_breast_descriptors, list(
 		var/mob/living/carbon/human/H = owner
 		var/r_prev_size = round(prev_size)
 		if (rounded_cached > r_prev_size)
-			to_chat(H, span_warning("Your breasts [pick("swell up to", "flourish into", "expand into", "burst forth into", "grow eagerly into", "amplify into")] a [uppertext(size)]-cup."))
+			to_chat(H, span_warning("My breasts [pick("swell up to", "flourish into", "expand into", "burst forth into", "grow eagerly into", "amplify into")] a [uppertext(size)]-cup."))
 		else if (rounded_cached < r_prev_size)
-			to_chat(H, span_warning("Your breasts [pick("shrink down to", "decrease into", "diminish into", "deflate into", "shrivel regretfully into", "contracts into")] a [uppertext(size)]-cup."))
+			to_chat(H, span_warning("My breasts [pick("shrink down to", "decrease into", "diminish into", "deflate into", "shrivel regretfully into", "contracts into")] a [uppertext(size)]-cup."))
 
 /obj/item/organ/genital/breasts/get_features(mob/living/carbon/human/H)
 	var/datum/dna/D = H.dna
@@ -223,12 +223,12 @@ GLOBAL_LIST_INIT(massive_breast_descriptors, list(
 
 /// your butt sets people breasts fire when horny
 /obj/item/organ/genital/breasts/on_arouse()
-	owner?.show_message(span_userlove("You feel your breasts become sensitive and their nipples stiffen."))
+	owner?.show_message(span_userlove("I feel your breasts become sensitive and their nipples stiffen."))
 	. = ..()
 
 /// your womb eats a burger when unhorny
 /obj/item/organ/genital/breasts/on_unarouse()
-	owner?.show_message(span_userlove("Your nipples soften back to normal."))
+	owner?.show_message(span_userlove("My nipples soften back to normal."))
 	. = ..()
 
 /// Returns its respective sprite accessory from the global list (full of init'd types, hopefully)

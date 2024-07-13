@@ -37,7 +37,7 @@ GLOBAL_LIST_EMPTY(supplykits)
 
 /datum/component/supplykit/proc/LoadST(mob/user, obj/item/stack/supplytoken/ST, silent = FALSE)
 	if(!silent)
-		to_chat(user, span_notice("You pack additional supplies into [parent]."))
+		to_chat(user, span_notice("I pack additional supplies into [parent]."))
 	var/amt = ST.amount
 	supplytokens += amt
 	ST.use(amt)

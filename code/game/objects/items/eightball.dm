@@ -19,7 +19,7 @@
 		"It is decidedly so",
 		"Without a doubt",
 		"Yes definitely",
-		"You may rely on it",
+		"I may rely on it",
 		"As I see it, yes",
 		"Most likely",
 		"Outlook good",
@@ -54,7 +54,7 @@
 		to_chat(user, span_warning("[src] was shaken recently, it needs time to settle."))
 		return
 
-	user.visible_message(span_notice("[user] starts shaking [src]."), span_notice("You start shaking [src]."), span_hear("You hear shaking and sloshing."))
+	user.visible_message(span_notice("[user] starts shaking [src]."), span_notice("I start shaking [src]."), span_hear("I hear shaking and sloshing."))
 
 	shaking = TRUE
 
@@ -109,7 +109,7 @@
 			"It is decidedly so",
 			"Without a doubt",
 			"Yes definitely",
-			"You may rely on it",
+			"I may rely on it",
 			"As I see it, yes",
 			"Most likely",
 			"Outlook good",

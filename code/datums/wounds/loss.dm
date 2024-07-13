@@ -31,7 +31,7 @@
 
 	var/msg = span_bolddanger("[victim]'s [dismembered_part.name] [occur_text]!")
 
-	victim.visible_message(msg, span_userdanger("Your [dismembered_part.name] [occur_text]!"))
+	victim.visible_message(msg, span_userdanger("My [dismembered_part.name] [occur_text]!"))
 
 	limb = dismembered_part
 	severity = WOUND_SEVERITY_LOSS

@@ -93,17 +93,17 @@
 /obj/structure/lootable/attack_hand(mob/user)
 	var/ukey = ckey(user?.ckey)
 	if(!ukey)
-		to_chat(user, span_alert("You need a ckey to search this! Gratz on not having a ckey, tell a coder about it!"))
+		to_chat(user, span_alert("I need a ckey to search this! Gratz on not having a ckey, tell a coder about it!"))
 	if(ukey in loot_players)
 		if(!reusable)
 			to_chat(user, span_notice("You've already looted [src]. A fresh pair of eyes might be able to find more..."))
 			return
 		else if((world.time - loot_players[ukey]) < reusable_cooldown)
-			to_chat(user, span_notice("You have already looted [src] too recently...."))
+			to_chat(user, span_notice("I have already looted [src] too recently...."))
 			return
 	if(!being_looted)
 		playsound(get_turf(src), GetLootingSound(), 100, TRUE, 1)
-	to_chat(user, span_smallnoticeital("You start looking through [src] for anything worth taking..."))
+	to_chat(user, span_smallnoticeital("I start looking through [src] for anything worth taking..."))
 	being_looted = TRUE
 	if(!do_mob(user, src, time_to_loot, public_progbar = TRUE))
 		being_looted = FALSE
@@ -115,9 +115,9 @@
 		icon_state = icon_state_open
 	var/num_loot = rand(loot_rolls_min, loot_rolls_max)
 	if(num_loot < 1 || (!isnull(uses) && uses < 1))
-		to_chat(user, span_notice("You didn't find anything useful in [src]."))
+		to_chat(user, span_notice("I didn't find anything useful in [src]."))
 		return
-	to_chat(user, span_notice("You finish searching [src]."))
+	to_chat(user, span_notice("I finish searching [src]."))
 	var/turf/loot_turf = get_turf(user)
 	for(var/i=0, i<num_loot, i++ )
 		var/list/ourlist = LAZYACCESS(GLOB.lootable_types, loot_type)

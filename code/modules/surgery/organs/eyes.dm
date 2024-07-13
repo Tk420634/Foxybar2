@@ -20,8 +20,8 @@
 	high_threshold_passed = span_info("Everything starts to look a lot less clear.")
 	now_failing = span_warning("Darkness envelopes you, as your eyes go blind!")
 	now_fixed = span_info("Color and shapes are once again perceivable.")
-	high_threshold_cleared = span_info("Your vision functions passably once more.")
-	low_threshold_cleared = span_info("Your vision is cleared of any ailment.")
+	high_threshold_cleared = span_info("My vision functions passably once more.")
+	low_threshold_cleared = span_info("My vision is cleared of any ailment.")
 
 	var/sight_flags = 0
 	var/see_in_dark = 2
@@ -155,7 +155,7 @@
 /obj/item/organ/eyes/robotic
 	name = "robotic eyes"
 	icon_state = "cybernetic_eyeballs"
-	desc = "Your vision is augmented."
+	desc = "My vision is augmented."
 	status = ORGAN_ROBOTIC
 	organ_flags = ORGAN_SYNTHETIC
 
@@ -328,7 +328,7 @@
 /obj/item/organ/eyes/robotic/glow/proc/activate(silent = FALSE)
 	start_visuals()
 	if(!silent)
-		to_chat(owner, span_warning("Your [src] clicks and makes a whining noise, before shooting out a beam of light!"))
+		to_chat(owner, span_warning("My [src] clicks and makes a whining noise, before shooting out a beam of light!"))
 	active = TRUE
 	RegisterSignal(owner, COMSIG_ATOM_DIR_CHANGE,PROC_REF(update_visuals))
 	cycle_mob_overlay()
@@ -336,7 +336,7 @@
 /obj/item/organ/eyes/robotic/glow/proc/deactivate(silent = FALSE)
 	clear_visuals()
 	if(!silent)
-		to_chat(owner, span_warning("Your [src] shuts off!"))
+		to_chat(owner, span_warning("My [src] shuts off!"))
 	active = FALSE
 	UnregisterSignal(owner, COMSIG_ATOM_DIR_CHANGE)
 	remove_mob_overlay()

@@ -196,11 +196,11 @@
 	. = ..()
 	if(user.a_intent == INTENT_HELP)
 		if(!(obj_flags & EMAGGED))
-			user.visible_message(span_notice("[user] scans [target] with [src]."), span_notice("You scan [target]'s radiation levels with [src]..."))
+			user.visible_message(span_notice("[user] scans [target] with [src]."), span_notice("I scan [target]'s radiation levels with [src]..."))
 			scan(target, user)
 			//addtimer(CALLBACK(src,PROC_REF(scan), target, user), 20, TIMER_UNIQUE) // Let's not have spamming GetAllContents
 		else
-			user.visible_message(span_notice("[user] scans [target] with [src]."), span_danger("You project [src]'s stored radiation into [target]!"))
+			user.visible_message(span_notice("[user] scans [target] with [src]."), span_danger("I project [src]'s stored radiation into [target]!"))
 			target.rad_act(radiation_count)
 			radiation_count = 0
 		return TRUE
@@ -230,10 +230,10 @@
 		if(scanning)
 			to_chat(user, span_warning("Turn off [src] before you perform this action!"))
 			return 0
-		user.visible_message(span_notice("[user] unscrews [src]'s maintenance panel and begins fiddling with its innards..."), span_notice("You begin resetting [src]..."))
+		user.visible_message(span_notice("[user] unscrews [src]'s maintenance panel and begins fiddling with its innards..."), span_notice("I begin resetting [src]..."))
 		if(!I.use_tool(src, user, 40, volume=50))
 			return 0
-		user.visible_message(span_notice("[user] refastens [src]'s maintenance panel!"), span_notice("You reset [src] to its factory settings!"))
+		user.visible_message(span_notice("[user] refastens [src]'s maintenance panel!"), span_notice("I reset [src] to its factory settings!"))
 		obj_flags &= ~EMAGGED
 		radiation_count = 0
 		update_icon()
@@ -249,7 +249,7 @@
 		to_chat(usr, span_warning("[src] must be on to reset its radiation level!"))
 		return TRUE
 	radiation_count = 0
-	to_chat(usr, span_notice("You flush [src]'s radiation counts, resetting it to normal."))
+	to_chat(usr, span_notice("I flush [src]'s radiation counts, resetting it to normal."))
 	update_icon()
 	return TRUE
 
@@ -260,7 +260,7 @@
 	if(scanning)
 		to_chat(user, span_warning("Turn off [src] before you perform this action!"))
 		return
-	to_chat(user, span_warning("You override [src]'s radiation storing protocols. It will now generate small doses of radiation, and stored rads are now projected into creatures you scan."))
+	to_chat(user, span_warning("I override [src]'s radiation storing protocols. It will now generate small doses of radiation, and stored rads are now projected into creatures you scan."))
 	obj_flags |= EMAGGED
 	return TRUE
 

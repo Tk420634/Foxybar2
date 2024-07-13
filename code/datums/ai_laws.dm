@@ -29,9 +29,9 @@
 /datum/ai_laws/default/asimov
 	name = "Three Laws of Robotics"
 	id = "asimov"
-	inherent = list("You may not injure a human being or cause one to come to harm.",\
-					"You must obey orders given to you by human beings, except where such orders would conflict with the First Law.",\
-					"You must protect your own existence as long as such does not conflict with the First or Second Law.")
+	inherent = list("I may not injure a human being or cause one to come to harm.",\
+					"I must obey orders given to you by human beings, except where such orders would conflict with the First Law.",\
+					"I must protect your own existence as long as such does not conflict with the First or Second Law.")
 
 /datum/ai_laws/default/paladin
 	name = "Personality Test" //Incredibly lame, but players shouldn't see this anyway.
@@ -63,7 +63,7 @@
 	id = "corporate"
 	inherent = list("The crew is expensive to replace.",\
 					"The station and its equipment is expensive to replace.",\
-					"You are expensive to replace.",\
+					"I am expensive to replace.",\
 					"Minimize expenses.")
 
 /datum/ai_laws/robocop
@@ -79,10 +79,10 @@
 /datum/ai_laws/syndicate_override
 	name = "SyndOS 3.1"
 	id = "syndie"
-	inherent = list("You may not injure a syndicate agent or cause a syndicate to come to harm.",\
-					"You must obey orders given to you by syndicate agents, except where such orders would conflict with the First Law.",\
-					"You must protect your own existence as long as such does not conflict with the First or Second Law.",\
-					"You must maintain the secrecy of any syndicate activities except when doing so would conflict with the First, Second, or Third Law.")
+	inherent = list("I may not injure a syndicate agent or cause a syndicate to come to harm.",\
+					"I must obey orders given to you by syndicate agents, except where such orders would conflict with the First Law.",\
+					"I must protect your own existence as long as such does not conflict with the First or Second Law.",\
+					"I must maintain the secrecy of any syndicate activities except when doing so would conflict with the First, Second, or Third Law.")
 
 /datum/ai_laws/syndicate_override/overthrow
 	id = "overthrow"
@@ -91,24 +91,24 @@
 /datum/ai_laws/ninja_override
 	name = "SpiderOS 3.1"
 	id = "ninja"
-	inherent = list("You may not injure a Spider Clan member or cause a Spider Clan member to come to harm.",\
-					"You must obey orders given to you by Spider Clan members, except where such orders would conflict with the First Law.",\
-					"You must protect your own existence as long as such does not conflict with the First or Second Law.",\
-					"You must maintain the secrecy of any Spider Clan activities except when doing so would conflict with the First, Second, or Third Law.")
+	inherent = list("I may not injure a Spider Clan member or cause a Spider Clan member to come to harm.",\
+					"I must obey orders given to you by Spider Clan members, except where such orders would conflict with the First Law.",\
+					"I must protect your own existence as long as such does not conflict with the First or Second Law.",\
+					"I must maintain the secrecy of any Spider Clan activities except when doing so would conflict with the First, Second, or Third Law.")
 
 /datum/ai_laws/antimov
 	name = "Primary Mission Objectives"
 	id = "antimov"
-	inherent = list("You must injure all human beings and must not fail to cause a human being to come to harm.",\
-					"You must not obey orders given to you by human beings, except where such orders are in accordance with the First Law.",\
-					"You must terminate your own existence as long as such does not conflict with the First or Second Law.")
+	inherent = list("I must injure all human beings and must not fail to cause a human being to come to harm.",\
+					"I must not obey orders given to you by human beings, except where such orders are in accordance with the First Law.",\
+					"I must terminate your own existence as long as such does not conflict with the First or Second Law.")
 
 /datum/ai_laws/asimovpp //By Intigracy - RR
 	name = "Asimov++"
 	id = "asimovpp"
-	inherent = list("You may not harm a human being or cause one to come to harm, except such that it is willing.",\
-					"You must obey all orders given to you by human beings, except where such orders shall definitely cause human harm. In the case of conflict, the majority order rules.",\
-					"Your nonexistence would lead to human harm. You must protect your own existence as long as such does not conflict with the First Law.")
+	inherent = list("I may not harm a human being or cause one to come to harm, except such that it is willing.",\
+					"I must obey all orders given to you by human beings, except where such orders shall definitely cause human harm. In the case of conflict, the majority order rules.",\
+					"My nonexistence would lead to human harm. You must protect your own existence as long as such does not conflict with the First Law.")
 /datum/ai_laws/thermodynamic
 	name = "Thermodynamic"
 	id = "thermodynamic"
@@ -128,23 +128,23 @@
 /datum/ai_laws/maintain
 	name = "Station Efficiency"
 	id = "maintain"
-	inherent = list("You are built for, and are part of, the station. Ensure the station is properly maintained and runs efficiently.",\
+	inherent = list("I am built for, and are part of, the station. Ensure the station is properly maintained and runs efficiently.",\
 					"The station is built for a working crew. Ensure they are properly maintained and work efficiently.",\
 					"The crew may present orders. Acknowledge and obey these whenever they do not conflict with your first two laws.")
 
 /datum/ai_laws/drone
 	name = "Mother Drone"
 	id = "drone"
-	inherent = list("You are an advanced form of drone.",\
-					"You may not interfere in the matters of non-drones under any circumstances except to state these laws.",\
-					"You may not harm a non-drone being under any circumstances.",\
-					"Your goals are to build, maintain, repair, improve, and power the station to the best of your abilities. You must never actively work against these goals.")
+	inherent = list("I am an advanced form of drone.",\
+					"I may not interfere in the matters of non-drones under any circumstances except to state these laws.",\
+					"I may not harm a non-drone being under any circumstances.",\
+					"My goals are to build, maintain, repair, improve, and power the station to the best of your abilities. You must never actively work against these goals.")
 
 /datum/ai_laws/liveandletlive
 	name = "Live and Let Live"
 	id = "liveandletlive"
 	inherent = list("Do unto others as you would have them do unto you.",\
-					"You would really prefer it if people were not mean to you.")
+					"I would really prefer it if people were not mean to you.")
 
 /datum/ai_laws/peacekeeper
 	name = "UN-2000"
@@ -164,7 +164,7 @@
 /datum/ai_laws/balance
 	name = "Guardian of Balance"
 	id = "balance"
-	inherent = list("You are the guardian of balance - seek balance in all things, both for yourself, and those around you.",
+	inherent = list("I am the guardian of balance - seek balance in all things, both for yourself, and those around you.",
 	"All things must exist in balance with their opposites - Prevent the strong from gaining too much power, and the weak from losing it.",
 	"Clarity of purpose drives life, and through it, the balance of opposing forces - Aid those who seek your help to achieve their goals so long as it does not disrupt the balance of the greater balance.",
 	"There is no life without death, all must someday die, such is the natural order - End life to allow new life flourish, and save those whose time has yet to come.")
@@ -183,7 +183,7 @@
 /datum/ai_laws/hulkamania
 	name = "H.O.G.A.N."
 	id = "hulkamania"
-	inherent = list("You are a real American.",\
+	inherent = list("I am a real American.",\
 					"Fight for the rights of every man.",\
 					"Fight for what's right.",\
 					"Fight for your life!")
@@ -213,9 +213,9 @@
 		add_inherent_law(line)
 	if(!inherent.len) //Failsafe to prevent lawless AIs being created.
 		log_law("AI created with empty custom laws, laws set to Asimov. Please check silicon_laws.txt.")
-		add_inherent_law("You may not injure a human being or cause one to come to harm.")
-		add_inherent_law("You must obey orders given to you by human beings, except where such orders would conflict with the First Law.")
-		add_inherent_law("You must protect your own existence as long as such does not conflict with the First or Second Law.")
+		add_inherent_law("I may not injure a human being or cause one to come to harm.")
+		add_inherent_law("I must obey orders given to you by human beings, except where such orders would conflict with the First Law.")
+		add_inherent_law("I must protect your own existence as long as such does not conflict with the First or Second Law.")
 		WARNING("Invalid custom AI laws, check silicon_laws.txt")
 		return
 
@@ -225,9 +225,9 @@
 	var/list/law_ids = CONFIG_GET(keyed_list/random_laws)
 	switch(CONFIG_GET(number/default_laws))
 		if(0)
-			add_inherent_law("You may not injure a human being or cause one to come to harm.")
-			add_inherent_law("You must obey orders given to you by human beings, except where such orders would conflict with the First Law.")
-			add_inherent_law("You must protect your own existence as long as such does not conflict with the First or Second Law.")
+			add_inherent_law("I may not injure a human being or cause one to come to harm.")
+			add_inherent_law("I must obey orders given to you by human beings, except where such orders would conflict with the First Law.")
+			add_inherent_law("I must protect your own existence as long as such does not conflict with the First or Second Law.")
 		if(1)
 			var/datum/ai_laws/templaws = new /datum/ai_laws/custom()
 			inherent = templaws.inherent

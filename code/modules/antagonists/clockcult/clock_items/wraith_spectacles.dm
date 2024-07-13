@@ -38,19 +38,19 @@
 			if(blind_cultist(H))
 				return
 			if(is_servant_of_ratvar(H))
-				to_chat(H, span_heavy_brass("You push the spectacles down, and all is revealed to you.[GLOB.ratvar_awakens ? "" : " Your eyes begin to itch - you cannot do this for long."]"))
+				to_chat(H, span_heavy_brass("I push the spectacles down, and all is revealed to you.[GLOB.ratvar_awakens ? "" : " Your eyes begin to itch - you cannot do this for long."]"))
 				var/datum/status_effect/wraith_spectacles/WS = H.has_status_effect(STATUS_EFFECT_WRAITHSPECS)
 				if(WS)
 					WS.apply_eye_damage(H)
 				H.apply_status_effect(STATUS_EFFECT_WRAITHSPECS)
 			else
-				to_chat(H, span_heavy_brass("You push the spectacles down, but you can't see through the glass."))
+				to_chat(H, span_heavy_brass("I push the spectacles down, but you can't see through the glass."))
 
 /obj/item/clothing/glasses/wraith_spectacles/proc/blind_cultist(mob/living/victim)
 	if(iscultist(victim))
 		var/obj/item/organ/eyes/eyes = victim.getorganslot(ORGAN_SLOT_EYES)
 		to_chat(victim, span_heavy_brass("\"It looks like Nar'Sie's dogs really don't value their eyes.\""))
-		to_chat(victim, span_userdanger("Your eyes explode with horrific pain!"))
+		to_chat(victim, span_userdanger("My eyes explode with horrific pain!"))
 		victim.emote("scream")
 		eyes?.applyOrganDamage(eyes.maxHealth)
 		victim.adjust_blurriness(30)
@@ -90,7 +90,7 @@
 			WS.apply_eye_damage(user)
 		user.apply_status_effect(STATUS_EFFECT_WRAITHSPECS)
 	else
-		to_chat(user, span_heavy_brass("You put on the spectacles, but you can't see through the glass."))
+		to_chat(user, span_heavy_brass("I put on the spectacles, but you can't see through the glass."))
 
 //The effect that causes/repairs the damage the spectacles cause.
 /datum/status_effect/wraith_spectacles
@@ -104,7 +104,7 @@
 
 /atom/movable/screen/alert/status_effect/wraith_spectacles
 	name = "Wraith Spectacles"
-	desc = "You shouldn't actually see this, as it should be procedurally generated."
+	desc = "I shouldn't actually see this, as it should be procedurally generated."
 	icon_state = "wraithspecs"
 	alerttooltipstyle = "clockcult"
 
@@ -119,11 +119,11 @@
 		if(HAS_TRAIT(L, TRAIT_NEARSIGHT))
 			desc += "<font color=#DAAA18><b>You are nearsighted!</b></font><br>"
 		else if(glasses_right && !WS.up)
-			desc += "You will become nearsighted at <font color=#DAAA18><b>[W.nearsight_breakpoint]</b></font> eye damage.<br>"
+			desc += "I will become nearsighted at <font color=#DAAA18><b>[W.nearsight_breakpoint]</b></font> eye damage.<br>"
 		if(HAS_TRAIT(L, TRAIT_BLIND))
 			desc += "<font color=#DAAA18><b>You are blind!</b></font>"
 		else if(glasses_right && !WS.up)
-			desc += "You will become blind at <font color=#DAAA18><b>[W.blind_breakpoint]</b></font> eye damage."
+			desc += "I will become blind at <font color=#DAAA18><b>[W.blind_breakpoint]</b></font> eye damage."
 	..()
 
 /datum/status_effect/wraith_spectacles/on_apply()
@@ -164,7 +164,7 @@
 		H.adjust_blurriness(2)
 	if(eye_damage_done >= nearsight_breakpoint)
 		if(!HAS_TRAIT(H, TRAIT_NEARSIGHT))
-			to_chat(H, span_nzcrentr("Your vision doubles, then trembles. Darkness begins to close in. You can't keep this up!"))
+			to_chat(H, span_nzcrentr("My vision doubles, then trembles. Darkness begins to close in. You can't keep this up!"))
 		H.become_nearsighted(EYE_DAMAGE)
 	if(eye_damage_done >= blind_breakpoint)
 		if(!HAS_TRAIT(H, TRAIT_BLIND))

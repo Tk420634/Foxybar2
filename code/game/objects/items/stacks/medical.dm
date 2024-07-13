@@ -108,7 +108,7 @@
 		return heal_carbon(M, user, just_check)
 	if(isanimal(M) && can_heal_critters)
 		return heal_critter(M, user, just_check)
-	to_chat(user, span_warning("You can't heal [M] with \the [src]!"))
+	to_chat(user, span_warning("I can't heal [M] with \the [src]!"))
 
 /* * * * * * * * * * * * * * * * * * *
  * Proc that actually does the healing
@@ -120,7 +120,7 @@
 		user.show_message(span_alert("You're already doing something with this!"))
 		return FALSE
 	if(!user.can_inject(C, TRUE))
-		user.show_message(span_alert("You can't get through [C]'s outer bits!"))
+		user.show_message(span_alert("I can't get through [C]'s outer bits!"))
 		return FALSE
 
 	var/list/output_list = pick_a_bodypart(C, user)
@@ -149,11 +149,11 @@
 		playsound(get_turf(user), start_sound, 50, 1, SOUND_DISTANCE(4))
 	if(istype(src, /obj/item/stack/medical/bruise_pack/lick/))
 		if(!do_after(user, get_delay_time(user, C, 1), TRUE, C, required_mobility_flags = NONE, allow_movement = TRUE,))
-			to_chat(user, span_warning("You were interrupted!"))
+			to_chat(user, span_warning("I were interrupted!"))
 			is_healing = FALSE
 			return FALSE
 	else if(!do_mob(user, C, get_delay_time(user, C, 1), progress = TRUE, allow_lying = TRUE))
-		to_chat(user, span_warning("You were interrupted!"))
+		to_chat(user, span_warning("I were interrupted!"))
 		is_healing = FALSE
 		return FALSE
 	is_healing = FALSE
@@ -273,17 +273,17 @@
 		if("start")
 			user.visible_message(
 				span_warning("[user] begins applying \a [src] to [target]'s [target_part]..."),
-				span_warning("You begin applying \a [src] to [user == target ? "your" : "[target]'s"] [target_part]..."))
+				span_warning("I begin applying \a [src] to [user == target ? "your" : "[target]'s"] [target_part]..."))
 /*			if(is_skilled && is_skilled != NO_SKILLS_REQUIRED)
 				switch(needed_trait)
 					if(TRAIT_SURGERY_LOW)
 						if(is_skilled == USER_HAS_THE_SKILLS)
-							user.show_message(span_green("Your first aid training helps you breeze through this!"))
+							user.show_message(span_green("My first aid training helps you breeze through this!"))
 						else
 							user.show_message(span_green("[target]'s first aid training steadies your hand and helps you work!"))
 					if(TRAIT_SURGERY_MID)
 						if(is_skilled == USER_HAS_THE_SKILLS)
-							user.show_message(span_green("Your medical training makes this easy as could be!"))
+							user.show_message(span_green("My medical training makes this easy as could be!"))
 						else
 							user.show_message(span_green("[target]'s medical training inspires you to steady your hand!"))
 					if(TRAIT_SURGERY_HIGH)
@@ -296,41 +296,41 @@
 			if(isnull(bandage_code))
 				user.visible_message(
 					span_green("[user] applies \a [src] to [target]'s [target_part]."),
-					span_green("You apply \a [src] to [user == target ? "your" : "[target]'s"] [target_part]."))
+					span_green("I apply \a [src] to [user == target ? "your" : "[target]'s"] [target_part]."))
 			else
 				if(bandage_code & BANDAGE_NEW_APPLIED)
 					user.visible_message(
 						span_green("[user] applies a fresh new [src] to [target]'s [target_part]!"),
-						span_green("You apply a fresh new [src] to [user == target ? "your" : "[target]'s"] [target_part]!"))
+						span_green("I apply a fresh new [src] to [user == target ? "your" : "[target]'s"] [target_part]!"))
 				if(bandage_code & BANDAGE_WAS_REPAIRED)
 					user.visible_message(
 						span_green("[user] fixes up the bandages on [target]'s [target_part] with [src]!"),
-						span_green("You fix up the bandages on [user == target ? "your" : "[target]'s"] [target_part] with [src]!"))
+						span_green("I fix up the bandages on [user == target ? "your" : "[target]'s"] [target_part] with [src]!"))
 				if(bandage_code & BANDAGE_WAS_REPAIRED_TO_FULL)
 					user.visible_message(
 						span_green("[user] fixes up the bandages on [target]'s [target_part] with [src], repairing them completely!"),
-						span_green("You fix up the bandages on [user == target ? "your" : "[target]'s"] [target_part] with [src], repairing them completely!"))
+						span_green("I fix up the bandages on [user == target ? "your" : "[target]'s"] [target_part] with [src], repairing them completely!"))
 				if(bandage_code & BANDAGE_TIMER_REFILLED)
 					user.visible_message(
 						span_green("[user] freshens up the bandages on [target]'s [target_part] with [src]!"),
-						span_green("You freshen up the bandages on [user == target ? "your" : "[target]'s"] [target_part] with [src]!"))
+						span_green("I freshen up the bandages on [user == target ? "your" : "[target]'s"] [target_part] with [src]!"))
 
 				if(bandage_code & SUTURE_NEW_APPLIED)
 					user.visible_message(
 						span_green("[user] applies a fresh new set of [src] to [target]'s [target_part]!"),
-						span_green("You apply a fresh new set of [src] to [user == target ? "your" : "[target]'s"] [target_part]!"))
+						span_green("I apply a fresh new set of [src] to [user == target ? "your" : "[target]'s"] [target_part]!"))
 				if(bandage_code & SUTURE_WAS_REPAIRED)
 					user.visible_message(
 						span_green("[user] reinforces the sutures on [target]'s [target_part] with [src]!"),
-						span_green("You reinforce the sutures on [user == target ? "your" : "[target]'s"] [target_part] with [src]!"))
+						span_green("I reinforce the sutures on [user == target ? "your" : "[target]'s"] [target_part] with [src]!"))
 				if(bandage_code & SUTURE_WAS_REPAIRED_TO_FULL)
 					user.visible_message(
 						span_green("[user] reinforces the sutures on [target]'s [target_part] with [src], repairing them completely!"),
-						span_green("You reinforce the sutures on [user == target ? "your" : "[target]'s"] [target_part] with [src], repairing them completely!"))
+						span_green("I reinforce the sutures on [user == target ? "your" : "[target]'s"] [target_part] with [src], repairing them completely!"))
 				if(bandage_code & SUTURE_TIMER_REFILLED)
 					user.visible_message(
 						span_green("[user] freshens up the sutures on [target]'s [target_part] with [src]!"),
-						span_green("You freshen up the sutures on [user == target ? "your" : "[target]'s"] [target_part] with [src]!"))
+						span_green("I freshen up the sutures on [user == target ? "your" : "[target]'s"] [target_part] with [src]!"))
 
 /* * * * * * * * * * * * * * * * * * *
  * Proc that heals simplemobs
@@ -362,15 +362,15 @@
 	is_healing = TRUE
 	user.visible_message(
 	span_warning("[user] begins applying \a [src] to [M]..."),
-	span_warning("You begin applying \a [src] to [user == M ? "yourself" : "[M]"]"))
+	span_warning("I begin applying \a [src] to [user == M ? "yourself" : "[M]"]"))
 	if(start_sound)
 		playsound(get_turf(user), start_sound, 50, 1, SOUND_DISTANCE(4))
 	if(!do_mob(user, M, get_delay_time(user, M, 1), progress = TRUE, allow_lying = TRUE))
-		to_chat(user, span_warning("You were interrupted!"))
+		to_chat(user, span_warning("I were interrupted!"))
 		is_healing = FALSE
 		return FALSE
 	is_healing = FALSE
-	user.visible_message(span_green("[user] applies \the [src] on [M]."), span_green("You apply \the [src] on [M]."))
+	user.visible_message(span_green("[user] applies \the [src] on [M]."), span_green("I apply \the [src] on [M]."))
 	critter.adjustHealth(-heal_mobs)
 	if(needs_reservoir)
 		user.heal_reservoir -= 1
@@ -437,7 +437,7 @@
 	//needed_trait = TRAIT_SURGERY_LOW
 	infinite_uses = TRUE
 	needs_reservoir = TRUE
-	too_dry = "Your tongue is too dry to keep licking. A break will help. Drinking some water would help too."
+	too_dry = "My tongue is too dry to keep licking. A break will help. Drinking some water would help too."
 	var/third_person_verb = "lapping at"
 	var/action_verb = "lick at"
 	var/action_verb_2 = "lick"
@@ -458,18 +458,18 @@
 		if("start")
 			user.visible_message(
 				span_notice("[user] starts [third_person_verb] [target]'s [target_part]..."),
-				span_notice("You [action_verb] [user == target ? "your" : "[target]'s"] [target_part]..."))
+				span_notice("I [action_verb] [user == target ? "your" : "[target]'s"] [target_part]..."))
 
 		if("end")
 			user.visible_message(
 				span_green("[user] [action_verb_2]s [target]'s [target_part]!"),
-				span_green("You [action_verb_2] [user == target ? "your" : "[target]'s"] [target_part]!"))
+				span_green("I [action_verb_2] [user == target ? "your" : "[target]'s"] [target_part]!"))
 
 /obj/item/stack/medical/bruise_pack/lick/touch
 	name = "magic healing"
 	singular_name = "magic healing"
 	desc = "A mystical source of healing that draws from an unknown source of power to soothe mild wounds."
-	too_dry = "Your well of magical energy feels dry. A break will help. Drinking some water would help too."
+	too_dry = "My well of magical energy feels dry. A break will help. Drinking some water would help too."
 	third_person_verb = "touching"
 	action_verb = "touch"
 	action_verb_2 = "magically soothe"
@@ -479,7 +479,7 @@
 	name = "triage tending"
 	singular_name = "triage tending"
 	desc = "A small Miscellanious supply of medical equipment for treating small wounds."
-	too_dry = "You can't focus enough to keep working. A break will help. Drinking some water would help too."
+	too_dry = "I can't focus enough to keep working. A break will help. Drinking some water would help too."
 	third_person_verb = "tending to"
 	action_verb = "tend"
 	action_verb_2 = "tend"
@@ -534,18 +534,18 @@
 /obj/item/stack/medical/gauze/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_WIRECUTTER || I.get_sharpness())
 		if(get_amount() < 2)
-			to_chat(user, span_warning("You need at least two gauzes to do this!"))
+			to_chat(user, span_warning("I need at least two gauzes to do this!"))
 			return
 		new /obj/item/stack/sheet/cloth(user.drop_location())
 		user.visible_message("[user] cuts [src] into pieces of cloth with [I].", \
-					span_notice("You cut [src] into pieces of cloth with [I]."), \
-					"You hear cutting.")
+					span_notice("I cut [src] into pieces of cloth with [I]."), \
+					"I hear cutting.")
 		use(2)
 	else if(I.is_drainable() && I.reagents.has_reagent(/datum/reagent/abraxo_cleaner/sterilizine))
 		if(!I.reagents.has_reagent(/datum/reagent/abraxo_cleaner/sterilizine, 10))
 			to_chat(user, span_warning("There's not enough sterilizine in [I] to sterilize [src]!"))
 			return
-		user.visible_message(span_notice("[user] pours the contents of [I] onto [src], sterilizing it."), span_notice("You pour the contents of [I] onto [src], sterilizing it."))
+		user.visible_message(span_notice("[user] pours the contents of [I] onto [src], sterilizing it."), span_notice("I pour the contents of [I] onto [src], sterilizing it."))
 		I.reagents.remove_reagent(/datum/reagent/abraxo_cleaner/sterilizine, 10)
 		new /obj/item/stack/medical/gauze/adv/one(user.drop_location())
 		use(1)
@@ -773,7 +773,7 @@
 /obj/item/stack/medical/ointment/heal(mob/living/M, mob/user)
 	if(iscarbon(M))
 		return heal_carbon(M, user, heal_brute, heal_burn)
-	to_chat(user, span_warning("You can't heal [M] with \the [src]!"))
+	to_chat(user, span_warning("I can't heal [M] with \the [src]!"))
 
 /obj/item/stack/medical/mesh
 	name = "regenerative mesh"
@@ -837,26 +837,26 @@
 
 /obj/item/stack/medical/mesh/try_heal(mob/living/M, mob/user, silent = FALSE)
 	if(!is_open)
-		to_chat(user, span_warning("You need to open [src] first."))
+		to_chat(user, span_warning("I need to open [src] first."))
 		return
 	. = ..()
 
 /obj/item/stack/medical/mesh/AltClick(mob/living/user)
 	if(!is_open)
-		to_chat(user, span_warning("You need to open [src] first."))
+		to_chat(user, span_warning("I need to open [src] first."))
 		return
 	. = ..()
 
 /obj/item/stack/medical/mesh/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
 	if(!is_open && user.get_inactive_held_item() == src)
-		to_chat(user, span_warning("You need to open [src] first."))
+		to_chat(user, span_warning("I need to open [src] first."))
 		return
 	. = ..()
 
 /obj/item/stack/medical/mesh/attack_self(mob/user)
 	if(!is_open)
 		is_open = TRUE
-		to_chat(user, span_notice("You open the sterile mesh package."))
+		to_chat(user, span_notice("I open the sterile mesh package."))
 		update_icon()
 		playsound(src, 'sound/items/poster_ripped.ogg', 20, TRUE)
 		return
@@ -940,7 +940,7 @@
 // gonna try and get a little fancy here
 /obj/item/stack/medical/mesh/horsecream/do_medical_message(mob/living/M, mob/user)
 	if(M.getBruteLoss())
-		to_chat(user, span_danger("You feel your muscles contract powerfully and involuntarily! It hurts like hell!"))
+		to_chat(user, span_danger("I feel your muscles contract powerfully and involuntarily! It hurts like hell!"))
 		M.emote("scream")
 		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
 	return
@@ -973,7 +973,7 @@
 // gonna try and get a little quirky here
 ///obj/item/stack/medical/mesh/horsecream/goodcream/do_medical_message(mob/living/M, mob/user)
 //	if(M.getBruteLoss())
-//		to_chat(user, span_warning("Your muscles begin palpitating. It feels weird!"))
+//		to_chat(user, span_warning("My muscles begin palpitating. It feels weird!"))
 //		M.emote("augh") // It was kinda getting a bit annoying, plus it makes you augh even if you're using it on someone else!
 //		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "weird medicine", /datum/mood_event/healsbadman)
 //	return

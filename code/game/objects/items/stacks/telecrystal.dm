@@ -19,7 +19,7 @@
 				if(hidden_uplink)
 					hidden_uplink.telecrystals += amount
 					use(amount)
-					to_chat(user, span_notice("You press [src] onto yourself and charge your hidden uplink."))
+					to_chat(user, span_notice("I press [src] onto yourself and charge your hidden uplink."))
 	else
 		return ..()
 
@@ -32,7 +32,7 @@
 			return
 		cart.telecrystals += amount
 		use(amount)
-		to_chat(user, span_notice("You slot [src] into [cart].  The next time it's used, it will also give telecrystals."))
+		to_chat(user, span_notice("I slot [src] into [cart].  The next time it's used, it will also give telecrystals."))
 
 /obj/item/stack/telecrystal/five
 	amount = 5

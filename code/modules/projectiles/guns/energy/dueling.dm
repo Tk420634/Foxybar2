@@ -204,7 +204,7 @@
 			setting = DUEL_SETTING_C
 		if(DUEL_SETTING_C)
 			setting = DUEL_SETTING_A
-	to_chat(user,span_notice("You switch [src] setting to [setting] mode."))
+	to_chat(user,span_notice("I switch [src] setting to [setting] mode."))
 	update_icon()
 
 /obj/item/gun/energy/dueling/update_overlays(force_update)
@@ -239,7 +239,7 @@
 /obj/item/gun/energy/dueling/process_fire(atom/target, mob/living/user, message, params, zone_override, bonus_spread = 0, stam_cost = 0)
 	if(duel.state == DUEL_READY)
 		duel.confirmations[src] = TRUE
-		to_chat(user,span_notice("You confirm your readiness."))
+		to_chat(user,span_notice("I confirm your readiness."))
 	else if(!is_duelist(target)) //I kinda want to leave this out just to see someone shoot a bystander or missing.
 		to_chat(user,span_warning("[src] safety system prevents shooting anyone but your designated opponent."))
 	else

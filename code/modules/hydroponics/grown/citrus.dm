@@ -97,7 +97,7 @@
 /obj/item/reagent_containers/food/snacks/grown/citrus/orange_3d
 	seed = /obj/item/seeds/orange_3d
 	name = "extradminesional orange"
-	desc = "You can hardly wrap your head around this thing."
+	desc = "I can hardly wrap your head around this thing."
 	icon_state = "orang"
 	filling_color = "#FFA500"
 	juice_results = list(/datum/reagent/consumable/orangejuice = 0)
@@ -168,7 +168,7 @@
 	wine_power = 70
 
 /obj/item/reagent_containers/food/snacks/grown/firelemon/attack_self(mob/living/user)
-	user.visible_message(span_warning("[user] primes [src]!"), span_userdanger("You prime [src]!"))
+	user.visible_message(span_warning("[user] primes [src]!"), span_userdanger("I prime [src]!"))
 	var/message = "[ADMIN_LOOKUPFLW(user)] primed a combustible lemon for detonation at [ADMIN_VERBOSEJMP(user)]"
 	GLOB.bombers += message
 	message_admins(message)

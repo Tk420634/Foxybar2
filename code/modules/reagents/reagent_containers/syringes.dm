@@ -102,7 +102,7 @@
 				if(L.transfer_blood_to(src, drawn_amount))
 					user.visible_message("[user] takes a blood sample from [L].")
 				else
-					to_chat(user, span_warning("You are unable to draw any blood from [L]!"))
+					to_chat(user, span_warning("I am unable to draw any blood from [L]!"))
 
 			else //if not mob
 				if(!target.reagents.total_volume)
@@ -110,12 +110,12 @@
 					return
 
 				if(!target.is_drawable())
-					to_chat(user, span_warning("You cannot directly remove reagents from [target]!"))
+					to_chat(user, span_warning("I cannot directly remove reagents from [target]!"))
 					return
 
 				var/trans = target.reagents.trans_to(src, amount_per_transfer_from_this, log = TRUE)	// transfer from, transfer to - who cares?
 
-				to_chat(user, span_notice("You fill [src] with [trans] units of the solution. It now contains [reagents.total_volume] units."))
+				to_chat(user, span_notice("I fill [src] with [trans] units of the solution. It now contains [reagents.total_volume] units."))
 			if (round(reagents.total_volume, 0.1) >= reagents.maximum_volume)
 				mode=!mode
 				update_icon()
@@ -130,7 +130,7 @@
 				return
 
 			if(!L && !target.is_injectable()) //only checks on non-living mobs, due to how can_inject() handles
-				to_chat(user, span_warning("You cannot directly fill [target]!"))
+				to_chat(user, span_warning("I cannot directly fill [target]!"))
 				return
 
 			if(target.reagents.total_volume >= target.reagents.maximum_volume)
@@ -159,7 +159,7 @@
 			var/fraction = min(amount_per_transfer_from_this/reagents.total_volume, 1)
 			reagents.reaction(L, INJECT, fraction)
 			reagents.trans_to(target, amount_per_transfer_from_this, log = TRUE)
-			to_chat(user, span_notice("You inject [amount_per_transfer_from_this] units of the solution. The syringe now contains [reagents.total_volume] units."))
+			to_chat(user, span_notice("I inject [amount_per_transfer_from_this] units of the solution. The syringe now contains [reagents.total_volume] units."))
 			if (reagents.total_volume <= 0 && mode==SYRINGE_INJECT)
 				mode = SYRINGE_DRAW
 				update_icon()
@@ -325,7 +325,7 @@
 				return
 
 			if(L) //living mob
-				to_chat(user, span_warning("You can't draw blood using a dart!"))
+				to_chat(user, span_warning("I can't draw blood using a dart!"))
 				return
 
 			else //if not mob
@@ -334,12 +334,12 @@
 					return
 
 				if(!target.is_drawable())
-					to_chat(user, span_warning("You cannot directly remove reagents from [target]!"))
+					to_chat(user, span_warning("I cannot directly remove reagents from [target]!"))
 					return
 
 				var/trans = target.reagents.trans_to(src, amount_per_transfer_from_this)
 
-				to_chat(user, span_notice("You soak the [src] with [trans] units of the solution. It now contains [reagents.total_volume] units."))
+				to_chat(user, span_notice("I soak the [src] with [trans] units of the solution. It now contains [reagents.total_volume] units."))
 			if (round(reagents.total_volume,1) >= reagents.maximum_volume)
 				mode=!mode
 				update_icon()

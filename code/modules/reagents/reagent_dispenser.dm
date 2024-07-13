@@ -87,7 +87,7 @@
 	if(!paper_cups)
 		to_chat(user, span_warning("There aren't any cups left!"))
 		return
-	user.visible_message(span_notice("[user] takes a cup from [src]."), span_notice("You take a paper cup from [src]."))
+	user.visible_message(span_notice("[user] takes a cup from [src]."), span_notice("I take a paper cup from [src]."))
 	var/obj/item/reagent_containers/food/drinks/sillycup/S = new(get_turf(src))
 	user.put_in_hands(S)
 	paper_cups--
@@ -106,7 +106,7 @@
 	. = ..()
 	if(. == SUCCESSFUL_UNFASTEN)
 		user.visible_message(span_notice("[user.name] [anchored ? "fasten" : "unfasten"] [src]"), \
-		span_notice("You [anchored ? "fasten" : "unfasten"] [src]"))
+		span_notice("I [anchored ? "fasten" : "unfasten"] [src]"))
 		var/datum/component/plumbing/CP = GetComponent(/datum/component/plumbing)
 		if(anchored)
 			CP.enable()
@@ -173,7 +173,7 @@
 		var/obj/item/weldingtool/weldie = W
 		if(weldie.isOn())
 			var/turf/T = get_turf(src)
-			user.visible_message(span_warning("[user] pours fuel into [user.p_their()] running [name], and everything goes up in flames!"), span_userdanger("Your open flame ignites the barrel of fuel. Oops!"))
+			user.visible_message(span_warning("[user] pours fuel into [user.p_their()] running [name], and everything goes up in flames!"), span_userdanger("My open flame ignites the barrel of fuel. Oops!"))
 
 			var/message_admins = "[ADMIN_LOOKUPFLW(user)] triggered a fueltank explosion via welding tool at [ADMIN_VERBOSEJMP(T)]."
 			GLOB.bombers += message_admins

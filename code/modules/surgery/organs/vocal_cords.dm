@@ -90,7 +90,7 @@
 	. = ..()
 	if(!IsAvailable())
 		if(world.time < cords.next_command)
-			to_chat(owner, span_notice("You must wait [DisplayTimeText(cords.next_command - world.time)] before Speaking again."))
+			to_chat(owner, span_notice("I must wait [DisplayTimeText(cords.next_command - world.time)] before Speaking again."))
 		return
 	var/command = input(owner, "Speak with the Voice of God", "Command")
 	if(QDELETED(src) || QDELETED(owner))
@@ -101,12 +101,12 @@
 
 /obj/item/organ/vocal_cords/colossus/can_speak_with()
 	if(world.time < next_command)
-		to_chat(owner, span_notice("You must wait [DisplayTimeText(next_command - world.time)] before Speaking again."))
+		to_chat(owner, span_notice("I must wait [DisplayTimeText(next_command - world.time)] before Speaking again."))
 		return FALSE
 	if(!owner)
 		return FALSE
 	if(!owner.can_speak())
-		to_chat(owner, span_warning("You are unable to speak!"))
+		to_chat(owner, span_warning("I am unable to speak!"))
 		return FALSE
 	return TRUE
 
@@ -838,7 +838,7 @@
 				if(3)
 					speaktrigger += "[(E.lewd?"I'm devoted to being your pet":"I'm commited to following your cause!")]! "
 				if(4)
-					speaktrigger += "[(E.lewd?"You are my whole world and all of my being belongs to you, ":"I cannot think of anything else but aiding your cause, ")] "//Redflags!!
+					speaktrigger += "[(E.lewd?"I am my whole world and all of my being belongs to you, ":"I cannot think of anything else but aiding your cause, ")] "//Redflags!!
 
 			//mood
 			var/datum/component/mood/mood = H.GetComponent(/datum/component/mood)
@@ -922,7 +922,7 @@
 				if(80 to 120)
 					speaktrigger += "My head feels like it's about to explode, "
 				if(120 to 160)
-					speaktrigger += "You are the only thing keeping my mind sane, "
+					speaktrigger += "I am the only thing keeping my mind sane, "
 				if(160 to INFINITY)
 					speaktrigger += "I feel like I'm on the brink of losing my mind, "
 
@@ -990,7 +990,7 @@
 			if(E.phase == 4)
 				addtimer(CALLBACK(usr, GLOBAL_PROC_REF(to_chat), C, span_warning("You're unable to forget about [(E.lewd?"the dominating presence of [E.enthrallGender]":"[E.master]")]!</b>")), 5)
 				continue
-			addtimer(CALLBACK(usr, GLOBAL_PROC_REF(to_chat), C, span_warning("You wake up, forgetting everything that just happened. You must've dozed off..? How embarassing!</b>")), 5)
+			addtimer(CALLBACK(usr, GLOBAL_PROC_REF(to_chat), C, span_warning("I wake up, forgetting everything that just happened. You must've dozed off..? How embarassing!</b>")), 5)
 			C.Sleeping(50)
 			switch(E.phase)
 				if(1 to 2)
@@ -1102,12 +1102,12 @@
 				var/speaktrigger = ""
 				C.emote("me", EMOTE_VISIBLE, "whispers something quietly.")
 				if (get_dist(user, C) > 1)//Requires user to be next to their pet.
-					to_chat(user, span_warning("You need to be next to your pet to hear them!</b>"))
+					to_chat(user, span_warning("I need to be next to your pet to hear them!</b>"))
 					continue
 				for (var/trigger in E.customTriggers)
 					speaktrigger += "[trigger], "
 				to_chat(user, "<b>[C]</b> whispers, \"<i>[speaktrigger] are my triggers.</i>\"")//So they don't trigger themselves!
-				addtimer(CALLBACK(usr, GLOBAL_PROC_REF(to_chat), C, span_notice("You whisper your triggers to [(E.lewd?"Your [E.enthrallGender]":"[E.master]")].")), 5)
+				addtimer(CALLBACK(usr, GLOBAL_PROC_REF(to_chat), C, span_notice("I whisper your triggers to [(E.lewd?"My [E.enthrallGender]":"[E.master]")].")), 5)
 
 
 	//CUSTOM TRIGGERS
@@ -1117,7 +1117,7 @@
 			var/datum/status_effect/chem/enthrall/E = H.has_status_effect(/datum/status_effect/chem/enthrall)
 			if(E.phase == 3)
 				if (get_dist(user, H) > 1)//Requires user to be next to their pet.
-					to_chat(user, span_warning("You need to be next to your pet to give them a new trigger!</b>"))
+					to_chat(user, span_warning("I need to be next to your pet to give them a new trigger!</b>"))
 					continue
 				if(!E.lewd)
 					to_chat(user, span_warning("[H] seems incapable of being implanted with triggers.</b>"))
@@ -1145,9 +1145,9 @@
 							addtimer(CALLBACK(usr, GLOBAL_PROC_REF(to_chat), H, span_notice("[(E.lewd?"your [E.enthrallGender]":"[E.master]")] whispers you a new trigger.")), 5)
 							to_chat(user, "<span class='notice'><i>You sucessfully set the trigger word [trigger] in [H]</i></span>")
 						else
-							to_chat(user, span_warning("Your pet looks at you confused, it seems they don't understand that effect!</b>"))
+							to_chat(user, span_warning("My pet looks at you confused, it seems they don't understand that effect!</b>"))
 					else
-						to_chat(user, span_warning("Your pet looks at you with a vacant blase expression, you don't think you can program anything else into them</b>"))
+						to_chat(user, span_warning("My pet looks at you with a vacant blase expression, you don't think you can program anything else into them</b>"))
 					user.SetStun(0)
 					H.SetStun(0)
 
@@ -1158,7 +1158,7 @@
 			var/datum/status_effect/chem/enthrall/E = H.has_status_effect(/datum/status_effect/chem/enthrall)
 			if(E.phase == 3)
 				if (get_dist(user, H) > 1)//Requires user to be next to their pet.
-					to_chat(user, span_warning("You need to be next to your pet to give them a new echophrase!</b>"))
+					to_chat(user, span_warning("I need to be next to your pet to give them a new echophrase!</b>"))
 					continue
 				if(!E.lewd)
 					to_chat(user, span_warning("[H] seems incapable of being implanted with an echoing phrase.</b>"))
@@ -1184,7 +1184,7 @@
 			var/datum/status_effect/chem/enthrall/E = H.has_status_effect(/datum/status_effect/chem/enthrall)
 			if(E.phase == 3)
 				if (get_dist(user, H) > 1)//Requires user to be next to their pet.
-					to_chat(user, span_warning("You need to be next to your pet to give them a new objective!</b>"))
+					to_chat(user, span_warning("I need to be next to your pet to give them a new objective!</b>"))
 					continue
 				else
 					user.emote("me", EMOTE_VISIBLE, "puts their hands upon [H.name]'s head and looks deep into their eyes, whispering something to them.'")
@@ -1193,7 +1193,7 @@
 					if (E.mental_capacity >= 200)
 						var/datum/objective/brainwashing/objective = stripped_input(user, "Add an objective to give your pet.", MAX_MESSAGE_LEN)
 						if(!LAZYLEN(objective))
-							to_chat(user, span_warning("You can't give your pet an objective to do nothing!</b>"))
+							to_chat(user, span_warning("I can't give your pet an objective to do nothing!</b>"))
 							continue
 						//Pets don't understand harm
 						objective = replacetext(lowertext(objective), "kill", "hug")
@@ -1203,12 +1203,12 @@
 						objective = replacetext(lowertext(objective), "strangle", "meow at")
 						message_admins("[H] has been implanted by [user] with the objective [objective].")
 						log_reagent("FERMICHEM: [H] has been implanted by [user] with the objective [objective] via MKUltra.")
-						addtimer(CALLBACK(usr, GLOBAL_PROC_REF(to_chat), H, span_notice("[(E.lewd?"Your [E.enthrallGender]":"[E.master]")] whispers you a new objective.")), 5)
+						addtimer(CALLBACK(usr, GLOBAL_PROC_REF(to_chat), H, span_notice("[(E.lewd?"My [E.enthrallGender]":"[E.master]")] whispers you a new objective.")), 5)
 						brainwash(H, objective)
 						E.mental_capacity -= 200
 						to_chat(user, "<span class='notice'><i>You sucessfully give an objective to [H]</i></span>")
 					else
-						to_chat(user, span_warning("Your pet looks at you with a vacant blasé expression, you don't think you can program anything else into them</b>"))
+						to_chat(user, span_warning("My pet looks at you with a vacant blasé expression, you don't think you can program anything else into them</b>"))
 					user.SetStun(0)
 					H.SetStun(0)
 
@@ -1232,7 +1232,7 @@
 			if(E.phase > 1)
 				if(user.ckey == E.enthrallID && user.real_name == E.master.real_name)
 					E.master = user
-					addtimer(CALLBACK(usr, GLOBAL_PROC_REF(to_chat), H, span_nicegreen("[(E.lewd?"You hear the words of your [E.enthrallGender] again!! They're back!!":"You recognise the voice of [E.master].")]</b>")), 5)
+					addtimer(CALLBACK(usr, GLOBAL_PROC_REF(to_chat), H, span_nicegreen("[(E.lewd?"I hear the words of your [E.enthrallGender] again!! They're back!!":"I recognise the voice of [E.master].")]</b>")), 5)
 					to_chat(user, "<span class='notice'><i>[H] looks at you with sparkling eyes, recognising you!</i></span>")
 
 	//I dunno how to do state objectives without them revealing they're an antag

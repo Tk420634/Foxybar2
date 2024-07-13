@@ -70,7 +70,7 @@
 			//.if(2)
 				//fisto_setting = 1
 		//W.play_tool_sound(src)
-		//to_chat(user, span_notice("You tweak \the [src]'s piston valve to [fisto_setting]."))
+		//to_chat(user, span_notice("I tweak \the [src]'s piston valve to [fisto_setting]."))
 		//attack_speed = CLICK_CD_MELEE * fisto_setting
 
 //obj/item/melee/powerfist/f13/updateTank(obj/item/tank/internals/thetank, removing = 0, mob/living/carbon/human/user)
@@ -78,7 +78,7 @@
 
 /obj/item/melee/powerfist/f13/attack(mob/living/target, mob/living/user, attackchain_flags = NONE)
 	if(HAS_TRAIT(user, TRAIT_PACIFISM))
-		to_chat(user, span_warning("You don't want to harm other living beings!"))
+		to_chat(user, span_warning("I don't want to harm other living beings!"))
 		return FALSE
 	var/turf/T = get_turf(src)
 	if(!T)
@@ -87,7 +87,7 @@
 	SSdamage.damage_mob(user, target, totalitemdamage)
 	//target.apply_damage(totalitemdamage * fisto_setting, BRUTE, wound_bonus = -25*fisto_setting**2)
 	target.visible_message(span_danger("[user]'s powerfist lets out a loud hiss as [user.p_they()] punch[user.p_es()] [target.name]!"), \
-		span_userdanger("You cry out in pain as [user]'s punch flings you backwards!"))
+		span_userdanger("I cry out in pain as [user]'s punch flings you backwards!"))
 	new /obj/effect/temp_visual/kinetic_blast(target.loc)
 	playsound(loc, 'sound/weapons/resonator_blast.ogg', 50, 1)
 	playsound(loc, 'sound/weapons/genhit2.ogg', 50, 1)
@@ -123,8 +123,8 @@
 /obj/item/melee/powerfist/f13/satfist/welder_act(mob/living/user, obj/item/I)
 	if(I.use_tool(src, user, 20, volume=50, amount=15))
 		user.visible_message("[user] heats up the Metal of the [src].", \
-				span_notice("You heat up the [src] until the Fist glows!"), \
-				span_italic("You hear faint sounds of a welder working."))
+				span_notice("I heat up the [src] until the Fist glows!"), \
+				span_italic("I hear faint sounds of a welder working."))
 		new /obj/item/melee/powerfist/f13/satfisth(drop_location())
 		qdel(src)
 		return
@@ -287,7 +287,7 @@
 	if(sword in src)
 		//Detach the sword into the user's hands
 		if(!user.put_in_hands(sword))
-			to_chat(user, span_warning("You need a free hand to hold the shishkebab!"))
+			to_chat(user, span_warning("I need a free hand to hold the shishkebab!"))
 			return
 	else
 		//Remove from their hands and put back "into" the tank

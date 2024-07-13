@@ -20,7 +20,7 @@
 		return
 	// must have nobody around to see the cloak
 	for(var/mob/living/M in fov_viewers(9, owner) - owner)
-		to_chat(owner, span_warning("You may only vanish into the shadows unseen."))
+		to_chat(owner, span_warning("I may only vanish into the shadows unseen."))
 		return FALSE
 	return TRUE
 
@@ -56,7 +56,7 @@
 	if (!..())
 		return FALSE
 	if(user.stat == !CONSCIOUS) // Must be CONSCIOUS
-		to_chat(owner, span_warning("Your cloak failed due to you falling unconcious! "))
+		to_chat(owner, span_warning("My cloak failed due to you falling unconcious! "))
 		return FALSE
 	return TRUE
 

@@ -334,7 +334,7 @@
 	if(departing_mob.logout_time && departing_mob.logout_time + 2 MINUTES > world.time)
 		to_chat(user, span_warning("This mind has only recently departed. Wait at most two minutes before sending this character out of the round."))
 		return
-	user.visible_message(span_warning("[user] [departing_mob == user ? "is trying to leave the swamps!" : "is trying to send [departing_mob] away!"]"), span_notice("You [departing_mob == user ? "are trying to leave the swamps." : "are trying to send [departing_mob] away."]"))
+	user.visible_message(span_warning("[user] [departing_mob == user ? "is trying to leave the swamps!" : "is trying to send [departing_mob] away!"]"), span_notice("I [departing_mob == user ? "are trying to leave the swamps." : "are trying to send [departing_mob] away."]"))
 	icon_state = "matrix_going" // ALERT, WEE WOO
 	update_icon()
 	in_use = TRUE
@@ -368,7 +368,7 @@
 	
 	if(departing_mob.client.is_in_game >= 1)
 		// if(departing_mob.client.is_in_game == 2)
-		// 	to_chat(world, span_nicegreen("You hear through the grapevine that [departing_mob.name] has left the county."))
+		// 	to_chat(world, span_nicegreen("I hear through the grapevine that [departing_mob.name] has left the county."))
 		departing_mob.client.is_in_game = 0
 	
 	departing_mob.despawn()

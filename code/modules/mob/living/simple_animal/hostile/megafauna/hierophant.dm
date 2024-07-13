@@ -127,7 +127,7 @@ Difficulty: Normal
 		if(!L.dropItemToGround(W))
 			qdel(W)
 	visible_message(span_hierophant_warning("\"[pick(kill_phrases)]\""))
-	visible_message(span_hierophant_warning("[src] annihilates [L]!"),span_userdanger("You annihilate [L], restoring your health!"))
+	visible_message(span_hierophant_warning("[src] annihilates [L]!"),span_userdanger("I annihilate [L], restoring your health!"))
 	adjustHealth(-L.maxHealth*0.5)
 	L.dust()
 */
@@ -656,7 +656,7 @@ Difficulty: Normal
 		playsound(L,'sound/weapons/sear.ogg', 50, 1, -4)
 		to_chat(L, span_userdanger("You're struck by a [name]!"))
 		var/limb_to_hit = L.get_bodypart(pick(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_R_ARM, BODY_ZONE_L_ARM, BODY_ZONE_R_LEG, BODY_ZONE_L_LEG))
-		var/armor = L.run_armor_check(limb_to_hit, "melee", "Your armor absorbs [src]!", "Your armor blocks part of [src]!", 50, "Your armor was penetrated by [src]!")
+		var/armor = L.run_armor_check(limb_to_hit, "melee", "My armor absorbs [src]!", "My armor blocks part of [src]!", 50, "My armor was penetrated by [src]!")
 		L.apply_damage(damage, BURN, limb_to_hit, armor, wound_bonus=CANT_WOUND)
 		if(ishostile(L))
 			var/mob/living/simple_animal/hostile/H = L //mobs find and damage you...
@@ -674,7 +674,7 @@ Difficulty: Normal
 		if(M.occupant)
 			if(friendly_fire_check && caster && caster.faction_check_mob(M.occupant))
 				continue
-			to_chat(M.occupant, span_userdanger("Your [M.name] is struck by a [name]!"))
+			to_chat(M.occupant, span_userdanger("My [M.name] is struck by a [name]!"))
 		playsound(M,'sound/weapons/sear.ogg', 50, 1, -4)
 		M.take_damage(damage, BURN, 0, 0, null, 50)
 
@@ -696,13 +696,13 @@ Difficulty: Normal
 		if(H.timer > world.time)
 			return
 		if(H.beacon == src)
-			to_chat(user, span_notice("You start removing your hierophant beacon..."))
+			to_chat(user, span_notice("I start removing your hierophant beacon..."))
 			H.timer = world.time + 51
 			INVOKE_ASYNC(H, TYPE_PROC_REF(/obj/item/hierophant_club,prepare_icon_update))
 			if(do_after(user, 50, target = src))
 				playsound(src,'sound/magic/blind.ogg', 200, 1, -4)
 				new /obj/effect/temp_visual/hierophant/telegraph/teleport(get_turf(src), user)
-				to_chat(user, span_hierophant_warning("You collect [src], reattaching it to the club!"))
+				to_chat(user, span_hierophant_warning("I collect [src], reattaching it to the club!"))
 				H.beacon = null
 				user.update_action_buttons_icon()
 				qdel(src)
@@ -710,7 +710,7 @@ Difficulty: Normal
 				H.timer = world.time
 				INVOKE_ASYNC(H, TYPE_PROC_REF(/obj/item/hierophant_club,prepare_icon_update))
 		else
-			to_chat(user, span_hierophant_warning("You touch the beacon with the club, but nothing happens."))
+			to_chat(user, span_hierophant_warning("I touch the beacon with the club, but nothing happens."))
 	else
 		return ..()
 

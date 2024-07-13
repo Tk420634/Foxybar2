@@ -121,7 +121,7 @@
 		if(src.use_tool(H, user, 0, volume=50, amount=1))
 			if(user == H)
 				user.visible_message(span_notice("[user] starts to fix some of the dents on [H]'s [affecting.name]."),
-					span_notice("You start fixing some of the dents on [H]'s [affecting.name]."))
+					span_notice("I start fixing some of the dents on [H]'s [affecting.name]."))
 				if(!do_mob(user, H, 50))
 					return
 			item_heal_robotic(H, user, heal_amount, 0)
@@ -173,7 +173,7 @@
 		user.show_message(span_alert("[src] is empty!"))
 		return FALSE
 	reagents.trans_to(O, reagents.total_volume)
-	to_chat(user, span_notice("You empty [src]'s fuel tank into [O]."))
+	to_chat(user, span_notice("I empty [src]'s fuel tank into [O]."))
 	update_icon()
 	return */
 /* /obj/item/weldingtool/proc/try_healing(mob/living/healtarget, mob/user, actually_heal)
@@ -203,15 +203,15 @@
 	if(healtarget == user)
 		user.visible_message(
 			span_notice("[user] starts to fix some of the dents on [healtarget]'s [affecting.name]."),
-			span_notice("You start fixing some of the dents on [healtarget]'s [affecting.name]."))
+			span_notice("I start fixing some of the dents on [healtarget]'s [affecting.name]."))
 	else
 		user.visible_message(
 			span_notice("[user] starts to fix some of the dents on [healtarget.p_their()] [affecting.name]."),
-			span_notice("You start fixing some of the dents on your [affecting.name]."))
+			span_notice("I start fixing some of the dents on your [affecting.name]."))
 	if(!use_tool(healtarget, user, (5 SECONDS * toolspeed * (healtarget == user ? 1 : 0.5)), 1, 50, 1))
 		user.visible_message(
 			span_alert("[user] was interrupted!"),
-			span_alert("You were interrupted!"))
+			span_alert("I were interrupted!"))
 		return FALSE
 	item_heal_robotic(healtarget, user, 15, 0)
 	return TRUE
@@ -239,7 +239,7 @@
 		return FALSE
 	var/fill_this_much = max_fuel - amt_remaining
 	tank_reagents.trans_to(src, fill_this_much, log = TRUE)
-	user.visible_message(span_notice("[user] refills [user.p_their()] [name]."), span_notice("You refill [src]."))
+	user.visible_message(span_notice("[user] refills [user.p_their()] [name]."), span_notice("I refill [src]."))
 	playsound(src, 'sound/effects/refill.ogg', 50, 1)
 	update_icon()
 	O.update_icon()
@@ -281,7 +281,7 @@
 	welding = !welding
 	if(welding)
 		if(get_fuel() >= 1)
-			to_chat(user, span_notice("You switch [src] on."))
+			to_chat(user, span_notice("I switch [src] on."))
 			playsound(loc, acti_sound, 50, 1)
 			force = 30
 			damtype = "fire"
@@ -289,10 +289,10 @@
 			update_icon()
 			START_PROCESSING(SSobj, src)
 		else
-			to_chat(user, span_warning("You need more fuel!"))
+			to_chat(user, span_warning("I need more fuel!"))
 			switched_off(user)
 	else
-		to_chat(user, span_notice("You switch [src] off."))
+		to_chat(user, span_notice("I switch [src] off."))
 		playsound(loc, deac_sound, 50, 1)
 		switched_off(user)
 
@@ -343,7 +343,7 @@
 	if(get_fuel() >= amount)
 		return TRUE
 	else
-		to_chat(user, span_warning("You need more welding fuel to complete this task!"))
+		to_chat(user, span_warning("I need more welding fuel to complete this task!"))
 		return FALSE
 
 
@@ -353,7 +353,7 @@
 		return
 	status = !status
 	if(status)
-		to_chat(user, span_notice("You resecure [src] and close the fuel tank."))
+		to_chat(user, span_notice("I resecure [src] and close the fuel tank."))
 		DISABLE_BITFIELD(reagents.reagents_holder_flags, OPENCONTAINER)
 	else
 		to_chat(user, span_notice("[src] can now be attached, modified, and refuelled."))
@@ -369,10 +369,10 @@
 				user.transferItemToLoc(src, F, TRUE)
 			F.weldtool = src
 			add_fingerprint(user)
-			to_chat(user, span_notice("You add a rod to a welder, starting to build a flamethrower."))
+			to_chat(user, span_notice("I add a rod to a welder, starting to build a flamethrower."))
 			user.put_in_hands(F)
 		else
-			to_chat(user, span_warning("You need one rod to start building a flamethrower!"))
+			to_chat(user, span_warning("I need one rod to start building a flamethrower!"))
 */
 /obj/item/weldingtool/ignition_effect(atom/A, mob/user)
 	if(use_tool(A, user, 0, amount=1))

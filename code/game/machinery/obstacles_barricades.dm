@@ -35,15 +35,15 @@
 			if(!I.tool_start_check(user, amount=0))
 				return
 
-			to_chat(user, span_notice("You begin repairing [src]..."))
+			to_chat(user, span_notice("I begin repairing [src]..."))
 			if(I.use_tool(src, user, 40, volume=40))
 				obj_integrity = clamp(obj_integrity + 20, 0, max_integrity)
 	else if(istype(I, /obj/item/stack/ore/glass) && bar_material == SAND)
 		if(obj_integrity < max_integrity)
-			to_chat(user, span_notice("You begin packing sand into the damaged \the [src], repairing them..."))
+			to_chat(user, span_notice("I begin packing sand into the damaged \the [src], repairing them..."))
 			if(do_after(user, 30, target = src))
 				obj_integrity = clamp(obj_integrity + 30, 0, max_integrity)
-				user.visible_message(span_notice("[user] repairs [src] with some sand."),span_notice("You repair [src] with some sand."))
+				user.visible_message(span_notice("[user] repairs [src] with some sand."),span_notice("I repair [src] with some sand."))
 				I.use(1)
 		else
 			to_chat(user, span_notice("The [src] doesn't need to be repaired."))
@@ -90,9 +90,9 @@
 	if(istype(I,/obj/item/stack/sheet/mineral/wood))
 		var/obj/item/stack/sheet/mineral/wood/W = I
 		if(W.amount < 5)
-			to_chat(user, span_warning("You need at least five wooden planks to make a wall!"))
+			to_chat(user, span_warning("I need at least five wooden planks to make a wall!"))
 			return
-		to_chat(user, span_notice("You start adding [I] to [src]..."))
+		to_chat(user, span_notice("I start adding [I] to [src]..."))
 		if(do_after(user, 50, target=src))
 			W.use(5)
 			var/turf/T = get_turf(src)
@@ -125,9 +125,9 @@
 	. = ..()
 	if(.)
 		return
-	user.visible_message(span_notice("[user] starts to take down [src]..."), span_notice("You start to take down [src]..."))
+	user.visible_message(span_notice("[user] starts to take down [src]..."), span_notice("I start to take down [src]..."))
 	if(!has_buckled_mobs() && do_after(user, 80, target = src))
-		to_chat(user, span_notice("You take down [src]."))
+		to_chat(user, span_notice("I take down [src]."))
 		new /obj/item/stack/sheet/mineral/sandbags(src.loc)
 		qdel(src)
 		return
@@ -250,28 +250,28 @@
 						return
 					switch(chosen_wall)
 						if("Wooden Wall")
-							to_chat(user, span_notice("You start building a wooden wall..."))
+							to_chat(user, span_notice("I start building a wooden wall..."))
 							if(do_after(user, 100, target = src) && W.use(3))
 								var/turf/open/T = loc
 								T.ChangeTurf(/turf/closed/wall/f13/wood)
 								qdel(src)
 								return TRUE
 						if("Interior Wall")
-							to_chat(user, span_notice("You start building an interior wall..."))
+							to_chat(user, span_notice("I start building an interior wall..."))
 							if(do_after(user, 100, target = src) && W.use(3))
 								var/turf/open/T = loc
 								T.ChangeTurf(/turf/closed/wall/f13/wood/interior)
 								qdel(src)
 								return TRUE
 						if("House Wall")
-							to_chat(user, span_notice("You start building a house wall..."))
+							to_chat(user, span_notice("I start building a house wall..."))
 							if(do_after(user, 100, target = src) && W.use(3))
 								var/turf/open/T = loc
 								T.ChangeTurf(/turf/closed/wall/f13/wood/house/clean)
 								qdel(src)
 								return TRUE
 				else
-					to_chat(user, span_warning("You need atleast 3 wood to build a structure!"))
+					to_chat(user, span_warning("I need atleast 3 wood to build a structure!"))
 			else if(istype(I, /obj/item/stack/sheet/glass))
 				var/obj/item/stack/sheet/glass/G = I
 				if(G.amount >= 3)
@@ -284,21 +284,21 @@
 						return
 					switch(chosen_window)
 						if("House Window")
-							to_chat(user, span_notice("You start building a house window..."))
+							to_chat(user, span_notice("I start building a house window..."))
 							if(do_after(user, 100, target = src) && G.use(3))
 								var/turf/open/T = loc
 								new /obj/structure/window/fulltile/house(T)
 								qdel(src)
 								return TRUE
 						if("Wood Framed Window")
-							to_chat(user, span_notice("You start building a wood framed window..."))
+							to_chat(user, span_notice("I start building a wood framed window..."))
 							if(do_after(user, 100, target = src) && G.use(3))
 								var/turf/open/T = loc
 								new /obj/structure/window/fulltile/wood(T)
 								qdel(src)
 								return TRUE
 				else
-					to_chat(user, span_warning("You need at least 3 glass to build a structure!"))
+					to_chat(user, span_warning("I need at least 3 glass to build a structure!"))
 			else if(istype(I, /obj/item/stack/sheet/cloth))
 				var/obj/item/stack/sheet/cloth/C = I
 				if(C.amount >= 3)
@@ -311,23 +311,23 @@
 						return
 					switch(chosen_tent)
 						if("Tent Wall")
-							to_chat(user, span_notice("You start building a tent wall..."))
+							to_chat(user, span_notice("I start building a tent wall..."))
 							if(do_after(user, 100, target = src) && C.use(3))
 								var/turf/open/T = loc
 								T.ChangeTurf(/turf/closed/wall/f13/tentwall)
 								qdel(src)
 								return TRUE
 						if("Tent Flaps")
-							to_chat(user, span_notice("You start building tent flaps..."))
+							to_chat(user, span_notice("I start building tent flaps..."))
 							if(do_after(user, 100, target = src) && C.use(3))
 								var/turf/open/T = loc
 								new /obj/structure/simple_door/tent(T)
 								qdel(src)
 								return TRUE
 				else
-					to_chat(user, span_warning("You need at least 3 cloth to build a structure!"))
+					to_chat(user, span_warning("I need at least 3 cloth to build a structure!"))
 		else
-			to_chat(user, span_warning("You can only build the structure on a solid floor!"))
+			to_chat(user, span_warning("I can only build the structure on a solid floor!"))
 	else
 		return ..()
 
@@ -463,7 +463,7 @@
 	AddComponent(/datum/component/caltrop, 20, 30, 100, CALTROP_BYPASS_SHOES)
 
 /obj/structure/obstacle/barbedwire/wirecutter_act(mob/user, obj/item/tool)
-	user.visible_message(span_warning("[user] cuts apart [src]."), span_notice("You start to cut apart [src]."), "You hear cutting.")
+	user.visible_message(span_warning("[user] cuts apart [src]."), span_notice("I start to cut apart [src]."), "I hear cutting.")
 	if(tool.use_tool(src, user, 4 SECONDS, volume=50))
 		deconstruct(TRUE)
 		playsound(src.loc, 'sound/items/deconstruct.ogg', 50, 1)
@@ -625,7 +625,7 @@
 	
 /obj/effect/overlay/junk/wrench_act(mob/user, obj/item/tool)
 	if(tool.use_tool(src, user, 30, volume=100))
-		to_chat(user, span_notice("You dismantle the junk."))
+		to_chat(user, span_notice("I dismantle the junk."))
 		qdel(src)
 	return TRUE
 

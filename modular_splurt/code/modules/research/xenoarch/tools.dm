@@ -141,7 +141,7 @@
 		return
 	var/datum/export_report/ex = new
 	if(!do_after(user, 300, target=target))
-		to_chat(user,"You need to stand still to export items.")
+		to_chat(user,"I need to stand still to export items.")
 		return
 	export_item_and_contents(target, export_categories , dry_run = FALSE, external_report = ex)
 	var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_CAR)

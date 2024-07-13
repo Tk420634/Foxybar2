@@ -87,8 +87,8 @@
 	var/new_name = name
 	switch(notches)
 		if(1)
-			to_chat(user, span_notice("Your first kill - hopefully one of many. You scratch a notch into [src]'s blade."))
-			to_chat(user, span_warning("You feel your fallen foe's soul entering your blade, restoring your wounds!"))
+			to_chat(user, span_notice("My first kill - hopefully one of many. You scratch a notch into [src]'s blade."))
+			to_chat(user, span_warning("I feel your fallen foe's soul entering your blade, restoring your wounds!"))
 			new_name = "notched claymore"
 		if(2)
 			to_chat(user, span_notice("Another falls before you. Another soul fuses with your own. Another notch in the blade."))
@@ -273,7 +273,7 @@
 	if(creator)
 		var/datum/antagonist/bloodsucker/creator_bloodsucker = creator.has_antag_datum(ANTAG_DATUM_BLOODSUCKER)
 		if(!istype(creator_bloodsucker) || creator_bloodsucker.bloodsucker_level < BLOODSUCKER_LEVEL_TO_EMBRACE)
-			to_chat(creator, span_danger("Your blood is too thin to turn this corpse!"))
+			to_chat(creator, span_danger("My blood is too thin to turn this corpse!"))
 			return FALSE
 	return TRUE
 

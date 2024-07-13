@@ -22,7 +22,7 @@
 	if(closed)
 		return
 	if(H.IsSleeping())
-		to_chat(user, "You can't hypnotize [H] whilst they're asleep!")
+		to_chat(user, "I can't hypnotize [H] whilst they're asleep!")
 		return
 
 	user.visible_message("<span class='warning'>[user] begins to mesmerizingly wave [src] like a pendulum before [H]'s very eyes!</span>")

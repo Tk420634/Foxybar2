@@ -15,7 +15,7 @@
 	. = ..()
 	if(. == SUCCESSFUL_UNFASTEN)
 		user.visible_message(span_notice("[user.name] [anchored ? "fasten" : "unfasten"] [src]"), \
-		span_notice("You [anchored ? "fasten" : "unfasten"] [src]"))
+		span_notice("I [anchored ? "fasten" : "unfasten"] [src]"))
 		var/datum/component/plumbing/CP = GetComponent(/datum/component/plumbing)
 		if(anchored)
 			CP.enable()

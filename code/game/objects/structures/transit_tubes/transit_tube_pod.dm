@@ -30,7 +30,7 @@
 		if(!moving)
 			I.play_tool_sound(src)
 			if(contents.len)
-				user.visible_message("[user] empties \the [src].", span_notice("You empty \the [src]."))
+				user.visible_message("[user] empties \the [src].", span_notice("I empty \the [src]."))
 				empty_pod()
 			else
 				deconstruct(TRUE, user)
@@ -43,7 +43,7 @@
 		if(user)
 			location = user.loc
 			add_fingerprint(user)
-			user.visible_message("[user] removes [src].", span_notice("You remove [src]."))
+			user.visible_message("[user] removes [src].", span_notice("I remove [src]."))
 		var/obj/structure/c_transit_tube_pod/R = new/obj/structure/c_transit_tube_pod(location)
 		transfer_fingerprints_to(R)
 		R.setDir(dir)
@@ -69,9 +69,9 @@
 		empty_pod()
 		return
 	if(!moving)
-		to_chat(user, span_notice("You start trying to escape from the pod..."))
+		to_chat(user, span_notice("I start trying to escape from the pod..."))
 		if(do_after(user, 600, target = src))
-			to_chat(user, span_notice("You manage to open the pod."))
+			to_chat(user, span_notice("I manage to open the pod."))
 			empty_pod()
 
 /obj/structure/transit_tube_pod/proc/empty_pod(atom/location)

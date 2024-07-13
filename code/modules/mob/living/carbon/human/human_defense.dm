@@ -118,7 +118,7 @@
 		playsound(loc, user.dna.species.attack_sound, 25, 1, -1)
 		visible_message(span_danger("[user] [hulk_verb_continous] [src]!"), \
 						span_userdanger("[user] [hulk_verb_continous] you!"), null, COMBAT_MESSAGE_RANGE, null, user,
-						span_danger("You [hulk_verb_simple] [src]!"))
+						span_danger("I [hulk_verb_simple] [src]!"))
 		apply_damage(15, BRUTE, wound_bonus=10)
 		return 1
 
@@ -147,14 +147,14 @@
 			playsound(loc, 'sound/weapons/slash.ogg', 25, 1, -1)
 			visible_message(span_danger("[M] has disarmed [src]!"), \
 					span_userdanger("[M] has disarmed you!"), null, COMBAT_MESSAGE_RANGE, null, M,
-					span_danger("You have disarmed [src]!"))
+					span_danger("I have disarmed [src]!"))
 		else if(!M.client || prob(5)) // only natural monkeys get to stun reliably, (they only do it occasionaly)
 			playsound(loc, 'sound/weapons/pierce.ogg', 25, 1, -1)
 			DefaultCombatKnockdown(100)
 			log_combat(M, src, "tackled")
 			visible_message(span_danger("[M] has tackled down [src]!"), \
 				span_userdanger("[M] has tackled you down!"), null, COMBAT_MESSAGE_RANGE, null, M,
-				span_danger("You have tackled [src] down!"))
+				span_danger("I have tackled [src] down!"))
 
 	if(M.limb_destroyer)
 		dismembering_strike(M, affecting.body_zone)
@@ -177,7 +177,7 @@
 			playsound(loc, 'sound/weapons/slashmiss.ogg', 50, 1, -1)
 			visible_message(span_danger("[M] has lunged at [src]!"), \
 				span_userdanger("[M] has lunged at you!"), target = M, \
-				target_message = span_danger("You have lunged at [src]!"))
+				target_message = span_danger("I have lunged at [src]!"))
 			return 0
 		var/obj/item/bodypart/affecting = get_bodypart(ran_zone(M.zone_selected))
 		if(!affecting)
@@ -187,7 +187,7 @@
 		playsound(loc, 'sound/weapons/slice.ogg', 25, 1, -1)
 		visible_message(span_danger("[M] has slashed at [src]!"), \
 			span_userdanger("[M] has slashed at you!"), target = M, \
-			target_message = span_danger("You have slashed at [src]!"))
+			target_message = span_danger("I have slashed at [src]!"))
 		log_combat(M, src, "attacked")
 		if(!dismembering_strike(M, M.zone_selected)) //Dismemberment successful
 			return 1
@@ -199,14 +199,14 @@
 			playsound(loc, 'sound/weapons/slash.ogg', 25, 1, -1)
 			visible_message(span_danger("[M] has disarmed [src]!"), \
 					span_userdanger("[M] has disarmed you!"), target = M, \
-					target_message = span_danger("You have disarmed [src]!"))
+					target_message = span_danger("I have disarmed [src]!"))
 		else
 			playsound(loc, 'sound/weapons/pierce.ogg', 25, 1, -1)
 			DefaultCombatKnockdown(M.meleeKnockdownPower)
 			log_combat(M, src, "tackled")
 			visible_message(span_danger("[M] has tackled down [src]!"), \
 				span_userdanger("[M] has tackled you down!"), target = M, \
-				target_message = span_danger("You have tackled down [src]!"))
+				target_message = span_danger("I have tackled down [src]!"))
 
 /mob/living/carbon/human/attack_larva(mob/living/carbon/alien/larva/L)
 	. = ..()
@@ -259,7 +259,7 @@
 /mob/living/carbon/human/mech_melee_attack(obj/mecha/M)
 	if(M.occupant.a_intent == INTENT_HARM)
 		if(HAS_TRAIT(M.occupant, TRAIT_PACIFISM))
-			to_chat(M.occupant, span_warning("You don't want to harm other living beings!"))
+			to_chat(M.occupant, span_warning("I don't want to harm other living beings!"))
 			return
 		M.do_attack_animation(src)
 		if(M.damtype == "brute")
@@ -291,7 +291,7 @@
 
 		visible_message(span_danger("[M.name] has hit [src]!"), \
 						span_userdanger("[M.name] has hit you!"), null, COMBAT_MESSAGE_RANGE, target = M,
-						target_message = span_danger("You have hit [src]!"))
+						target_message = span_danger("I have hit [src]!"))
 		log_combat(M.occupant, src, "attacked", M, "(INTENT: [uppertext(M.occupant.a_intent)]) (DAMTYPE: [uppertext(M.damtype)])")
 
 	else
@@ -395,7 +395,7 @@
 		if(shock_damage * siemens_coeff >= 1 && prob(25))
 			var/obj/item/organ/heart/heart = getorganslot(ORGAN_SLOT_HEART)
 			if(heart.Restart() && stat == CONSCIOUS)
-				to_chat(src, span_notice("You feel your heart beating again!"))
+				to_chat(src, span_notice("I feel your heart beating again!"))
 	electrocution_animation(40)
 
 /mob/living/carbon/human/emp_act(severity)
@@ -409,7 +409,7 @@
 	for(var/obj/item/bodypart/L in src.bodyparts)
 		if(L.status == BODYPART_ROBOTIC)
 			if(!informed)
-				to_chat(src, span_userdanger("You feel a sharp pain as your robotic limbs overload."))
+				to_chat(src, span_userdanger("I feel a sharp pain as your robotic limbs overload."))
 				informed = TRUE
 			L.receive_damage(0,severity/10)
 			Stun(severity*2)
@@ -437,7 +437,7 @@
 				update_inv_neck()
 				update_inv_head()
 			else
-				to_chat(src, span_notice("Your [head_clothes.name] protects your head and face from the acid!"))
+				to_chat(src, span_notice("My [head_clothes.name] protects your head and face from the acid!"))
 		else
 			. = get_bodypart(BODY_ZONE_HEAD)
 			if(.)
@@ -458,7 +458,7 @@
 				update_inv_w_uniform()
 				update_inv_wear_suit()
 			else
-				to_chat(src, span_notice("Your [chest_clothes.name] protects your body from the acid!"))
+				to_chat(src, span_notice("My [chest_clothes.name] protects your body from the acid!"))
 		else
 			. = get_bodypart(BODY_ZONE_CHEST)
 			if(.)
@@ -490,7 +490,7 @@
 				update_inv_w_uniform()
 				update_inv_wear_suit()
 			else
-				to_chat(src, span_notice("Your [arm_clothes.name] protects your arms and hands from the acid!"))
+				to_chat(src, span_notice("My [arm_clothes.name] protects your arms and hands from the acid!"))
 		else
 			. = get_bodypart(BODY_ZONE_R_ARM)
 			if(.)
@@ -516,7 +516,7 @@
 				update_inv_w_uniform()
 				update_inv_wear_suit()
 			else
-				to_chat(src, span_notice("Your [leg_clothes.name] protects your legs and feet from the acid!"))
+				to_chat(src, span_notice("My [leg_clothes.name] protects your legs and feet from the acid!"))
 		else
 			. = get_bodypart(BODY_ZONE_R_LEG)
 			if(.)
@@ -577,14 +577,14 @@
 				for(var/datum/brain_trauma/mild/phobia/fear in traumas)
 					fear.RealityCheck()
 			if(has_status_effect(STATUS_EFFECT_CHOKINGSTRAND))
-				to_chat(src, span_notice("You attempt to remove the durathread strand from around your neck."))
+				to_chat(src, span_notice("I attempt to remove the durathread strand from around your neck."))
 				if(do_after(src, 35, null, src))
-					to_chat(src, span_notice("You succesfuly remove the durathread strand."))
+					to_chat(src, span_notice("I succesfuly remove the durathread strand."))
 					remove_status_effect(STATUS_EFFECT_CHOKINGSTRAND)
 				return
 			var/to_send = ""
 			visible_message("[src] examines [p_them()]self.", \
-				span_notice("You check yourself for injuries."))
+				span_notice("I check yourself for injuries."))
 
 			var/list/missing = list(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 			for(var/X in bodyparts)
@@ -658,7 +658,7 @@
 					to_chat(src, "\t [span_notice("It is stitched with [LB.current_suture.name]\s.")] <a href='?src=[REF(src)];remove_covering=[TRUE];suture=[TRUE];limb=[REF(LB)]' class='notice'>(Remove?)</a>")
 
 			for(var/t in missing)
-				to_send += span_boldannounce("Your [parse_zone(t)] is missing!")
+				to_send += span_boldannounce("My [parse_zone(t)] is missing!")
 
 			if(is_bleeding())
 				var/list/obj/item/bodypart/bleeding_limbs = list()
@@ -684,32 +684,32 @@
 				if(getStaminaLoss() > 30)
 					to_send += span_info("You're completely exhausted.\n")
 				else
-					to_send += span_info("You feel fatigued.\n")
+					to_send += span_info("I feel fatigued.\n")
 
 			switch(toxloss)
 				if(0 to 15)
-					to_send += span_notice("You feel fine. ")
+					to_send += span_notice("I feel fine. ")
 				if(15 to 25)
-					to_send += span_danger("You feel sick. ")
+					to_send += span_danger("I feel sick. ")
 				if(25 to 40)
-					to_send += span_danger("You feel nauseated. ")
+					to_send += span_danger("I feel nauseated. ")
 				if(40 to INFINITY)
-					to_send += span_danger("You feel very unwell! ")
+					to_send += span_danger("I feel very unwell! ")
 			if(HAS_TRAIT(src, TRAIT_SELF_AWARE))
-				to_send += toxloss ? span_danger("You have [toxloss] toxin damage. ") : span_notice("You have no toxin damage. ")
+				to_send += toxloss ? span_danger("I have [toxloss] toxin damage. ") : span_notice("I have no toxin damage. ")
 			to_send += "\n"
 			
 			switch(oxyloss)
 				if(0 to 10)
-					to_send += span_notice("You are breathing normally. ")
+					to_send += span_notice("I am breathing normally. ")
 				if(10 to 15)
-					to_send += span_danger("You feel lightheaded. ")
+					to_send += span_danger("I feel lightheaded. ")
 				if(15 to 30)
-					to_send += span_danger("Your thinking is clouded and distant. ")
+					to_send += span_danger("My thinking is clouded and distant. ")
 				if(30 to INFINITY)
 					to_send += span_danger("You're choking! ")
 			if(HAS_TRAIT(src, TRAIT_SELF_AWARE))
-				to_send += oxyloss ? span_danger("You have [oxyloss] suffocation damage. ") : span_notice("You have no suffocation damage. ")
+				to_send += oxyloss ? span_danger("I have [oxyloss] suffocation damage. ") : span_notice("I have no suffocation damage. ")
 			to_send += "\n"
 			
 			switch(nutrition)
@@ -720,9 +720,9 @@
 				if(NUTRITION_LEVEL_FED to NUTRITION_LEVEL_WELL_FED)
 					to_send += span_info("You're not hungry.\n")
 				if(NUTRITION_LEVEL_HUNGRY to NUTRITION_LEVEL_FED)
-					to_send += span_info("You could use a bite to eat.\n")
+					to_send += span_info("I could use a bite to eat.\n")
 				if(NUTRITION_LEVEL_STARVING to NUTRITION_LEVEL_HUNGRY)
-					to_send += span_info("You feel quite hungry.\n")
+					to_send += span_info("I feel quite hungry.\n")
 				if(0 to NUTRITION_LEVEL_STARVING)
 					to_send += span_danger("You're starving!\n")
 
@@ -769,10 +769,10 @@
 						damaged_plural = TRUE
 				for(var/D in damaged)
 					damaged_message += D
-				to_chat(src, span_info("Your [damaged_message] [damaged_plural ? "are" : "is"] hurt."))
+				to_chat(src, span_info("My [damaged_message] [damaged_plural ? "are" : "is"] hurt."))
 
 			if(mob_quirks.len)
-				to_send += span_notice("You have these quirks: [get_trait_string()].")
+				to_send += span_notice("I have these quirks: [get_trait_string()].")
 
 			to_chat(src, to_send)
 		else
@@ -788,7 +788,7 @@
 		return
 
 	visible_message(span_notice("[src] examines [p_them()]self."), \
-		span_notice("You check yourself for injuries."))
+		span_notice("I check yourself for injuries."))
 
 	var/list/missing = list(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 

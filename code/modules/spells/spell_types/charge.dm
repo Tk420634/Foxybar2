@@ -26,9 +26,9 @@
 				if(M.mind)
 					for(var/obj/effect/proc_holder/spell/S in M.mind.spell_list)
 						S.charge_counter = S.charge_max
-				to_chat(M, span_notice("You feel raw magic flowing through you. It feels good!"))
+				to_chat(M, span_notice("I feel raw magic flowing through you. It feels good!"))
 			else
-				to_chat(M, span_notice("You feel very strange for a moment, but then it passes."))
+				to_chat(M, span_notice("I feel very strange for a moment, but then it passes."))
 				burnt_out = 1
 			charged_item = M
 			break
@@ -95,7 +95,7 @@
 						charged_item = item
 						break
 		if(!charged_item)
-			to_chat(L, span_notice("You feel magical power surging through your hands, but the feeling rapidly fades..."))
+			to_chat(L, span_notice("I feel magical power surging through your hands, but the feeling rapidly fades..."))
 		else if(burnt_out)
 			to_chat(L, span_caution("[charged_item] doesn't seem to be reacting to the spell..."))
 		else

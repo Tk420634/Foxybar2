@@ -9,8 +9,8 @@
 	shape = DEF_VAGINA_SHAPE
 	genital_flags = CAN_MASTURBATE_WITH|GENITAL_CAN_AROUSE|GENITAL_CAN_RECOLOR|GENITAL_CAN_RESHAPE
 	masturbation_verb = "finger"
-	arousal_verb = "You feel wetness on your crotch"
-	unarousal_verb = "You no longer feel wet"
+	arousal_verb = "I feel wetness on your crotch"
+	unarousal_verb = "I no longer feel wet"
 	fluid_transfer_factor = 0.1 //Yes, some amount is exposed to you, go get your AIDS
 	layer_index = VAGINA_LAYER_INDEX
 	var/cap_length = 8//D   E   P   T   H (cap = capacity)
@@ -65,7 +65,7 @@
 	else
 		details += "seems to be dry."
 
-	desc = "You see a vagina. [details]"
+	desc = "I see a vagina. [details]"
 
 	if(ishuman(owner) && owner?.dna?.species?.use_skintones) // Check before recasting type, although someone fucked up if you're not human AND have use_skintones somehow...
 		var/mob/living/carbon/human/H = owner // only human mobs have skin_tone, which we need.
@@ -100,11 +100,11 @@
 	return "Just fine"
 
 /obj/item/organ/genital/vagina/on_arouse()
-	owner?.show_message(span_userlove("You feel a warm slickness down there."))
+	owner?.show_message(span_userlove("I feel a warm slickness down there."))
 	. = ..()
 
 /obj/item/organ/genital/vagina/on_unarouse()
-	owner?.show_message(span_userlove("You feel a dull dryness down there."))
+	owner?.show_message(span_userlove("I feel a dull dryness down there."))
 	. = ..()
 
 /// Returns its respective sprite accessory from the global list (full of init'd types, hopefully)

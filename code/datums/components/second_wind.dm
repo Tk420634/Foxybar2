@@ -34,16 +34,16 @@
 	third_winded = FALSE
 	lives_left = 1
 	COOLDOWN_RESET(src, second_wind_cooldown)
-	to_chat(played, span_greentext("You feel a sudden rush of energy! Seems like you've been given a second wind for the next time you die!"))
+	to_chat(played, span_greentext("I feel a sudden rush of energy! Seems like you've been given a second wind for the next time you die!"))
 
 /datum/component/second_wind/proc/attempt_revive()
 	BODY_PLAYED
 	var/error_code = can_revive()
 	if(CHECK_BITFIELD(error_code, SW_ERROR_NO_BODY))
-		to_chat(played, span_alert("You don't have a body to revive!"))
+		to_chat(played, span_alert("I don't have a body to revive!"))
 		return
 	if(CHECK_BITFIELD(error_code, SW_ERROR_QDELLED_BODY))
-		to_chat(played, span_alert("Your body is in the trash where it belongs! (it has been deleted, sorry!)"))
+		to_chat(played, span_alert("My body is in the trash where it belongs! (it has been deleted, sorry!)"))
 		return
 	if(CHECK_BITFIELD(error_code, SW_ERROR_THIRD_WINDED))
 		to_chat(played, span_userdanger("You've already exerted yourself far beyond your limits! You'll need someone else to revive you!"))
@@ -61,10 +61,10 @@
 		to_chat(played, span_alert("Someone's already in your body!"))
 		return
 	if(CHECK_BITFIELD(error_code, SW_ERROR_CUFFED))
-		to_chat(played, span_alert("Your body is cuffed! You can't revive yourself!"))
+		to_chat(played, span_alert("My body is cuffed! You can't revive yourself!"))
 		return
 	if(CHECK_BITFIELD(error_code, SW_ERROR_NO_LIVES))
-		to_chat(played, span_alert("You don't have a Second Wind! You could use your Third Wind though..."))
+		to_chat(played, span_alert("I don't have a Second Wind! You could use your Third Wind though..."))
 		pls_confirm_third_wind()
 		return
 	/// Okay, we're good to revive!

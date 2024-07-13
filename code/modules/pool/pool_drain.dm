@@ -96,7 +96,7 @@
 								to_chat(H, span_danger("You're caught in the drain!"))
 							else
 								H.apply_damage(2.5, BRUTE, pick(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)) //drain should only target the legs
-								to_chat(H, span_danger("Your legs are caught in the drain!"))
+								to_chat(H, span_danger("My legs are caught in the drain!"))
 			else
 				for(var/turf/open/pool/P in controller.linked_turfs)
 					P.filled = FALSE
@@ -138,7 +138,7 @@
 /obj/machinery/pool/filter/emag_act(mob/living/user)
 	. = ..()
 	if(!(obj_flags & EMAGGED))
-		to_chat(user, span_warning("You disable the [src]'s shark filter! Run!"))
+		to_chat(user, span_warning("I disable the [src]'s shark filter! Run!"))
 		obj_flags |= EMAGGED
 		do_sparks(5, TRUE, src)
 		icon_state = "filter_b"
@@ -157,6 +157,6 @@
 			new /mob/living/simple_animal/hostile/shark/laser(loc)
 
 /obj/machinery/pool/filter/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
-	to_chat(user, "You search the filter.")
+	to_chat(user, "I search the filter.")
 	for(var/obj/O in contents)
 		O.forceMove(loc)

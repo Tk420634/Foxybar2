@@ -67,7 +67,7 @@ Setup map
 				W.play_tool_sound(src, 75)
 				anchored = TRUE
 				user.visible_message("[user.name] secures the [name] to the floor.", \
-					"You secure the external bolts.")
+					"I secure the external bolts.")
 				construction_state = PA_CONSTRUCTION_UNWIRED
 				did_something = TRUE
 		if(PA_CONSTRUCTION_UNWIRED)
@@ -75,30 +75,30 @@ Setup map
 				W.play_tool_sound(src, 75)
 				anchored = FALSE
 				user.visible_message("[user.name] detaches the [name] from the floor.", \
-					"You remove the external bolts.")
+					"I remove the external bolts.")
 				construction_state = PA_CONSTRUCTION_UNSECURED
 				did_something = TRUE
 			else if(istype(W, /obj/item/stack/cable_coil))
 				if(W.use_tool(src, user, 0, 1))
 					user.visible_message("[user.name] adds wires to the [name].", \
-						"You add some wires.")
+						"I add some wires.")
 					construction_state = PA_CONSTRUCTION_PANEL_OPEN
 					did_something = TRUE
 		if(PA_CONSTRUCTION_PANEL_OPEN)
 			if(istype(W, /obj/item/wirecutters))//TODO:Shock user if its on?
 				user.visible_message("[user.name] removes some wires from the [name].", \
-					"You remove some wires.")
+					"I remove some wires.")
 				construction_state = PA_CONSTRUCTION_UNWIRED
 				did_something = TRUE
 			else if(istype(W, /obj/item/screwdriver))
 				user.visible_message("[user.name] closes the [name]'s access panel.", \
-					"You close the access panel.")
+					"I close the access panel.")
 				construction_state = PA_CONSTRUCTION_COMPLETE
 				did_something = TRUE
 		if(PA_CONSTRUCTION_COMPLETE)
 			if(istype(W, /obj/item/screwdriver))
 				user.visible_message("[user.name] opens the [name]'s access panel.", \
-					"You open the access panel.")
+					"I open the access panel.")
 				construction_state = PA_CONSTRUCTION_PANEL_OPEN
 				did_something = TRUE
 

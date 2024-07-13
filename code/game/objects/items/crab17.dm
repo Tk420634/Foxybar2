@@ -12,7 +12,7 @@
 		to_chat(user, span_warning("This device is too advanced for you!"))
 		return
 	if(dumped)
-		to_chat(user, span_warning("You already activated Protocol CRAB-17."))
+		to_chat(user, span_warning("I already activated Protocol CRAB-17."))
 		return FALSE
 	if(alert(user, "Are you sure you want to crash this market with no survivors?", "Protocol CRAB-17", "Yes", "No") == "Yes")
 		if(dumped || QDELETED(src)) //Prevents fuckers from cheesing alert
@@ -63,7 +63,7 @@
 		if(do_after(user, 40, target = src))
 			if(!card.registered_account.being_dumped)
 				return
-			to_chat(user, span_warning("You quickly cash out your funds to a more secure banking location. Funds are safu.")) // This is a reference and not a typo
+			to_chat(user, span_warning("I quickly cash out your funds to a more secure banking location. Funds are safu.")) // This is a reference and not a typo
 			card.registered_account.being_dumped = FALSE
 			card.registered_account.withdrawDelay = 0
 			if(check_if_finished())
@@ -170,7 +170,7 @@
 		var/datum/bank_account/account = bogdanoff.get_bank_account()
 		if (account) // get_bank_account() may return FALSE
 			account.transfer_money(B, amount)
-			B.bank_card_talk("You have lost [percentage_lost * 100]% of your funds! A spacecoin credit deposit machine is located at: [get_area(src)].")
+			B.bank_card_talk("I have lost [percentage_lost * 100]% of your funds! A spacecoin credit deposit machine is located at: [get_area(src)].")
 	addtimer(CALLBACK(src,PROC_REF(dump)), 150) //Drain every 15 seconds
 
 /obj/structure/checkoutmachine/process()

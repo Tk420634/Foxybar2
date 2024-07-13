@@ -26,4 +26,4 @@
 		var/atom/A = parent
 		A.add_atom_colour(colour, FIXED_COLOUR_PRIORITY)
 		playsound(spraycan, 'sound/effects/spray.ogg', 5, 1, 5)
-		to_chat(user, span_notice("You spray [spraycan] on [A], painting it."))
+		to_chat(user, span_notice("I spray [spraycan] on [A], painting it."))

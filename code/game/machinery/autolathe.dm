@@ -257,7 +257,7 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 
 			if(materials.has_materials(materials_used))
 				busy = TRUE
-				to_chat(usr, span_notice("You print [multiplier] item(s) from the [src]"))
+				to_chat(usr, span_notice("I print [multiplier] item(s) from the [src]"))
 				use_power(power)
 				icon_state = "autolathe_n"
 				var/time = is_stack ? 32 : (32 * coeff * multiplier) ** 0.8
@@ -297,8 +297,8 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 
 	if(istype(O, /obj/item/disk/design_disk))
 		user.visible_message("[user] begins to load \the [O] in \the [src]...",
-			"You begin to load a design from \the [O]...",
-			"You hear the chatter of a floppy drive.")
+			"I begin to load a design from \the [O]...",
+			"I hear the chatter of a floppy drive.")
 		busy = TRUE
 		var/obj/item/disk/design_disk/D = O
 		if(do_after(user, 14.4, target = src))
@@ -462,16 +462,16 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 	else if(isballistic(gunammo))
 		gunammo = load_from_ballistic(user, gunammo)
 		if(!istype(gunammo)) // this one is special, cus it needs to shift focus to the magazine if it popped one out
-			to_chat(user, span_warning("You can't load \the [gunammo] into \the [src]!"))
+			to_chat(user, span_warning("I can't load \the [gunammo] into \the [src]!"))
 			return FALSE
 	else if(isammobox(gunammo) && !load_from_ammo_box(user, gunammo))
-		to_chat(user, span_warning("You can't load \the [gunammo] into \the [src]!"))
+		to_chat(user, span_warning("I can't load \the [gunammo] into \the [src]!"))
 		return FALSE
 	else if(istype(gunammo, /obj/item/storage/bag/casings) && !load_from_bag(user, gunammo))
-		to_chat(user, span_warning("You can't load anything in \the [gunammo] into \the [src]!"))
+		to_chat(user, span_warning("I can't load anything in \the [gunammo] into \the [src]!"))
 		return FALSE
 	// else if(istype(gunammo, /obj/item/gun/energy) && !load_from_energy(user, gunammo))
-	// 	to_chat(user, span_warning("You can't load \the [gunammo] into \the [src]!"))
+	// 	to_chat(user, span_warning("I can't load \the [gunammo] into \the [src]!"))
 	// 	return FALSE // screw energy guns
 	/// if we're here, we loaded something, so lets queue up another cycle
 	addtimer(CALLBACK(src,PROC_REF(gun_loop), user, gunammo), 0.1 SECONDS)
@@ -589,9 +589,9 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 		return FALSE
 	if(time > 0)
 		if(!silent)
-			to_chat(user, span_notice("You start loading \the [item] into \the [src]."))
+			to_chat(user, span_notice("I start loading \the [item] into \the [src]."))
 		if(!do_after(user, time, TRUE, src, allow_movement = FALSE, stay_close = TRUE, public_progbar = TRUE))
-			to_chat(user, span_alert("You were interrupted!"))
+			to_chat(user, span_alert("I were interrupted!"))
 			return FALSE
 	if(SEND_SIGNAL(src, COMSIG_PARENT_FORCEFEED, item, user, TRUE, silent) == TRUE)
 		update_record(item)
@@ -751,7 +751,7 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 			var/obj/item/gun/ballistic/gun_thing = O
 			if(!gun_thing.magazine)
 				if(!do_after(user, 2 SECONDS, target = src))
-					to_chat(user, span_notice("You stop dumping \the [gun_thing] into \the [src]."))
+					to_chat(user, span_notice("I stop dumping \the [gun_thing] into \the [src]."))
 					return
 				return ..()
 			if(pre_insert_check(user, O))
@@ -759,22 +759,22 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 			return */
 	if(panel_open && accepts_books)
 		if(!simple && istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_one))
-			to_chat(user, span_notice("You upgrade [src] with simple ammunition schematics."))
+			to_chat(user, span_notice("I upgrade [src] with simple ammunition schematics."))
 			simple = TRUE
 			qdel(O)
 			return
 		if(!basic && istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_two))
-			to_chat(user, span_notice("You upgrade [src] with basic ammunition schematics."))
+			to_chat(user, span_notice("I upgrade [src] with basic ammunition schematics."))
 			basic = TRUE
 			qdel(O)
 			return
 		else if(!intermediate && istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_three))
-			to_chat(user, span_notice("You upgrade [src] with intermediate ammunition schematics."))
+			to_chat(user, span_notice("I upgrade [src] with intermediate ammunition schematics."))
 			intermediate = TRUE
 			qdel(O)
 			return
 		else if(!advanced && istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_four))
-			to_chat(user, span_notice("You upgrade [src] with advanced ammunition schematics."))
+			to_chat(user, span_notice("I upgrade [src] with advanced ammunition schematics."))
 			advanced = TRUE
 			qdel(O)
 			return
@@ -801,12 +801,12 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 	if(INTERACTING_WITH(user, src))
 		return FALSE
 	if(!do_after(user, 2 SECONDS, target = src))
-		to_chat(user, span_notice("You stop dumping \the [stuff_holder] into \the [src]."))
+		to_chat(user, span_notice("I stop dumping \the [stuff_holder] into \the [src]."))
 		return FALSE
 	// if(!length(stuff_holder.contents))
 	// 	to_chat(user, span_warning("There's nothing in \the [stuff_holder] to load into \the [src]!"))
 	// 	return FALSE
-	to_chat(user, span_notice("You start dumping \the [stuff_holder] into \the [src]."))
+	to_chat(user, span_notice("I start dumping \the [stuff_holder] into \the [src]."))
 	return TRUE
 
 /obj/machinery/autolathe/ammo/proc/insert_bullets_from_box(mob/user, obj/item/ammo_box/ammobox)
@@ -821,14 +821,14 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 			if(AUTOLATHE_SKIP_INSERTING)
 				continue
 			if(AUTOLATHE_STOP_INSERTING)
-				to_chat(user, span_warning("You can't fit any more in \the [src]!"))
+				to_chat(user, span_warning("I can't fit any more in \the [src]!"))
 				return FALSE
 		ammobox.stored_ammo -= casing
 		qdel(casing)
 		count++
 		stoplag()
 	if(count > 0)
-		to_chat(user, span_notice("You insert [count] casing\s into \the [src]."))
+		to_chat(user, span_notice("I insert [count] casing\s into \the [src]."))
 	else if(ammobox.stored_ammo)
 		to_chat(user, span_warning("There aren't any casings in \the [ammobox] to recycle!"))
 	else
@@ -853,12 +853,12 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 	mag.forceMove(get_turf(mag))
 	switch(insert_thing(mag, null, mats))
 		if(AUTOLATHE_SKIP_INSERTING)
-			to_chat(user, span_warning("You can't put that in \the [src]!"))
+			to_chat(user, span_warning("I can't put that in \the [src]!"))
 			return FALSE
 		if(AUTOLATHE_STOP_INSERTING)
-			to_chat(user, span_warning("You can't fit any more in \the [src]!"))
+			to_chat(user, span_warning("I can't fit any more in \the [src]!"))
 			return FALSE
-	to_chat(user, span_notice("You insert [mag] into \the [src]."))
+	to_chat(user, span_notice("I insert [mag] into \the [src]."))
 	QDEL_NULL(gun_thing.magazine)
 	return TRUE
 
@@ -871,16 +871,16 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 	if(!length(casings_bag.contents))
 		to_chat(user, span_warning("There's nothing in \the [casings_bag] to load into \the [src]!"))
 		return
-	to_chat(user, span_notice("You start dumping \the [casings_bag] into \the [src]."))
+	to_chat(user, span_notice("I start dumping \the [casings_bag] into \the [src]."))
 	if(!do_after(user, 2 SECONDS, target = src))
-		to_chat(user, span_notice("You stop dumping \the [casings_bag] into \the [src]."))
+		to_chat(user, span_notice("I stop dumping \the [casings_bag] into \the [src]."))
 		return
 	for(var/obj/item/ammo_casing/casing in casings_bag.contents)
 		var/mat_amount = mats.get_item_material_amount(casing)
 		if(!mat_amount)
 			continue
 		if(!mats.has_space(mat_amount))
-			to_chat(user, span_warning("You can't fit any more in \the [src]!"))
+			to_chat(user, span_warning("I can't fit any more in \the [src]!"))
 			return
 		if(!SEND_SIGNAL(casings_bag, COMSIG_TRY_STORAGE_TAKE, casing, src, FALSE, casing.loc, null))
 			continue
@@ -892,7 +892,7 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 		count++
 		stoplag()
 	if(count > 0)
-		to_chat(user, span_notice("You insert [count] casing\s into \the [src]."))
+		to_chat(user, span_notice("I insert [count] casing\s into \the [src]."))
 	else
 		to_chat(user, span_warning("There aren't any casings in \the [O] to recycle!"))
  */
@@ -1041,7 +1041,7 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 
 /obj/machinery/autolathe/ammo/improvised/examine(mob/user)
 	. += ..()
-	. += span_notice("You can disassemble this thing by [span_notice("Ctrl-Shift Clicking")] it, or using just about any [span_notice("tool")] on it.")
+	. += span_notice("I can disassemble this thing by [span_notice("Ctrl-Shift Clicking")] it, or using just about any [span_notice("tool")] on it.")
 
 /obj/machinery/autolathe/ammo/improvised/proc/tableize(obj/structure/table/T)
 	icon_state_base = "autolathe_tabletop"
@@ -1077,9 +1077,9 @@ GLOBAL_VAR_INIT(lathe_reports_done, 0)
 	if(!user.Adjacent(src))
 		return
 	if(!do_after(user, 2 SECONDS, TRUE, src, allow_movement = TRUE))
-		to_chat(user, span_notice("You stop taking apart \the [src]."))
+		to_chat(user, span_notice("I stop taking apart \the [src]."))
 		return
-	to_chat(user, span_notice("You take apart \the [src]!"))
+	to_chat(user, span_notice("I take apart \the [src]!"))
 	self_destruct(TRUE)
 
 /obj/machinery/autolathe/ammo/improvised/deconstruct(disassembled = TRUE)

@@ -158,7 +158,7 @@
 		forceMove(tongs)
 		tongs.sliver = src
 		tongs.update_icon()
-		to_chat(user, span_notice("You carefully pick up [src] with [tongs]."))
+		to_chat(user, span_notice("I carefully pick up [src] with [tongs]."))
 	else if(istype(W, /obj/item/scalpel/supermatter) || istype(W, /obj/item/nuke_core_container/supermatter/)) // we don't want it to dust
 		return
 	else
@@ -173,7 +173,7 @@
 	if(!iscarbon(user))
 		return FALSE
 	var/mob/ded = user
-	to_chat(user, span_warning("You reach for the supermatter sliver with your hands. That was dumb."))
+	to_chat(user, span_warning("I reach for the supermatter sliver with your hands. That was dumb."))
 	radiation_pulse(user, 500, 2)
 	playsound(get_turf(user), 'sound/effects/supermatter.ogg', 50, 1)
 	ded.dust()
@@ -285,7 +285,7 @@
 		qdel(AM)
 	if (user)
 		user.visible_message(span_danger("As [user] touches [AM] with \a [src], silence fills the room..."),\
-			span_userdanger("You touch [AM] with [src], and everything suddenly goes silent.</span>\n<span class='notice'>[AM] and [sliver] flash into dust, and soon as you can register this, you do as well."),\
+			span_userdanger("I touch [AM] with [src], and everything suddenly goes silent.</span>\n<span class='notice'>[AM] and [sliver] flash into dust, and soon as you can register this, you do as well."),\
 			span_italic("Everything suddenly goes silent."))
 		user.dust()
 	radiation_pulse(src, 500, 2)

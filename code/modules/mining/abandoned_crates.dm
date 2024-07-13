@@ -152,7 +152,7 @@
 				add_overlay("securecrateg")
 				tamperproof = 0 // set explosion chance to zero, so we dont accidently hit it with a multitool and instantly die
 			else if(!input || !sanitycheck || length(sanitised) != codelen)
-				to_chat(user, span_notice("You leave the crate alone."))
+				to_chat(user, span_notice("I leave the crate alone."))
 			else
 				to_chat(user, span_warning("A red light flashes."))
 				lastattempt = input

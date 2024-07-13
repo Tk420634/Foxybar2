@@ -114,57 +114,57 @@ Behavior that's still missing from this component that original food items had t
 		var/eatverb = pick(eatverbs)
 		if(junkiness && eater.satiety < -150 && eater.nutrition > NUTRITION_LEVEL_STARVING + 50)
 			if(HAS_TRAIT(eater, TRAIT_VORACIOUS))
-				to_chat(eater, span_notice("You happily choke down yet more junk food!"))
+				to_chat(eater, span_notice("I happily choke down yet more junk food!"))
 				eater.adjust_disgust(-1)
 			else
-				to_chat(eater, span_danger("You feel sick as you choke down yet more junk food!"))
+				to_chat(eater, span_danger("I feel sick as you choke down yet more junk food!"))
 				eater.adjust_disgust(1)
 		switch(fullness)
 			if(-INFINITY to 50)
 				if(HAS_TRAIT(eater, TRAIT_VORACIOUS))
 					eater.visible_message(
 						span_notice("[eater] ravenously [eatverb]s \the [parent], gobbling it down!"), 
-						span_notice("You ravenously [eatverb] \the [parent], gobbling it down!"))
+						span_notice("I ravenously [eatverb] \the [parent], gobbling it down!"))
 				else
 					eater.visible_message(
 						span_notice("[eater] hungrily [eatverb]s \the [parent], gobbling it down!"), 
-						span_notice("You hungrily [eatverb] \the [parent], gobbling it down!"))
+						span_notice("I hungrily [eatverb] \the [parent], gobbling it down!"))
 			if(50 to 200)
 				if(HAS_TRAIT(eater, TRAIT_VORACIOUS))
 					eater.visible_message(
 						span_notice("[eater] ravenously [eatverb]s \the [parent]!"), 
-						span_notice("You ravenously [eatverb] \the [parent]!"))
+						span_notice("I ravenously [eatverb] \the [parent]!"))
 				else
 					eater.visible_message(
 						span_notice("[eater] hungrily [eatverb]s \the [parent]."), 
-						span_notice("You hungrily [eatverb] \the [parent]."))
+						span_notice("I hungrily [eatverb] \the [parent]."))
 			if(200 to 500)
 				if(HAS_TRAIT(eater, TRAIT_VORACIOUS))
 					eater.visible_message(
 						span_notice("[eater] vigorously [eatverb]s \the [parent]!"), 
-						span_notice("You vigorously [eatverb] \the [parent]!"))
+						span_notice("I vigorously [eatverb] \the [parent]!"))
 				else
 					eater.visible_message(
 						span_notice("[eater] [eatverb]s \the [parent]."), 
-						span_notice("You [eatverb] \the [parent]."))
+						span_notice("I [eatverb] \the [parent]."))
 			if(500 to 650)
 				if(HAS_TRAIT(eater, TRAIT_VORACIOUS))
 					eater.visible_message(
 						span_notice("[eater] gluttonously [eatverb]s \the [parent]!"), 
-						span_notice("You gluttonously [eatverb] \the [parent]!"))
+						span_notice("I gluttonously [eatverb] \the [parent]!"))
 				else
 					eater.visible_message(
 						span_notice("[eater] unwillingly [eatverb]s \the [parent]."), 
-						span_notice("You unwillingly [eatverb] \the [parent]."))
+						span_notice("I unwillingly [eatverb] \the [parent]."))
 			if(650 to INFINITY)
 				if(HAS_TRAIT(eater, TRAIT_VORACIOUS))
 					eater.visible_message(
 						span_notice("[eater] gluttonously [eatverb]s \the [parent], cramming it down [eater.p_their()] throat!"), 
-						span_notice("You gluttonously [eatverb] \the [parent], cramming it down your throat!"))
+						span_notice("I gluttonously [eatverb] \the [parent], cramming it down your throat!"))
 				else
 					eater.visible_message(
 						span_warning("[eater] cannot force any more of \the [parent] to go down [eater.p_their()] throat!"), 
-						span_warning("You cannot force any more of \the [parent] to go down your throat!"))
+						span_warning("I cannot force any more of \the [parent] to go down your throat!"))
 					return
 	else //If you're feeding it to someone else.
 		if(isbrain(eater))
@@ -226,7 +226,7 @@ Behavior that's still missing from this component that original food items had t
 		covered = "mask"
 	if(covered)
 		var/who = (isnull(feeder) || eater == feeder) ? "your" : "[eater.p_their()]"
-		to_chat(feeder, span_warning("You have to remove [who] [covered] first!"))
+		to_chat(feeder, span_warning("I have to remove [who] [covered] first!"))
 		return FALSE
 	return TRUE
 
@@ -238,7 +238,7 @@ Behavior that's still missing from this component that original food items had t
 		return FALSE
 	var/mob/living/carbon/human/H = M
 	if(HAS_TRAIT(H, TRAIT_AGEUSIA) && foodtypes & H.dna.species.toxic_food)
-		to_chat(H, span_warning("You don't feel so good..."))
+		to_chat(H, span_warning("I don't feel so good..."))
 		H.adjust_disgust(25 + 30 * fraction)
 	else
 		if(foodtypes & H.dna.species.toxic_food)

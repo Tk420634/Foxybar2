@@ -57,7 +57,7 @@
 		if(RECOGNIZER_MODE)
 			recorded = speaker.GetVoice()
 			listening = FALSE
-			say("Your voice pattern is saved.", language = languages)
+			say("My voice pattern is saved.", language = languages)
 		if(VOICE_SENSOR_MODE)
 			if(length(raw_message))
 				addtimer(CALLBACK(src,PROC_REF(pulse), 0), 10)
@@ -81,7 +81,7 @@
 /obj/item/assembly/voice/multitool_act(mob/living/user, obj/item/I)
 	mode %= modes.len
 	mode++
-	to_chat(user, span_notice("You set [src] into [modes[mode]] mode."))
+	to_chat(user, span_notice("I set [src] into [modes[mode]] mode."))
 	listening = FALSE
 	recorded = ""
 	return TRUE

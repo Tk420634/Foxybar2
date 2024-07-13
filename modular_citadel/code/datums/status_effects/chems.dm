@@ -78,7 +78,7 @@
 	set name = "Toggle Lewd Hypno"
 	set desc = "Allows you to toggle if you'd like lewd flavour messages for hypno features, such as MKUltra."
 	client.prefs.cit_toggles ^= HYPNO
-	to_chat(usr, "You [((client.prefs.cit_toggles & HYPNO) ?"will":"no longer")] receive lewd flavour messages for hypno.")
+	to_chat(usr, "I [((client.prefs.cit_toggles & HYPNO) ?"will":"no longer")] receive lewd flavour messages for hypno.")
 
 /datum/status_effect/chem/enthrall
 	id = "enthrall"
@@ -190,12 +190,12 @@
 				phase = -1
 				to_chat(owner, span_warning("<i>You break free of the influence in your mind, your thoughts suddenly turning lucid!</i>"))
 				if(DistApart < 10)
-					to_chat(master, span_warning("[(lewd?"Your pet":"Your thrall")] seems to have broken free of your enthrallment!</i>"))
+					to_chat(master, span_warning("[(lewd?"My pet":"My thrall")] seems to have broken free of your enthrallment!</i>"))
 				SSblackbox.record_feedback("tally", "fermi_chem", 1, "Thralls broken free")
 				owner.remove_status_effect(src) //If resisted in phase 1, effect is removed.
 			if(prob(10))
 				if(lewd)
-					to_chat(owner, "<span class='small velvet'><i>[pick("It feels so good to listen to [master].", "You can't keep your eyes off [master].", "[master]'s voice is making you feel so sleepy.",  "You feel so comfortable with [master]", "[master] is so dominant, it feels right to obey them.")].</b></span>")
+					to_chat(owner, "<span class='small velvet'><i>[pick("It feels so good to listen to [master].", "I can't keep your eyes off [master].", "[master]'s voice is making you feel so sleepy.",  "I feel so comfortable with [master]", "[master] is so dominant, it feels right to obey them.")].</b></span>")
 		if (2) //partially enthralled
 			if(enthrallTally > 200)
 				phase += 1
@@ -217,7 +217,7 @@
 				resistGrowth = 0
 				to_chat(owner, span_notice("<i>You manage to shake some of the effects from your addled mind, however you can still feel yourself drawn towards [master].</i>"))
 			if(lewd && prob(10))
-				to_chat(owner, "<span class='velvet'><i>[pick("It feels so good to listen to [enthrallGender].", "You can't keep your eyes off [enthrallGender].", "[enthrallGender]'s voice is making you feel so sleepy.",  "You feel so comfortable with [enthrallGender]", "[enthrallGender] is so dominant, it feels right to obey them.")].</i></span>")
+				to_chat(owner, "<span class='velvet'><i>[pick("It feels so good to listen to [enthrallGender].", "I can't keep your eyes off [enthrallGender].", "[enthrallGender]'s voice is making you feel so sleepy.",  "I feel so comfortable with [enthrallGender]", "[enthrallGender] is so dominant, it feels right to obey them.")].</i></span>")
 		if (3)//fully entranced
 			if ((resistanceTally >= 200 && withdrawalTick >= 150) || (HAS_TRAIT(M, TRAIT_MINDSHIELD) && (resistanceTally >= 100)))
 				enthrallTally = 0
@@ -306,7 +306,7 @@
 			if(66)
 				SEND_SIGNAL(M, COMSIG_CLEAR_MOOD_EVENT, "EnthMissing1")
 				var/message = "[(lewd?"I feel so lost in this complicated world without [enthrallGender]..":"I have to return to [master]!")]"
-				to_chat(owner, span_warning("You start to feel really angry about how you're not with [(lewd?"your [enthrallGender]":"[master]")]!"))
+				to_chat(owner, span_warning("I start to feel really angry about how you're not with [(lewd?"your [enthrallGender]":"[master]")]!"))
 				SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "EnthMissing2", /datum/mood_event/enthrallmissing2, message)
 				owner.stuttering += 50
 				owner.jitteriness += 250
@@ -315,9 +315,9 @@
 					addtimer(CALLBACK(M, /mob/verb/a_intent_change, INTENT_HARM), 2)
 					addtimer(CALLBACK(M, /mob/proc/click_random_mob), 2)
 					if(lewd)
-						to_chat(owner, span_warning("You are overwhelmed with anger at the lack of [enthrallGender]'s presence and suddenly lash out!"))
+						to_chat(owner, span_warning("I am overwhelmed with anger at the lack of [enthrallGender]'s presence and suddenly lash out!"))
 					else
-						to_chat(owner, span_warning("You are overwhelmed with anger and suddenly lash out!"))
+						to_chat(owner, span_warning("I am overwhelmed with anger and suddenly lash out!"))
 			if(90)
 				SEND_SIGNAL(M, COMSIG_CLEAR_MOOD_EVENT, "EnthMissing2")
 				var/message = "[(lewd?"Where are you [enthrallGender]??!":"I need to find [master]!")]"
@@ -484,7 +484,7 @@
 
 			//Speak (Forces player to talk)
 			if (lowertext(customTriggers[trigger][1]) == "speak")//trigger2
-				var/saytext = "Your mouth moves on it's own before you can even catch it."
+				var/saytext = "My mouth moves on it's own before you can even catch it."
 				addtimer(CALLBACK(usr, GLOBAL_PROC_REF(to_chat), C, span_notice("<i>[saytext]</i>")), 5)
 				addtimer(CALLBACK(C, /atom/movable/proc/say, "[customTriggers[trigger][2]]"), 5)
 				log_reagent("FERMICHEM: MKULTRA: [owner] ckey: [owner.key] has been forced to say: \"[customTriggers[trigger][2]]\" from previous trigger.")

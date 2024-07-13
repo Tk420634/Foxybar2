@@ -29,11 +29,11 @@
 		to_chat(user, span_danger("Without the hivemind, you can't possibly hold the responsibility of leadership!"))
 		return 0
 	if(node.recent_queen_death)
-		to_chat(user, span_danger("Your thoughts are still too scattered to take up the position of leadership."))
+		to_chat(user, span_danger("My thoughts are still too scattered to take up the position of leadership."))
 		return 0
 
 	if(!isturf(user.loc))
-		to_chat(user, span_notice("You can't evolve here!"))
+		to_chat(user, span_notice("I can't evolve here!"))
 		return 0
 	if(!get_alien_type(/mob/living/carbon/alien/humanoid/royal))
 		var/mob/living/carbon/alien/humanoid/royal/praetorian/new_xeno = new (user.loc)

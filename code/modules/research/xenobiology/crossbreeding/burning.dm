@@ -18,7 +18,7 @@ Burning extracts:
 		to_chat(user, span_warning("This extract needs to be full of plasma to activate!"))
 		return
 	reagents.remove_reagent(/datum/reagent/toxin/plasma,10)
-	to_chat(user, span_notice("You squeeze the extract, and it absorbs the plasma!"))
+	to_chat(user, span_notice("I squeeze the extract, and it absorbs the plasma!"))
 	playsound(src, 'sound/effects/bubbles.ogg', 50, 1)
 	playsound(src, 'sound/magic/fireball.ogg', 50, 1)
 	do_effect(user)
@@ -69,7 +69,7 @@ Burning extracts:
 	for(var/mob/living/carbon/M in range(5, get_turf(user)))
 		if(M != user)
 			M.bodytemperature = BODYTEMP_COLD_DAMAGE_LIMIT + 10 //Not quite cold enough to hurt.
-			to_chat(M, span_danger("You feel a chill run down your spine, and the floor feels a bit slippery with frost..."))
+			to_chat(M, span_danger("I feel a chill run down your spine, and the floor feels a bit slippery with frost..."))
 	..()
 
 /obj/item/slimecross/burning/metal
@@ -95,7 +95,7 @@ Burning extracts:
 				C.electrocute_act(25,src)
 			else
 				M.adjustFireLoss(25)
-			to_chat(M, span_danger("You feel a sharp electrical pulse!"))
+			to_chat(M, span_danger("I feel a sharp electrical pulse!"))
 	..()
 
 /obj/item/slimecross/burning/darkpurple
@@ -395,7 +395,7 @@ Burning extracts:
 	var/path = S.type
 	var/obj/item/slime_extract/C = new path(get_turf(target))
 	C.Uses = S.Uses
-	to_chat(user, span_notice("You pour the potion onto [target], and the fluid solidifies into a copy of it!"))
+	to_chat(user, span_notice("I pour the potion onto [target], and the fluid solidifies into a copy of it!"))
 	qdel(src)
 	return
 

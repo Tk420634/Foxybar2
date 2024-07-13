@@ -18,12 +18,12 @@
 	time = 125
 
 /datum/surgery_step/reinforce_ligaments/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, span_notice("You start reinforcing [target]'s ligaments."),
+	display_results(user, target, span_notice("I start reinforcing [target]'s ligaments."),
 	"[user] starts reinforcing [target]'s ligaments.",
 	"[user] starts manipulating [target]'s ligaments.")
 
 /datum/surgery_step/reinforce_ligaments/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, span_notice("You finish reinforcing [target]'s ligaments!"),
+	display_results(user, target, span_notice("I finish reinforcing [target]'s ligaments!"),
 	"[user] finishes reinforcing [target]'s ligaments!",
 	"[user] finishes manipulating [target]'s ligaments!")
 	new /datum/bioware/reinforced_ligaments(target)

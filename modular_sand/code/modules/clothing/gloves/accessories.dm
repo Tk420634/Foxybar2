@@ -20,7 +20,7 @@
 	return OXYLOSS
 
 /obj/item/clothing/accessory/ring/attack_self(mob/user)
-	user.visible_message(span_warning("\The [user] gets down on one knee, presenting \the [src]."),span_warning("You get down on one knee, presenting \the [src]."))
+	user.visible_message(span_warning("\The [user] gets down on one knee, presenting \the [src]."),span_warning("I get down on one knee, presenting \the [src]."))
 
 /obj/item/clothing/accessory/ring/proc/Touch(atom/A, proximity)
 	return FALSE // return TRUE to cancel attack_hand()

@@ -98,7 +98,7 @@
 					foundit = TRUE
 					break
 			if(!foundit) //We can't find it :(
-				to_chat(L, span_warning("You can't find the right key for \the [src]. Maybe it's too deeply packed away or you lost it?"))
+				to_chat(L, span_warning("I can't find the right key for \the [src]. Maybe it's too deeply packed away or you lost it?"))
 
 /obj/structure/simple_door/proc/SetBounds()
 	if(width>1)
@@ -131,7 +131,7 @@
 		to_chat(user, "[src] already has \a [padlock] attached")
 		return FALSE
 	if(user.transferItemToLoc(P, src))
-		user.visible_message(span_notice("[user] adds [P] to [src]."),span_notice("You add [P] to [src]."))
+		user.visible_message(span_notice("[user] adds [P] to [src]."),span_notice("I add [P] to [src]."))
 		padlock = P
 		desc = "[src.desc] Has a lock."
 		if(density)
@@ -162,7 +162,7 @@
 			add_overlay(deadbolt_overlay)
 	else if(user.transferItemToLoc(L, src))
 		L.dir = get_dir(src,user)
-		user.visible_message(span_notice("[user] adds [L] to [src]."),span_notice("You add [L] to [src]. It can only be manipulated from \the [dir2text(L.dir)]"))
+		user.visible_message(span_notice("[user] adds [L] to [src]."),span_notice("I add [L] to [src]. It can only be manipulated from \the [dir2text(L.dir)]"))
 		deadbolt = L
 		if(density)
 			add_overlay(deadbolt_overlay)
@@ -268,7 +268,7 @@
 			if(can_disasemble && do_after(user, 60, target = src))
 				for(var/i = 1, i <= material_count, i++)
 					new material_type(get_turf(src))
-				to_chat(user,span_notice("You disassemble [name]."))
+				to_chat(user,span_notice("I disassemble [name]."))
 				playsound(loc, 'sound/items/Screwdriver.ogg', 25, -3)
 				qdel(src)
 				return 1

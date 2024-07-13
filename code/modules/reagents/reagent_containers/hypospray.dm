@@ -35,8 +35,8 @@
 	log_combat(user, M, "attempted to inject", src, "([contained])")
 
 	if(reagents.total_volume && (ignore_flags || M.can_inject(user, 1))) // Ignore flag should be checked first or there will be an error message.
-		to_chat(M, span_warning("You feel a tiny prick!"))
-		to_chat(user, span_notice("You inject [M] with [src]."))
+		to_chat(M, span_warning("I feel a tiny prick!"))
+		to_chat(user, span_notice("I inject [M] with [src]."))
 
 		var/fraction = min(amount_per_transfer_from_this/reagents.total_volume, 1)
 		reagents.reaction(M, INJECT, fraction)
@@ -115,7 +115,7 @@
 		return
 
 	if(M == user)
-		to_chat(M, span_notice("You jab yourself with the [src]."))
+		to_chat(M, span_notice("I jab yourself with the [src]."))
 
 	else
 		M.visible_message(span_danger("[user] attempts to use [src] on [M]."), \
@@ -449,7 +449,7 @@
 		var/obj/item/reagent_containers/glass/bottle/vial/V = I
 		V.forceMove(user.loc)
 		user.put_in_hands(V)
-		to_chat(user, span_notice("You remove [vial] from [src]."))
+		to_chat(user, span_notice("I remove [vial] from [src]."))
 		vial = null
 		update_icon()
 		playsound(loc, 'sound/weapons/empty.ogg', 50, 1)
@@ -471,7 +471,7 @@
 		if(!user.transferItemToLoc(V,src))
 			return FALSE
 		vial = V
-		user.visible_message(span_notice("[user] has loaded a vial into [src]."),span_notice("You have loaded [vial] into [src]."))
+		user.visible_message(span_notice("[user] has loaded a vial into [src]."),span_notice("I have loaded [vial] into [src]."))
 		update_icon()
 		playsound(loc, 'sound/weapons/autoguninsert.ogg', 35, 1)
 		return TRUE
@@ -496,7 +496,7 @@
 	spray_self = COMBAT_SELF_INJECT
 	inject_self = COMBAT_SELF_SPRAY
 	penetrates = TRUE
-	to_chat(user, "You overcharge [src]'s control circuit.")
+	to_chat(user, "I overcharge [src]'s control circuit.")
 	obj_flags |= EMAGGED
 	return TRUE
 
@@ -560,7 +560,7 @@
 	vial.reagents.trans_to(target, vial.amount_per_transfer_from_this, log = TRUE)
 	var/long_sound = vial.amount_per_transfer_from_this >= 15
 	playsound(loc, long_sound ? 'sound/items/hypospray_long.ogg' : pick('sound/items/hypospray.ogg','sound/items/hypospray2.ogg'), 50, 1, -1)
-	to_chat(user, span_notice("You [fp_verb] [vial.amount_per_transfer_from_this] units of the solution. The hypospray's cartridge now contains [vial.reagents.total_volume] units."))
+	to_chat(user, span_notice("I [fp_verb] [vial.amount_per_transfer_from_this] units of the solution. The hypospray's cartridge now contains [vial.reagents.total_volume] units."))
 
 /obj/item/hypospray/mkii/attack_self(mob/living/user)
 	if(user)

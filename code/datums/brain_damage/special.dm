@@ -8,8 +8,8 @@
 	name = "Violent Psychosis"
 	desc = "Patient fights in unpredictable ways, ranging from helping his target to hitting them with brutal strength."
 	scan_desc = "violent psychosis"
-	gain_text = span_warning("You feel unhinged...")
-	lose_text = span_notice("You feel more balanced.")
+	gain_text = span_warning("I feel unhinged...")
+	lose_text = span_notice("I feel more balanced.")
 	var/datum/martial_art/psychotic_brawling/psychotic_brawling
 
 /datum/brain_trauma/special/psychotic_brawling/on_gain()
@@ -32,8 +32,8 @@
 	name = "Tenacity"
 	desc = "Patient is psychologically unaffected by pain and injuries, and can remain standing far longer than a normal person."
 	scan_desc = "traumatic neuropathy"
-	gain_text = span_warning("You suddenly stop feeling pain.")
-	lose_text = span_warning("You realize you can feel pain again.")
+	gain_text = span_warning("I suddenly stop feeling pain.")
+	lose_text = span_warning("I realize you can feel pain again.")
 	random_gain = TRUE
 
 /datum/brain_trauma/special/tenacity/on_gain()
@@ -50,8 +50,8 @@
 	name = "Functional Cerebral Necrosis"
 	desc = "Patient's brain is stuck in a functional near-death state, causing occasional moments of lucid hallucinations, which are often interpreted as the voices of the dead."
 	scan_desc = "chronic functional necrosis"
-	gain_text = span_warning("You feel dead inside.")
-	lose_text = span_notice("You feel alive again.")
+	gain_text = span_warning("I feel dead inside.")
+	lose_text = span_notice("I feel alive again.")
 	var/active = FALSE
 
 /datum/brain_trauma/special/death_whispers/on_life()
@@ -77,8 +77,8 @@
 	name = "Existential Crisis"
 	desc = "Patient's hold on reality becomes faint, causing occasional bouts of non-existence."
 	scan_desc = "existential crisis"
-	gain_text = span_notice("You feel less real.")
-	lose_text = span_warning("You feel more substantial again.")
+	gain_text = span_notice("I feel less real.")
+	lose_text = span_warning("I feel more substantial again.")
 	var/obj/effect/abstract/sync_holder/veil/veil
 	var/next_crisis = 0
 
@@ -98,13 +98,13 @@
 		return
 	var/duration = rand(50, 450)
 	veil = new(owner.drop_location())
-	to_chat(owner, "<span class='warning'>[pick("You stop thinking for a moment. Therefore you are not.",\
+	to_chat(owner, "<span class='warning'>[pick("I stop thinking for a moment. Therefore you are not.",\
 												"To be or not to be...",\
 												"Why exist?",\
-												"You stop keeping it real.",\
-												"Your grip on existence slips.",\
+												"I stop keeping it real.",\
+												"My grip on existence slips.",\
 												"Do you even exist?",\
-												"You simply fade away.")]</span>")
+												"I simply fade away.")]</span>")
 	owner.forceMove(veil)
 	SEND_SIGNAL(owner, COMSIG_MOVABLE_SECLUDED_LOCATION)
 	for(var/thing in owner)
@@ -115,7 +115,7 @@
 
 /datum/brain_trauma/special/existential_crisis/proc/fade_in()
 	QDEL_NULL(veil)
-	to_chat(owner, span_notice("You fade back into reality."))
+	to_chat(owner, span_notice("I fade back into reality."))
 	next_crisis = world.time + 600
 
 //base sync holder is in desynchronizer.dm
@@ -128,7 +128,7 @@
 	desc = "Patient seems to be a criminal."
 	scan_desc = "criminal mind"
 	gain_text = span_warning("Justice is coming for you.")
-	lose_text = span_notice("You were absolved for your crimes.")
+	lose_text = span_notice("I were absolved for your crimes.")
 	clonable = FALSE
 	random_gain = FALSE
 	var/obj/effect/hallucination/simple/securitron/beepsky
@@ -162,7 +162,7 @@
 		return
 	if(get_dist(owner, beepsky) <= 1)
 		owner.playsound_local(owner, 'sound/weapons/egloves.ogg', 50)
-		owner.visible_message(span_warning("[owner]'s body jerks as if it was shocked."), span_userdanger("You feel the fist of the LAW."))
+		owner.visible_message(span_warning("[owner]'s body jerks as if it was shocked."), span_userdanger("I feel the fist of the LAW."))
 		owner.take_bodypart_damage(0,0,rand(40, 70))
 		QDEL_NULL(beepsky)
 	if(prob(20) && get_dist(owner, beepsky) <= 8)

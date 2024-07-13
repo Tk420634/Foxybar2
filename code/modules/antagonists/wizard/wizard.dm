@@ -92,17 +92,17 @@
 	H.equipOutfit(outfit_type)
 
 /datum/antagonist/wizard/greet()
-	to_chat(owner, span_boldannounce("You are the Space Wizard!"))
+	to_chat(owner, span_boldannounce("I am the Space Wizard!"))
 	to_chat(owner, "<B>The Space Wizards Federation has given you the following tasks:</B>")
 	owner.announce_objectives()
 	to_chat(owner, "<B>These are merely guidelines! The federation are your masters, but you forge your own path!</B>")
-	to_chat(owner, "You will find a list of available spells in your spell book. Choose your magic arsenal carefully.")
+	to_chat(owner, "I will find a list of available spells in your spell book. Choose your magic arsenal carefully.")
 	to_chat(owner, "The spellbook is bound to you, and others cannot use it.")
 	to_chat(owner, "In your pockets you will find a teleport scroll. Use it as needed.")
 	to_chat(owner,"<B>Remember:</B> do not forget to prepare your spells.")
 
 /datum/antagonist/wizard/farewell()
-	to_chat(owner, span_userdanger("You have been brainwashed! You are no longer a wizard!"))
+	to_chat(owner, span_userdanger("I have been brainwashed! You are no longer a wizard!"))
 
 /datum/antagonist/wizard/proc/rename_wizard()
 	set waitfor = FALSE
@@ -111,7 +111,7 @@
 	var/wizard_name_second = pick(GLOB.wizard_second)
 	var/randomname = "[wizard_name_first] [wizard_name_second]"
 	var/mob/living/wiz_mob = owner.current
-	var/newname = reject_bad_name(stripped_input(wiz_mob, "You are the [name]. Would you like to change your name to something else?", "Name change", randomname, MAX_NAME_LEN))
+	var/newname = reject_bad_name(stripped_input(wiz_mob, "I am the [name]. Would you like to change your name to something else?", "Name change", randomname, MAX_NAME_LEN))
 
 	if (!newname)
 		newname = randomname

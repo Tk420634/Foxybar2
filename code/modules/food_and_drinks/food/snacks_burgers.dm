@@ -22,7 +22,7 @@
 	name = "steamed ham"
 	desc = pick("Ahh, welcome. I hope you're prepared for an unforgettable luncheon!",
 	"And you call these steamed hams despite the fact that they are obviously microwaved?",
-	"You know, these hamburgers taste quite similar to the ones they have at the ballpark.")
+	"I know, these hamburgers taste quite similar to the ones they have at the ballpark.")
 	SSlistbank.catalogue_tastes(src, list("fast food hamburger" = 1), TRUE) /// steamed hams are VERY important
 
 /obj/item/reagent_containers/food/snacks/burger/human
@@ -48,7 +48,7 @@
 
 /obj/item/reagent_containers/food/snacks/burger/corgi
 	name = "corgi burger"
-	desc = "You monster."
+	desc = "I monster."
 	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 1)
 	foodtype = GRAIN | MEAT | GROSS
 

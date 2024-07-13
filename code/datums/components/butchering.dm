@@ -50,17 +50,17 @@
 
 /datum/component/butchering/proc/startButcher(obj/item/source, mob/living/M, mob/living/user)
 	if(!SEND_SIGNAL(M, COMSIG_ATOM_CAN_BUTCHER))
-		to_chat(user, span_alert("You can't see anything worth butchering from [M]"))
-	to_chat(user, span_notice("You begin to butcher [M]..."))
+		to_chat(user, span_alert("I can't see anything worth butchering from [M]"))
+	to_chat(user, span_notice("I begin to butcher [M]..."))
 	playsound(M.loc, butcher_sound, 50, TRUE, -1)
 	if(do_mob(user, M, speed) && M.Adjacent(source))
 		SEND_SIGNAL(M, COMSIG_ATOM_BUTCHER, user, effectiveness, bonus_modifier, FALSE, TRUE)
 
 /datum/component/butchering/proc/startNeckSlice(obj/item/source, mob/living/carbon/human/H, mob/living/user)
 	user.visible_message(span_danger("[user] is slitting [H]'s throat!"), \
-					span_danger("You start slicing [H]'s throat!"), \
-					span_notice("You hear a cutting noise!"), ignored_mobs = H)
-	H.show_message(span_userdanger("Your throat is being slit by [user]!"), 1, \
+					span_danger("I start slicing [H]'s throat!"), \
+					span_notice("I hear a cutting noise!"), ignored_mobs = H)
+	H.show_message(span_userdanger("My throat is being slit by [user]!"), 1, \
 					"<span class = 'userdanger'>Something is cutting into your neck!</span>", NONE)
 	log_combat(user, H, "starts slicing the throat of")
 

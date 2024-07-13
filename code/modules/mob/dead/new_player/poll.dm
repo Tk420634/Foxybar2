@@ -398,7 +398,7 @@
 		//we gots ourselfs a dirty cheater on our hands!
 		log_game("[key_name(usr)] attempted to rig the vote by voting as [key]")
 		message_admins("[key_name_admin(usr)] attempted to rig the vote by voting as [key]")
-		to_chat(usr, span_danger("You don't seem to be [key]."))
+		to_chat(usr, span_danger("I don't seem to be [key]."))
 		to_chat(src, span_danger("Something went horribly wrong processing your vote. Please contact an administrator, they should have gotten a message about this"))
 		return 0
 	return 1

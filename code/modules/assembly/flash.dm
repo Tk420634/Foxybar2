@@ -111,16 +111,16 @@
 			if(user)
 				terrible_conversion_proc(M, user)
 				visible_message(span_disarm("[user] blinds [M] with the flash!"))
-				to_chat(user, span_danger("You blind [M] with the flash!"))
+				to_chat(user, span_danger("I blind [M] with the flash!"))
 				to_chat(M, span_userdanger("[user] blinds you with the flash!"))
 			else
-				to_chat(M, span_userdanger("You are blinded by [src]!"))
+				to_chat(M, span_userdanger("I am blinded by [src]!"))
 			var/toblur = 20 - M.eye_blurry
 			if(toblur > 0)
 				M.blur_eyes(toblur)
 		else if(user)
 			visible_message(span_disarm("[user] fails to blind [M] with the flash!"))
-			to_chat(user, span_warning("You fail to blind [M] with the flash!"))
+			to_chat(user, span_warning("I fail to blind [M] with the flash!"))
 			to_chat(M, span_danger("[user] fails to blind you with the flash!"))
 		else
 			to_chat(M, span_danger("[src] fails to blind you!"))
@@ -143,10 +143,10 @@
 		var/diff = 5 * CONFUSION_STACK_MAX_MULTIPLIER - M.confused
 		R.confused += min(5, diff)
 		R.flash_act(affect_silicon = 1)
-		user.visible_message(span_disarm("[user] overloads [R]'s sensors with the flash!"), span_danger("You overload [R]'s sensors with the flash!"))
+		user.visible_message(span_disarm("[user] overloads [R]'s sensors with the flash!"), span_danger("I overload [R]'s sensors with the flash!"))
 		return TRUE
 
-	user.visible_message(span_disarm("[user] fails to blind [M] with the flash!"), span_warning("You fail to blind [M] with the flash!"))
+	user.visible_message(span_disarm("[user] fails to blind [M] with the flash!"), span_warning("I fail to blind [M] with the flash!"))
 
 /obj/item/assembly/flash/attack_self(mob/living/carbon/user, flag = 0, emp = 0)
 	if(holder)
@@ -222,7 +222,7 @@
 
 /obj/item/assembly/flash/armimplant/burn_out()
 	if(I && I.owner)
-		to_chat(I.owner, span_warning("Your photon projector implant overheats and deactivates!"))
+		to_chat(I.owner, span_warning("My photon projector implant overheats and deactivates!"))
 		I.Retract()
 	overheat = TRUE
 	addtimer(CALLBACK(src,PROC_REF(cooldown)), flashcd * 2)
@@ -230,7 +230,7 @@
 /obj/item/assembly/flash/armimplant/try_use_flash(mob/user = null)
 	if(overheat)
 		if(I && I.owner)
-			to_chat(I.owner, span_warning("Your photon projector is running too hot to be used again so quickly!"))
+			to_chat(I.owner, span_warning("My photon projector is running too hot to be used again so quickly!"))
 		return FALSE
 	overheat = TRUE
 	addtimer(CALLBACK(src,PROC_REF(cooldown)), flashcd)
@@ -280,7 +280,7 @@
 			to_chat(user, "No sense replacing it with a broken bulb.")
 			return
 		else
-			to_chat(user, "You begin to replace the bulb.")
+			to_chat(user, "I begin to replace the bulb.")
 			if(do_after(user, 20, target = src))
 				if(flash.crit_fail || !flash || QDELETED(flash))
 					return
@@ -337,7 +337,7 @@
 			if(M.hypnosis_vulnerable())
 				hypnosis = TRUE
 			if(user)
-				user.visible_message(span_disarm("[user] blinds [M] with the flash!"), span_danger("You hypno-flash [M]!"))
+				user.visible_message(span_disarm("[user] blinds [M] with the flash!"), span_danger("I hypno-flash [M]!"))
 
 			if(!hypnosis)
 				to_chat(M, span_notice("The light makes you feel oddly relaxed..."))
@@ -349,7 +349,7 @@
 				M.apply_status_effect(/datum/status_effect/trance, 200, TRUE)
 
 		else if(user)
-			user.visible_message(span_disarm("[user] fails to blind [M] with the flash!"), span_warning("You fail to hypno-flash [M]!"))
+			user.visible_message(span_disarm("[user] fails to blind [M] with the flash!"), span_warning("I fail to hypno-flash [M]!"))
 		else
 			to_chat(M, span_danger("[src] fails to blind you!"))
 

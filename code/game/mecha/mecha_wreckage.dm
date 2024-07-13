@@ -37,7 +37,7 @@
 /obj/structure/mecha_wreckage/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/weldingtool))
 		if(salvage_num <= 0 || !length(welder_salvage))
-			to_chat(user, span_warning("You don't see anything that can be cut with [I]!"))
+			to_chat(user, span_warning("I don't see anything that can be cut with [I]!"))
 			return
 
 		if(!I.use_tool(src, user, 0, volume=50))
@@ -46,26 +46,26 @@
 		var/type = prob(70) ? pick(welder_salvage) : null
 		if(type)
 			var/N = new type(get_turf(user))
-			user.visible_message("[user] cuts [N] from [src].", span_notice("You cut [N] from [src]."))
+			user.visible_message("[user] cuts [N] from [src].", span_notice("I cut [N] from [src]."))
 			if(istype(N, /obj/item/mecha_parts/part))
 				welder_salvage -= type
 			salvage_num--
 		else
-			to_chat(user, span_warning("You fail to salvage anything valuable from [src]!"))
+			to_chat(user, span_warning("I fail to salvage anything valuable from [src]!"))
 		return
 
 	else if(istype(I, /obj/item/wirecutters))
 		if(salvage_num <= 0)
-			to_chat(user, span_warning("You don't see anything that can be cut with [I]!"))
+			to_chat(user, span_warning("I don't see anything that can be cut with [I]!"))
 			return
 		else if(wirecutters_salvage && wirecutters_salvage.len)
 			var/type = prob(70) ? pick(wirecutters_salvage) : null
 			if(type)
 				var/N = new type(get_turf(user))
-				user.visible_message("[user] cuts [N] from [src].", span_notice("You cut [N] from [src]."))
+				user.visible_message("[user] cuts [N] from [src].", span_notice("I cut [N] from [src]."))
 				salvage_num--
 			else
-				to_chat(user, span_warning("You fail to salvage anything valuable from [src]!"))
+				to_chat(user, span_warning("I fail to salvage anything valuable from [src]!"))
 
 	else if(istype(I, /obj/item/crowbar))
 		if(crowbar_salvage && crowbar_salvage.len)
@@ -73,10 +73,10 @@
 			if(S)
 				S.forceMove(user.drop_location())
 				crowbar_salvage -= S
-				user.visible_message("[user] pries [S] from [src].", span_notice("You pry [S] from [src]."))
+				user.visible_message("[user] pries [S] from [src].", span_notice("I pry [S] from [src]."))
 			return
 		else
-			to_chat(user, span_warning("You don't see anything that can be pried with [I]!"))
+			to_chat(user, span_warning("I don't see anything that can be pried with [I]!"))
 
 
 /obj/structure/mecha_wreckage/transfer_ai(interaction, mob/user, null, obj/item/aicard/card)
@@ -94,7 +94,7 @@
 		if(AI.client) //AI player is still in the dead AI and is connected
 			to_chat(AI, "The remains of your file system have been recovered on a mobile storage device.")
 		else //Give the AI a heads-up that it is probably going to get fixed.
-			AI.notify_ghost_cloning("You have been recovered from the wreckage!", source = card)
+			AI.notify_ghost_cloning("I have been recovered from the wreckage!", source = card)
 		to_chat(user, "<span class='boldnotice'>Backup files recovered</span>: [AI.name] ([rand(1000,9999)].exe) salvaged from [name] and stored within local memory.")
 
 	else

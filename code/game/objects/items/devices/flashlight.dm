@@ -51,7 +51,7 @@
 			return ..()	//just hit them in the head
 
 		if(!user.IsAdvancedToolUser())
-			to_chat(user, span_warning("You don't have the dexterity to do this!"))
+			to_chat(user, span_warning("I don't have the dexterity to do this!"))
 			return
 
 		if(!M.get_bodypart(BODY_ZONE_HEAD))
@@ -75,12 +75,12 @@
 
 				if(M == user)	//they're using it on themselves
 					if(M.flash_act(visual = 1))
-						M.visible_message("[M] directs [src] to [M.p_their()] eyes.", span_notice("You wave the light in front of your eyes! Trippy!"))
+						M.visible_message("[M] directs [src] to [M.p_their()] eyes.", span_notice("I wave the light in front of your eyes! Trippy!"))
 					else
-						M.visible_message("[M] directs [src] to [M.p_their()] eyes.", span_notice("You wave the light in front of your eyes."))
+						M.visible_message("[M] directs [src] to [M.p_their()] eyes.", span_notice("I wave the light in front of your eyes."))
 				else
 					user.visible_message(span_warning("[user] directs [src] to [M]'s eyes."), \
-										span_danger("You direct [src] to [M]'s eyes."))
+										span_danger("I direct [src] to [M]'s eyes."))
 					if(M.stat == DEAD || (HAS_TRAIT(M, TRAIT_BLIND)) || !M.flash_act(visual = 1)) //mob is dead or fully blind
 						to_chat(user, span_warning("[M]'s pupils don't react to the light!"))
 					else if(M.dna && M.dna.check_mutation(XRAY))	//mob has X-ray vision
@@ -132,20 +132,20 @@
 									can_use_mirror = mirror.pixel_x < 0
 
 					M.visible_message("[M] directs [src] to [their] mouth.", \
-					span_notice("You point [src] into your mouth."))
+					span_notice("I point [src] into your mouth."))
 					if(!can_use_mirror)
-						to_chat(user, span_notice("You can't see anything without a mirror."))
+						to_chat(user, span_notice("I can't see anything without a mirror."))
 						return
 					if(organ_count)
 						to_chat(user, span_notice("Inside your mouth [organ_count > 1 ? "are" : "is"] [organ_list]."))
 					else
 						to_chat(user, span_notice("There's nothing inside your mouth."))
 					if(pill_count)
-						to_chat(user, span_notice("You have [pill_count] implanted pill[pill_count > 1 ? "s" : ""]."))
+						to_chat(user, span_notice("I have [pill_count] implanted pill[pill_count > 1 ? "s" : ""]."))
 
 				else
 					user.visible_message(span_notice("[user] directs [src] to [M]'s mouth."),\
-										span_notice("You direct [src] to [M]'s mouth."))
+										span_notice("I direct [src] to [M]'s mouth."))
 					if(organ_count)
 						to_chat(user, span_notice("Inside [their] mouth [organ_count > 1 ? "are" : "is"] [organ_list]."))
 					else
@@ -345,7 +345,7 @@
 	. = ..()
 	// All good, turn it on.
 	if(.)
-		user.visible_message(span_notice("[user] lights \the [src]."), span_notice("You light \the [src]!"))
+		user.visible_message(span_notice("[user] lights \the [src]."), span_notice("I light \the [src]!"))
 		playsound(loc, 'sound/effects/flare_light.ogg', 50, 0)
 		force = on_damage
 		damtype = "fire"
@@ -379,7 +379,7 @@
 		return
 	// All good, turn it on.
 	else
-		user.visible_message(span_notice("[user] lights [src]."), span_notice("You light [src]!"))
+		user.visible_message(span_notice("[user] lights [src]."), span_notice("I light [src]!"))
 		playsound(loc, 'sound/effects/torch_light.ogg', 50, 0)
 		force = on_damage
 		damtype = BURN
@@ -563,7 +563,7 @@
 
 	. = ..()
 	if(.)
-		user.visible_message(span_notice("[user] cracks and shakes [src]."), span_notice("You crack and shake [src], turning it on!"))
+		user.visible_message(span_notice("[user] cracks and shakes [src]."), span_notice("I crack and shake [src], turning it on!"))
 		activate()
 
 /obj/item/flashlight/glowstick/proc/activate()

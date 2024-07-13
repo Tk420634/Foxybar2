@@ -504,10 +504,10 @@ GLOBAL_LIST_EMPTY(allConsoles)
 /obj/machinery/requests_console/attackby(obj/item/O, mob/user, params)
 	if(istype(O, /obj/item/crowbar))
 		if(open)
-			to_chat(user, span_notice("You close the maintenance panel."))
+			to_chat(user, span_notice("I close the maintenance panel."))
 			open = FALSE
 		else
-			to_chat(user, span_notice("You open the maintenance panel."))
+			to_chat(user, span_notice("I open the maintenance panel."))
 			open = TRUE
 		update_icon()
 		return
@@ -515,12 +515,12 @@ GLOBAL_LIST_EMPTY(allConsoles)
 		if(open)
 			hackState = !hackState
 			if(hackState)
-				to_chat(user, span_notice("You modify the wiring."))
+				to_chat(user, span_notice("I modify the wiring."))
 			else
-				to_chat(user, span_notice("You reset the wiring."))
+				to_chat(user, span_notice("I reset the wiring."))
 			update_icon()
 		else
-			to_chat(user, span_warning("You must open the maintenance panel first!"))
+			to_chat(user, span_warning("I must open the maintenance panel first!"))
 		return
 
 	if(istype(O, /obj/item/card/id))
@@ -535,7 +535,7 @@ GLOBAL_LIST_EMPTY(allConsoles)
 				announceAuth = TRUE
 			else
 				announceAuth = FALSE
-				to_chat(user, span_warning("You are not authorized to send announcements!"))
+				to_chat(user, span_warning("I am not authorized to send announcements!"))
 			updateUsrDialog()
 		return
 

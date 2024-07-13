@@ -20,8 +20,8 @@
 	high_threshold = 0.6 * LUNGS_MAX_HEALTH	//threshold at 180
 	low_threshold = 0.3 * LUNGS_MAX_HEALTH	//threshold at 90
 
-	high_threshold_passed = span_warning("You feel some sort of constriction around your chest as your breathing becomes shallow and rapid.")
-	now_fixed = span_warning("Your lungs seem to once again be able to hold air.")
+	high_threshold_passed = span_warning("I feel some sort of constriction around your chest as your breathing becomes shallow and rapid.")
+	now_fixed = span_warning("My lungs seem to once again be able to hold air.")
 	high_threshold_cleared = span_info("The constriction around your chest loosens as your breathing calms down.")
 
 	food_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/medicine/salbutamol = 5)
@@ -101,7 +101,7 @@
 
 	cached_damage += damage_mod
 	if ((cached_damage/ maxHealth) > 1)
-		to_chat(owner, span_userdanger("You feel your lungs collapse within your chest as you gasp for air, unable to inflate them anymore!"))
+		to_chat(owner, span_userdanger("I feel your lungs collapse within your chest as you gasp for air, unable to inflate them anymore!"))
 		owner.emote("gasp")
 		SSblackbox.record_feedback("tally", "fermi_chem", 1, "Lungs lost")
 		//qdel(src) - Handled elsewhere for now.
@@ -111,10 +111,10 @@
 		owner.Dizzy(3)
 	else if ((cached_damage / maxHealth) > 0.5)
 		owner.Dizzy(2)
-		to_chat(owner, span_notice("Your chest is really starting to hurt."))
+		to_chat(owner, span_notice("My chest is really starting to hurt."))
 		owner.emote("cough")
 	else if ((cached_damage / maxHealth) > 0.2)
-		to_chat(owner, span_notice("You feel an ache within your chest."))
+		to_chat(owner, span_notice("I feel an ache within your chest."))
 		owner.emote("cough")
 		owner.Dizzy(1)
 
@@ -282,12 +282,12 @@
 	// Nitryl
 		var/nitryl_pp = PP(breath,GAS_NITRYL)
 		if (prob(nitryl_pp))
-			to_chat(H, span_alert("Your mouth feels like it's burning!"))
+			to_chat(H, span_alert("My mouth feels like it's burning!"))
 		if (nitryl_pp >40)
 			H.emote("gasp")
 			H.adjustFireLoss(10)
 			if (prob(nitryl_pp/2))
-				to_chat(H, span_alert("Your throat closes up!"))
+				to_chat(H, span_alert("My throat closes up!"))
 				H.silent = max(H.silent, 3)
 		else
 			H.adjustFireLoss(nitryl_pp/4)
@@ -318,7 +318,7 @@
 					if(5 to 15)
 						//At somewhat higher pp, warning becomes more obvious
 						if(prob(15))
-							to_chat(owner, span_warning("You smell something horribly decayed inside this room."))
+							to_chat(owner, span_warning("I smell something horribly decayed inside this room."))
 							SEND_SIGNAL(owner, COMSIG_ADD_MOOD_EVENT, "smell", /datum/mood_event/disgust/bad_smell)
 					if(15 to 30)
 						//Small chance to vomit. By now, people have internals on anyway
@@ -382,7 +382,7 @@
 			H.adjustOrganLoss(ORGAN_SLOT_LUNGS, (cold_level_1_damage*cold_modifier*2))
 		if(breath_temperature < cold_level_1_threshold)
 			if(prob(20))
-				to_chat(H, span_warning("You feel [cold_message] in your [name]!"))
+				to_chat(H, span_warning("I feel [cold_message] in your [name]!"))
 
 	if(!HAS_TRAIT(H, TRAIT_RESISTHEAT)) // HEAT DAMAGE
 		var/heat_modifier = H.dna.species.heatmod
@@ -397,7 +397,7 @@
 			H.adjustOrganLoss(ORGAN_SLOT_LUNGS, (heat_level_3_damage*heat_modifier*2))
 		if(breath_temperature > heat_level_1_threshold)
 			if(prob(20))
-				to_chat(H, span_warning("You feel [hot_message] in your [name]!"))
+				to_chat(H, span_warning("I feel [hot_message] in your [name]!"))
 
 /obj/item/organ/lungs/applyOrganDamage(d, maximum = maxHealth)
 	. = ..()
@@ -406,7 +406,7 @@
 	if(!failed && organ_flags & ORGAN_FAILING)
 		if(owner && owner.stat == CONSCIOUS)
 			owner.visible_message(span_danger("[owner] grabs [owner.p_their()] throat, struggling for breath!"), \
-								span_userdanger("You suddenly feel like you can't breathe!"))
+								span_userdanger("I suddenly feel like you can't breathe!"))
 		failed = TRUE
 	else if(!(organ_flags & ORGAN_FAILING))
 		failed = FALSE

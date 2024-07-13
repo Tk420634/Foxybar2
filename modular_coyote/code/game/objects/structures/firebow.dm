@@ -37,7 +37,7 @@
 		if(AttemptIgnite(user))
 			StartBurning(user)
 	else
-		to_chat(user, span_danger("You already have hot embers, pour it onto something to light it!"))
+		to_chat(user, span_danger("I already have hot embers, pour it onto something to light it!"))
 	
 	..()
 
@@ -47,11 +47,11 @@
 
 	// behold my cursed layered chance effect for firebows. Each do_after plays a new sound file, and the last 2 stages will have a prob check.
 	user.playsound_local(user, 'modular_coyote/sound/items/firebow1.ogg', 40, FALSE)
-	user.visible_message(span_notice("[user] begins to draw the bow back and forth, starting slow..."), span_notice("You start drawing the bow back and forth slowly..."))
+	user.visible_message(span_notice("[user] begins to draw the bow back and forth, starting slow..."), span_notice("I start drawing the bow back and forth slowly..."))
 
 	if(do_after(user, 35, target = src))
 		user.playsound_local(user, 'modular_coyote/sound/items/firebow2.ogg', 40, FALSE)
-		user.visible_message(span_notice("[user] builds up momentum, causing smoke to form around the bottom of the stick."), span_notice("You get quicker, you even start seeing smoke to form.."))
+		user.visible_message(span_notice("[user] builds up momentum, causing smoke to form around the bottom of the stick."), span_notice("I get quicker, you even start seeing smoke to form.."))
 
 		if(do_after(user, 15, target = src))
 			if(prob(60))
@@ -59,11 +59,11 @@
 				user.visible_message(span_notice("[user] gets incredibly quick now, as a red glow would softly brighten the longer they continue..!"), span_notice("You're now at max speed, you can see a red glow forming at the base."))
 
 				if(do_after(user, 50, target = src))
-					user.visible_message(span_notice("[user] creates a small glowing pile of embers on the [src]..!"), span_danger("You created a small pile of red embers on the [src], use it quickly!"))
+					user.visible_message(span_notice("[user] creates a small glowing pile of embers on the [src]..!"), span_danger("I created a small pile of red embers on the [src], use it quickly!"))
 					return TRUE
 	
 	user.playsound_local(user, 'modular_coyote/sound/items/firebowfail.ogg', 40, FALSE)
-	user.visible_message(span_danger("[user] suddenly lost control of the spin, the stick flew off of the base and dropped onto the floor!"), span_danger("You lost control of the stick, it twisted and flung from the base, falling onto the floor... Time to try again..."))
+	user.visible_message(span_danger("[user] suddenly lost control of the spin, the stick flew off of the base and dropped onto the floor!"), span_danger("I lost control of the stick, it twisted and flung from the base, falling onto the floor... Time to try again..."))
 	return FALSE
 	
 

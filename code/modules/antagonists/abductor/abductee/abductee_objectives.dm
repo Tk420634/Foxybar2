@@ -21,7 +21,7 @@
 	explanation_text = " [color]!"
 
 /datum/objective/abductee/speech
-	explanation_text = "Your brain is broken... you can only communicate in"
+	explanation_text = "My brain is broken... you can only communicate in"
 
 /datum/objective/abductee/speech/New()
 	var/style = pick(list("pantomime", "rhyme", "haiku", "extended metaphors", "riddles", "extremely literal terms", "sound effects", "military jargon", "three word sentences"))
@@ -45,7 +45,7 @@
 /datum/objective/abductee/calling/New()
 	var/mob/dead/D = pick(GLOB.dead_mob_list)
 	if(D)
-		explanation_text = "You know that [D] has perished. Hold a seance to call [D.p_them()] from the spirit realm."
+		explanation_text = "I know that [D] has perished. Hold a seance to call [D.p_them()] from the spirit realm."
 
 /datum/objective/abductee/forbiddennumber
 

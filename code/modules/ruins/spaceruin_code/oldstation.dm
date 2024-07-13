@@ -57,4 +57,4 @@ __DO NOT REMOVE WITHOUT HE CAPTAIN AND RESEARCH DIRECTOR'S AUTHORISATION__
 
 /obj/item/paper/fluff/ruins/oldstation/generator_manual
 	name = "S.U.P.E.R.P.A.C.M.A.N.-type portable generator manual"
-	info = "You can barely make out a faded sentence... <br><br> Wrench down the generator on top of a wire node connected to either a SMES input terminal or the power grid." 
+	info = "I can barely make out a faded sentence... <br><br> Wrench down the generator on top of a wire node connected to either a SMES input terminal or the power grid." 

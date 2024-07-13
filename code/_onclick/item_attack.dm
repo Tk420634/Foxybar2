@@ -9,12 +9,12 @@
  */
 /obj/item/proc/melee_attack_chain(mob/user, atom/target, params, attackchain_flags, damage_multiplier = 1)
 	// if(user != target && !isitem(target) && user.incapacitated() && !extract_ckey(target)) // no attacking mobs, other players is okay
-	// 	to_chat(user, span_danger("You are to messed up to use [src] on anything but yourself!"))
+	// 	to_chat(user, span_danger("I am to messed up to use [src] on anything but yourself!"))
 	// 	return
 	if(isliving(user))
 		var/mob/living/L = user
 		if(!CHECK_MOBILITY(L, MOBILITY_USE) && !(attackchain_flags & ATTACK_IS_PARRY_COUNTERATTACK))
-			to_chat(L, span_warning("You are unable to swing [src] right now!"))
+			to_chat(L, span_warning("I am unable to swing [src] right now!"))
 			return
 		if(SEND_SIGNAL(src, COMSIG_ITEM_ATTACKCHAIN, user, target, params) & COMPONENT_ITEM_NO_ATTACK)
 			return
@@ -36,7 +36,7 @@
 	if(isliving(user))
 		var/mob/living/L = user
 		if(!CHECK_MOBILITY(L, MOBILITY_USE))
-			to_chat(L, span_warning("You are unable to raise [src] right now!"))
+			to_chat(L, span_warning("I am unable to raise [src] right now!"))
 			return
 		if(SEND_SIGNAL(src, COMSIG_ITEM_ATTACKCHAIN, user, target, params) & COMPONENT_ITEM_NO_ATTACK)
 			return
@@ -108,7 +108,7 @@
 	//<--
 
 	if((force || damage_override) && damtype != STAMINA && HAS_TRAIT(user, TRAIT_PACIFISM))
-		to_chat(user, span_warning("You don't want to harm other living beings!"))
+		to_chat(user, span_warning("I don't want to harm other living beings!"))
 		return
 
 	//var/bigleagues = 10 //flat additive
@@ -343,7 +343,7 @@
 		attack_message = "[user] [message_verb] [src][message_hit_area] with [I]!"
 		attack_message_local = "[user] [message_verb] you[message_hit_area] with [I]!"
 	if(user == src)
-		attack_message_local = "You [message_verb] yourself[message_hit_area] with [I]"
+		attack_message_local = "I [message_verb] yourself[message_hit_area] with [I]"
 	visible_message(span_danger("[attack_message]"),\
 		span_userdanger("[attack_message_local]"), null, COMBAT_MESSAGE_RANGE)
 	return 1

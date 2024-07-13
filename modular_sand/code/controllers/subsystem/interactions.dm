@@ -152,7 +152,7 @@ SUBSYSTEM_DEF(interactions)
 	else
 		consents[keyname] = ASKED_ASKER
 	if(target)
-		to_chat(target, span_greentext("You have given [requesting] consent to do lewd things with you!"))
+		to_chat(target, span_greentext("I have given [requesting] consent to do lewd things with you!"))
 	if(requesting)
 		to_chat(requesting, span_greentext("[target] has given you consent to do lewd things with them!"))
 	message_admins("[ADMIN_TPMONTY(requesting)] requested consent from [ADMIN_TPMONTY(target)]. [target] said yes!")
@@ -163,7 +163,7 @@ SUBSYSTEM_DEF(interactions)
 		return FALSE
 
 	to_chat(denied, span_userdanger("[decliner] has declined your request to do lewd things with them!"))
-	to_chat(decliner, span_userdanger("You have declined [denied]'s request to do lewd things with you!"))
+	to_chat(decliner, span_userdanger("I have declined [denied]'s request to do lewd things with you!"))
 	log_ooc("[key_name_admin(decliner)] has declined [key_name_admin(denied)]'s request to do lewd things with them!")
 	if(!ahelp)
 		message_admins("[ADMIN_TPMONTY(decliner)] declined consent from [ADMIN_TPMONTY(denied)].")
@@ -220,7 +220,7 @@ SUBSYSTEM_DEF(interactions)
 	var/original_approver = who_asked_who(keyname)
 	consents -= keyname
 	to_chat(revoked, span_userdanger("[revoker] has revoked consent for you to do lewd things with them!"))
-	to_chat(revoker, span_userdanger("You have revoked consent from [revoked] to do lewd things with you!"))
+	to_chat(revoker, span_userdanger("I have revoked consent from [revoked] to do lewd things with you!"))
 	message_admins("[ADMIN_TPMONTY(revoker)] has revoked [ADMIN_TPMONTY(revoked)]'s consent to do lewd things with them. (Original approver: [original_approver])")
 	log_ooc("[key_name_admin(revoker)] has revoked [key_name_admin(revoked)]'s consent to do lewd things with them! (Original approver: [key_name_admin(original_approver)])")
 	if(ahelp)

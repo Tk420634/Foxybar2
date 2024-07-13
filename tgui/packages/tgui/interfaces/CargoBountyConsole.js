@@ -378,8 +378,8 @@ const BottomToolbar = (props, context) => {
   const BeepToggleIcon = BeepOnUpdate ? "volume-up" : "volume-mute";
   const BeepToggleColor = BeepOnUpdate ? "green" : "label";
   const BeepToggleTip = BeepOnUpdate
-    ? "You will be alerted when the quest pool updates!"
-    : "You will NOT be alerted when the quest pool updates!";
+    ? "I will be alerted when the quest pool updates!"
+    : "I will NOT be alerted when the quest pool updates!";
 
   const CoolNumber = (
     <Box inline
@@ -462,12 +462,12 @@ const QuestList = (props, context) => {
 
   const IsEmpty = Quests.length === 0;
   const WhyItEmpty = props.WhichOne === 1
-    ? "You have no active quests!"
+    ? "I have no active quests!"
     : props.WhichOne === 2
       ? "There are no quests available!"
       : props.WhichOne === 3
-        ? "You have not completed any quests!"
-        : "You have no quests!";
+        ? "I have not completed any quests!"
+        : "I have no quests!";
 
   return (
     <Section>
@@ -652,11 +652,11 @@ const YourCash = (props, context) => {
   } = data;
   const ActualCash = toFixed(BankedPoints / 10, 0);
   const IsGlobalHighest = OverallBankedPoints >= GlobalHighestBanked;
-  const OverallTip = "You have earned "
+  const OverallTip = "I have earned "
     + CurrencyUnit
     + formatMoney(ActualCash)
     + " this round!";
-  const HighestTip = IsGlobalHighest ? "You are the highest earner this round!" : "";
+  const HighestTip = IsGlobalHighest ? "I am the highest earner this round!" : "";
   const TotalTip = "" + HighestTip + OverallTip + " Click to cash out!  Or you can click here with money/tickets to deposit them to your account!";
 
   return (
@@ -713,7 +713,7 @@ const HistoryPanel = (props, context) => {
   let Keykey = 0;
 
   const IsEmpty = QuestHistory.length === 0;
-  const WhyItEmpty = "You haven't completed any quests... before today, that is!";
+  const WhyItEmpty = "I haven't completed any quests... before today, that is!";
   return (
     <Section
       title="Quest History">

@@ -32,7 +32,7 @@
 
 /obj/effect/clockwork/city_of_cogs_rift/attackby(obj/item/I, mob/living/user, params)
 	if(istype(I, /obj/item/nullrod))
-		to_chat(user, span_warning("Your [I.name] seems to have no effect on [src]!"))
+		to_chat(user, span_warning("My [I.name] seems to have no effect on [src]!"))
 		return
 	. = ..()
 
@@ -45,7 +45,7 @@
 			var/mob/living/L = AM
 			if(L.client && !L.incapacitated())
 				L.visible_message(span_notice("[L] starts climbing through [src]..."), \
-				span_notice("You begin climbing through [src]..."))
+				span_notice("I begin climbing through [src]..."))
 				if(!do_after(L, 30, target = L))
 					return
 		if(!istype(AM, /obj/effect/))
@@ -64,7 +64,7 @@
 	AM.visible_message(span_danger("[AM] passes through [src]!"), null, null, null, AM)
 	AM.forceMove(T)
 	AM.visible_message(span_danger("[AM] materializes from the air!"), \
-	span_boldannounce("You pass through [src] and appear [is_servant_of_ratvar(AM) ? "back at the City of Cogs" : "somewhere unfamiliar. Looks like it was a one-way trip.."]."))
+	span_boldannounce("I pass through [src] and appear [is_servant_of_ratvar(AM) ? "back at the City of Cogs" : "somewhere unfamiliar. Looks like it was a one-way trip.."]."))
 	do_sparks(5, TRUE, src)
 	do_sparks(5, TRUE, AM)
 	if(isliving(AM))

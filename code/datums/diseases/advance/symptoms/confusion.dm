@@ -52,9 +52,9 @@ Bonus
 	switch(A.stage)
 		if(1, 2, 3, 4)
 			if(prob(base_message_chance) && !suppress_warning)
-				to_chat(M, span_warning("[pick("Your head hurts.", "Your mind blanks for a moment.")]"))
+				to_chat(M, span_warning("[pick("My head hurts.", "My mind blanks for a moment.")]"))
 		else
-			to_chat(M, span_userdanger("You can't think straight!"))
+			to_chat(M, span_userdanger("I can't think straight!"))
 			M.confused = min(100 * power, M.confused + 8)
 			if(brain_damage)
 				M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 3 * power, 80)

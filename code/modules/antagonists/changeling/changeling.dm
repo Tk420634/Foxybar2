@@ -101,7 +101,7 @@
 	if (owner)
 		var/mob/living/carbon/human/H = owner.current
 		if(istype(H) && owner.assigned_role == "Clown")
-			to_chat(H, "You have evolved beyond your clownish nature, allowing you to wield weapons without harming yourself.")
+			to_chat(H, "I have evolved beyond your clownish nature, allowing you to wield weapons without harming yourself.")
 			H.dna.remove_mutation(CLOWNMUT)
 
 /datum/antagonist/changeling/proc/reset_properties(hardReset = FALSE)
@@ -212,7 +212,7 @@
 		SSblackbox.record_feedback("tally", "changeling_power_purchase", 1, "Readapt")
 		return 1
 	else
-		to_chat(owner.current, span_danger("You lack the power to readapt your evolutions!"))
+		to_chat(owner.current, span_danger("I lack the power to readapt your evolutions!"))
 		return 0
 
 //Called in life()
@@ -371,7 +371,7 @@
 
 /datum/antagonist/changeling/greet()
 	if (you_are_greet)
-		to_chat(owner.current, span_boldannounce("You are [changelingID], a changeling! You have absorbed and taken the form of a human."))
+		to_chat(owner.current, span_boldannounce("I am [changelingID], a changeling! You have absorbed and taken the form of a human."))
 	to_chat(owner.current, span_boldannounce("Use say \"[MODE_TOKEN_CHANGELING] message\" to communicate with your fellow changelings."))
 	to_chat(owner.current, "<b>You must complete the following tasks:</b>")
 	owner.current.playsound_local(get_turf(owner.current), 'sound/ambience/antag/ling_aler.ogg', 100, FALSE, pressure_affected = FALSE)
@@ -379,7 +379,7 @@
 	owner.announce_objectives()
 
 /datum/antagonist/changeling/farewell()
-	to_chat(owner.current, span_userdanger("You grow weak and lose your powers! You are no longer a changeling and are stuck in your current form!"))
+	to_chat(owner.current, span_userdanger("I grow weak and lose your powers! You are no longer a changeling and are stuck in your current form!"))
 
 /datum/antagonist/changeling/proc/forge_team_objectives()
 	if(GLOB.changeling_team_objective_type)

@@ -57,28 +57,28 @@
 	name = "Blood Charge"
 	icon_icon = 'modular_sand/icons/mob/actions/actions_elites.dmi'
 	button_icon_state = "blood_charge"
-	chosen_message = span_boldwarning("You will attempt to charge your target.")
+	chosen_message = span_boldwarning("I will attempt to charge your target.")
 	chosen_attack_num = BLOOD_CHARGE
 
 /datum/action/innate/elite_attack/bloody_trap
 	name = "Bloody Trap"
 	icon_icon = 'modular_sand/icons/mob/actions/actions_elites.dmi'
 	button_icon_state = "bloody_trap"
-	chosen_message = span_boldwarning("You will attempt to trap your target.")
+	chosen_message = span_boldwarning("I will attempt to trap your target.")
 	chosen_attack_num = BLOODY_TRAP
 
 /datum/action/innate/elite_attack/meat_shield
 	name = "Meat Shield"
 	icon_icon = 'modular_sand/icons/mob/actions/actions_elites.dmi'
 	button_icon_state = "meat_shield"
-	chosen_message = span_boldwarning("You will attempt to shield yourself.")
+	chosen_message = span_boldwarning("I will attempt to shield yourself.")
 	chosen_attack_num = MEAT_SHIELD
 
 /datum/action/innate/elite_attack/knockdown
 	name = "Knockdown"
 	icon_icon = 'modular_sand/icons/mob/actions/actions_elites.dmi'
 	button_icon_state = "knockdown"
-	chosen_message = span_boldwarning("You will knock down every mob around you.")
+	chosen_message = span_boldwarning("I will knock down every mob around you.")
 	chosen_attack_num = KNOCKDOWN
 
 
@@ -276,7 +276,7 @@
 	icon_state = "vial"
 
 /obj/item/bloodcrawlbottle/attack_self(mob/user)
-	to_chat(user, span_notice("You drink the bottle's contents."))
+	to_chat(user, span_notice("I drink the bottle's contents."))
 	var/obj/effect/proc_holder/spell/bloodcrawl/S = new /obj/effect/proc_holder/spell/bloodcrawl/
 	user.mind.AddSpell(S)
 	user.log_message("learned the spell bloodcrawl ([S])", LOG_ATTACK, color="orange")

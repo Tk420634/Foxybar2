@@ -111,7 +111,7 @@ GLOBAL_LIST_INIT(personalitytrait2description, list(
 	var/skipface = !HAS_TRAIT(src, TRAIT_NOHIDEFACE) && ((wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE)))
 
 	if(skipface || get_visible_name() == "Unknown")
-		. += "You can't make out what species they are."
+		. += "I can't make out what species they are."
 	else
 		. += "[t_He] [t_is] a [dna.custom_species ? dna.custom_species : dna.species.name]!"
 

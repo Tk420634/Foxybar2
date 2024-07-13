@@ -26,14 +26,14 @@
 /obj/machinery/blackbox_recorder/on_attack_hand(mob/living/user, act_intent, unarmed_attack_flags)
 	. = ..()
 	if(stored)
-		to_chat(user, span_notice("You start struggling to pry the [stored] from the [src]..."))
+		to_chat(user, span_notice("I start struggling to pry the [stored] from the [src]..."))
 		if(!do_after(user, 30 SECONDS, TRUE, src))
-			to_chat(user, span_warning("Your fingers slip as you fail to pry the [stored] from the [src], clicking it right back into the slot!"))
+			to_chat(user, span_warning("My fingers slip as you fail to pry the [stored] from the [src], clicking it right back into the slot!"))
 			return
 		if(user.put_in_hands(stored))
 			stored.forceMove(user.drop_location())
 		stored = null
-		to_chat(user, span_warning("You successfully pry the [stored] from the [src], and send its overwhelming weight tumbling onto the ground! The tapes on the [src] stop spinning..."))
+		to_chat(user, span_warning("I successfully pry the [stored] from the [src], and send its overwhelming weight tumbling onto the ground! The tapes on the [src] stop spinning..."))
 		update_icon()
 		return
 	else
@@ -47,7 +47,7 @@
 			to_chat(user, span_warning("[I] is stuck to your hand!"))
 			return
 		user.visible_message(span_notice("[user] clicks the [I] into the [src]!"), \
-		span_notice("You press [I] into [src], and it clicks into place. The tapes on the [src] begin spinning again..."))
+		span_notice("I press [I] into [src], and it clicks into place. The tapes on the [src] begin spinning again..."))
 		playsound(src, 'sound/machines/click.ogg', 50, TRUE)
 		stored = I
 		update_icon()

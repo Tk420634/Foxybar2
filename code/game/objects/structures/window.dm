@@ -121,7 +121,7 @@ GLOBAL_LIST_EMPTY(electrochromatic_window_lookup)
 /obj/structure/window/rcd_act(mob/user, obj/item/construction/rcd/the_rcd)
 	switch(the_rcd.mode)
 		if(RCD_DECONSTRUCT)
-			to_chat(user, span_notice("You deconstruct the window."))
+			to_chat(user, span_notice("I deconstruct the window."))
 			qdel(src)
 			return TRUE
 	return FALSE
@@ -222,11 +222,11 @@ GLOBAL_LIST_EMPTY(electrochromatic_window_lookup)
 			if(!I.tool_start_check(user, amount=0))
 				return
 
-			to_chat(user, span_notice("You begin repairing [src]..."))
+			to_chat(user, span_notice("I begin repairing [src]..."))
 			if(I.use_tool(src, user, 40, volume=50))
 				obj_integrity = max_integrity
 				update_nearby_icons()
-				to_chat(user, span_notice("You repair [src]."))
+				to_chat(user, span_notice("I repair [src]."))
 		else
 			to_chat(user, span_warning("[src] is already in good condition!"))
 		return
@@ -245,7 +245,7 @@ GLOBAL_LIST_EMPTY(electrochromatic_window_lookup)
 		if(!user.temporarilyRemoveItemFromInventory(K))
 			to_chat(user, span_warning("[K] is stuck to your hand!"))
 			return
-		user.visible_message(span_notice("[user] upgrades [src] with [I]."), span_notice("You upgrade [src] with [I]."))
+		user.visible_message(span_notice("[user] upgrades [src] with [I]."), span_notice("I upgrade [src] with [I]."))
 		make_electrochromatic(K.id)
 		qdel(K)
 
@@ -254,29 +254,29 @@ GLOBAL_LIST_EMPTY(electrochromatic_window_lookup)
 			I.play_tool_sound(src, 75)
 			if(reinf)
 				if(state == WINDOW_SCREWED_TO_FRAME || state == WINDOW_IN_FRAME)
-					to_chat(user, span_notice("You begin to [state == WINDOW_SCREWED_TO_FRAME ? "unscrew the window from":"screw the window to"] the frame..."))
+					to_chat(user, span_notice("I begin to [state == WINDOW_SCREWED_TO_FRAME ? "unscrew the window from":"screw the window to"] the frame..."))
 					if(I.use_tool(src, user, decon_speed, extra_checks = CALLBACK(src,PROC_REF(check_state_and_anchored), state, anchored)))
 						state = (state == WINDOW_IN_FRAME ? WINDOW_SCREWED_TO_FRAME : WINDOW_IN_FRAME)
-						to_chat(user, span_notice("You [state == WINDOW_IN_FRAME ? "unfasten the window from":"fasten the window to"] the frame."))
+						to_chat(user, span_notice("I [state == WINDOW_IN_FRAME ? "unfasten the window from":"fasten the window to"] the frame."))
 				else if(state == WINDOW_OUT_OF_FRAME)
-					to_chat(user, span_notice("You begin to [anchored ? "unscrew the frame from":"screw the frame to"] the floor..."))
+					to_chat(user, span_notice("I begin to [anchored ? "unscrew the frame from":"screw the frame to"] the floor..."))
 					if(I.use_tool(src, user, decon_speed, extra_checks = CALLBACK(src,PROC_REF(check_state_and_anchored), state, anchored)))
 						setAnchored(!anchored)
-						to_chat(user, span_notice("You [anchored ? "fasten the frame to":"unfasten the frame from"] the floor."))
+						to_chat(user, span_notice("I [anchored ? "fasten the frame to":"unfasten the frame from"] the floor."))
 			else //if we're not reinforced, we don't need to check or update state
-				to_chat(user, span_notice("You begin to [anchored ? "unscrew the window from":"screw the window to"] the floor..."))
+				to_chat(user, span_notice("I begin to [anchored ? "unscrew the window from":"screw the window to"] the floor..."))
 				if(I.use_tool(src, user, decon_speed, extra_checks = CALLBACK(src,PROC_REF(check_anchored), anchored)))
 					setAnchored(!anchored)
-					to_chat(user, span_notice("You [anchored ? "fasten the window to":"unfasten the window from"] the floor."))
+					to_chat(user, span_notice("I [anchored ? "fasten the window to":"unfasten the window from"] the floor."))
 			return
 
 
 		else if (istype(I, /obj/item/crowbar) && reinf && (state == WINDOW_OUT_OF_FRAME || state == WINDOW_IN_FRAME))
-			to_chat(user, span_notice("You begin to lever the window [state == WINDOW_OUT_OF_FRAME ? "into":"out of"] the frame..."))
+			to_chat(user, span_notice("I begin to lever the window [state == WINDOW_OUT_OF_FRAME ? "into":"out of"] the frame..."))
 			I.play_tool_sound(src, 75)
 			if(I.use_tool(src, user, decon_speed, extra_checks = CALLBACK(src,PROC_REF(check_state_and_anchored), state, anchored)))
 				state = (state == WINDOW_OUT_OF_FRAME ? WINDOW_IN_FRAME : WINDOW_OUT_OF_FRAME)
-				to_chat(user, span_notice("You pry the window [state == WINDOW_IN_FRAME ? "into":"out of"] the frame."))
+				to_chat(user, span_notice("I pry the window [state == WINDOW_IN_FRAME ? "into":"out of"] the frame."))
 			return
 
 		else if(istype(I, /obj/item/wrench) && !anchored)
@@ -286,7 +286,7 @@ GLOBAL_LIST_EMPTY(electrochromatic_window_lookup)
 				var/obj/item/stack/sheet/G = new glass_type(user.loc, glass_amount)
 				G.add_fingerprint(user)
 				playsound(src, 'sound/items/Deconstruct.ogg', 50, 1)
-				to_chat(user, span_notice("You successfully disassemble [src]."))
+				to_chat(user, span_notice("I successfully disassemble [src]."))
 				qdel(src)
 			return
 	return ..()

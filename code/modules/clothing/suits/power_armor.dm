@@ -57,7 +57,7 @@
 		if(fuel.fuel >= 5000)
 			src.powerLevel += 5000
 			fuel.fuel -= 5000
-			to_chat(user, "You charge the fusion core to [src.powerLevel] units of fuel. [fuel.fuel]/20000 left in the fuel cell.")
+			to_chat(user, "I charge the fusion core to [src.powerLevel] units of fuel. [fuel.fuel]/20000 left in the fuel cell.")
 			return
 		to_chat(user, "The fuel cell is empty.")
 
@@ -105,7 +105,7 @@
 	if(src == H.wear_suit) //Suit is already equipped
 		return ..()
 	if (!HAS_TRAIT(H, TRAIT_PA_WEAR) && slot == SLOT_WEAR_SUIT && requires_training)
-		to_chat(user, span_warning("You don't have the proper training to operate the power armor!"))
+		to_chat(user, span_warning("I don't have the proper training to operate the power armor!"))
 		return 0
 	if(slot == SLOT_WEAR_SUIT)
 		ADD_TRAIT(user, TRAIT_STUNIMMUNE,	"stun_immunity")
@@ -152,7 +152,7 @@
 				block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_DEFLECT
 				return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 			if(ismob(loc))
-				to_chat(loc, span_warning("Your power armor absorbs the projectile's impact!"))
+				to_chat(loc, span_warning("My power armor absorbs the projectile's impact!"))
 			block_return[BLOCK_RETURN_SET_DAMAGE_TO] = 0
 			return BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 	return

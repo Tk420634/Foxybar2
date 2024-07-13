@@ -25,7 +25,7 @@
 		return
 	var/obj/vore_belly/vb = loc
 	if(!vb.is_in_belly(src))
-		to_chat(src, span_phobia("You aren't in that belly! This might be a bug!"))
+		to_chat(src, span_phobia("I amn't in that belly! This might be a bug!"))
 		return
 	var/confirm = alert(
 		src, 
@@ -80,7 +80,7 @@
 
 	SEND_SIGNAL(src, COMSIG_VORE_TOGGLE_VOREMODE)
 	var/modenow = SEND_SIGNAL(src, COMSIG_VORE_GET_VOREMODE)
-	to_chat(src, span_notice("Your vore intent is now [modenow ? span_greentext("active") : span_redtext("inactive")]!"))
+	to_chat(src, span_notice("My vore intent is now [modenow ? span_greentext("active") : span_redtext("inactive")]!"))
 
 /mob/living/proc/vore_verb()
 	set name = "Vore"

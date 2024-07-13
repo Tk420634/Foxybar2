@@ -165,7 +165,7 @@
 	. = !(state_open || panel_open || (flags_1 & NODECONSTRUCT_1)) && I.tool_behaviour == TOOL_CROWBAR //We removed is_operational() here
 	if(.)
 		I.play_tool_sound(src, 50)
-		visible_message(span_notice("[usr] pries open \the [src]."), span_notice("You pry open [src]."))
+		visible_message(span_notice("[usr] pries open \the [src]."), span_notice("I pry open [src]."))
 		open_machine()
 
 /obj/machinery/harvester/emag_act(mob/user)
@@ -174,13 +174,13 @@
 		return
 	obj_flags |= EMAGGED
 	allow_living = TRUE
-	to_chat(user, span_warning("You overload [src]'s lifesign scanners."))
+	to_chat(user, span_warning("I overload [src]'s lifesign scanners."))
 	return TRUE
 
 /obj/machinery/harvester/container_resist(mob/living/user)
 	if(!harvesting)
 		visible_message(span_notice("[occupant] emerges from [src]!"),
-			span_notice("You climb out of [src]!"))
+			span_notice("I climb out of [src]!"))
 		open_machine()
 	else
 		to_chat(user,span_warning("[src] is active and can't be opened!")) //rip

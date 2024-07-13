@@ -87,10 +87,10 @@
 	else if(istype(target, /obj/machinery/door))
 		var/obj/machinery/door/D = target
 		playsound(get_turf(usr), 'sound/machines/airlock_alien_prying.ogg', 40, 1, -1)
-		to_chat(user, span_notice("You prepare to tear open [D]."))
+		to_chat(user, span_notice("I prepare to tear open [D]."))
 		if(do_mob(usr,target,25))
 			if (D.Adjacent(user))
-				to_chat(user, span_notice("You tear open the [D]."))
+				to_chat(user, span_notice("I tear open the [D]."))
 				user.Stun(10)
 				user.do_attack_animation(D, ATTACK_EFFECT_SMASH)
 				playsound(get_turf(D), 'sound/effects/bang.ogg', 30, 1, -1)
@@ -118,7 +118,7 @@
 			var/obj/item/clothing/suit/straight_jacket/S = user_H.get_item_by_slot(INV_SLOTBIT_ICLOTHING)
 			if(istype(S))
 				user_C.visible_message(span_warning("[user_C] attempts to remove [S]!"), \
-									span_warning("You rip through [S] like it's nothing!"))
+									span_warning("I rip through [S] like it's nothing!"))
 				user_C.clear_cuffs(S,TRUE)
 				playsound(get_turf(usr), 'sound/effects/grillehit.ogg', 80, 1, -1)
 				return TRUE */
@@ -149,7 +149,7 @@
 	// /proc/log_combat(atom/user, atom/target, what_done, atom/object=null, addition=null)
 	log_combat(owner, M, "used Brawn power")
 	owner.visible_message(span_warning("[owner] tears free of [M]'s grasp!"), \
-						span_warning("You shrug off [M]'s grasp!"))
+						span_warning("I shrug off [M]'s grasp!"))
 	owner.pulledby = null // It's already done, but JUST IN CASE.
 	return TRUE
 /* Doesnt work
@@ -159,7 +159,7 @@
 		playsound(get_turf(owner), 'sound/machines/airlock_alien_prying.ogg', 40, 1, -1)
 		if(do_mob(owner ,target, 25))
 			var/obj/structure/closet/C = owner.loc
-			to_chat(owner, span_notice("You prepare to tear open the [C]."))
+			to_chat(owner, span_notice("I prepare to tear open the [C]."))
 			owner.do_attack_animation(C, ATTACK_EFFECT_SMASH)
 			playsound(get_turf(C), 'sound/effects/bang.ogg', 30, 1, -1)
 			C.bust_open()

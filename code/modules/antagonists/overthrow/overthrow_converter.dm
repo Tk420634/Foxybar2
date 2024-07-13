@@ -19,7 +19,7 @@
 		var/datum/antagonist/overthrow/TO = target_mind.has_antag_datum(/datum/antagonist/overthrow)
 		var/datum/antagonist/overthrow/UO = user_mind.has_antag_datum(/datum/antagonist/overthrow)
 		if(!UO)
-			to_chat(user, span_danger("You don't know how to use this thing!")) // It needs a valid team to work, if you aren't an antag don't use this thing
+			to_chat(user, span_danger("I don't know how to use this thing!")) // It needs a valid team to work, if you aren't an antag don't use this thing
 			return FALSE
 		if(TO)
 			to_chat(user, span_notice("[target.name] woke up already, the implant would be ineffective against him!"))
@@ -35,7 +35,7 @@
 		to_chat(user,span_warning("The converter is empty!"))
 		return
 	if(M == user)
-		to_chat(user,span_warning("You cannot convert yourself!"))
+		to_chat(user,span_warning("I cannot convert yourself!"))
 		return
 	if(HAS_TRAIT(M, TRAIT_MINDSHIELD))
 		to_chat(user, span_danger("This mind is too strong to convert, try to remove whatever is protecting it first!"))

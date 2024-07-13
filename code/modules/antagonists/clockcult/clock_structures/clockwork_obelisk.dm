@@ -51,16 +51,16 @@
 	if(.)
 		return
 	if(!is_servant_of_ratvar(user) || !can_access_clockwork_power(src, hierophant_cost) || !anchored)
-		to_chat(user, span_warning("You place your hand on [src], but it doesn't react."))
+		to_chat(user, span_warning("I place your hand on [src], but it doesn't react."))
 		return
-	var/choice = alert(user,"You place your hand on [src]...",,"Hierophant Broadcast","Spatial Gateway","Cancel") //Will create a stable gateway instead if between two obelisks one of which is onstation and the other on reebe
+	var/choice = alert(user,"I place your hand on [src]...",,"Hierophant Broadcast","Spatial Gateway","Cancel") //Will create a stable gateway instead if between two obelisks one of which is onstation and the other on reebe
 	switch(choice)
 		if("Hierophant Broadcast")
 			if(active)
 				to_chat(user, span_warning("[src] is sustaining a gateway and cannot broadcast!"))
 				return
 			if(!user.can_speak_vocal())
-				to_chat(user, span_warning("You cannot speak through [src]!"))
+				to_chat(user, span_warning("I cannot speak through [src]!"))
 				return
 			var/input = stripped_input(usr, "Please choose a message to send over the Hierophant Network.", "Hierophant Broadcast", "")
 			if(!is_servant_of_ratvar(user) || !input || !user.canUseTopic(src, !issilicon(user)))
@@ -72,7 +72,7 @@
 				to_chat(user, span_warning("[src] is sustaining a gateway and cannot broadcast!"))
 				return
 			if(!user.can_speak_vocal())
-				to_chat(user, span_warning("You cannot speak through [src]!"))
+				to_chat(user, span_warning("I cannot speak through [src]!"))
 				return
 			if(!try_use_power(hierophant_cost))
 				to_chat(user, span_warning("[src] lacks the power to broadcast!"))
@@ -84,7 +84,7 @@
 				to_chat(user, span_warning("[src] is already sustaining a gateway!"))
 				return
 			if(!user.can_speak_vocal())
-				to_chat(user, span_warning("You need to be able to speak to open a gateway!"))
+				to_chat(user, span_warning("I need to be able to speak to open a gateway!"))
 				return
 			if(!try_use_power(gateway_cost))
 				to_chat(user, span_warning("[src] lacks the power to open a gateway!"))

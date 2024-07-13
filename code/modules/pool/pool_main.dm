@@ -119,7 +119,7 @@
 				if(filled)
 					if (H.wear_mask && H.wear_mask.flags_cover & MASKCOVERSMOUTH)
 						H.visible_message(span_danger("[H] falls in the water!"),
-											span_userdanger("You fall in the water!"))
+											span_userdanger("I fall in the water!"))
 						playsound(src, 'sound/effects/splash.ogg', 60, TRUE, 1)
 						H.DefaultCombatKnockdown(20)
 						return
@@ -128,25 +128,25 @@
 						H.adjustOxyLoss(5)
 						H.emote("cough")
 						H.visible_message(span_danger("[H] falls in and takes a drink!"),
-											span_userdanger("You fall in and swallow some water!"))
+											span_userdanger("I fall in and swallow some water!"))
 						playsound(src, 'sound/effects/splash.ogg', 60, TRUE, 1)
 				else if(!H.head || !(H.head.armor.getRating("melee") > 20))
 					if(prob(75))
 						H.visible_message(span_danger("[H] falls in the drained pool!"),
-													span_userdanger("You fall in the drained pool!"))
+													span_userdanger("I fall in the drained pool!"))
 						H.adjustBruteLoss(7)
 						H.DefaultCombatKnockdown(80)
 						playsound(src, 'sound/effects/woodhit.ogg', 60, TRUE, 1)
 					else
 						H.visible_message(span_danger("[H] falls in the drained pool, and cracks his skull!"),
-													span_userdanger("You fall in the drained pool, and crack your skull!"))
+													span_userdanger("I fall in the drained pool, and crack your skull!"))
 						H.apply_damage(15, BRUTE, "head")
 						H.DefaultCombatKnockdown(200) // This should hurt. And it does.
 						playsound(src, 'sound/effects/woodhit.ogg', 60, TRUE, 1)
 						playsound(src, 'sound/misc/crack.ogg', 100, TRUE)
 				else
 					H.visible_message(span_danger("[H] falls in the drained pool, but had an helmet!"),
-										span_userdanger("You fall in the drained pool, but you had an helmet!"))
+										span_userdanger("I fall in the drained pool, but you had an helmet!"))
 					H.DefaultCombatKnockdown(40)
 					playsound(src, 'sound/effects/woodhit.ogg', 60, TRUE, 1)
 		else if(filled)
@@ -172,7 +172,7 @@
 /turf/open/pool/attackby(obj/item/W, mob/living/user)
 	if(istype(W, /obj/item/mop) && filled)
 		W.reagents.add_reagent(/datum/reagent/water, 5)
-		to_chat(user, span_notice("You wet [W] in [src]."))
+		to_chat(user, span_notice("I wet [W] in [src]."))
 		playsound(src, 'sound/effects/slosh.ogg', 25, TRUE)
 	else
 		return ..()

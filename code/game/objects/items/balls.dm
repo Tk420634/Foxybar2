@@ -26,7 +26,7 @@
 
 /obj/item/toy/tennis/altafterattack(atom/target, mob/living/carbon/user, proximity_flag, click_parameters)	//does right click memes
 	if(istype(user))
-		user.visible_message(span_notice("[user] waggles [src] at [target]."), span_notice("You waggle [src] at [target]."))
+		user.visible_message(span_notice("[user] waggles [src] at [target]."), span_notice("I waggle [src] at [target]."))
 	return TRUE
 
 ///Special throw_impact for hats to frisbee hats at people to place them on their heads.

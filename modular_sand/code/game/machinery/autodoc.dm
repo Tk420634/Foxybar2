@@ -45,13 +45,13 @@
 		if((obj_flags & EMAGGED) && panel_open)
 			. += span_warning("[src]'s surgery protocols have been corrupted!")
 	else
-		. += span_warning("You need to get closer to see more information!")
+		. += span_warning("I need to get closer to see more information!")
 
 /obj/machinery/autodoc/close_machine(mob/user)
 	..()
 	playsound(src, 'sound/machines/click.ogg', 50)
 	if(occupant)
-		to_chat(occupant, span_notice("You enter [src]."))
+		to_chat(occupant, span_notice("I enter [src]."))
 
 		do_surgery()
 
@@ -61,7 +61,7 @@
 		return
 
 	occupant.visible_message(span_notice("[occupant] presses a button on [src], and you hear a mechanical noise."), \
-							span_notice("You feel a sharp sting as [src] starts inserting the organ into your body."))
+							span_notice("I feel a sharp sting as [src] starts inserting the organ into your body."))
 	playsound(get_turf(occupant), 'sound/weapons/circsawhit.ogg', 50, 1)
 	processing = TRUE
 	update_icon()
@@ -120,7 +120,7 @@
 			return
 		stored_organ = I
 		I.moveToNullspace()
-		to_chat(user, span_notice("You insert the [I] into [src]."))
+		to_chat(user, span_notice("I insert the [I] into [src]."))
 	else
 		return ..()
 
@@ -171,7 +171,7 @@
 	if(obj_flags & EMAGGED)
 		return
 	obj_flags |= EMAGGED
-	to_chat(user, span_warning("You reprogram [src]'s surgery procedures."))
+	to_chat(user, span_warning("I reprogram [src]'s surgery procedures."))
 
 /obj/machinery/autodoc/relaymove(mob/living/user)
 	container_resist(user)

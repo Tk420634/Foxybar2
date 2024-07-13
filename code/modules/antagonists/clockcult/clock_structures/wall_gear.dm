@@ -30,15 +30,15 @@
 		if(anchored)
 			to_chat(user, span_warning("[src] needs to be unsecured to disassemble it!"))
 		else
-			user.visible_message(span_warning("[user] starts to disassemble [src]."), span_notice("You start to disassemble [src]..."))
+			user.visible_message(span_warning("[user] starts to disassemble [src]."), span_notice("I start to disassemble [src]..."))
 			if(I.use_tool(src, user, 30, volume=100) && !anchored)
-				to_chat(user, span_notice("You disassemble [src]."))
+				to_chat(user, span_notice("I disassemble [src]."))
 				deconstruct(TRUE)
 		return 1
 	else if(istype(I, /obj/item/stack/tile/brass))
 		var/obj/item/stack/tile/brass/W = I
 		if(W.get_amount() < 1)
-			to_chat(user, span_warning("You need one brass sheet to do this!"))
+			to_chat(user, span_warning("I need one brass sheet to do this!"))
 			return
 		var/turf/T = get_turf(src)
 		if(iswallturf(T))
@@ -50,7 +50,7 @@
 		if(locate(/obj/structure/falsewall) in T.contents)
 			to_chat(user, span_warning("There is already a false wall present!"))
 			return
-		to_chat(user, span_notice("You start adding [W] to [src]..."))
+		to_chat(user, span_notice("I start adding [W] to [src]..."))
 		if(do_after(user, 20, target = src))
 			var/brass_floor = FALSE
 			if(istype(T, /turf/open/floor/clockwork)) //if the floor is already brass, costs less to make(conservation of masssssss)
@@ -63,7 +63,7 @@
 					new /obj/structure/falsewall/brass(T)
 				qdel(src)
 			else
-				to_chat(user, span_warning("You need more brass to make a [anchored ? "false ":""]wall!"))
+				to_chat(user, span_warning("I need more brass to make a [anchored ? "false ":""]wall!"))
 		return 1
 	return ..()
 

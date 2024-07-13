@@ -28,7 +28,7 @@
 
 /obj/item/grenade/homemade/examine(mob/user)
 	. = ..()
-	. += "You can't tell when it will explode!"
+	. += "I can't tell when it will explode!"
 
 
 ////////////////////
@@ -145,7 +145,7 @@
 		message_admins(message)
 		log_game("[key_name(user)] primed [name] at [AREACOORD(user)].")
 
-		to_chat(user, span_info("You light [src] on fire."))
+		to_chat(user, span_info("I light [src] on fire."))
 		icon_state = initial(icon_state) + "_active"
 		item_state = initial(item_state) + "_active"
 		if(isGlass)
@@ -187,7 +187,7 @@
 		if(!isGlass)
 			to_chat(user, span_danger("The flame's spread too far on it!"))
 			return
-		to_chat(user, span_info("You snuff out the flame on [src]."))
+		to_chat(user, span_info("I snuff out the flame on [src]."))
 		cut_overlay(GLOB.fire_overlay)
 		active = FALSE
 
@@ -229,7 +229,7 @@
 /obj/item/grenade/iedcasing/attack_self(mob/user) //
 	if(!active)
 		if(!botch_check(user))
-			to_chat(user, span_warning("You light the [name]!"))
+			to_chat(user, span_warning("I light the [name]!"))
 			cut_overlay("improvised_grenade_filled")
 			preprime(user, null, FALSE)
 */

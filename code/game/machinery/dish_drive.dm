@@ -37,7 +37,7 @@
 		return
 	var/obj/item/I = contents[contents.len] //the most recently-added item
 	user.put_in_hands(I)
-	to_chat(user, span_notice("You take out [I] from [src]."))
+	to_chat(user, span_notice("I take out [I] from [src]."))
 	playsound(src, 'sound/items/pshoom.ogg', 50, TRUE)
 	flick("synthesizer_beam", src)
 
@@ -45,7 +45,7 @@
 	if(is_type_in_list(I, item_types) && user.a_intent != INTENT_HARM)
 		if(!user.transferItemToLoc(I, src))
 			return
-		to_chat(user, span_notice("You put [I] in [src], and it's beamed into energy!"))
+		to_chat(user, span_notice("I put [I] in [src], and it's beamed into energy!"))
 		playsound(src, 'sound/items/pshoom.ogg', 50, TRUE)
 		flick("synthesizer_beam", src)
 		return
@@ -93,7 +93,7 @@
 /obj/machinery/dish_drive/attack_ai(mob/living/user)
 	if(stat)
 		return
-	to_chat(user, span_notice("You send a disposal transmission signal to [src]."))
+	to_chat(user, span_notice("I send a disposal transmission signal to [src]."))
 	do_the_dishes(TRUE)
 
 /obj/machinery/dish_drive/AltClick(mob/living/user)

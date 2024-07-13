@@ -47,7 +47,7 @@
 	else
 		limb_regen = user.regenerate_limb(BODY_ZONE_L_ARM, 1)
 	if(limb_regen)
-		user.visible_message(span_warning("[user]'s missing arm reforms, making a loud, grotesque sound!"), span_userdanger("Your arm regrows, making a loud, crunchy sound and giving you great pain!"), span_italic("You hear organic matter ripping and tearing!"))
+		user.visible_message(span_warning("[user]'s missing arm reforms, making a loud, grotesque sound!"), span_userdanger("My arm regrows, making a loud, crunchy sound and giving you great pain!"), span_italic("I hear organic matter ripping and tearing!"))
 		user.emote("scream")
 	var/obj/item/W = new weapon_type(user, silent)
 	user.put_in_hands(W)
@@ -89,7 +89,7 @@
 		return 1
 	var/mob/living/carbon/human/H = user
 	if(istype(H.wear_suit, suit_type) || istype(H.head, helmet_type))
-		H.visible_message(span_warning("[H] casts off [H.p_their()] [suit_name_simple]!"), span_warning("We cast off our [suit_name_simple]."), span_italic("You hear the organic matter ripping and tearing!"))
+		H.visible_message(span_warning("[H] casts off [H.p_their()] [suit_name_simple]!"), span_warning("We cast off our [suit_name_simple]."), span_italic("I hear the organic matter ripping and tearing!"))
 		H.temporarilyRemoveItemFromInventory(H.head, TRUE) //The qdel on dropped() takes care of it
 		H.temporarilyRemoveItemFromInventory(H.wear_suit, TRUE)
 		H.update_inv_wear_suit()
@@ -188,7 +188,7 @@
 	. = ..()
 	ADD_TRAIT(src, TRAIT_NODROP, CHANGELING_TRAIT)
 	if(ismob(loc) && !silent)
-		loc.visible_message(span_warning("A grotesque blade forms around [loc.name]\'s arm!"), span_warning("Our arm twists and mutates, transforming it into a deadly blade."), span_italic("You hear organic matter ripping and tearing!"))
+		loc.visible_message(span_warning("A grotesque blade forms around [loc.name]\'s arm!"), span_warning("Our arm twists and mutates, transforming it into a deadly blade."), span_italic("I hear organic matter ripping and tearing!"))
 	if(synthetic)
 		can_drop = TRUE
 	AddComponent(/datum/component/butchering, 60, 80)
@@ -216,13 +216,13 @@
 
 		if(A.hasPower())
 			user.visible_message(span_warning("[user] jams [src] into the airlock and starts prying it open!"), span_warning("We start forcing [src] open."), \
-			span_italic("You hear a metal screeching sound."))
+			span_italic("I hear a metal screeching sound."))
 			playsound(A, 'sound/machines/airlock_alien_prying.ogg', 100, 1)
 			if(!do_after(user, 100, target = A))
 				return
 		//user.say("Heeeeeeeeeerrre's Johnny!")
 		user.visible_message(span_warning("[user] forces the airlock to open with [user.p_their()] [src]!"), span_warning("We force [src] to open."), \
-		span_italic("You hear a metal screeching sound."))
+		span_italic("I hear a metal screeching sound."))
 		A.open(2)
 
 /obj/item/melee/arm_blade/dropped(mob/user)
@@ -278,9 +278,9 @@
 	. = ..()
 	if(ismob(loc))
 		if(!silent)
-			loc.visible_message(span_warning("[loc.name]\'s arm starts stretching inhumanly!"), span_warning("Our arm twists and mutates, transforming it into a tentacle."), span_italic("You hear organic matter ripping and tearing!"))
+			loc.visible_message(span_warning("[loc.name]\'s arm starts stretching inhumanly!"), span_warning("Our arm twists and mutates, transforming it into a tentacle."), span_italic("I hear organic matter ripping and tearing!"))
 		else
-			to_chat(loc, span_notice("You prepare to extend a tentacle."))
+			to_chat(loc, span_notice("I prepare to extend a tentacle."))
 
 
 /obj/item/gun/magic/tentacle/shoot_with_empty_chamber(mob/living/user as mob|obj)
@@ -359,7 +359,7 @@
 	if(isitem(target))
 		var/obj/item/I = target
 		if(!I.anchored)
-			to_chat(firer, span_notice("You pull [I] right into your grasp."))
+			to_chat(firer, span_notice("I pull [I] right into your grasp."))
 			H.put_in_hands(I) //Because throwing it is goofy as fuck and unreliable. If you land the tentacle despite the penalties to accuracy, you should have your reward.
 			. = BULLET_ACT_HIT
 
@@ -386,7 +386,7 @@
 								on_hit(I) //grab the item as if you had hit it directly with the tentacle
 								return BULLET_ACT_HIT
 							else
-								to_chat(firer, span_danger("You can't seem to pry [I] off [C]'s hands!"))
+								to_chat(firer, span_danger("I can't seem to pry [I] off [C]'s hands!"))
 								return BULLET_ACT_BLOCK
 						else
 							to_chat(firer, span_danger("[C] has nothing in hand to disarm!"))
@@ -440,9 +440,9 @@
 	. = ..()
 	if(ismob(loc))
 		if(!silent)
-			loc.visible_message(span_warning("[loc.name]'s hand begins glowing with magic power!"), span_warning("Our hand bursts alight with the magic spell."), span_italic("You hear a spell flaring to life!"))
+			loc.visible_message(span_warning("[loc.name]'s hand begins glowing with magic power!"), span_warning("Our hand bursts alight with the magic spell."), span_italic("I hear a spell flaring to life!"))
 		else
-			to_chat(loc, span_notice("You prepare to extend a magic grip."))
+			to_chat(loc, span_notice("I prepare to extend a magic grip."))
 
 
 /obj/item/gun/magic/magegrab/shoot_with_empty_chamber(mob/living/user as mob|obj)
@@ -521,7 +521,7 @@
 	if(isitem(target))
 		var/obj/item/I = target
 		if(!I.anchored)
-			to_chat(firer, span_notice("You pull [I] right into your grasp."))
+			to_chat(firer, span_notice("I pull [I] right into your grasp."))
 			H.put_in_hands(I) //Because throwing it is goofy as fuck and unreliable. If you land the tentacle despite the penalties to accuracy, you should have your reward.
 			. = BULLET_ACT_HIT
 
@@ -548,7 +548,7 @@
 								on_hit(I) //grab the item as if you had hit it directly with the tentacle
 								return BULLET_ACT_HIT
 							else
-								to_chat(firer, span_danger("You can't seem to pry [I] off [C]'s hands!"))
+								to_chat(firer, span_danger("I can't seem to pry [I] off [C]'s hands!"))
 								return BULLET_ACT_BLOCK
 						else
 							to_chat(firer, span_danger("[C] has nothing in hand to disarm!"))
@@ -619,7 +619,7 @@
 	. = ..()
 	ADD_TRAIT(src, TRAIT_NODROP, CHANGELING_TRAIT)
 	if(ismob(loc))
-		loc.visible_message(span_warning("The end of [loc.name]\'s hand inflates rapidly, forming a huge shield-like mass!"), span_warning("We inflate our hand into a strong shield."), span_italic("You hear organic matter ripping and tearing!"))
+		loc.visible_message(span_warning("The end of [loc.name]\'s hand inflates rapidly, forming a huge shield-like mass!"), span_warning("We inflate our hand into a strong shield."), span_italic("I hear organic matter ripping and tearing!"))
 
 /obj/item/shield/changeling/check_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
 	block_return[BLOCK_RETURN_BLOCK_CAPACITY] = (block_return[BLOCK_RETURN_BLOCK_CAPACITY] || 0) + remaining_uses
@@ -669,7 +669,7 @@
 	. = ..()
 	ADD_TRAIT(src, TRAIT_NODROP, CHANGELING_TRAIT)
 	if(ismob(loc))
-		loc.visible_message(span_warning("[loc.name]\'s flesh rapidly inflates, forming a bloated mass around [loc.p_their()] body!"), span_warning("We inflate our flesh, creating a spaceproof suit!"), span_italic("You hear organic matter ripping and tearing!"))
+		loc.visible_message(span_warning("[loc.name]\'s flesh rapidly inflates, forming a bloated mass around [loc.p_their()] body!"), span_warning("We inflate our flesh, creating a spaceproof suit!"), span_italic("I hear organic matter ripping and tearing!"))
 	START_PROCESSING(SSobj, src)
 
 /obj/item/clothing/suit/space/changeling/process()
@@ -726,7 +726,7 @@
 	. = ..()
 	ADD_TRAIT(src, TRAIT_NODROP, CHANGELING_TRAIT)
 	if(ismob(loc))
-		loc.visible_message(span_warning("[loc.name]\'s flesh turns black, quickly transforming into a hard, chitinous mass!"), span_warning("We harden our flesh, creating a suit of armor!"), span_italic("You hear organic matter ripping and tearing!"))
+		loc.visible_message(span_warning("[loc.name]\'s flesh turns black, quickly transforming into a hard, chitinous mass!"), span_warning("We harden our flesh, creating a suit of armor!"), span_italic("I hear organic matter ripping and tearing!"))
 
 /obj/item/clothing/head/helmet/changeling
 	name = "chitinous mass"

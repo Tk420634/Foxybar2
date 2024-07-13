@@ -542,7 +542,7 @@
 		user.DefaultCombatKnockdown(100)
 		user.dropItemToGround(src, TRUE)
 		user.visible_message(span_warning("A powerful force shoves [user] away from [target]!"), \
-							span_cultlarge("\"You shouldn't be touching tools that aren't yours.\""))
+							span_cultlarge("\"I shouldn't be touching tools that aren't yours.\""))
 		if(ishuman(user))
 			var/mob/living/carbon/human/H = user
 			H.apply_damage(rand(force/2, force), BRUTE, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
@@ -561,7 +561,7 @@
 	if(!is_servant_of_ratvar(user))
 		user.DefaultCombatKnockdown(100)
 		user.dropItemToGround(src, TRUE)
-		user.visible_message(span_warning("A powerful force shoves [user] away from [target]!"), span_neovgre("\"You shouldn't be touching tools that aren't yours.\""))
+		user.visible_message(span_warning("A powerful force shoves [user] away from [target]!"), span_neovgre("\"I shouldn't be touching tools that aren't yours.\""))
 		if(ishuman(user))
 			var/mob/living/carbon/human/H = user
 			H.apply_damage(rand(force/2, force), BRUTE, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))

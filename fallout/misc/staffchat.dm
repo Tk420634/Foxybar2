@@ -79,7 +79,7 @@ GLOBAL_PROTECT(staff)
 			else
 				target?.mind.teach_crafting_recipe(chosen_recipe)
 				to_chat(src, span_notice("Target now knows the [add_name] recipe! They may need to reenter any open crafting menus."))
-				to_chat(target, span_warning("You begin to remember how to make '[add_name]...'"))
+				to_chat(target, span_warning("I begin to remember how to make '[add_name]...'"))
 				log_admin("[key_name(usr)] added [chosen_recipe] recipe to [key_name(target)].")
 				message_admins("[key_name(usr)] added [chosen_recipe] recipe to [key_name(target)].")
 		if("Remove")
@@ -89,7 +89,7 @@ GLOBAL_PROTECT(staff)
 				if(chosen_recipe in our_known_recipes)
 					target?.mind.learned_recipes -= chosen_recipe
 					to_chat(src, span_notice("Target now no longer knows [remove_name]."))
-					to_chat(target, span_warning("You feel the knowledge of '[remove_name]' slipping from your mind..."))
+					to_chat(target, span_warning("I feel the knowledge of '[remove_name]' slipping from your mind..."))
 					log_admin("[key_name(usr)] removed [remove_name] from [key_name(target)].")
 					message_admins("[key_name(usr)] removed [remove_name] from [key_name(target)].")
 					return

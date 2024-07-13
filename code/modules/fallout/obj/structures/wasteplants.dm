@@ -11,7 +11,7 @@
 
 /obj/structure/flora/grass/wasteland/attackby(obj/item/W, mob/user, params) //we dont use /weapon any more
 	if(W.sharpness && W.force > 0 && !(NODECONSTRUCT_1 in flags_1))
-		to_chat(user, "You begin to harvest [src]...")
+		to_chat(user, "I begin to harvest [src]...")
 		playsound(src, 'sound/effects/grabgrass.ogg', 100, TRUE, -1) //touch it you coward
 		if(do_after(user, 100/W.force, target = user))
 			to_chat(user, span_notice("You've collected [src]"))
@@ -65,7 +65,7 @@
 		if(!istype(product))
 			return //Something fucked up here or it's a weird product
 		user.put_in_hands(product)
-		to_chat(user, span_notice("You pluck [product] from [src]."))
+		to_chat(user, span_notice("I pluck [product] from [src]."))
 		has_plod = FALSE
 		update_icon() //Won't update due to proc otherwise
 		addtimer(CALLBACK(src,PROC_REF(regrow)),timer) //Set up the timer properly

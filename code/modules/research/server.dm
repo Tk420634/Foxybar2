@@ -111,7 +111,7 @@
 	add_fingerprint(usr)
 	usr.set_machine(src)
 	if(!src.allowed(usr) && !(obj_flags & EMAGGED))
-		to_chat(usr, span_danger("You do not have the required access level."))
+		to_chat(usr, span_danger("I do not have the required access level."))
 		return
 
 	if(href_list["main"])
@@ -147,7 +147,7 @@
 		return
 	playsound(src, "sparks", 75, 1)
 	obj_flags |= EMAGGED
-	to_chat(user, span_notice("You disable the security protocols."))
+	to_chat(user, span_notice("I disable the security protocols."))
 	return TRUE
 
 
@@ -177,5 +177,5 @@
 	if(istype(I, /obj/item/multitool))
 		var/obj/item/multitool/M = I
 		M.buffer = src
-		to_chat(user, span_notice("You store server information in [I]'s buffer."))
+		to_chat(user, span_notice("I store server information in [I]'s buffer."))
 		return TRUE

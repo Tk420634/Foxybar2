@@ -78,7 +78,7 @@
 
 /mob/living/simple_animal/hostile/morph/proc/eat(atom/movable/A)
 	if(morphed && !eat_while_disguised)
-		to_chat(src, span_warning("You can not eat anything while you are disguised!"))
+		to_chat(src, span_warning("I can not eat anything while you are disguised!"))
 		return FALSE
 	if(A && A.loc != src)
 		visible_message(span_warning("[src] swallows [A] whole!"))
@@ -94,18 +94,18 @@
 		if(istype(A) && allowed(A))
 			assume(A)
 	else
-		to_chat(src, span_warning("Your chameleon skin is still repairing itself!"))
+		to_chat(src, span_warning("My chameleon skin is still repairing itself!"))
 		..()
 
 /mob/living/simple_animal/hostile/morph/proc/assume(atom/movable/target)
 	if(morphed)
-		to_chat(src, span_warning("You must restore to your original form first!"))
+		to_chat(src, span_warning("I must restore to your original form first!"))
 		return
 	morphed = TRUE
 	form = target
 
 	visible_message(span_warning("[src] suddenly twists and changes shape, becoming a copy of [target]!"), \
-					span_notice("You twist your body and assume the form of [target]."))
+					span_notice("I twist your body and assume the form of [target]."))
 	appearance = target.appearance
 	copy_overlays(target)
 	alpha = max(alpha, 150)	//fucking chameleons
@@ -134,7 +134,7 @@
 	maptext = null
 
 	visible_message(span_warning("[src] suddenly collapses in on itself, dissolving into a pile of green flesh!"), \
-					span_notice("You reform to your normal body."))
+					span_notice("I reform to your normal body."))
 	name = initial(name)
 	icon = initial(icon)
 	icon_state = initial(icon_state)
@@ -152,7 +152,7 @@
 /mob/living/simple_animal/hostile/morph/death(gibbed)
 	if(morphed)
 		visible_message(span_warning("[src] twists and dissolves into a pile of green flesh!"), \
-						span_userdanger("Your skin ruptures! Your flesh breaks apart! No disguise can ward off de--"))
+						span_userdanger("My skin ruptures! Your flesh breaks apart! No disguise can ward off de--"))
 		restore()
 	barf_contents()
 	..()
@@ -191,7 +191,7 @@
 
 /mob/living/simple_animal/hostile/morph/AttackingTarget()
 	if(morphed && !melee_damage_disguised)
-		to_chat(src, span_warning("You can not attack while disguised!"))
+		to_chat(src, span_warning("I can not attack while disguised!"))
 		return
 	var/atom/my_target = get_target()
 	if(isliving(my_target)) //Eat Corpses to regen health

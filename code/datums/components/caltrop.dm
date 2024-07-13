@@ -105,7 +105,7 @@
 		H.apply_status_effect(/datum/status_effect/caltropped)
 		H.visible_message(
 			span_danger("[H] steps on [parent]."),
-			span_userdanger("You step on [parent]!")
+			span_userdanger("I step on [parent]!")
 		)
 
 	INVOKE_ASYNC(H, TYPE_PROC_REF(/mob/living/carbon/human/,apply_damage), damage, BRUTE, picked_def_zone, FALSE, FALSE, FALSE, CANT_WOUND)

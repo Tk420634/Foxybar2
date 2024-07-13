@@ -1,6 +1,6 @@
 /atom/movable/screen/alert/status_effect/rainbow_protection
 	name = "Rainbow Protection"
-	desc = "You are defended from harm, but so are those you might seek to injure!"
+	desc = "I am defended from harm, but so are those you might seek to injure!"
 	icon_state = "slime_rainbowshield"
 
 /datum/status_effect/rainbow_protection
@@ -13,7 +13,7 @@
 	owner.status_flags |= GODMODE
 	ADD_TRAIT(owner, TRAIT_PACIFISM, "slimestatus")
 	owner.visible_message(span_warning("[owner] shines with a brilliant rainbow light."),
-		span_notice("You feel protected by an unknown force!"))
+		span_notice("I feel protected by an unknown force!"))
 	originalcolor = owner.color
 	return ..()
 
@@ -26,12 +26,12 @@
 	owner.color = originalcolor
 	REMOVE_TRAIT(owner, TRAIT_PACIFISM, "slimestatus")
 	owner.visible_message(span_notice("[owner] stops glowing, the rainbow light fading away."),
-		span_warning("You no longer feel protected..."))
+		span_warning("I no longer feel protected..."))
 	return ..()
 
 /atom/movable/screen/alert/status_effect/slimeskin
 	name = "Adamantine Slimeskin"
-	desc = "You are covered in a thick, non-neutonian gel."
+	desc = "I am covered in a thick, non-neutonian gel."
 	icon_state = "slime_stoneskin"
 
 /datum/status_effect/slimeskin
@@ -47,7 +47,7 @@
 		var/mob/living/carbon/human/H = owner
 		H.physiology.damage_resistance += 10
 	owner.visible_message(span_warning("[owner] is suddenly covered in a strange, blue-ish gel!"),
-		span_notice("You are covered in a thick, rubbery gel."))
+		span_notice("I am covered in a thick, rubbery gel."))
 	return ..()
 
 /datum/status_effect/slimeskin/on_remove()
@@ -56,7 +56,7 @@
 		var/mob/living/carbon/human/H = owner
 		H.physiology.damage_resistance -= 10
 	owner.visible_message(span_warning("[owner]'s gel coating liquefies and dissolves away."),
-		span_notice("Your gel second-skin dissolves!"))
+		span_notice("My gel second-skin dissolves!"))
 	return ..()
 
 /datum/status_effect/slimerecall
@@ -69,7 +69,7 @@
 
 /datum/status_effect/slimerecall/on_apply()
 	RegisterSignal(owner, COMSIG_LIVING_RESIST,PROC_REF(resistField))
-	to_chat(owner, span_danger("You feel a sudden tug from an unknown force, and feel a pull to bluespace!"))
+	to_chat(owner, span_danger("I feel a sudden tug from an unknown force, and feel a pull to bluespace!"))
 	to_chat(owner, span_notice("Resist if you wish avoid the force!"))
 	bluespace = icon('icons/effects/effects.dmi',"chronofield")
 	owner.add_overlay(bluespace)
@@ -164,7 +164,7 @@
 
 /atom/movable/screen/alert/status_effect/clone_decay
 	name = "Clone Decay"
-	desc = "You are simply a construct, and cannot maintain this form forever. You will be returned to your original body if you should fall."
+	desc = "I am simply a construct, and cannot maintain this form forever. You will be returned to your original body if you should fall."
 	icon_state = "slime_clonedecay"
 
 /datum/status_effect/slime_clone_decay
@@ -182,7 +182,7 @@
 
 /atom/movable/screen/alert/status_effect/bloodchill
 	name = "Bloodchilled"
-	desc = "You feel a shiver down your spine after getting hit with a glob of cold blood. You'll move slower and get frostbite for a while!"
+	desc = "I feel a shiver down your spine after getting hit with a glob of cold blood. You'll move slower and get frostbite for a while!"
 	icon_state = "bloodchill"
 
 /datum/status_effect/bloodchill
@@ -204,7 +204,7 @@
 
 /atom/movable/screen/alert/status_effect/bloodchill
 	name = "Bloodchilled"
-	desc = "You feel a shiver down your spine after getting hit with a glob of cold blood. You'll move slower and get frostbite for a while!"
+	desc = "I feel a shiver down your spine after getting hit with a glob of cold blood. You'll move slower and get frostbite for a while!"
 	icon_state = "bloodchill"
 
 /datum/status_effect/bonechill
@@ -228,7 +228,7 @@
 
 /atom/movable/screen/alert/status_effect/bonechill
 	name = "Bonechilled"
-	desc = "You feel a shiver down your spine after hearing the haunting noise of bone rattling. You'll move slower and get frostbite for a while!"
+	desc = "I feel a shiver down your spine after hearing the haunting noise of bone rattling. You'll move slower and get frostbite for a while!"
 	icon_state = "bloodchill"
 
 /datum/status_effect/rebreathing
@@ -365,7 +365,7 @@
 			huggables += L
 	if(length(huggables))
 		var/mob/living/carbon/hugged = pick(huggables)
-		owner.visible_message(span_notice("[owner] hugs [hugged]!"), span_notice("You hug [hugged]!"))
+		owner.visible_message(span_notice("[owner] hugs [hugged]!"), span_notice("I hug [hugged]!"))
 
 /datum/status_effect/tarcookie
 	id = "tarcookie"
@@ -578,7 +578,7 @@
 
 /obj/item/hothands
 	name = "burning fingertips"
-	desc = "You shouldn't see this."
+	desc = "I shouldn't see this."
 
 /obj/item/hothands/get_temperature()
 	return 290 //Below what's required to ignite plasma.
@@ -661,7 +661,7 @@
 //Bluespace has an icon because it's kinda active.
 /atom/movable/screen/alert/status_effect/bluespaceslime
 	name = "Stabilized Bluespace Extract"
-	desc = "You shouldn't see this, since we set it to change automatically!"
+	desc = "I shouldn't see this, since we set it to change automatically!"
 	icon_state = "slime_bluespace_on"
 
 /datum/status_effect/bluespacestabilization
@@ -738,7 +738,7 @@
 	if(owner.stat == DEAD)
 		if(clone && clone.stat != DEAD)
 			owner.visible_message(span_warning("[owner] blazes with brilliant light, [linked_extract] whisking [owner.p_their()] soul away."),
-				span_notice("You feel a warm glow from [linked_extract], and you open your eyes... elsewhere."))
+				span_notice("I feel a warm glow from [linked_extract], and you open your eyes... elsewhere."))
 			if(owner.mind)
 				owner.mind.transfer_to(clone)
 			clone = null
@@ -791,7 +791,7 @@
 	var/originalname
 
 /datum/status_effect/stabilized/green/on_apply()
-	to_chat(owner, span_warning("You feel different..."))
+	to_chat(owner, span_warning("I feel different..."))
 	if(ishuman(owner))
 		var/mob/living/carbon/human/H = owner
 		originalDNA = new H.dna.type
@@ -808,7 +808,7 @@
 	return ..()
 
 /datum/status_effect/stabilized/green/on_remove()
-	to_chat(owner, span_notice("You feel more like yourself."))
+	to_chat(owner, span_notice("I feel more like yourself."))
 	if(ishuman(owner))
 		var/mob/living/carbon/human/H = owner
 		originalDNA.transfer_identity(H)
@@ -902,7 +902,7 @@
 		if(M.stat == DEAD)
 			return
 		if(!messagedelivered)
-			to_chat(owner,span_notice("You feel your hands melt around [M]'s neck and start to drain [M.p_them()] of life."))
+			to_chat(owner,span_notice("I feel your hands melt around [M]'s neck and start to drain [M.p_them()] of life."))
 			to_chat(owner.pulling, span_userdanger("[owner]'s hands melt around your neck, and you can feel your life starting to drain away!"))
 			messagedelivered = TRUE
 		examine_text = span_warning("SUBJECTPRONOUN is draining health from [owner.pulling]!")

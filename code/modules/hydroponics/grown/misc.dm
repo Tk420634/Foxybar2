@@ -221,7 +221,7 @@
 
 /obj/item/reagent_containers/food/snacks/grown/cherry_bomb
 	name = "cherry bombs"
-	desc = "You think you can hear the hissing of a tiny fuse."
+	desc = "I think you can hear the hissing of a tiny fuse."
 	icon_state = "cherry_bomb"
 	filling_color = rgb(20, 20, 20)
 	seed = /obj/item/seeds/cherry/bomb
@@ -231,7 +231,7 @@
 	wine_power = 80
 
 /obj/item/reagent_containers/food/snacks/grown/cherry_bomb/attack_self(mob/living/user)
-	user.visible_message(span_warning("[user] plucks the stem from [src]!"), span_userdanger("You pluck the stem from [src], which begins to hiss loudly!"))
+	user.visible_message(span_warning("[user] plucks the stem from [src]!"), span_userdanger("I pluck the stem from [src], which begins to hiss loudly!"))
 	message_admins("[ADMIN_LOOKUPFLW(user)] primed a cherry bomb at [ADMIN_VERBOSEJMP(user)]")
 	log_game("[key_name(user)] primed a cherry bomb at [AREACOORD(user)].")
 	prime()
@@ -333,7 +333,7 @@
 
 	//DEFUSING NADE LOGIC
 	if (W.tool_behaviour == TOOL_WIRECUTTER && fused)
-		user.show_message(span_notice("You cut the fuse!"), MSG_VISUAL)
+		user.show_message(span_notice("I cut the fuse!"), MSG_VISUAL)
 		playsound(user, W.hitsound, 50, 1, -1)
 		icon_state = "coconut_carved"
 		desc = "A coconut. This one's got a hole in it."
@@ -348,7 +348,7 @@
 	if(!fusedactive && fused)
 		var/lighting_text = W.ignition_effect(src, user)
 		if(lighting_text)
-			user.visible_message(span_warning("[user] ignites [src]'s fuse!"), span_userdanger("You ignite the [src]'s fuse!"))
+			user.visible_message(span_warning("[user] ignites [src]'s fuse!"), span_userdanger("I ignite the [src]'s fuse!"))
 			fusedactive = TRUE
 			defused = FALSE
 			playsound(src, 'sound/effects/fuse.ogg', 100, 0)
@@ -362,7 +362,7 @@
 	//ADDING A FUSE, NADE LOGIC
 	if (istype(W,/obj/item/stack/sheet/cloth) || istype(W,/obj/item/stack/sheet/durathread))
 		if (carved && !straw && !fused)
-			user.show_message(span_notice("You add a fuse to the coconut!"), 1)
+			user.show_message(span_notice("I add a fuse to the coconut!"), 1)
 			W.use(1)
 			fused = TRUE
 			icon_state = "coconut_grenade"
@@ -372,17 +372,17 @@
 
 	//ADDING STRAW LOGIC
 	if (istype(W,/obj/item/stack/sheet/mineral/bamboo) && opened && !straw && fused)
-		user.show_message(span_notice("You add a bamboo straw to the coconut!"), 1)
+		user.show_message(span_notice("I add a bamboo straw to the coconut!"), 1)
 		straw = TRUE
 		W.use(1)
 		icon_state += "_straw"
-		desc = "You can already feel like you're on a tropical vacation."
+		desc = "I can already feel like you're on a tropical vacation."
 		return
 	//OPENING THE NUT LOGIC
 	if (!carved && !chopped)
 		var/screwdrivered = W.tool_behaviour == TOOL_SCREWDRIVER
 		if(screwdrivered || W.sharpness)
-			user.show_message(span_notice("You [screwdrivered ? "make a hole in the coconut" : "slice the coconut open"]!"), 1)
+			user.show_message(span_notice("I [screwdrivered ? "make a hole in the coconut" : "slice the coconut open"]!"), 1)
 			carved = TRUE
 			opened = TRUE
 			spillable = !screwdrivered
@@ -464,7 +464,7 @@
 			M.visible_message(span_danger("[user] feeds something to [M]."), span_userdanger("[user] feeds something to you."))
 			log_combat(user, M, "fed", reagents.log_list())
 		else
-			to_chat(user, span_notice("You swallow a gulp of [src]."))
+			to_chat(user, span_notice("I swallow a gulp of [src]."))
 		var/fraction = min(5/reagents.total_volume, 1)
 		reagents.reaction(M, INGEST, fraction)
 		addtimer(CALLBACK(reagents, TYPE_PROC_REF(/datum/reagents,trans_to), M, 5), 5)
@@ -490,7 +490,7 @@
 			return
 
 		var/trans = reagents.trans_to(target, amount_per_transfer_from_this)
-		to_chat(user, span_notice("You transfer [trans] unit\s of the solution to [target]."))
+		to_chat(user, span_notice("I transfer [trans] unit\s of the solution to [target]."))
 
 	else if(target.is_drainable()) //A dispenser. Transfer FROM it TO us.
 		if(!target.reagents.total_volume)
@@ -502,12 +502,12 @@
 			return
 
 		var/trans = target.reagents.trans_to(src, amount_per_transfer_from_this)
-		to_chat(user, span_notice("You fill [src] with [trans] unit\s of the contents of [target]."))
+		to_chat(user, span_notice("I fill [src] with [trans] unit\s of the contents of [target]."))
 
 	else if(reagents.total_volume)
 		if(user.a_intent == INTENT_HARM && spillable == TRUE)
 			user.visible_message(span_danger("[user] splashes the contents of [src] onto [target]!"), \
-								span_notice("You splash the contents of [src] onto [target]."))
+								span_notice("I splash the contents of [src] onto [target]."))
 			reagents.reaction(target, TOUCH)
 			reagents.clear_reagents()
 
@@ -630,5 +630,5 @@
 	user.visible_message(span_danger("[user] begins to plant \the [src]."))
 	if(do_after(user, 8 SECONDS, target = user.drop_location(), progress = TRUE))
 		new /obj/structure/fluff/hedge/opaque(user.drop_location())
-		to_chat(user, span_notice("You plant \the [src]."))
+		to_chat(user, span_notice("I plant \the [src]."))
 		qdel(src)

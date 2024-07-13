@@ -53,7 +53,7 @@
 		user.DelayNextAction(CLICK_CD_MELEE)
 		user.do_attack_animation(src)
 		structureclimber.DefaultCombatKnockdown(40)
-		structureclimber.visible_message(span_warning("[structureclimber] has been knocked off [src]."), span_warning("You're knocked off [src]!"), span_warning("You see [structureclimber] get knocked off [src]."))
+		structureclimber.visible_message(span_warning("[structureclimber] has been knocked off [src]."), span_warning("You're knocked off [src]!"), span_warning("I see [structureclimber] get knocked off [src]."))
 
 /obj/structure/ui_act(action, params)
 	. = ..()
@@ -86,7 +86,7 @@
 /obj/structure/proc/climb_structure(mob/living/user)
 	src.add_fingerprint(user)
 	user.visible_message(span_warning("[user] starts climbing onto [src]."), \
-								span_notice("You start climbing onto [src]..."))
+								span_notice("I start climbing onto [src]..."))
 	var/adjusted_climb_time = climb_time
 	if(user.restrained()) //climbing takes twice as long when restrained.
 		adjusted_climb_time *= 2
@@ -99,13 +99,13 @@
 		if(src.loc) //Checking if structure has been destroyed
 			if(do_climb(user))
 				user.visible_message(span_warning("[user] climbs onto [src]."), \
-									span_notice("You climb onto [src]."))
+									span_notice("I climb onto [src]."))
 				log_combat(user, src, "climbed onto")
 				if(climb_stun && !HAS_TRAIT(user, TRAIT_FREERUNNING))
 					user.Stun(climb_stun)
 				. = 1
 			else
-				to_chat(user, span_warning("You fail to climb onto [src]."))
+				to_chat(user, span_warning("I fail to climb onto [src]."))
 	structureclimber = null
 
 /obj/structure/examine(mob/user)
@@ -215,7 +215,7 @@
 // 		if(HAS_TRAIT(user,TRAIT_TECHNOPHREAK))
 // 			chance_for_extra += 50
 // 		if(made_stuff < max_stuff && prob(chance_for_extra))
-// 			to_chat(user, span_green("Your expert salvaging sense lets you spot a bit more usable scrap!"))
+// 			to_chat(user, span_green("My expert salvaging sense lets you spot a bit more usable scrap!"))
 // 			return TRUE
 // 		else
 // 			return FALSE

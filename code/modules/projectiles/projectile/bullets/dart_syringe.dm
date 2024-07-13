@@ -22,7 +22,7 @@
 			else
 				blocked = 100
 				target.visible_message(span_danger("\The [src] was deflected!"), \
-									   span_userdanger("You were protected against \the [src]!"))
+									   span_userdanger("I were protected against \the [src]!"))
 
 	..(target, blocked)
 	DISABLE_BITFIELD(reagents.reagents_holder_flags, NO_REACT)
@@ -69,12 +69,12 @@
 						else
 							M.reagents.add_reagent(R.type, R.volume)
 
-				target.visible_message(span_notice("\The [src] beeps!"), span_hear("You feel a tiny prick as a smartdart embeds itself in you with a beep."))
+				target.visible_message(span_notice("\The [src] beeps!"), span_hear("I feel a tiny prick as a smartdart embeds itself in you with a beep."))
 				return BULLET_ACT_HIT
 			else
 				blocked = 100
 				target.visible_message(span_danger("\The [src] was deflected!"), \
-									   span_userdanger("You see a [src] bounce off you, booping sadly!"))
+									   span_userdanger("I see a [src] bounce off you, booping sadly!"))
 
 	target.visible_message(span_danger("\The [src] fails to land on target!"))
 	return BULLET_ACT_BLOCK

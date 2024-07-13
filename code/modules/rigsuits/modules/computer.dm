@@ -15,12 +15,12 @@
 	set src in usr
 
 	if(!usr.loc || !usr.loc.loc || !istype(usr.loc.loc, /obj/item/rig_module))
-		to_chat(usr, "You are not loaded into a hardsuit.")
+		to_chat(usr, "I am not loaded into a hardsuit.")
 		return
 
 	var/obj/item/rig_module/module = usr.loc.loc
 	if(!module.holder)
-		to_chat(usr, "Your module is not installed in a hardsuit.")
+		to_chat(usr, "My module is not installed in a hardsuit.")
 		return
 
 	module.holder.ui_interact(usr)
@@ -160,9 +160,9 @@
 		if(istype(ai_card, /obj/item/aicard))
 			if(integrated_ai && !integrated_ai.stat)
 				if(user)
-					to_chat(user, span_danger("You cannot eject your currently stored AI. Purge it manually."))
+					to_chat(user, span_danger("I cannot eject your currently stored AI. Purge it manually."))
 				return 0
-			to_chat(user, span_danger("You purge the remaining scraps of data from your previous AI, freeing it for use."))
+			to_chat(user, span_danger("I purge the remaining scraps of data from your previous AI, freeing it for use."))
 			QDEL_NULL(integrated_ai)
 			QDEL_NULL(ai_card)
 		else if(user)
@@ -252,7 +252,7 @@
 /obj/item/rig_module/datajack/accepts_item(obj/item/input_device, mob/living/user)
 
 	if(istype(input_device,/obj/item/disk/tech_disk))
-		to_chat(user, "You slot the disk into [src].")
+		to_chat(user, "I slot the disk into [src].")
 		var/obj/item/disk/tech_disk/disk = input_device
 		if(disk.stored)
 			if(load_data(disk.stored))

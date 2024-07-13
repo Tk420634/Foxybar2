@@ -335,15 +335,15 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 	// Taken from /obj/item/stack/rods/attackby in [rods.dm]
 	if(W.get_sharpness())
 		user.visible_message("[user] begins whittling [src] into a rod.", \
-				span_notice("You begin whittling [src] into a rod, suitable as a weapon shaft."), \
-				span_italic("You hear wood carving."))
+				span_notice("I begin whittling [src] into a rod, suitable as a weapon shaft."), \
+				span_italic("I hear wood carving."))
 		// 7 Second Timer
 		if(!do_after(user, 70, TRUE, src))
 			return
 		// Make stick
 		var/obj/item/blacksmith/woodrod/new_item = new(user.loc)
 		user.visible_message("[user] finishes carving a rod from the [src].", \
-				span_notice("You finish carving a rod from the [src]."))
+				span_notice("I finish carving a rod from the [src]."))
 		// Prepare to Put in Hands (if holding wood)
 		var/obj/item/stack/sheet/mineral/wood/N = src
 		var/replace = (user.get_inactive_held_item() == N)
@@ -355,7 +355,7 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 	if(istype(W, merge_type))
 		var/obj/item/stack/S = W
 		if(merge(S))
-			to_chat(user, span_notice("Your [S.name] stack now contains [S.get_amount()] [S.singular_name]\s."))
+			to_chat(user, span_notice("My [S.name] stack now contains [S.get_amount()] [S.singular_name]\s."))
 	else
 		. = ..()
 

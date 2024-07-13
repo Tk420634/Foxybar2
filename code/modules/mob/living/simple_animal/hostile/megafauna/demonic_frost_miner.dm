@@ -51,21 +51,21 @@ Difficulty: Extremely Hard
 	name = "Fire Frost Orbs"
 	icon_icon = 'icons/mob/actions/actions_items.dmi'
 	button_icon_state = "sniper_zoom"
-	chosen_message = span_colossus("You are now sending out frost orbs to track in on a target.")
+	chosen_message = span_colossus("I am now sending out frost orbs to track in on a target.")
 	chosen_attack_num = 1
 
 /datum/action/innate/megafauna_attack/snowball_machine_gun
 	name = "Fire Snowball Machine Gun"
 	icon_icon = 'icons/obj/guns/energy.dmi'
 	button_icon_state = "kineticgun"
-	chosen_message = span_colossus("You are now firing a snowball machine gun at a target.")
+	chosen_message = span_colossus("I am now firing a snowball machine gun at a target.")
 	chosen_attack_num = 2
 
 /datum/action/innate/megafauna_attack/ice_shotgun
 	name = "Fire Ice Shotgun"
 	icon_icon = 'icons/obj/guns/projectile.dmi'
 	button_icon_state = "shotgun"
-	chosen_message = span_colossus("You are now firing shotgun ice blasts.")
+	chosen_message = span_colossus("I am now firing shotgun ice blasts.")
 	chosen_attack_num = 3
 
 /mob/living/simple_animal/hostile/megafauna/demonic_frost_miner/OpenFire()
@@ -140,7 +140,7 @@ Difficulty: Extremely Hard
 
 /mob/living/simple_animal/hostile/megafauna/demonic_frost_miner/ex_act(severity, target)
 	adjustBruteLoss(30 * severity - 120)
-	visible_message(span_danger("[src] absorbs the explosion!"), span_userdanger("You absorb the explosion!"))
+	visible_message(span_danger("[src] absorbs the explosion!"), span_userdanger("I absorb the explosion!"))
 
 /mob/living/simple_animal/hostile/megafauna/demonic_frost_miner/Goto(target, delay, minimum_distance)
 	if(enraging)
@@ -281,12 +281,12 @@ Difficulty: Extremely Hard
 		to_chat(user, span_notice("A dark presence stops you from absorbing the crystal."))
 		return
 	forceMove(user)
-	to_chat(user, span_notice("You feel a bit safer... but a demonic presence lurks in the back of your head..."))
+	to_chat(user, span_notice("I feel a bit safer... but a demonic presence lurks in the back of your head..."))
 	RegisterSignal(user, COMSIG_MOB_DEATH,PROC_REF(resurrect))
 
 /// Resurrects the targette when they die by cloning them into a new duplicate body and transferring their mind to the clone on a safe station turf
 /obj/item/resurrection_crystal/proc/resurrect(mob/living/carbon/user, gibbed)
-	user.visible_message(span_notice("You see [user]'s soul dragged out of their body!"), span_notice("You feel your soul dragged away to a fresh body!"))
+	user.visible_message(span_notice("I see [user]'s soul dragged out of their body!"), span_notice("I feel your soul dragged away to a fresh body!"))
 	var/typepath = user.type
 	var/turf/T = find_safe_turf()
 	var/mob/living/carbon/clone = new typepath(T)
@@ -294,7 +294,7 @@ Difficulty: Extremely Hard
 	user.dna.transfer_identity(clone)
 	clone.updateappearance(mutcolor_update=1)
 	user.mind.transfer_to(clone) // second life
-	to_chat(clone, span_notice("You blink and find yourself in [get_area_name(T)]."))
+	to_chat(clone, span_notice("I blink and find yourself in [get_area_name(T)]."))
 	user.gib()
 	qdel(src)
 
@@ -345,7 +345,7 @@ Difficulty: Extremely Hard
 /datum/status_effect/ice_block_talisman/on_apply()
 	RegisterSignal(owner, COMSIG_MOVABLE_PRE_MOVE,PROC_REF(owner_moved))
 	if(!owner.stat)
-		to_chat(owner, span_userdanger("You become frozen in a cube!"))
+		to_chat(owner, span_userdanger("I become frozen in a cube!"))
 	cube = icon('icons/effects/freeze.dmi', "ice_cube")
 	var/icon/size_check = icon(owner.icon, owner.icon_state)
 	cube.Scale(size_check.Width(), size_check.Height())

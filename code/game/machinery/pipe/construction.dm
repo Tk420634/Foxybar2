@@ -154,8 +154,8 @@ Buildable meters
 	W.play_tool_sound(src)
 	user.visible_message( \
 		"[user] fastens \the [src].", \
-		span_notice("You fasten \the [src]."), \
-		span_italic("You hear ratcheting."))
+		span_notice("I fasten \the [src]."), \
+		span_italic("I hear ratcheting."))
 
 	qdel(src)
 
@@ -192,11 +192,11 @@ Buildable meters
 			pipe = P
 			break
 	if(!pipe)
-		to_chat(user, span_warning("You need to fasten it to a pipe!"))
+		to_chat(user, span_warning("I need to fasten it to a pipe!"))
 		return TRUE
 	new /obj/machinery/meter(loc, piping_layer)
 	W.play_tool_sound(src)
-	to_chat(user, span_notice("You fasten the meter to the pipe."))
+	to_chat(user, span_notice("I fasten the meter to the pipe."))
 	qdel(src)
 
 /obj/item/pipe_meter/screwdriver_act(mob/living/user, obj/item/S)
@@ -205,12 +205,12 @@ Buildable meters
 		return TRUE
 
 	if(!isturf(loc))
-		to_chat(user, span_warning("You need to fasten it to the floor!"))
+		to_chat(user, span_warning("I need to fasten it to the floor!"))
 		return TRUE
 
 	new /obj/machinery/meter/turf(loc, piping_layer)
 	S.play_tool_sound(src)
-	to_chat(user, span_notice("You fasten the meter to the [loc.name]."))
+	to_chat(user, span_notice("I fasten the meter to the [loc.name]."))
 	qdel(src)
 
 /obj/item/pipe_meter/dropped(mob/user)

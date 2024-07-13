@@ -85,7 +85,7 @@
 		return
 	if(!chassis.selected)
 		chassis.selected = available_equipment[1]
-		chassis.occupant_message("You select [chassis.selected]")
+		chassis.occupant_message("I select [chassis.selected]")
 		send_byjax(chassis.occupant,"exosuit.browser","eq_list",chassis.get_equipment_list())
 		button_icon_state = "mech_cycle_equip_on"
 		playsound(chassis,'sound/machines/piston_raise.ogg', 40, TRUE)
@@ -97,12 +97,12 @@
 		if(A == chassis.selected)
 			if(available_equipment.len == number)
 				chassis.selected = null
-				chassis.occupant_message("You switch to no equipment")
+				chassis.occupant_message("I switch to no equipment")
 				button_icon_state = "mech_cycle_equip_off"
 				playsound(chassis,'sound/machines/piston_lower.ogg', 40, TRUE)
 			else
 				chassis.selected = available_equipment[number+1]
-				chassis.occupant_message("You switch to [chassis.selected]")
+				chassis.occupant_message("I switch to [chassis.selected]")
 				button_icon_state = "mech_cycle_equip_on"
 				playsound(chassis,'sound/machines/piston_raise.ogg', 40, TRUE)
 			send_byjax(chassis.occupant,"exosuit.browser","eq_list",chassis.get_equipment_list())
@@ -205,13 +205,13 @@
 		chassis.bumpsmash = 1
 		chassis.step_in = max(1, round(chassis.step_in*0.75, 0.25))
 		chassis.step_energy_drain = max(chassis.overload_step_energy_drain_min,chassis.step_energy_drain*chassis.leg_overload_coeff)
-		chassis.occupant_message(span_danger("You enable leg actuators overload."))
+		chassis.occupant_message(span_danger("I enable leg actuators overload."))
 	else
 		chassis.leg_overload_mode = 0
 		chassis.bumpsmash = 0
 		chassis.step_in = initial(chassis.step_in)
 		chassis.step_energy_drain = chassis.normal_step_energy_drain
-		chassis.occupant_message(span_notice("You disable leg actuators overload."))
+		chassis.occupant_message(span_notice("I disable leg actuators overload."))
 	UpdateButtonIcon()
 
 /datum/action/innate/mecha/mech_smoke
@@ -258,7 +258,7 @@
 	switch(chassis.damtype)
 		if("tox")
 			new_damtype = "brute"
-			chassis.occupant_message("Your exosuit's hands form into fists.")
+			chassis.occupant_message("My exosuit's hands form into fists.")
 		if("brute")
 			new_damtype = "fire"
 			chassis.occupant_message("A torch tip extends from your exosuit's hand, glowing red.")

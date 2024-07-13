@@ -76,7 +76,7 @@
 		to_chat(F, span_notice("YOU'RE ALREADY WUMBO!"))
 		return
 	if(F.inflate_cooldown)
-		to_chat(F, span_notice("You need time to gather your strength."))
+		to_chat(F, span_notice("I need time to gather your strength."))
 		return
 	if(F.buffed)
 		to_chat(F, span_notice("Something is interfering with your growth."))
@@ -142,5 +142,5 @@
 		A.melee_damage_upper = max((A.melee_damage_upper * 2), 10)
 		A.transform *= 2
 		A.environment_smash |= ENVIRONMENT_SMASH_STRUCTURES | ENVIRONMENT_SMASH_RWALLS
-		to_chat(user, span_info("You increase the size of [A], giving it a surge of strength!"))
+		to_chat(user, span_info("I increase the size of [A], giving it a surge of strength!"))
 		qdel(src)

@@ -407,13 +407,13 @@
 	if(!Adjacent(target))
 		if(selected && selected.is_ranged())
 			if(HAS_TRAIT(L, TRAIT_PACIFISM) && selected.harmful)
-				to_chat(user, span_warning("You don't want to harm other living beings!"))
+				to_chat(user, span_warning("I don't want to harm other living beings!"))
 				return
 			if(selected.action(target,params))
 				selected.start_cooldown()
 	else if(selected && selected.is_melee())
 		if(isliving(target) && selected.harmful && HAS_TRAIT(L, TRAIT_PACIFISM))
-			to_chat(user, span_warning("You don't want to harm other living beings!"))
+			to_chat(user, span_warning("I don't want to harm other living beings!"))
 			return
 		if(selected.action(target,params))
 			selected.start_cooldown()
@@ -457,7 +457,7 @@
 		if(istype(backup) && movement_dir && !backup.anchored)
 			if(backup.newtonian_move(turn(movement_dir, 180)))
 				if(occupant)
-					to_chat(occupant, span_info("You push off of [backup] to propel yourself."))
+					to_chat(occupant, span_info("I push off of [backup] to propel yourself."))
 		return 1
 
 /obj/mecha/relaymove(mob/user,direction)
@@ -467,7 +467,7 @@
 		return
 	if(user != occupant) //While not "realistic", this piece is player friendly.
 		user.forceMove(get_turf(src))
-		to_chat(user, span_notice("You climb out from [src]."))
+		to_chat(user, span_notice("I climb out from [src]."))
 		return 0
 	if(state)
 		occupant_message(span_danger("Maintenance protocols in effect."))
@@ -625,7 +625,7 @@
 			to_chat(user, "<span class='notice'>[icon2html(src, user)] Status of [name]:</span>\n[A.get_mecha_info()]")
 			break
 		if(!can_control_mech)
-			to_chat(user, span_warning("You cannot control exosuits without AI control beacons installed."))
+			to_chat(user, span_warning("I cannot control exosuits without AI control beacons installed."))
 			return
 		to_chat(user, "<a href='?src=[REF(user)];ai_take_control=[REF(src)]'><span class='boldnotice'>Take control of exosuit?</span></a><br>")
 
@@ -654,7 +654,7 @@
 			AI.controlled_mech = null
 			AI.remote_control = null
 			icon_state = initial(icon_state)+"-open"
-			to_chat(AI, "You have been downloaded to a mobile storage device. Wireless connection offline.")
+			to_chat(AI, "I have been downloaded to a mobile storage device. Wireless connection offline.")
 			to_chat(user, "<span class='boldnotice'>Transfer successful</span>: [AI.name] ([rand(1000,9999)].exe) removed from [name] and stored within local memory.")
 
 		if(AI_MECH_HACK) //Called by AIs on the mech
@@ -662,7 +662,7 @@
 			if(AI.can_dominate_mechs)
 				if(occupant) //Oh, I am sorry, were you using that?
 					to_chat(AI, span_warning("Pilot detected! Forced ejection initiated!"))
-					to_chat(occupant, span_danger("You have been forcibly ejected!"))
+					to_chat(occupant, span_danger("I have been forcibly ejected!"))
 					go_out(1) //IT IS MINE, NOW. SUCK IT, RD!
 			ai_enter_mech(AI, interaction)
 
@@ -700,7 +700,7 @@
 	AI.mobility_flags = MOBILITY_FLAGS_DEFAULT //Much easier than adding AI checks! Be sure to set this back to 0 if you decide to allow an AI to leave a mech somehow.
 	AI.can_shunt = 0 //ONE AI ENTERS. NO AI LEAVES.
 	to_chat(AI, AI.can_dominate_mechs ? span_announce("Takeover of [name] complete! You are now loaded onto the onboard computer. Do not attempt to leave the station sector!") :\
-		span_notice("You have been uploaded to a mech's onboard computer."))
+		span_notice("I have been uploaded to a mech's onboard computer."))
 	to_chat(AI, "<span class='reallybig boldnotice'>Use Middle-Mouse to activate mech functions and equipment. Click normally for AI interactions.</span>")
 	if(interaction == AI_TRANS_FROM_CARD)
 		GrantActions(AI, FALSE) //No eject/return to core action for AI uploaded by card
@@ -759,28 +759,28 @@
 		log_append_to_last("Permission denied.")
 		return
 	if(user.buckled)
-		to_chat(user, span_warning("You are currently buckled and cannot move."))
+		to_chat(user, span_warning("I am currently buckled and cannot move."))
 		log_append_to_last("Permission denied.")
 		return
 	if(user.has_buckled_mobs()) //mob attached to us
-		to_chat(user, span_warning("You can't enter the exosuit with other creatures attached to you!"))
+		to_chat(user, span_warning("I can't enter the exosuit with other creatures attached to you!"))
 		return
 
 	visible_message("[user] starts to climb into [name].")
 
 	if(do_after(user, enter_delay, target = src))
 		if(obj_integrity <= 0)
-			to_chat(user, span_warning("You cannot get in the [name], it has been destroyed!"))
+			to_chat(user, span_warning("I cannot get in the [name], it has been destroyed!"))
 		else if(occupant)
 			to_chat(user, span_danger("[occupant] was faster! Try better next time, loser."))
 		else if(user.buckled)
-			to_chat(user, span_warning("You can't enter the exosuit while buckled."))
+			to_chat(user, span_warning("I can't enter the exosuit while buckled."))
 		else if(user.has_buckled_mobs())
-			to_chat(user, span_warning("You can't enter the exosuit with other creatures attached to you!"))
+			to_chat(user, span_warning("I can't enter the exosuit with other creatures attached to you!"))
 		else
 			moved_inside(user)
 	else
-		to_chat(user, span_warning("You stop entering the exosuit!"))
+		to_chat(user, span_warning("I stop entering the exosuit!"))
 	return
 
 /obj/mecha/proc/moved_inside(mob/living/carbon/human/H)
@@ -823,7 +823,7 @@
 		else
 			to_chat(user, span_warning("Occupant detected!"))
 	else
-		to_chat(user, span_notice("You stop inserting the MMI."))
+		to_chat(user, span_notice("I stop inserting the MMI."))
 	return FALSE
 
 /obj/mecha/proc/mmi_moved_inside(obj/item/mmi/mmi_as_oc, mob/user)
@@ -1016,7 +1016,7 @@
 					else
 						gun.projectiles_cache = gun.projectiles_cache + ammo_needed
 					playsound(get_turf(user),A.load_audio,50,1)
-					to_chat(user, span_notice("You add [ammo_needed] [A.round_term][ammo_needed > 1?"s":""] to the [gun.name]"))
+					to_chat(user, span_notice("I add [ammo_needed] [A.round_term][ammo_needed > 1?"s":""] to the [gun.name]"))
 					A.rounds = A.rounds - ammo_needed
 					A.update_name()
 					return TRUE
@@ -1027,13 +1027,13 @@
 					else
 						gun.projectiles_cache = gun.projectiles_cache + A.rounds
 					playsound(get_turf(user),A.load_audio,50,1)
-					to_chat(user, span_notice("You add [A.rounds] [A.round_term][A.rounds > 1?"s":""] to the [gun.name]"))
+					to_chat(user, span_notice("I add [A.rounds] [A.round_term][A.rounds > 1?"s":""] to the [gun.name]"))
 					A.rounds = 0
 					A.update_name()
 					return TRUE
 	if(!fail_chat_override)
 		if(found_gun)
-			to_chat(user, span_notice("You can't fit any more ammo of this type!"))
+			to_chat(user, span_notice("I can't fit any more ammo of this type!"))
 		else
 			to_chat(user, span_notice("None of the equipment on this exosuit can use this ammo!"))
 	return FALSE

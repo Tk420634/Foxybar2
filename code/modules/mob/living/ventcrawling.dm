@@ -10,22 +10,22 @@ GLOBAL_LIST_INIT(ventcrawl_machinery, typecacheof(list(
 		return
 	. = TRUE //return value to stop the client from being shown the turf contents stat tab on alt-click.
 	if(stat)
-		to_chat(src, "You must be conscious to do this!")
+		to_chat(src, "I must be conscious to do this!")
 		return
 	if(lying)
-		to_chat(src, "You can't vent crawl while you're stunned!")
+		to_chat(src, "I can't vent crawl while you're stunned!")
 		return
 	if(restrained())
-		to_chat(src, "You can't vent crawl while you're restrained!")
+		to_chat(src, "I can't vent crawl while you're restrained!")
 		return
 	if(has_buckled_mobs())
 		// attempt once
 		unbuckle_all_mobs()
 		if(has_buckled_mobs())
-			to_chat(src, "You can't vent crawl with other creatures on you!")
+			to_chat(src, "I can't vent crawl with other creatures on you!")
 			return
 	if(buckled)
-		to_chat(src, "You can't vent crawl while buckled!")
+		to_chat(src, "I can't vent crawl while buckled!")
 		return
 
 	var/obj/machinery/atmospherics/components/unary/vent_found
@@ -51,7 +51,7 @@ GLOBAL_LIST_INIT(ventcrawl_machinery, typecacheof(list(
 	if(vent_found)
 		var/datum/pipeline/vent_found_parent = vent_found.parents[1]
 		if(vent_found_parent && (vent_found_parent.members.len || vent_found_parent.other_atmosmch))
-			visible_message(span_notice("[src] begins climbing into the ventilation system...") ,span_notice("You begin climbing into the ventilation system..."))
+			visible_message(span_notice("[src] begins climbing into the ventilation system...") ,span_notice("I begin climbing into the ventilation system..."))
 
 			if(!do_after(src, 25, target = vent_found, required_mobility_flags = MOBILITY_MOVE))
 				return
@@ -68,10 +68,10 @@ GLOBAL_LIST_INIT(ventcrawl_machinery, typecacheof(list(
 					failed = 1
 					break
 				if(failed)
-					to_chat(src, span_warning("You can't crawl around in the ventilation ducts with items!"))
+					to_chat(src, span_warning("I can't crawl around in the ventilation ducts with items!"))
 					return
 
-			visible_message(span_notice("[src] scrambles into the ventilation ducts!"),span_notice("You climb into the ventilation ducts."))
+			visible_message(span_notice("[src] scrambles into the ventilation ducts!"),span_notice("I climb into the ventilation ducts."))
 			forceMove(vent_found)
 	else
 		to_chat(src, span_warning("This ventilation duct is not connected to anything!"))

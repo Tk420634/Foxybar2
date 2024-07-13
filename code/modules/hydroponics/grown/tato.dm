@@ -40,7 +40,7 @@
 
 /obj/item/reagent_containers/food/snacks/grown/tato/attackby(obj/item/W, mob/user, params)
 	if(W.get_sharpness())
-		to_chat(user, span_notice("You cut the tato into wedges with [W]."))
+		to_chat(user, span_notice("I cut the tato into wedges with [W]."))
 		var/obj/item/reagent_containers/food/snacks/grown/tato/wedges/Wedges = new /obj/item/reagent_containers/food/snacks/grown/tato/wedges
 		remove_item_from_storage(user)
 		qdel(src)

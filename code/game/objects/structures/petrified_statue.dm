@@ -17,7 +17,7 @@
 		petrified_mob = L
 		if(L.buckled)
 			L.buckled.unbuckle_mob(L,force=1)
-		L.visible_message(span_warning("[L]'s skin rapidly turns to marble!"), span_userdanger("Your body freezes up! Can't... move... can't...  think..."))
+		L.visible_message(span_warning("[L]'s skin rapidly turns to marble!"), span_userdanger("My body freezes up! Can't... move... can't...  think..."))
 		L.forceMove(src)
 		ADD_TRAIT(L, TRAIT_MUTE, STATUE_TRAIT)
 		ADD_TRAIT(L, TRAIT_EMOTEMUTE, STATUE_TRAIT)
@@ -45,7 +45,7 @@
 			if(petrified_mob)
 				S.mind.transfer_to(petrified_mob)
 				petrified_mob.DefaultCombatKnockdown(100)
-				to_chat(petrified_mob, span_notice("You slowly come back to your senses. You are in control of yourself again!"))
+				to_chat(petrified_mob, span_notice("I slowly come back to your senses. You are in control of yourself again!"))
 		qdel(S)
 
 	for(var/obj/O in src)

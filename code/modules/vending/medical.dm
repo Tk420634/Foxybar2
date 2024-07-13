@@ -171,8 +171,8 @@
 /obj/machinery/vending/medical/becomingnook
 	name = "\improper Becoming Nook"
 	desc = "A becoming nook. Useful for becoming an Aristocrat."
-	product_ads = "You are very becoming!;Implantations available, upgrade your license chip today."
-	product_slogans = "You are very becoming, Aristocrat."
+	product_ads = "I am very becoming!;Implantations available, upgrade your license chip today."
+	product_slogans = "I am very becoming, Aristocrat."
 	products = list(/obj/item/implanter = 3,
 					/obj/item/implantcase/mindshield = 3,
 					/obj/item/implantcase/chem = 3,

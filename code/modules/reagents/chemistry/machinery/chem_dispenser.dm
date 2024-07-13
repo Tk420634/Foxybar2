@@ -164,7 +164,7 @@
 	if(obj_flags & EMAGGED)
 		to_chat(user, span_warning("[src] has no functional safeties to emag."))
 		return
-	to_chat(user, span_notice("You short out [src]'s safeties."))
+	to_chat(user, span_notice("I short out [src]'s safeties."))
 	dispensable_reagents |= emagged_reagents//add the emagged reagents to the dispensable ones
 	obj_flags |= EMAGGED
 	return TRUE
@@ -284,7 +284,7 @@
 						return
 					R.add_reagent(reagent, actual)
 					log_reagent("DISPENSER: ([COORD(src)]) ([REF(src)]) [key_name(usr)] dispensed [actual] of [reagent] to [beaker] ([REF(beaker)]).")
-					to_chat(usr, span_warning("You button the button."))
+					to_chat(usr, span_warning("I button the button."))
 					playsound(src, 'sound/machines/button.ogg', 100, TRUE, -1)
 					// playsound(
 					// 	source = src,
@@ -384,7 +384,7 @@
 					var/reagent_id = GLOB.name2reagent[translate_legacy_chem_id(reagent)]
 					logstring += "[reagent_id] = [recording_recipe[reagent]]"
 					if(!dispensable_reagents.Find(reagent_id))
-						visible_message(span_warning("[src] buzzes."), span_hear("You hear a faint buzz."))
+						visible_message(span_warning("[src] buzzes."), span_hear("I hear a faint buzz."))
 						to_chat(usr, "<span class ='danger'>[src] cannot find <b>[reagent]</b>!</span>")
 						playsound(src, 'sound/machines/buzz-two.ogg', 50, TRUE)
 						return
@@ -413,7 +413,7 @@
 		if(!user.transferItemToLoc(B, src))
 			return
 		replace_beaker(user, B)
-		to_chat(user, span_notice("You add [B] to [src]."))
+		to_chat(user, span_notice("I add [B] to [src]."))
 		playsound(src, 'sound/machines/glassclink.ogg', 100, TRUE, -1)
 		updateUsrDialog()
 	else if(istype(I, /obj/item/stock_parts/chem_cartridge))
@@ -422,9 +422,9 @@
 		if(!user.transferItemToLoc(C, src))
 			return
 		replace_cartridge(user, C)
-		to_chat(user, span_notice("You replace [C] in [src]"))
+		to_chat(user, span_notice("I replace [C] in [src]"))
 	else if(user.a_intent != INTENT_HARM && !istype(I, /obj/item/card/emag))
-		to_chat(user, span_warning("You can't load [I] into [src]!"))
+		to_chat(user, span_warning("I can't load [I] into [src]!"))
 		return ..()
 	else
 		return ..()

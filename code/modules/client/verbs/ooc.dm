@@ -20,10 +20,10 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 			to_chat(usr, span_danger("OOC for dead mobs has been turned off."))
 			return
 		if(prefs.muted & MUTE_OOC)
-			to_chat(src, span_danger("You cannot use OOC (muted)."))
+			to_chat(src, span_danger("I cannot use OOC (muted)."))
 			return
 	if(jobban_isbanned(src.mob, "OOC"))
-		to_chat(src, span_danger("You have been banned from OOC."))
+		to_chat(src, span_danger("I have been banned from OOC."))
 		return
 	if(QDELETED(src))
 		return
@@ -37,7 +37,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 	msg = emoji_parse(msg)
 
 	if((msg[1] in list(".",";",":","#")) || findtext_char(msg, "say", 1, 5))
-		if(alert("Your message \"[raw_msg]\" looks like it was meant for in game communication, say it in OOC?", "Meant for OOC?", "No", "Yes") != "Yes")
+		if(alert("My message \"[raw_msg]\" looks like it was meant for in game communication, say it in OOC?", "Meant for OOC?", "No", "Yes") != "Yes")
 			return
 
 	if(!holder)
@@ -50,7 +50,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 			return
 
 	if(!(prefs.chat_toggles & CHAT_OOC))
-		to_chat(src, span_danger("You have OOC muted."))
+		to_chat(src, span_danger("I have OOC muted."))
 		return
 
 	mob.log_talk(raw_msg, LOG_OOC, tag="(OOC)")
@@ -215,7 +215,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 		prefs.ignoring -= C.key
 	else
 		prefs.ignoring |= C.key
-	to_chat(src, "You are [(C.key in prefs.ignoring) ? "now" : "no longer"] ignoring [C.key] on the OOC channel.")
+	to_chat(src, "I am [(C.key in prefs.ignoring) ? "now" : "no longer"] ignoring [C.key] on the OOC channel.")
 	prefs.save_preferences()
 
 /*
@@ -239,13 +239,13 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 		return
 	selection = choices[selection]
 	if(selection == src)
-		to_chat(src, "You can't ignore yourself.")
+		to_chat(src, "I can't ignore yourself.")
 		return
 	ignore_key(selection)
 */
 
 /client/proc/show_previous_roundend_report()
-	set name = "Your Last Round"
+	set name = "My Last Round"
 	set category = "OOC"
 	set desc = "View the last round end report you've seen"
 

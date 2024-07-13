@@ -273,7 +273,7 @@
 		if("move_belly")
 			var/dir = text2num(params["dir"])
 			if(LAZYLEN(vorgans) <= 1)
-				to_chat(usr, span_warning("You can't sort bellies with only one belly to sort..."))
+				to_chat(usr, span_warning("I can't sort bellies with only one belly to sort..."))
 				return TRUE
 
 			SEND_SIGNAL(host, COMSIG_VORE_SWAP_BELLY_INDEX, dir)
@@ -417,13 +417,13 @@
 		if("Examine") //Examine a mob inside another mob
 			var/list/results = target.examine(host)
 			if(!LAZYLEN(results))
-				results = list("You were unable to examine that. Tell a developer!")
+				results = list("I were unable to examine that. Tell a developer!")
 			to_chat(user, jointext(results, "<br>"))
 			return TRUE
 
 		if("Use Hand")
 			if(host.stat)
-				to_chat(user, span_warning("You can't do that in your state!"))
+				to_chat(user, span_warning("I can't do that in your state!"))
 				return TRUE
 
 			host.ClickOn(target)
@@ -436,7 +436,7 @@
 	switch(intent)
 		if("Help Out") //Help the inside-mob out
 			if(host.stat || SEND_SIGNAL(user, COMSIG_VORE_ABSORBED_STATE) || SEND_SIGNAL(living_prey, COMSIG_VORE_ABSORBED_STATE))
-				to_chat(user, span_warning("You can't do that in your state!"))
+				to_chat(user, span_warning("I can't do that in your state!"))
 				return TRUE
 
 			to_chat(user,"<font color='green'>You begin to push [living_prey] to freedom!</font>")
@@ -456,7 +456,7 @@
 
 		if("Devour") //Eat the inside mob
 			if(host.stat || SEND_SIGNAL(host, COMSIG_VORE_ABSORBED_STATE))
-				to_chat(user,span_warning("You can't do that in your state!"))
+				to_chat(user,span_warning("I can't do that in your state!"))
 				return TRUE
 
 			if(!selected)
@@ -464,13 +464,13 @@
 				return TRUE
 
 			var/obj/vore_belly/TB = selected
-			to_chat(user,span_warning("You begin to [lowertext(TB.vore_verb)] [living_prey] into your [lowertext(TB.name)]!"))
+			to_chat(user,span_warning("I begin to [lowertext(TB.vore_verb)] [living_prey] into your [lowertext(TB.name)]!"))
 			to_chat(living_prey,span_warning("[host] begins to [lowertext(TB.vore_verb)] you into their [lowertext(TB.name)]!"))
 			to_chat(OB.owner,span_warning("Someone inside you is eating someone else!"))
 
 			sleep(VORE_SWALLOW_NONHUMAN_TIME) //Can't do after, in a stomach, weird things abound.
 			if((host in OB) && (living_prey in OB)) //Make sure they're still here.
-				to_chat(user,span_warning("You manage to [lowertext(TB.vore_verb)] [living_prey] into your [lowertext(TB.name)]!"))
+				to_chat(user,span_warning("I manage to [lowertext(TB.vore_verb)] [living_prey] into your [lowertext(TB.name)]!"))
 				to_chat(living_prey,span_warning("[host] manages to [lowertext(TB.vore_verb)] you into their [lowertext(TB.name)]!"))
 				to_chat(OB.owner,span_warning("Someone inside you has eaten someone else!"))
 				TB.nom_mob(living_prey)
@@ -493,7 +493,7 @@
 
 			if("Eject all")
 				if(host.stat)
-					to_chat(user,span_warning("You can't do that in your state!"))
+					to_chat(user,span_warning("I can't do that in your state!"))
 					return TRUE
 
 				SEND_SIGNAL(selected, COMSIG_VORE_EXPEL_ALL)
@@ -501,7 +501,7 @@
 
 			if("Move all")
 				if(host.stat)
-					to_chat(user,span_warning("You can't do that in your state!"))
+					to_chat(user,span_warning("I can't do that in your state!"))
 					return TRUE
 
 				var/obj/vore_belly/choice = input(usr, "Move all where?","Select Belly") as anything in vorgans
@@ -523,13 +523,13 @@
 		if("Examine")
 			var/list/results = target.examine(host)
 			if(!LAZYLEN(results))
-				results = list("You were unable to examine that. Tell a developer!")
+				results = list("I were unable to examine that. Tell a developer!")
 			to_chat(user, jointext(results, "<br>"))
 			return TRUE
 
 		if("Eject")
 			if(host.stat)
-				to_chat(user,span_warning("You can't do that in your state!"))
+				to_chat(user,span_warning("I can't do that in your state!"))
 				return TRUE
 
 			SEND_SIGNAL(selected, COMSIG_BELLY_EXPEL_SPECIFIC, target)
@@ -537,7 +537,7 @@
 
 		if("Move")
 			if(host.stat)
-				to_chat(user,span_warning("You can't do that in your state!"))
+				to_chat(user,span_warning("I can't do that in your state!"))
 				return TRUE
 
 			var/obj/vore_belly/choice = input(usr, "Move [target] where?","Select Belly") as anything in vorgans
@@ -697,7 +697,7 @@
 				return FALSE
 			if(new_bulge == 0) //Disable.
 				selected.bulge_size = 0
-				to_chat(user,span_notice("Your stomach will not be seen on examine."))
+				to_chat(user,span_notice("My stomach will not be seen on examine."))
 			else if (!ISINRANGE(new_bulge,25,200))
 				selected.bulge_size = 0.25 //Set it to the default.
 				to_chat(user,span_notice("Invalid size."))
@@ -784,11 +784,11 @@
 					break
 
 			if(LAZYLEN(selected.contents))
-				failure_msg += "You cannot delete bellies with contents! " //These end with spaces, to be nice looking. Make sure you do the same.
+				failure_msg += "I cannot delete bellies with contents! " //These end with spaces, to be nice looking. Make sure you do the same.
 			if(selected.immutable)
 				failure_msg += "This belly is marked as undeletable. "
 			if(LAZYLEN(vorgans) == 1)
-				failure_msg += "You must have at least one belly. "
+				failure_msg += "I must have at least one belly. "
 
 			if(failure_msg)
 				tgui_alert_async(user,failure_msg,"Error!")

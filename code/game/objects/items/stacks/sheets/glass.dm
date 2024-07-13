@@ -71,7 +71,7 @@ GLOBAL_LIST_INIT(glass_recipes, list ( \
 			return
 		CC.use_tool(src, user, 0, 5, skill_gain_mult = TRIVIAL_USE_TOOL_MULT)
 		use(1)
-		to_chat(user, span_notice("You attach wire to the [name]."))
+		to_chat(user, span_notice("I attach wire to the [name]."))
 		var/obj/item/stack/light_w/new_tile = new(user.loc)
 		new_tile.add_fingerprint(user)
 	else if(istype(W, /obj/item/stack/rods))
@@ -85,7 +85,7 @@ GLOBAL_LIST_INIT(glass_recipes, list ( \
 			if(QDELETED(src) && replace)
 				user.put_in_hands(RG)
 		else
-			to_chat(user, span_warning("You need one rod and one sheet of glass to make reinforced glass!"))
+			to_chat(user, span_warning("I need one rod and one sheet of glass to make reinforced glass!"))
 			return
 	else
 		return ..()
@@ -132,7 +132,7 @@ GLOBAL_LIST_INIT(pglass_recipes, list ( \
 			if(QDELETED(src) && replace)
 				user.put_in_hands(RG)
 		else
-			to_chat(user, span_warning("You need one rod and one sheet of plasma glass to make reinforced plasma glass!"))
+			to_chat(user, span_warning("I need one rod and one sheet of plasma glass to make reinforced plasma glass!"))
 			return
 	else
 		return ..()
@@ -366,7 +366,7 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 			if(G.amount >= G.max_amount)
 				continue
 			G.attackby(NG, user)
-		to_chat(user, span_notice("You add the newly-formed glass to the stack. It now contains [NG.amount] sheet\s."))
+		to_chat(user, span_notice("I add the newly-formed glass to the stack. It now contains [NG.amount] sheet\s."))
 		qdel(src)
 	return TRUE
 

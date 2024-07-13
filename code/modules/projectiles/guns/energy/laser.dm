@@ -30,13 +30,13 @@
 			if(user.transferItemToLoc(AM, src))
 				cell = AM
 				if(oldcell)
-					to_chat(user, span_notice("You perform a tactical reload on \the [src], replacing the cell."))
+					to_chat(user, span_notice("I perform a tactical reload on \the [src], replacing the cell."))
 					// oldcell.dropped()
 					// oldcell.forceMove(get_turf(src.loc))
 					oldcell.attack_hand(user)  //let's perform reload in a more intuitive way
 					oldcell.update_icon()
 				//else
-				//	to_chat(user, span_notice("You insert the cell into \the [src]."))
+				//	to_chat(user, span_notice("I insert the cell into \the [src]."))
 
 				//playsound(src, 'sound/weapons/autoguninsert.ogg', 60, TRUE)
 				//chamber_round()
@@ -44,7 +44,7 @@
 				update_icon()
 				return 1
 			else
-				to_chat(user, span_warning("You cannot seem to get \the [src] out of your hands!"))
+				to_chat(user, span_warning("I cannot seem to get \the [src] out of your hands!"))
 
 /obj/item/gun/energy/laser/practice
 	name = "practice laser gun"
@@ -907,12 +907,12 @@
 				armed = 1
 				if(!user.put_in_hands(gun))
 					armed = 0
-					to_chat(user, span_warning("You need a free hand to hold the gun!"))
+					to_chat(user, span_warning("I need a free hand to hold the gun!"))
 					return
 				update_icon()
 				user.update_inv_back()
 		else
-			to_chat(user, span_warning("You are already holding the gun!"))
+			to_chat(user, span_warning("I am already holding the gun!"))
 	else
 		..()
 
@@ -956,7 +956,7 @@
 	gun.forceMove(src)
 	armed = 0
 	if(user)
-		to_chat(user, span_notice("You attach the [gun.name] to the [name]."))
+		to_chat(user, span_notice("I attach the [gun.name] to the [name]."))
 	else
 		src.visible_message(span_warning("The [gun.name] snaps back onto the [name]!"))
 	update_icon()
@@ -1006,7 +1006,7 @@
 
 /obj/item/gun/energy/minigun/afterattack(atom/target, mob/living/user, flag, params)
 	if(!ammo_pack || ammo_pack.loc != user)
-		to_chat(user, "You need the backpack power source to fire the gun!")
+		to_chat(user, "I need the backpack power source to fire the gun!")
 	. = ..()
 
 /obj/item/gun/energy/minigun/dropped(mob/living/user)
@@ -1032,7 +1032,7 @@
 
 /obj/item/gun/energy/laser/tg
 	name = "TG Blaster Template"
-	desc = "You probably shouldn't be seeing this. Contact a coder!"
+	desc = "I probably shouldn't be seeing this. Contact a coder!"
 	icon = 'icons/fallout/objects/guns/energy.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -1231,14 +1231,14 @@ Phased out for /obj/item/projectile/beam/laser/cranklasergun/tg */
 				radiation_pulse(src, 50)
 				var/mob/M = (ismob(loc) && loc) || (ismob(loc.loc) && loc.loc)		//thank you short circuiting. if you powergame and nest these guns deeply you get to suffer no-warning radiation death.
 				if(M)
-					to_chat(M, span_userdanger("Your [name] feels warmer."))
+					to_chat(M, span_userdanger("My [name] feels warmer."))
 			if(201 to INFINITY)
 				SSobj.processing.Remove(src)
 				radiation_pulse(src, 200)
 				crit_fail = TRUE
 				var/mob/M = (ismob(loc) && loc) || (ismob(loc.loc) && loc.loc)
 				if(M)
-					to_chat(M, span_userdanger("Your [name]'s reactor leaks radiation!"))
+					to_chat(M, span_userdanger("My [name]'s reactor leaks radiation!"))
 
 /obj/item/gun/energy/laser/tg/recharger/nuclear/emp_act(severity)
 	. = ..()

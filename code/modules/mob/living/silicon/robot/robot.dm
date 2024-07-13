@@ -214,7 +214,7 @@
 		ion_trail.set_up(src)
 
 	ionpulse_on = !ionpulse_on
-	to_chat(src, span_notice("You [ionpulse_on ? null :"de"]activate your ion thrusters."))
+	to_chat(src, span_notice("I [ionpulse_on ? null :"de"]activate your ion thrusters."))
 	if(ionpulse_on)
 		ion_trail.start()
 	else
@@ -297,12 +297,12 @@
 		return
 	user.DelayNextAction(CLICK_CD_MELEE)
 	if(src == user)
-		to_chat(user, span_notice("You start fixing yourself..."))
+		to_chat(user, span_notice("I start fixing yourself..."))
 		if(!W.use_tool(src, user, 50))
 			return
 		adjustBruteLoss(-10)
 	else
-		to_chat(user, span_notice("You start fixing [src]..."))
+		to_chat(user, span_notice("I start fixing [src]..."))
 		if(!do_after(user, 30, target = src))
 			return
 		adjustBruteLoss(-30)
@@ -314,21 +314,21 @@
 	if (getFireLoss() > 0 || getToxLoss() > 0)
 		user.DelayNextAction(CLICK_CD_MELEE)
 		if(src == user)
-			to_chat(user, span_notice("You start fixing yourself..."))
+			to_chat(user, span_notice("I start fixing yourself..."))
 			if(!W.use_tool(src, user, 50, 1, skill_gain_mult = TRIVIAL_USE_TOOL_MULT))
-				to_chat(user, span_warning("You need more cable to repair [src]!"))
+				to_chat(user, span_warning("I need more cable to repair [src]!"))
 				return
 			adjustFireLoss(-10)
 			adjustToxLoss(-10)
 		else
-			to_chat(user, span_notice("You start fixing [src]..."))
+			to_chat(user, span_notice("I start fixing [src]..."))
 			if(!W.use_tool(src, user, 30, 1))
-				to_chat(user, span_warning("You need more cable to repair [src]!"))
+				to_chat(user, span_warning("I need more cable to repair [src]!"))
 				return
 			adjustFireLoss(-30)
 			adjustToxLoss(-30)
 			updatehealth()
-			user.visible_message("[user] has fixed some of the burnt wires on [src].", span_notice("You fix some of the burnt wires on [src]."))
+			user.visible_message("[user] has fixed some of the burnt wires on [src].", span_notice("I fix some of the burnt wires on [src]."))
 	else
 		to_chat(user, "The wires seem fine, there's no need to fix them.")
 
@@ -343,14 +343,14 @@
 
 	else if(istype(W, /obj/item/crowbar))	// crowbar means open or close the cover
 		if(opened)
-			to_chat(user, span_notice("You close the cover."))
+			to_chat(user, span_notice("I close the cover."))
 			opened = 0
 			update_icons()
 		else
 			if(locked)
 				to_chat(user, span_warning("The cover is locked and cannot be opened!"))
 			else
-				to_chat(user, span_notice("You open the cover."))
+				to_chat(user, span_notice("I open the cover."))
 				opened = 1
 				update_icons()
 
@@ -363,7 +363,7 @@
 			if(!user.transferItemToLoc(W, src))
 				return
 			cell = W
-			to_chat(user, span_notice("You insert the power cell."))
+			to_chat(user, span_notice("I insert the power cell."))
 		update_icons()
 		diag_hud_set_borgcell()
 
@@ -371,7 +371,7 @@
 		if (wiresexposed)
 			wires.interact(user)
 		else
-			to_chat(user, span_warning("You can't reach the wiring!"))
+			to_chat(user, span_warning("I can't reach the wiring!"))
 
 	else if(istype(W, /obj/item/screwdriver) && opened && !cell)	// haxing
 		wiresexposed = !wiresexposed
@@ -380,7 +380,7 @@
 
 	else if(istype(W, /obj/item/screwdriver) && opened && cell)	// radio
 		if(shell)
-			to_chat(user, "You cannot seem to open the radio compartment")	//Prevent AI radio key theft
+			to_chat(user, "I cannot seem to open the radio compartment")	//Prevent AI radio key theft
 		else if(radio)
 			radio.attackby(W,user)//Push it to the radio to let it handle everything
 		else
@@ -393,21 +393,21 @@
 			spark_system.start()
 			return
 		else
-			to_chat(user, span_notice("You start to unfasten [src]'s securing bolts..."))
+			to_chat(user, span_notice("I start to unfasten [src]'s securing bolts..."))
 			if(W.use_tool(src, user, 50, volume=50) && !cell)
-				user.visible_message("[user] deconstructs [src]!", span_notice("You unfasten the securing bolts, and [src] falls to pieces!"))
+				user.visible_message("[user] deconstructs [src]!", span_notice("I unfasten the securing bolts, and [src] falls to pieces!"))
 				deconstruct()
 
 	else if(istype(W, /obj/item/aiModule))
 		var/obj/item/aiModule/MOD = W
 		if(!opened)
-			to_chat(user, span_warning("You need access to the robot's insides to do that!"))
+			to_chat(user, span_warning("I need access to the robot's insides to do that!"))
 			return
 		if(wiresexposed)
-			to_chat(user, span_warning("You need to close the wire panel to do that!"))
+			to_chat(user, span_warning("I need to close the wire panel to do that!"))
 			return
 		if(!cell)
-			to_chat(user, span_warning("You need to install a power cell to do that!"))
+			to_chat(user, span_warning("I need to install a power cell to do that!"))
 			return
 		if(shell) //AI shells always have the laws of the AI
 			to_chat(user, span_warning("[src] is controlled remotely! You cannot upload new laws this way!"))
@@ -431,11 +431,11 @@
 		if(emagged)//still allow them to open the cover
 			to_chat(user, span_notice("The interface seems slightly damaged."))
 		if(opened)
-			to_chat(user, span_warning("You must close the cover to swipe an ID card!"))
+			to_chat(user, span_warning("I must close the cover to swipe an ID card!"))
 		else
 			if(allowed(usr))
 				locked = !locked
-				to_chat(user, span_notice("You [ locked ? "lock" : "unlock"] [src]'s cover."))
+				to_chat(user, span_notice("I [ locked ? "lock" : "unlock"] [src]'s cover."))
 				update_icons()
 			else
 				to_chat(user, span_danger("Access denied."))
@@ -443,7 +443,7 @@
 	else if(istype(W, /obj/item/borg/upgrade/))
 		var/obj/item/borg/upgrade/U = W
 		if(!opened)
-			to_chat(user, span_warning("You must access the borg's internals!"))
+			to_chat(user, span_warning("I must access the borg's internals!"))
 		else if(!src.module && U.require_module)
 			to_chat(user, span_warning("The borg must choose a module before it can be upgraded!"))
 		else if(U.locked)
@@ -452,7 +452,7 @@
 			if(!user.temporarilyRemoveItemFromInventory(U))
 				return
 			if(U.action(src))
-				to_chat(user, span_notice("You apply the upgrade to [src]."))
+				to_chat(user, span_notice("I apply the upgrade to [src]."))
 				if(U.one_use)
 					U.afterInstall(src)
 					qdel(U)
@@ -472,11 +472,11 @@
 				return
 			toner = tonermax
 			qdel(W)
-			to_chat(user, span_notice("You fill the toner level of [src] to its max capacity."))
+			to_chat(user, span_notice("I fill the toner level of [src] to its max capacity."))
 
 	else if(istype(W, /obj/item/flashlight))
 		if(!opened)
-			to_chat(user, span_warning("You need to open the panel to repair the headlamp!"))
+			to_chat(user, span_warning("I need to open the panel to repair the headlamp!"))
 		else if(lamp_cooldown <= world.time)
 			to_chat(user, span_warning("The headlamp is already functional!"))
 		else
@@ -485,7 +485,7 @@
 				return
 			lamp_cooldown = 0
 			qdel(W)
-			to_chat(user, span_notice("You replace the headlamp bulbs."))
+			to_chat(user, span_notice("I replace the headlamp bulbs."))
 	else
 		return ..()
 
@@ -496,11 +496,11 @@
 	if(stat == DEAD)
 		return //won't work if dead
 	if(locked)
-		switch(alert("You cannot lock your cover again, are you sure?\n      (You can still ask for a human to lock it)", "Unlock Own Cover", "Yes", "No"))
+		switch(alert("I cannot lock your cover again, are you sure?\n      (You can still ask for a human to lock it)", "Unlock Own Cover", "Yes", "No"))
 			if("Yes")
 				locked = FALSE
 				update_icons()
-				to_chat(usr, span_notice("You unlock your cover."))
+				to_chat(usr, span_notice("I unlock your cover."))
 
 /mob/living/silicon/robot/proc/allowed(mob/M)
 	//check if it doesn't require any access at all
@@ -623,7 +623,7 @@
 
 /mob/living/silicon/robot/proc/update_headlamp(turn_off = 0, cooldown = 100)
 	if(lamp_intensity && (turn_off || stat || low_power_mode))
-		to_chat(src, span_danger("Your headlamp has been deactivated."))
+		to_chat(src, span_danger("My headlamp has been deactivated."))
 		lamp_intensity = 0
 		lamp_cooldown = world.time + cooldown
 		set_light_on(FALSE)
@@ -794,10 +794,10 @@
 
 /mob/living/silicon/robot/canUseTopic(atom/movable/M, be_close=FALSE, no_dextery=FALSE, no_tk=FALSE)
 	if(stat || locked_down || low_power_mode)
-		to_chat(src, span_warning("You can't do that right now!"))
+		to_chat(src, span_warning("I can't do that right now!"))
 		return FALSE
 	if(be_close && !in_range(M, src))
-		to_chat(src, span_warning("You are too far away!"))
+		to_chat(src, span_warning("I am too far away!"))
 		return FALSE
 	return TRUE
 

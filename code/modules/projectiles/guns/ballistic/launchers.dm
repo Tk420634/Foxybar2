@@ -86,7 +86,7 @@
 /obj/item/gun/ballistic/automatic/speargun/attackby(obj/item/A, mob/user, params)
 	var/num_loaded = magazine.attackby(A, user, params, 1)
 	if(num_loaded)
-		to_chat(user, span_notice("You load [num_loaded] spear\s into \the [src]."))
+		to_chat(user, span_notice("I load [num_loaded] spear\s into \the [src]."))
 		update_icon()
 		chamber_round()
 
@@ -178,7 +178,7 @@
 		if(AC)
 			if(!user.put_in_hands(AC))
 				AC.bounce_away(FALSE, NONE)
-			to_chat(user, span_notice("You remove \the [AC] from \the [src]!"))
+			to_chat(user, span_notice("I remove \the [AC] from \the [src]!"))
 			playsound(src, 'sound/weapons/gun_magazine_remove_full.ogg', 70, TRUE)
 			chambered = null
 		else
@@ -191,7 +191,7 @@
 			to_chat(user, span_notice("[src] already has a [magazine_wording] chambered."))
 			return
 		if(magazine.attackby(A, user, silent = TRUE))
-			to_chat(user, span_notice("You load a new [A] into \the [src]."))
+			to_chat(user, span_notice("I load a new [A] into \the [src]."))
 			playsound(src, "gun_insert_full_magazine", 70, 1)
 			chamber_round()
 			update_icon()

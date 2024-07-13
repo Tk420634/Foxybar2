@@ -49,16 +49,16 @@
 					aspell.charge_counter = aspell.charge_max
 				switch(aspell.spell_level)
 					if(1)
-						to_chat(user, span_notice("You have improved [aspell.name] into Efficient [aspell.name]."))
+						to_chat(user, span_notice("I have improved [aspell.name] into Efficient [aspell.name]."))
 						aspell.name = "Efficient [aspell.name]"
 					if(2)
-						to_chat(user, span_notice("You have further improved [aspell.name] into Quickened [aspell.name]."))
+						to_chat(user, span_notice("I have further improved [aspell.name] into Quickened [aspell.name]."))
 						aspell.name = "Quickened [aspell.name]"
 					if(3)
-						to_chat(user, span_notice("You have further improved [aspell.name] into Free [aspell.name]."))
+						to_chat(user, span_notice("I have further improved [aspell.name] into Free [aspell.name]."))
 						aspell.name = "Free [aspell.name]"
 					if(4)
-						to_chat(user, span_notice("You have further improved [aspell.name] into Instant [aspell.name]."))
+						to_chat(user, span_notice("I have further improved [aspell.name] into Instant [aspell.name]."))
 						aspell.name = "Instant [aspell.name]"
 				if(aspell.spell_level >= aspell.level_max)
 					to_chat(user, span_notice("This spell cannot be strengthened any further."))
@@ -67,7 +67,7 @@
 	//No same spell found - just learn it
 	SSblackbox.record_feedback("tally", "wizard_spell_learned", 1, name)
 	user.mind.AddSpell(S)
-	to_chat(user, span_notice("You have learned [S.name]."))
+	to_chat(user, span_notice("I have learned [S.name]."))
 	return 1
 
 /datum/spellbook_entry/proc/CanRefund(mob/living/carbon/human/user,obj/item/spellbook/book)
@@ -83,7 +83,7 @@
 /datum/spellbook_entry/proc/Refund(mob/living/carbon/human/user,obj/item/spellbook/book) //return point value or -1 for failure
 	var/area/wizard_station/A = GLOB.areas_by_type[/area/wizard_station]
 	if(!(user in A.contents))
-		to_chat(user, span_warning("You can only refund spells at the wizard lair"))
+		to_chat(user, span_warning("I can only refund spells at the wizard lair"))
 		return -1
 	if(!S)
 		S = new spell_type()
@@ -548,7 +548,7 @@
 	SSblackbox.record_feedback("tally", "wizard_spell_learned", 1, name)
 	new /datum/round_event/wizard/ghost()
 	active = TRUE
-	to_chat(user, span_notice("You have cast summon ghosts!"))
+	to_chat(user, span_notice("I have cast summon ghosts!"))
 	playsound(get_turf(user), 'sound/effects/ghost2.ogg', 50, 1)
 	return TRUE
 
@@ -569,7 +569,7 @@
 	rightandwrong(SUMMON_GUNS, user, 25)
 	active = 1
 	playsound(get_turf(user), 'sound/magic/castsummon.ogg', 50, 1)
-	to_chat(user, span_notice("You have cast summon guns!"))
+	to_chat(user, span_notice("I have cast summon guns!"))
 	return 1
 
 /datum/spellbook_entry/summon/magic
@@ -589,7 +589,7 @@
 	rightandwrong(SUMMON_MAGIC, user, 25)
 	active = 1
 	playsound(get_turf(user), 'sound/magic/castsummon.ogg', 50, 1)
-	to_chat(user, span_notice("You have cast summon magic!"))
+	to_chat(user, span_notice("I have cast summon magic!"))
 	return 1
 
 /datum/spellbook_entry/summon/events
@@ -609,13 +609,13 @@
 	summonevents()
 	times++
 	playsound(get_turf(user), 'sound/magic/castsummon.ogg', 50, 1)
-	to_chat(user, span_notice("You have cast summon events."))
+	to_chat(user, span_notice("I have cast summon events."))
 	return 1
 
 /datum/spellbook_entry/summon/events/GetInfo()
 	. = ..()
 	if(times>0)
-		. += "You cast it [times] times.<br>"
+		. += "I cast it [times] times.<br>"
 	return .
 
 /datum/spellbook_entry/summon/curse_of_madness
@@ -630,7 +630,7 @@
 	if(!message)
 		return FALSE
 	curse_of_madness(user, message)
-	to_chat(user, span_notice("You have cast the curse of insanity!"))
+	to_chat(user, span_notice("I have cast the curse of insanity!"))
 	playsound(user, 'sound/magic/mandswap.ogg', 50, 1)
 	return TRUE
 
@@ -684,7 +684,7 @@
 		if(contract.used)
 			to_chat(user, span_warning("The contract has been used, you can't get your points back now!"))
 		else
-			to_chat(user, span_notice("You feed the contract back into the spellbook, refunding your points."))
+			to_chat(user, span_notice("I feed the contract back into the spellbook, refunding your points."))
 			uses++
 			for(var/datum/spellbook_entry/item/contract/CT in entries)
 				if(!isnull(CT.limit))
@@ -706,22 +706,22 @@
 			dat += "Spells and items geared towards debilitating and destroying.<BR><BR>"
 			dat += "Items are not bound to you and can be stolen. Additionally they cannot typically be returned once purchased.<BR>"
 			dat += "For spells: the number after the spell name is the cooldown time.<BR>"
-			dat += "You can reduce this number by spending more points on the spell.<BR>"
+			dat += "I can reduce this number by spending more points on the spell.<BR>"
 		if("Defensive")
 			dat += "Spells and items geared towards improving your survivability or reducing foes' ability to attack.<BR><BR>"
 			dat += "Items are not bound to you and can be stolen. Additionally they cannot typically be returned once purchased.<BR>"
 			dat += "For spells: the number after the spell name is the cooldown time.<BR>"
-			dat += "You can reduce this number by spending more points on the spell.<BR>"
+			dat += "I can reduce this number by spending more points on the spell.<BR>"
 		if("Mobility")
 			dat += "Spells and items geared towards improving your ability to move. It is a good idea to take at least one.<BR><BR>"
 			dat += "Items are not bound to you and can be stolen. Additionally they cannot typically be returned once purchased.<BR>"
 			dat += "For spells: the number after the spell name is the cooldown time.<BR>"
-			dat += "You can reduce this number by spending more points on the spell.<BR>"
+			dat += "I can reduce this number by spending more points on the spell.<BR>"
 		if("Assistance")
 			dat += "Spells and items geared towards bringing in outside forces to aid you or improving upon your other items and abilities.<BR><BR>"
 			dat += "Items are not bound to you and can be stolen. Additionally they cannot typically be returned once purchased.<BR>"
 			dat += "For spells: the number after the spell name is the cooldown time.<BR>"
-			dat += "You can reduce this number by spending more points on the spell.<BR>"
+			dat += "I can reduce this number by spending more points on the spell.<BR>"
 		if("Challenges")
 			dat += "The Wizard Federation typically has hard limits on the potency and number of spells brought to the station based on risk.<BR>"
 			dat += "Arming the station against you will increases the risk, but will grant you one more charge for your spellbook.<BR>"
@@ -751,7 +751,7 @@
 
 /obj/item/spellbook/attack_self(mob/user)
 	if(!owner)
-		to_chat(user, span_notice("You bind the spellbook to yourself."))
+		to_chat(user, span_notice("I bind the spellbook to yourself."))
 		//ADD_TRAIT( user, TRAIT_NOGUNS, src) Removed for now due to how many spells we pulled. ~TK
 		//ADD_TRAIT( user, TRAIT_NODRUGS, src)
 		owner = user

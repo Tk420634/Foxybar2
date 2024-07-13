@@ -50,7 +50,7 @@
 
 /obj/item/reagent_containers/food/snacks/salad/fruit
 	name = "fruit salad"
-	desc = "Your standard fruit salad."
+	desc = "My standard fruit salad."
 	icon_state = "fruitsalad"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 4)
 	tastes = list("fruit" = 1)
@@ -118,7 +118,7 @@
 
 /obj/item/reagent_containers/food/snacks/salad/caesar
 	name = "caesar salad"
-	desc = "You too?"
+	desc = "I too?"
 	icon_state = "ceasar_salad"
 	trash = /obj/item/kitchen/knife
 	bonus_reagents = list(/datum/reagent/medicine/earthsblood = 1, /datum/reagent/iron = 4)

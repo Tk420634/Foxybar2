@@ -338,11 +338,11 @@
 				return
 			M.adjustToxLoss(0.5*reac_volume * effect_mult)
 			if(show_message)
-				to_chat(M, span_warning("You don't feel so good..."))
+				to_chat(M, span_warning("I don't feel so good..."))
 		else if(M.getFireLoss())
 			M.adjustFireLoss(-reac_volume * effect_mult)
 			if(show_message)
-				to_chat(M, span_danger("You feel your burns healing! It stings like hell!"))
+				to_chat(M, span_danger("I feel your burns healing! It stings like hell!"))
 			M.emote("scream")
 			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
 	..()
@@ -409,11 +409,11 @@
 				return
 			M.adjustToxLoss(0.5*reac_volume * effect_mult)
 			if(show_message)
-				to_chat(M, span_warning("You don't feel so good..."))
+				to_chat(M, span_warning("I don't feel so good..."))
 		else if(M.getBruteLoss())
 			M.adjustBruteLoss(-reac_volume * effect_mult)
 			if(show_message)
-				to_chat(M, span_danger("You feel your bruises healing! It stings like hell!"))
+				to_chat(M, span_danger("I feel your bruises healing! It stings like hell!"))
 			M.emote("scream")
 			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
 	..()
@@ -510,7 +510,7 @@
 		if(method in list(INGEST, VAPOR, INJECT))
 			M.adjust_nutrition(-5 * effect_mult)
 			if(show_message)
-				to_chat(M, span_warning("Your stomach feels empty and cramps!"))
+				to_chat(M, span_warning("My stomach feels empty and cramps!"))
 		else
 			var/mob/living/carbon/C = M
 			for(var/s in C.surgeries)
@@ -519,7 +519,7 @@
 				// +10% success propability on each step, useful while operating in less-than-perfect conditions
 
 			if(show_message)
-				to_chat(M, span_danger("You feel your injuries fade away to nothing!") )
+				to_chat(M, span_danger("I feel your injuries fade away to nothing!") )
 	..()
 
 /datum/reagent/medicine/mine_salve/on_mob_end_metabolize(mob/living/M)
@@ -547,7 +547,7 @@
 		if(method in list(INGEST, VAPOR))
 			C.losebreath++
 			C.emote("cough")
-			to_chat(M, span_danger("You feel your throat closing up!"))
+			to_chat(M, span_danger("I feel your throat closing up!"))
 		else if(method == INJECT)
 			return
 		else if(method in list(PATCH, TOUCH))
@@ -557,7 +557,7 @@
 				var/datum/wound/iter_wound = i
 				iter_wound.on_synthflesh(reac_volume * effect_mult)
 			if(show_message)
-				to_chat(M, span_danger("You feel your burns and bruises healing! It stings like hell!"))
+				to_chat(M, span_danger("I feel your burns and bruises healing! It stings like hell!"))
 			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
 			var/vol = (reac_volume * effect_mult) + M.reagents.get_reagent_amount(/datum/reagent/medicine/synthflesh)
 			//Has to be at less than THRESHOLD_UNHUSK burn damage and have 100 synthflesh before unhusking. Corpses dont metabolize.
@@ -857,7 +857,7 @@
 /datum/reagent/medicine/morphine/on_mob_life(mob/living/carbon/M)
 	switch(current_cycle)
 		if(11)
-			to_chat(M, span_warning("You start to feel tired...") )
+			to_chat(M, span_warning("I start to feel tired...") )
 		if(12 to 24)
 			M.drowsyness += 1 * effect_mult
 		if(24 to INFINITY)
@@ -921,7 +921,7 @@
 	eyes.applyOrganDamage(-2 * effect_mult)
 	if(HAS_TRAIT_FROM(M, TRAIT_BLIND, EYE_DAMAGE))
 		if(prob(20 * effect_mult))
-			to_chat(M, span_warning("Your vision slowly returns..."))
+			to_chat(M, span_warning("My vision slowly returns..."))
 			M.cure_blind(EYE_DAMAGE)
 			M.cure_nearsighted(EYE_DAMAGE)
 			M.blur_eyes(35 * effect_mult)
@@ -1601,7 +1601,7 @@
 	..()
 
 /datum/reagent/medicine/modafinil/overdose_start(mob/living/M)
-	to_chat(M, span_userdanger("You feel awfully out of breath and jittery!"))
+	to_chat(M, span_userdanger("I feel awfully out of breath and jittery!"))
 	metabolization_rate = 0.025 * REAGENTS_METABOLISM // sets metabolism to 0.01 per tick on overdose
 
 /datum/reagent/medicine/modafinil/overdose_process(mob/living/M)
@@ -1622,11 +1622,11 @@
 			if(prob(50))
 				M.losebreath++
 			if(prob(20))
-				to_chat(M, "You have a sudden fit!")
+				to_chat(M, "I have a sudden fit!")
 				M.emote("moan")
 				M.DefaultCombatKnockdown(20, 1, 0) // you should be in a bad spot at this point unless epipen has been used
 		if(81)
-			to_chat(M, "You feel too exhausted to continue!") // at this point you will eventually die unless you get charcoal
+			to_chat(M, "I feel too exhausted to continue!") // at this point you will eventually die unless you get charcoal
 			M.adjustOxyLoss(0.1*REM, 0)
 			M.adjustStaminaLoss(0.1*REM, 0)
 		if(82 to INFINITY)
@@ -1758,9 +1758,9 @@
 		M.losebreath += rand(2,4)
 		M.adjustOxyLoss(rand(1,3))
 		if(prob(30))
-			to_chat(M, span_danger("You can feel your blood clotting up in your veins!"))
+			to_chat(M, span_danger("I can feel your blood clotting up in your veins!"))
 		else if(prob(10))
-			to_chat(M, span_userdanger("You feel like your blood has stopped moving!"))
+			to_chat(M, span_userdanger("I feel like your blood has stopped moving!"))
 		if(prob(50))
 			var/obj/item/organ/lungs/our_lungs = M.getorganslot(ORGAN_SLOT_LUNGS)
 			our_lungs.applyOrganDamage(1)
@@ -1823,7 +1823,7 @@
 	ADD_TRAIT(L, TRAIT_NOSOFTCRIT, type)
 	L.add_movespeed_mod_immunities(type, list(/datum/movespeed_modifier/damage_slowdown, /datum/movespeed_modifier/damage_slowdown_flying, /datum/movespeed_modifier/monkey_health_speedmod))
 	ADD_TRAIT(L, TRAIT_IGNOREDAMAGESLOWDOWN, "[type]")
-	to_chat(L, span_danger("Your body surges with panicked energy! You feel like you could run forever, but your shaking \
+	to_chat(L, span_danger("My body surges with panicked energy! You feel like you could run forever, but your shaking \
 		hands make it next to impossible to fight!"))
 	L.resist_a_rest(automatic = TRUE, ignoretimer = TRUE, silent = TRUE)
 	L.add_movespeed_modifier(/datum/movespeed_modifier/reagent/adrenaline)
@@ -1836,7 +1836,7 @@
 
 
 /datum/reagent/medicine/adrenaline/on_mob_end_metabolize(mob/living/L)
-	to_chat(L, span_danger("Your body's panicked energy fades away. The shakes are gone, but you feel exhausted."))
+	to_chat(L, span_danger("My body's panicked energy fades away. The shakes are gone, but you feel exhausted."))
 	REMOVE_TRAIT(L, TRAIT_PANICKED_ATTACKER, type)
 	REMOVE_TRAIT(L, TRAIT_ENDLESS_RUNNER, type)
 	REMOVE_TRAIT(L, TRAIT_NOSOFTCRIT, type)
@@ -1865,7 +1865,7 @@
 			var/obj/item/mainhand = M.get_active_held_item()
 			if(mainhand)
 				M.drop_all_held_items()
-				to_chat(M, span_userdanger("Your hands flinch and fumble your [mainhand] to the ground!!"))
+				to_chat(M, span_userdanger("My hands flinch and fumble your [mainhand] to the ground!!"))
 		if(15 to 80)
 			var/emote_to_do = pick(
 				"twitch",
@@ -1892,35 +1892,35 @@
 		return
 	switch(rand(1,10))
 		if(1)
-			to_chat(M, span_danger("Your legs wont stop shaking!"))
+			to_chat(M, span_danger("My legs wont stop shaking!"))
 			M.confused = clamp(M.confused + 2, 1, 200)
 		if(2)
-			to_chat(M, span_danger("Your eyes ache!"))
+			to_chat(M, span_danger("My eyes ache!"))
 			M.blur_eyes(5)
 		if(3)
 			M.emote("gasp")
 			M.losebreath = clamp(M.losebreath + 3, 1, 10)
 		if(4)
-			to_chat(M, span_danger("You feel your veins burn!"))
+			to_chat(M, span_danger("I feel your veins burn!"))
 			M.adjustToxLoss(2)
 		if(5)
-			to_chat(M, span_danger("Your insides feel like they're on fire!"))
+			to_chat(M, span_danger("My insides feel like they're on fire!"))
 			M.adjustOrganLoss(ORGAN_SLOT_EYES, 3)
 			M.adjustOrganLoss(ORGAN_SLOT_LUNGS, 1, 40)
 			M.adjustOrganLoss(ORGAN_SLOT_HEART, 1, 40)
 			M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2, BRAIN_DAMAGE_MILD)
 		if(6)
-			to_chat(M, span_danger("You feel sick to your stomach!"))
+			to_chat(M, span_danger("I feel sick to your stomach!"))
 			M.disgust = max(0, M.disgust+50)
 		if(7)
-			to_chat(M, span_danger("Your heart is beating so fast you can feel it in your throat!"))
+			to_chat(M, span_danger("My heart is beating so fast you can feel it in your throat!"))
 			M.adjustStaminaLoss(10*REM)
 		if(8)
 			M.Jitter(20)
 		if(9)
 			M.playsound_local(M, 'sound/effects/singlebeat.ogg', 100, 0)
 		if(10)
-			to_chat(M, span_danger("You throw up everything you've eaten in the past week and some blood to boot. You're pretty sure your heart just stopped for a second, too."))
+			to_chat(M, span_danger("I throw up everything you've eaten in the past week and some blood to boot. You're pretty sure your heart just stopped for a second, too."))
 			M.vomit(30, 1, 1, 5, 0, 0, 0, 60)
 
 /datum/reagent/medicine/critmed
@@ -2143,42 +2143,42 @@
 		if(-INFINITY to 0)
 			C.visible_message(
 				span_notice("[C] nods along to [stringload]."),
-				span_notice("You nod along to [stringload].[makesufeel]"),
+				span_notice("I nod along to [stringload].[makesufeel]"),
 			)
 		if(0.01 to 0.25)
 			if(healed)
 				makesufeel = " It makes you feel a bit better."
 			C.visible_message(
 				span_notice("[C] nods along to [stringload]."),
-				span_notice("You nod along to [stringload].[makesufeel]"),
+				span_notice("I nod along to [stringload].[makesufeel]"),
 			)
 		if(0.25 to 0.5)
 			if(healed)
 				makesufeel = " It makes you feel a little better."
 			C.visible_message(
 				span_notice("[C] bobs along to [stringload]."),
-				span_notice("You bob along to [stringload].[makesufeel]"),
+				span_notice("I bob along to [stringload].[makesufeel]"),
 			)
 		if(0.5 to 0.75)
 			if(healed)
 				makesufeel = " It makes you feel somewhat better."
 			C.visible_message(
 				span_notice("[C] sways along to [stringload]."),
-				span_notice("You sway along to [stringload].[makesufeel]"),
+				span_notice("I sway along to [stringload].[makesufeel]"),
 			)
 		if(0.75 to 1)
 			if(healed)
 				makesufeel = " It makes you feel better."
 			C.visible_message(
 				span_notice("[C] dances along to [stringload]."),
-				span_notice("You dance along to [stringload].[makesufeel]"),
+				span_notice("I dance along to [stringload].[makesufeel]"),
 			)
 		if(1 to 2)
 			if(healed)
 				makesufeel = " It makes you feel more than a little bit better."
 			C.visible_message(
 				span_notice("[C] jams along to [stringload]."),
-				span_notice("You jam along to [stringload].[makesufeel]"),
+				span_notice("I jam along to [stringload].[makesufeel]"),
 			)
 			if(prob(35))
 				C.emote("airguitar")
@@ -2187,7 +2187,7 @@
 				makesufeel = " It makes you feel a much better."
 			C.visible_message(
 				span_notice("[C] rocks out to [stringload]."),
-				span_notice("You rock out to [stringload].[makesufeel]"),
+				span_notice("I rock out to [stringload].[makesufeel]"),
 			)
 			if(prob(35))
 				C.emote("airguitar")

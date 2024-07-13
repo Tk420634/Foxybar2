@@ -104,7 +104,7 @@
 	faction = FACTION_KHAN
 	total_positions = 4
 	spawn_positions = 4
-	description = "You are a Mangudai, a warrior of the Great Khans who has passed the Trial of Position within the arena and earned their place. While your combat skills are to be respected, remember your position as a soldier - protect the Khan Fortress and Bighorn, show loyalty, and you may find chances yet to prove your greater worth."
+	description = "I am a Mangudai, a warrior of the Great Khans who has passed the Trial of Position within the arena and earned their place. While your combat skills are to be respected, remember your position as a soldier - protect the Khan Fortress and Bighorn, show loyalty, and you may find chances yet to prove your greater worth."
 	supervisors = "the Noyan and Khanate"
 	selection_color = "#ff915e"
 	exp_type = EXP_TYPE_KHAN
@@ -334,7 +334,7 @@
 	faction = FACTION_KHAN
 	total_positions = 4
 	spawn_positions = 4
-	description = "You are a Kipchak, a warrior of the Great Khans who has demonstrated prowess beyond the domain of a Mangudai. While you remain a humble soldier, greater duties may be entrusted upon you - such as leadership of small scouting parties or the collection of tribute. Your additional duties may involve hunting, prospecting and mining."
+	description = "I am a Kipchak, a warrior of the Great Khans who has demonstrated prowess beyond the domain of a Mangudai. While you remain a humble soldier, greater duties may be entrusted upon you - such as leadership of small scouting parties or the collection of tribute. Your additional duties may involve hunting, prospecting and mining."
 	supervisors = "the Noyan and Khanate"
 	selection_color = "#ff915e"
 	exp_requirements = 60
@@ -354,7 +354,7 @@
 	faction = FACTION_KHAN
 	total_positions = 4
 	spawn_positions = 4
-	description = "You are a Khorchin, an experienced warrior of the Great Khans who has proven their worth to the Khanate several times over. Your lamellar armor was forged for your person, and you shall find ample instruments of warfare at your disposal. Duties of greater prestige shall be given to you, from protecting Bighorn from lawbreakers to serving on diplomatic missions and expeditions."
+	description = "I am a Khorchin, an experienced warrior of the Great Khans who has proven their worth to the Khanate several times over. Your lamellar armor was forged for your person, and you shall find ample instruments of warfare at your disposal. Duties of greater prestige shall be given to you, from protecting Bighorn from lawbreakers to serving on diplomatic missions and expeditions."
 	supervisors = "the Noyan and Khanate"
 	selection_color = "#ff915e"
 	exp_requirements = 150
@@ -374,7 +374,7 @@
 	faction = FACTION_KHAN
 	total_positions = 2
 	spawn_positions = 2
-	description = "You are a Kheshig, a veteran Khorchin of the Great Khans who has displayed a degree of combat mastery in service to the Khanate. You receive access to a far greater arsenal, but with this comes greater expectations - expect to be given duties befitting of a true loyalist of the Khan such as leading dangerous expeditions alongside Knorchin, Bighorn prospectors and Followers."
+	description = "I am a Kheshig, a veteran Khorchin of the Great Khans who has displayed a degree of combat mastery in service to the Khanate. You receive access to a far greater arsenal, but with this comes greater expectations - expect to be given duties befitting of a true loyalist of the Khan such as leading dangerous expeditions alongside Knorchin, Bighorn prospectors and Followers."
 	supervisors = "the Noyan and Khanate"
 	selection_color = "#ff915e"
 	exp_requirements = 500
@@ -395,8 +395,8 @@
 	faction = FACTION_KHAN
 	total_positions = 1
 	spawn_positions = 1
-	description = "You are a Steward, a veteran of the Great Khans now serving its interests through negotiations and book-keeping. While dialogue and paperwork may be less exciting than the battlefield, you are instrumental in securing the financial and political wellbeing of the Khanate in this region. You are expected to lead in the absence of a Noyan."
-	enforces = "You have control over the First Bank of Bighorn, a valuable asset in generating profit. Some ideas - distributing loans, handling the collection of tribute, establishing a chem distribution ring, and working with another faction - perhaps against another. But don't unnecessarily endanger the Khanate, and listen to the Noyan!"
+	description = "I am a Steward, a veteran of the Great Khans now serving its interests through negotiations and book-keeping. While dialogue and paperwork may be less exciting than the battlefield, you are instrumental in securing the financial and political wellbeing of the Khanate in this region. You are expected to lead in the absence of a Noyan."
+	enforces = "I have control over the First Bank of Bighorn, a valuable asset in generating profit. Some ideas - distributing loans, handling the collection of tribute, establishing a chem distribution ring, and working with another faction - perhaps against another. But don't unnecessarily endanger the Khanate, and listen to the Noyan!"
 	supervisors = "the Noyan and Khanate"
 	selection_color = "#ff915e"
 	exp_requirements = 750
@@ -416,7 +416,7 @@
 	faction = FACTION_KHAN
 	total_positions = 1
 	spawn_positions = 1
-	description = "You are a Noyan, a ranking officer of the Khanate in charge of the local territory. You serve with the authority of the Khan themselves, and answer only to them - every Khan within the region is under your command. Maintain control of Bighorn from your mighty Khan Fortress. Work closely with the Steward if present - an invaluable financial and political adviser."
+	description = "I am a Noyan, a ranking officer of the Khanate in charge of the local territory. You serve with the authority of the Khan themselves, and answer only to them - every Khan within the region is under your command. Maintain control of Bighorn from your mighty Khan Fortress. Work closely with the Steward if present - an invaluable financial and political adviser."
 	enforces = "While you command great respect, you are nevertheless expected to keep the interests of the Khanate central. Put down dissent, but expect rapid and justified rebellion amongst your Khans if you begin unnecessarily endangering the interests of the Khanate. Mangudai and Kipchaks make good guards and scouts: Khorchins and Kheshigs are a more formidable military garrison."
 	supervisors = "the Khan and Khanate"
 	selection_color = "#ff915e"

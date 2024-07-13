@@ -19,7 +19,7 @@
 			var/mob/living/carbon/C = L
 			C.unequip_everything()
 			C.visible_message(span_warning("[C]'s belongings fall off of [C.p_them()] as they shrink down!"),
-			span_userdanger("Your belongings fall away as everything grows bigger!"))
+			span_userdanger("My belongings fall away as everything grows bigger!"))
 			if(ishuman(C))
 				var/mob/living/carbon/human/H = C
 				H.physiology.damage_resistance -= 100//carbons take double damage while shrunk

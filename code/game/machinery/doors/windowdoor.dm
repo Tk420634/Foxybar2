@@ -258,12 +258,12 @@
 	if(flags_1 & NODECONSTRUCT_1)
 		return
 	if(density || operating)
-		to_chat(user, span_warning("You need to open the door to access the maintenance panel!"))
+		to_chat(user, span_warning("I need to open the door to access the maintenance panel!"))
 		return
 	add_fingerprint(user)
 	tool.play_tool_sound(src)
 	panel_open = !panel_open
-	to_chat(user, span_notice("You [panel_open ? "open" : "close"] the maintenance panel."))
+	to_chat(user, span_notice("I [panel_open ? "open" : "close"] the maintenance panel."))
 	return TRUE
 
 /obj/machinery/door/window/crowbar_act(mob/living/user, obj/item/tool)
@@ -274,7 +274,7 @@
 		return
 	add_fingerprint(user)
 	user.visible_message(span_notice("[user] removes the electronics from the [name]."), \
-	span_notice("You start to remove electronics from the [name]..."))
+	span_notice("I start to remove electronics from the [name]..."))
 	if(!tool.use_tool(src, user, 40, volume=50))
 		return
 	if(!panel_open || density || operating || !loc)
@@ -296,10 +296,10 @@
 	windoor_assembly.setDir(dir)
 	windoor_assembly.created_name = name
 	if(obj_flags & EMAGGED)
-		to_chat(user, span_warning("You discard the damaged electronics."))
+		to_chat(user, span_warning("I discard the damaged electronics."))
 		qdel(src)
 		return
-	to_chat(user, span_notice("You remove the airlock electronics."))
+	to_chat(user, span_notice("I remove the airlock electronics."))
 	var/obj/item/electronics/airlock/dropped_electronics
 	if(!electronics)
 		dropped_electronics = new/obj/item/electronics/airlock(drop_location())
@@ -382,7 +382,7 @@
 /obj/machinery/door/window/rcd_act(mob/user, obj/item/construction/rcd/the_rcd, passed_mode)
 	switch(passed_mode)
 		if(RCD_DECONSTRUCT)
-			to_chat(user, span_notice("You deconstruct the windoor."))
+			to_chat(user, span_notice("I deconstruct the windoor."))
 			qdel(src)
 			return TRUE
 	return FALSE

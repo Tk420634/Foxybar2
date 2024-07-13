@@ -152,7 +152,7 @@
 		to_chat(victim, span_userdanger("[weapon] sticks itself to your [limb.name]!"))
 
 	if(damage > 0)
-		var/armor = victim.run_armor_check(limb.body_zone, "melee", "Your armor has protected your [limb.name].", "Your armor has softened a hit to your [limb.name].",weapon.armour_penetration)
+		var/armor = victim.run_armor_check(limb.body_zone, "melee", "My armor has protected your [limb.name].", "My armor has softened a hit to your [limb.name].",weapon.armour_penetration)
 		limb.receive_damage(brute=(1-pain_stam_pct) * damage, stamina=pain_stam_pct * damage, blocked=armor, sharpness = weapon.get_sharpness())
 
 /// Called every time a carbon with a harmful embed moves, rolling a chance for the item to cause pain. The chance is halved if the carbon is crawling or walking.
@@ -196,7 +196,7 @@
 	var/mob/living/carbon/victim = parent
 	var/time_taken = rip_time * weapon.w_class
 
-	victim.visible_message(span_warning("[victim] attempts to remove [weapon] from [victim.p_their()] [limb.name]."),span_notice("You attempt to remove [weapon] from your [limb.name]... (It will take [DisplayTimeText(time_taken)].)"))
+	victim.visible_message(span_warning("[victim] attempts to remove [weapon] from [victim.p_their()] [limb.name]."),span_notice("I attempt to remove [weapon] from your [limb.name]... (It will take [DisplayTimeText(time_taken)].)"))
 	if(do_after(victim, time_taken, target = victim))
 		if(!weapon || !limb || weapon.loc != victim || !(weapon in limb.embedded_objects))
 			qdel(src)
@@ -206,9 +206,9 @@
 			var/damage = weapon.w_class * remove_pain_mult
 			limb.receive_damage(brute=(1-pain_stam_pct) * damage, stamina=pain_stam_pct * damage, wound_bonus = CANT_WOUND) //It hurts to rip it out, get surgery you dingus.
 			victim.emote("scream")
-			victim.visible_message(span_notice("[victim] successfully rips [weapon] out of [victim.p_their()] [limb.name]!"), span_notice("You successfully remove [weapon] from your [limb.name]."))
+			victim.visible_message(span_notice("[victim] successfully rips [weapon] out of [victim.p_their()] [limb.name]!"), span_notice("I successfully remove [weapon] from your [limb.name]."))
 		else
-			victim.visible_message(span_notice("[victim] successfully rips [weapon] off of [victim.p_their()] [limb.name]!"), span_notice("You successfully remove [weapon] from your [limb.name]."))
+			victim.visible_message(span_notice("[victim] successfully rips [weapon] off of [victim.p_their()] [limb.name]!"), span_notice("I successfully remove [weapon] from your [limb.name]."))
 
 		safeRemoveCarbon(TRUE)
 
@@ -355,9 +355,9 @@
 	var/mob/living/us = usr
 	if(in_range(us, parent) && locate(href_list["embedded_object"]) == weapon)
 		if(harmful)
-			us.visible_message(span_notice("[us] begins unwedging [weapon] from [parent]."), span_notice("You begin unwedging [weapon] from [parent]..."))
+			us.visible_message(span_notice("[us] begins unwedging [weapon] from [parent]."), span_notice("I begin unwedging [weapon] from [parent]..."))
 		else
-			us.visible_message(span_notice("[us] begins unsticking [weapon] from [parent]."), span_notice("You begin unsticking [weapon] from [parent]..."))
+			us.visible_message(span_notice("[us] begins unsticking [weapon] from [parent]."), span_notice("I begin unsticking [weapon] from [parent]..."))
 
 		if(do_after(us, 30, target = parent))
 			us.put_in_hands(weapon)

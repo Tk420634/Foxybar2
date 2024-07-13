@@ -279,7 +279,7 @@
 				if(!(H.combat_flags & COMBAT_FLAG_SPRINT_ACTIVE) && H.getStaminaLoss() <= 20)
 					return FALSE
 	if(!(lube&SLIDE_ICE))
-		to_chat(C, span_notice("You slipped[ O ? " on the [O.name]" : ""]!"))
+		to_chat(C, span_notice("I slipped[ O ? " on the [O.name]" : ""]!"))
 		playsound(C.loc, 'sound/misc/slip.ogg', 50, 1, -3)
 
 	SEND_SIGNAL(C, COMSIG_ADD_MOOD_EVENT, "slipped", /datum/mood_event/slipped)

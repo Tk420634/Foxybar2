@@ -85,7 +85,7 @@ interface with the mining shuttle at the landing site if a mobile beacon is also
 
 	if(href_list["move"])
 		if(!is_station_level(z) && shuttleId == "colony_drop")
-			to_chat(usr, span_warning("You can't move the base again!"))
+			to_chat(usr, span_warning("I can't move the base again!"))
 			return
 		var/shuttle_error = SSshuttle.moveShuttle(shuttleId, href_list["move"], 1)
 		if(launch_warning)
@@ -200,7 +200,7 @@ interface with the mining shuttle at the landing site if a mobile beacon is also
 	if(setting)
 		return
 
-	to_chat(user, span_notice("You begin setting the landing zone parameters..."))
+	to_chat(user, span_notice("I begin setting the landing zone parameters..."))
 	setting = TRUE
 	if(!do_after(user, 50, target = user)) //You get a few seconds to cancel if you do not want to drop there.
 		setting = FALSE

@@ -19,10 +19,10 @@
 		to_chat(user, span_warning("[I] is much too powerful to sharpen further!"))
 		return
 	if(requires_sharpness && !I.sharpness)
-		to_chat(user, span_warning("You can only sharpen items that are already sharp, such as knives!"))
+		to_chat(user, span_warning("I can only sharpen items that are already sharp, such as knives!"))
 		return
 	if(istype(I, /obj/item/melee/transforming/energy))
-		to_chat(user, span_warning("You don't think \the [I] will be the thing getting modified if you use it on \the [src]!"))
+		to_chat(user, span_warning("I don't think \the [I] will be the thing getting modified if you use it on \the [src]!"))
 		return
 
 	var/signal_out = SEND_SIGNAL(I, COMSIG_ITEM_SHARPEN_ACT, increment, max)
@@ -42,7 +42,7 @@
 		I.force_bonus = increment
 		playsound(get_turf(src), 'sound/items/unsheath.ogg', 25, 1)
 
-	user.visible_message(span_notice("[user] enhances [I] with [src]!"), span_notice("You enhance [I], making it much more deadly than before."))
+	user.visible_message(span_notice("[user] enhances [I] with [src]!"), span_notice("I enhance [I], making it much more deadly than before."))
 	I.sharpness = SHARP_POINTY
 	I.throwforce = clamp(I.throwforce + increment, 0, max)
 	I.name = "[prefix] [I.name]"

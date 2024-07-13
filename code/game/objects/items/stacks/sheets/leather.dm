@@ -286,9 +286,9 @@ GLOBAL_LIST_INIT(sinew_recipes, list (
 /obj/item/stack/sheet/animalhide/attackby(obj/item/W, mob/user, params)
 	if(W.get_sharpness())
 		playsound(loc, 'sound/weapons/slice.ogg', 50, 1, -1)
-		user.visible_message("[user] starts cutting hair offthe [src].", span_notice("You start cutting the hair offthe [src]..."), span_italic("You hear the sound of a knife rubbing against flesh."))
+		user.visible_message("[user] starts cutting hair offthe [src].", span_notice("I start cutting the hair offthe [src]..."), span_italic("I hear the sound of a knife rubbing against flesh."))
 		if(do_after(user, 50, target = src))
-			to_chat(user, span_notice("You cut the hair from this [src.singular_name]."))
+			to_chat(user, span_notice("I cut the hair from this [src.singular_name]."))
 			new /obj/item/stack/sheet/hairlesshide(user.drop_location(), 1)
 			use(1)
 	else
@@ -316,9 +316,9 @@ GLOBAL_LIST_INIT(sinew_recipes, list (
 /obj/item/stack/sheet/leather/attackby(obj/item/W, mob/user, params)
 	if(W.get_sharpness())
 		playsound(loc, 'sound/weapons/slice.ogg', 50, 1, -1)
-		user.visible_message("[user] starts shredding the [src] into strips.", span_notice("You start shredding the [src] into strips"), span_italic("You hear the sound of leather being ripped."))
+		user.visible_message("[user] starts shredding the [src] into strips.", span_notice("I start shredding the [src] into strips"), span_italic("I hear the sound of leather being ripped."))
 		if(do_after(user, 50, target = src))
-			to_chat(user, span_notice("You cut strips from this [src.singular_name]."))
+			to_chat(user, span_notice("I cut strips from this [src.singular_name]."))
 			new /obj/item/stack/sheet/leatherstrips(user.drop_location(), 1)
 			use(1)
 	else

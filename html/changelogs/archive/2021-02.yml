@@ -645,7 +645,7 @@
   - tweak: "heavily edited the chem heater into a reaction chamber, showing multiple\
       \ details on a reaction, edited chem master and chem dispenser\u2019s UI to\
       \ show pH."
-  - tweak: "You can now use droppers and syringes directly on heaters to affect the\
+  - tweak: "I can now use droppers and syringes directly on heaters to affect the\
       \ beaker inside of it (provided there\u2019s a beaker in there)"
   - tweak: Tweaks most reagents to use a default handler. The ones omitted are ones
       that rely on being instant. This default has a minimum reaction temperature

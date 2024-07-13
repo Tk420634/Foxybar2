@@ -727,7 +727,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	if(other)
 		if(close_other) //increase the odds
 			for(var/i in 1 to 5)
-				message_pool.Add(span_warning("You feel a tiny prick!"))
+				message_pool.Add(span_warning("I feel a tiny prick!"))
 		var/obj/item/storage/equipped_backpack = other.get_item_by_slot(SLOT_BACK)
 		if(istype(equipped_backpack))
 			for(var/i in 1 to 5) //increase the odds
@@ -740,19 +740,19 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 
 		message_pool.Add("<B>[other]</B> [pick("sneezes","coughs")].")
 
-	message_pool.Add(span_notice("You hear something squeezing through the ducts..."), \
-		span_notice("Your [pick("arm", "leg", "back", "head")] itches."),\
-		span_warning("You feel [pick("hot","cold","dry","wet","woozy","faint")]."),
-		span_warning("Your stomach rumbles."),
-		span_warning("Your head hurts."),
-		span_warning("You hear a faint buzz in your head."),
+	message_pool.Add(span_notice("I hear something squeezing through the ducts..."), \
+		span_notice("My [pick("arm", "leg", "back", "head")] itches."),\
+		span_warning("I feel [pick("hot","cold","dry","wet","woozy","faint")]."),
+		span_warning("My stomach rumbles."),
+		span_warning("My head hurts."),
+		span_warning("I hear a faint buzz in your head."),
 		"<B>[target]</B> sneezes.")
 	if(prob(10))
 		message_pool.Add(span_warning("Behind you."),\
-			span_warning("You hear a faint laughter."),
-			span_warning("You see something move."),
-			span_warning("You hear skittering on the ceiling."),
-			span_warning("You see an inhumanly tall silhouette moving in the distance."))
+			span_warning("I hear a faint laughter."),
+			span_warning("I see something move."),
+			span_warning("I hear skittering on the ceiling."),
+			span_warning("I see an inhumanly tall silhouette moving in the distance."))
 	if(prob(10))
 		message_pool.Add("[pick_list_replacements(HAL_LINES_FILE, "advice")]")
 	var/chosen = pick(message_pool)
@@ -890,7 +890,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 			SEND_SOUND(target, get_announcer_sound("meteors"))
 		if("supermatter")
 			SEND_SOUND(target, 'sound/magic/charge.ogg')
-			to_chat(target, span_boldannounce("You feel reality distort for a moment..."))
+			to_chat(target, span_boldannounce("I feel reality distort for a moment..."))
 
 /datum/hallucination/hudscrew
 
@@ -1113,7 +1113,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	if(AM == target)
 		if(istype(target, /obj/effect/dummy/phased_mob))
 			return
-		to_chat(target, span_userdanger("You fall into the chasm!"))
+		to_chat(target, span_userdanger("I fall into the chasm!"))
 		target.DefaultCombatKnockdown(40)
 		addtimer(CALLBACK(usr, GLOBAL_PROC_REF(to_chat), target, span_notice("It's surprisingly shallow.")), 15)
 		QDEL_IN(src, 30)
@@ -1240,7 +1240,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	shock_image.override = TRUE
 	electrocution_skeleton_anim = image('icons/mob/human.dmi', target, icon_state = "electrocuted_base", layer=ABOVE_MOB_LAYER)
 	electrocution_skeleton_anim.appearance_flags |= RESET_COLOR|KEEP_APART
-	to_chat(target, span_userdanger("You feel a powerful shock course through your body!"))
+	to_chat(target, span_userdanger("I feel a powerful shock course through your body!"))
 	if(target.client)
 		target.client.images |= shock_image
 		target.client.images |= electrocution_skeleton_anim

@@ -29,7 +29,7 @@
 /obj/item/stack/packageWrap
 	name = "package wrapper"
 	singular_name = "wrapping sheet"
-	desc = "You can use this to wrap items in."
+	desc = "I can use this to wrap items in."
 	icon = 'icons/obj/stack_objects.dmi'
 	icon_state = "deliveryPaper"
 	item_flags = NOBLUDGEON
@@ -87,7 +87,7 @@
 		if(O.opened)
 			return
 		if(!O.delivery_icon) //no delivery icon means unwrappable closet (e.g. body bags)
-			to_chat(user, span_warning("You can't wrap this!"))
+			to_chat(user, span_warning("I can't wrap this!"))
 			return
 		if(use(3))
 			var/obj/structure/bigDelivery/P = new /obj/structure/bigDelivery(get_turf(O.loc))
@@ -96,7 +96,7 @@
 			P.add_fingerprint(user)
 			O.add_fingerprint(user)
 		else
-			to_chat(user, span_warning("You need more paper!"))
+			to_chat(user, span_warning("I need more paper!"))
 			return
 	else
 		to_chat(user, span_warning("The object you are trying to wrap is unsuitable for the sorting machinery!"))

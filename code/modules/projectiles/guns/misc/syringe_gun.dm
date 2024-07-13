@@ -47,7 +47,7 @@
 	S.forceMove(user.loc)
 
 	syringes.Remove(S)
-	to_chat(user, span_notice("You unload [S] from \the [src]."))
+	to_chat(user, span_notice("I unload [S] from \the [src]."))
 
 	return 1
 
@@ -56,7 +56,7 @@
 		if(syringes.len < max_syringes)
 			if(!user.transferItemToLoc(A, src))
 				return FALSE
-			to_chat(user, span_notice("You load [A] into \the [src]."))
+			to_chat(user, span_notice("I load [A] into \the [src]."))
 			syringes += A
 			recharge_newshot()
 			return TRUE
@@ -96,7 +96,7 @@
 		if(syringes.len < max_syringes)
 			if(!user.transferItemToLoc(D, src))
 				return FALSE
-			to_chat(user, span_notice("You load \the [D] into \the [src]."))
+			to_chat(user, span_notice("I load \the [D] into \the [src]."))
 			syringes += D
 			recharge_newshot()
 			return TRUE
@@ -120,7 +120,7 @@
 	if(istype(A, /obj/item/reagent_containers/syringe/dart))
 		..()
 	else
-		to_chat(user, span_notice("You can't put the [A] into \the [src]!"))
+		to_chat(user, span_notice("I can't put the [A] into \the [src]!"))
 		return FALSE
 
 /obj/item/gun/syringe/dart/rapiddart

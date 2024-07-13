@@ -503,14 +503,14 @@
 			trigger_selfcharge(user)
 			return
 		if(sounds_and_words)
-			to_chat(user, span_notice("You can't remove the cell from \the [src]."))
+			to_chat(user, span_notice("I can't remove the cell from \the [src]."))
 		return
 	cell.forceMove(drop_location())
 	if(put_it_in_their_hand)
 		user.put_in_hands(cell)
 	cell.update_icon()
 	if(sounds_and_words)
-		to_chat(user, span_notice("You pull \the [cell] out of \the [src]."))
+		to_chat(user, span_notice("I pull \the [cell] out of \the [src]."))
 		playsound(src, 'sound/f13weapons/equipsounds/laserreload.ogg', 50, 1)
 	cell = null
 	pause_selfcharge()
@@ -531,12 +531,12 @@
 			if(user.transferItemToLoc(AM, src))
 				cell = AM
 				resume_or_initiate_selfcharge()
-				to_chat(user, span_notice("You load a new cell into \the [src]."))
+				to_chat(user, span_notice("I load a new cell into \the [src]."))
 				A.update_icon()
 				update_icon()
 				return 1
 			else
-				to_chat(user, span_warning("You cannot seem to get \the [src] out of your hands!"))
+				to_chat(user, span_warning("I cannot seem to get \the [src] out of your hands!"))
 				return
 		//else if (cell)
 			//to_chat(user, span_notice("There's already a cell in \the [src]."))

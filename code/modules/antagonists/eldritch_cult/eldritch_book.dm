@@ -40,7 +40,7 @@
 ///Gives you a charge and destroys a corresponding influence
 /obj/item/forbidden_book/proc/get_power_from_influence(atom/target, mob/user)
 	var/obj/effect/reality_smash/RS = target
-	to_chat(target, span_danger("You start drawing power from influence..."))
+	to_chat(target, span_danger("I start drawing power from influence..."))
 	if(do_after(user,10 SECONDS,TRUE,RS))
 		qdel(RS)
 		charge += 1
@@ -53,7 +53,7 @@
 			to_chat(target, span_warning("The terrain doesn't support runes!"))
 			return
 	var/A = get_turf(target)
-	to_chat(user, span_danger("You start drawing a rune..."))
+	to_chat(user, span_danger("I start drawing a rune..."))
 
 	if(do_after(user,30 SECONDS,FALSE, user))
 
@@ -62,7 +62,7 @@
 ///Removes runes from the selected turf
 /obj/item/forbidden_book/proc/remove_rune(atom/target,mob/user)
 
-	to_chat(user, span_danger("You start removing a rune..."))
+	to_chat(user, span_danger("I start removing a rune..."))
 	if(do_after(user,2 SECONDS,FALSE, user))
 		qdel(target)
 

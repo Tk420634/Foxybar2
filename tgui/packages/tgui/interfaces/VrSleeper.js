@@ -66,7 +66,7 @@ export const VrSleeper = (props, context) => {
                 Connect to VR
               </Button.Confirm>
             ) : (
-              "You need to be inside the VR sleeper to connect to VR"
+              "I need to be inside the VR sleeper to connect to VR"
             )}
           </Section>
           {!!data.vr_avatar && (

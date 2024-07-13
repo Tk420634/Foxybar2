@@ -298,7 +298,7 @@
 
 /datum/design/decloner
 	name = "Decloner"
-	desc = "Your opponent will bubble into a messy pile of goop."
+	desc = "My opponent will bubble into a messy pile of goop."
 	id = "decloner"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/gold = 5000,/datum/material/uranium = 10000)

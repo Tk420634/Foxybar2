@@ -149,7 +149,7 @@
 /turf/open/floor/plating/beach/water
 	gender = PLURAL
 	name = "water"
-	desc = "You get the feeling that nobody's bothered to actually make this water functional..."
+	desc = "I get the feeling that nobody's bothered to actually make this water functional..."
 	icon_state = "water"
 	baseturfs = /turf/open/floor/plating/beach/water
 	footstep = FOOTSTEP_WATER

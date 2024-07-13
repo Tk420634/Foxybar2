@@ -1,6 +1,6 @@
 /obj/structure/chair
 	name = "chair"
-	desc = "You sit in this. Either by will or force."
+	desc = "I sit in this. Either by will or force."
 	icon = 'icons/fallout/objects/furniture/chairs_and_beds.dmi'
 	icon_state = "chair"
 	anchored = TRUE
@@ -100,7 +100,7 @@
 		if(!item_chair || !user.can_hold_items() || !has_buckled_mobs() || buckled_mobs.len > 1 || dir != user.dir || flags_1 & NODECONSTRUCT_1)
 			return TRUE
 		if(!user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
-			to_chat(user, span_warning("You can't do that right now!"))
+			to_chat(user, span_warning("I can't do that right now!"))
 			return TRUE
 		if(IS_STAMCRIT(user))
 			to_chat(user, span_warning("You're too exhausted for that."))
@@ -108,7 +108,7 @@
 		var/mob/living/poordude = buckled_mobs[1]
 		if(!istype(poordude))
 			return TRUE
-		user.visible_message(span_notice("[user] pulls [src] out from under [poordude]."), span_notice("You pull [src] out from under [poordude]."))
+		user.visible_message(span_notice("[user] pulls [src] out from under [poordude]."), span_notice("I pull [src] out from under [poordude]."))
 		var/obj/item/chair/C = new item_chair(loc)
 		C.set_custom_materials(custom_materials)
 		TransferComponents(C)
@@ -449,7 +449,7 @@
 			return
 		if(!usr.canUseTopic(src, BE_CLOSE, ismonkey(usr)))
 			return
-		usr.visible_message(span_notice("[usr] grabs \the [src.name]."), span_notice("You grab \the [src.name]."))
+		usr.visible_message(span_notice("[usr] grabs \the [src.name]."), span_notice("I grab \the [src.name]."))
 		var/obj/item/C = new item_chair(loc)
 		C.set_custom_materials(custom_materials)
 		TransferComponents(C)
@@ -544,7 +544,7 @@
 			to_chat(user, span_danger("There is already something here."))
 			return
 
-	user.visible_message(span_notice("[user] rights \the [src.name]."), span_notice("You right \the [name]."))
+	user.visible_message(span_notice("[user] rights \the [src.name]."), span_notice("I right \the [name]."))
 	var/obj/structure/chair/C = new origin_type(get_turf(loc))
 	C.set_custom_materials(custom_materials)
 	TransferComponents(C)
@@ -709,7 +709,7 @@
 
 /obj/structure/chair/old
 	name = "strange chair"
-	desc = "You sit in this. Either by will or force. Looks REALLY uncomfortable."
+	desc = "I sit in this. Either by will or force. Looks REALLY uncomfortable."
 	icon = 'icons/obj/chairs.dmi'
 	icon_state = "chairold"
 	item_chair = null
@@ -748,7 +748,7 @@
 		START_PROCESSING(SSfastprocess, src)
 	else
 		user.visible_message(span_notice("[user] stops [src]'s uncontrollable spinning."), \
-		span_notice("You grab [src] and stop its wild spinning."))
+		span_notice("I grab [src] and stop its wild spinning."))
 		STOP_PROCESSING(SSfastprocess, src)
 	return TRUE */
 

@@ -86,7 +86,7 @@ To add a crossbreed:
 
 /obj/item/slimecrossbeaker //To be used as a result for extract reactions that make chemicals.
 	name = "result extract"
-	desc = "You shouldn't see this."
+	desc = "I shouldn't see this."
 	icon = 'icons/obj/slimecrossing.dmi'
 	icon_state = "base"
 	var/del_on_empty = TRUE
@@ -147,9 +147,9 @@ To add a crossbreed:
 		reagents.trans_to(M, reagents.total_volume)
 		if(user != M)
 			to_chat(M, span_warning("[user] presses [src] against you!"))
-			to_chat(user, span_notice("You press [src] against [M], injecting [M.p_them()]."))
+			to_chat(user, span_notice("I press [src] against [M], injecting [M.p_them()]."))
 		else
-			to_chat(user, span_notice("You press [src] against yourself, and it flattens against you!"))
+			to_chat(user, span_notice("I press [src] against yourself, and it flattens against you!"))
 	else
 		to_chat(user, span_warning("There's no place to stick [src]!"))
 

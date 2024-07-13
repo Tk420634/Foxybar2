@@ -31,20 +31,20 @@
 			if(!I.tool_start_check(user, amount=2))
 				return
 
-			to_chat(user, span_notice("You begin repairing [src]."))
+			to_chat(user, span_notice("I begin repairing [src]."))
 			if(I.use_tool(src, user, 40, volume=50, amount=2))
 				obj_integrity = max_integrity
 				update_icon()
-				to_chat(user, span_notice("You repair [src]."))
+				to_chat(user, span_notice("I repair [src]."))
 		else
 			to_chat(user, span_warning("[src] is already in good condition!"))
 		return
 	else if(istype(I, /obj/item/stack/sheet/glass) && broken)
 		var/obj/item/stack/sheet/glass/G = I
 		if(G.get_amount() < 2)
-			to_chat(user, span_warning("You need two glass sheets to fix [src]!"))
+			to_chat(user, span_warning("I need two glass sheets to fix [src]!"))
 			return
-		to_chat(user, span_notice("You start fixing [src]..."))
+		to_chat(user, span_notice("I start fixing [src]..."))
 		if(do_after(user, 20, target = src) && G.use(2))
 			broken = 0
 			obj_integrity = max_integrity
@@ -58,7 +58,7 @@
 			if(!user.transferItemToLoc(F, src))
 				return
 			fireaxe = F
-			to_chat(user, span_caution("You place the [F.name] back in the [name]."))
+			to_chat(user, span_caution("I place the [F.name] back in the [name]."))
 			update_icon()
 			return
 		else if(!broken)
@@ -110,7 +110,7 @@
 		if(fireaxe)
 			user.put_in_hands(fireaxe)
 			fireaxe = null
-			to_chat(user, span_caution("You take the fire axe from the [name]."))
+			to_chat(user, span_caution("I take the fire axe from the [name]."))
 			src.add_fingerprint(user)
 			update_icon()
 			return
@@ -167,7 +167,7 @@
 	to_chat(user, "<span class = 'caution'> Resetting circuitry...</span>")
 	playsound(src, 'sound/machines/locktoggle.ogg', 50, 1)
 	if(do_after(user, 20, target = src))
-		to_chat(user, span_caution("You [locked ? "disable" : "re-enable"] the locking modules."))
+		to_chat(user, span_caution("I [locked ? "disable" : "re-enable"] the locking modules."))
 		locked = !locked
 		update_icon()
 

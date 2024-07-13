@@ -170,7 +170,7 @@
 
 /obj/item/ammo_box/proc/can_load(mob/user)
 	if(caliber_change_step != MAGAZINE_CALIBER_CHANGE_STEP_0)
-		to_chat(user, span_alert("You can't load anything into \the [src] while you're working on it!"))
+		to_chat(user, span_alert("I can't load anything into \the [src] while you're working on it!"))
 	return 1
 
 /obj/item/ammo_box/attackby(obj/item/A, mob/user, params, silent = FALSE, replace_spent = 0)
@@ -179,16 +179,16 @@
 		var/obj/item/stack/crafting/metalparts/parts_to_use = A
 		switch(caliber_change_step)
 			if(MAGAZINE_CALIBER_CHANGE_STEP_0)
-				to_chat(user, span_alert("You can't find a good place on \the [src] to put this!"))
+				to_chat(user, span_alert("I can't find a good place on \the [src] to put this!"))
 			if(MAGAZINE_CALIBER_CHANGE_STEP_1)
 				if(parts_to_use.use(1))
 					playsound(get_turf(src), 'sound/machines/click.ogg', 50, 1)
-					to_chat(user, span_notice("You slide some parts into \the [src]. Now it's good and ready for melting!"))
+					to_chat(user, span_notice("I slide some parts into \the [src]. Now it's good and ready for melting!"))
 					caliber_change_step = MAGAZINE_CALIBER_CHANGE_STEP_2
 				else
-					to_chat(user, span_alert("You need at least one part to put on \the [src]! What are you trying to pull?"))
+					to_chat(user, span_alert("I need at least one part to put on \the [src]! What are you trying to pull?"))
 			if(MAGAZINE_CALIBER_CHANGE_STEP_2)
-				to_chat(user, span_alert("You knock the parts out of the way and snap the fasteners back onto \the [src]."))
+				to_chat(user, span_alert("I knock the parts out of the way and snap the fasteners back onto \the [src]."))
 				var/turf/spawn_it_here = get_turf(user)
 				new /obj/item/stack/crafting/metalparts(spawn_it_here)
 				caliber_change_step = MAGAZINE_CALIBER_CHANGE_STEP_0
@@ -223,7 +223,7 @@
 			break
 	if(.)
 		if(!silent)
-			to_chat(user, span_notice("You load [.] shell\s into \the [src]!"))
+			to_chat(user, span_notice("I load [.] shell\s into \the [src]!"))
 			playsound(src, 'sound/weapons/bulletinsert.ogg', 60, 1)
 		other_ammobox.update_icon()
 		update_icon()
@@ -239,7 +239,7 @@
 		.++
 	if(.)
 		if(!silent)
-			to_chat(user, span_notice("You load [.] shell\s into \the [src]!"))
+			to_chat(user, span_notice("I load [.] shell\s into \the [src]!"))
 			playsound(src, 'sound/weapons/bulletinsert.ogg', 60, 1)
 		other_casing.update_icon()
 		update_icon()
@@ -254,7 +254,7 @@
 	if(casing_to_use.caliber in valid_new_calibers)
 		caliber.len = 0
 		caliber |= casing_to_use.caliber
-		to_chat(user, span_notice("You press \the [casing_to_use] into the glowing hot metal of \the [src]! The casing melts, and leaves behind a hole roughly its diameter! Looks like this mag'll accept [casing_to_use.caliber] now!"))
+		to_chat(user, span_notice("I press \the [casing_to_use] into the glowing hot metal of \the [src]! The casing melts, and leaves behind a hole roughly its diameter! Looks like this mag'll accept [casing_to_use.caliber] now!"))
 		qdel(casing_to_use)
 		if(!been_rebored)
 			name = "rebored [name]"
@@ -265,7 +265,7 @@
 		caliber_change_step = MAGAZINE_CALIBER_CHANGE_STEP_0
 		return TRUE
 	else
-		to_chat(user, span_alert("You can't press \the [casing_to_use] into \the [src]! Try a different kind of casing!"))
+		to_chat(user, span_alert("I can't press \the [casing_to_use] into \the [src]! Try a different kind of casing!"))
 		return FALSE
 
 /obj/item/ammo_box/screwdriver_act(mob/living/user, obj/item/I)
@@ -277,7 +277,7 @@
 		return
 
 	if(!can_change_caliber)
-		to_chat(user, span_alert("You can't change what kind of casing goes into \the [src]!"))
+		to_chat(user, span_alert("I can't change what kind of casing goes into \the [src]!"))
 		return
 
 	if(length(stored_ammo))
@@ -289,27 +289,27 @@
 				is_loaded = TRUE
 				break
 		if(is_loaded)
-			to_chat(user, span_alert("You need to unload \the [src]!"))
+			to_chat(user, span_alert("I need to unload \the [src]!"))
 			return
 	
 	switch(caliber_change_step)
 		if(MAGAZINE_CALIBER_CHANGE_STEP_0)
-			to_chat(user, span_notice("You start loosening the fasteners on \the [src]..."))
+			to_chat(user, span_notice("I start loosening the fasteners on \the [src]..."))
 			if(I.use_tool(src, user, volume=50))
 				caliber_change_step = MAGAZINE_CALIBER_CHANGE_STEP_1
-				to_chat(user, span_notice("You snap open the fasteners on \the [src]! Next, you'll need some metal parts..."))
+				to_chat(user, span_notice("I snap open the fasteners on \the [src]! Next, you'll need some metal parts..."))
 			else
-				to_chat(user, span_alert("You mess up and all the fasteners on \the [src] snap back into place! Shoot!"))
+				to_chat(user, span_alert("I mess up and all the fasteners on \the [src] snap back into place! Shoot!"))
 		if(MAGAZINE_CALIBER_CHANGE_STEP_1)
-			to_chat(user, span_alert("You snap the fasteners back onto \the [src]."))
+			to_chat(user, span_alert("I snap the fasteners back onto \the [src]."))
 			caliber_change_step = MAGAZINE_CALIBER_CHANGE_STEP_0
 		if(MAGAZINE_CALIBER_CHANGE_STEP_2)
-			to_chat(user, span_alert("You knock the parts out of the way and snap the fasteners back onto \the [src]."))
+			to_chat(user, span_alert("I knock the parts out of the way and snap the fasteners back onto \the [src]."))
 			var/turf/spawn_it_here = get_turf(user)
 			new /obj/item/stack/crafting/metalparts(spawn_it_here)
 			caliber_change_step = MAGAZINE_CALIBER_CHANGE_STEP_0
 		if(MAGAZINE_CALIBER_CHANGE_STEP_3)
-			to_chat(user, span_alert("You scoop out the glowing hot metal with \the [I], and when \the [src] cools, it seems like it'd gone back to how it was before. Huh."))
+			to_chat(user, span_alert("I scoop out the glowing hot metal with \the [I], and when \the [src] cools, it seems like it'd gone back to how it was before. Huh."))
 			var/turf/spawn_it_here = get_turf(user)
 			new /obj/item/stack/crafting/metalparts(spawn_it_here)
 			caliber_change_step = MAGAZINE_CALIBER_CHANGE_STEP_0
@@ -324,7 +324,7 @@
 		return
 
 	if(!can_change_caliber)
-		to_chat(user, span_alert("You can't change what kind of casing goes into \the [src]!"))
+		to_chat(user, span_alert("I can't change what kind of casing goes into \the [src]!"))
 		return
 
 	if(length(stored_ammo))
@@ -336,25 +336,25 @@
 				is_loaded = TRUE
 				break
 		if(is_loaded)
-			to_chat(user, span_alert("You need to unload \the [src]!"))
+			to_chat(user, span_alert("I need to unload \the [src]!"))
 			return
 	
 	switch(caliber_change_step)
 		if(MAGAZINE_CALIBER_CHANGE_STEP_0)
-			to_chat(user, span_alert("You cant weld \the [src] just yet! Try using a screwdriver on the fasteners first!"))
+			to_chat(user, span_alert("I cant weld \the [src] just yet! Try using a screwdriver on the fasteners first!"))
 		if(MAGAZINE_CALIBER_CHANGE_STEP_1)
-			to_chat(user, span_alert("You knock the fasteners on \the [src] back into place."))
+			to_chat(user, span_alert("I knock the fasteners on \the [src] back into place."))
 			caliber_change_step = MAGAZINE_CALIBER_CHANGE_STEP_0
 		if(MAGAZINE_CALIBER_CHANGE_STEP_2)
 			if(!I.tool_start_check(user, amount=0))
-				to_chat(user, span_alert("You need at least 5 units of fuel in your welder!"))
+				to_chat(user, span_alert("I need at least 5 units of fuel in your welder!"))
 				return
-			to_chat(user, span_notice("You start heating up the parts on \the [src]..."))
+			to_chat(user, span_notice("I start heating up the parts on \the [src]..."))
 			if(I.use_tool(src, user, amount=1, volume=50))
 				caliber_change_step = MAGAZINE_CALIBER_CHANGE_STEP_3
-				to_chat(user, span_notice("You heat up the parts nice and hot and weld them to \the [src]! It should hold a casing, as a mold..."))
+				to_chat(user, span_notice("I heat up the parts nice and hot and weld them to \the [src]! It should hold a casing, as a mold..."))
 			else
-				to_chat(user, span_alert("You mess up and \the [src] cools off! Darn!"))
+				to_chat(user, span_alert("I mess up and \the [src] cools off! Darn!"))
 		if(MAGAZINE_CALIBER_CHANGE_STEP_3)
 			to_chat(user, span_alert("\The [src] is already hot! Quick, put a casing in there!"))
 
@@ -363,7 +363,7 @@
 
 /obj/item/ammo_box/proc/pop_casing(mob/user, to_ground, silent)
 	if(unloadable)
-		to_chat(user, span_notice("You can't remove ammo from \the [src]!"))
+		to_chat(user, span_notice("I can't remove ammo from \the [src]!"))
 		return FALSE
 	var/obj/item/ammo_casing/A = get_round()
 	if(!A)
@@ -373,7 +373,7 @@
 		A.bounce_away(FALSE, NONE)
 	playsound(src, 'sound/weapons/bulletinsert.ogg', 60, 1)
 	if(!silent)
-		to_chat(user, span_notice("You remove a round from \the [src]!"))
+		to_chat(user, span_notice("I remove a round from \the [src]!"))
 	update_icon()
 	return A
 

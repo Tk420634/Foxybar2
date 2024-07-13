@@ -36,7 +36,7 @@
 
 /obj/structure/destructible/clockwork/trap/attackby(obj/item/I, mob/living/user, params)
 	if(buckled_mobs && (user in buckled_mobs))
-		to_chat(user, span_warning("You can't reach!"))
+		to_chat(user, span_warning("I can't reach!"))
 		return
 	..()
 
@@ -98,7 +98,7 @@
 		if(wiggle_wiggle)
 			return
 		user.visible_message(span_warning("[user] starts wriggling off of [src]!"), \
-		span_danger("You start agonizingly working your way off of [src]..."))
+		span_danger("I start agonizingly working your way off of [src]..."))
 		wiggle_wiggle = TRUE
 		if(!do_after(user, 300, target = user))
 			user.visible_message(span_warning("[user] slides back down [src]!"))
@@ -110,7 +110,7 @@
 		wiggle_wiggle = FALSE
 	else
 		user.visible_message(span_danger("[user] starts tenderly lifting [skewee] off of [src]..."), \
-		span_danger("You start tenderly lifting [skewee] off of [src]..."))
+		span_danger("I start tenderly lifting [skewee] off of [src]..."))
 		if(!do_after(user, 60, target = skewee))
 			skewee.visible_message(span_warning("[skewee] painfully slides back down [src]."))
 			if(skewee.stat >= UNCONSCIOUS)
@@ -118,7 +118,7 @@
 			skewee.say("Oof, ouch owwie!!", forced = "fail brass skewer removal")
 			return
 	skewee.visible_message(span_danger("[skewee] comes free of [src] with a squelching pop!"), \
-	span_boldannounce("You come free of [src]!"))
+	span_boldannounce("I come free of [src]!"))
 	skewee.DefaultCombatKnockdown(30)
 	playsound(skewee, 'sound/misc/desceration-03.ogg', 50, TRUE)
 	unbuckle_mob(skewee)

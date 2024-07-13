@@ -118,12 +118,12 @@
 						deadchat_broadcast("<span class='deadsay'><span class='name'>[usr.real_name]</span> has changed the security level to [security_level] with [src] at <span class='name'>[get_area_name(usr, TRUE)]</span>.</span>", usr)
 					tmp_alertlevel = 0
 				else
-					to_chat(usr, span_warning("You are not authorized to do this!"))
+					to_chat(usr, span_warning("I am not authorized to do this!"))
 					playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
 					tmp_alertlevel = 0
 				state = STATE_DEFAULT
 			else
-				to_chat(usr, span_warning("You need to swipe your ID!"))
+				to_chat(usr, span_warning("I need to swipe your ID!"))
 				playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
 
 		if("announce")
@@ -167,7 +167,7 @@
 					if(SSshuttle.shuttle_purchased)
 						to_chat(usr, span_alert("A replacement shuttle has already been purchased."))
 					else if(!S.prerequisites_met())
-						to_chat(usr, span_alert("You have not met the requirements for purchasing this shuttle."))
+						to_chat(usr, span_alert("I have not met the requirements for purchasing this shuttle."))
 					else
 						var/points_to_check
 						var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_CAR)
@@ -451,7 +451,7 @@
 	SSshuttle.shuttle_purchase_requirements_met |= "emagged"
 	if(authenticated == 1)
 		authenticated = 2
-	to_chat(user, span_danger("You scramble the communication routing circuits!"))
+	to_chat(user, span_danger("I scramble the communication routing circuits!"))
 	playsound(src, 'sound/machines/terminal_alert.ogg', 50, FALSE)
 	return TRUE
 
@@ -738,7 +738,7 @@
 		return
 	if(!(user.can_speak())) //No more cheating, mime/random mute guy!
 		input = "..."
-		to_chat(user, span_warning("You find yourself unable to speak."))
+		to_chat(user, span_warning("I find yourself unable to speak."))
 	else
 		input = user.treat_message(input) //Adds slurs and so on. Someone should make this use languages too.
 	SScommunications.make_announcement(user, is_silicon, input)

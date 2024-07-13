@@ -78,16 +78,16 @@ GLOBAL_LIST_EMPTY(power_sinks)
 					set_mode(CLAMPED_OFF)
 					user.visible_message( \
 						"[user] attaches \the [src] to the cable.", \
-						span_notice("You attach \the [src] to the cable."),
-						span_italic("You hear some wires being connected to something."))
+						span_notice("I attach \the [src] to the cable."),
+						span_italic("I hear some wires being connected to something."))
 			else
 				to_chat(user, span_warning("This device must be placed over an exposed, powered cable node!"))
 		else
 			set_mode(DISCONNECTED)
 			user.visible_message( \
 				"[user] detaches \the [src] from the cable.", \
-				span_notice("You detach \the [src] from the cable."),
-				span_italic("You hear some wires being disconnected from something."))
+				span_notice("I detach \the [src] from the cable."),
+				span_italic("I hear some wires being disconnected from something."))
 	else
 		return ..()
 
@@ -105,8 +105,8 @@ GLOBAL_LIST_EMPTY(power_sinks)
 		if(CLAMPED_OFF)
 			user.visible_message( \
 				"[user] activates \the [src]!", \
-				span_notice("You activate \the [src]."),
-				span_italic("You hear a click."))
+				span_notice("I activate \the [src]."),
+				span_italic("I hear a click."))
 			message_admins("Power sink activated by [ADMIN_LOOKUPFLW(user)] at [ADMIN_VERBOSEJMP(src)]")
 			log_game("Power sink activated by [key_name(user)] at [AREACOORD(src)]")
 			set_mode(OPERATING)
@@ -114,8 +114,8 @@ GLOBAL_LIST_EMPTY(power_sinks)
 		if(OPERATING)
 			user.visible_message( \
 				"[user] deactivates \the [src]!", \
-				span_notice("You deactivate \the [src]."),
-				span_italic("You hear a click."))
+				span_notice("I deactivate \the [src]."),
+				span_italic("I hear a click."))
 			set_mode(CLAMPED_OFF)
 
 /obj/item/powersink/process()

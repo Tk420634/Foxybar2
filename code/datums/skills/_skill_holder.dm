@@ -117,7 +117,7 @@
 		CRASH("Invalid set_skill_value call. Use skill typepaths.")
 	var/datum/skill/S = GLOB.skill_datums[skill]
 	if(S.progression_type != SKILL_PROGRESSION_NUMERICAL && S.progression_type != SKILL_PROGRESSION_LEVEL)
-		CRASH("You cannot auto increment a non numerical(experience skill!")
+		CRASH("I cannot auto increment a non numerical(experience skill!")
 	var/current = get_skill_value(skill, FALSE)
 	var/affinity = get_skill_affinity(skill)
 	var/target_value = round(current + (value * affinity), S.skill_gain_quantisation)

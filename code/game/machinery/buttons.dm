@@ -79,7 +79,7 @@
 				to_chat(user, span_warning("\The [W] is stuck to you!"))
 				return
 			device = W
-			to_chat(user, span_notice("You add [W] to the button."))
+			to_chat(user, span_notice("I add [W] to the button."))
 
 		if(!board && istype(W, /obj/item/electronics/airlock))
 			if(!user.transferItemToLoc(W, src))
@@ -90,13 +90,13 @@
 				req_one_access = board.accesses
 			else
 				req_access = board.accesses
-			to_chat(user, span_notice("You add [W] to the button."))
+			to_chat(user, span_notice("I add [W] to the button."))
 
 		if(!device && !board && istype(W, /obj/item/wrench))
-			to_chat(user, span_notice("You start unsecuring the button frame..."))
+			to_chat(user, span_notice("I start unsecuring the button frame..."))
 			W.play_tool_sound(src)
 			if(W.use_tool(src, user, 40))
-				to_chat(user, span_notice("You unsecure the button frame."))
+				to_chat(user, span_notice("I unsecure the button frame."))
 				transfer_fingerprints_to(new /obj/item/wallframe/button(get_turf(src)))
 				playsound(loc, 'sound/items/deconstruct.ogg', 50, 1)
 				qdel(src)
@@ -155,14 +155,14 @@
 				req_one_access = list()
 				board = null
 			update_icon()
-			to_chat(user, span_notice("You remove electronics from the button frame."))
+			to_chat(user, span_notice("I remove electronics from the button frame."))
 
 		else
 			if(skin == "doorctrl")
 				skin = "launcher"
 			else
 				skin = "doorctrl"
-			to_chat(user, span_notice("You change the button frame's front panel."))
+			to_chat(user, span_notice("I change the button frame's front panel."))
 		return
 
 	if((stat & (NOPOWER|BROKEN)))

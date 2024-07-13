@@ -8,7 +8,7 @@
 	mind_control_duration = 800
 
 /obj/item/organ/heart/gland/plasma/activate()
-	to_chat(owner, span_warning("You feel bloated."))
+	to_chat(owner, span_warning("I feel bloated."))
 	addtimer(CALLBACK(usr, GLOBAL_PROC_REF(to_chat), owner, span_userdanger("A massive stomachache overcomes you.")), 150)
 	addtimer(CALLBACK(src,PROC_REF(vomit_plasma)), 200)
 

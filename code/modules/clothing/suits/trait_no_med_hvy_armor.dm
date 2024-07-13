@@ -17,6 +17,6 @@
 				armor.laser		> (ARMOR_AVERSION_THRESHOLD_LASER) || \
 				armor.damage_threshold > (ARMOR_AVERSION_THRESHOLD_THRES))
 
-				to_chat(M, span_danger("You can't wear this armour, it's too heavy!"))
+				to_chat(M, span_danger("I can't wear this armour, it's too heavy!"))
 				return FALSE
 

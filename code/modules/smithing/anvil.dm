@@ -113,7 +113,7 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 
 /obj/structure/anvil/attackby(obj/item/I, mob/user)
 	if(!HAS_TRAIT(user, TRAIT_WEAPONSMITH))
-		to_chat(user, span_warning("You arent a blacksmith, you have no clue how to work this thing!"))
+		to_chat(user, span_warning("I amnt a blacksmith, you have no clue how to work this thing!"))
 		return
 	if(istype(I, /obj/item/ingot)) // That's it we're refactoring this code because I can't im literally crying rn ; _;
 		return HandleIngot(I, user)
@@ -122,11 +122,11 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 		var/obj/item/melee/smith/hammer/hammertime = I // Even though they are two seperate object paths, I believe because we're only accessing qualitymod, it casts accordingly.
 		// If the player has weaponsmith
 		if(!HAS_TRAIT(user, TRAIT_WEAPONSMITH))
-			to_chat(user, span_warning("You arent a blacksmith, you have no clue how to work this thing!"))
+			to_chat(user, span_warning("I amnt a blacksmith, you have no clue how to work this thing!"))
 			return
 		// if there is nothing present or something in progress.
 		if(!(workpiece_state == WORKPIECE_PRESENT || workpiece_state == WORKPIECE_INPROGRESS))
-			to_chat(user, "You can't work an empty anvil!")
+			to_chat(user, "I can't work an empty anvil!")
 			return FALSE
 
 		// Checks if F.busy or busy.
@@ -167,7 +167,7 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 	if(notsword.workability == "shapeable")
 		workpiece_state = WORKPIECE_PRESENT
 		workpiece_material = notsword.custom_materials
-		to_chat(user, "You place the [notsword] on the [src].")
+		to_chat(user, "I place the [notsword] on the [src].")
 
 		currentquality = initial(currentquality)
 
@@ -384,7 +384,7 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 			currentquality -= 1
 
 	// Display message
-	user.show_message(span_notice("You hammer the metal into a [stepdone]."))
+	user.show_message(span_notice("I hammer the metal into a [stepdone]."))
 
 	// more sounds... uhhh...
 	playsound(src, 'code/modules/smithing/sound/anvil_double3.ogg',30)
@@ -423,7 +423,7 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 	// I hate this. If you hit more than 10 times, or the final piece failed and you have no artifact. Why it gotta look so awkward.
 	if((currentsteps > 10 || (rng && prob(finalfailchance))) && !artifact)
 
-		to_chat(user, span_warning("You overwork the metal, causing it to turn into useless slag!"))
+		to_chat(user, span_warning("I overwork the metal, causing it to turn into useless slag!"))
 
 		new /obj/item/stack/ore/slag(get_turf(src)) // Spawn some slag
 
@@ -441,7 +441,7 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 			var/obj/item/smithing/finisheditem = GLOB.anvil_recipes[stepsdone]
 			finisheditem = new finisheditem(get_turf(src)) // Lets just spawn the item in immediately!
 
-			to_chat(user, "You finish [finisheditem]!")
+			to_chat(user, "I finish [finisheditem]!")
 
 			// math to make quality better if its an artifact.
 			if(artifact)

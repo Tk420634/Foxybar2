@@ -32,16 +32,16 @@
 	if(P.get_temperature())
 		fire(user)
 	if(istype(P, /obj/item/shovel))
-		to_chat(user, "You remove some campfire ashes.")
+		to_chat(user, "I remove some campfire ashes.")
 		qdel(src)
 		return
 	else if(istype(P, /obj/item/stack/sheet/mineral/wood))
 		var/obj/item/stack/sheet/mineral/wood/W = P
 		if(fuel > 3000)
-			to_chat(user, "You can't add more fuel - wait untill some of it burns away!")
+			to_chat(user, "I can't add more fuel - wait untill some of it burns away!")
 			return
 		if(W.use(1))
-			user.visible_message("[user] has added fuel to [src].", span_notice("You have added fuel to [src]."))
+			user.visible_message("[user] has added fuel to [src].", span_notice("I have added fuel to [src]."))
 			fuel += 300
 	else if(fired && istype(P, /obj/item/reagent_containers/food/snacks))
 		if(!ishuman(user))
@@ -49,7 +49,7 @@
 		if(istype(P, /obj/item/reagent_containers/food/snacks))
 			var/obj/item/reagent_containers/food/snacks/F = P
 			if(F.cooked_type)
-				to_chat(user, "You start cooking a [F.name].")
+				to_chat(user, "I start cooking a [F.name].")
 				if(do_after(user, 20, target = src))
 					F.microwave_act()
 	else
@@ -91,7 +91,7 @@
 	fired = 1
 	desc = "A warm, bright, and hopeful fire source."
 	if(user)
-		user.visible_message("[user] has lit a [src].", span_notice("You have lit a [src]."))
+		user.visible_message("[user] has lit a [src].", span_notice("I have lit a [src]."))
 	update_icon()
 	burned = 0
 	burn_process()

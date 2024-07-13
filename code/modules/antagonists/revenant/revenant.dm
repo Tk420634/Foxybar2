@@ -119,11 +119,11 @@
 		revealed = FALSE
 		incorporeal_move = INCORPOREAL_MOVE_JAUNT
 		invisibility = INVISIBILITY_REVENANT
-		to_chat(src, span_revenboldnotice("You are once more concealed."))
+		to_chat(src, span_revenboldnotice("I am once more concealed."))
 	if(unstun_time && world.time >= unstun_time)
 		unstun_time = 0
 		mob_transforming = FALSE
-		to_chat(src, span_revenboldnotice("You can move again!"))
+		to_chat(src, span_revenboldnotice("I can move again!"))
 	if(essence_regenerating && !inhibited && essence < essence_regen_cap) //While inhibited, essence will not regenerate
 		essence = min(essence_regen_cap, essence+essence_regen_amount)
 		update_action_buttons_icon() //because we update something required by our spells in life, we need to update our buttons
@@ -248,10 +248,10 @@
 	invisibility = 0
 	incorporeal_move = FALSE
 	if(!unreveal_time)
-		to_chat(src, span_revendanger("You have been revealed!"))
+		to_chat(src, span_revendanger("I have been revealed!"))
 		unreveal_time = world.time + time
 	else
-		to_chat(src, span_revenwarning("You have been revealed!"))
+		to_chat(src, span_revenwarning("I have been revealed!"))
 		unreveal_time = unreveal_time + time
 	update_spooky_icon()
 
@@ -262,10 +262,10 @@
 		return
 	mob_transforming = TRUE
 	if(!unstun_time)
-		to_chat(src, span_revendanger("You cannot move!"))
+		to_chat(src, span_revendanger("I cannot move!"))
 		unstun_time = world.time + time
 	else
-		to_chat(src, span_revenwarning("You cannot move!"))
+		to_chat(src, span_revenwarning("I cannot move!"))
 		unstun_time = unstun_time + time
 	update_spooky_icon()
 
@@ -286,17 +286,17 @@
 		return
 	var/turf/T = get_turf(src)
 	if(isclosedturf(T))
-		to_chat(src, span_revenwarning("You cannot use abilities from inside of a wall."))
+		to_chat(src, span_revenwarning("I cannot use abilities from inside of a wall."))
 		return FALSE
 	for(var/obj/O in T)
 		if(O.density && !(O.flags_1 & ON_BORDER_1))
-			to_chat(src, span_revenwarning("You cannot use abilities inside of a dense object."))
+			to_chat(src, span_revenwarning("I cannot use abilities inside of a dense object."))
 			return FALSE
 	if(inhibited)
-		to_chat(src, span_revenwarning("Your powers have been suppressed by nulling energy!"))
+		to_chat(src, span_revenwarning("My powers have been suppressed by nulling energy!"))
 		return FALSE
 	if(!change_essence_amount(essence_cost, TRUE))
-		to_chat(src, span_revenwarning("You lack the essence to use that ability."))
+		to_chat(src, span_revenwarning("I lack the essence to use that ability."))
 		return FALSE
 	return TRUE
 
@@ -362,7 +362,7 @@
 	if(!reforming || inert)
 		return ..()
 	user.visible_message(span_notice("[user] scatters [src] in all directions."), \
-						span_notice("You scatter [src] across the area. The particles slowly fade away."))
+						span_notice("I scatter [src] across the area. The particles slowly fade away."))
 	user.dropItemToGround(src)
 	scatter()
 

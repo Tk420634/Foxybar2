@@ -393,7 +393,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	if(!istype(new_thing))
 		user.show_message(span_alert("Couldn't get the thing out of the case. Try again?"))
 		return
-	user.show_message(span_green("You pull \a [new_thing.name] out of [src]."))
+	user.show_message(span_green("I pull \a [new_thing.name] out of [src]."))
 	user.put_in_hands(new_thing)
 	if(first_key && (first_key in multiple_choice))
 		multiple_choice[first_key] = null

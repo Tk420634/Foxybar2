@@ -563,7 +563,7 @@
 	new_mob.a_intent = INTENT_HARM
 
 
-	to_chat(new_mob, "You suddenly feel more... animalistic.")
+	to_chat(new_mob, "I suddenly feel more... animalistic.")
 	. = new_mob
 	qdel(src)
 
@@ -583,7 +583,7 @@
 	else
 		transfer_ckey(new_mob)
 	new_mob.a_intent = INTENT_HARM
-	to_chat(new_mob, "You feel more... animalistic")
+	to_chat(new_mob, "I feel more... animalistic")
 
 	. = new_mob
 	qdel(src)

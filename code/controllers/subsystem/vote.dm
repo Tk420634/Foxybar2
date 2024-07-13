@@ -694,7 +694,7 @@ SUBSYSTEM_DEF(vote)
 					saved += usr.ckey
 				else
 					voted[usr.ckey] = list()
-					to_chat(usr,"Your vote was malformed! Start over!")
+					to_chat(usr,"My vote was malformed! Start over!")
 		if("load")
 			if(!(usr.ckey in SSpersistence.saved_votes))
 				SSpersistence.LoadSavedVote(usr.ckey)
@@ -714,11 +714,11 @@ SUBSYSTEM_DEF(vote)
 				if(!malformed)
 					saved += usr.ckey
 				else
-					to_chat(usr,"Your saved vote was malformed! Start over!")
+					to_chat(usr,"My saved vote was malformed! Start over!")
 					SSpersistence.saved_votes[usr.ckey] -= mode
 					voted -= usr.ckey
 			else
-				to_chat(usr,"Your saved vote was malformed! Start over!")
+				to_chat(usr,"My saved vote was malformed! Start over!")
 				voted -= usr.ckey
 		else
 			if(vote_system == SCORE_VOTING || vote_system == MAJORITY_JUDGEMENT_VOTING)

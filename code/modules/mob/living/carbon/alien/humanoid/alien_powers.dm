@@ -42,7 +42,7 @@ Doesn't work on other aliens/AI.*/
 /obj/effect/proc_holder/alien/proc/cost_check(check_turf = FALSE, mob/living/carbon/user, silent = FALSE)
 	if(user.stat)
 		if(!silent)
-			to_chat(user, span_noticealien("You must be conscious to do this."))
+			to_chat(user, span_noticealien("I must be conscious to do this."))
 		return FALSE
 	if(user.getPlasma() < plasma_cost)
 		if(!silent)
@@ -100,7 +100,7 @@ Doesn't work on other aliens/AI.*/
 			return
 		log_directed_talk(user, M, msg, LOG_SAY, tag="alien whisper")
 		to_chat(M, "<span class='noticealien'>You hear a strange, alien voice in your head...</span>[msg]")
-		to_chat(user, span_noticealien("You said: \"[msg]\" to [M]"))
+		to_chat(user, span_noticealien("I said: \"[msg]\" to [M]"))
 		for(var/ded in GLOB.dead_mob_list)
 			if(!isobserver(ded))
 				continue
@@ -132,9 +132,9 @@ Doesn't work on other aliens/AI.*/
 			M.adjustPlasma(amount)
 			user.adjustPlasma(-amount)
 			to_chat(M, span_noticealien("[user] has transferred [amount] plasma to you."))
-			to_chat(user, span_noticealien("You transfer [amount] plasma to [M]"))
+			to_chat(user, span_noticealien("I transfer [amount] plasma to [M]"))
 		else
-			to_chat(user, span_noticealien("You need to be closer!"))
+			to_chat(user, span_noticealien("I need to be closer!"))
 	return
 
 /obj/effect/proc_holder/alien/acid
@@ -155,7 +155,7 @@ Doesn't work on other aliens/AI.*/
 			user.visible_message(span_alertalien("[user] vomits globs of vile stuff all over [target]. It begins to sizzle and melt under the bubbling mess of acid!"))
 			return 1
 		else
-			to_chat(user, span_noticealien("You cannot dissolve this object."))
+			to_chat(user, span_noticealien("I cannot dissolve this object."))
 
 
 			return 0
@@ -192,10 +192,10 @@ Doesn't work on other aliens/AI.*/
 /obj/effect/proc_holder/alien/neurotoxin/fire(mob/living/carbon/user)
 	var/message
 	if(active)
-		message = span_notice("You empty your neurotoxin gland.")
+		message = span_notice("I empty your neurotoxin gland.")
 		remove_ranged_ability(message)
 	else
-		message = span_notice("You prepare your neurotoxin gland. <B>Left-click to fire at a target!</B>")
+		message = span_notice("I prepare your neurotoxin gland. <B>Left-click to fire at a target!</B>")
 		add_ranged_ability(user, message, TRUE)
 
 /obj/effect/proc_holder/alien/neurotoxin/update_icon()
@@ -213,7 +213,7 @@ Doesn't work on other aliens/AI.*/
 	var/mob/living/carbon/user = ranged_ability_user
 
 	if(user.getPlasma() < p_cost)
-		to_chat(user, span_warning("You need at least [p_cost] plasma to spit."))
+		to_chat(user, span_warning("I need at least [p_cost] plasma to spit."))
 		remove_ranged_ability()
 		return
 
@@ -222,7 +222,7 @@ Doesn't work on other aliens/AI.*/
 	if(!isturf(U) || !isturf(T))
 		return FALSE
 
-	user.visible_message("<span class='danger'>[user] spits neurotoxin!", span_alertalien("You spit neurotoxin."))
+	user.visible_message("<span class='danger'>[user] spits neurotoxin!", span_alertalien("I spit neurotoxin."))
 	var/obj/item/projectile/bullet/neurotoxin/A = new /obj/item/projectile/bullet/neurotoxin(user.loc)
 	A.preparePixelProjectile(target, user, params)
 	A.fire()
@@ -273,7 +273,7 @@ Doesn't work on other aliens/AI.*/
 		return FALSE
 	if (!cost_check(check_turf,user))
 		return FALSE
-	to_chat(user, span_notice("You shape a [choice]."))
+	to_chat(user, span_notice("I shape a [choice]."))
 	user.visible_message(span_notice("[user] vomits up a thick purple substance and begins to shape it."))
 
 	choice = structures[choice]
@@ -309,12 +309,12 @@ Doesn't work on other aliens/AI.*/
 		user.alpha = 75 //Still easy to see in lit areas with bright tiles, almost invisible on resin.
 		user.sneaking = 1
 		active = 1
-		to_chat(user, span_noticealien("You blend into the shadows..."))
+		to_chat(user, span_noticealien("I blend into the shadows..."))
 	else
 		user.alpha = initial(user.alpha)
 		user.sneaking = 0
 		active = 0
-		to_chat(user, span_noticealien("You reveal yourself!"))
+		to_chat(user, span_noticealien("I reveal yourself!"))
 
 
 /mob/living/carbon/proc/getPlasma()

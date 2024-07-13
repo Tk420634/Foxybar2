@@ -84,7 +84,7 @@
 /obj/item/circuitboard/computer/card/minor/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/screwdriver))
 		target_dept = (target_dept == dept_list.len) ? 1 : (target_dept + 1)
-		to_chat(user, span_notice("You set the board to \"[dept_list[target_dept]]\"."))
+		to_chat(user, span_notice("I set the board to \"[dept_list[target_dept]]\"."))
 	else
 		return ..()
 
@@ -251,7 +251,7 @@
 		return
 	contraband = TRUE
 	obj_flags |= EMAGGED
-	to_chat(user, span_notice("You adjust [src]'s routing and receiver spectrum, unlocking special supplies and contraband."))
+	to_chat(user, span_notice("I adjust [src]'s routing and receiver spectrum, unlocking special supplies and contraband."))
 	return TRUE
 
 /obj/item/circuitboard/computer/cargo/express
@@ -262,14 +262,14 @@
 	if (!(obj_flags & EMAGGED))
 		to_chat(user, span_notice("Routing protocols are already set to: \"factory defaults\"."))
 	else
-		to_chat(user, span_notice("You reset the routing protocols to: \"factory defaults\"."))
+		to_chat(user, span_notice("I reset the routing protocols to: \"factory defaults\"."))
 		obj_flags &= ~EMAGGED
 
 /obj/item/circuitboard/computer/cargo/express/emag_act(mob/living/user)
 	. = SEND_SIGNAL(src, COMSIG_ATOM_EMAG_ACT)
 	if(obj_flags & EMAGGED)
 		return
-	to_chat(user, span_notice("You change the routing protocols, allowing the Drop Pod to land anywhere on the station."))
+	to_chat(user, span_notice("I change the routing protocols, allowing the Drop Pod to land anywhere on the station."))
 	obj_flags |= EMAGGED
 	return TRUE
 

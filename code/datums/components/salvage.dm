@@ -221,7 +221,7 @@
 	for(var/trait in bonus_traits)
 		if(HAS_TRAIT(user, trait))
 			if(prob(bonus_traits[trait][SCRAP_EXTRA_ROLL_CHANCE]))
-				to_chat(user, span_notice("Your skills help you find some extra salvage from [parent]."))
+				to_chat(user, span_notice("My skills help you find some extra salvage from [parent]."))
 				return TRUE
 
 /datum/component/toolable/salvage/proc/StartDisassembleMessage(mob/living/user, obj/item/tool, time, obj/item/offhand)
@@ -304,12 +304,12 @@
 	var/with_what = "with [tool]."
 	if(welder_akimbo)
 		with_what = "with both of your welders, like a pro!"
-	to_chat(user, "You start [doing] \a [part] [speediness][with_what]")
+	to_chat(user, "I start [doing] \a [part] [speediness][with_what]")
 
 /datum/component/toolable/salvage/welder/AbortMessage(mob/living/user, obj/item/tool)
 	if(!user || !tool)
 		return
-	to_chat(user, span_alert("You stop cutting it up."))
+	to_chat(user, span_alert("I stop cutting it up."))
 
 /datum/component/toolable/salvage/welder/DepletedMessage(mob/living/user, obj/item/tool)
 	if(!user || !tool)
@@ -320,12 +320,12 @@
 /datum/component/toolable/salvage/welder/ItWentOnTheGroundMessage(mob/living/user, atom/movable/loot)
 	if(!user || !loot)
 		return
-	to_chat(user, span_notice("You cut free a [loot] from [parent]."))
+	to_chat(user, span_notice("I cut free a [loot] from [parent]."))
 
 /datum/component/toolable/salvage/welder/ItWentSomewhereMessage(mob/living/user, atom/movable/loot, obj/item/dest)
 	if(!user || !loot || !dest)
 		return
-	to_chat(user, span_notice("You cut free a [loot] from [parent] and put it in [dest]."))
+	to_chat(user, span_notice("I cut free a [loot] from [parent] and put it in [dest]."))
 
 /datum/component/toolable/salvage/welder/ShouldProceed(mob/living/user, obj/item/tool)
 	. = ..()

@@ -65,7 +65,7 @@
 
 /* /obj/item/gun/ballistic/shotgun/proc/pump(mob/M, visible = TRUE)
 	if(visible)
-		M.visible_message(span_warning("[M] racks [src]."), span_warning("You rack [src]."))
+		M.visible_message(span_warning("[M] racks [src]."), span_warning("I rack [src]."))
 	playsound(M, cock_sound, 60, 1)
 	pump_unload(M)
 	pump_reload(M)
@@ -346,12 +346,12 @@
 	if(stock)
 		slot_flags = INV_SLOTBIT_BACK | INV_SLOTBIT_BELT
 		w_class = WEIGHT_CLASS_NORMAL
-		to_chat(user, "You unfold the stock.")
+		to_chat(user, "I unfold the stock.")
 		recoil_tag = SSrecoil.give_recoil_tag(RIFLE_RECOIL(1, 1))
 	else
 		slot_flags = INV_SLOTBIT_BACK | INV_SLOTBIT_BELT
 		w_class = WEIGHT_CLASS_SMALL
-		to_chat(user, "You fold the stock.")
+		to_chat(user, "I fold the stock.")
 		recoil_tag = SSrecoil.give_recoil_tag(init_recoil)
 	update_icon()
 
@@ -618,9 +618,9 @@
 	alternate_magazine = current_mag
 	toggled = !toggled
 	if(toggled)
-		to_chat(user, "You switch to tube B.")
+		to_chat(user, "I switch to tube B.")
 	else
-		to_chat(user, "You switch to tube A.")
+		to_chat(user, "I switch to tube A.")
 
 /obj/item/gun/ballistic/shotgun/automatic/combat/neostead/AltClick(mob/living/user)
 	if(!user.canUseTopic(src, BE_CLOSE, ismonkey(user)))

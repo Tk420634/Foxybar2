@@ -12,13 +12,13 @@
 		if(NODRUGS(M))
 			to_chat(M, span_userdanger("Jet-- but doesn't that come from-- OH SHIT???!"))
 		else
-			to_chat(M, span_notice("You feel an incredible high! You just absolutely love life in this moment!"))
+			to_chat(M, span_notice("I feel an incredible high! You just absolutely love life in this moment!"))
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "jet euphoria", /datum/mood_event/jet_euphoria, name)
 
 /datum/reagent/drug/jet/on_mob_delete(mob/living/carbon/human/M)
 	..()
 	if(isliving(M) && !NODRUGS(M))
-		to_chat(M, span_notice("You come down from your high. The wild ride is unfortunately over..."))
+		to_chat(M, span_notice("I come down from your high. The wild ride is unfortunately over..."))
 		M.confused += 2
 	SEND_SIGNAL(M, COMSIG_CLEAR_MOOD_EVENT, "jet euphoria")
 
@@ -45,7 +45,7 @@
 	. = TRUE
 
 /datum/reagent/drug/jet/overdose_start(mob/living/M)
-	to_chat(M, span_userdanger("You start tripping hard!"))
+	to_chat(M, span_userdanger("I start tripping hard!"))
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "[type]_overdose", /datum/mood_event/overdose, name)
 
 /datum/reagent/drug/jet/overdose_process(mob/living/M)
@@ -118,7 +118,7 @@
 		. = TRUE
 		..()
 		return
-	var/high_message = pick("You feel hyper.", "You feel like you need to go faster.", "You feel like you can run the world.")
+	var/high_message = pick("I feel hyper.", "I feel like you need to go faster.", "I feel like you can run the world.")
 	if(prob(5))
 		to_chat(M, span_notice("[high_message]"))
 	M.Jitter(2*REM)
@@ -234,7 +234,7 @@
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2)
 	M.set_heartattack(TRUE)
 	M.visible_message(span_userdanger("[M] clutches at their chest as if their heart stopped!"))
-	to_chat(M, span_danger("Your vision goes black and your heart stops beating as the amount of drugs in your system shut down your organs one by one. Say hello to Elvis in the afterlife. "))
+	to_chat(M, span_danger("My vision goes black and your heart stops beating as the amount of drugs in your system shut down your organs one by one. Say hello to Elvis in the afterlife. "))
 	..()
 	return TRUE
 
@@ -298,7 +298,7 @@
 		if(NODRUGS(M))
 			to_chat(M, span_userdanger("Steriods have been linked to heart attacks and infertility! Oh no!"))
 			return
-		to_chat(M, span_notice("You feel stronger, and like you're able to endure more."))
+		to_chat(M, span_notice("I feel stronger, and like you're able to endure more."))
 		ADD_TRAIT(M, TRAIT_BUFFOUT_BUFF, "buffout")
 		ADD_TRAIT(M, TRAIT_PERFECT_ATTACKER, "buffout")
 		M.maxHealth += 25
@@ -307,7 +307,7 @@
 /datum/reagent/drug/buffout/on_mob_delete(mob/living/carbon/human/M)
 	..()
 	if(isliving(M) && !NODRUGS(M))
-		to_chat(M, span_notice("You feel weaker."))
+		to_chat(M, span_notice("I feel weaker."))
 		REMOVE_TRAIT(M, TRAIT_BUFFOUT_BUFF, "buffout")
 		REMOVE_TRAIT(M, TRAIT_PERFECT_ATTACKER, "buffout")
 		M.maxHealth -= 25
@@ -337,7 +337,7 @@
 	..()
 
 /datum/reagent/drug/buffout/addiction_act_stage1(mob/living/M)
-	to_chat(M, span_notice("Your muscles ache slightly."))
+	to_chat(M, span_notice("My muscles ache slightly."))
 	M.adjustBruteLoss(1.5)
 	if(prob(15))
 		M.emote(pick("twitch"))
@@ -345,34 +345,34 @@
 	return
 
 /datum/reagent/drug/buffout/addiction_act_stage2(mob/living/M)
-	to_chat(M, span_notice("Your muscles feel incredibly sore."))
+	to_chat(M, span_notice("My muscles feel incredibly sore."))
 	M.adjustBruteLoss(4)
 	if(prob(30))
-		to_chat(M, span_notice("Your muscles spasm, making you drop what you were holding."))
+		to_chat(M, span_notice("My muscles spasm, making you drop what you were holding."))
 		M.drop_all_held_items()
 		M.emote(pick("twitch"))
 	..()
 	return
 
 /datum/reagent/drug/buffout/addiction_act_stage3(mob/living/M)
-	to_chat(M, span_notice("Your muscles start to hurt badly, and everything feels like it hurts more."))
+	to_chat(M, span_notice("My muscles start to hurt badly, and everything feels like it hurts more."))
 	M.adjustBruteLoss(7.5)
 	M.maxHealth -= 1.5
 	M.health -= 1.5
 	if(prob(50))
-		to_chat(M, span_notice("Your muscles spasm, making you drop what you were holding. You're not even sure if you can control your arms!"))
+		to_chat(M, span_notice("My muscles spasm, making you drop what you were holding. You're not even sure if you can control your arms!"))
 		M.drop_all_held_items()
 		M.emote(pick("twitch"))
 	..()
 	return
 
 /datum/reagent/drug/buffout/addiction_act_stage4(mob/living/M)
-	to_chat(M, span_danger("Your muscles are in incredible pain! When will it stop!?"))
+	to_chat(M, span_danger("My muscles are in incredible pain! When will it stop!?"))
 	M.adjustBruteLoss(12.5)
 	M.maxHealth -= 5
 	M.health -= 5
 	if(prob(90))
-		to_chat(M, span_danger("You can't even keep control of your muscles anymore!"))
+		to_chat(M, span_danger("I can't even keep control of your muscles anymore!"))
 		M.drop_all_held_items()
 		M.emote(pick("twitch"))
 	if(CHECK_MOBILITY(M, MOBILITY_MOVE) && !isspaceturf(M.loc) && prob(25))
@@ -397,13 +397,13 @@
 		if(NODRUGS(M))
 			to_chat(M, span_userdanger("But you were steady before! You feel TOO steady!"))
 			return
-		to_chat(M, span_notice("You feel your senses becoming sharper, your trigger finger moving instinctively."))
+		to_chat(M, span_notice("I feel your senses becoming sharper, your trigger finger moving instinctively."))
 		ADD_TRAIT(M, SPREAD_CONTROL, "steady")
 
 /datum/reagent/drug/steady/on_mob_delete(mob/living/M)
 	..()
 	if(M)
-		to_chat(M, "You feel your aim going back to normal.")
+		to_chat(M, "I feel your aim going back to normal.")
 		REMOVE_TRAIT(M, SPREAD_CONTROL, "steady")
 
 /datum/reagent/drug/steady/overdose_process(mob/living/M)
@@ -415,7 +415,7 @@
 
 /datum/reagent/drug/steady/addiction_act_stage1(mob/living/M)
 	if(prob(50))
-		to_chat(M, span_notice("Your senses feel dull."))
+		to_chat(M, span_notice("My senses feel dull."))
 	if(prob(15))
 		M.emote(pick("twitch","blink"))
 	M.Dizzy(5)
@@ -424,7 +424,7 @@
 
 /datum/reagent/drug/steady/addiction_act_stage2(mob/living/M)
 	if(prob(50))
-		to_chat(M, span_notice("Your senses seem to lag."))
+		to_chat(M, span_notice("My senses seem to lag."))
 	if(prob(30))
 		M.emote(pick("twitch","blink"))
 	M.Dizzy(10)
@@ -434,7 +434,7 @@
 /datum/reagent/drug/steady/addiction_act_stage3(mob/living/M)
 	M.adjustToxLoss(2, 0)
 	if(prob(50))
-		to_chat(M, span_notice("You feel like a snail, your reaction times have slowed down to a crawl."))
+		to_chat(M, span_notice("I feel like a snail, your reaction times have slowed down to a crawl."))
 	if(prob(50))
 		M.emote(pick("twitch","blink"))
 	M.Dizzy(15)
@@ -444,7 +444,7 @@
 /datum/reagent/drug/steady/addiction_act_stage4(mob/living/M)
 	M.adjustToxLoss(2, 0)
 	if(prob(50))
-		to_chat(M, span_danger("Your hand-eye coordination is a thing of the past, even walking feels hard!"))
+		to_chat(M, span_danger("My hand-eye coordination is a thing of the past, even walking feels hard!"))
 	if(prob(90))
 		M.emote(pick("blink","twitch"))
 	if(CHECK_MOBILITY(M, MOBILITY_MOVE) && !isspaceturf(M.loc) && prob(75))

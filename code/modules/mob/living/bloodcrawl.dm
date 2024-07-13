@@ -28,7 +28,7 @@
 			//TODO make it toggleable to either forcedrop the items, or deny
 			//entry when holding them
 			// literally only an option for carbons though
-			to_chat(C, span_warning("You may not hold items while blood crawling!"))
+			to_chat(C, span_warning("I may not hold items while blood crawling!"))
 			return 0
 		var/obj/item/bloodcrawl/B1 = new(C)
 		var/obj/item/bloodcrawl/B2 = new(C)
@@ -72,23 +72,23 @@
 	var/kidnapped = FALSE
 
 	if(victim.stat == CONSCIOUS)
-		src.visible_message(span_warning("[victim] kicks free of the blood pool just before entering it!"), null, span_notice("You hear splashing and struggling."))
+		src.visible_message(span_warning("[victim] kicks free of the blood pool just before entering it!"), null, span_notice("I hear splashing and struggling."))
 	else if(victim.reagents?.has_reagent(/datum/reagent/consumable/ethanol/demonsblood))
-		visible_message(span_warning("Something prevents [victim] from entering the pool!"), span_warning("A strange force is blocking [victim] from entering!"), span_notice("You hear a splash and a thud."))
+		visible_message(span_warning("Something prevents [victim] from entering the pool!"), span_warning("A strange force is blocking [victim] from entering!"), span_notice("I hear a splash and a thud."))
 	else
 		victim.forceMove(src)
 		victim.emote("scream")
-		src.visible_message(span_warning("<b>[src] drags [victim] into the pool of blood!</b>"), null, span_notice("You hear a splash."))
+		src.visible_message(span_warning("<b>[src] drags [victim] into the pool of blood!</b>"), null, span_notice("I hear a splash."))
 		kidnapped = TRUE
 
 	if(kidnapped)
 		var/success = bloodcrawl_consume(victim)
 		if(!success)
-			to_chat(src, span_danger("You happily devour... nothing? Your meal vanished at some point!"))
+			to_chat(src, span_danger("I happily devour... nothing? Your meal vanished at some point!"))
 	return 1
 
 /mob/living/proc/bloodcrawl_consume(mob/living/victim)
-	to_chat(src, span_danger("You begin to feast on [victim]. You can not move while you are doing this."))
+	to_chat(src, span_danger("I begin to feast on [victim]. You can not move while you are doing this."))
 
 	var/sound
 	if(istype(src, /mob/living/simple_animal/slaughter))
@@ -122,7 +122,7 @@
 			victim.exit_blood_effect()
 		return TRUE
 
-	to_chat(src, span_danger("You devour [victim]. Your health is fully restored."))
+	to_chat(src, span_danger("I devour [victim]. Your health is fully restored."))
 	src.revive(full_heal = 1)
 
 	// No defib possible after laughter
@@ -136,7 +136,7 @@
 
 /obj/item/bloodcrawl
 	name = "blood crawl"
-	desc = "You are unable to hold anything while in this form."
+	desc = "I am unable to hold anything while in this form."
 	icon = 'icons/effects/blood.dmi'
 	item_flags = ABSTRACT
 

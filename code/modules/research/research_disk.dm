@@ -42,7 +42,7 @@
 
 /obj/item/disk/tech_disk/abductor
 	name = "Gray technology disk"
-	desc = "You feel like it's not Gray because of its color."
+	desc = "I feel like it's not Gray because of its color."
 	custom_materials = null
 
 /obj/item/disk/tech_disk/abductor/Initialize()

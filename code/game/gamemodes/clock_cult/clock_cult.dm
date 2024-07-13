@@ -97,14 +97,14 @@ Credit where due:
 
 	if(!silent && L)
 		if(.)
-			to_chat(L, "<span class='heavy_brass'>The world before you suddenly glows a brilliant yellow. [issilicon(L) ? "You cannot compute this truth!" : \
-			"Your mind is racing!"] You hear the whooshing steam and cl[pick("ank", "ink", "unk", "ang")]ing cogs of a billion billion machines, and all at once it comes to you.<br>\
+			to_chat(L, "<span class='heavy_brass'>The world before you suddenly glows a brilliant yellow. [issilicon(L) ? "I cannot compute this truth!" : \
+			"My mind is racing!"] You hear the whooshing steam and cl[pick("ank", "ink", "unk", "ang")]ing cogs of a billion billion machines, and all at once it comes to you.<br>\
 			Ratvar, the Clockwork Justiciar, [GLOB.ratvar_awakens ? "has been freed from his eternal prison" : "lies in exile, derelict and forgotten in an unseen realm"].</span>")
 			flash_color(L, flash_color = list("#BE8700", "#BE8700", "#BE8700", rgb(0,0,0)), flash_time = 50)
 		else
 			L.visible_message(span_boldwarning("[L] seems to resist an unseen force!"), null, null, 7, L)
-			to_chat(L, "<span class='heavy_brass'>The world before you suddenly glows a brilliant yellow. [issilicon(L) ? "You cannot compute this truth!" : \
-			"Your mind is racing!"] You hear the whooshing steam and cl[pick("ank", "ink", "unk", "ang")]ing cogs of a billion billion machines, and the sound</span> <span class='boldwarning'>\
+			to_chat(L, "<span class='heavy_brass'>The world before you suddenly glows a brilliant yellow. [issilicon(L) ? "I cannot compute this truth!" : \
+			"My mind is racing!"] You hear the whooshing steam and cl[pick("ank", "ink", "unk", "ang")]ing cogs of a billion billion machines, and the sound</span> <span class='boldwarning'>\
 			is a meaningless cacophony.</span><br>\
 			<span class='userdanger'>You see an abomination of rusting parts[GLOB.ratvar_awakens ? ", and it is here.<br>It is too late" : \
 			" in an endless grey void.<br>It cannot be allowed to escape"].</span>")
@@ -215,7 +215,7 @@ Credit where due:
 		var/mob/living/carbon/human/H = L
 		var/obj/item/clockwork/replica_fabricator/F = new
 		if(H.equip_to_slot_or_del(F, SLOT_IN_BACKPACK))
-			to_chat(H, span_brass("You have been equipped with a replica fabricator, an advanced tool that can convert objects like doors, tables or even coats into clockwork equivalents."))
+			to_chat(H, span_brass("I have been equipped with a replica fabricator, an advanced tool that can convert objects like doors, tables or even coats into clockwork equivalents."))
 		slot = H.equip_in_one_of_slots(S, slots)
 		if(slot == "In your backpack")
 			slot = "In your [H.back.name]"

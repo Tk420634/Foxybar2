@@ -259,7 +259,7 @@
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		return
 	if(!length(user.get_empty_held_indexes()))
-		to_chat(user, span_warning("Your hands are full!"))
+		to_chat(user, span_warning("My hands are full!"))
 		return
 	var/obj/item/reagent_containers/pill/P = locate() in contents
 	if(P)
@@ -268,7 +268,7 @@
 			P.forceMove(user.drop_location())	// make sure it's not stuck in the user if the put in hands somehow fails
 			to_chat(user, span_warning("[P] drops to the floor!"))
 		else
-			to_chat(user, span_notice("You take \a [P] out of [src]."))
+			to_chat(user, span_notice("I take \a [P] out of [src]."))
 	else
 		to_chat(user, span_notice("There are no pills left in the bottle."))
 	return TRUE

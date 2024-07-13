@@ -43,7 +43,7 @@
 	mutant_organs = list(/obj/item/organ/heart/nightmare)
 	mutant_brain = /obj/item/organ/brain/nightmare
 
-	var/info_text = "You are a <span class='danger'>Nightmare</span>. The ability <span class='warning'>shadow walk</span> allows unlimited, unrestricted movement in the dark while activated. \
+	var/info_text = "I am a <span class='danger'>Nightmare</span>. The ability <span class='warning'>shadow walk</span> allows unlimited, unrestricted movement in the dark while activated. \
 					Your <span class='warning'>light eater</span> will destroy any light producing objects you attack, as well as destroy any lights a living creature may be holding. You will automatically dodge gunfire and melee attacks when on a dark tile. If killed, you will eventually revive if left in darkness."
 
 /datum/species/shadow/nightmare/on_species_gain(mob/living/carbon/C, datum/species/old_species)
@@ -146,7 +146,7 @@
 			Remove(HEART_SPECIAL_SHADOWIFY)
 			old_owner.set_species(/datum/species/shadow)
 			Insert(old_owner, HEART_SPECIAL_SHADOWIFY)
-			to_chat(owner, span_userdanger("You feel the shadows invade your skin, leaping into the center of your chest! You're alive!"))
+			to_chat(owner, span_userdanger("I feel the shadows invade your skin, leaping into the center of your chest! You're alive!"))
 			SEND_SOUND(owner, sound('sound/effects/ghost.ogg'))
 		owner.visible_message(span_warning("[owner] staggers to [owner.p_their()] feet!"))
 		playsound(owner, 'sound/hallucinations/far_noise.ogg', 50, 1)
@@ -178,7 +178,7 @@
 	if(isopenturf(AM))
 		var/turf/open/T = AM
 		if(T.light_range && !isspaceturf(T)) //no fairy grass or light tile can escape the fury of the darkness.
-			to_chat(user, span_notice("You scrape away [T] with your [name] and snuff out its lights."))
+			to_chat(user, span_notice("I scrape away [T] with your [name] and snuff out its lights."))
 			T.ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
 	else if(isliving(AM))
 		var/mob/living/L = AM
@@ -188,7 +188,7 @@
 			var/mob/living/silicon/robot/borg = AM
 			if(borg.lamp_intensity)
 				borg.update_headlamp(TRUE, INFINITY)
-				to_chat(borg, span_danger("Your headlamp is fried! You'll need a human to help replace it."))
+				to_chat(borg, span_danger("My headlamp is fried! You'll need a human to help replace it."))
 			for(var/obj/item/assembly/flash/cyborg/F in borg.held_items)
 				if(!F.crit_fail)
 					F.burn_out()

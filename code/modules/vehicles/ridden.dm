@@ -32,14 +32,14 @@
 /obj/vehicle/ridden/post_buckle_mob(mob/living/M)
 	add_occupant(M)
 	if(M.get_num_legs() < legs_required)
-		to_chat(M, span_warning("You don't have enough legs to operate the pedals!"))
+		to_chat(M, span_warning("I don't have enough legs to operate the pedals!"))
 		unbuckle_mob(M)
 	return ..()
 
 /obj/vehicle/ridden/attackby(obj/item/I, mob/user, params)
 	if(key_type && !is_key(inserted_key) && is_key(I))
 		if(user.transferItemToLoc(I, src))
-			to_chat(user, span_notice("You insert \the [I] into \the [src]."))
+			to_chat(user, span_notice("I insert \the [I] into \the [src]."))
 			if(inserted_key)	//just in case there's an invalid key
 				inserted_key.forceMove(drop_location())
 			inserted_key = I
@@ -52,9 +52,9 @@
 	. = ..()
 	if(inserted_key && user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		if(!is_occupant(user))
-			to_chat(user, span_notice("You must be riding the [src] to remove [src]'s key!"))
+			to_chat(user, span_notice("I must be riding the [src] to remove [src]'s key!"))
 			return
-		to_chat(user, span_notice("You remove \the [inserted_key] from \the [src]."))
+		to_chat(user, span_notice("I remove \the [inserted_key] from \the [src]."))
 		inserted_key.forceMove(drop_location())
 		user.put_in_hands(inserted_key)
 		inserted_key = null

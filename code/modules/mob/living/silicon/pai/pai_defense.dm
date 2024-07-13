@@ -33,11 +33,11 @@
 		if(INTENT_HELP)
 			visible_message(span_notice("[user] gently pats [src] on the head, eliciting an off-putting buzzing from its holographic field."),
 				span_notice("[user] gently pats you on the head, eliciting an off-putting buzzing from your holographic field."), target = user,
-				target_message = span_notice("You gently pat [src] on the head, eliciting an off-putting buzzing from its holographic field."))
+				target_message = span_notice("I gently pat [src] on the head, eliciting an off-putting buzzing from its holographic field."))
 		if(INTENT_DISARM)
 			visible_message(span_notice("[user] boops [src] on the head!"),
 				span_notice("[user] boops you on the head!"), target = user,
-				target_message = span_notice("You boop [src] on the head!"))
+				target_message = span_notice("I boop [src] on the head!"))
 		if(INTENT_HARM)
 			user.do_attack_animation(src)
 			if (user.name == master)
@@ -45,14 +45,14 @@
 				fold_in()
 				if(user.put_in_hands(card))
 					user.visible_message(span_notice("[user] promptly scoops up [user.p_their()] pAI's card."),
-						span_notice("You promptly scoops up your pAI's card."))
+						span_notice("I promptly scoops up your pAI's card."))
 			else
 				if(HAS_TRAIT(user, TRAIT_PACIFISM))
-					to_chat(user, span_notice("You don't want to hurt [src]!"))
+					to_chat(user, span_notice("I don't want to hurt [src]!"))
 					return
 				visible_message(span_danger("[user] stomps on [src]!."),
 					span_userdanger("[user] stomps on you!."), target = user,
-					target_message = span_danger("You stomp on [src]!."))
+					target_message = span_danger("I stomp on [src]!."))
 				take_holo_damage(2)
 		else
 			grabbedby(user)
@@ -65,10 +65,10 @@
 	return BULLET_ACT_FORCE_PIERCE
 
 /mob/living/silicon/pai/stripPanelUnequip(obj/item/what, mob/who, where) //prevents stripping
-	to_chat(src, span_warning("Your holochassis stutters and warps intensely as you attempt to interact with the object, forcing you to cease lest the field fail."))
+	to_chat(src, span_warning("My holochassis stutters and warps intensely as you attempt to interact with the object, forcing you to cease lest the field fail."))
 
 /mob/living/silicon/pai/stripPanelEquip(obj/item/what, mob/who, where) //prevents stripping
-	to_chat(src, span_warning("Your holochassis stutters and warps intensely as you attempt to interact with the object, forcing you to cease lest the field fail."))
+	to_chat(src, span_warning("My holochassis stutters and warps intensely as you attempt to interact with the object, forcing you to cease lest the field fail."))
 
 /mob/living/silicon/pai/IgniteMob(mob/living/silicon/pai/P)
 	return FALSE //No we're not flammable

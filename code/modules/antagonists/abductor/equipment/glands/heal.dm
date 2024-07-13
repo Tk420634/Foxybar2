@@ -54,7 +54,7 @@
 		return
 	if(owner.blood_volume < BLOOD_VOLUME_OKAY)
 		owner.blood_volume = BLOOD_VOLUME_NORMAL
-		to_chat(owner, span_warning("You feel your blood pulsing within you."))
+		to_chat(owner, span_warning("I feel your blood pulsing within you."))
 		return
 
 	var/obj/item/bodypart/chest/chest = owner.get_bodypart(BODY_ZONE_CHEST)
@@ -63,19 +63,19 @@
 		return
 
 /obj/item/organ/heart/gland/heal/proc/reject_implant(obj/item/organ/cyberimp/implant)
-	owner.visible_message(span_warning("[owner] vomits up his [implant.name]!"), span_userdanger("You suddenly vomit up your [implant.name]!"))
+	owner.visible_message(span_warning("[owner] vomits up his [implant.name]!"), span_userdanger("I suddenly vomit up your [implant.name]!"))
 	owner.vomit(0, TRUE, TRUE, 1, FALSE, FALSE, FALSE, TRUE)
 	implant.Remove()
 	implant.forceMove(owner.drop_location())
 
 /obj/item/organ/heart/gland/heal/proc/replace_liver(obj/item/organ/liver/liver)
 	if(liver)
-		owner.visible_message(span_warning("[owner] vomits up his [liver.name]!"), span_userdanger("You suddenly vomit up your [liver.name]!"))
+		owner.visible_message(span_warning("[owner] vomits up his [liver.name]!"), span_userdanger("I suddenly vomit up your [liver.name]!"))
 		owner.vomit(0, TRUE, TRUE, 1, FALSE, FALSE, FALSE, TRUE)
 		liver.Remove()
 		liver.forceMove(owner.drop_location())
 	else
-		to_chat(owner, span_warning("You feel a weird rumble in your bowels..."))
+		to_chat(owner, span_warning("I feel a weird rumble in your bowels..."))
 
 	var/liver_type = /obj/item/organ/liver
 	if(owner?.dna?.species?.mutantliver)
@@ -85,12 +85,12 @@
 
 /obj/item/organ/heart/gland/heal/proc/replace_lungs(obj/item/organ/lungs/lungs)
 	if(lungs)
-		owner.visible_message(span_warning("[owner] vomits up his [lungs.name]!"), span_userdanger("You suddenly vomit up your [lungs.name]!"))
+		owner.visible_message(span_warning("[owner] vomits up his [lungs.name]!"), span_userdanger("I suddenly vomit up your [lungs.name]!"))
 		owner.vomit(0, TRUE, TRUE, 1, FALSE, FALSE, FALSE, TRUE)
 		lungs.Remove()
 		lungs.forceMove(owner.drop_location())
 	else
-		to_chat(owner, span_warning("You feel a weird rumble inside your chest..."))
+		to_chat(owner, span_warning("I feel a weird rumble inside your chest..."))
 
 	var/lung_type = /obj/item/organ/lungs
 	if(owner.dna.species && owner.dna.species.mutantlungs)
@@ -100,12 +100,12 @@
 
 /obj/item/organ/heart/gland/heal/proc/replace_eyes(obj/item/organ/eyes/eyes)
 	if(eyes)
-		owner.visible_message(span_warning("[owner]'s [eyes.name] fall out of their sockets!"), span_userdanger("Your [eyes.name] fall out of their sockets!"))
+		owner.visible_message(span_warning("[owner]'s [eyes.name] fall out of their sockets!"), span_userdanger("My [eyes.name] fall out of their sockets!"))
 		playsound(owner, 'sound/effects/splat.ogg', 50, TRUE)
 		eyes.Remove()
 		eyes.forceMove(owner.drop_location())
 	else
-		to_chat(owner, span_warning("You feel a weird rumble behind your eye sockets..."))
+		to_chat(owner, span_warning("I feel a weird rumble behind your eye sockets..."))
 
 	addtimer(CALLBACK(src,PROC_REF(finish_replace_eyes)), rand(100, 200))
 
@@ -119,23 +119,23 @@
 
 /obj/item/organ/heart/gland/heal/proc/replace_limb(body_zone, obj/item/bodypart/limb)
 	if(limb)
-		owner.visible_message(span_warning("[owner]'s [limb.name] suddenly detaches from [owner.p_their()] body!"), span_userdanger("Your [limb.name] suddenly detaches from your body!"))
+		owner.visible_message(span_warning("[owner]'s [limb.name] suddenly detaches from [owner.p_their()] body!"), span_userdanger("My [limb.name] suddenly detaches from your body!"))
 		playsound(owner, "desceration", 50, TRUE, -1)
 		limb.drop_limb()
 	else
-		to_chat(owner, span_warning("You feel a weird tingle in your [parse_zone(body_zone)]... even if you don't have one."))
+		to_chat(owner, span_warning("I feel a weird tingle in your [parse_zone(body_zone)]... even if you don't have one."))
 
 	addtimer(CALLBACK(src,PROC_REF(finish_replace_limb), body_zone), rand(150, 300))
 
 /obj/item/organ/heart/gland/heal/proc/finish_replace_limb(body_zone)
 	owner.visible_message(span_warning("With a loud snap, [owner]'s [parse_zone(body_zone)] rapidly grows back from [owner.p_their()] body!"),
 	span_userdanger("With a loud snap, your [parse_zone(body_zone)] rapidly grows back from your body!"),
-	span_warning("Your hear a loud snap."))
+	span_warning("My hear a loud snap."))
 	playsound(owner, 'sound/magic/demon_consume.ogg', 50, TRUE)
 	owner.regenerate_limb(body_zone)
 
 /obj/item/organ/heart/gland/heal/proc/replace_blood()
-	owner.visible_message(span_warning("[owner] starts vomiting huge amounts of blood!"), span_userdanger("You suddenly start vomiting huge amounts of blood!"))
+	owner.visible_message(span_warning("[owner] starts vomiting huge amounts of blood!"), span_userdanger("I suddenly start vomiting huge amounts of blood!"))
 	keep_replacing_blood()
 
 /obj/item/organ/heart/gland/heal/proc/keep_replacing_blood()
@@ -159,14 +159,14 @@
 
 /obj/item/organ/heart/gland/heal/proc/replace_chest(obj/item/bodypart/chest/chest)
 	if(chest.status == BODYPART_ROBOTIC)
-		owner.visible_message(span_warning("[owner]'s [chest.name] rapidly expels its mechanical components, replacing them with flesh!"), span_userdanger("Your [chest.name] rapidly expels its mechanical components, replacing them with flesh!"))
+		owner.visible_message(span_warning("[owner]'s [chest.name] rapidly expels its mechanical components, replacing them with flesh!"), span_userdanger("My [chest.name] rapidly expels its mechanical components, replacing them with flesh!"))
 		playsound(owner, 'sound/magic/clockwork/anima_fragment_attack.ogg', 50, TRUE)
 		var/list/dirs = GLOB.alldirs.Copy()
 		for(var/i in 1 to 3)
 			var/obj/effect/decal/cleanable/robot_debris/debris = new(get_turf(owner))
 			debris.streak(dirs)
 	else
-		owner.visible_message(span_warning("[owner]'s [chest.name] sheds off its damaged flesh, rapidly replacing it!"), span_warning("Your [chest.name] sheds off its damaged flesh, rapidly replacing it!"))
+		owner.visible_message(span_warning("[owner]'s [chest.name] sheds off its damaged flesh, rapidly replacing it!"), span_warning("My [chest.name] sheds off its damaged flesh, rapidly replacing it!"))
 		playsound(owner, 'sound/effects/splat.ogg', 50, TRUE)
 		var/list/dirs = GLOB.alldirs.Copy()
 		for(var/i in 1 to 3)

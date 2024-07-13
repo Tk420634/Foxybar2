@@ -49,7 +49,7 @@
 			START_PROCESSING(SSprocessing, src)
 			SSshuttle.registerHostileEnvironment(src)
 		else
-			to_chat(user, span_brass("You decide against activating the ark.. for now."))
+			to_chat(user, span_brass("I decide against activating the ark.. for now."))
 
 /obj/structure/destructible/clockwork/massive/celestial_gateway/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, attack_dir, armour_penetration = 0, atom/attacked_by)
 	. = ..()
@@ -234,7 +234,7 @@ obj/structure/destructible/clockwork/massive/celestial_gateway/Destroy()
 		else
 			switch(progress_in_seconds)
 				if(-INFINITY to GATEWAY_REEBE_FOUND)
-					. += span_warning("You see a swirling bluespace anomaly steadily growing in intensity.")
+					. += span_warning("I see a swirling bluespace anomaly steadily growing in intensity.")
 				if(GATEWAY_REEBE_FOUND to GATEWAY_RATVAR_COMING)
 					. += span_warning("The anomaly is stable, and you can see flashes of something from it.")
 				if(GATEWAY_RATVAR_COMING to INFINITY)
@@ -257,7 +257,7 @@ obj/structure/destructible/clockwork/massive/celestial_gateway/Destroy()
 				if(T && T.z == z)
 					to_chat(M, span_warning("<b>You hear otherworldly sounds from the [dir2text(get_dir(get_turf(M), get_turf(src)))]..."))
 				else
-					to_chat(M, span_boldwarning("You hear otherworldly sounds from all around you..."))
+					to_chat(M, span_boldwarning("I hear otherworldly sounds from all around you..."))
 	if(!obj_integrity)
 		return
 	for(var/turf/closed/wall/W in RANGE_TURFS(2, src))

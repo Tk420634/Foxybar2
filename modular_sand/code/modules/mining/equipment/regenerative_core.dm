@@ -21,7 +21,7 @@
 		H.visible_message("[user] forces [H] to apply [src]... Black tendrils entangle and reinforce [H.p_them()]!")
 		SSblackbox.record_feedback("nested tally", "hivelord_core", 1, list("[type]", "used", "other"))
 	else
-		to_chat(user, span_notice("You start to smear [src] on yourself. Disgusting tendrils hold you together and allow you to keep moving, but for how long?"))
+		to_chat(user, span_notice("I start to smear [src] on yourself. Disgusting tendrils hold you together and allow you to keep moving, but for how long?"))
 		SSblackbox.record_feedback("nested tally", "hivelord_core", 1, list("[type]", "used", "self"))
 	if(is_station_level(H.z))
 		H.adjustBruteLoss(-25, 0)
