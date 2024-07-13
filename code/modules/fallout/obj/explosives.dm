@@ -139,7 +139,7 @@
 	if(user.dropItemToGround(src))
 		anchored = TRUE
 		addtimer(CALLBACK(src,PROC_REF(arm)), 5 SECONDS)
-		to_chat(user, span_notice("You drop the mine and activate the 5-second arming process."))
+		to_chat(user, span_notice("I drop the mine and activate the 5-second arming process."))
 		return
 
 /obj/item/mine/proc/arm()
@@ -188,9 +188,9 @@
 /obj/item/mine/screwdriver_act(mob/living/user, obj/item/S)
 	if(!armed)
 		return
-	to_chat(user, span_danger("You begin carefully disarming [src]."))
+	to_chat(user, span_danger("I begin carefully disarming [src]."))
 	if(S.use_tool(src, user, 200, volume=100)) //20 seconds base, if you don't want to play the game of chance
-		to_chat(user, span_notice("You carefully destroy the detonator of the mine!"))
+		to_chat(user, span_notice("I carefully destroy the detonator of the mine!"))
 		qdel(src)
 	else
 		triggermine(user)
@@ -251,7 +251,7 @@
 
 /obj/item/mine/kickmine/mineEffect(mob/victim)
 	if(isliving(victim) && victim.client)
-		to_chat(victim, span_userdanger("You have been kicked FOR NO REISIN!"))
+		to_chat(victim, span_userdanger("I have been kicked FOR NO REISIN!"))
 		qdel(victim.client)
 
 

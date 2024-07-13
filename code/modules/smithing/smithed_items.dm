@@ -49,10 +49,10 @@
 		else
 			prot = 0
 	if(prot > 0 || HAS_TRAIT(user, TRAIT_RESISTHEAT) || HAS_TRAIT(user, TRAIT_RESISTHEATHANDS))
-		to_chat(user, span_notice("You pick up the [src]."))
+		to_chat(user, span_notice("I pick up the [src]."))
 		return ..()
 	else
-		to_chat(user, span_warning("You try to move the [src], but you burn your hand on it!"))
+		to_chat(user, span_warning("I try to move the [src], but you burn your hand on it!"))
 	if(H)
 		var/obj/item/bodypart/affecting = H.get_bodypart("[(user.active_hand_index % 2 == 0) ? "r" : "l" ]_arm")
 		if(affecting && affecting.receive_damage( 0, 5 ))		// 5 burn damage
@@ -218,15 +218,15 @@
 /obj/item/blacksmith/woodrod/attackby/(obj/item/W, mob/user, params)
 	if (istype(W, /obj/item/stack/sheet/leatherstrips))
 		user.visible_message("[user] begins finishing the [src] into a sword handle.", \
-				span_notice("You begin wrapping the [src] with leather strips, and shaping the wood into a sword handle."), \
-				span_italic("You hear faint sounds of handcrafting."))
+				span_notice("I begin wrapping the [src] with leather strips, and shaping the wood into a sword handle."), \
+				span_italic("I hear faint sounds of handcrafting."))
 		// 3 Second Timer
 		if(!do_after(user, 30, TRUE, src))
 			return
 		// Make stick
 		var/obj/item/blacksmith/swordhandle/new_item = new(user.loc)
 		user.visible_message("[user] finishes making a sword handle from the [src].", \
-				span_notice("You finish making a sword handle from the [src]."))
+				span_notice("I finish making a sword handle from the [src]."))
 		qdel(src)
 		// Prepare to Put xin Hands (if holding wood)
 		var/obj/item/stack/sheet/leatherstrips/N = src

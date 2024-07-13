@@ -23,7 +23,7 @@
 		return
 
 	if(!src)
-		to_chat(usr, span_warning("Your interaction target is gone!"))
+		to_chat(usr, span_warning("My interaction target is gone!"))
 		return
 	SEND_SIGNAL(usr, COMSIG_CLICK_CTRL_SHIFT, src)
 
@@ -266,9 +266,9 @@
 		if("ToggleAutoCum")
 			TOGGLE_VAR(parent_mob.ready_to_cum)
 			if(parent_mob.ready_to_cum)
-				to_chat(parent_mob, span_green("You will automatically cum when your arousal reaches 100%!"))
+				to_chat(parent_mob, span_green("I will automatically cum when your arousal reaches 100%!"))
 			else
-				to_chat(parent_mob, span_green("You will no longer automatically cum when your arousal reaches 100%!"))
+				to_chat(parent_mob, span_green("I will no longer automatically cum when your arousal reaches 100%!"))
 			interface_sound(1)
 
 		if("ToggleAutoStart")
@@ -314,9 +314,9 @@
 				return FALSE
 			TOGGLE_BITFIELD(P.toggles, HEAR_LEWD_VERB_WORDS)
 			if(CHECK_BITFIELD(P.toggles, HEAR_LEWD_VERB_WORDS))
-				to_chat(parent_mob, span_green("You will now see lewd messages!"))
+				to_chat(parent_mob, span_green("I will now see lewd messages!"))
 			else
-				to_chat(parent_mob, span_green("You will no longer see lewd messages!"))
+				to_chat(parent_mob, span_green("I will no longer see lewd messages!"))
 			queue_save()
 			interface_sound(1)
 
@@ -325,9 +325,9 @@
 				return FALSE
 			TOGGLE_BITFIELD(P.toggles, HEAR_LEWD_VERB_SOUNDS)
 			if(CHECK_BITFIELD(P.toggles, HEAR_LEWD_VERB_SOUNDS))
-				to_chat(parent_mob, span_green("You will now hear lewd verb sounds!"))
+				to_chat(parent_mob, span_green("I will now hear lewd verb sounds!"))
 			else
-				to_chat(parent_mob, span_green("You will no longer hear lewd verb sounds!"))
+				to_chat(parent_mob, span_green("I will no longer hear lewd verb sounds!"))
 			queue_save()
 			interface_sound(1)
 
@@ -388,7 +388,7 @@
 		to_chat(parent, span_alert("That didnt work!!!"))
 		return
 	if(LAZYLEN(autoplappers) >= SPLURT_MAX_AUTOPLAPPERS)
-		to_chat(parent, span_alert("You have too many autointeractions to add another one!"))
+		to_chat(parent, span_alert("I have too many autointeractions to add another one!"))
 		return
 	var/datum/interaction/I = LAZYACCESS(SSinteractions.interactions, key)
 	if(!I)
@@ -632,7 +632,7 @@
 					to_chat(self, span_userlove("[genital.aroused_state ? genital.arousal_verb : genital.unarousal_verb]."))
 					. = TRUE
 				else
-					to_chat(self, span_userlove("You can't make that genital [genital.aroused_state ? "unaroused" : "aroused"]!"))
+					to_chat(self, span_userlove("I can't make that genital [genital.aroused_state ? "unaroused" : "aroused"]!"))
 					. = FALSE
 				genital.update_appearance()
 				if(ishuman(self))

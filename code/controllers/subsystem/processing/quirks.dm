@@ -384,7 +384,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	if(prob(1))
 		to_chat(P.parent, span_warning("Sorry, [P.parent.ckey], I can't make you OP. Come back when you're a little... mmmmm... weaker!"))
 	else
-		to_chat(P.parent, span_warning("You can not have more than [max_good_quirks] good quirks! You have [num_good_quirks] good quirks already!"))
+		to_chat(P.parent, span_warning("I can not have more than [max_good_quirks] good quirks! You have [num_good_quirks] good quirks already!"))
 
 /datum/controller/subsystem/processing/quirks/proc/CanAffordQuirk(datum/preferences/P, datum/quirk/Q)
 	if(!istype(P) || !istype(Q))
@@ -404,7 +404,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	if(prob(1))
 		to_chat(P.parent, span_warning("Sorry, [P.parent.ckey], I can't make you OP. Come back when you're a little... mmmmm... weaker!"))
 	else
-		to_chat(P.parent, span_warning("You can not afford [Q.name]! You have [player_point_balance] points, and [Q.value] would put you over the limit of [max_points]!"))
+		to_chat(P.parent, span_warning("I can not afford [Q.name]! You have [player_point_balance] points, and [Q.value] would put you over the limit of [max_points]!"))
 
 /// Removes quirks until the player's point balance is back in valid range
 /datum/controller/subsystem/processing/quirks/proc/PruneQuirksUntilBalanced(datum/preferences/P, unbalanced)
@@ -437,7 +437,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 			P.save_character()
 			break
 	if(LAZYLEN(pruned))
-		to_chat(P.parent, span_warning("You somehow had more quirks than your point balance allowed! [english_list(pruned)] have been removed from your character!"))
+		to_chat(P.parent, span_warning("I somehow had more quirks than your point balance allowed! [english_list(pruned)] have been removed from your character!"))
 
 /// Returns TRUE if the quirk conflicts with any of the player's quirks
 /datum/controller/subsystem/processing/quirks/proc/QuirkConflict(datum/preferences/P, datum/quirk/Q)
@@ -453,7 +453,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 		if((Q.type in Q2.conflicts) || (Q2.type in Q.conflicts))
 			cornflicts += Q2
 	if(LAZYLEN(cornflicts))
-		to_chat(P.parent, span_warning("You can not take [Q.name], as [english_list(cornflicts)] prevent[LAZYLEN(cornflicts)==1?"s":""] it from being taken! They conflict!"))
+		to_chat(P.parent, span_warning("I can not take [Q.name], as [english_list(cornflicts)] prevent[LAZYLEN(cornflicts)==1?"s":""] it from being taken! They conflict!"))
 		return TRUE
 	return FALSE
 
@@ -481,7 +481,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	if(!P)
 		return
 	if(!LAZYLEN(P.char_quirks))
-		to_chat(user, span_alert("You didn't have any quirks to clear!"))
+		to_chat(user, span_alert("I didn't have any quirks to clear!"))
 		return
 	var/confirm = tgui_alert(
 		user,
@@ -494,9 +494,9 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 		for(var/qstring in P.char_quirks)
 			RemoveQuirkFromPrefs(P, qstring)
 		P.save_character()
-		to_chat(user, span_green("Your quirks have been cleared, and your character has been saved!"))
+		to_chat(user, span_green("My quirks have been cleared, and your character has been saved!"))
 	else
-		to_chat(user, span_warning("Your quirks have NOT been cleared!"))
+		to_chat(user, span_warning("My quirks have NOT been cleared!"))
 	OpenWindow(user) // update the window
 
 /// Checks if the player has their prefs window open, and updates it if so
@@ -591,7 +591,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	if(!P)
 		return
 	P.save_character()
-	to_chat(user, span_greenannounce("Your quirks have been saved! =3"))
+	to_chat(user, span_greenannounce("My quirks have been saved! =3"))
 	return TRUE
 
 /datum/controller/subsystem/processing/quirks/proc/AssignQuirks(mob/living/user, client/cli, spawn_effects, roundstart = FALSE, datum/job/job)
@@ -629,7 +629,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	var/static/discard = "Discard and start over"
 	var/proceed = alert(
 		cli.mob,
-		"You have quirks that use the old system! Would you like to convert them to the new system, do it later, or just discard the old ones and start fresh on some new quirks?",
+		"I have quirks that use the old system! Would you like to convert them to the new system, do it later, or just discard the old ones and start fresh on some new quirks?",
 		"QuirkVerter 2k23: The Quirkening",
 		doit,
 		doitl8r,
@@ -645,7 +645,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	var/list/failures = list()
 	to_chat(cli, span_phobia("WARNING! WARNING! YOUR QUIRKS ARE BEING CONVERTED FROM THE OLD FORMAT TO THE NEW ONE! PANIC! (dont actually this'll probably work fine)"))
 	if(!LAZYLEN(old_quirks))
-		to_chat(cli, span_greentext("You didn't have any quirks to begin with, so... all done!"))
+		to_chat(cli, span_greentext("I didn't have any quirks to begin with, so... all done!"))
 		P.current_version |= PMC_QUIRK_OVERHAUL_2K23
 		P.save_character()
 		return // all done! maybe
@@ -670,7 +670,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 		to_chat(P.parent, span_userdanger("Some quirks could not be converted, namely [english_list(failures)]. Be sure to check your quirks!"))
 	P.current_version |= PMC_QUIRK_OVERHAUL_2K23
 	P.save_character()
-	to_chat(cli, span_greentext("Your quirks have been converted! =3"))
+	to_chat(cli, span_greentext("My quirks have been converted! =3"))
 	to_chat(cli, span_greentext("Be sure to check your quirks, just to be sure!"))
 	// notably, we dont change the data in `all_quirks`
 	// just in case we might need to convert it again in the future

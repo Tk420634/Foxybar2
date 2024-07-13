@@ -1,7 +1,7 @@
 //No, not that kind.
 /obj/structure/destructible/clockwork/trap
 	name = "base clockwork trap"
-	desc = "You shouldn't see this. File a bug report!"
+	desc = "I shouldn't see this. File a bug report!"
 	clockwork_desc = "A trap that shouldn't exist, and you should report this as a bug."
 	var/list/wired_to
 
@@ -30,7 +30,7 @@
 /obj/structure/destructible/clockwork/trap/wrench_act(mob/living/user, obj/item/I)
 	if(!is_servant_of_ratvar(user))
 		return ..()
-	to_chat(user, span_notice("You break down the delicate components of [src] into brass."))
+	to_chat(user, span_notice("I break down the delicate components of [src] into brass."))
 	I.play_tool_sound(src)
 	new/obj/item/stack/tile/brass(get_turf(src))
 	qdel(src)
@@ -49,7 +49,7 @@
 			if(F.linking.z != z)
 				to_chat(user, span_warning("You'd need a <b>much</b> tougher slab to link two objects in different sectors."))
 				return
-			to_chat(user, span_notice("You link [F.linking] with [src]."))
+			to_chat(user, span_notice("I link [F.linking] with [src]."))
 			wired_to += F.linking
 			F.linking.wired_to += src
 			F.linking = null
@@ -62,7 +62,7 @@
 	if(!wired_to.len)
 		to_chat(user, span_warning("[src] has no connections!"))
 		return
-	to_chat(user, span_notice("You sever all connections to [src]."))
+	to_chat(user, span_notice("I sever all connections to [src]."))
 	I.play_tool_sound(src)
 	for(var/V in wired_to)
 		var/obj/structure/destructible/clockwork/trap/T = V

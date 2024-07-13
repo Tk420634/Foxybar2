@@ -45,13 +45,13 @@ effective or pretty fucking useless.
 		if(prob(50))
 
 			M.DefaultCombatKnockdown(rand(200,400))
-			to_chat(M, span_userdanger("You feel a tremendous, paralyzing wave flood your mind."))
+			to_chat(M, span_userdanger("I feel a tremendous, paralyzing wave flood your mind."))
 
 		else
-			to_chat(M, span_userdanger("You feel a sudden, electric jolt travel through your head."))
+			to_chat(M, span_userdanger("I feel a sudden, electric jolt travel through your head."))
 
 	playsound(src.loc, 'sound/misc/interference.ogg', 50, 1)
-	to_chat(user, span_notice("You trigger [src]."))
+	to_chat(user, span_notice("I trigger [src]."))
 	times_used += 1
 	if(times_used >= max_uses)
 		icon_state = "battererburnt"
@@ -214,14 +214,14 @@ effective or pretty fucking useless.
 /obj/item/shadowcloak/proc/Activate(mob/living/carbon/human/user)
 	if(!user)
 		return
-	to_chat(user, span_notice("You activate [src]."))
+	to_chat(user, span_notice("I activate [src]."))
 	src.user = user
 	START_PROCESSING(SSobj, src)
 	old_alpha = user.alpha
 	on = TRUE
 
 /obj/item/shadowcloak/proc/Deactivate()
-	to_chat(user, span_notice("You deactivate [src]."))
+	to_chat(user, span_notice("I deactivate [src]."))
 	STOP_PROCESSING(SSobj, src)
 	if(user)
 		user.alpha = old_alpha
@@ -256,7 +256,7 @@ effective or pretty fucking useless.
 	var/range = 12
 
 /obj/item/jammer/attack_self(mob/user)
-	to_chat(user,span_notice("You [active ? "deactivate" : "activate"] [src]."))
+	to_chat(user,span_notice("I [active ? "deactivate" : "activate"] [src]."))
 	active = !active
 	if(active)
 		GLOB.active_jammers |= src

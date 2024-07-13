@@ -113,7 +113,7 @@
 	if(..())
 		return TRUE
 	if(circuit && !(flags_1&NODECONSTRUCT_1))
-		to_chat(user, span_notice("You start to disconnect the monitor..."))
+		to_chat(user, span_notice("I start to disconnect the monitor..."))
 		if(I.use_tool(src, user, 20, volume=50))
 			deconstruct(TRUE, user)
 	return TRUE
@@ -162,7 +162,7 @@
 				A.icon_state = "3"
 			else
 				if(user)
-					to_chat(user, span_notice("You disconnect the monitor."))
+					to_chat(user, span_notice("I disconnect the monitor."))
 				A.state = 4
 				A.icon_state = "4"
 			circuit = null

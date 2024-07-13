@@ -23,7 +23,7 @@
 	if(!iscarbon(user)) //Look ma, no hands
 		return
 	if(user.lying || user.handcuffed)
-		to_chat(user, span_warning("You can't reach out!"))
+		to_chat(user, span_warning("I can't reach out!"))
 		return
 	..()
 
@@ -52,7 +52,7 @@
 	if(!proximity || target == user || !ismob(target) || !iscarbon(user) || user.lying || user.handcuffed) //exploding after touching yourself would be bad
 		return
 	if(!user.can_speak_vocal())
-		to_chat(user, span_notice("You can't get the words out!"))
+		to_chat(user, span_notice("I can't get the words out!"))
 		return
 	var/mob/M = target
 	do_sparks(4, FALSE, M.loc)
@@ -84,15 +84,15 @@
 	if(!proximity || target == user || !isliving(target) || !iscarbon(user) || user.lying || user.handcuffed) //getting hard after touching yourself would also be bad
 		return
 	if(user.lying || user.handcuffed)
-		to_chat(user, span_warning("You can't reach out!"))
+		to_chat(user, span_warning("I can't reach out!"))
 		return
 	if(!user.can_speak_vocal())
-		to_chat(user, span_notice("You can't get the words out!"))
+		to_chat(user, span_notice("I can't get the words out!"))
 		return
 	var/mob/living/M = target
 	if(M.anti_magic_check())
 		to_chat(user, span_warning("The spell can't seem to affect [M]!"))
-		to_chat(M, span_warning("You feel your flesh turn to stone for a moment, then revert back!"))
+		to_chat(M, span_warning("I feel your flesh turn to stone for a moment, then revert back!"))
 		..()
 		return
 	M.Stun(40)
@@ -111,7 +111,7 @@
 	if(!proximity || target == user || !ismob(target) || !iscarbon(user) || user.lying || user.handcuffed) //exploding after touching yourself would be bad
 		return
 	if(!user.can_speak_vocal())
-		to_chat(user, span_notice("You can't get the words out!"))
+		to_chat(user, span_notice("I can't get the words out!"))
 		return
 	var/mob/M = target
 	var/atom/A = M.anti_magic_check()

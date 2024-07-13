@@ -24,7 +24,7 @@
 		var/obj/item/door_key/K = W
 		if((!src.id && !K.id) || (src.id && K.id))
 			return 0
-		if(alert(user,"You want to make copy of key?",,"Yes","No") == "No")
+		if(alert(user,"I want to make copy of key?",,"Yes","No") == "No")
 			return 0
 		if(src.id && !K.id)
 			K.attach_id(src.id)
@@ -111,7 +111,7 @@
 		var/obj/item/door_key/K = W
 		if(id)
 			if(id == K.id)
-				to_chat(user, span_notice("You begin [open ? "locking" : "unlocking"] padlock."))
+				to_chat(user, span_notice("I begin [open ? "locking" : "unlocking"] padlock."))
 				if(do_after(user, 15, target = loc))
 					toggle()
 			else

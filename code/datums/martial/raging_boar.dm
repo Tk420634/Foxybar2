@@ -36,8 +36,8 @@
 	var/damage = damage_roll(A,D) * 0.8
 	A.do_attack_animation(D, ATTACK_EFFECT_PUNCH)
 	D.visible_message(span_danger("[A] shoves [D]!"), \
-				span_userdanger("You're shoved by [A]!"), span_hear("You hear a whump!"), COMBAT_MESSAGE_RANGE, A)
-	to_chat(A, span_danger("You shove [D]!"))
+				span_userdanger("You're shoved by [A]!"), span_hear("I hear a whump!"), COMBAT_MESSAGE_RANGE, A)
+	to_chat(A, span_danger("I shove [D]!"))
 	D.Dizzy(1)
 	deal_damage(A, D, damage, BRUTE, A.zone_selected)
 	deal_damage(A, D, damage, STAMINA, A.zone_selected)
@@ -58,8 +58,8 @@
 	var/damage = (damage_roll(A,D) + 5)
 	A.do_attack_animation(D, ATTACK_EFFECT_PUNCH)
 	D.visible_message(span_danger("[A] sends [D] reeling with an atomic pork hammer!"), \
-				span_userdanger("You're sent reeling by [A]'s atomic pork hammer!"), span_hear("You hear a whump!"), COMBAT_MESSAGE_RANGE, A)
-	to_chat(A, span_danger("You smack [D] back with an atomic pork hammer!"))
+				span_userdanger("You're sent reeling by [A]'s atomic pork hammer!"), span_hear("I hear a whump!"), COMBAT_MESSAGE_RANGE, A)
+	to_chat(A, span_danger("I smack [D] back with an atomic pork hammer!"))
 	playsound(A, 'sound/effects/flesh_impact_2.ogg', 60, TRUE)
 	deal_damage(A, D, damage, BRUTE, A.zone_selected)
 	if(D.anchored)

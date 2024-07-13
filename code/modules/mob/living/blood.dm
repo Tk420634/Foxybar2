@@ -30,25 +30,25 @@
 
 GLOBAL_LIST_INIT(blood_loss_messages, list(
 	BLOOD_ANEMIA_MESSAGE_WARN = list(
-		"You feel thirsty.",
-		"You feel a chill.",
-		"You feel tired."),
+		"I feel thirsty.",
+		"I feel a chill.",
+		"I feel tired."),
 	BLOOD_ANEMIA_MESSAGE_MINOR = list(
-		"You feel your heart flutter for a moment.",
-		"You feel woozy.",
-		"You feel very tired."),
+		"I feel your heart flutter for a moment.",
+		"I feel woozy.",
+		"I feel very tired."),
 	BLOOD_ANEMIA_MESSAGE_ANNOYING = list(
-		"Your limbs feel cold.",
-		"Your heart races.",
-		"You can't seem to catch your breath."),
+		"My limbs feel cold.",
+		"My heart races.",
+		"I can't seem to catch your breath."),
 	BLOOD_ANEMIA_MESSAGE_DEBILITATING = list(
-		"You feel a deep chill.",
-		"You feel lethargic.",
-		"You gasp for air, but it doesn't help!"),
+		"I feel a deep chill.",
+		"I feel lethargic.",
+		"I gasp for air, but it doesn't help!"),
 	BLOOD_ANEMIA_MESSAGE_WORST = list(
-		"You feel like a light breeze would knock you over.",
-		"Your heart thrashes in your chest.",
-		"You struggle to summon the strength to take a step.")
+		"I feel like a light breeze would knock you over.",
+		"My heart thrashes in your chest.",
+		"I struggle to summon the strength to take a step.")
 		))
 
 // Takes care blood loss and regeneration
@@ -224,7 +224,7 @@ GLOBAL_LIST_INIT(blood_loss_messages, list(
 	if(blurry && (eye_blurry < blurry) && prob(35))
 		adjust_blurriness(1)
 	if(knockdown_chance && prob(knockdown_chance))
-		to_chat(src, span_warning("You stumble over, dazed by your blood loss!"))
+		to_chat(src, span_warning("I stumble over, dazed by your blood loss!"))
 		AdjustKnockdown(knockdown_time, TRUE)
 	apply_bloodloss_sprint_effects(sprint_max, sprint_regen, sprint_cost, reset = FALSE)
 	add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/bloodloss_slowdown, TRUE, slowdown)

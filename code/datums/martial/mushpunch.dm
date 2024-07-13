@@ -5,7 +5,7 @@
 /datum/martial_art/mushpunch/harm_act(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	var/atk_verb
 	var/damage = (damage_roll(A,D)*3)
-	to_chat(A, span_spider("You begin to wind up an attack..."))
+	to_chat(A, span_spider("I begin to wind up an attack..."))
 	if(!do_after(A, 25, target = D))
 		to_chat(A, "<span class='spider'><b>Your attack was interrupted!</b></span>")
 		return TRUE //martial art code was a mistake
@@ -31,7 +31,7 @@
 /obj/item/mushpunch/attack_self(mob/living/carbon/human/user)
 	if(!istype(user) || !user)
 		return
-	var/message = span_spider("You devour [src], and a confluence of skill and power from the mushroom enhances your punches! You do need a short moment to charge these powerful punches.")
+	var/message = span_spider("I devour [src], and a confluence of skill and power from the mushroom enhances your punches! You do need a short moment to charge these powerful punches.")
 	to_chat(user, message)
 	var/datum/martial_art/mushpunch/mush = new(null)
 	mush.teach(user)

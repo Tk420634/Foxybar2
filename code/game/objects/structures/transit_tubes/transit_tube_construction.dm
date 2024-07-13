@@ -21,7 +21,7 @@
 	for(var/obj/structure/transit_tube/tube in source_turf)
 		existing_tubes++
 		if(existing_tubes >= 2)
-			to_chat(user, span_warning("You cannot wrench any more transit tubes!"))
+			to_chat(user, span_warning("I cannot wrench any more transit tubes!"))
 			return FALSE
 	return TRUE
 
@@ -43,10 +43,10 @@
 /obj/structure/c_transit_tube/wrench_act(mob/living/user, obj/item/I)
 	if(!can_wrench_in_loc(user))
 		return
-	to_chat(user, span_notice("You start attaching the [name]..."))
+	to_chat(user, span_notice("I start attaching the [name]..."))
 	add_fingerprint(user)
 	if(I.use_tool(src, user, time_to_unwrench, volume=50, extra_checks=CALLBACK(src,PROC_REF(can_wrench_in_loc), user)))
-		to_chat(user, span_notice("You attach the [name]."))
+		to_chat(user, span_notice("I attach the [name]."))
 		var/obj/structure/transit_tube/R = new build_type(loc, dir)
 		transfer_fingerprints_to(R)
 		qdel(src)

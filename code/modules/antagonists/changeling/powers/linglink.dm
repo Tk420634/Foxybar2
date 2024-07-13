@@ -47,7 +47,7 @@
 				to_chat(user, span_notice("This creature is compatible. We must hold still..."))
 			if(2)
 				to_chat(user, span_notice("We stealthily stab [target] with a minor proboscis..."))
-				to_chat(target, span_userdanger("You experience a stabbing sensation and your ears begin to ring..."))
+				to_chat(target, span_userdanger("I experience a stabbing sensation and your ears begin to ring..."))
 			if(3)
 				to_chat(user, span_notice("We mold the [target]'s mind like clay, granting [target.p_them()] the ability to speak in the hivemind!"))
 				to_chat(target, span_userdanger("A migraine throbs behind your eyes, you hear yourself screaming - but your mouth has not opened!"))
@@ -69,5 +69,5 @@
 
 	changeling.islinking = 0
 	target.mind.linglink = 0
-	to_chat(user, span_notice("You cannot sustain the connection any longer, your victim fades from the hivemind"))
+	to_chat(user, span_notice("I cannot sustain the connection any longer, your victim fades from the hivemind"))
 	to_chat(target, span_userdanger("The link cannot be sustained any longer, your connection to the hivemind has faded!"))

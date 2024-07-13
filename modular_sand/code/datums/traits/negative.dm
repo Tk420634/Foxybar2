@@ -4,7 +4,7 @@
 	value = 0
 	mob_trait = TRAIT_SHELTERED
 	gain_text = span_danger("The words of others begin to blur together...")
-	lose_text = span_notice("You start putting together what people are saying!")
+	lose_text = span_notice("I start putting together what people are saying!")
 	medical_record_text = "Patient has shown an inability to use common speaking languages."
 
 /datum/quirk/sheltered/on_spawn()
@@ -18,7 +18,7 @@
 
 /datum/quirk/dnc_order
 	name = "DNC Order"
-	desc = "You have a Do Not Clone order on your record, stating that you may not be cloned. You can still be revived by other means."
+	desc = "I have a Do Not Clone order on your record, stating that you may not be cloned. You can still be revived by other means."
 	value = -2
 	mob_trait = TRAIT_DNC_ORDER
 	medical_record_text = "Patient has a DNC (Do Not Clone) order and will be rejected by cloning mechanisms as a result."

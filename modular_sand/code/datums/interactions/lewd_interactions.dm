@@ -112,12 +112,12 @@
 
 	// if(require_user_bottomless && !user.is_bottomless())
 	// 	if(!silent)
-	// 		to_chat(user, span_warning("Your pants are in the way."))
+	// 		to_chat(user, span_warning("My pants are in the way."))
 	// 	return FALSE
 
 	// if(require_user_topless && !user.is_topless())
 	// 	if(!silent)
-	// 		to_chat(user, span_warning("Your top is in the way."))
+	// 		to_chat(user, span_warning("My top is in the way."))
 	// 	return FALSE
 
 	// if(require_user_penis)
@@ -125,17 +125,17 @@
 	// 		if(REQUIRE_EXPOSED)
 	// 			if(!user.has_penis(REQUIRE_EXPOSED) && !user.has_strapon(REQUIRE_EXPOSED))
 	// 				if(!silent)
-	// 					to_chat(user, span_warning("Your penis need to be exposed."))
+	// 					to_chat(user, span_warning("My penis need to be exposed."))
 	// 				return FALSE
 	// 		if(REQUIRE_ANY)
 	// 			if(!user.has_penis(REQUIRE_ANY) && !user.has_strapon(REQUIRE_ANY))
 	// 				if(!silent)
-	// 					to_chat(user, span_warning("You don't have a penis."))
+	// 					to_chat(user, span_warning("I don't have a penis."))
 	// 				return FALSE
 	// 		if(REQUIRE_UNEXPOSED)
 	// 			if(!user.has_penis(REQUIRE_UNEXPOSED) && !user.has_strapon(REQUIRE_UNEXPOSED))
 	// 				if(!silent)
-	// 					to_chat(user, span_warning("Your penis need to be unexposed."))
+	// 					to_chat(user, span_warning("My penis need to be unexposed."))
 	// 				return FALSE
 
 	// if(require_user_balls)
@@ -143,17 +143,17 @@
 	// 		if(REQUIRE_EXPOSED)
 	// 			if(!user.has_balls(REQUIRE_EXPOSED))
 	// 				if(!silent)
-	// 					to_chat(user, span_warning("Your balls need to be exposed."))
+	// 					to_chat(user, span_warning("My balls need to be exposed."))
 	// 				return FALSE
 	// 		if(REQUIRE_ANY)
 	// 			if(!user.has_balls(REQUIRE_ANY))
 	// 				if(!silent)
-	// 					to_chat(user, span_warning("You don't have balls."))
+	// 					to_chat(user, span_warning("I don't have balls."))
 	// 				return FALSE
 	// 		if(REQUIRE_UNEXPOSED)
 	// 			if(!user.has_balls(REQUIRE_UNEXPOSED))
 	// 				if(!silent)
-	// 					to_chat(user, span_warning("Your balls need to be unexposed."))
+	// 					to_chat(user, span_warning("My balls need to be unexposed."))
 	// 				return FALSE
 
 	// if(require_user_anus)
@@ -161,17 +161,17 @@
 	// 		if(REQUIRE_EXPOSED)
 	// 			if(!user.has_anus(REQUIRE_EXPOSED))
 	// 				if(!silent)
-	// 					to_chat(user, span_warning("Your anus need to be exposed."))
+	// 					to_chat(user, span_warning("My anus need to be exposed."))
 	// 				return FALSE
 	// 		if(REQUIRE_ANY)
 	// 			if(!user.has_anus(REQUIRE_ANY))
 	// 				if(!silent)
-	// 					to_chat(user, span_warning("You don't have an anus."))
+	// 					to_chat(user, span_warning("I don't have an anus."))
 	// 				return FALSE
 	// 		if(REQUIRE_UNEXPOSED)
 	// 			if(!user.has_anus(REQUIRE_UNEXPOSED))
 	// 				if(!silent)
-	// 					to_chat(user, span_warning("Your anus need to be unexposed."))
+	// 					to_chat(user, span_warning("My anus need to be unexposed."))
 	// 				return FALSE
 
 	// if(require_user_vagina)
@@ -179,17 +179,17 @@
 	// 		if(REQUIRE_EXPOSED)
 	// 			if(!user.has_vagina(REQUIRE_EXPOSED))
 	// 				if(!silent)
-	// 					to_chat(user, span_warning("Your vagina need to be exposed."))
+	// 					to_chat(user, span_warning("My vagina need to be exposed."))
 	// 				return FALSE
 	// 		if(REQUIRE_ANY)
 	// 			if(!user.has_vagina(REQUIRE_ANY))
 	// 				if(!silent)
-	// 					to_chat(user, span_warning("You don't have a vagina."))
+	// 					to_chat(user, span_warning("I don't have a vagina."))
 	// 				return FALSE
 	// 		if(REQUIRE_UNEXPOSED)
 	// 			if(!user.has_vagina(REQUIRE_UNEXPOSED))
 	// 				if(!silent)
-	// 					to_chat(user, span_warning("Your vagina need to be unexposed."))
+	// 					to_chat(user, span_warning("My vagina need to be unexposed."))
 	// 				return FALSE
 
 	// if(require_user_breasts)
@@ -197,17 +197,17 @@
 	// 		if(REQUIRE_EXPOSED)
 	// 			if(!user.has_breasts(REQUIRE_EXPOSED))
 	// 				if(!silent)
-	// 					to_chat(user, span_warning("Your breasts need to be exposed."))
+	// 					to_chat(user, span_warning("My breasts need to be exposed."))
 	// 				return FALSE
 	// 		if(REQUIRE_ANY)
 	// 			if(!user.has_breasts(REQUIRE_ANY))
 	// 				if(!silent)
-	// 					to_chat(user, span_warning("You don't have breasts."))
+	// 					to_chat(user, span_warning("I don't have breasts."))
 	// 				return FALSE
 	// 		if(REQUIRE_UNEXPOSED)
 	// 			if(!user.has_breasts(REQUIRE_UNEXPOSED))
 	// 				if(!silent)
-	// 					to_chat(user, span_warning("Your breasts need to be unexposed."))
+	// 					to_chat(user, span_warning("My breasts need to be unexposed."))
 	// 				return FALSE
 
 	// if(require_user_feet)
@@ -215,22 +215,22 @@
 	// 		if(REQUIRE_EXPOSED)
 	// 			if(!user.has_feet(REQUIRE_EXPOSED))
 	// 				if(!silent)
-	// 					to_chat(user, span_warning("Your feet need to be exposed."))
+	// 					to_chat(user, span_warning("My feet need to be exposed."))
 	// 				return FALSE
 	// 		if(REQUIRE_ANY)
 	// 			if(!user.has_feet(REQUIRE_ANY))
 	// 				if(!silent)
-	// 					to_chat(user, span_warning("You don't have enough feet."))
+	// 					to_chat(user, span_warning("I don't have enough feet."))
 	// 				return FALSE
 	// 		if(REQUIRE_UNEXPOSED)
 	// 			if(!user.has_feet(REQUIRE_UNEXPOSED))
 	// 				if(!silent)
-	// 					to_chat(user, span_warning("Your feet need to be unexposed."))
+	// 					to_chat(user, span_warning("My feet need to be unexposed."))
 	// 				return FALSE
 
 	// if(require_user_num_feet && (user.get_num_feet() < require_user_num_feet))
 	// 	if(!silent)
-	// 		to_chat(user, span_warning("You don't have enough feet."))
+	// 		to_chat(user, span_warning("I don't have enough feet."))
 	// 	return FALSE
 
 	// if(require_user_eyes)
@@ -238,17 +238,17 @@
 	// 		if(REQUIRE_EXPOSED)
 	// 			if(!user.has_eyes(REQUIRE_EXPOSED))
 	// 				if(!silent)
-	// 					to_chat(user, span_warning("Your eyes need to be exposed."))
+	// 					to_chat(user, span_warning("My eyes need to be exposed."))
 	// 				return FALSE
 	// 		if(REQUIRE_ANY)
 	// 			if(!user.has_eyes(REQUIRE_ANY))
 	// 				if(!silent)
-	// 					to_chat(user, span_warning("You don't have eyes."))
+	// 					to_chat(user, span_warning("I don't have eyes."))
 	// 				return FALSE
 	// 		if(REQUIRE_UNEXPOSED)
 	// 			if(!user.has_eyes(REQUIRE_UNEXPOSED))
 	// 				if(!silent)
-	// 					to_chat(user, span_warning("Your eyes need to be unexposed."))
+	// 					to_chat(user, span_warning("My eyes need to be unexposed."))
 	// 				return FALSE
 
 	// if(require_user_eyesockets)
@@ -256,17 +256,17 @@
 	// 		if(REQUIRE_EXPOSED)
 	// 			if(!user.has_eyesockets(REQUIRE_EXPOSED))
 	// 				if(!silent)
-	// 					to_chat(user, span_warning("Your eyesockets need to be exposed."))
+	// 					to_chat(user, span_warning("My eyesockets need to be exposed."))
 	// 				return FALSE
 	// 		if(REQUIRE_ANY)
 	// 			if(!user.has_eyesockets(REQUIRE_ANY))
 	// 				if(!silent)
-	// 					to_chat(user, span_warning("You still have eyes."))
+	// 					to_chat(user, span_warning("I still have eyes."))
 	// 				return FALSE
 	// 		if(REQUIRE_UNEXPOSED)
 	// 			if(!user.has_eyesockets(REQUIRE_UNEXPOSED))
 	// 				if(!silent)
-	// 					to_chat(user, span_warning("Your eyesockets need to be unexposed."))
+	// 					to_chat(user, span_warning("My eyesockets need to be unexposed."))
 	// 				return FALSE
 
 	// if(require_user_ears)
@@ -274,17 +274,17 @@
 	// 		if(REQUIRE_EXPOSED)
 	// 			if(!user.has_ears(REQUIRE_EXPOSED))
 	// 				if(!silent)
-	// 					to_chat(user, span_warning("Your ears need to be exposed."))
+	// 					to_chat(user, span_warning("My ears need to be exposed."))
 	// 				return FALSE
 	// 		if(REQUIRE_ANY)
 	// 			if(!user.has_ears(REQUIRE_ANY))
 	// 				if(!silent)
-	// 					to_chat(user, span_warning("You don't have ears."))
+	// 					to_chat(user, span_warning("I don't have ears."))
 	// 				return FALSE
 	// 		if(REQUIRE_UNEXPOSED)
 	// 			if(!user.has_ears(REQUIRE_UNEXPOSED))
 	// 				if(!silent)
-	// 					to_chat(user, span_warning("Your ears need to be unexposed."))
+	// 					to_chat(user, span_warning("My ears need to be unexposed."))
 	// 				return FALSE
 
 	// if(require_user_earsockets)
@@ -292,17 +292,17 @@
 	// 		if(REQUIRE_EXPOSED)
 	// 			if(!user.has_earsockets(REQUIRE_EXPOSED))
 	// 				if(!silent)
-	// 					to_chat(user, span_warning("Your earsockets need to be exposed."))
+	// 					to_chat(user, span_warning("My earsockets need to be exposed."))
 	// 				return FALSE
 	// 		if(REQUIRE_ANY)
 	// 			if(!user.has_earsockets(REQUIRE_ANY))
 	// 				if(!silent)
-	// 					to_chat(user, span_warning("You still have eyes."))
+	// 					to_chat(user, span_warning("I still have eyes."))
 	// 				return FALSE
 	// 		if(REQUIRE_UNEXPOSED)
 	// 			if(!user.has_earsockets(REQUIRE_UNEXPOSED))
 	// 				if(!silent)
-	// 					to_chat(user, span_warning("Your earsockets need to be unexposed."))
+	// 					to_chat(user, span_warning("My earsockets need to be unexposed."))
 	// 				return FALSE
 
 	if(extreme)
@@ -529,7 +529,7 @@
 
 	if(!SSinteractions.check_consent(user, target))
 		if(!silent)
-			to_chat(user, span_warning("You need their consent to do that! Click the consent button!"))
+			to_chat(user, span_warning("I need their consent to do that! Click the consent button!"))
 		return FALSE
 	
 	// if(require_ooc_consent) // ^-- that is consent!

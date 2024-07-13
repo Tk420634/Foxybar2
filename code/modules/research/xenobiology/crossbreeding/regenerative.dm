@@ -25,10 +25,10 @@ Regenerative extracts:
 		return
 	if(H != user)
 		user.visible_message(span_notice("[user] crushes the [src] over [H], the milky goo quickly regenerating all of [H.p_their()] injuries!"),
-			span_notice("You squeeze the [src], and it bursts over [H], the milky goo regenerating [H.p_their()] injuries."))
+			span_notice("I squeeze the [src], and it bursts over [H], the milky goo regenerating [H.p_their()] injuries."))
 	else
 		user.visible_message(span_notice("[user] crushes the [src] over [user.p_them()]self, the milky goo quickly regenerating all of [user.p_their()] injuries!"),
-			span_notice("You squeeze the [src], and it bursts in your hand, splashing you with milky goo which quickly regenerates your injuries!"))
+			span_notice("I squeeze the [src], and it bursts in your hand, splashing you with milky goo which quickly regenerates your injuries!"))
 	core_effect_before(H, user)
 	H.revive(full_heal = 1)
 	core_effect(H, user)
@@ -83,7 +83,7 @@ Regenerative extracts:
 	if(batteries.len)
 		var/obj/item/stock_parts/cell/ToCharge = pick(batteries)
 		ToCharge.charge = ToCharge.maxcharge
-		to_chat(target, span_notice("You feel a strange electrical pulse, and one of your electrical items was recharged."))
+		to_chat(target, span_notice("I feel a strange electrical pulse, and one of your electrical items was recharged."))
 
 /obj/item/slimecross/regenerative/darkpurple
 	colour = "dark purple"
@@ -129,7 +129,7 @@ Regenerative extracts:
 
 /obj/item/slimecross/regenerative/silver/core_effect(mob/living/target, mob/user)
 	target.set_nutrition(NUTRITION_LEVEL_FULL - 1)
-	to_chat(target, span_notice("You feel satiated."))
+	to_chat(target, span_notice("I feel satiated."))
 
 /obj/item/slimecross/regenerative/bluespace
 	colour = "bluespace"
@@ -174,7 +174,7 @@ Regenerative extracts:
 	colour = "red"
 
 /obj/item/slimecross/regenerative/red/core_effect(mob/living/target, mob/user)
-	to_chat(target, span_notice("You feel... <i>faster.</i>"))
+	to_chat(target, span_notice("I feel... <i>faster.</i>"))
 	target.reagents.add_reagent(/datum/reagent/medicine/ephedrine,3)
 
 /obj/item/slimecross/regenerative/green
@@ -195,7 +195,7 @@ Regenerative extracts:
 	colour = "pink"
 
 /obj/item/slimecross/regenerative/pink/core_effect(mob/living/target, mob/user)
-	to_chat(target, span_notice("You feel more calm."))
+	to_chat(target, span_notice("I feel more calm."))
 	target.reagents.add_reagent(/datum/reagent/drug/krokodil,4)
 
 /obj/item/slimecross/regenerative/gold

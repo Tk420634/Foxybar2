@@ -1,6 +1,6 @@
 /obj/machinery/nuclearbomb
 	name = "nuclear fission explosive"
-	desc = "You probably shouldn't stick around to see if this is armed."
+	desc = "I probably shouldn't stick around to see if this is armed."
 	icon = 'icons/obj/machines/nuke.dmi'
 	icon_state = "nuclearbomb_base"
 	anchored = FALSE
@@ -105,10 +105,10 @@
 	switch(deconstruction_state)
 		if(NUKESTATE_INTACT)
 			if(istype(I, /obj/item/screwdriver/nuke))
-				to_chat(user, span_notice("You start removing [src]'s front panel's screws..."))
+				to_chat(user, span_notice("I start removing [src]'s front panel's screws..."))
 				if(I.use_tool(src, user, 60, volume=100))
 					deconstruction_state = NUKESTATE_UNSCREWED
-					to_chat(user, span_notice("You remove the screws from [src]'s front panel."))
+					to_chat(user, span_notice("I remove the screws from [src]'s front panel."))
 					update_icon()
 				return
 
@@ -116,32 +116,32 @@
 			if(istype(I, /obj/item/weldingtool))
 				if(!I.tool_start_check(user, amount=1))
 					return
-				to_chat(user, span_notice("You start cutting [src]'s inner plate..."))
+				to_chat(user, span_notice("I start cutting [src]'s inner plate..."))
 				if(I.use_tool(src, user, 80, volume=100, amount=1))
-					to_chat(user, span_notice("You cut [src]'s inner plate."))
+					to_chat(user, span_notice("I cut [src]'s inner plate."))
 					deconstruction_state = NUKESTATE_WELDED
 					update_icon()
 				return
 		if(NUKESTATE_CORE_EXPOSED)
 			if(istype(I, /obj/item/nuke_core_container))
 				var/obj/item/nuke_core_container/core_box = I
-				to_chat(user, span_notice("You start loading the plutonium core into [core_box]..."))
+				to_chat(user, span_notice("I start loading the plutonium core into [core_box]..."))
 				if(do_after(user,50,target=src))
 					if(core_box.load(core, user))
-						to_chat(user, span_notice("You load the plutonium core into [core_box]."))
+						to_chat(user, span_notice("I load the plutonium core into [core_box]."))
 						deconstruction_state = NUKESTATE_CORE_REMOVED
 						update_icon()
 						core = null
 					else
-						to_chat(user, span_warning("You fail to load the plutonium core into [core_box]. [core_box] has already been used!"))
+						to_chat(user, span_warning("I fail to load the plutonium core into [core_box]. [core_box] has already been used!"))
 				return
 			if(istype(I, /obj/item/stack/sheet/metal))
 				if(!I.tool_start_check(user, amount=20))
 					return
 
-				to_chat(user, span_notice("You begin repairing [src]'s inner metal plate..."))
+				to_chat(user, span_notice("I begin repairing [src]'s inner metal plate..."))
 				if(I.use_tool(src, user, 100, amount=20))
-					to_chat(user, span_notice("You repair [src]'s inner metal plate. The radiation is contained."))
+					to_chat(user, span_notice("I repair [src]'s inner metal plate. The radiation is contained."))
 					deconstruction_state = NUKESTATE_PANEL_REMOVED
 					STOP_PROCESSING(SSobj, core)
 					update_icon()
@@ -152,16 +152,16 @@
 	. = FALSE
 	switch(deconstruction_state)
 		if(NUKESTATE_UNSCREWED)
-			to_chat(user, span_notice("You start removing [src]'s front panel..."))
+			to_chat(user, span_notice("I start removing [src]'s front panel..."))
 			if(tool.use_tool(src, user, 30, volume=100))
-				to_chat(user, span_notice("You remove [src]'s front panel."))
+				to_chat(user, span_notice("I remove [src]'s front panel."))
 				deconstruction_state = NUKESTATE_PANEL_REMOVED
 				update_icon()
 			return TRUE
 		if(NUKESTATE_WELDED)
-			to_chat(user, span_notice("You start prying off [src]'s inner plate..."))
+			to_chat(user, span_notice("I start prying off [src]'s inner plate..."))
 			if(tool.use_tool(src, user, 30, volume=100))
-				to_chat(user, span_notice("You pry off [src]'s inner plate. You can see the core's green glow!"))
+				to_chat(user, span_notice("I pry off [src]'s inner plate. You can see the core's green glow!"))
 				deconstruction_state = NUKESTATE_CORE_EXPOSED
 				update_icon()
 				START_PROCESSING(SSobj, core)

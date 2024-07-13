@@ -69,7 +69,7 @@
 			/datum/reagent/medicine/adrenaline = 100
 		)
 	)
-	to_chat(imp_in, span_userdanger("You feel your adrenal implant burst!"))
+	to_chat(imp_in, span_userdanger("I feel your adrenal implant burst!"))
 	qdel(src)
 
 /obj/item/implant/warp
@@ -81,8 +81,8 @@
 /obj/item/implant/warp/activate()
 	. = ..()
 	uses--
-	imp_in.do_adrenaline(20, TRUE, 0, 0, TRUE, list(/datum/reagent/fermi/eigenstate = 1.2), span_boldnotice("You feel an internal prick as as the bluespace starts ramping up!"))
-	to_chat(imp_in, span_notice("You feel an internal prick as as the bluespace starts ramping up!"))
+	imp_in.do_adrenaline(20, TRUE, 0, 0, TRUE, list(/datum/reagent/fermi/eigenstate = 1.2), span_boldnotice("I feel an internal prick as as the bluespace starts ramping up!"))
+	to_chat(imp_in, span_notice("I feel an internal prick as as the bluespace starts ramping up!"))
 	if(!uses)
 		qdel(src)
 

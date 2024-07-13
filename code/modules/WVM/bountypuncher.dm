@@ -30,5 +30,5 @@
 	else
 		new /obj/item/stack/f13Cash/random/bankerticket(get_turf(src))
 	playsound(get_turf(src), 'sound/machines/card_punch.ogg', 50, 1)
-	to_chat(user, span_green("You punch the ticket, and coins fall out! Be sure to give the coins to whoever gave you this ticket, that's their reward! You can sell this ticket on the train, or give it back to them if you really want to."))
+	to_chat(user, span_green("I punch the ticket, and coins fall out! Be sure to give the coins to whoever gave you this ticket, that's their reward! You can sell this ticket on the train, or give it back to them if you really want to."))
 

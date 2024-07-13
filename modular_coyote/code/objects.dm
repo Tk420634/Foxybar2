@@ -924,7 +924,7 @@
 
 /obj/item/toy/plush/otter
 	name = "otter plush"
-	desc = "You otta love it!"
+	desc = "I otta love it!"
 	icon = 'icons/obj/plushes.dmi'
 	icon_state = "otter"
 
@@ -1076,13 +1076,13 @@
 /obj/structure/rug/attackby(obj/item/I, mob/user, params) // Rug deconstruction, copied over from clothing decon, so the tools are the same
 	if(!(flags_1 & HOLOGRAM_1) && ((I.tool_behaviour == TOOL_WIRECUTTER) || I.get_sharpness()))
 		user.visible_message("[user] begins cutting the [src] apart.", \
-				span_notice("You begin cutting the [src] into strips."), \
-				span_italic("You hear faint sounds of ripping cloth."))
+				span_notice("I begin cutting the [src] into strips."), \
+				span_italic("I hear faint sounds of ripping cloth."))
 		playsound(get_turf(src), 'sound/items/poster_ripped.ogg', 50, TRUE)
 		if(!do_after(user, 60, TRUE, src))
 			return
 		new /obj/item/stack/sheet/cloth (drop_location(), 10)
-		to_chat(user, span_notice("You cut [src] into useful pieces of cloth."))
+		to_chat(user, span_notice("I cut [src] into useful pieces of cloth."))
 		qdel(src)
 		return TRUE
 

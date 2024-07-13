@@ -67,7 +67,7 @@ GLOBAL_VAR(orbital_cow_cooldown)
 		return
 	COOLDOWN_START(src, clickyclick, 4 SECONDS)
 	playsound(src, 'sound/machines/keyboard_beep.ogg', 40, ignore_walls = TRUE)
-	user.show_message(span_notice("You press one or more buttons on the uplink..."))
+	user.show_message(span_notice("I press one or more buttons on the uplink..."))
 	addtimer(CALLBACK(src,PROC_REF(claim_beacon), user), 3 SECONDS)
 
 /obj/item/brahmin_beacon/proc/claim_beacon(mob/user)

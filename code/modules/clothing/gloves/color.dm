@@ -102,7 +102,7 @@
 /obj/item/clothing/gloves/color/yellow/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/wirecutters))
 		if(can_be_cut && icon_state == initial(icon_state))//only if not dyed
-			to_chat(user, span_notice("You snip the fingertips off of [src]."))
+			to_chat(user, span_notice("I snip the fingertips off of [src]."))
 			I.play_tool_sound(src)
 			new /obj/item/clothing/gloves/cut(drop_location())
 			qdel(src)
@@ -111,7 +111,7 @@
 /obj/item/clothing/gloves/color/fyellow/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/wirecutters))
 		if(can_be_cut && icon_state == initial(icon_state))//only if not dyed
-			to_chat(user, span_notice("You snip the fingertips off of [src]."))
+			to_chat(user, span_notice("I snip the fingertips off of [src]."))
 			I.play_tool_sound(src)
 			new /obj/item/clothing/gloves/cut(drop_location())
 			qdel(src)
@@ -133,7 +133,7 @@
 /obj/item/clothing/gloves/color/black/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/wirecutters))
 		if(can_be_cut && icon_state == initial(icon_state))//only if not dyed
-			to_chat(user, span_notice("You snip the fingertips off of [src]."))
+			to_chat(user, span_notice("I snip the fingertips off of [src]."))
 			I.play_tool_sound(src)
 			new /obj/item/clothing/gloves/fingerless(drop_location())
 			qdel(src)

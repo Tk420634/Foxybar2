@@ -109,7 +109,7 @@
 			if(!user.transferItemToLoc(W, src))
 				return
 			cell = W
-			to_chat(user, span_notice("You install a cell in [src]."))
+			to_chat(user, span_notice("I install a cell in [src]."))
 			update_icon()
 
 	else if(istype(W, /obj/item/screwdriver))
@@ -117,7 +117,7 @@
 			cell.update_icon()
 			cell.forceMove(get_turf(src))
 			cell = null
-			to_chat(user, span_notice("You remove the cell from [src]."))
+			to_chat(user, span_notice("I remove the cell from [src]."))
 			switch_status(FALSE, TRUE)
 	else
 		return ..()
@@ -217,7 +217,7 @@
 
 /obj/item/melee/baton/proc/clowning_around(mob/living/user)
 	user.visible_message(span_danger("[user] accidentally hits [user.p_them()]self with [src]!"), \
-						span_userdanger("You accidentally hit yourself with [src]!"))
+						span_userdanger("I accidentally hit yourself with [src]!"))
 	SEND_SIGNAL(user, COMSIG_LIVING_MINOR_SHOCK)
 	user.DefaultCombatKnockdown(stamforce*6)
 	playsound(loc, 'sound/weapons/egloves.ogg', 50, 1, -1)
@@ -266,7 +266,7 @@
 			return
 		to_chat(user,span_warning("Remove the powercell first!")) //We make this check because the stunsword starts without a battery.
 		return
-	to_chat(user, span_warning("You can't modify [O] with this kit!"))
+	to_chat(user, span_warning("I can't modify [O] with this kit!"))
 
 //Makeshift stun baton. Replacement for stun gloves.
 /obj/item/melee/baton/cattleprod

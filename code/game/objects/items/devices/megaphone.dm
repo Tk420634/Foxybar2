@@ -37,7 +37,7 @@
 	. = ..()
 	if(obj_flags & EMAGGED)
 		return
-	to_chat(user, span_warning("You overload \the [src]'s voice synthesizer."))
+	to_chat(user, span_warning("I overload \the [src]'s voice synthesizer."))
 	obj_flags |= EMAGGED
 	voicespan = list(SPAN_REALLYBIG, "userdanger")
 	return TRUE

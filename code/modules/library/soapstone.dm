@@ -35,10 +35,10 @@
 		return
 
 	if(existing_message)
-		user.visible_message(span_notice("[user] starts erasing [existing_message]."), span_notice("You start erasing [existing_message]."), span_hear("You hear a chipping sound."))
+		user.visible_message(span_notice("[user] starts erasing [existing_message]."), span_notice("I start erasing [existing_message]."), span_hear("I hear a chipping sound."))
 		playsound(loc, 'sound/items/gavel.ogg', 50, TRUE, -1)
 		if(do_after(user, tool_speed, target = existing_message))
-			user.visible_message(span_notice("[user] erases [existing_message]."), span_notice("You erase [existing_message][existing_message.creator_key == user.ckey ? ", refunding a use" : ""]."))
+			user.visible_message(span_notice("[user] erases [existing_message]."), span_notice("I erase [existing_message][existing_message.creator_key == user.ckey ? ", refunding a use" : ""]."))
 			existing_message.persists = FALSE
 			qdel(existing_message)
 			playsound(loc, 'sound/items/gavel.ogg', 50, TRUE, -1)
@@ -48,17 +48,17 @@
 
 	var/message = stripped_input(user, "What would you like to engrave?", "Leave a message")
 	if(!message)
-		to_chat(user, span_notice("You decide not to engrave anything."))
+		to_chat(user, span_notice("I decide not to engrave anything."))
 		return
 
 	if(!target.Adjacent(user) && locate(/obj/structure/chisel_message) in T)
 		to_chat(user, span_warning("Someone wrote here before you chose! Find another spot."))
 		return
 	playsound(loc, 'sound/items/gavel.ogg', 50, TRUE, -1)
-	user.visible_message(span_notice("[user] starts engraving a message into [T]..."), span_notice("You start engraving a message into [T]..."), span_hear("You hear a chipping sound."))
+	user.visible_message(span_notice("[user] starts engraving a message into [T]..."), span_notice("I start engraving a message into [T]..."), span_hear("I hear a chipping sound."))
 	if(can_use() && do_after(user, tool_speed, target = T) && can_use()) //This looks messy but it's actually really clever!
 		if(!locate(/obj/structure/chisel_message) in T)
-			user.visible_message(span_notice("[user] leaves a message for future spacemen!"), span_notice("You engrave a message into [T]!"), span_hear("You hear a chipping sound."))
+			user.visible_message(span_notice("[user] leaves a message for future spacemen!"), span_notice("I engrave a message into [T]!"), span_hear("I hear a chipping sound."))
 			playsound(loc, 'sound/items/gavel.ogg', 50, TRUE, -1)
 			var/obj/structure/chisel_message/M = new(T)
 			M.register(user, message)

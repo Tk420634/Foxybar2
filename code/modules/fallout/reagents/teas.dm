@@ -58,7 +58,7 @@
 
 /datum/reagent/consumable/tea/coyotetea/on_mob_life(mob/living/carbon/M)
 	if(prob(10))
-		var/smoke_message = pick("You feel relaxed.", "You feel calmed.","You feel alert.","You feel rugged.")
+		var/smoke_message = pick("I feel relaxed.", "I feel calmed.","I feel alert.","I feel rugged.")
 		to_chat(M, span_notice("[smoke_message]"))
 	M.AdjustStun(-40, 0)
 	M.AdjustKnockdown(-40, 0)
@@ -168,7 +168,7 @@
 
 /datum/reagent/consumable/tea/fever_blossom_tea/on_mob_life(mob/living/carbon/M)
 	if(prob(10))
-		var/blossom_message = pick("You feel relaxed.", "You feel calmed.","You feel sensual.","You feel warm.")
+		var/blossom_message = pick("I feel relaxed.", "I feel calmed.","I feel sensual.","I feel warm.")
 		to_chat(M, span_notice("[blossom_message]"))
 	M.dizziness = max(0,M.dizziness-2)
 	M.jitteriness = max(0,M.jitteriness-2)

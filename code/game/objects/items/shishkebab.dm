@@ -37,7 +37,7 @@
 	if(sword in src)
 		//Detach the sword into the user's hands
 		if(!user.put_in_hands(sword))
-			to_chat(user, span_warning("You need a free hand to hold the shishkebab!"))
+			to_chat(user, span_warning("I need a free hand to hold the shishkebab!"))
 			return
 	else
 		//Remove from their hands and put back "into" the tank

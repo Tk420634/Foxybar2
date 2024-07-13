@@ -37,13 +37,13 @@
 	. = ..()
 	if(contents.len)
 		var/s = contents.len == 1 ? "" : "s"
-		. += span_notice("You can make out the shape[s] of [contents.len] object[s] through the fabric.")
+		. += span_notice("I can make out the shape[s] of [contents.len] object[s] through the fabric.")
 
 /obj/item/bodybag/bluespace/Destroy()
 	for(var/atom/movable/A in contents)
 		A.forceMove(get_turf(src))
 		if(isliving(A))
-			to_chat(A, span_notice("You suddenly feel the space around you torn apart! You're free!"))
+			to_chat(A, span_notice("I suddenly feel the space around you torn apart! You're free!"))
 	return ..()
 
 /obj/item/bodybag/bluespace/deploy_bodybag(mob/user, atom/location)
@@ -51,16 +51,16 @@
 	for(var/atom/movable/A in contents)
 		A.forceMove(R)
 		if(isliving(A))
-			to_chat(A, span_notice("You suddenly feel air around you! You're free!"))
+			to_chat(A, span_notice("I suddenly feel air around you! You're free!"))
 	R.open(user)
 	R.add_fingerprint(user)
 	qdel(src)
 
 /obj/item/bodybag/bluespace/container_resist(mob/living/user)
 	if(user.incapacitated(allow_crit = TRUE))
-		to_chat(user, span_warning("You can't get out while you're restrained like this!"))
+		to_chat(user, span_warning("I can't get out while you're restrained like this!"))
 		return
-	to_chat(user, span_notice("You claw at the fabric of [src], trying to tear it open..."))
+	to_chat(user, span_notice("I claw at the fabric of [src], trying to tear it open..."))
 	to_chat(loc, span_warning("Someone starts trying to break free of [src]!"))
 	if(!do_after(user, 200, target = src))
 		to_chat(loc, span_warning("The pressure subsides. It seems that they've stopped resisting..."))

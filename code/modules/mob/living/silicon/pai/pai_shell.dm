@@ -1,11 +1,11 @@
 
 /mob/living/silicon/pai/proc/fold_out(force = FALSE)
 	if(emitterhealth < 0)
-		to_chat(src, span_warning("Your holochassis emitters are still too unstable! Please wait for automatic repair."))
+		to_chat(src, span_warning("My holochassis emitters are still too unstable! Please wait for automatic repair."))
 		return FALSE
 
 	if(!canholo && !force)
-		to_chat(src, span_warning("Your master or another force has disabled your holochassis emitters!"))
+		to_chat(src, span_warning("My master or another force has disabled your holochassis emitters!"))
 		return FALSE
 
 	if(holoform)
@@ -71,7 +71,7 @@
 
 /mob/living/silicon/pai/proc/choose_chassis()
 	if(!isturf(loc) && loc != card)
-		to_chat(src, span_boldwarning("You can not change your holochassis composite while not on the ground or in your card!"))
+		to_chat(src, span_boldwarning("I can not change your holochassis composite while not on the ground or in your card!"))
 		return FALSE
 	var/list/choices = list("Preset - Basic", "Preset - Dynamic")
 	if(CONFIG_GET(flag/pai_custom_holoforms))
@@ -94,7 +94,7 @@
 		RemoveElement(/datum/element/mob_holder, old_chassis, 'icons/mob/pai_item_head.dmi', 'icons/mob/pai_item_rh.dmi', 'icons/mob/pai_item_lh.dmi', INV_SLOTBIT_HEAD)
 	if(possible_chassis[chassis])
 		AddElement(/datum/element/mob_holder, chassis, 'icons/mob/pai_item_head.dmi', 'icons/mob/pai_item_rh.dmi', 'icons/mob/pai_item_lh.dmi', INV_SLOTBIT_HEAD)
-	to_chat(src, span_boldnotice("You switch your holochassis projection composite to [chassis]"))
+	to_chat(src, span_boldnotice("I switch your holochassis projection composite to [chassis]"))
 
 /mob/living/silicon/pai/lay_down()
 	. = ..()
@@ -110,10 +110,10 @@
 /mob/living/silicon/pai/proc/toggle_integrated_light()
 	if(!light_range)
 		set_light_on(TRUE)
-		to_chat(src, span_notice("You enable your integrated light."))
+		to_chat(src, span_notice("I enable your integrated light."))
 	else
 		set_light_on(FALSE)
-		to_chat(src, span_notice("You disable your integrated light."))
+		to_chat(src, span_notice("I disable your integrated light."))
 
 /mob/living/silicon/pai/can_buckle_others(mob/living/target, atom/buckle_to)
 	return ispAI(target) && ..()

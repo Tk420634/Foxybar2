@@ -22,7 +22,7 @@
 	if(obj_flags & EMAGGED)
 		return
 	obj_flags |= EMAGGED
-	to_chat(usr, span_notice("You emag [src], hoping it'll achieve something.."))
+	to_chat(usr, span_notice("I emag [src], hoping it'll achieve something.."))
 
 //Brass claw implant. Holds the brass claw from brass_claw.dm and can extend / retract it at will.
 /obj/item/organ/cyberimp/arm/clockwork/claw

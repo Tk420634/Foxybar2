@@ -481,7 +481,7 @@
 	desc = "A standard issue NCR steel helmet, issued with an additional pair of storm goggles for weather resistance."
 	icon_state = "steelpot_goggles"
 	item_state = "steelpot_goggles"
-	alt_toggle_message = "You push the goggles down "
+	alt_toggle_message = "I push the goggles down "
 	can_toggle = 1
 	flags_inv = HIDEEARS
 	actions_types = list(/datum/action/item_action/toggle)
@@ -916,7 +916,7 @@
 	if(!can_use(usr))
 		return 0
 
-	to_chat(usr, span_notice("You turn the [src] inside out."))
+	to_chat(usr, span_notice("I turn the [src] inside out."))
 	if(src.helmettoggled)
 		src.icon_state = "[initial(icon_state)]"
 		src.item_state = "[initial(icon_state)]"
@@ -977,35 +977,35 @@
 	var/choice = show_radial_menu(user, src, choices, radius = 32, require_near = TRUE)
 	switch(choice)
 		if("Black")
-			balloon_alert(user, "Your suit changes color.")
+			balloon_alert(user, "My suit changes color.")
 			icon_state = "syndicate-helm-black"
 			item_state = "syndicate-helm-black"
 		if("Green Stripe")
-			balloon_alert(user, "Your suit changes color.")
+			balloon_alert(user, "My suit changes color.")
 			icon_state = "syndicate-helm-black-green"
 			item_state = "syndicate-helm-black-green"
 		if("Orange Stripe")
-			balloon_alert(user, "Your suit changes color.")
+			balloon_alert(user, "My suit changes color.")
 			icon_state = "syndicate-helm-black-orange"
 			item_state = "syndicate-helm-black-orange"
 		if("Blue Stripe")
-			balloon_alert(user, "Your suit changes color.")
+			balloon_alert(user, "My suit changes color.")
 			icon_state = "syndicate-helm-black-blue"
 			item_state = "syndicate-helm-black-blue"
 		if("Red Stripe")
-			balloon_alert(user, "Your suit changes color.")
+			balloon_alert(user, "My suit changes color.")
 			icon_state = "syndicate-helm-black-red"
 			item_state = "syndicate-helm-black-red"
 		if("Medic Marks")
-			balloon_alert(user, "Your suit changes color.")
+			balloon_alert(user, "My suit changes color.")
 			icon_state = "syndicate-helm-black-med"
 			item_state = "syndicate-helm-black-med"
 		if("Engi Marks")
-			balloon_alert(user, "Your suit changes color.")
+			balloon_alert(user, "My suit changes color.")
 			icon_state = "syndicate-helm-black-engie"
 			item_state = "syndicate-helm-black-engie"
 		if("Contractor")
-			balloon_alert(user, "Your suit changes color.")
+			balloon_alert(user, "My suit changes color.")
 			icon_state = "syndicate-contract-helm"
 			item_state = "syndicate-contract-helm"
 		else
@@ -1319,8 +1319,8 @@
 	desc = "A standard issue NCR Infantry helmet, with a pair of goggles attached to it."
 	icon_state = "ncr_goggles_helmet"
 	item_state = "ncr_goggles_helmet"
-	toggle_message = "You pull the goggles down under "
-	alt_toggle_message = "You push the goggles up onto the "
+	toggle_message = "I pull the goggles down under "
+	alt_toggle_message = "I push the goggles up onto the "
 	can_toggle = 1
 	flags_inv = HIDEEARS
 	actions_types = list(/datum/action/item_action/toggle)

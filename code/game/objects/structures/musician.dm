@@ -237,7 +237,7 @@
 				return
 
 			if(length(t) >= MUSIC_MAXLINES * MUSIC_MAXLINECHARS)
-				var/cont = input(usr, "Your message is too long! Would you like to continue editing it?", "", "yes") in list("yes", "no")
+				var/cont = input(usr, "My message is too long! Would you like to continue editing it?", "", "yes") in list("yes", "no")
 				if(cont == "no")
 					break
 		while(length(t) > MUSIC_MAXLINES * MUSIC_MAXLINECHARS)

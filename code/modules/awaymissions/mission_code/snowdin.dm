@@ -176,7 +176,7 @@
 		to_chat(user, span_danger("[C] is full."))
 		return
 	C.reagents.add_reagent(/datum/reagent/toxin/plasma, rand(5, 10))
-	user.visible_message("[user] scoops some plasma from the [src] with \the [C].", span_notice("You scoop out some plasma from the [src] using \the [C]."))
+	user.visible_message("[user] scoops some plasma from the [src] with \the [C].", span_notice("I scoop out some plasma from the [src] using \the [C]."))
 
 /turf/open/lava/plasma/burn_stuff(AM)
 	. = 0
@@ -243,12 +243,12 @@
 							NB.no_update = TRUE
 							NB.change_bodypart_status()
 							PP.visible_message(span_warning("[L] screams in pain as [L.p_their()] [NB] melts down to the bone!"), \
-											  span_userdanger("You scream out in pain as your [NB] melts down to the bone, leaving an eerie plasma-like glow where flesh used to be!"))
+											  span_userdanger("I scream out in pain as your [NB] melts down to the bone, leaving an eerie plasma-like glow where flesh used to be!"))
 						if(!plasma_parts.len && !robo_parts.len) //a person with no potential organic limbs left AND no robotic limbs, time to turn them into a plasmaman
 							PP.IgniteMob()
 							PP.set_species(/datum/species/plasmaman)
 							PP.visible_message(span_warning("[L] bursts into a brilliant purple flame as [L.p_their()] entire body is that of a skeleton!"), \
-											  span_userdanger("Your senses numb as all of your remaining flesh is turned into a purple slurry, sloshing off your body and leaving only your bones to show in a vibrant purple!"))
+											  span_userdanger("My senses numb as all of your remaining flesh is turned into a purple slurry, sloshing off your body and leaving only your bones to show in a vibrant purple!"))
 
 
 /obj/vehicle/ridden/lavaboat/plasma
@@ -569,8 +569,8 @@
 	job_description = "Syndicate Snow Operative"
 	faction = ROLE_SYNDICATE
 	outfit = /datum/outfit/snowsyndie
-	short_desc = "You are a syndicate operative recently awoken from cryostasis in an underground outpost."
-	flavour_text = "You are a syndicate operative recently awoken from cryostasis in an underground outpost. Monitor US Government communications and record information. All intruders should be \
+	short_desc = "I am a syndicate operative recently awoken from cryostasis in an underground outpost."
+	flavour_text = "I am a syndicate operative recently awoken from cryostasis in an underground outpost. Monitor US Government communications and record information. All intruders should be \
 	disposed of swiftly to assure no gathered information is stolen or lost. Try not to wander too far from the outpost as the caves can be a deadly place even for a trained operative such as yourself."
 
 /datum/outfit/snowsyndie

@@ -128,9 +128,9 @@ IMPORTANT FACTORS TO CONSIDER WHILE BALANCING
 						to_chat(SM, span_userdanger("While you find your newfound existence strange, you share the same memories as [M.real_name]. However, You find yourself indifferent to the goals you previously had, and take more interest in your newfound independence, but still have an indescribable care for the safety of your original."))
 					log_reagent("FERMICHEM: [SM] ckey: [SM.key]'s is not bound by [M] ckey [M.key]'s will, and is free to determine their own goals, while respecting and acting as their origin.")
 	
-				to_chat(SM, span_warning("You feel a strange sensation building in your mind as you realise there's two of you. Before you get a chance to think about it, you suddenly split from your old body, and find yourself face to face with your original, a perfect clone of your origin."))
+				to_chat(SM, span_warning("I feel a strange sensation building in your mind as you realise there's two of you. Before you get a chance to think about it, you suddenly split from your old body, and find yourself face to face with your original, a perfect clone of your origin."))
 				SM.client?.change_view(CONFIG_GET(string/default_view))
-				to_chat(M, span_warning("You feel a strange sensation building in your mind as you realise there's two of you. Before you get a chance to think about it, a mass splits from you, and find yourself face to face with yourself."))
+				to_chat(M, span_warning("I feel a strange sensation building in your mind as you realise there's two of you. Before you get a chance to think about it, a mass splits from you, and find yourself face to face with yourself."))
 				M.visible_message("[M] suddenly shudders, and splits into two identical twins!")
 				SM.copy_languages(M, LANGUAGE_MIND)
 				playerClone =  TRUE
@@ -167,11 +167,11 @@ IMPORTANT FACTORS TO CONSIDER WHILE BALANCING
 				else //If there's no ghosts, but they've made a large amount, then proceed to make flavourful clone, where you become fat and useless until you split.
 					switch(current_cycle)
 						if(21)
-							to_chat(M, span_notice("You feel the synethic cells rest uncomfortably within your body as they start to pulse and grow rapidly."))
+							to_chat(M, span_notice("I feel the synethic cells rest uncomfortably within your body as they start to pulse and grow rapidly."))
 						if(22 to 29)
 							M.adjust_nutrition(M.nutrition/10)
 						if(30)
-							to_chat(M, span_notice("You feel the synethic cells grow and expand within yourself, bloating your body outwards."))
+							to_chat(M, span_notice("I feel the synethic cells grow and expand within yourself, bloating your body outwards."))
 						if(31 to 49)
 							M.adjust_nutrition(M.nutrition/5)
 						if(50)
@@ -187,7 +187,7 @@ IMPORTANT FACTORS TO CONSIDER WHILE BALANCING
 						if(86)//Upon splitting, you get really hungry and are capable again. Deletes the chem after you're done.
 							M.set_nutrition(15)//YOU BEST BE EATTING AFTER THIS YOU CUTIE
 							M.action_cooldown_mod -= 4
-							to_chat(M, span_notice("Your body splits away from the cell clone of yourself, leaving you with a drained and hollow feeling inside."))
+							to_chat(M, span_notice("My body splits away from the cell clone of yourself, leaving you with a drained and hollow feeling inside."))
 
 							//clone
 							var/typepath = M.type
@@ -222,7 +222,7 @@ IMPORTANT FACTORS TO CONSIDER WHILE BALANCING
 		playerClone = FALSE
 		return
 	if (M.action_cooldown_mod == 4 && !M.has_status_effect(/datum/status_effect/chem/SGDF))//checks if they're ingested over 20u of the stuff, but fell short of the required 30u to make a clone.
-		to_chat(M, span_notice("You feel the cells begin to merge with your body, unable to reach nucleation, they instead merge with your body, healing any wounds."))
+		to_chat(M, span_notice("I feel the cells begin to merge with your body, unable to reach nucleation, they instead merge with your body, healing any wounds."))
 		M.adjustCloneLoss(-10, 0) //I don't want to make Rezadone obsolete.
 		M.adjustBruteLoss(-25, 0)// Note that this takes a long time to apply and makes you fat and useless when it's in you, I don't think this small burst of healing will be useful considering how long it takes to get there.
 		M.adjustFireLoss(-25, 0)
@@ -342,12 +342,12 @@ IMPORTANT FACTORS TO CONSIDER WHILE BALANCING
 /datum/reagent/impure/SDZF/on_mob_life(mob/living/carbon/M) //If you're bad at fermichem, turns your clone into a zombie instead.
 	switch(current_cycle)//Pretends to be normal
 		if(20)
-			to_chat(M, span_notice("You feel the synethic cells rest uncomfortably within your body as they start to pulse and grow rapidly."))
+			to_chat(M, span_notice("I feel the synethic cells rest uncomfortably within your body as they start to pulse and grow rapidly."))
 			startHunger = M.nutrition
 		if(21 to 29)
 			M.adjust_nutrition(M.nutrition/10)
 		if(30)
-			to_chat(M, span_notice("You feel the synethic cells grow and expand within yourself, bloating your body outwards."))
+			to_chat(M, span_notice("I feel the synethic cells grow and expand within yourself, bloating your body outwards."))
 		if(31 to 49)
 			M.adjust_nutrition(M.nutrition/5)
 		if(50)
@@ -367,7 +367,7 @@ IMPORTANT FACTORS TO CONSIDER WHILE BALANCING
 				message_admins("(non-infectious) SDZF: Zombie spawned at [M] [COORD(M)]!")
 				M.set_nutrition(startHunger - 500) //YOU BEST BE RUNNING AWAY AFTER THIS YOU BADDIE
 				M.action_cooldown_mod = 1
-				to_chat(M, span_warning("Your body splits away from the cell clone of yourself, your attempted clone birthing itself violently from you as it begins to shamble around, a terrifying abomination of science."))
+				to_chat(M, span_warning("My body splits away from the cell clone of yourself, your attempted clone birthing itself violently from you as it begins to shamble around, a terrifying abomination of science."))
 				M.visible_message("[M] suddenly shudders, and splits into a funky smelling copy of themselves!")
 				M.emote("scream")
 				M.adjustToxLoss(30, 0)

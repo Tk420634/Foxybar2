@@ -28,12 +28,12 @@
 				armed = 1
 				if(!user.put_in_hands(gun))
 					armed = 0
-					to_chat(user, span_warning("You need a free hand to hold the gun!"))
+					to_chat(user, span_warning("I need a free hand to hold the gun!"))
 					return
 				update_icon()
 				user.update_inv_back()
 		else
-			to_chat(user, span_warning("You are already holding the gun!"))
+			to_chat(user, span_warning("I am already holding the gun!"))
 	else
 		..()
 
@@ -77,7 +77,7 @@
 	gun.forceMove(src)
 	armed = 0
 	if(user)
-		to_chat(user, span_notice("You attach the [gun.name] to the [name]."))
+		to_chat(user, span_notice("I attach the [gun.name] to the [name]."))
 	else
 		src.visible_message(span_warning("The [gun.name] snaps back onto the [name]!"))
 	update_icon()
@@ -137,7 +137,7 @@
 
 /obj/item/gun/ballistic/minigunbal5mm/afterattack(atom/target, mob/living/user, flag, params)
 	if(!ammo_pack || ammo_pack.loc != user)
-		to_chat(user, "You need the backpack ammo belt to fire the gun!")
+		to_chat(user, "I need the backpack ammo belt to fire the gun!")
 	. = ..()
 
 /obj/item/gun/ballistic/minigunbal5mm/dropped(mob/living/user)

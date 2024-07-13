@@ -2,8 +2,8 @@
 	name = "Antenna"
 	desc = "The affected person sprouts an antenna. This is known to allow them to access common radio channels passively."
 	quality = POSITIVE
-	text_gain_indication = span_notice("You feel an antenna sprout from your forehead.")
-	text_lose_indication = span_notice("Your antenna shrinks back down.")
+	text_gain_indication = span_notice("I feel an antenna sprout from your forehead.")
+	text_lose_indication = span_notice("My antenna shrinks back down.")
 	instability = 5
 	difficulty = 8
 	var/obj/item/implant/radio/antenna/linked_radio
@@ -43,7 +43,7 @@
 	name = "Mind Reader"
 	desc = "The affected person can look into the recent memories of others."
 	quality = POSITIVE
-	text_gain_indication = span_notice("You hear distant voices at the corners of your mind.")
+	text_gain_indication = span_notice("I hear distant voices at the corners of your mind.")
 	text_lose_indication = span_notice("The distant voices fade.")
 	power = /obj/effect/proc_holder/spell/targeted/mindread
 	instability = 40
@@ -67,9 +67,9 @@
 			to_chat(user, span_boldnotice("[M] is dead!"))
 			return
 		if(M.mind)
-			to_chat(user, span_boldnotice("You plunge into [M]'s mind..."))
+			to_chat(user, span_boldnotice("I plunge into [M]'s mind..."))
 			if(prob(20))
-				to_chat(M, span_danger("You feel something foreign enter your mind."))//chance to alert the read-ee
+				to_chat(M, span_danger("I feel something foreign enter your mind."))//chance to alert the read-ee
 			var/list/recent_speech = list()
 			var/list/say_log = list()
 			var/log_source = M.logging
@@ -88,19 +88,19 @@
 					if(prob(50))
 						recent_speech[spoken_memory] = say_log[spoken_memory]
 			if(recent_speech.len)
-				to_chat(user, span_boldnotice("You catch some drifting memories of their past conversations..."))
+				to_chat(user, span_boldnotice("I catch some drifting memories of their past conversations..."))
 				for(var/spoken_memory in recent_speech)
 					to_chat(user, span_notice("[recent_speech[spoken_memory]]"))
 			if(usr in GLOB.rockpaperscissors_players)
 				to_chat(user, span_notice("They're planning on playing [GLOB.rockpaperscissors_players[usr][1]]"))
 			if(iscarbon(M))
 				var/mob/living/carbon/human/H = M
-				to_chat(user, span_boldnotice("You find that their intent is to [H.a_intent]..."))
+				to_chat(user, span_boldnotice("I find that their intent is to [H.a_intent]..."))
 				var/datum/dna/the_dna = H.has_dna()
 				if(the_dna)
-					to_chat(user, span_boldnotice("You uncover that [H.p_their()] true identity is [the_dna.real_name]."))
+					to_chat(user, span_boldnotice("I uncover that [H.p_their()] true identity is [the_dna.real_name]."))
 		else
-			to_chat(user, span_warning("You can't find a mind to read inside of [M]!"))
+			to_chat(user, span_warning("I can't find a mind to read inside of [M]!"))
 
 /datum/mutation/human/mindreader/New(class_ = MUT_OTHER, timer, datum/mutation/human/copymut)
 	..()

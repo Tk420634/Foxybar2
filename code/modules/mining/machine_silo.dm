@@ -171,7 +171,7 @@ GLOBAL_LIST_EMPTY(silo_access_logs)
 
 /obj/machinery/ore_silo/multitool_act(mob/living/user, obj/item/multitool/I)
 	if (istype(I))
-		to_chat(user, span_notice("You log [src] in the multitool's buffer."))
+		to_chat(user, span_notice("I log [src] in the multitool's buffer."))
 		I.buffer = src
 		return TRUE
 

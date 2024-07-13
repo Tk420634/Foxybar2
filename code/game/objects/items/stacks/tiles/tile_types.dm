@@ -42,26 +42,26 @@
 
 	if (istype(W, /obj/item/weldingtool))
 		if(get_amount() < 4)
-			to_chat(user, span_warning("You need at least four tiles to do this!"))
+			to_chat(user, span_warning("I need at least four tiles to do this!"))
 			return
 
 		if(!mineralType)
-			to_chat(user, span_warning("You can not reform this!"))
+			to_chat(user, span_warning("I can not reform this!"))
 			return
 
 		if(W.use_tool(src, user, 0, volume=40))
 			if(mineralType == "plasma")
 				atmos_spawn_air("plasma=5;TEMP=1000")
 				user.visible_message(span_warning("[user.name] sets the plasma tiles on fire!"), \
-									span_warning("You set the plasma tiles on fire!"))
+									span_warning("I set the plasma tiles on fire!"))
 				qdel(src)
 				return
 
 			if (mineralType == "metal")
 				var/obj/item/stack/sheet/metal/new_item = new(user.loc)
 				user.visible_message("[user.name] shaped [src] into metal with the welding tool.", \
-							span_notice("You shaped [src] into metal with the welding tool."), \
-							span_italic("You hear welding."))
+							span_notice("I shaped [src] into metal with the welding tool."), \
+							span_italic("I hear welding."))
 				var/obj/item/stack/rods/R = src
 				src = null
 				var/replace = (user.get_inactive_held_item()==R)
@@ -73,8 +73,8 @@
 				var/sheet_type = text2path("/obj/item/stack/sheet/mineral/[mineralType]")
 				var/obj/item/stack/sheet/mineral/new_item = new sheet_type(user.loc)
 				user.visible_message("[user.name] shaped [src] into a sheet with the welding tool.", \
-							span_notice("You shaped [src] into a sheet with the welding tool."), \
-							span_italic("You hear welding."))
+							span_notice("I shaped [src] into a sheet with the welding tool."), \
+							span_italic("I hear welding."))
 				var/obj/item/stack/rods/R = src
 				src = null
 				var/replace = (user.get_inactive_held_item()==R)

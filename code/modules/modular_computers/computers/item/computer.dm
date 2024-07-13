@@ -148,9 +148,9 @@
 		if(app.run_emag())
 			newemag = TRUE
 	if(newemag)
-		to_chat(user, span_notice("You swipe \the [src]. A console window momentarily fills the screen, with white text rapidly scrolling past."))
+		to_chat(user, span_notice("I swipe \the [src]. A console window momentarily fills the screen, with white text rapidly scrolling past."))
 		return TRUE
-	to_chat(user, span_notice("You swipe \the [src]. A console window fills the screen, but it quickly closes itself after only a few lines are written to it."))
+	to_chat(user, span_notice("I swipe \the [src]. A console window fills the screen, but it quickly closes itself after only a few lines are written to it."))
 	return FALSE
 
 /obj/item/modular_computer/examine(mob/user)
@@ -194,9 +194,9 @@
 	var/issynth = issilicon(user) // Robots and AIs get different activation messages.
 	if(obj_integrity <= integrity_failure * max_integrity)
 		if(issynth)
-			to_chat(user, span_warning("You send an activation signal to \the [src], but it responds with an error code. It must be damaged."))
+			to_chat(user, span_warning("I send an activation signal to \the [src], but it responds with an error code. It must be damaged."))
 		else
-			to_chat(user, span_warning("You press the power button, but the computer fails to boot up, displaying variety of errors before shutting down again."))
+			to_chat(user, span_warning("I press the power button, but the computer fails to boot up, displaying variety of errors before shutting down again."))
 		return
 
 	// If we have a recharger, enable it automatically. Lets computer without a battery work.
@@ -206,17 +206,17 @@
 
 	if(all_components[MC_CPU] && use_power()) // use_power() checks if the PC is powered
 		if(issynth)
-			to_chat(user, span_notice("You send an activation signal to \the [src], turning it on."))
+			to_chat(user, span_notice("I send an activation signal to \the [src], turning it on."))
 		else
-			to_chat(user, span_notice("You press the power button and start up \the [src]."))
+			to_chat(user, span_notice("I press the power button and start up \the [src]."))
 		enabled = 1
 		update_icon()
 		ui_interact(user)
 	else // Unpowered
 		if(issynth)
-			to_chat(user, span_warning("You send an activation signal to \the [src] but it does not respond."))
+			to_chat(user, span_warning("I send an activation signal to \the [src] but it does not respond."))
 		else
-			to_chat(user, span_warning("You press the power button but \the [src] does not respond."))
+			to_chat(user, span_warning("I press the power button but \the [src] does not respond."))
 
 // Process currently calls handle_power(), may be expanded in future if more things are added.
 /obj/item/modular_computer/process()
@@ -379,10 +379,10 @@
 		if(!W.tool_start_check(user, amount=1))
 			return
 
-		to_chat(user, span_notice("You begin repairing damage to \the [src]..."))
+		to_chat(user, span_notice("I begin repairing damage to \the [src]..."))
 		if(W.use_tool(src, user, 20, volume=50, amount=1))
 			obj_integrity = max_integrity
-			to_chat(user, span_notice("You repair \the [src]."))
+			to_chat(user, span_notice("I repair \the [src]."))
 		return
 
 	if(W.tool_behaviour == TOOL_SCREWDRIVER)

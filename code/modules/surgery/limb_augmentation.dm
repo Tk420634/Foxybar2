@@ -43,7 +43,7 @@
 			tool = tool.contents[1]
 		if(istype(tool) && user.temporarilyRemoveItemFromInventory(tool))
 			tool.replace_limb(target, TRUE)
-		display_results(user, target, span_notice("You successfully augment [target]'s [parse_zone(target_zone)]."),
+		display_results(user, target, span_notice("I successfully augment [target]'s [parse_zone(target_zone)]."),
 			"[user] successfully augments [target]'s [parse_zone(target_zone)] with [tool]!",
 			"[user] successfully augments [target]'s [parse_zone(target_zone)]!")
 		log_combat(user, target, "augmented", addition="by giving him new [parse_zone(target_zone)] INTENT: [uppertext(user.a_intent)]")

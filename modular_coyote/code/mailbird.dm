@@ -19,7 +19,7 @@
 		return FALSE
 
 	if(!(HAS_TRAIT(C, TRAIT_TRIBAL) || HAS_TRAIT(C, TRAIT_FORMER_TRIBAL)))
-		to_chat(user, span_warning("You need a deeper connection with the tribes to understand how to call for a bird."))
+		to_chat(user, span_warning("I need a deeper connection with the tribes to understand how to call for a bird."))
 		return FALSE
 
 	return TRUE
@@ -27,7 +27,7 @@
 /datum/emote/living/carbon/birdcall/run_emote(mob/user)
 	var/mob/living/carbon/C = user
 	if(!is_type_in_list(get_area(C), GLOB.outdoor_areas))
-		to_chat(user, span_warning("You must be outside to call for a bird."))
+		to_chat(user, span_warning("I must be outside to call for a bird."))
 		return FALSE
 
 	var/obj/item/reagent_containers/food/snacks/grown/pinyon/nut
@@ -37,7 +37,7 @@
 		break
 
 	if(!istype(nut))
-		to_chat(user, span_warning("You must have a pinyon nut to give to the bird you call."))
+		to_chat(user, span_warning("I must have a pinyon nut to give to the bird you call."))
 		return FALSE
 
 	var/obj/item/mail
@@ -48,7 +48,7 @@
 			break
 
 	if(!istype(mail))
-		to_chat(user, span_warning("You need an item to give to the bird you call!"))
+		to_chat(user, span_warning("I need an item to give to the bird you call!"))
 		return FALSE
 
 	if(mail.w_class > WEIGHT_CLASS_SMALL)
@@ -127,7 +127,7 @@
 		flyOff()
 		return
 
-	to_chat(C, span_info("You feed \the [nut] to the crow, and offer \the [mail] to it."))
+	to_chat(C, span_info("I feed \the [nut] to the crow, and offer \the [mail] to it."))
 
 	C.dropItemToGround(nut)
 	qdel(nut)
@@ -142,7 +142,7 @@
 		mail = null
 		flyOff()
 		return
-	to_chat(C, span_info("You use your tribal bond to ask the crow to deliver \the [mail] to someone named \"[TargetName].\""))
+	to_chat(C, span_info("I use your tribal bond to ask the crow to deliver \the [mail] to someone named \"[TargetName].\""))
 	flyOff()
 
 /obj/effect/mailbird/proc/flyOff()

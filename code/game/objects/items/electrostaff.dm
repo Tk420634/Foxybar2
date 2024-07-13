@@ -110,13 +110,13 @@
 	START_PROCESSING(SSobj, src)
 	set_light_on(TRUE)
 	if(user)
-		to_chat(user, span_warning("You turn [src] on."))
+		to_chat(user, span_warning("I turn [src] on."))
 
 /obj/item/electrostaff/proc/turn_off(obj/item/source, mob/user)
 	wielded = FALSE
 	item_flags &= ~(ITEM_CAN_BLOCK|ITEM_CAN_PARRY)
 	if(user)
-		to_chat(user, span_warning("You turn [src] off."))
+		to_chat(user, span_warning("I turn [src] off."))
 	on = FALSE
 	STOP_PROCESSING(SSobj, src)
 	set_light_on(FALSE)
@@ -146,14 +146,14 @@
 			if(!user.transferItemToLoc(W, src))
 				return
 			cell = C
-			to_chat(user, span_notice("You install a cell in [src]."))
+			to_chat(user, span_notice("I install a cell in [src]."))
 
 	else if(W.tool_behaviour == TOOL_SCREWDRIVER)
 		if(cell)
 			cell.update_icon()
 			cell.forceMove(get_turf(src))
 			cell = null
-			to_chat(user, span_notice("You remove the cell from [src]."))
+			to_chat(user, span_notice("I remove the cell from [src]."))
 			turn_off(user, TRUE)
 	else
 		return ..()
@@ -255,7 +255,7 @@
 
 /obj/item/electrostaff/proc/clowning_around(mob/living/user)
 	user.visible_message(span_danger("[user] accidentally hits [user.p_them()]self with [src]!"), \
-						span_userdanger("You accidentally hit yourself with [src]!"))
+						span_userdanger("I accidentally hit yourself with [src]!"))
 	SEND_SIGNAL(user, COMSIG_LIVING_MINOR_SHOCK)
 	harm_act(user, user, TRUE)
 	stun_act(user, user, TRUE)

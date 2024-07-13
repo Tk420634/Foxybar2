@@ -67,11 +67,11 @@
 			to_chat(user, span_info("Access denied."))
 			return
 		if(!panel_open)
-			to_chat(user, span_notice("You open the maintenance panel."))
+			to_chat(user, span_notice("I open the maintenance panel."))
 			set_sign(new /datum/barsign/hiddensigns/signoff)
 			panel_open = TRUE
 		else
-			to_chat(user, span_notice("You close the maintenance panel."))
+			to_chat(user, span_notice("I close the maintenance panel."))
 			if(!broken && !(obj_flags & EMAGGED))
 				set_sign(pick(barsigns))
 			else if(obj_flags & EMAGGED)
@@ -89,10 +89,10 @@
 			return
 
 		if(I.use_tool(src, user, 0, 2))
-			to_chat(user, span_notice("You replace the burnt wiring."))
+			to_chat(user, span_notice("I replace the burnt wiring."))
 			broken = FALSE
 		else
-			to_chat(user, span_warning("You need at least two lengths of cable!"))
+			to_chat(user, span_warning("I need at least two lengths of cable!"))
 	else
 		return ..()
 
@@ -110,7 +110,7 @@
 		to_chat(user, span_warning("Nothing interesting happens!"))
 		return
 	obj_flags |= EMAGGED
-	to_chat(user, span_notice("You emag the barsign. Takeover in progress..."))
+	to_chat(user, span_notice("I emag the barsign. Takeover in progress..."))
 	addtimer(CALLBACK(src,PROC_REF(syndie_bar_good)), 10 SECONDS)
 	return TRUE
 
@@ -264,7 +264,7 @@
 /datum/barsign/thenet
 	name = "The Net"
 	icon = "thenet"
-	desc = "You just seem to get caught up in it for hours."
+	desc = "I just seem to get caught up in it for hours."
 
 /datum/barsign/maidcafe
 	name = "Maid Cafe"

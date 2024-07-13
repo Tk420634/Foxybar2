@@ -490,7 +490,7 @@
 	var/list/itworth = techweb_item_point_check(src)
 	for(var/tweb in itworth)
 		if(isnum(itworth[tweb]) && itworth[tweb] > 0)
-			. += span_green("You figure this thing is worth around [round(itworth[tweb], 250)] science points.")
+			. += span_green("I figure this thing is worth around [round(itworth[tweb], 250)] science points.")
 
 	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user, .)
 
@@ -544,7 +544,7 @@
 		return				//why are you buckling nonliving mobs to atoms?
 	if(user.buckle_message_cooldown <= world.time)
 		user.buckle_message_cooldown = world.time + 50
-		to_chat(user, span_warning("You can't move while buckled to [src]!"))
+		to_chat(user, span_warning("I can't move while buckled to [src]!"))
 		SEND_SIGNAL(user, COMSIG_ATOM_RELAYMOVE, src)
 		SEND_SIGNAL(src, COMSIG_ATOM_RELAYMOVE, user)
 
@@ -779,7 +779,7 @@
 	while (do_after(user, 10, TRUE, src, FALSE, CALLBACK(STR, TYPE_PROC_REF(/datum/component/storage,handle_mass_item_insertion), things, src_object, user, my_bar)))
 		stoplag(1)
 	SSprogress_bars.remove_bar(my_bar)
-	to_chat(user, span_notice("You dump as much of [src_object.parent]'s contents into [STR.insert_preposition]to [src] as you can."))
+	to_chat(user, span_notice("I dump as much of [src_object.parent]'s contents into [STR.insert_preposition]to [src] as you can."))
 	if(user.active_storage) //refresh the HUD to show the transfered contents
 		user.active_storage.ui_show(user)
 	return TRUE

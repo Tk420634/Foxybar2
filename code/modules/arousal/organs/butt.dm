@@ -34,7 +34,7 @@ GLOBAL_LIST_INIT(butt_descriptors, list(
 /// butt
 /obj/item/organ/genital/butt
 	name = "butt"
-	desc = "You see a patootie."
+	desc = "I see a patootie."
 	icon_state = "butt"
 	icon = 'icons/obj/genitals/butt.dmi'
 	zone = BODY_ZONE_PRECISE_GROIN
@@ -85,7 +85,7 @@ GLOBAL_LIST_INIT(butt_descriptors, list(
 	var/rounded_size = clamp(size, BUTT_SIZE_MIN, BUTT_SIZE_MAX)
 	if(size < 0)//I don't actually know what round() does to negative numbers, so to be safe!!fixed
 		if(owner)
-			to_chat(owner, span_warning("You feel your asscheeks shrink down to an ordinary size."))
+			to_chat(owner, span_warning("I feel your asscheeks shrink down to an ordinary size."))
 		QDEL_IN(src, 1)
 		return
 
@@ -93,9 +93,9 @@ GLOBAL_LIST_INIT(butt_descriptors, list(
 		var/mob/living/carbon/human/H = owner
 		var/r_prev_size = round(prev_size)
 		if (rounded_size > r_prev_size)
-			to_chat(H, span_warning("Your [pick(GLOB.butt_descriptors["buttsize"])] [pick(GLOB.butt_descriptors["grow"])] a larger pair."))
+			to_chat(H, span_warning("My [pick(GLOB.butt_descriptors["buttsize"])] [pick(GLOB.butt_descriptors["grow"])] a larger pair."))
 		else if (rounded_size < r_prev_size)
-			to_chat(H, span_warning("Your [pick(GLOB.butt_descriptors["buttsize"])] [pick(GLOB.butt_descriptors["grow"])] a smaller pair."))
+			to_chat(H, span_warning("My [pick(GLOB.butt_descriptors["buttsize"])] [pick(GLOB.butt_descriptors["grow"])] a smaller pair."))
 
 /obj/item/organ/genital/butt/update_appearance()
 	//Reflect the size of dat ass on examine.
@@ -119,7 +119,7 @@ GLOBAL_LIST_INIT(butt_descriptors, list(
 		else
 			size_name = "nonexistent"
 
-	desc = "You see \a [size_name] [pick(GLOB.butt_descriptors["buttdesc"])]."
+	desc = "I see \a [size_name] [pick(GLOB.butt_descriptors["buttdesc"])]."
 
 	var/icon_size = round(clamp(size, BUTT_SIZE_MIN, BUTT_SIZE_MAX), 1)
 	icon_state = "butt_pair_[icon_size]"

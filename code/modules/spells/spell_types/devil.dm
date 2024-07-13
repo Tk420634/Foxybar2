@@ -80,7 +80,7 @@
 	school = "evocation"
 	charge_max = 80
 	clothes_req = NONE
-	invocation = "Your very soul will catch fire!"
+	invocation = "My very soul will catch fire!"
 	invocation_type = "shout"
 	range = 2
 
@@ -106,25 +106,25 @@
 	if(istype(user))
 		if(istype(user.loc, /obj/effect/dummy/phased_mob/slaughter/))
 			if(valid_location(user))
-				to_chat(user, span_warning("You are now phasing in."))
+				to_chat(user, span_warning("I am now phasing in."))
 				if(do_mob(user,user,150))
 					if(valid_location(user))
 						user.infernalphasein()
 					else
-						to_chat(user, span_warning("You are no longer near a potential signer."))
+						to_chat(user, span_warning("I am no longer near a potential signer."))
 
 			else
-				to_chat(user, span_warning("You can only re-appear near a potential signer."))
+				to_chat(user, span_warning("I can only re-appear near a potential signer."))
 				revert_cast()
 				return ..()
 		else
 			user.mob_transforming = TRUE
 			user.fakefire()
-			to_chat(src, span_warning("You begin to phase back into sinful flames."))
+			to_chat(src, span_warning("I begin to phase back into sinful flames."))
 			if(do_mob(user,user,150))
 				user.infernalphaseout()
 			else
-				to_chat(user, span_warning("You must remain still while exiting."))
+				to_chat(user, span_warning("I must remain still while exiting."))
 				user.mob_transforming = FALSE
 				user.fakefireextinguish()
 		start_recharge()

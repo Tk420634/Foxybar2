@@ -37,7 +37,7 @@
 		to_chat(user, "<span class'warning'>The [name] is already active!</span>")
 		return
 
-	to_chat(user, span_notice("You start vigorously plunging [src]!"))
+	to_chat(user, span_notice("I start vigorously plunging [src]!"))
 	if(do_after(user, 50 * P.plunge_mod, target = src) && !activated)
 		start_chemming()
 

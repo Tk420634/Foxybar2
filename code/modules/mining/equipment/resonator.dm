@@ -27,10 +27,10 @@
 /obj/item/resonator/attack_self(mob/user)
 	if(burst_time == 50)
 		burst_time = 30
-		to_chat(user, span_info("You set the resonator's fields to detonate after 3 seconds."))
+		to_chat(user, span_info("I set the resonator's fields to detonate after 3 seconds."))
 	else
 		burst_time = 50
-		to_chat(user, span_info("You set the resonator's fields to detonate after 5 seconds."))
+		to_chat(user, span_info("I set the resonator's fields to detonate after 5 seconds."))
 
 /obj/item/resonator/proc/CreateResonance(target, mob/user)
 	var/turf/T = get_turf(target)

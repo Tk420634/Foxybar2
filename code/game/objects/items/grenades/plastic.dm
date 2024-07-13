@@ -47,7 +47,7 @@
 		nadeassembly = A
 		A.master = src
 		assemblyattacher = user.ckey
-		to_chat(user, span_notice("You add [A] to the [name]."))
+		to_chat(user, span_notice("I add [A] to the [name]."))
 		playsound(src, 'sound/weapons/tap.ogg', 20, 1)
 		update_icon()
 		return
@@ -113,7 +113,7 @@
 	if(ismob(AM) && !can_attach_mob)
 		return
 
-	to_chat(user, span_notice("You start planting [src]. The timer is set to [det_time]..."))
+	to_chat(user, span_notice("I start planting [src]. The timer is set to [det_time]..."))
 
 	if(do_after(user, 30, target = AM))
 		if(!user.temporarilyRemoveItemFromInventory(src))
@@ -136,7 +136,7 @@
 		RegisterSignal(target, COMSIG_ATOM_UPDATE_OVERLAYS,PROC_REF(add_plastic_overlay))
 		target.update_icon()
 		if(!nadeassembly)
-			to_chat(user, span_notice("You plant the bomb. Timer counting down from [det_time]."))
+			to_chat(user, span_notice("I plant the bomb. Timer counting down from [det_time]."))
 			addtimer(CALLBACK(src,PROC_REF(prime)), det_time*10)
 		else
 			qdel(src)	//How?
@@ -175,7 +175,7 @@
 /obj/item/grenade/plastic/c4/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/screwdriver))
 		open_panel = !open_panel
-		to_chat(user, span_notice("You [open_panel ? "open" : "close"] the wire panel."))
+		to_chat(user, span_notice("I [open_panel ? "open" : "close"] the wire panel."))
 	else if(is_wire_tool(I))
 		wires.interact(user)
 	else

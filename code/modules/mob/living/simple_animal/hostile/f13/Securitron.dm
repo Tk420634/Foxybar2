@@ -113,7 +113,7 @@
 
 /mob/living/simple_animal/hostile/securitron/proc/do_death_beep()
 	playsound(src, 'sound/machines/triple_beep.ogg', 75, FALSE)
-	visible_message(span_warning("You hear an ominous beep coming from [src]!"), span_warning("You hear an ominous beep!"))
+	visible_message(span_warning("I hear an ominous beep coming from [src]!"), span_warning("I hear an ominous beep!"))
 
 /mob/living/simple_animal/hostile/securitron/proc/self_destruct()
 	explosion(

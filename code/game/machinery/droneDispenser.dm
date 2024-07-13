@@ -214,7 +214,7 @@
 		var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
 		materials.retrieve_all()
 		I.play_tool_sound(src)
-		to_chat(user, span_notice("You retrieve the materials from [src]."))
+		to_chat(user, span_notice("I retrieve the materials from [src]."))
 
 	else if(istype(I, /obj/item/weldingtool))
 		if(!(stat & BROKEN))
@@ -226,14 +226,14 @@
 
 		user.visible_message(
 			span_notice("[user] begins patching up [src] with [I]."),
-			span_notice("You begin restoring the damage to [src]..."))
+			span_notice("I begin restoring the damage to [src]..."))
 
 		if(!I.use_tool(src, user, 40, volume=50, amount=1))
 			return
 
 		user.visible_message(
 			span_notice("[user] fixes [src]!"),
-			span_notice("You restore [src] to operation."))
+			span_notice("I restore [src] to operation."))
 
 		stat &= ~BROKEN
 		obj_integrity = max_integrity

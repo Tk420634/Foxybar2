@@ -85,10 +85,10 @@
 			return
 		else if(G.use(decrement))
 			AddUses(increment)
-			to_chat(user, span_notice("You insert a piece of glass into the [src.name]. You have [uses] light\s remaining."))
+			to_chat(user, span_notice("I insert a piece of glass into the [src.name]. You have [uses] light\s remaining."))
 			return
 		else
-			to_chat(user, span_warning("You need one sheet of glass to replace lights!"))
+			to_chat(user, span_warning("I need one sheet of glass to replace lights!"))
 
 	if(istype(W, /obj/item/shard))
 		if(uses >= max_uses)
@@ -97,7 +97,7 @@
 		if(!user.temporarilyRemoveItemFromInventory(W))
 			return
 		AddUses(round(increment*0.75))
-		to_chat(user, span_notice("You insert a shard of glass into the [src.name]. You have [uses] light\s remaining."))
+		to_chat(user, span_notice("I insert a shard of glass into the [src.name]. You have [uses] light\s remaining."))
 		qdel(W)
 		return
 
@@ -112,7 +112,7 @@
 		else
 			if(!user.temporarilyRemoveItemFromInventory(W))
 				return
-			to_chat(user, span_notice("You insert the [L.name] into the [src.name]"))
+			to_chat(user, span_notice("I insert the [L.name] into the [src.name]"))
 			AddShards(1, user)
 			qdel(L)
 		return
@@ -146,7 +146,7 @@
 			to_chat(user, span_warning("\The [src] is full!"))
 			return
 
-		to_chat(user, span_notice("You fill \the [src] with lights from \the [S]. " + status_string() + ""))
+		to_chat(user, span_notice("I fill \the [src] with lights from \the [S]. " + status_string() + ""))
 
 /obj/item/lightreplacer/emag_act()
 	. = ..()
@@ -196,7 +196,7 @@
 		if(CanUse(U))
 			if(!Use(U))
 				return
-			to_chat(U, span_notice("You replace the [target.fitting] with \the [src]."))
+			to_chat(U, span_notice("I replace the [target.fitting] with \the [src]."))
 
 			if(target.status != LIGHT_EMPTY)
 				AddShards(1, U)

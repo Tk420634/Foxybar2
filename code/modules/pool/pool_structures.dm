@@ -64,7 +64,7 @@
 		else
 			if(Adjacent(jumper))
 				jumper.visible_message(span_notice("[user] climbs up \the [src]!"), \
-									span_notice("You climb up \the [src] and prepares to jump!"))
+									span_notice("I climb up \the [src] and prepares to jump!"))
 				jumper.Stun(40)
 				jumping = TRUE
 				var/original_layer = jumper.layer
@@ -83,7 +83,7 @@
 	switch(rand(1, 100))
 		if(1 to 20)
 			jumper.visible_message(span_notice("[jumper] goes for a small dive!"), \
-								span_notice("You go for a small dive."))
+								span_notice("I go for a small dive."))
 			sleep(15)
 			backswim()
 			var/atom/throw_target = get_edge_target_turf(src, dir)
@@ -107,7 +107,7 @@
 
 		if(61 to 80)
 			jumper.visible_message(span_notice("[jumper] goes for an awesome dive! Don't stand in [jumper.p_their()] way!"), \
-								span_notice("You feel like this dive will be awesome"))
+								span_notice("I feel like this dive will be awesome"))
 			sleep(30)
 			backswim()
 			var/atom/throw_target = get_edge_target_turf(src, dir)
@@ -116,7 +116,7 @@
 			sleep(20)
 			backswim()
 			jumper.visible_message(span_danger("[jumper] misses [jumper.p_their()] step!"), \
-							span_userdanger("You misstep!"))
+							span_userdanger("I misstep!"))
 			var/atom/throw_target = get_edge_target_turf(src, dir)
 			jumper.throw_at(throw_target, 0, 1, callback = CALLBACK(src,PROC_REF(on_finish_jump), jumper))
 			jumper.DefaultCombatKnockdown(100)
@@ -124,14 +124,14 @@
 
 		if(91 to 100)
 			jumper.visible_message(span_notice("[jumper] is preparing for the legendary dive! Can [jumper.p_they()] make it?"), \
-								span_userdanger("You start preparing for a legendary dive!"))
+								span_userdanger("I start preparing for a legendary dive!"))
 			jumper.SpinAnimation(7,1)
 
 			sleep(30)
 			if(prob(75))
 				backswim()
 				jumper.visible_message(span_notice("[jumper] fails!"), \
-						span_userdanger("You can't quite do it!"))
+						span_userdanger("I can't quite do it!"))
 				var/atom/throw_target = get_edge_target_turf(src, dir)
 				jumper.throw_at(throw_target, 1, 1, callback = CALLBACK(src,PROC_REF(on_finish_jump), jumper))
 			else

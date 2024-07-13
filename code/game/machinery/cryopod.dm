@@ -243,7 +243,7 @@
 		var/mob/living/mob_occupant = occupant
 		investigate_log("Cryogenics machine closed with occupant [key_name(occupant)] by user [key_name(user)].", INVESTIGATE_CRYOGENICS)
 		if(mob_occupant && mob_occupant.stat != DEAD)
-			to_chat(occupant, span_boldnotice("You feel cool air surround you. You go numb as your senses turn inward."))
+			to_chat(occupant, span_boldnotice("I feel cool air surround you. You go numb as your senses turn inward."))
 		if(mob_occupant.client)//if they're logged in
 			despawn_world_time = world.time + (time_till_despawn * 0.1)
 		else
@@ -261,7 +261,7 @@
 /obj/machinery/cryopod/container_resist(mob/living/user)
 	investigate_log("Cryogenics machine container resisted by [key_name(user)] with occupant [key_name(occupant)].", INVESTIGATE_CRYOGENICS)
 	visible_message(span_notice("[occupant] emerges from [src]!"),
-		span_notice("You climb out of [src]!"))
+		span_notice("I climb out of [src]!"))
 	open_machine()
 
 /obj/machinery/cryopod/relaymove(mob/user)
@@ -440,9 +440,9 @@
 
 	if(target.client && user != target)
 		if(iscyborg(target))
-			to_chat(user, span_danger("You can't put [target] into [src]. They're online."))
+			to_chat(user, span_danger("I can't put [target] into [src]. They're online."))
 		else
-			to_chat(user, span_danger("You can't put [target] into [src]. They're conscious."))
+			to_chat(user, span_danger("I can't put [target] into [src]. They're conscious."))
 		return
 	else if(target.client)
 		if(alert(target,"Would you like to enter cryosleep?",,"Yes","No") == "No")

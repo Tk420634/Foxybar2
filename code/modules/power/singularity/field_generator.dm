@@ -71,12 +71,12 @@ field_generator power level display
 	if(state == FG_WELDED)
 		if(get_dist(src, user) <= 1)//Need to actually touch the thing to turn it on
 			if(active >= FG_CHARGING)
-				to_chat(user, span_warning("You are unable to turn off [src] once it is online!"))
+				to_chat(user, span_warning("I am unable to turn off [src] once it is online!"))
 				return 1
 			else
 				user.visible_message("[user] turns on [src].", \
-					span_notice("You turn on [src]."), \
-					span_italic("You hear heavy droning."))
+					span_notice("I turn on [src]."), \
+					span_italic("I hear heavy droning."))
 				turn_on()
 				investigate_log("<font color='green'>activated</font> by [key_name(user)].", INVESTIGATE_SINGULO)
 
@@ -122,21 +122,21 @@ field_generator power level display
 			if(!I.tool_start_check(user, amount=0))
 				return TRUE
 			user.visible_message("[user] starts to weld [src] to the floor.", \
-				span_notice("You start to weld \the [src] to the floor..."), \
-				span_italic("You hear welding."))
+				span_notice("I start to weld \the [src] to the floor..."), \
+				span_italic("I hear welding."))
 			if(I.use_tool(src, user, 20, volume=50) && state == FG_SECURED)
 				state = FG_WELDED
-				to_chat(user, span_notice("You weld the field generator to the floor."))
+				to_chat(user, span_notice("I weld the field generator to the floor."))
 
 		if(FG_WELDED)
 			if(!I.tool_start_check(user, amount=0))
 				return TRUE
 			user.visible_message("[user] starts to cut [src] free from the floor.", \
-				span_notice("You start to cut \the [src] free from the floor..."), \
-				span_italic("You hear welding."))
+				span_notice("I start to cut \the [src] free from the floor..."), \
+				span_italic("I hear welding."))
 			if(I.use_tool(src, user, 20, volume=50) && state == FG_WELDED)
 				state = FG_SECURED
-				to_chat(user, span_notice("You cut \the [src] free from the floor."))
+				to_chat(user, span_notice("I cut \the [src] free from the floor."))
 
 	return TRUE
 
@@ -204,7 +204,7 @@ field_generator power level display
 		check_power_level()
 		return 1
 	else
-		visible_message(span_danger("The [name] shuts down!"), span_italic("You hear something shutting down."))
+		visible_message(span_danger("The [name] shuts down!"), span_italic("I hear something shutting down."))
 		turn_off()
 		investigate_log("ran out of power and <font color='red'>deactivated</font>", INVESTIGATE_SINGULO)
 		power = 0

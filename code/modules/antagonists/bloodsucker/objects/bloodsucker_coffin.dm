@@ -32,8 +32,8 @@
 	coffin = claimed
 	lair = get_area(claimed)
 	// DONE
-	to_chat(owner, span_userdanger("You have claimed the [claimed] as your place of immortal rest! Your lair is now [lair]."))
-	to_chat(owner, span_danger("You have learned new construction recipes to improve your lair."))
+	to_chat(owner, span_userdanger("I have claimed the [claimed] as your place of immortal rest! Your lair is now [lair]."))
+	to_chat(owner, span_danger("I have learned new construction recipes to improve your lair."))
 	to_chat(owner, "<span class='announce'>Bloodsucker Tip: Find new lair recipes in the misc tab of the <i>Crafting Menu</i> at the bottom of the screen, including the <i>Persuasion Rack</i> for converting crew into Vassals.</span><br><br>")
 	RunLair() // Start
 	return TRUE
@@ -120,7 +120,7 @@
 			if (welded)
 				welded = FALSE
 				update_icon()
-			//to_chat(user, span_notice("You flip a secret latch and unlock [src].")) // Don't bother. We know it's unlocked.
+			//to_chat(user, span_notice("I flip a secret latch and unlock [src].")) // Don't bother. We know it's unlocked.
 			locked = FALSE
 			return 1
 		else
@@ -147,11 +147,11 @@
 					if("Yes")
 						ClaimCoffin(user)
 			if (user.AmStaked()) // Stake? No Heal!
-				to_chat(bloodsuckerdatum.owner.current, span_userdanger("You are staked! Remove the offending weapon from your heart before sleeping."))
+				to_chat(bloodsuckerdatum.owner.current, span_userdanger("I am staked! Remove the offending weapon from your heart before sleeping."))
 				return
 			// Heal
 			if(bloodsuckerdatum.HandleHealing(0)) // Healing Mult 0 <--- We only want to check if healing is valid!
-				to_chat(bloodsuckerdatum.owner.current, span_notice("You enter the horrible slumber of deathless Torpor. You will heal until you are renewed."))
+				to_chat(bloodsuckerdatum.owner.current, span_notice("I enter the horrible slumber of deathless Torpor. You will heal until you are renewed."))
 				bloodsuckerdatum.Torpor_Begin()
 			// Level Up?
 			bloodsuckerdatum.SpendRank() // Auto-Fails if not appropriate
@@ -171,7 +171,7 @@
 	if(locked && istype(W, /obj/item/crowbar))
 		var/pry_time = pryLidTimer * W.toolspeed // Pry speed must be affected by the speed of the tool.
 		user.visible_message(span_notice("[user] tries to pry the lid off of [src] with [W]."), \
-							  span_notice("You begin prying the lid off of [src] with [W]. This should take about [DisplayTimeText(pry_time)]."))
+							  span_notice("I begin prying the lid off of [src] with [W]. This should take about [DisplayTimeText(pry_time)]."))
 		if (!do_mob(user,src,pry_time))
 			return
 		bust_open()
@@ -192,11 +192,11 @@
 	if (user == resident)
 		if (!broken)
 			locked = inLocked
-			to_chat(user, span_notice("You flip a secret latch and [locked?"":"un"]lock yourself inside [src]."))
+			to_chat(user, span_notice("I flip a secret latch and [locked?"":"un"]lock yourself inside [src]."))
 		else
 			to_chat(resident, span_notice("The secret latch to lock [src] from the inside is broken. You set it back into place..."))
 			if (do_mob(resident, src, 50))//sleep(10)
 				if (broken) // Spam Safety
-					to_chat(resident, span_notice("You fix the mechanism and lock it."))
+					to_chat(resident, span_notice("I fix the mechanism and lock it."))
 					broken = FALSE
 					locked = TRUE

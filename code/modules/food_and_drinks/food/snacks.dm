@@ -25,7 +25,7 @@ Food formatting and crafting examples.
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1,				//What's -added- to the food, in addition to the reagents contained inside the foods used to craft it. Basically, a reward for cooking.
 						/datum/reagent/consumable/nutriment/vitamin = 1)		^^For example. Egg+Egg = 2Egg + Bonus Reagents.
 	filling_color = "#F4A460"													//What color it will use if put in a custom food.
-	tastes = list("salt" = 1, "oil" = 1)										//Descriptive flavoring displayed when eaten. IE: "You taste a bit of salt and a bit of oil."
+	tastes = list("salt" = 1, "oil" = 1)										//Descriptive flavoring displayed when eaten. IE: "I taste a bit of salt and a bit of oil."
 	foodtype = GRAIN | JUNKFOOD													//Tag for racial or custom food preferences. IE: Most Lizards cannot have GRAIN.
 
 Crafting Recipe (See files in code/modules/food_and_drinks/recipes/tablecraft/)
@@ -134,10 +134,10 @@ All foods are distributed among various categories. Use common sense.
 		if(M == user || forced) //If you're eating it yourself.
 			if(junkiness && M.satiety < -150 && M.nutrition > NUTRITION_LEVEL_STARVING + 50)
 				if(HAS_TRAIT(M, TRAIT_VORACIOUS))
-					to_chat(M, span_notice("You happily choke down yet more junk food!"))
+					to_chat(M, span_notice("I happily choke down yet more junk food!"))
 					M.adjust_disgust(-1)
 				else
-					to_chat(M, span_danger("You feel sick as you choke down yet more junk food!"))
+					to_chat(M, span_danger("I feel sick as you choke down yet more junk food!"))
 					M.adjust_disgust(1)
 			if(!silent)
 				switch(fullness)
@@ -145,48 +145,48 @@ All foods are distributed among various categories. Use common sense.
 						if(HAS_TRAIT(M, TRAIT_VORACIOUS))
 							M.visible_message(
 								span_notice("[M] ravenously [eatverb]s \the [src], gobbling it down!"), 
-								span_notice("You ravenously [eatverb] \the [src], gobbling it down!"))
+								span_notice("I ravenously [eatverb] \the [src], gobbling it down!"))
 						else
 							M.visible_message(
 								span_notice("[M] hungrily [eatverb]s \the [src], gobbling it down!"), 
-								span_notice("You hungrily [eatverb] \the [src], gobbling it down!"))
+								span_notice("I hungrily [eatverb] \the [src], gobbling it down!"))
 					if(50 to 200)
 						if(HAS_TRAIT(M, TRAIT_VORACIOUS))
 							M.visible_message(
 								span_notice("[M] ravenously [eatverb]s \the [src]!"), 
-								span_notice("You ravenously [eatverb] \the [src]!"))
+								span_notice("I ravenously [eatverb] \the [src]!"))
 						else
 							M.visible_message(
 								span_notice("[M] hungrily [eatverb]s \the [src]."), 
-								span_notice("You hungrily [eatverb] \the [src]."))
+								span_notice("I hungrily [eatverb] \the [src]."))
 					if(200 to 500)
 						if(HAS_TRAIT(M, TRAIT_VORACIOUS))
 							M.visible_message(
 								span_notice("[M] vigorously [eatverb]s \the [src]!"), 
-								span_notice("You vigorously [eatverb] \the [src]!"))
+								span_notice("I vigorously [eatverb] \the [src]!"))
 						else
 							M.visible_message(
 								span_notice("[M] [eatverb]s \the [src]."), 
-								span_notice("You [eatverb] \the [src]."))
+								span_notice("I [eatverb] \the [src]."))
 					if(500 to 650)
 						if(HAS_TRAIT(M, TRAIT_VORACIOUS))
 							M.visible_message(
 								span_notice("[M] gluttonously [eatverb]s \the [src]!"), 
-								span_notice("You gluttonously [eatverb] \the [src]!"))
+								span_notice("I gluttonously [eatverb] \the [src]!"))
 						else
 							M.visible_message(
 								span_notice("[M] unwillingly [eatverb]s \the [src]."), 
-								span_notice("You unwillingly [eatverb] \the [src]."))
+								span_notice("I unwillingly [eatverb] \the [src]."))
 					//if((600 * (1 + M.overeatduration / 1000)) to INFINITY) // Had to change this to a const, sorry if it don't work! Can convert it to an if else statemetnt but I'm lazy.
 					if(650 to INFINITY)
 						if(HAS_TRAIT(M, TRAIT_VORACIOUS) || forced)
 							M.visible_message(
 								span_notice("[M] gluttonously [eatverb]s \the [src], cramming it down [M.p_their()] throat!"), 
-								span_notice("You gluttonously [eatverb] \the [src], cramming it down your throat!"))
+								span_notice("I gluttonously [eatverb] \the [src], cramming it down your throat!"))
 						else
 							M.visible_message(
 								span_warning("[M] cannot force any more of \the [src] to go down [M.p_their()] throat!"), 
-								span_warning("You cannot force any more of \the [src] to go down your throat!"))
+								span_warning("I cannot force any more of \the [src] to go down your throat!"))
 							return
 		else
 			if(isbrain(M))
@@ -266,7 +266,7 @@ All foods are distributed among various categories. Use common sense.
 				to_chat(user, span_warning("[src] can't be filled with [S]!"))
 				return 0
 			if(contents.len >= 20)
-				to_chat(user, span_warning("You can't add more ingredients to [src]!"))
+				to_chat(user, span_warning("I can't add more ingredients to [src]!"))
 				return 0
 			var/obj/item/reagent_containers/food/snacks/customizable/C = new custom_food_type(get_turf(src))
 			C.initialize_custom_food(src, S, user)
@@ -311,10 +311,10 @@ All foods are distributed among various categories. Use common sense.
 			!(locate(/obj/structure/table/optable) in src.loc) && \
 			!(locate(/obj/item/storage/bag/tray) in src.loc) \
 		)
-		to_chat(user, span_warning("You cannot slice [src] here! You need a table or at least a tray."))
+		to_chat(user, span_warning("I cannot slice [src] here! You need a table or at least a tray."))
 		return FALSE
 
-	user.visible_message("[user] slices [src].", span_notice("You slice [src]."))
+	user.visible_message("[user] slices [src].", span_notice("I slice [src]."))
 	var/reagents_per_slice = reagents.total_volume/slices_num
 	for(var/i=1 to slices_num)
 		var/obj/item/reagent_containers/food/snacks/slice = new slice_path (loc)
@@ -422,7 +422,7 @@ All foods are distributed among various categories. Use common sense.
 			to_chat(user, span_warning("[M] is unable to be dunked in!"))
 			return
 		if(M.reagents.trans_to(src, dunk_amount, log = TRUE))	//if reagents were transfered, show the message
-			to_chat(user, span_notice("You dunk the [M]."))
+			to_chat(user, span_notice("I dunk the [M]."))
 			return
 		if(!M.reagents.total_volume)
 			to_chat(user, span_warning("[M] is empty!"))
@@ -447,7 +447,7 @@ All foods are distributed among various categories. Use common sense.
 		if(contents.len >= 20)
 			to_chat(user, span_warning("[src] is full."))
 			return 0
-		to_chat(user, span_notice("You slip [W] inside [src]."))
+		to_chat(user, span_notice("I slip [W] inside [src]."))
 		user.transferItemToLoc(W, src)
 		add_fingerprint(user)
 		contents += W

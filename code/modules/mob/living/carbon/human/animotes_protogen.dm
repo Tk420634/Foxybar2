@@ -33,7 +33,7 @@
 		H.dna.features["mam_snouts"] == "Protogen with Beak - Snout Tertiary Under" \
 	)
 		return TRUE
-	to_chat(usr, span_warning("You realize that you're actually missing a protogen visor to do this..."))
+	to_chat(usr, span_warning("I realize that you're actually missing a protogen visor to do this..."))
 	return FALSE
 ////////////////////////////////////////////////////////////////////////////////////////////////
 

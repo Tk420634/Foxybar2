@@ -28,7 +28,7 @@
 			return
 
 		locked = !locked
-		to_chat(user, "You [locked ? "lock" : "unlock"] \the [src] access panel.")
+		to_chat(user, "I [locked ? "lock" : "unlock"] \the [src] access panel.")
 		return
 
 	else if(istype(W,/obj/item/crowbar))
@@ -37,7 +37,7 @@
 			return
 
 		open = !open
-		to_chat(user, "You [open ? "open" : "close"] the access panel.")
+		to_chat(user, "I [open ? "open" : "close"] the access panel.")
 		return
 
 	if(open)
@@ -46,7 +46,7 @@
 			if(open)
 				wires.interact(user)
 			else
-				to_chat(user, "You can't reach the wiring.")
+				to_chat(user, "I can't reach the wiring.")
 			return
 		// Air tank.
 		if(istype(W,/obj/item/tank)) //Todo, some kind of check for suits without integrated air supplies.
@@ -57,7 +57,7 @@
 			user.doUnEquip(W)
 			air_supply = W
 			W.forceMove(src)
-			to_chat(user, "You slot [W] into [src] and tighten the connecting valve.")
+			to_chat(user, "I slot [W] into [src] and tighten the connecting valve.")
 			return
 
 		// Check if this is a hardsuit upgrade or a modification.
@@ -65,7 +65,7 @@
 			if(istype(src.loc,/mob/living/carbon/human))
 				var/mob/living/carbon/human/H = src.loc
 				if(H.back == src)
-					to_chat(user, span_danger("You can't install a hardsuit module while the suit is being worn."))
+					to_chat(user, span_danger("I can't install a hardsuit module while the suit is being worn."))
 					return 1
 
 			if(!installed_modules) 
@@ -77,12 +77,12 @@
 						return 1
 
 			var/obj/item/rig_module/mod = W
-			to_chat(user, "You begin installing \the [mod] into \the [src].")
+			to_chat(user, "I begin installing \the [mod] into \the [src].")
 			if(!do_after(user, 40 * W.toolspeed, target = src))
 				return
 			if(!user || !W)
 				return
-			to_chat(user, "You install \the [mod] into \the [src].")
+			to_chat(user, "I install \the [mod] into \the [src].")
 			user.doUnEquip(mod)
 			installed_modules |= mod
 			mod.forceMove(src)
@@ -91,7 +91,7 @@
 			return 1
 
 		else if(!cell && istype(W,/obj/item/stock_parts/cell))
-			to_chat(user, "You jack \the [W] into \the [src]'s battery mount.")
+			to_chat(user, "I jack \the [W] into \the [src]'s battery mount.")
 			user.doUnEquip(W)
 			W.forceMove(src)
 			src.cell = W
@@ -105,7 +105,7 @@
 				air_supply.forceMove(get_turf(user))
 			else
 				user.put_in_hands(air_supply)
-			to_chat(user, "You detach and remove \the [air_supply].")
+			to_chat(user, "I detach and remove \the [air_supply].")
 			air_supply = null
 			return
 
@@ -121,13 +121,13 @@
 			if(istype(src.loc,/mob/living/carbon/human) && to_remove != "cell")
 				var/mob/living/carbon/human/H = src.loc
 				if(H.back == src)
-					to_chat(user, "You can't remove an installed device while the hardsuit is being worn.")
+					to_chat(user, "I can't remove an installed device while the hardsuit is being worn.")
 					return
 
 			switch(to_remove)
 				if("cell")
 					if(cell)
-						to_chat(user, "You detatch \the [cell] from \the [src]'s battery mount.")
+						to_chat(user, "I detatch \the [cell] from \the [src]'s battery mount.")
 						for(var/obj/item/rig_module/module in installed_modules)
 							module.deactivate()
 						var/l_hand2 = user.get_item_for_held_index(1)
@@ -156,7 +156,7 @@
 						return
 
 					var/obj/item/rig_module/removed = possible_removals[removal_choice]
-					to_chat(user, "You detatch \the [removed] from \the [src].")
+					to_chat(user, "I detatch \the [removed] from \the [src].")
 					removed.forceMove(get_turf(src))
 					removed.removed()
 					installed_modules -= removed
@@ -184,5 +184,5 @@
 		req_one_access.Cut()
 		locked = FALSE
 		subverted = TRUE
-		to_chat(user, span_danger("You short out the access protocol for the suit."))
+		to_chat(user, span_danger("I short out the access protocol for the suit."))
 		return TRUE

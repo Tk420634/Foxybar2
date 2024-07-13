@@ -286,7 +286,7 @@ Creating a chem with a low purity will make you permanently fall in love with so
 		love = pick(seen)
 		M.apply_status_effect(STATUS_EFFECT_INLOVE, love)
 		lewd = (M.client?.prefs.cit_toggles & HYPNO) && (love.client?.prefs.cit_toggles & HYPNO)
-		to_chat(M, "[(lewd?"<span class='love'>":"<span class='warning'>")][(lewd?"You develop a sudden crush on [love], your heart beginning to race as you look upon them with new eyes.":"You suddenly feel like making friends with [love].")] You feel strangely drawn towards them.</span>")
+		to_chat(M, "[(lewd?"<span class='love'>":"<span class='warning'>")][(lewd?"I develop a sudden crush on [love], your heart beginning to race as you look upon them with new eyes.":"I suddenly feel like making friends with [love].")] You feel strangely drawn towards them.</span>")
 		log_reagent("FERMICHEM: [M] ckey: [M.key] has temporarily bonded with [love] ckey: [love.key]")
 		SSblackbox.record_feedback("tally", "fermi_chem", 1, "Times people have bonded")
 	else
@@ -319,12 +319,12 @@ Creating a chem with a low purity will make you permanently fall in love with so
 	if(Lover.client?.prefs.cit_toggles & NEVER_HYPNO)
 		return // doesn't even give a message, it's just ignored
 	if(Lover.has_status_effect(STATUS_EFFECT_INLOVE))
-		to_chat(Lover, span_warning("You are already fully devoted to someone else!"))
+		to_chat(Lover, span_warning("I am already fully devoted to someone else!"))
 		return
 	var/lewd = (Lover.client?.prefs.cit_toggles & HYPNO) && (Love.client?.prefs.cit_toggles & HYPNO)
 	to_chat(Lover, "[(lewd?"<span class='love'>":"<span class='warning'>")]You develop a deep and sudden bond with [Love][(lewd?", your heart beginning to race as your mind filles with thoughts about them.":".")] You are determined to keep them safe and happy, and feel drawn towards them.</span>")
 	if(Lover.mind)
-		Lover.mind.store_memory("You are in love with [Love].")
+		Lover.mind.store_memory("I am in love with [Love].")
 	Lover.faction |= "[REF(Love)]"
 	Lover.apply_status_effect(STATUS_EFFECT_INLOVE, Love)
 	forge_valentines_objective(Lover, Love, TRUE)

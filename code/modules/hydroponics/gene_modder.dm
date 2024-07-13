@@ -86,7 +86,7 @@
 				if(!user.temporarilyRemoveItemFromInventory(I))
 					return
 				insert_seed(I)
-				to_chat(user, span_notice("You add [I] to the machine."))
+				to_chat(user, span_notice("I add [I] to the machine."))
 				interact(user)
 			return
 		else if(istype(I, /obj/item/disk/plantgene))
@@ -97,7 +97,7 @@
 			if(!user.transferItemToLoc(I, src))
 				return
 			disk = I
-			to_chat(user, span_notice("You add [I] to the machine."))
+			to_chat(user, span_notice("I add [I] to the machine."))
 			interact(user)
 		else
 			..()
@@ -275,7 +275,7 @@
 				if(!usr.temporarilyRemoveItemFromInventory(I))
 					return
 				insert_seed(I)
-				to_chat(usr, span_notice("You add [I] to the machine."))
+				to_chat(usr, span_notice("I add [I] to the machine."))
 		update_icon()
 	else if(href_list["eject_disk"] && !operation)
 		var/obj/item/I = usr.get_active_held_item()
@@ -284,7 +284,7 @@
 			if(!usr.transferItemToLoc(I, src))
 				return
 			disk = I
-			to_chat(usr, span_notice("You add [I] to the machine."))
+			to_chat(usr, span_notice("I add [I] to the machine."))
 	else if(href_list["op"] == "insert" && disk && disk.gene && seed)
 		if(!operation) // Wait for confirmation
 			operation = "insert"
@@ -444,7 +444,7 @@
 
 /obj/item/disk/plantgene/attack_self(mob/user)
 	read_only = !read_only
-	to_chat(user, span_notice("You flip the write-protect tab to [src.read_only ? "protected" : "unprotected"]."))
+	to_chat(user, span_notice("I flip the write-protect tab to [src.read_only ? "protected" : "unprotected"]."))
 
 /obj/item/disk/plantgene/examine(mob/user)
 	. = ..()

@@ -47,7 +47,7 @@
 
 /obj/machinery/teleport/hub/Bumped(atom/movable/AM)
 	if(is_centcom_level(z))
-		to_chat(AM, "You can't use this here.")
+		to_chat(AM, "I can't use this here.")
 		return
 	if(is_ready())
 		teleport(AM)
@@ -159,13 +159,13 @@
 		var/obj/item/multitool/M = W
 		if(panel_open)
 			M.buffer = src
-			to_chat(user, span_caution("You download the data to the [W.name]'s buffer."))
+			to_chat(user, span_caution("I download the data to the [W.name]'s buffer."))
 		else
 			if(M.buffer && istype(M.buffer, /obj/machinery/teleport/station) && M.buffer != src)
 				if(linked_stations.len < efficiency)
 					linked_stations.Add(M.buffer)
 					M.buffer = null
-					to_chat(user, span_caution("You upload the data from the [W.name]'s buffer."))
+					to_chat(user, span_caution("I upload the data from the [W.name]'s buffer."))
 				else
 					to_chat(user, span_alert("This station can't hold more information, try to use better parts."))
 		return
@@ -179,7 +179,7 @@
 	else if(istype(W, /obj/item/wirecutters))
 		if(panel_open)
 			link_console_and_hub()
-			to_chat(user, span_caution("You reconnect the station to nearby machinery."))
+			to_chat(user, span_caution("I reconnect the station to nearby machinery."))
 			return
 	else
 		return ..()

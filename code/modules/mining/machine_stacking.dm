@@ -47,7 +47,7 @@
 	if(istype(I, /obj/item/multitool))
 		var/obj/item/multitool/M = I
 		M.buffer = src
-		to_chat(user, span_notice("You store linkage information in [I]'s buffer."))
+		to_chat(user, span_notice("I store linkage information in [I]'s buffer."))
 		return TRUE
 
 /obj/machinery/mineral/stacking_unit_console/Topic(href, href_list)
@@ -111,7 +111,7 @@
 		if(istype(M.buffer, /obj/machinery/mineral/stacking_unit_console))
 			console = M.buffer
 			console.machine = src
-			to_chat(user, span_notice("You link [src] to the console in [M]'s buffer."))
+			to_chat(user, span_notice("I link [src] to the console in [M]'s buffer."))
 			return TRUE
 
 /obj/machinery/mineral/stacking_machine/proc/process_sheet(obj/item/stack/sheet/inp)

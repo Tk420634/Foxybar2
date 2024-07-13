@@ -91,7 +91,7 @@
 		if(mob_occupant.stat != DEAD)
 			. += "Current clone cycle is [round(get_completion())]% complete."
 	if(!HAS_TRAIT(user, TRAIT_CHEMWHIZ))
-		. += "You don't know how this works, you're not enough of a [span_notice("whiz")]."
+		. += "I don't know how this works, you're not enough of a [span_notice("whiz")]."
 
 /obj/machinery/clonepod/return_air()
 	// We want to simulate the clone not being in contact with
@@ -182,7 +182,7 @@
 
 	if(grab_ghost_when == CLONER_MATURE_CLONE)
 		H.ghostize(TRUE)	//Only does anything if they were still in their old body and not already a ghost
-		to_chat(H.get_ghost(TRUE), span_notice("Your body is beginning to regenerate in a cloning pod. You will become conscious when it is complete."))
+		to_chat(H.get_ghost(TRUE), span_notice("My body is beginning to regenerate in a cloning pod. You will become conscious when it is complete."))
 
 	if(H)
 		H.faction |= factions
@@ -320,7 +320,7 @@
 		else
 			connected_message("Emergency Ejection")
 			SPEAK("An emergency ejection of the current clone has occurred. Survival not guaranteed.")
-			to_chat(user, span_notice("You force an emergency ejection. "))
+			to_chat(user, span_notice("I force an emergency ejection. "))
 			go_out()
 	else
 		return ..()
@@ -329,7 +329,7 @@
 	. = ..()
 	if(!occupant)
 		return
-	to_chat(user, span_warning("You corrupt the genetic compiler."))
+	to_chat(user, span_warning("I corrupt the genetic compiler."))
 	malfunction()
 	return TRUE
 
@@ -359,7 +359,7 @@
 		mess = FALSE
 		if(mob_occupant)
 			mob_occupant.spawn_gibs()
-		audible_message(span_italic("You hear a splat."))
+		audible_message(span_italic("I hear a splat."))
 		update_icon()
 		return
 

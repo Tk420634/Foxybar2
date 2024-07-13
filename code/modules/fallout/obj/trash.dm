@@ -86,7 +86,7 @@
 
 /obj/item/trash/f13/borscht
 	name = "\proper empty can of borscht"
-	desc = "You see Ivan, there was some food, now there is no food - it's a trash."
+	desc = "I see Ivan, there was some food, now there is no food - it's a trash."
 	icon_state = "borscht"
 
 /obj/item/trash/f13/dog

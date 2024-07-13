@@ -55,7 +55,7 @@
 
 /obj/structure/lattice/rcd_act(mob/user, obj/item/construction/rcd/the_rcd, passed_mode)
 	if(passed_mode == RCD_FLOORWALL)
-		to_chat(user, span_notice("You build a floor."))
+		to_chat(user, span_notice("I build a floor."))
 		var/turf/T = src.loc
 		if(isspaceturf(T))
 			T.PlaceOnTop(/turf/open/floor/plating, flags = CHANGETURF_INHERIT_AIR)
@@ -172,9 +172,9 @@
 	if(istype(C, /obj/item/stack/tile/plasteel))
 		var/obj/item/stack/tile/plasteel/P = C
 		if(P.use(1))
-			to_chat(user, span_notice("You construct a floor plating, as lava settles around the rods."))
+			to_chat(user, span_notice("I construct a floor plating, as lava settles around the rods."))
 			playsound(src, 'sound/weapons/genhit.ogg', 50, TRUE)
 			new /turf/open/floor/plating(locate(x, y, z))
 		else
-			to_chat(user, span_warning("You need one floor tile to build atop [src]."))
+			to_chat(user, span_warning("I need one floor tile to build atop [src]."))
 		return

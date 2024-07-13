@@ -32,11 +32,11 @@
 		var/reagentlist = pretty_string_from_reagent_list(reagents)
 		var/log_object = "a damp rag containing [reagentlist]"
 		if(user.a_intent == INTENT_HARM && !C.is_mouth_covered())
-			C.visible_message(span_danger("[user] is trying to smother \the [C] with \the [src]!"), span_userdanger("[user] is trying to smother you with \the [src]!"), span_italic("You hear some struggling and muffled cries of surprise."))
+			C.visible_message(span_danger("[user] is trying to smother \the [C] with \the [src]!"), span_userdanger("[user] is trying to smother you with \the [src]!"), span_italic("I hear some struggling and muffled cries of surprise."))
 			if(do_after(user, 20, target = C))
 				reagents.reaction(C, INGEST)
 				reagents.trans_to(C, 5, log = TRUE)
-				C.visible_message(span_danger("[user] has smothered \the [C] with \the [src]!"), span_userdanger("[user] has smothered you with \the [src]!"), span_italic("You hear some struggling and a heavy breath taken."))
+				C.visible_message(span_danger("[user] has smothered \the [C] with \the [src]!"), span_userdanger("[user] has smothered you with \the [src]!"), span_italic("I hear some struggling and a heavy breath taken."))
 				log_combat(user, C, "smothered", log_object)
 		else
 			C.visible_message(span_notice("[user] is trying to wipe \the [C] with \the [src]."))
@@ -47,9 +47,9 @@
 				log_combat(user, C, "touched", log_object)
 
 	else if(istype(A) && (src in user))
-		user.visible_message("[user] starts to wipe down [A] with [src]!", span_notice("You start to wipe down [A] with [src]..."))
+		user.visible_message("[user] starts to wipe down [A] with [src]!", span_notice("I start to wipe down [A] with [src]..."))
 		if(do_after(user, action_speed, target = A))
-			user.visible_message("[user] finishes wiping off [A]!", span_notice("You finish wiping off [A]."))
+			user.visible_message("[user] finishes wiping off [A]!", span_notice("I finish wiping off [A]."))
 			SEND_SIGNAL(A, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_MEDIUM)
 
 /obj/item/reagent_containers/rag/alt_pre_attack(mob/living/M, mob/living/user, params)
@@ -86,9 +86,9 @@
 /obj/item/reagent_containers/rag/AltClick(mob/user)
 	. = ..()
 	if(reagents.total_volume && user.canUseTopic(src, BE_CLOSE))
-		to_chat(user, span_notice("You start squeezing \the [src] dry..."))
+		to_chat(user, span_notice("I start squeezing \the [src] dry..."))
 		if(do_after(user, action_speed, TRUE, src))
-			var/msg = "You squeeze \the [src]"
+			var/msg = "I squeeze \the [src]"
 			var/obj/item/target
 			if(Adjacent(user)) //Allows the user to drain the reagents into a beaker if adjacent (no telepathy).
 				for(var/obj/item/I in user.held_items)
@@ -162,7 +162,7 @@
 /obj/item/reagent_containers/rag/towel/attack_self(mob/user)
 	if(!user.can_reach(src) || !user.dropItemToGround(src))
 		return
-	to_chat(user, span_notice("You lay out \the [src] flat on the ground."))
+	to_chat(user, span_notice("I lay out \the [src] flat on the ground."))
 	icon_state = flat_icon
 	layer = BELOW_OBJ_LAYER
 

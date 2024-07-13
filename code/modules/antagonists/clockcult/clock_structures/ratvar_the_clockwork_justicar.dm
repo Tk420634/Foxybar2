@@ -80,7 +80,7 @@
 		if(!prey && LAZYLEN(meals))
 			var/mob/living/L = prey
 			prey = pick(meals)
-			to_chat(prey, "<span class='heavy_brass'><font size=5>\"You will do, heretic.\"</font></span>\n\
+			to_chat(prey, "<span class='heavy_brass'><font size=5>\"I will do, heretic.\"</font></span>\n\
 			<span class='userdanger'>You feel something massive turn its crushing focus to you...</span>")
 			L.playsound_local(prey, 'sound/effects/ratvar_reveal.ogg', 100, FALSE, pressure_affected = FALSE)
 	else
@@ -144,7 +144,7 @@
 			clashing = FALSE
 			qdel(narsie)
 		if("Nar'Sie")
-			send_to_playing_players("<span class='cult'><font size=5>\"<b>[pick("Ha.", "Ra'sha fonn dest.", "You fool. To come here.")]</b>\"</font></span>\n\
+			send_to_playing_players("<span class='cult'><font size=5>\"<b>[pick("Ha.", "Ra'sha fonn dest.", "I fool. To come here.")]</b>\"</font></span>\n\
 			<span class='heavy_brass'><font size=5>\"[pick("NO, YOUR SHADOWS SHALL NO-", "ZNL GUR FGERNZF BS GVZR PNEEL ZL RKVFG-", "MY LIGHT CANNO-")]\"</font></span>")
 			sound_to_playing_players('sound/magic/demon_attack1.ogg', 50)
 			sound_to_playing_players('sound/machines/clockcult/ratvar_scream.ogg', 80)

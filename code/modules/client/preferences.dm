@@ -370,7 +370,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/screenshake = 100
 	var/damagescreenshake = 2
 	var/arousable = TRUE
-	var/widescreenpref = FALSE
+	var/widescreenpref = TRUE
 	var/end_of_round_deathmatch = FALSE
 	var/autostand = TRUE
 	var/auto_ooc = FALSE
@@ -1160,7 +1160,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						for(var/i in 1 to LAZYLEN(genitals_we_have))
 							dat += add_genital_layer_piece(genitals_we_have[i], i, LAZYLEN(genitals_we_have))
 					else
-						dat += "You dont seem to have any movable genitals!"
+						dat += "I dont seem to have any movable genitals!"
 					dat += "<tr>"
 					dat += "<td colspan='4' class='genital_name'>Hide Undies In Preview</td>"
 					/* var/genital_shirtlayer
@@ -1426,7 +1426,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<h2>Preferences</h2>" //Because fuck me if preferences can't be fucking modularized and expected to update in a reasonable timeframe.
 			dat += "<b>End of round deathmatch:</b> <a href='?_src_=prefs;preference=end_of_round_deathmatch'>[end_of_round_deathmatch ? "Enabled" : "Disabled"]</a><br>"
 			dat += "<h2>Citadel Preferences</h2>" //Because fuck me if preferences can't be fucking modularized and expected to update in a reasonable timeframe.
-			dat += "<b>Widescreen:</b> <a href='?_src_=prefs;preference=widescreenpref'>[widescreenpref ? "Enabled ([CONFIG_GET(string/default_view)])" : "Disabled (15x15)"]</a><br>"
+			// dat += "<b>Widescreen:</b> <a href='?_src_=prefs;preference=widescreenpref'>[widescreenpref ? "Enabled ([CONFIG_GET(string/default_view)])" : "Disabled (15x15)"]</a><br>"
 			dat += "<b>Auto stand:</b> <a href='?_src_=prefs;preference=autostand'>[autostand ? "Enabled" : "Disabled"]</a><br>"
 			dat += "<b>Auto OOC:</b> <a href='?_src_=prefs;preference=auto_ooc'>[auto_ooc ? "Disabled" : "Enabled" ]</a><br>"
 			dat += "<b>Force Slot Storage HUD:</b> <a href='?_src_=prefs;preference=no_tetris_storage'>[no_tetris_storage ? "Enabled" : "Disabled"]</a><br>"
@@ -2538,10 +2538,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	// 				char_quirks -= quirk
 	// 			else
 	// 				if(value != 0 && (GetPositiveQuirkCount() >= MAX_QUIRKS))
-	// 					to_chat(user, span_warning("You can't have more than [MAX_QUIRKS] positive quirks!"))
+	// 					to_chat(user, span_warning("I can't have more than [MAX_QUIRKS] positive quirks!"))
 	// 					return
 	// 				if(balance - value < 0)
-	// 					to_chat(user, span_warning("You don't have enough balance to gain this quirk!"))
+	// 					to_chat(user, span_warning("I don't have enough balance to gain this quirk!"))
 	// 					return
 	// 				char_quirks += quirk
 	// 			SetQuirks(user)
@@ -2879,7 +2879,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							if(modified_limbs[modified_limb][1] == LOADOUT_LIMB_PROSTHETIC && modified_limb != limb_type)
 								number_of_prosthetics += 1
 						if(number_of_prosthetics > MAXIMUM_LOADOUT_PROSTHETICS)
-							to_chat(user, span_danger("You can only have up to two prosthetic limbs!"))
+							to_chat(user, span_danger("I can only have up to two prosthetic limbs!"))
 						else
 							//save the actual prosthetic data
 							modified_limbs[limb_type] = list(modification_type, prosthetic_type)
@@ -3713,7 +3713,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						new_body_size = clamp(new_body_size * 0.01, min, max)
 						var/dorfy
 						if((new_body_size + 0.01) < danger) // Adding 0.01 as a dumb fix to prevent the warning message from appearing when exactly at threshold... Not sure why that happens in the first place.
-							dorfy = alert(user, "You have chosen a size below the slowdown threshold of [danger*100]%. For balancing purposes, the further you go below this percentage, the slower your character will be. Do you wish to keep this size?", "Speed Penalty Alert", "Yes", "Move it to the threshold", "No")
+							dorfy = alert(user, "I have chosen a size below the slowdown threshold of [danger*100]%. For balancing purposes, the further you go below this percentage, the slower your character will be. Do you wish to keep this size?", "Speed Penalty Alert", "Yes", "Move it to the threshold", "No")
 							if(dorfy == "Move it to the threshold")
 								new_body_size = danger
 							if(!dorfy) //Aborts if this var is somehow empty
@@ -3905,7 +3905,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if("has_belly")
 					features["has_belly"] = !features["has_belly"]
 				if("widescreenpref")
-					widescreenpref = !widescreenpref
+					widescreenpref = TRUE
 					user.client.change_view(CONFIG_GET(string/default_view))
 				if("end_of_round_deathmatch")
 					end_of_round_deathmatch = !end_of_round_deathmatch
@@ -4267,7 +4267,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			else if(toggle && !(has_loadout_gear(loadout_slot, "[G.type]")))
 				
 				if(!is_loadout_slot_available(G.category, G.cost))
-					to_chat(user, span_danger("You can only take [MAX_FREE_PER_CAT] free items from this category!"))
+					to_chat(user, span_danger("I can only take [MAX_FREE_PER_CAT] free items from this category!"))
 					return
 				
 				if(G.donoritem && !G.donator_ckey_check(user.ckey))
@@ -4526,7 +4526,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 //Resets the client's keybindings. Asks them for which
 /datum/preferences/proc/force_reset_keybindings()
-	var/choice = tgalert(parent.mob, "Your basic keybindings need to be reset, emotes will remain as before. Would you prefer 'hotkey' or 'classic' mode?", "Reset keybindings", "Hotkey", "Classic")
+	var/choice = tgalert(parent.mob, "My basic keybindings need to be reset, emotes will remain as before. Would you prefer 'hotkey' or 'classic' mode?", "Reset keybindings", "Hotkey", "Classic")
 	hotkeys = (choice != "Classic")
 	force_reset_keybindings_direct(hotkeys)
 
@@ -4724,14 +4724,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	lockdown = TRUE
 	/// stage one, ask if they are sure, and detail the fact that this will delete the character forever
 	/// with no chance of retrieval
-	var/stage1text = "You have clicked the button that will delete [real_name]. If you go through with this, [real_name] will \
+	var/stage1text = "I have clicked the button that will delete [real_name]. If you go through with this, [real_name] will \
 		be deleted, forever. There are no backups available, and no way to retrieve [real_name] once deleted. All of your \
 		flavor texts, quirks, and preferences associated with [real_name] will be lost, permanently and forever. The only things that will \
 		remain of [real_name] are things you have written down or screenshotted. Are you sure you want to delete [real_name]?"
 	var/choose = alert(usr, stage1text, "Character Deletion", "Yes, Delete This Character Forever", "NO WAIT I CHANGED MY MIND")
 	if(choose != "Yes, Delete This Character Forever")
 		lockdown = FALSE
-		to_chat(usr, span_green("Your character remains safe and sound."))
+		to_chat(usr, span_green("My character remains safe and sound."))
 		return
 	/// stage two, ask if they are really sure, and ask if they'd like to go back and save their flavor text or keep a screenshot of their prefs
 	/// a chance to back out, but also a chance to save some stuff
@@ -4743,7 +4743,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/choose2 = alert(usr, stage2text, "Character Deletion", "Yes, Delete This Character Forever", "NO WAIT I CHANGED MY MIND")
 	if(choose2 != "Yes, Delete This Character Forever")
 		lockdown = FALSE
-		to_chat(usr, span_green("Your character remains safe and sound."))
+		to_chat(usr, span_green("My character remains safe and sound."))
 		return
 	/// stage three, have them type in the name of the character to confirm they really want to delete it
 	var/confirmtext = "To confirm that you really want to delete [real_name], type in their name exactly as it appears in the text box below. \
@@ -4754,7 +4754,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/confirm = input(usr, confirmtext, "Character Deletion") as text|null
 	if(confirm != real_name)
 		lockdown = FALSE
-		to_chat(usr, span_green("Your character remains safe and sound."))
+		to_chat(usr, span_green("My character remains safe and sound."))
 		return
 	/// stage four, actually delete the character
 	log_game("[parent.ckey] has deleted [real_name] via the preferences menu. [real_name] is gone, forever. RIP.")

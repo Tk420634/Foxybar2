@@ -24,7 +24,7 @@
 	. = ..()
 	if(istype(I, /obj/item/storage/book/bible) || istype(I, /obj/item/nullrod))
 		user.say("BEGONE FOUL MAGICKS!!", forced = "bible")
-		to_chat(user, span_danger("You disrupt the magic of [src] with [I]."))
+		to_chat(user, span_danger("I disrupt the magic of [src] with [I]."))
 		qdel(src)
 
 /obj/effect/eldritch/proc/activate(mob/living/user)
@@ -92,7 +92,7 @@
 
 		return
 	is_in_use = FALSE
-	to_chat(user,span_warning("Your ritual failed! You used either wrong components or are missing something important!"))
+	to_chat(user,span_warning("My ritual failed! You used either wrong components or are missing something important!"))
 
 /obj/effect/eldritch/big
 	name = "transmutation circle"
@@ -196,7 +196,7 @@
 		return ..()
 	var/mob/living/carbon/human/human_user = user
 	if(IS_HERETIC(human_user))
-		to_chat(human_user,span_boldwarning("You know better than to tempt forces out of your control."))
+		to_chat(human_user,span_boldwarning("I know better than to tempt forces out of your control."))
 	else
 		var/obj/item/bodypart/arm = human_user.get_active_hand()
 		if(prob(25))
@@ -204,12 +204,12 @@
 			arm.dismember()
 			qdel(arm)
 		else
-			to_chat(human_user,span_danger("You pull your hand away from the hole as eldritch energy flails out, trying to latch onto existence itself!"))
+			to_chat(human_user,span_danger("I pull your hand away from the hole as eldritch energy flails out, trying to latch onto existence itself!"))
 
 /obj/effect/broken_illusion/examine(mob/user)
 	if(!IS_HERETIC(user) && ishuman(user))
 		var/mob/living/carbon/human/human_user = user
-		to_chat(human_user,span_userdanger("Your brain hurts when you look at this!"))
+		to_chat(human_user,span_userdanger("My brain hurts when you look at this!"))
 		human_user.adjustOrganLoss(ORGAN_SLOT_BRAIN,30)
 	. = ..()
 

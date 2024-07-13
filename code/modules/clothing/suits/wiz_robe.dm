@@ -348,5 +348,5 @@
 		return
 	var/datum/component/shielded/S = GetComponent(/datum/component/shielded)
 	S.adjust_charges(8)
-	to_chat(user, span_notice("You charge \the [W]. It can now absorb [S.charges] hits."))
+	to_chat(user, span_notice("I charge \the [W]. It can now absorb [S.charges] hits."))
 	qdel(src)

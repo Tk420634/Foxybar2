@@ -40,7 +40,7 @@ Reproductive extracts:
 /obj/item/slimecross/reproductive/proc/eat_cube(obj/item/reagent_containers/food/snacks/monkeycube, mob/user)
 		qdel(monkeycube)
 		cubes_eaten++
-		to_chat(user, span_notice("You feed [monkeycube] to [src], and it pulses gently."))
+		to_chat(user, span_notice("I feed [monkeycube] to [src], and it pulses gently."))
 		playsound(src, 'sound/items/eatfood.ogg', 20, 1)
 
 /obj/item/slimecross/reproductive/grey

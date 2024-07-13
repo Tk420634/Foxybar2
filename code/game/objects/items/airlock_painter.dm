@@ -65,7 +65,7 @@
 			return
 		if(!user.transferItemToLoc(W, src))
 			return
-		to_chat(user, span_notice("You install [W] into [src]."))
+		to_chat(user, span_notice("I install [W] into [src]."))
 		ink = W
 		playsound(src.loc, 'sound/machines/click.ogg', 50, 1)
 	else
@@ -76,7 +76,7 @@
 		playsound(src.loc, 'sound/machines/click.ogg', 50, 1)
 		ink.forceMove(user.drop_location())
 		user.put_in_hands(ink)
-		to_chat(user, span_notice("You remove [ink] from [src]."))
+		to_chat(user, span_notice("I remove [ink] from [src]."))
 		ink = null
 
 
@@ -107,7 +107,7 @@
 	. = ..()
 	var/turf/open/floor/F = target
 	if(!proximity)
-		to_chat(user, span_notice("You need to get closer!"))
+		to_chat(user, span_notice("I need to get closer!"))
 		return
 	if(use_paint(user) && isturf(F))
 		F.AddElement(/datum/element/decal, 'icons/turf/decals.dmi', stored_decal_total, turn(stored_dir, -dir2angle(F.dir)), CLEAN_STRONG, color, null, null, alpha)
@@ -253,7 +253,7 @@
 	. = ..()
 	var/turf/open/floor/F = target
 	if(!proximity)
-		to_chat(user, span_notice("You need to get closer!"))
+		to_chat(user, span_notice("I need to get closer!"))
 		return
 	if(use_paint(user) && isValidSurface(F))
 		playsound(src.loc, 'sound/effects/spray2.ogg', 50, 1)

@@ -85,7 +85,7 @@
 				pressureSetting = 3
 			if(3)
 				pressureSetting = 1
-		to_chat(user, span_notice("You tweak \the [src]'s pressure output to [pressureSetting]."))
+		to_chat(user, span_notice("I tweak \the [src]'s pressure output to [pressureSetting]."))
 	else if(istype(W, /obj/item/screwdriver))
 		if(tank)
 			updateTank(tank, 1, user)
@@ -118,7 +118,7 @@
 	if(user)		//Only use transfer proc if there's a user, otherwise just set loc.
 		if(!user.transferItemToLoc(I, src))
 			return FALSE
-		to_chat(user, span_notice("You load \the [I] into \the [src]."))
+		to_chat(user, span_notice("I load \the [I] into \the [src]."))
 	else
 		I.forceMove(src)
 	loadedItems += I
@@ -160,7 +160,7 @@
 		discharge = 1
 	if(!discharge)
 		user.visible_message(span_danger("[user] fires \the [src]!"), \
-							span_danger("You fire \the [src]!"))
+							span_danger("I fire \the [src]!"))
 	log_combat(user, target, "fired at", src)
 	var/turf/T = get_target(target, get_turf(src))
 	playsound(src, 'sound/weapons/sonic_jackhammer.ogg', 50, 1)
@@ -227,7 +227,7 @@
 	if(removing)
 		if(!tank)
 			return
-		to_chat(user, span_notice("You detach \the [thetank] from \the [src]."))
+		to_chat(user, span_notice("I detach \the [thetank] from \the [src]."))
 		tank.forceMove(user.drop_location())
 		user.put_in_hands(tank)
 		tank = null
@@ -237,7 +237,7 @@
 			return
 		if(!user.transferItemToLoc(thetank, src))
 			return
-		to_chat(user, span_notice("You hook \the [thetank] up to \the [src]."))
+		to_chat(user, span_notice("I hook \the [thetank] up to \the [src]."))
 		tank = thetank
 	update_icon()
 

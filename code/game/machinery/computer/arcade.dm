@@ -96,7 +96,7 @@
 		new prizeselect(src)
 
 	var/atom/movable/prize = pick(contents)
-	visible_message(span_notice("[src] dispenses [prize]!"), span_notice("You hear a chime and a clunk."))
+	visible_message(span_notice("[src] dispenses [prize]!"), span_notice("I hear a chime and a clunk."))
 
 	prize.forceMove(get_turf(src))
 
@@ -118,11 +118,11 @@
 		var/obj/item/stack/arcadeticket/T = O
 		var/amount = T.get_amount()
 		if(amount <2)
-			to_chat(user, span_warning("You need 2 tickets to claim a prize!"))
+			to_chat(user, span_warning("I need 2 tickets to claim a prize!"))
 			return
 		prizevend(user)
 		T.pay_tickets()
 		T.update_icon()
 		O = T
-		to_chat(user, span_notice("You turn in 2 tickets to the [src] and claim a prize!"))
+		to_chat(user, span_notice("I turn in 2 tickets to the [src] and claim a prize!"))
 		return

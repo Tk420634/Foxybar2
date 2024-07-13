@@ -42,7 +42,7 @@
 			filters += CIT_FILTER_STAMINACRIT
 			update_mobility()
 	if((combat_flags & COMBAT_FLAG_HARD_STAMCRIT) && total_health <= STAMINA_SOFTCRIT)
-		to_chat(src, span_notice("You don't feel nearly as exhausted anymore."))
+		to_chat(src, span_notice("I don't feel nearly as exhausted anymore."))
 		DISABLE_BITFIELD(combat_flags, COMBAT_FLAG_HARD_STAMCRIT | COMBAT_FLAG_SOFT_STAMCRIT)
 		filters -= CIT_FILTER_STAMINACRIT
 		update_mobility()

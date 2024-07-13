@@ -285,7 +285,7 @@ Difficulty: Medium
 		AltClickNoInteract(src, A)
 		return
 	if(swoop_cooldown >= world.time)
-		to_chat(src, span_warning("You need to wait 20 seconds between swoop attacks!"))
+		to_chat(src, span_warning("I need to wait 20 seconds between swoop attacks!"))
 		return
 	swoop_attack(TRUE, A, 25)
 

@@ -125,8 +125,8 @@
 	s.set_up(5, 1, target.loc)
 	s.start()
 	target.visible_message(span_danger("[target.name] was shocked by [src]!"), \
-		span_userdanger("You feel a powerful shock course through your body sending you flying!"), \
-		span_italic("You hear a heavy electrical crack!"))
+		span_userdanger("I feel a powerful shock course through your body sending you flying!"), \
+		span_italic("I hear a heavy electrical crack!"))
 	var/atom/throw_target = get_edge_target_turf(target, get_dir(src, get_step_away(target, src)))
 	target.throw_at(throw_target, 200, 4)
 	return

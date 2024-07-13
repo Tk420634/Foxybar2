@@ -10,7 +10,7 @@
 /obj/item/key/chastity_key
 	name = "cage key"
 	icon_state = "key"
-	desc = "You better not lose this."
+	desc = "I better not lose this."
 
 /obj/item/genital_equipment/chastity_cage
 	name = "chastity cage"

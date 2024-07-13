@@ -74,13 +74,13 @@
 					loaded++
 
 		if(loaded)
-			to_chat(user, span_notice("You insert [loaded] items into [src]."))
+			to_chat(user, span_notice("I insert [loaded] items into [src]."))
 		return
 
 	var/datum/food_processor_process/P = select_recipe(O)
 	if(P)
 		user.visible_message("[user] put [O] into [src].", \
-			"You put [O] into [src].")
+			"I put [O] into [src].")
 		user.transferItemToLoc(O, src, TRUE)
 		return 1
 	else
@@ -96,7 +96,7 @@
 		return TRUE
 	if(user.a_intent == INTENT_GRAB && ismob(user.pulling) && select_recipe(user.pulling))
 		if(user.grab_state < GRAB_AGGRESSIVE)
-			to_chat(user, span_warning("You need a better grip to do that!"))
+			to_chat(user, span_warning("I need a better grip to do that!"))
 			return
 		var/mob/living/pushed_mob = user.pulling
 		visible_message(span_warning("[user] stuffs [pushed_mob] into [src]!"))
@@ -108,8 +108,8 @@
 		return TRUE
 	processing = TRUE
 	user.visible_message("[user] turns on [src].", \
-		span_notice("You turn on [src]."), \
-		span_italic("You hear a food processor."))
+		span_notice("I turn on [src]."), \
+		span_italic("I hear a food processor."))
 	playsound(src.loc, 'sound/machines/blender.ogg', 50, 1)
 	use_power(500)
 	var/total_time = 0

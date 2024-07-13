@@ -63,7 +63,7 @@
 		to_chat(user, span_warning("The monkey is attached to something."))
 		return
 	qdel(target)
-	to_chat(user, span_notice("You stuff the monkey into the machine."))
+	to_chat(user, span_notice("I stuff the monkey into the machine."))
 	playsound(src.loc, 'sound/machines/juicer.ogg', 50, 1)
 	var/offset = prob(50) ? -2 : 2
 	animate(src, pixel_x = pixel_x + offset, time = 0.2, loop = 200) //start shaking

@@ -73,14 +73,14 @@
 			to_chat(user, "There is no damage to mend.")
 			return
 
-		to_chat(user, "You start mending the damaged portions of \the [src]...")
+		to_chat(user, "I start mending the damaged portions of \the [src]...")
 
 		if(!do_after(user, 30 * W.toolspeed, target = src) || !W || !src)
 			return
 
 		var/obj/item/stack/nanopaste/paste = W
 		damage = 0
-		to_chat(user, "You mend the damage to [src] with [W].")
+		to_chat(user, "I mend the damage to [src] with [W].")
 		paste.use(1)
 		return
 
@@ -96,15 +96,15 @@
 
 		var/obj/item/stack/cable_coil/cable = W
 		if(!cable.amount >= 5)
-			to_chat(user, "You need five units of cable to repair \the [src].")
+			to_chat(user, "I need five units of cable to repair \the [src].")
 			return
 
-		to_chat(user, "You start mending the damaged portions of \the [src]...")
+		to_chat(user, "I start mending the damaged portions of \the [src]...")
 		if(!do_after(user, 30 * W.toolspeed, target = src) || !W || !src)
 			return
 
 		damage = 1
-		to_chat(user, "You mend some of damage to [src] with [W], but you will need more advanced tools to fix it completely.")
+		to_chat(user, "I mend some of damage to [src] with [W], but you will need more advanced tools to fix it completely.")
 		cable.use(5)
 		return
 	*/
@@ -147,7 +147,7 @@
 		return 0
 
 	if(world.time < next_use)
-		to_chat(usr, span_warning("You cannot use the [interface_name] again so soon."))
+		to_chat(usr, span_warning("I cannot use the [interface_name] again so soon."))
 		return 0
 
 	if(!holder || (!(holder.item_flags & NODROP)))
@@ -155,7 +155,7 @@
 		return 0
 
 	if(usr.lying || usr.stat || usr.restrained())
-		to_chat(usr, span_warning("You cannot use the suit in this state."))
+		to_chat(usr, span_warning("I cannot use the suit in this state."))
 		return 0
 
 	if(holder.wearer && holder.wearer.lying)

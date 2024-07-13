@@ -228,7 +228,7 @@ const ToggleSettings = (props, context) => {
           key={genital.arousal_state}
           tooltip={genital.can_arouse
             ? ((genital.arousal_state ? "Unarouse" : "Arouse") + " your " + genital.name.toLowerCase())
-            : "You cannot modify arousal on your " + genital.name.toLowerCase()}
+            : "I cannot modify arousal on your " + genital.name.toLowerCase()}
           icon="heart"
           color={genital.can_arouse ? (genital.arousal_state ? "green" : "default") : "grey"}
           onClick={() => act('genital', {

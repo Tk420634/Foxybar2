@@ -269,7 +269,7 @@ GLOBAL_LIST_INIT(typing_indicator_max_words_spoken_list, list(
 						features_speech["typing_indicator_sound"] = new_sound
 
 				if("typing_indicator_sound_play")
-					var/new_input = input(user, "Choose your typing sound behaviour", "You stink c:") as null|anything in GLOB.play_methods
+					var/new_input = input(user, "Choose your typing sound behaviour", "I stink c:") as null|anything in GLOB.play_methods
 					if(new_input)
 						features_speech["typing_indicator_sound_play"] = new_input
 				

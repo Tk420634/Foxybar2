@@ -47,7 +47,7 @@ Also, you never added distance checking after target is selected. I've went ahea
 
 	if(target.stat == DEAD)
 		if(!silent)
-			to_chat(user, span_warning("You don't particularly want to be dead!"))
+			to_chat(user, span_warning("I don't particularly want to be dead!"))
 		return
 
 	if(!target.key || !target.mind)

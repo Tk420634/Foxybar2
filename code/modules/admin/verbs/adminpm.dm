@@ -76,7 +76,7 @@
 		return
 
 	if(!holder && !current_ticket)	//no ticket? https://www.youtube.com/watch?v=iHSPf6x1Fdo
-		to_chat(src, span_danger("You can no longer reply to this ticket, please open another one by using the Adminhelp verb if need be."), confidential = TRUE)
+		to_chat(src, span_danger("I can no longer reply to this ticket, please open another one by using the Adminhelp verb if need be."), confidential = TRUE)
 		to_chat(src, span_notice("Message: [msg]"), confidential = TRUE)
 		return
 

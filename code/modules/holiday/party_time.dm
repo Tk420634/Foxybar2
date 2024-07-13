@@ -56,7 +56,7 @@
 		var/msg = "some unknown place"
 		if(LAZYLEN(warning_time))
 			msg = "[english_list(partyzones)]"
-		to_chat(world, span_nicegreen("You feel an otherworldly sense of mirth and togetherness coalescing in [msg]. Huh."))
+		to_chat(world, span_nicegreen("I feel an otherworldly sense of mirth and togetherness coalescing in [msg]. Huh."))
 		warned = TRUE
 		return
 	if(!sparkling && tss >= sparkles_time)

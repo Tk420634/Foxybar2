@@ -217,7 +217,7 @@
 
 /obj/item/instrument/harmonica/speechModification(message)
 	if(song.playing && ismob(loc))
-		to_chat(loc, span_warning("You stop playing the harmonica to talk..."))
+		to_chat(loc, span_warning("I stop playing the harmonica to talk..."))
 		song.playing = FALSE
 	return message
 

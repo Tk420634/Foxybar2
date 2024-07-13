@@ -4,7 +4,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 
 /obj/machinery/computer/card
 	name = "identification console"
-	desc = "You can use this to manage jobs and ID access."
+	desc = "I can use this to manage jobs and ID access."
 	icon_screen = "id"
 	icon_keyboard = "id_key"
 	req_one_access = list(ACCESS_HEADS, ACCESS_CHANGE_IDS)
@@ -98,7 +98,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 			id_eject(user, target)
 
 	user.visible_message(span_notice("[user] inserts \the [card_to_insert] into \the [src]."),
-						span_notice("You insert \the [card_to_insert] into \the [src]."))
+						span_notice("I insert \the [card_to_insert] into \the [src]."))
 	playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
 	updateUsrDialog()
 	return TRUE
@@ -112,7 +112,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 		if(!issilicon(user) && Adjacent(user))
 			user.put_in_hands(target)
 		user.visible_message(span_notice("[user] gets \the [target] from \the [src]."), \
-							span_notice("You get \the [target] from \the [src]."))
+							span_notice("I get \the [target] from \the [src]."))
 		playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
 		updateUsrDialog()
 		return TRUE
@@ -134,7 +134,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 
 /obj/machinery/computer/card/ui_interact(mob/user)
 	if(LAZYLEN(job_req) && !(user.mind?.assigned_role in job_req))
-		to_chat(user, span_warning("You have no idea how to use it..."))
+		to_chat(user, span_warning("I have no idea how to use it..."))
 		return
 	. = ..()
 	var/list/dat = list()
@@ -337,7 +337,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 						if(region_access)
 							authenticated = 1
 			else if ((!( authenticated ) && hasSiliconAccessInArea(usr)) && (!inserted_modify_id))
-				to_chat(usr, span_warning("You can't modify an ID without an ID inserted to modify! Once one is in the modify slot on the computer, you can log in."))
+				to_chat(usr, span_warning("I can't modify an ID without an ID inserted to modify! Once one is in the modify slot on the computer, you can log in."))
 		if ("logout")
 			region_access = null
 			head_subordinates = null
@@ -402,7 +402,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 				inserted_modify_id.assignment = "Unassigned"
 				playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
 			else
-				to_chat(usr, span_alert("You are not authorized to demote this position."))
+				to_chat(usr, span_alert("I am not authorized to demote this position."))
 		if ("reg")
 			if (authenticated)
 				var/t2 = inserted_modify_id
@@ -439,7 +439,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 
 /obj/machinery/computer/card/minor
 	name = "department management console"
-	desc = "You can use this to change ID's for specific departments."
+	desc = "I can use this to change ID's for specific departments."
 	icon_screen = "idminor"
 	circuit = /obj/item/circuitboard/computer/card/minor
 

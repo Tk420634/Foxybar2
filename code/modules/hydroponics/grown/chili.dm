@@ -110,7 +110,7 @@
 				return
 			held_mob.adjust_bodytemperature(15 * TEMPERATURE_DAMAGE_COEFFICIENT)
 			if(prob(10))
-				to_chat(held_mob, span_warning("Your hand holding [src] burns!"))
+				to_chat(held_mob, span_warning("My hand holding [src] burns!"))
 	else
 		held_mob = null
 		..()

@@ -1,6 +1,6 @@
 /obj/item/organ/cyberimp/arm
 	name = "arm-mounted implant"
-	desc = "You shouldn't see this! Adminhelp and report this as an issue on github!"
+	desc = "I shouldn't see this! Adminhelp and report this as an issue on github!"
 	zone = BODY_ZONE_R_ARM
 	organ_flags = ORGAN_SYNTHETIC
 	icon_state = "implant-toolkit"
@@ -73,7 +73,7 @@
 	else
 		zone = BODY_ZONE_R_ARM
 	SetSlotFromZone()
-	to_chat(user, span_notice("You modify [src] to be installed on the [zone == BODY_ZONE_R_ARM ? "right" : "left"] arm."))
+	to_chat(user, span_notice("I modify [src] to be installed on the [zone == BODY_ZONE_R_ARM ? "right" : "left"] arm."))
 	update_icon()
 
 /obj/item/organ/cyberimp/arm/Remove(special = FALSE)
@@ -95,7 +95,7 @@
 
 	owner.visible_message(span_notice("[owner] retracts [holder] back into [owner.p_their()] [zone == BODY_ZONE_R_ARM ? "right" : "left"] arm."),
 		span_notice("[holder] snaps back into your [zone == BODY_ZONE_R_ARM ? "right" : "left"] arm."),
-		span_italic("You hear a short mechanical noise."))
+		span_italic("I hear a short mechanical noise."))
 
 	owner.transferItemToLoc(holder, src, TRUE)
 	holder = null
@@ -115,22 +115,22 @@
 
 	if(arm_item)
 		if(!owner.dropItemToGround(arm_item))
-			to_chat(owner, span_warning("Your [arm_item] interferes with [src]!"))
+			to_chat(owner, span_warning("My [arm_item] interferes with [src]!"))
 			return
 		else
-			to_chat(owner, span_notice("You drop [arm_item] to activate [src]!"))
+			to_chat(owner, span_notice("I drop [arm_item] to activate [src]!"))
 
 	var/result = (zone == BODY_ZONE_R_ARM ? owner.put_in_r_hand(holder) : owner.put_in_l_hand(holder))
 	if(!result)
-		to_chat(owner, span_warning("Your [name] fails to activate!"))
+		to_chat(owner, span_warning("My [name] fails to activate!"))
 		return
 
 	// Activate the hand that now holds our item.
 	owner.swap_hand(result)//... or the 1st hand if the index gets lost somehow
 
 	owner.visible_message(span_notice("[owner] extends [holder] from [owner.p_their()] [zone == BODY_ZONE_R_ARM ? "right" : "left"] arm."),
-		span_notice("You extend [holder] from your [zone == BODY_ZONE_R_ARM ? "right" : "left"] arm."),
-		span_italic("You hear a short mechanical noise."))
+		span_notice("I extend [holder] from your [zone == BODY_ZONE_R_ARM ? "right" : "left"] arm."),
+		span_italic("I hear a short mechanical noise."))
 	playsound(get_turf(owner), 'sound/mecha/mechmove03.ogg', 50, 1)
 	return TRUE
 
@@ -174,7 +174,7 @@
 	if(obj_flags & EMAGGED)
 		return
 	obj_flags |= EMAGGED
-	to_chat(usr, span_notice("You unlock [src]'s integrated rolling pin!"))
+	to_chat(usr, span_notice("I unlock [src]'s integrated rolling pin!"))
 	items_list += new /obj/item/kitchen/rollingpin(src)
 	return TRUE
 
@@ -188,7 +188,7 @@
 	if(obj_flags & EMAGGED)
 		return
 	obj_flags |= EMAGGED
-	to_chat(usr, span_notice("You unlock [src]'s integrated rolling pin!"))
+	to_chat(usr, span_notice("I unlock [src]'s integrated rolling pin!"))
 	items_list += new /obj/item/kitchen/rollingpin(src)
 	return TRUE
 
@@ -202,7 +202,7 @@
 	if(obj_flags & EMAGGED)
 		return
 	obj_flags |= EMAGGED
-	to_chat(usr, span_notice("You unlock [src]'s integrated deluxe cleaning supplies!"))
+	to_chat(usr, span_notice("I unlock [src]'s integrated deluxe cleaning supplies!"))
 	items_list += new /obj/item/soap/syndie(src) //We add not replace.
 	items_list += new /obj/item/reagent_containers/spray/cyborg_lube(src)
 	return TRUE
@@ -217,7 +217,7 @@
 	if(obj_flags & EMAGGED)
 		return
 	obj_flags |= EMAGGED
-	to_chat(usr, span_notice("You unlock [src]'s integrated rolling pin!"))
+	to_chat(usr, span_notice("I unlock [src]'s integrated rolling pin!"))
 	items_list += new /obj/item/kitchen/rollingpin(src)
 	return TRUE
 
@@ -303,7 +303,7 @@
 	if(obj_flags & EMAGGED)
 		return
 	obj_flags |= EMAGGED
-	to_chat(usr, span_notice("You unlock [src]'s high-power flash!"))
+	to_chat(usr, span_notice("I unlock [src]'s high-power flash!"))
 	var/obj/item/assembly/flash/armimplant/F = new(src)
 	items_list += F
 	F.I = src
@@ -336,12 +336,12 @@
 	var/mob/living/carbon/human/H = user
 	var/obj/item/organ/stomach/ipc/cell = locate(/obj/item/organ/stomach/ipc) in H.internal_organs
 	if(!cell)
-		to_chat(H, span_warning("You try to siphon energy from the [A], but your power cell is gone!"))
+		to_chat(H, span_warning("I try to siphon energy from the [A], but your power cell is gone!"))
 		return
 
 	if(A.cell && A.cell.charge > 0)
 		if(H.nutrition >= NUTRITION_LEVEL_WELL_FED)
-			to_chat(user, span_warning("You are already fully charged!"))
+			to_chat(user, span_warning("I am already fully charged!"))
 			return
 		else
 			powerdraw_loop(A, H)
@@ -350,10 +350,10 @@
 	to_chat(user, span_warning("There is no charge to draw from that APC."))
 
 /obj/item/apc_powercord/proc/powerdraw_loop(obj/machinery/power/apc/A, mob/living/carbon/human/H)
-	H.visible_message(span_notice("[H] inserts a power connector into the [A]."), span_notice("You begin to draw power from the [A]."))
+	H.visible_message(span_notice("[H] inserts a power connector into the [A]."), span_notice("I begin to draw power from the [A]."))
 	while(do_after(H, 10, target = A))
 		if(loc != H)
-			to_chat(H, span_warning("You must keep your connector out while charging!"))
+			to_chat(H, span_warning("I must keep your connector out while charging!"))
 			break
 		if(A.cell.charge == 0)
 			to_chat(H, span_warning("The [A] doesn't have enough charge to spare."))
@@ -363,13 +363,13 @@
 			do_sparks(1, FALSE, A)
 			H.nutrition += 50
 			A.cell.charge -= 150
-			to_chat(H, span_notice("You siphon off some of the stored charge for your own use."))
+			to_chat(H, span_notice("I siphon off some of the stored charge for your own use."))
 		else
 			H.nutrition += A.cell.charge/10
 			A.cell.charge = 0
-			to_chat(H, span_notice("You siphon off as much as the [A] can spare."))
+			to_chat(H, span_notice("I siphon off as much as the [A] can spare."))
 			break
 		if(H.nutrition > NUTRITION_LEVEL_WELL_FED)
-			to_chat(H, span_notice("You are now fully charged."))
+			to_chat(H, span_notice("I am now fully charged."))
 			break
-	H.visible_message(span_notice("[H] unplugs from the [A]."), span_notice("You unplug from the [A]."))
+	H.visible_message(span_notice("[H] unplugs from the [A]."), span_notice("I unplug from the [A]."))

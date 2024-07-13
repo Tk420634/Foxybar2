@@ -82,13 +82,13 @@
 	if(!isliving(A))
 		return ..()
 	if(slam_cooldown + slam_cooldown_time > world.time)
-		to_chat(src, span_warning("Your slam ability is still on cooldown!"))
+		to_chat(src, span_warning("My slam ability is still on cooldown!"))
 		return
 
 	face_atom(A)
 	var/mob/living/victim = A
 	victim.take_bodypart_damage(brute=20, wound_bonus=wound_bonus) // don't worry, there's more punishment when they hit something
-	visible_message(span_danger("[src] slams into [victim] with monstrous strength!"), span_danger("You slam into [victim] with monstrous strength!"), ignored_mobs=victim)
+	visible_message(span_danger("[src] slams into [victim] with monstrous strength!"), span_danger("I slam into [victim] with monstrous strength!"), ignored_mobs=victim)
 	to_chat(victim, span_userdanger("[src] slams into you with monstrous strength, sending you flying like a ragdoll!"))
 	var/turf/yeet_target = get_edge_target_turf(victim, dir)
 	victim.throw_at(yeet_target, 10, 5, src)
@@ -179,7 +179,7 @@
 			qdel(src)
 			return
 	user.visible_message(span_warning("[user]'s eyes flare a deep crimson!"), \
-						span_userdanger("You feel a strange power seep into your body... you have absorbed the demon's blood-travelling powers!"))
+						span_userdanger("I feel a strange power seep into your body... you have absorbed the demon's blood-travelling powers!"))
 	user.temporarilyRemoveItemFromInventory(src, TRUE)
 	src.Insert(user) //Consuming the heart literally replaces your heart with a demon heart. H A R D C O R E
 
@@ -270,4 +270,4 @@
 		if(M.revive(full_heal = TRUE, admin_revive = TRUE))
 			M.grab_ghost(force = TRUE)
 			playsound(T, feast_sound, 50, 1, -1)
-			to_chat(M, span_clown("You leave [src]'s warm embrace,	and feel ready to take on the world."))
+			to_chat(M, span_clown("I leave [src]'s warm embrace,	and feel ready to take on the world."))

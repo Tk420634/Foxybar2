@@ -137,7 +137,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 
 		Itm.forceMove(src)
 		playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
-		to_chat(usr, "You loaded [Itm.name] to vending machine. New price - [content[Itm]] copper.")
+		to_chat(usr, "I loaded [Itm.name] to vending machine. New price - [content[Itm]] copper.")
 		src.ui_interact(usr)
 	else
 		if(!item_allowed)
@@ -174,7 +174,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		if(I.use(expected_price))
 			stored_caps += expected_price
 			playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
-			to_chat(usr, "You put [expected_price] copper to a vending machine. [vending_item.name] is vended out of it. ")
+			to_chat(usr, "I put [expected_price] copper to a vending machine. [vending_item.name] is vended out of it. ")
 			remove_item(vending_item)
 			set_state(STATE_IDLE)
 			onclose(usr, "vending")
@@ -284,10 +284,10 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		if(!OtherItem.tool_start_check(user, amount=3))
 			return
 		user.visible_message("[user.name] repairs \the [src].", \
-						span_notice("You start repairing the vending machine."), \
-						span_italic("You hear welding."))
+						span_notice("I start repairing the vending machine."), \
+						span_italic("I hear welding."))
 		if(OtherItem.use_tool(src, user, 100, volume=50, amount=20))
-			to_chat(user, span_notice("You repair the vending machine."))
+			to_chat(user, span_notice("I repair the vending machine."))
 			stat &= ~BROKEN
 			obj_integrity = max_integrity
 
@@ -378,7 +378,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 					set_lock(OtherItem)
 				else
 					playsound(src, 'sound/machines/DeniedBeep.ogg', 60, 1)
-					to_chat(usr, "You need to secure lock first. Use screwdriver.")
+					to_chat(usr, "I need to secure lock first. Use screwdriver.")
 
 	src.ui_interact(user)
 
@@ -1456,7 +1456,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		stored_caps += inserted_value
 		I.use(currency.amount)
 		playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
-		to_chat(usr, "You put [inserted_value] bottle caps value to a vending machine.")
+		to_chat(usr, "I put [inserted_value] bottle caps value to a vending machine.")
 		src.ui_interact(usr)
 	else if(istype(I, /obj/item/stack/f13Cash/ncr))
 		var/obj/item/stack/f13Cash/ncr/currency = I
@@ -1464,7 +1464,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		stored_caps += inserted_value
 		I.use(currency.amount)
 		playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
-		to_chat(usr, "You put [inserted_value] bottle caps value to a vending machine.")
+		to_chat(usr, "I put [inserted_value] bottle caps value to a vending machine.")
 		src.ui_interact(usr)
 	else if(istype(I, /obj/item/stack/f13Cash/denarius))
 		var/obj/item/stack/f13Cash/denarius/currency = I
@@ -1472,7 +1472,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		stored_caps += inserted_value
 		I.use(currency.amount)
 		playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
-		to_chat(usr, "You put [inserted_value] bottle caps value to a vending machine.")
+		to_chat(usr, "I put [inserted_value] bottle caps value to a vending machine.")
 		src.ui_interact(usr)
 	else if(istype(I, /obj/item/stack/f13Cash/aureus))
 		var/obj/item/stack/f13Cash/aureus/currency = I
@@ -1480,7 +1480,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		stored_caps += inserted_value
 		I.use(currency.amount)
 		playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
-		to_chat(usr, "You put [inserted_value] bottle caps value to a vending machine.")
+		to_chat(usr, "I put [inserted_value] bottle caps value to a vending machine.")
 		src.ui_interact(usr)
 	else
 		to_chat(usr, "Invalid currency!")

@@ -31,12 +31,12 @@
 		to_chat(user, span_warning("[I] is already coated in [src]!"))
 		return
 
-	user.visible_message(span_notice("[user] begins wrapping [I] with [src]."), span_notice("You begin wrapping [I] with [src]."))
+	user.visible_message(span_notice("[user] begins wrapping [I] with [src]."), span_notice("I begin wrapping [I] with [src]."))
 
 	if(do_after(user, apply_time, target=I))
 		I.embedding = conferred_embed
 		I.updateEmbedding()
-		to_chat(user, span_notice("You finish wrapping [I] with [src]."))
+		to_chat(user, span_notice("I finish wrapping [I] with [src]."))
 		if(!endless)
 			use(1)
 		I.name = "[prefix] [I.name]"
@@ -74,7 +74,7 @@
 /obj/item/stack/sticky_tape/pointy/super
 	name = "super pointy tape"
 	singular_name = "super pointy tape"
-	desc = "You didn't know tape could look so sinister. Welcome to Space Station 13."
+	desc = "I didn't know tape could look so sinister. Welcome to Space Station 13."
 	icon_state = "tape_spikes"
 	prefix = "super pointy"
 	conferred_embed = EMBED_POINTY_SUPERIOR

@@ -79,7 +79,7 @@
 	if((peeker in (LAZYACCESS(ladder_watchers, "[UP]"))) || (peeker in (LAZYACCESS(ladder_watchers, "[DOWN]"))))
 		return
 	if(peeker.incapacitated(allow_crit = TRUE))
-		to_chat(peeker, "You can't do that in your current state.")
+		to_chat(peeker, "I can't do that in your current state.")
 		return
 
 	var/peek_dir = NONE
@@ -87,21 +87,21 @@
 		switch(alert(peeker, "Look up or down the ladder?", "Ladder", list("Up", "Down", "Cancel")))
 			if("Up")
 				peeker.visible_message(span_notice("[peeker] looks up [peeker]!"),
-				span_notice("You look up [peeker]!"))
+				span_notice("I look up [peeker]!"))
 				peek_dir = UP
 			if("Down")
 				usr.visible_message(span_notice("[usr] looks down [src]!"),
-				span_notice("You look down [src]!"))
+				span_notice("I look down [src]!"))
 				peek_dir = DOWN
 			else
 				return
 	else if(up)
 		usr.visible_message(span_notice("[usr] looks up [src]!"),
-		span_notice("You look up [src]!"))
+		span_notice("I look up [src]!"))
 		peek_dir = UP
 	else if(down)
 		usr.visible_message(span_notice("[usr] looks down [src]!"),
-		span_notice("You look down [src]!"))
+		span_notice("I look down [src]!"))
 		peek_dir = DOWN
 	else
 		return
@@ -111,7 +111,7 @@
 	if((peeker in (LAZYACCESS(ladder_watchers, "[UP]"))) || (peeker in (LAZYACCESS(ladder_watchers, "[DOWN]"))))
 		return
 	if(peeker.incapacitated(allow_crit = TRUE))
-		to_chat(peeker, "You can't do that in your current state.")
+		to_chat(peeker, "I can't do that in your current state.")
 		return
 
 	switch(peek_dir)
@@ -192,7 +192,7 @@
 		return
 
 	if(!is_ghost)
-		user.visible_message("[user] begins to climb [going_up ? "up" : "down"] [src].", span_notice("You begin to climb [going_up ? "up" : "down"] [src]."))
+		user.visible_message("[user] begins to climb [going_up ? "up" : "down"] [src].", span_notice("I begin to climb [going_up ? "up" : "down"] [src]."))
 
 	if(!is_ghost && !do_after(user, timetouse, target = src))
 		in_use = FALSE
@@ -291,9 +291,9 @@
 
 /obj/structure/ladder/proc/show_fluff_message(going_up, mob/user)
 	if(going_up)
-		user.visible_message("[user] climbs up [src].",span_notice("You climb up [src]."))
+		user.visible_message("[user] climbs up [src].",span_notice("I climb up [src]."))
 	else
-		user.visible_message("[user] climbs down [src].",span_notice("You climb down [src]."))
+		user.visible_message("[user] climbs down [src].",span_notice("I climb down [src]."))
 
 
 // Indestructible away mission ladders which link based on a mapped ID and height value rather than X/Y/Z.
@@ -423,9 +423,9 @@
 
 /obj/structure/ladder/unbreakable/transition/show_fluff_message(going_up, mob/user)
 	if(going_up)
-		user.visible_message("[user] walks up to [src].",span_notice("You walk up to [src]."))
+		user.visible_message("[user] walks up to [src].",span_notice("I walk up to [src]."))
 	else
-		user.visible_message("[user] walks down to [src].",span_notice("You walk down to [src]."))
+		user.visible_message("[user] walks down to [src].",span_notice("I walk down to [src]."))
 
 /obj/structure/ladder/unbreakable/transition/Cross(atom/movable/AM)
 	use(AM)

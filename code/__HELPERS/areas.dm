@@ -214,7 +214,7 @@ GLOBAL_LIST_INIT(room_sealers, typecacheof(list(
 		var/obj/machinery/door/firedoor/FD = door
 		FD.CalculateAffectingAreas()
 
-	to_chat(creator, span_notice("You have created a new area, named [newA.name], and have weather proofed it."))
+	to_chat(creator, span_notice("I have created a new area, named [newA.name], and have weather proofed it."))
 	return TRUE
 
 

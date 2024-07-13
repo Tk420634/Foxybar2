@@ -172,18 +172,18 @@
 			return
 		var/obj/item/organ/stomach/ethereal/stomach = H.getorganslot(ORGAN_SLOT_STOMACH)
 		if(stomach.crystal_charge > 146)
-			to_chat(H, span_warning("Your charge is full!"))
+			to_chat(H, span_warning("My charge is full!"))
 			return
-		to_chat(H, span_notice("You clumsily channel power through the [src] and into your body, wasting some in the process."))
+		to_chat(H, span_notice("I clumsily channel power through the [src] and into your body, wasting some in the process."))
 		if(do_after(user, 5, target = src))
 			if((charge < 100) || (stomach.crystal_charge > 146))
 				return
 			if(istype(stomach))
-				to_chat(H, span_notice("You receive some charge from the [src]."))
+				to_chat(H, span_notice("I receive some charge from the [src]."))
 				stomach.adjust_charge(3)
 				charge -= 100 //you waste way more than you receive, so that ethereals cant just steal one cell and forget about hunger
 			else
-				to_chat(H, span_warning("You can't receive charge from the [src]!"))
+				to_chat(H, span_warning("I can't receive charge from the [src]!"))
 		return
 
 /obj/item/stock_parts/cell/blob_act(obj/structure/blob/B)
@@ -204,8 +204,8 @@
 		playsound(licker, 'sound/magic/lightningshock.ogg', 100, TRUE)
 		licker.visible_message(
 			span_warning("[licker] licks \the [src], discharging it right into their body!"),
-			span_userdanger("You lick \the [src], and it shocks the everloving daylights out of you!"),
-			span_warning("You hear a meaty ZAP!")
+			span_userdanger("I lick \the [src], and it shocks the everloving daylights out of you!"),
+			span_warning("I hear a meaty ZAP!")
 		)
 		battery_licker.electrocute_act(damage, src, tongue.siemens_coefficient)
 		use(maxcharge*0.5)
@@ -243,7 +243,7 @@
 
 /obj/item/stock_parts/cell/crap
 	name = "\improper US Government brand rechargeable AA battery"
-	desc = "You can't top the plasma top." //TOTALLY TRADEMARK INFRINGEMENT
+	desc = "I can't top the plasma top." //TOTALLY TRADEMARK INFRINGEMENT
 	maxcharge = 500
 	custom_materials = list(/datum/material/glass=40)
 
@@ -461,7 +461,7 @@
 // Ammo cell template
 /obj/item/stock_parts/cell/ammo
 	name = "ammo cell"
-	desc = "You shouldn't be holding this."
+	desc = "I shouldn't be holding this."
 	cancharge = 1
 	w_class = WEIGHT_CLASS_SMALL
 

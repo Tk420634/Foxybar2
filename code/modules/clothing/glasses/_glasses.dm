@@ -110,7 +110,7 @@
 
 /obj/item/clothing/glasses/night
 	name = "night vision goggles"
-	desc = "You can totally see in the dark now! Just don't look too closely at bright lights. This lacks any flash correction."
+	desc = "I can totally see in the dark now! Just don't look too closely at bright lights. This lacks any flash correction."
 	icon_state = "night"
 	item_state = "glasses"
 	darkness_view = 24
@@ -149,7 +149,7 @@
 
 /obj/item/clothing/glasses/eyepatch/goji
 	name = "emblazoned eyepatch"
-	desc = "You have the eye of a mad dog!"
+	desc = "I have the eye of a mad dog!"
 	icon_state = "Gojipatch"
 	item_state = "Gojipatch"
 
@@ -583,9 +583,9 @@
 		if(H.client?.prefs && src == H.glasses)
 			H.client.prefs.uses_glasses_colour = !H.client.prefs.uses_glasses_colour
 			if(H.client.prefs.uses_glasses_colour)
-				to_chat(H, "You will now see glasses colors.")
+				to_chat(H, "I will now see glasses colors.")
 			else
-				to_chat(H, "You will no longer see glasses colors.")
+				to_chat(H, "I will no longer see glasses colors.")
 			H.update_glasses_color(src, 1)
 		return TRUE
 
@@ -686,7 +686,7 @@
 		var/mob/living/carbon/human/U = user
 		if(U.job in list("Priestess of Mars"))
 		else
-			to_chat(user, span_userdanger("\"You want to be blind, do you?\""))
+			to_chat(user, span_userdanger("\"I want to be blind, do you?\""))
 			user.dropItemToGround(src, TRUE)
 			user.Dizzy(30)
 			user.Knockdown(100)

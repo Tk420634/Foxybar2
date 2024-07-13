@@ -81,7 +81,7 @@ the new instance inside the host to be updated to the template's stats.
 /mob/camera/disease/Login()
 	..()
 	if(freemove)
-		to_chat(src, span_warning("You have [DisplayTimeText(freemove_end - world.time)] to select your first host. Click on a human to select your host."))
+		to_chat(src, span_warning("I have [DisplayTimeText(freemove_end - world.time)] to select your first host. Click on a human to select your host."))
 
 
 /mob/camera/disease/get_status_tab_items()
@@ -157,7 +157,7 @@ the new instance inside the host to be updated to the template's stats.
 			set_name = "Sentient Virus"
 			break
 		if(taken_names[input])
-			to_chat(src, span_notice("You cannot use the name of such a well-known disease!"))
+			to_chat(src, span_notice("I cannot use the name of such a well-known disease!"))
 		else
 			set_name = input
 	real_name = "[set_name] (Sentient Disease)"
@@ -305,12 +305,12 @@ the new instance inside the host to be updated to the template's stats.
 		to_chat(src, span_warning("[H ? H.name : "Host"] cannot be infected."))
 
 /mob/camera/disease/proc/adapt_cooldown()
-	to_chat(src, span_notice("You have altered your genetic structure. You will be unable to adapt again for [DisplayTimeText(adaptation_cooldown)]."))
+	to_chat(src, span_notice("I have altered your genetic structure. You will be unable to adapt again for [DisplayTimeText(adaptation_cooldown)]."))
 	next_adaptation_time = world.time + adaptation_cooldown
 	addtimer(CALLBACK(src,PROC_REF(notify_adapt_ready)), adaptation_cooldown)
 
 /mob/camera/disease/proc/notify_adapt_ready()
-	to_chat(src, span_notice("You are now ready to adapt again."))
+	to_chat(src, span_notice("I am now ready to adapt again."))
 	refresh_adaptation_menu()
 
 /mob/camera/disease/proc/refresh_adaptation_menu()

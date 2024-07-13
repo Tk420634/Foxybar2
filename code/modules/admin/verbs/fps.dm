@@ -14,7 +14,7 @@
 		to_chat(src, span_danger("Error: set_server_fps(): Invalid world.fps value. No changes made."))
 		return
 	if(new_fps > cfg_fps * 1.5)
-		if(alert(src, "You are setting fps to a high value:\n\t[new_fps] frames-per-second\n\tconfig.fps = [cfg_fps]","Warning!","Confirm","ABORT-ABORT-ABORT") != "Confirm")
+		if(alert(src, "I am setting fps to a high value:\n\t[new_fps] frames-per-second\n\tconfig.fps = [cfg_fps]","Warning!","Confirm","ABORT-ABORT-ABORT") != "Confirm")
 			return
 
 	var/msg = "[key_name(src)] has modified world.fps to [new_fps]"

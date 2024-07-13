@@ -81,6 +81,6 @@
 		return ..()
 
 	anchored = !anchored
-	to_chat(user, span_notice("You [anchored ? "secure" : "unsecure"] \the [src]."))
+	to_chat(user, span_notice("I [anchored ? "secure" : "unsecure"] \the [src]."))
 	I.play_tool_sound(src)
 	return TRUE

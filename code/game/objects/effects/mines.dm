@@ -71,7 +71,7 @@
 
 /obj/effect/mine/pickup/bloodbath
 	name = "Red Orb"
-	desc = "You feel angry just looking at it."
+	desc = "I feel angry just looking at it."
 	duration = 1200 //2min
 	color = "#FF0000"
 
@@ -101,33 +101,33 @@
 	sleep(10)
 	animate(victim.client,color = old_color, time = duration)//, easing = SINE_EASING|EASE_OUT)
 	sleep(duration)
-	to_chat(victim, span_notice("Your bloodlust seeps back into the bog of your subconscious and you regain self control."))
+	to_chat(victim, span_notice("My bloodlust seeps back into the bog of your subconscious and you regain self control."))
 	qdel(chainsaw)
 	victim.log_message("exited a blood frenzy", LOG_ATTACK)
 	qdel(src)
 
 /obj/effect/mine/pickup/healing
 	name = "Blue Orb"
-	desc = "You feel better just looking at it."
+	desc = "I feel better just looking at it."
 	color = "#0000FF"
 
 /obj/effect/mine/pickup/healing/mineEffect(mob/living/carbon/victim)
 	if(!victim.client || !istype(victim))
 		return
-	to_chat(victim, span_notice("You feel great!"))
+	to_chat(victim, span_notice("I feel great!"))
 	victim.revive(full_heal = 1, admin_revive = 1)
 
 /obj/effect/mine/pickup/speed
 	name = "Yellow Orb"
-	desc = "You feel faster just looking at it."
+	desc = "I feel faster just looking at it."
 	color = "#FFFF00"
 	duration = 300
 
 /obj/effect/mine/pickup/speed/mineEffect(mob/living/carbon/victim)
 	if(!victim.client || !istype(victim))
 		return
-	to_chat(victim, span_notice("You feel fast!"))
+	to_chat(victim, span_notice("I feel fast!"))
 	victim.add_movespeed_modifier(/datum/movespeed_modifier/yellow_orb)
 	sleep(duration)
 	victim.remove_movespeed_modifier(/datum/movespeed_modifier/yellow_orb)
-	to_chat(victim, span_notice("You slow down."))
+	to_chat(victim, span_notice("I slow down."))

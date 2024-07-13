@@ -84,7 +84,7 @@
 		var/obj/item/stack/f13Cash/currency = I
 		if(!user.temporarilyRemoveItemFromInventory(currency))
 			return
-		to_chat(user, span_notice("You insert [currency] into [src]'s slot!"))
+		to_chat(user, span_notice("I insert [currency] into [src]'s slot!"))
 		give_money(round(currency.value * currency.amount))
 		qdel(currency)
 	else
@@ -191,7 +191,7 @@
 	if(stat & BROKEN)
 		to_chat(user, span_warning("The slot machine is broken!"))
 	if(working)
-		to_chat(user, span_warning("You need to wait until the machine stops spinning before you can play again!"))
+		to_chat(user, span_warning("I need to wait until the machine stops spinning before you can play again!"))
 		return 0
 	if(balance < SPIN_PRICE)
 		to_chat(user, span_warning("Insufficient money to play!"))
@@ -232,7 +232,7 @@
 		drop_caps(SMALL_PRIZE)
 
 	else if(linelength == 3)
-		to_chat(user, span_notice("You win three free games!"))
+		to_chat(user, span_notice("I win three free games!"))
 		drop_caps(SPIN_PRICE * 4)
 		playsound(src, 'sound/machines/smallwin.ogg', 50, TRUE, -1)
 		money = max(money - SPIN_PRICE * 4, money)

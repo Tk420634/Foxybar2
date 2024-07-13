@@ -128,10 +128,10 @@
 		if(!locked && allow_switch_interact)
 			if(active == TRUE)
 				active = FALSE
-				to_chat(user, span_notice("You turn off [src]."))
+				to_chat(user, span_notice("I turn off [src]."))
 			else
 				active = TRUE
-				to_chat(user, span_notice("You turn on [src]."))
+				to_chat(user, span_notice("I turn on [src]."))
 				shot_number = 0
 				fire_delay = maximum_fire_delay
 
@@ -258,21 +258,21 @@
 			if(!I.tool_start_check(user, amount=0))
 				return TRUE
 			user.visible_message("[user.name] starts to weld the [name] to the floor.", \
-				span_notice("You start to weld \the [src] to the floor..."), \
-				span_italic("You hear welding."))
+				span_notice("I start to weld \the [src] to the floor..."), \
+				span_italic("I hear welding."))
 			if(I.use_tool(src, user, 20, volume=50))
 				state = EMITTER_WELDED
-				to_chat(user, span_notice("You weld \the [src] to the floor."))
+				to_chat(user, span_notice("I weld \the [src] to the floor."))
 				connect_to_network()
 		if(EMITTER_WELDED)
 			if(!I.tool_start_check(user, amount=0))
 				return TRUE
 			user.visible_message("[user.name] starts to cut the [name] free from the floor.", \
-				span_notice("You start to cut \the [src] free from the floor..."), \
-				span_italic("You hear welding."))
+				span_notice("I start to cut \the [src] free from the floor..."), \
+				span_italic("I hear welding."))
 			if(I.use_tool(src, user, 20, volume=50))
 				state = EMITTER_WRENCHED
-				to_chat(user, span_notice("You cut \the [src] free from the floor."))
+				to_chat(user, span_notice("I cut \the [src] free from the floor."))
 				disconnect_from_network()
 
 	return TRUE
@@ -298,7 +298,7 @@
 		if(allowed(user))
 			if(active)
 				locked = !locked
-				to_chat(user, span_notice("You [src.locked ? "lock" : "unlock"] the controls."))
+				to_chat(user, span_notice("I [src.locked ? "lock" : "unlock"] the controls."))
 			else
 				to_chat(user, span_warning("The controls can only be locked when \the [src] is online!"))
 		else
@@ -353,7 +353,7 @@
 		return
 	locked = FALSE
 	obj_flags |= EMAGGED
-	user?.visible_message("[user.name] emags [src].",span_notice("You short out the lock."))
+	user?.visible_message("[user.name] emags [src].",span_notice("I short out the lock."))
 	return TRUE
 
 

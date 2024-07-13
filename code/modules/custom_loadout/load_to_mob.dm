@@ -31,7 +31,7 @@
 
 	spawn(50)
 		to_chat(L, span_notice("-------------------------------------------"))
-		to_chat(L, span_notice("You have custom loadout items!  They are in the box at your feet."))
+		to_chat(L, span_notice("I have custom loadout items!  They are in the box at your feet."))
 		to_chat(L, span_notice("-------------------------------------------"))
 
 	var/turf/T = get_turf(H)
@@ -40,9 +40,9 @@
 	var/obj/item/storage/box/large/customloadoutbox = new
 
 	customloadoutbox.name = "Custom Loadout for [L.name]"
-	customloadoutbox.desc = "Your custom loadout items!"
+	customloadoutbox.desc = "My custom loadout items!"
 	customloadoutbox.w_class = WEIGHT_CLASS_BULKY
-//	to_chat(H, span_notice("You have custom loadout items in the box at your feet.  Don't forget them!"))
+//	to_chat(H, span_notice("I have custom loadout items in the box at your feet.  Don't forget them!"))
 
 	var obj/item/loaded_box = customloadoutbox			  //call it loaded_box
 	loaded_box.forceMove(T)								  //move box to below mob
@@ -106,7 +106,7 @@
 
 	spawn(50)
 		to_chat(M, span_notice("-------------------------------------------"))
-		to_chat(M, span_notice("You have custom loadout items. They are in the box at your feet."))
+		to_chat(M, span_notice("I have custom loadout items. They are in the box at your feet."))
 		to_chat(M, span_notice("-------------------------------------------"))
 
 	var/turf/T = get_turf(M)

@@ -58,7 +58,7 @@
 		J.mybag=src
 		J.update_icon()
 	else
-		to_chat(user, span_warning("You are unable to fit your [name] into the [J.name]."))
+		to_chat(user, span_warning("I am unable to fit your [name] into the [J.name]."))
 		return
 
 /obj/item/storage/bag/trash/bluespace
@@ -143,17 +143,17 @@
 				show_message = TRUE
 			else
 				if(!spam_protection)
-					to_chat(user, span_warning("Your [name] is full and can't hold any more!"))
+					to_chat(user, span_warning("My [name] is full and can't hold any more!"))
 					spam_protection = TRUE
 					continue
 	if(show_message)
 		playsound(user, "rustle", 50, TRUE)
 		if (box)
 			user.visible_message(span_notice("[user] offloads the ores beneath [user.p_them()] into [box]."), \
-			span_notice("You offload the ores beneath you into your [box]."))
+			span_notice("I offload the ores beneath you into your [box]."))
 		else
 			user.visible_message(span_notice("[user] scoops up the ores beneath [user.p_them()]."), \
-				span_notice("You scoop up the ores beneath you with your [name]."))
+				span_notice("I scoop up the ores beneath you with your [name]."))
 	spam_protection = FALSE
 
 /obj/item/storage/bag/ore/cyborg
@@ -525,14 +525,14 @@
 				show_message = TRUE
 				continue
 			if(!spam_protection)
-				to_chat(user, span_warning("Your [name] is full and can't hold any more!"))
+				to_chat(user, span_warning("My [name] is full and can't hold any more!"))
 				spam_protection = TRUE
 				break
 
 	if(show_message)
 		playsound(user, "rustle", 50, TRUE)
 		user.visible_message(span_notice("[user] scoops up the casings beneath [user.p_them()]."), \
-			span_notice("You scoop up the casings beneath you with your [name]."))
+			span_notice("I scoop up the casings beneath you with your [name]."))
 	spam_protection = FALSE
 
 /obj/item/storage/bag/casings/debug_casings
@@ -644,14 +644,14 @@
 				show_message = TRUE
 				continue
 			if(!spam_protection)
-				to_chat(user, span_warning("Your [name] is full and can't hold any more!"))
+				to_chat(user, span_warning("My [name] is full and can't hold any more!"))
 				spam_protection = TRUE
 				break
 
 	if(show_message)
 		playsound(user, "rustle", 50, TRUE)
 		user.visible_message(span_notice("[user] scoops up the arrows beneath [user.p_them()]."), \
-			span_notice("You scoop up the arrows beneath you with your [name]."))
+			span_notice("I scoop up the arrows beneath you with your [name]."))
 	spam_protection = FALSE
 
 
@@ -693,19 +693,19 @@
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		return
 	if(!length(user.get_empty_held_indexes()))
-		to_chat(user, span_warning("Your hands are full!"))
+		to_chat(user, span_warning("My hands are full!"))
 		return
 	var/obj/item/ammo_casing/caseless/arrow/L = locate() in contents
 	if(L)
 		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, L, user)
 		user.put_in_hands(L)
-		to_chat(user, span_notice("You take \a [L] out of the quiver."))
+		to_chat(user, span_notice("I take \a [L] out of the quiver."))
 		return TRUE
 	var/obj/item/ammo_casing/caseless/W = locate() in contents
 	if(W && contents.len > 0)
 		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, W, user)
 		user.put_in_hands(W)
-		to_chat(user, span_notice("You take \a [W] out of the quiver."))
+		to_chat(user, span_notice("I take \a [W] out of the quiver."))
 	else
 		to_chat(user, span_notice("There is nothing left in the quiver."))
 	return TRUE

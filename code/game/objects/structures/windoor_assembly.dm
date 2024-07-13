@@ -94,10 +94,10 @@
 					return
 
 				user.visible_message("[user] disassembles the windoor assembly.",
-					span_notice("You start to disassemble the windoor assembly..."))
+					span_notice("I start to disassemble the windoor assembly..."))
 
 				if(W.use_tool(src, user, 40, volume=50))
-					to_chat(user, span_notice("You disassemble the windoor assembly."))
+					to_chat(user, span_notice("I disassemble the windoor assembly."))
 					var/obj/item/stack/sheet/rglass/RG = new (get_turf(src), 5)
 					RG.add_fingerprint(user)
 					if(secure)
@@ -113,7 +113,7 @@
 						to_chat(user, span_warning("There is already a windoor in that location!"))
 						return
 				user.visible_message("[user] secures the windoor assembly to the floor.",
-					span_notice("You start to secure the windoor assembly to the floor..."))
+					span_notice("I start to secure the windoor assembly to the floor..."))
 
 				if(W.use_tool(src, user, 40, volume=100))
 					if(anchored)
@@ -122,7 +122,7 @@
 						if(WD.dir == dir)
 							to_chat(user, span_warning("There is already a windoor in that location!"))
 							return
-					to_chat(user, span_notice("You secure the windoor assembly."))
+					to_chat(user, span_notice("I secure the windoor assembly."))
 					setAnchored(TRUE)
 					if(secure)
 						name = "secure anchored windoor assembly"
@@ -132,12 +132,12 @@
 			//Unwrenching an unsecure assembly un-anchors it. Step 4 undone
 			else if(istype(W, /obj/item/wrench) && anchored)
 				user.visible_message("[user] unsecures the windoor assembly to the floor.",
-					span_notice("You start to unsecure the windoor assembly to the floor..."))
+					span_notice("I start to unsecure the windoor assembly to the floor..."))
 
 				if(W.use_tool(src, user, 40, volume=100))
 					if(!anchored)
 						return
-					to_chat(user, span_notice("You unsecure the windoor assembly."))
+					to_chat(user, span_notice("I unsecure the windoor assembly."))
 					setAnchored(FALSE)
 					if(secure)
 						name = "secure windoor assembly"
@@ -148,16 +148,16 @@
 			else if(istype(W, /obj/item/stack/sheet/plasteel) && !secure)
 				var/obj/item/stack/sheet/plasteel/P = W
 				if(P.get_amount() < 2)
-					to_chat(user, span_warning("You need more plasteel to do this!"))
+					to_chat(user, span_warning("I need more plasteel to do this!"))
 					return
-				to_chat(user, span_notice("You start to reinforce the windoor with plasteel..."))
+				to_chat(user, span_notice("I start to reinforce the windoor with plasteel..."))
 
 				if(do_after(user,40, target = src))
 					if(!src || secure || P.get_amount() < 2)
 						return
 
 					P.use(2)
-					to_chat(user, span_notice("You reinforce the windoor."))
+					to_chat(user, span_notice("I reinforce the windoor."))
 					secure = TRUE
 					if(anchored)
 						name = "secure anchored windoor assembly"
@@ -166,15 +166,15 @@
 
 			//Adding cable to the assembly. Step 5 complete.
 			else if(istype(W, /obj/item/stack/cable_coil) && anchored)
-				user.visible_message("[user] wires the windoor assembly.", span_notice("You start to wire the windoor assembly..."))
+				user.visible_message("[user] wires the windoor assembly.", span_notice("I start to wire the windoor assembly..."))
 
 				if(do_after(user, 40, target = src))
 					if(!src || !anchored || src.state != "01")
 						return
 					if(!W.use_tool(src, user, 0, 1))
-						to_chat(user, span_warning("You need more cable to do this!"))
+						to_chat(user, span_warning("I need more cable to do this!"))
 						return
-					to_chat(user, span_notice("You wire the windoor."))
+					to_chat(user, span_notice("I wire the windoor."))
 					state = "02"
 					if(secure)
 						name = "secure wired windoor assembly"
@@ -187,13 +187,13 @@
 
 			//Removing wire from the assembly. Step 5 undone.
 			if(istype(W, /obj/item/wirecutters))
-				user.visible_message("[user] cuts the wires from the airlock assembly.", span_notice("You start to cut the wires from airlock assembly..."))
+				user.visible_message("[user] cuts the wires from the airlock assembly.", span_notice("I start to cut the wires from airlock assembly..."))
 
 				if(W.use_tool(src, user, 40, volume=100))
 					if(state != "02")
 						return
 
-					to_chat(user, span_notice("You cut the windoor wires."))
+					to_chat(user, span_notice("I cut the windoor wires."))
 					new/obj/item/stack/cable_coil(get_turf(user), 1)
 					state = "01"
 					if(secure)
@@ -207,13 +207,13 @@
 					return
 				W.play_tool_sound(src, 100)
 				user.visible_message("[user] installs the electronics into the airlock assembly.",
-					span_notice("You start to install electronics into the airlock assembly..."))
+					span_notice("I start to install electronics into the airlock assembly..."))
 
 				if(do_after(user, 40, target = src))
 					if(!src || electronics)
 						W.forceMove(drop_location())
 						return
-					to_chat(user, span_notice("You install the airlock electronics."))
+					to_chat(user, span_notice("I install the airlock electronics."))
 					name = "near finished windoor assembly"
 					electronics = W
 				else
@@ -225,10 +225,10 @@
 					return
 
 				user.visible_message("[user] removes the electronics from the airlock assembly.",
-					span_notice("You start to uninstall electronics from the airlock assembly..."))
+					span_notice("I start to uninstall electronics from the airlock assembly..."))
 
 				if(W.use_tool(src, user, 40, volume=100) && electronics)
-					to_chat(user, span_notice("You remove the airlock electronics."))
+					to_chat(user, span_notice("I remove the airlock electronics."))
 					name = "wired windoor assembly"
 					var/obj/item/electronics/airlock/ae
 					ae = electronics
@@ -253,12 +253,12 @@
 					return
 				user << browse(null, "window=windoor_access")
 				user.visible_message("[user] pries the windoor into the frame.",
-					span_notice("You start prying the windoor into the frame..."))
+					span_notice("I start prying the windoor into the frame..."))
 
 				if(W.use_tool(src, user, 40, volume=100) && electronics)
 
 					density = TRUE //Shouldn't matter but just incase
-					to_chat(user, span_notice("You finish the windoor."))
+					to_chat(user, span_notice("I finish the windoor."))
 
 					if(secure)
 						var/obj/machinery/door/window/brigdoor/windoor = new /obj/machinery/door/window/brigdoor(loc)

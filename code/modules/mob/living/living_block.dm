@@ -83,7 +83,7 @@
 		return
 	if(prob(final_block_chance))
 		owner.visible_message(span_danger("[owner] blocks [attack_text] with [src]!"),
-			span_danger("You block [attack_text] with [src]!"))
+			span_danger("I block [attack_text] with [src]!"))
 		return . | BLOCK_SUCCESS | BLOCK_PHYSICAL_EXTERNAL
 	return . | BLOCK_NONE
 

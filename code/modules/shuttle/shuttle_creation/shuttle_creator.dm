@@ -70,7 +70,7 @@ GLOBAL_LIST_EMPTY(custom_shuttle_machines)		//Machines that require updating (He
 /obj/item/shuttle_creator/afterattack(atom/target, mob/user, proximity_flag)
 	. = ..()
 	if(!ready)
-		to_chat(user, span_warning("You need to define a shuttle area first."))
+		to_chat(user, span_warning("I need to define a shuttle area first."))
 		return
 	if(!proximity_flag)
 		return
@@ -299,7 +299,7 @@ GLOBAL_LIST_EMPTY(custom_shuttle_machines)		//Machines that require updating (He
 		var/area/place = get_area(turfs[i])
 		//If any of the turfs are on station / not in space, a shuttle cannot be forced there
 		if(!place)
-			to_chat(usr, span_warning("You can't seem to overpower the bluespace harmonics in this location, try somewhere else."))
+			to_chat(usr, span_warning("I can't seem to overpower the bluespace harmonics in this location, try somewhere else."))
 			return FALSE
 		if(istype(place, /area/space))
 			overwritten_area = /area/space
@@ -348,7 +348,7 @@ GLOBAL_LIST_EMPTY(custom_shuttle_machines)		//Machines that require updating (He
 	loggedTurfs |= turfs
 	overlay_holder.highlight_area(turfs)
 	//TODO READD THIS SHIT: icon_state = "rsd_empty"
-	to_chat(user, span_notice("You add the area into the buffer of the [src], you made add more areas or select an airlock to act as a docking port to complete the shuttle."))
+	to_chat(user, span_notice("I add the area into the buffer of the [src], you made add more areas or select an airlock to act as a docking port to complete the shuttle."))
 	return turfs
 
 /obj/item/shuttle_creator/proc/remove_single_turf(turf/T)
@@ -361,7 +361,7 @@ GLOBAL_LIST_EMPTY(custom_shuttle_machines)		//Machines that require updating (He
 /obj/item/shuttle_creator/proc/reset_saved_area()
 	overlay_holder.clear_highlights()
 	loggedTurfs.Cut()
-	to_chat(usr, span_notice("You reset the area buffer on the [src]."))
+	to_chat(usr, span_notice("I reset the area buffer on the [src]."))
 
 #undef CARDINAL_DIRECTIONS_X
 #undef CARDINAL_DIRECTIONS_Y

@@ -24,11 +24,11 @@
 		return FALSE
 
 	if(!unwrapped)
-		to_chat(user, span_notice("You must remove the condom from the package first!"))
+		to_chat(user, span_notice("I must remove the condom from the package first!"))
 		return FALSE
 
 	if(!G.owner.has_penis(REQUIRE_EXPOSED))
-		to_chat(user, span_notice("You can't find anywhere to put the condom!"))
+		to_chat(user, span_notice("I can't find anywhere to put the condom!"))
 		return FALSE
 
 	if(locate(src.type) in G.contents)
@@ -44,7 +44,7 @@
 /obj/item/genital_equipment/condom/item_inserted(datum/source, obj/item/organ/genital/G, mob/user)
 	. = TRUE
 	playsound(G.owner, 'modular_sand/sound/lewd/latex.ogg', 50, 1, -1)
-	to_chat(G.owner, span_userlove("Your penis feels more safe!"))
+	to_chat(G.owner, span_userlove("My penis feels more safe!"))
 
 /obj/item/genital_equipment/condom/update_icon()
 	switch(reagents.total_volume)
@@ -68,7 +68,7 @@
 		if(unwrapped == 0)
 			icon_state 	= "b_condom"
 			unwrapped = 1
-			to_chat(user, span_notice("You unwrap the condom."))
+			to_chat(user, span_notice("I unwrap the condom."))
 			playsound(user, 'sound/items/poster_ripped.ogg', 50, 1, -1)
 			return
 

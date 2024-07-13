@@ -176,17 +176,17 @@
 	// if(require_user_mouth)
 	// 	if(!user.has_mouth() && !issilicon(user)) //Again, silicons do not have the required parts normally.
 	// 		if(!silent)
-	// 			to_chat(user, span_warning("You don't have a mouth."))
+	// 			to_chat(user, span_warning("I don't have a mouth."))
 	// 		return FALSE
 
 	// 	if(!user.mouth_is_free() && !issilicon(user)) //Borgs cannot wear mouthgear, bypassing the check.
 	// 		if(!silent)
-	// 			to_chat(user, span_warning("Your mouth is covered."))
+	// 			to_chat(user, span_warning("My mouth is covered."))
 	// 		return FALSE
 
 	// if(require_user_hands && !user.has_hands() && !issilicon(user)) //Edited to allow silicons to interact.
 	// 	if(!silent)
-	// 		to_chat(user, span_warning("You don't have hands."))
+	// 		to_chat(user, span_warning("I don't have hands."))
 	// 	return FALSE
 
 	if(action_check)
@@ -249,7 +249,7 @@
 	if(!is_self_action)
 		if(user == target) //tactical href fix
 			if(!discrete)
-				to_chat(user, span_warning("You cannot target yourself with that!"))
+				to_chat(user, span_warning("I cannot target yourself with that!"))
 			return
 	if(!consented(user, target))
 		if(!discrete)
@@ -261,7 +261,7 @@
 		return
 	if(needs_physical_contact && !(user.Adjacent(target) && target.Adjacent(user)))
 		if(!discrete)
-			to_chat(user, span_warning("You cannot get to them."))
+			to_chat(user, span_warning("I cannot get to them."))
 		return
 	if(!evaluate_user(user, silent = discrete, action_check = override_for_tgui))
 		return
@@ -269,7 +269,7 @@
 		return
 	if(!override_for_tgui && user.incapacitated(allow_crit = TRUE))
 		if(!discrete)
-			to_chat(user, span_warning("You are in no shape to do that!"))
+			to_chat(user, span_warning("I am in no shape to do that!"))
 		return
 	return TRUE
 

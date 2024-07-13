@@ -16,7 +16,7 @@
 	if(.)
 		return
 	if(!is_servant_of_ratvar(user))
-		to_chat(user, span_notice("You can tell how powerful [src] is; you know better than to touch it."))
+		to_chat(user, span_notice("I can tell how powerful [src] is; you know better than to touch it."))
 		return
 	if(kingmaking)
 		return
@@ -39,7 +39,7 @@
 	if(!is_servant_of_ratvar(user))
 		..()
 	else
-		to_chat(user, span_warning("You feel the omniscient gaze turn into a puzzled frown. Perhaps you should just stick to building."))
+		to_chat(user, span_warning("I feel the omniscient gaze turn into a puzzled frown. Perhaps you should just stick to building."))
 		return
 
 //ATTACK GHOST IGNORING PARENT RETURN VALUE

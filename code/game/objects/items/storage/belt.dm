@@ -568,7 +568,7 @@
 
 	for(var/obj/item/reagent_containers/syringe/dart/D in contents)
 		if(round(target.reagents.total_volume, 1) <= 0)
-			to_chat(user, span_notice("You soak as many of the darts as you can with the contents from [target]."))
+			to_chat(user, span_notice("I soak as many of the darts as you can with the contents from [target]."))
 			return
 		if(D.mode == SYRINGE_INJECT)
 			continue
@@ -802,7 +802,7 @@
 		return
 	if(length(contents))
 		var/obj/item/I = contents[2]
-		user.visible_message("[user] takes [I] out of [src].", span_notice("You take [I] out of [src]."))
+		user.visible_message("[user] takes [I] out of [src].", span_notice("I take [I] out of [src]."))
 		user.put_in_hands(I)
 		update_icon()
 	else

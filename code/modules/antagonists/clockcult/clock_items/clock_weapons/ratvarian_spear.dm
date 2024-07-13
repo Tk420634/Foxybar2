@@ -40,7 +40,7 @@
 			target.visible_message(span_warning("[target] shudders violently at [src]'s touch!"), span_userdanger("ERROR: Temperature rising!"))
 			bonus_damage *= 5 //total 40 damage on borgs, 70 with ratvar
 		else if(iscultist(target) || isconstruct(target))
-			to_chat(target, span_userdanger("Your body flares with agony at [src]'s presence!"))
+			to_chat(target, span_userdanger("My body flares with agony at [src]'s presence!"))
 			bonus_damage *= 3 //total 30 damage on cultists, 50 with ratvar
 		GLOB.clockwork_vitality += max(0, target.adjustFireLoss(bonus_damage)) //adds the damage done to existing vitality
 

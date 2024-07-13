@@ -39,10 +39,10 @@
 			to_chat(user, span_warning("[src] is out of water!"))
 		else
 			reagents.trans_to(O, 5, log = "reagentcontainer-bucket fill mop")
-			to_chat(user, span_notice("You wet [O] in [src]."))
+			to_chat(user, span_notice("I wet [O] in [src]."))
 			playsound(loc, 'sound/effects/slosh.ogg', 25, 1)
 	else if(isprox(O))
-		to_chat(user, span_notice("You add [O] to [src]."))
+		to_chat(user, span_notice("I add [O] to [src]."))
 		qdel(O)
 		qdel(src)
 		user.put_in_hands(new /obj/item/bot_assembly/cleanbot)

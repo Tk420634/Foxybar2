@@ -86,7 +86,7 @@
 
 	if(Adjacent(target) && usr.Adjacent(target))
 		if(beaker)
-			usr.visible_message(span_warning("[usr] attaches [src] to [target]."), span_notice("You attach [src] to [target]."))
+			usr.visible_message(span_warning("[usr] attaches [src] to [target]."), span_notice("I attach [src] to [target]."))
 			log_combat(usr, target, "attached", src, "containing: [beaker.name] - ([beaker.reagents.log_list()])")
 			add_fingerprint(usr)
 			attached = target
@@ -104,7 +104,7 @@
 		if(!user.transferItemToLoc(W, src))
 			return
 		beaker = W
-		to_chat(user, span_notice("You attach [W] to [src]."))
+		to_chat(user, span_notice("I attach [W] to [src]."))
 		user.log_message("attached a [W] to [src] at [AREACOORD(src)] containing ([beaker.reagents.log_list()])", LOG_ATTACK)
 		add_fingerprint(user)
 		update_icon()
@@ -177,10 +177,10 @@
 		return
 	if(dripfeed)
 		dripfeed = FALSE
-		to_chat(usr, span_notice("You loosen the valve to speed up the [src]."))
+		to_chat(usr, span_notice("I loosen the valve to speed up the [src]."))
 	else
 		dripfeed = TRUE
-		to_chat(usr, span_notice("You tighten the valve to slowly drip-feed the contents of [src]."))
+		to_chat(usr, span_notice("I tighten the valve to slowly drip-feed the contents of [src]."))
 
 /obj/machinery/iv_drip/attack_robot(mob/user)
 	if(Adjacent(user))
@@ -192,7 +192,7 @@
 	set src in view(1)
 
 	if(!isliving(usr))
-		to_chat(usr, span_warning("You can't do that!"))
+		to_chat(usr, span_warning("I can't do that!"))
 		return
 
 	if(usr.incapacitated(allow_crit = TRUE))
@@ -212,7 +212,7 @@
 	set src in view(1)
 
 	if(!isliving(usr))
-		to_chat(usr, span_warning("You can't do that!"))
+		to_chat(usr, span_warning("I can't do that!"))
 		return
 
 	if(usr.incapacitated(allow_crit = TRUE))

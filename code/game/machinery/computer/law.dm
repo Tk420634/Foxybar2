@@ -10,7 +10,7 @@
 		if(src.stat & (NOPOWER|BROKEN|MAINT))
 			return
 		if(!current)
-			to_chat(user, span_caution("You haven't selected anything to transmit laws to!"))
+			to_chat(user, span_caution("I haven't selected anything to transmit laws to!"))
 			return
 		if(!can_upload_to(current))
 			to_chat(user, "<span class='caution'>Upload failed!</span> Check to make sure [current.name] is functioning properly.")

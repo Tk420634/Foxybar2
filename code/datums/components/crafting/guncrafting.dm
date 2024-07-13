@@ -157,58 +157,58 @@
 				if(tool.tool_behaviour != TOOL_SCREWDRIVER)
 					return
 				if(!tool.use_tool(src, user, 3 SECONDS, 0, 100))
-					user.show_message(span_alert("You were interrupted!"))
+					user.show_message(span_alert("I were interrupted!"))
 					return
 				disassembling = TRUE
 				visible_message(span_notice("[user] <b>unscrewed</b> the outer bolts on [src]!"),
-					span_green("You <b>unscrewed</b> the outer bolts on [src]!"))
+					span_green("I <b>unscrewed</b> the outer bolts on [src]!"))
 				return TRUE
 
 			if(WB_DISASSEMBLY_STEP_WELD)
 				if(tool.tool_behaviour != TOOL_WELDER)
 					return
 				if(!tool.tool_start_check(user, amount=1))
-					user.show_message(span_alert("You need at least 1 unit of fuel in that thing!"))
+					user.show_message(span_alert("I need at least 1 unit of fuel in that thing!"))
 					return
 				if(!tool.use_tool(src, user, 3 SECONDS, 0, 100))
-					user.show_message(span_alert("You were interrupted!"))
+					user.show_message(span_alert("I were interrupted!"))
 					return
 				disassembling = TRUE
 				visible_message(span_notice("[user] <b>unwelded</b> the outer hull on [src]!"),
-					span_green("You <b>unwelded</b> the outer hull on [src]!"))
+					span_green("I <b>unwelded</b> the outer hull on [src]!"))
 				return TRUE
 
 			if(WB_DISASSEMBLY_STEP_CUT)
 				if(tool.tool_behaviour != TOOL_WIRECUTTER)
 					return
 				if(!tool.use_tool(src, user, 3 SECONDS, 0, 100))
-					user.show_message(span_alert("You were interrupted!"))
+					user.show_message(span_alert("I were interrupted!"))
 					return
 				disassembling = TRUE
 				visible_message(span_notice("[user] <b>cut</b> the outer wires on [src]!"),
-					span_green("You <b>cut</b> the outer wires on [src]!"))
+					span_green("I <b>cut</b> the outer wires on [src]!"))
 				return TRUE
 
 			if(WB_DISASSEMBLY_STEP_CROWBAR)
 				if(tool.tool_behaviour != TOOL_CROWBAR)
 					return
 				if(!tool.use_tool(src, user, 3 SECONDS, 0, 100))
-					user.show_message(span_alert("You were interrupted!"))
+					user.show_message(span_alert("I were interrupted!"))
 					return
 				disassembling = TRUE
 				visible_message(span_notice("[user] <b>pried</b> the outer covering off [src]!"),
-					span_green("You <b>pried</b> the outer covering off [src]!"))
+					span_green("I <b>pried</b> the outer covering off [src]!"))
 				return TRUE
 
 			if(WB_DISASSEMBLY_STEP_ELECTRONICS)
 				if(tool.tool_behaviour != TOOL_MULTITOOL)
 					return
 				if(!tool.use_tool(src, user, 3 SECONDS, 0, 100))
-					user.show_message(span_alert("You were interrupted!"))
+					user.show_message(span_alert("I were interrupted!"))
 					return
 				disassembling = TRUE
 				visible_message(span_notice("[user] <b>bypassed</b> the outer security on [src]!"),
-					span_green("You <b>bypassed</b> the outer security on [src]!"))
+					span_green("I <b>bypassed</b> the outer security on [src]!"))
 				return TRUE
 
 			if(WB_DISASSEMBLY_STEP_CLUB)
@@ -217,7 +217,7 @@
 				disassembling = TRUE
 				play_attack_sound(1)
 				visible_message(span_notice("[user] <b>smashed</b> the outer cover on [src]!"),
-					span_green("You <b>smashed</b> the outer cover on [src]!"))
+					span_green("I <b>smashed</b> the outer cover on [src]!"))
 				return TRUE
 	else
 		var/did_something = FALSE
@@ -227,12 +227,12 @@
 				if(tool.use_tool(src, user, 3 SECONDS, 0, 100))
 					DISABLE_BITFIELD(disassembly_steps_remaining, WB_DISASSEMBLY_STEP_SCREW)
 					visible_message(span_notice("[user] <b>unscrewed</b> the supports on [src]!"),
-						span_green("You <b>unscrewed</b> the supports on [src]!"))
+						span_green("I <b>unscrewed</b> the supports on [src]!"))
 			else
 				if(tool.use_tool(src, user, 0, 0, 100))
 					ENABLE_BITFIELD(disassembly_steps_remaining, WB_DISASSEMBLY_STEP_SCREW)
 					visible_message(span_notice("[user] <b>screwed</b> the supports on [src] back in!"),
-						span_notice("You <b>screwed</b> the supports on [src] back in!"))
+						span_notice("I <b>screwed</b> the supports on [src] back in!"))
 		if(CHECK_BITFIELD(original_steps, WB_DISASSEMBLY_STEP_WELD) && tool.tool_behaviour == TOOL_WELDER)
 			did_something = TRUE
 			if(CHECK_BITFIELD(disassembly_steps_remaining, WB_DISASSEMBLY_STEP_WELD))
@@ -240,26 +240,26 @@
 					if(tool.use_tool(src, user, 3 SECONDS, 0, 100))
 						DISABLE_BITFIELD(disassembly_steps_remaining, WB_DISASSEMBLY_STEP_WELD)
 						visible_message(span_notice("[user] <b>unwelded</b> the seams on [src]!"),
-							span_green("You <b>unwelded</b> the seams on [src]!"))
+							span_green("I <b>unwelded</b> the seams on [src]!"))
 				else
-					to_chat(user, span_alert("You need at least 1 unit of fuel in your welder!"))
+					to_chat(user, span_alert("I need at least 1 unit of fuel in your welder!"))
 			else
 				if(tool.use_tool(src, user, 0, 0, 100))
 					ENABLE_BITFIELD(disassembly_steps_remaining, WB_DISASSEMBLY_STEP_WELD)
 					visible_message(span_notice("[user] <b>welded</b> the seams on [src] back together!"),
-						span_green("You <b>welded</b> the supports on [src] back together!"))
+						span_green("I <b>welded</b> the supports on [src] back together!"))
 		if(CHECK_BITFIELD(original_steps, WB_DISASSEMBLY_STEP_CUT) && tool.tool_behaviour == TOOL_WIRECUTTER)
 			did_something = TRUE
 			if(CHECK_BITFIELD(disassembly_steps_remaining, WB_DISASSEMBLY_STEP_CUT))
 				if(tool.use_tool(src, user, 3 SECONDS, 0, 100))
 					DISABLE_BITFIELD(disassembly_steps_remaining, WB_DISASSEMBLY_STEP_CUT)
 					visible_message(span_notice("[user] <b>cut</b> the cables on [src]!"),
-						span_green("You <b>cut</b> the cables on [src]!"))
+						span_green("I <b>cut</b> the cables on [src]!"))
 			else
 				if(tool.use_tool(src, user, 0, 0, 100))
 					ENABLE_BITFIELD(disassembly_steps_remaining, WB_DISASSEMBLY_STEP_CUT)
 					visible_message(span_notice("[user] <b>mended</b> the supports on [src] back together!"),
-						span_notice("You <b>mended</b> the supports on [src] back together!"))
+						span_notice("I <b>mended</b> the supports on [src] back together!"))
 
 		if(CHECK_BITFIELD(original_steps, WB_DISASSEMBLY_STEP_CROWBAR) && tool.tool_behaviour == TOOL_CROWBAR)
 			did_something = TRUE
@@ -267,12 +267,12 @@
 				if(tool.use_tool(src, user, 3 SECONDS, 0, 100))
 					DISABLE_BITFIELD(disassembly_steps_remaining, WB_DISASSEMBLY_STEP_CROWBAR)
 					visible_message(span_notice("[user] <b>pried</b> the panels off [src]!"),
-						span_green("You <b>pried</b> the panels off [src]!"))
+						span_green("I <b>pried</b> the panels off [src]!"))
 			else
 				if(tool.use_tool(src, user, 0, 0, 100))
 					ENABLE_BITFIELD(disassembly_steps_remaining, WB_DISASSEMBLY_STEP_CROWBAR)
 					visible_message(span_notice("[user] <b>replaced</b> the panels on [src]!"),
-						span_notice("You <b>replaced</b> the panels on [src]!"))
+						span_notice("I <b>replaced</b> the panels on [src]!"))
 
 		if(CHECK_BITFIELD(original_steps, WB_DISASSEMBLY_STEP_ELECTRONICS) && tool.tool_behaviour == TOOL_MULTITOOL)
 			did_something = TRUE
@@ -280,12 +280,12 @@
 				if(tool.use_tool(src, user, 3 SECONDS, 0, 100))
 					DISABLE_BITFIELD(disassembly_steps_remaining, WB_DISASSEMBLY_STEP_ELECTRONICS)
 					visible_message(span_notice("[user] <b>bypassed</b> [src]'s security!"),
-						span_green("You <b>bypassed</b> the [src]'s security!"))
+						span_green("I <b>bypassed</b> the [src]'s security!"))
 			else
 				if(tool.use_tool(src, user, 0, 0, 100))
 					ENABLE_BITFIELD(disassembly_steps_remaining, WB_DISASSEMBLY_STEP_ELECTRONICS)
 					visible_message(span_notice("[user] <b>reenabled</b> [src]'s security!"),
-						span_notice("You <b>reenabled</b> [src]'s security!"))
+						span_notice("I <b>reenabled</b> [src]'s security!"))
 
 		if(CHECK_BITFIELD(original_steps, WB_DISASSEMBLY_STEP_CLUB) && tool.force >= 15)
 			did_something = TRUE
@@ -293,12 +293,12 @@
 				play_attack_sound(1)
 				DISABLE_BITFIELD(disassembly_steps_remaining, WB_DISASSEMBLY_STEP_CLUB)
 				visible_message(span_notice("[user] <b>bashed</b> [src]!"),
-					span_green("You <b>bashed</b> the [src]!"))
+					span_green("I <b>bashed</b> the [src]!"))
 			else
 				play_attack_sound(1)
 				ENABLE_BITFIELD(disassembly_steps_remaining, WB_DISASSEMBLY_STEP_CLUB)
 				visible_message(span_notice("[user] <b>hit</b> [src] back into place!"),
-					span_notice("You <b>hit</b> [src] back into place!"))
+					span_notice("I <b>hit</b> [src] back into place!"))
 		if(!did_something)
 			return FALSE
 		if(!disassembly_steps_remaining)
@@ -307,14 +307,14 @@
 		if(disassembly_steps_remaining == original_steps)
 			disassembling = FALSE
 			visible_message(span_notice("[user] <b>stopped</b> disassembling [src]!"),
-				span_notice("You <b>stopped</b> disassembling [src]!"))
+				span_notice("I <b>stopped</b> disassembling [src]!"))
 			return TRUE
 
 /obj/machinery/workbench/proc/disassemble_it(mob/user)
 	if(!user)
 		return
 	visible_message(span_notice("[user] <b>disassembled</b> [src] into a bunch of stuff!"),
-		span_notice("You <b>disassembled</b> [src] into a bunch of stuff!"))
+		span_notice("I <b>disassembled</b> [src] into a bunch of stuff!"))
 	playsound(src, 'sound/weapons/machine_crunch.ogg', 50, 1)
 	var/turf/T = get_turf(src)
 	for(var/path in disassembly_loot)

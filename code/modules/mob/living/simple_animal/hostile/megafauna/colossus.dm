@@ -688,7 +688,7 @@ Difficulty: Very Hard
 
 /obj/structure/closet/stasis
 	name = "quantum entanglement stasis warp field"
-	desc = "You can hardly comprehend this thing... which is why you can't see it."
+	desc = "I can hardly comprehend this thing... which is why you can't see it."
 	icon_state = null //This shouldn't even be visible, so if it DOES show up, at least nobody will notice
 	density = TRUE
 	anchored = TRUE

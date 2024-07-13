@@ -43,7 +43,7 @@
 			var/mob/living/A = AM
 			if(A.mob_size > MOB_SIZE_SMALL && !(A.movement_type & FLYING))
 				if(prob(squish_chance))
-					A.visible_message(span_notice("[A] squashed [src]."), span_notice("You squashed [src]."))
+					A.visible_message(span_notice("[A] squashed [src]."), span_notice("I squashed [src]."))
 					adjustBruteLoss(1) //kills a normal cockroach
 				else
 					visible_message(span_notice("[src] avoids getting crushed."))

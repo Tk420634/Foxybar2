@@ -57,24 +57,24 @@
 /obj/item/radio/intercom/attackby(obj/item/I, mob/living/user, params)
 	if(istype(I, /obj/item/screwdriver))
 		if(unfastened)
-			user.visible_message(span_notice("[user] starts tightening [src]'s screws..."), span_notice("You start screwing in [src]..."))
+			user.visible_message(span_notice("[user] starts tightening [src]'s screws..."), span_notice("I start screwing in [src]..."))
 			if(I.use_tool(src, user, 30, volume=50))
-				user.visible_message(span_notice("[user] tightens [src]'s screws!"), span_notice("You tighten [src]'s screws."))
+				user.visible_message(span_notice("[user] tightens [src]'s screws!"), span_notice("I tighten [src]'s screws."))
 				unfastened = FALSE
 		else
-			user.visible_message(span_notice("[user] starts loosening [src]'s screws..."), span_notice("You start unscrewing [src]..."))
+			user.visible_message(span_notice("[user] starts loosening [src]'s screws..."), span_notice("I start unscrewing [src]..."))
 			if(I.use_tool(src, user, 40, volume=50))
-				user.visible_message(span_notice("[user] loosens [src]'s screws!"), span_notice("You unscrew [src], loosening it from the wall."))
+				user.visible_message(span_notice("[user] loosens [src]'s screws!"), span_notice("I unscrew [src], loosening it from the wall."))
 				unfastened = TRUE
 		return
 	else if(istype(I, /obj/item/wrench))
 		if(!unfastened)
-			to_chat(user, span_warning("You need to unscrew [src] from the wall first!"))
+			to_chat(user, span_warning("I need to unscrew [src] from the wall first!"))
 			return
-		user.visible_message(span_notice("[user] starts unsecuring [src]..."), span_notice("You start unsecuring [src]..."))
+		user.visible_message(span_notice("[user] starts unsecuring [src]..."), span_notice("I start unsecuring [src]..."))
 		I.play_tool_sound(src)
 		if(I.use_tool(src, user, 80))
-			user.visible_message(span_notice("[user] unsecures [src]!"), span_notice("You detach [src] from the wall."))
+			user.visible_message(span_notice("[user] unsecures [src]!"), span_notice("I detach [src] from the wall."))
 			playsound(src, 'sound/items/deconstruct.ogg', 50, 1)
 			new/obj/item/wallframe/intercom(get_turf(src))
 			qdel(src)

@@ -27,7 +27,7 @@
 			cargo_console = C
 			to_chat(user, span_notice("Scanner linked to [C]."))
 	else if(!istype(cargo_console))
-		to_chat(user, span_warning("You must link [src] to a cargo console first!"))
+		to_chat(user, span_warning("I must link [src] to a cargo console first!"))
 	else
 		// Before you fix it:
 		// yes, checking manifests is a part of intended functionality.

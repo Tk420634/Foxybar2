@@ -214,12 +214,12 @@
 		. += "Nutrition: [nutrition]/[get_max_nutrition()]"
 	if(amount_grown >= SLIME_EVOLUTION_THRESHOLD)
 		if(is_adult)
-			. += "You can reproduce!"
+			. += "I can reproduce!"
 		else
-			. += "You can evolve!"
+			. += "I can evolve!"
 
 		if(stat == UNCONSCIOUS)
-			. += "You are knocked out by high levels of BZ!"
+			. += "I am knocked out by high levels of BZ!"
 		else
 			. += "Power Level: [powerlevel]"
 
@@ -351,7 +351,7 @@
 			++Friends[user]
 		else
 			Friends[user] = 1
-		to_chat(user, span_notice("You feed the slime the plasma. It chirps happily."))
+		to_chat(user, span_notice("I feed the slime the plasma. It chirps happily."))
 		var/obj/item/stack/sheet/mineral/plasma/S = W
 		S.use(1)
 		return
@@ -384,7 +384,7 @@
 				applied++
 				hasFound = TRUE
 			if(applied >= SLIME_EXTRACT_CROSSING_REQUIRED)
-				to_chat(user, span_notice("You feed the slime as many of the extracts from the bag as you can, and it mutates!"))
+				to_chat(user, span_notice("I feed the slime as many of the extracts from the bag as you can, and it mutates!"))
 				playsound(src, 'sound/effects/attackblob.ogg', 50, 1)
 				spawn_corecross()
 				hasOutput = TRUE
@@ -393,7 +393,7 @@
 			if(!hasFound)
 				to_chat(user, span_warning("There are no extracts in the bag that this slime will accept!"))
 			else
-				to_chat(user, span_notice("You feed the slime some extracts from the bag."))
+				to_chat(user, span_notice("I feed the slime some extracts from the bag."))
 				playsound(src, 'sound/effects/attackblob.ogg', 50, 1)
 		return
 	..()

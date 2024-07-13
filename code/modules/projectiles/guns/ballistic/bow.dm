@@ -22,7 +22,7 @@
 	var/draw_sound = 'sound/weapons/bowdraw.wav'
 	dryfire_text = "*no arrows*"
 	dryfire_sound = ""
-	var/release_text = "You gently release the bowstring, removing the arrow."
+	var/release_text = "I gently release the bowstring, removing the arrow."
 	var/draw_noun = "string"
 	safety = 0
 	restrict_safety = 1
@@ -90,7 +90,7 @@
 	if(!draw_load(M))
 		return TRUE
 	if(visible)
-		M.visible_message(span_warning("[M] draws the [draw_noun] on [src]!"), span_warning("You draw the [draw_noun] on [src]!"))
+		M.visible_message(span_warning("[M] draws the [draw_noun] on [src]!"), span_warning("I draw the [draw_noun] on [src]!"))
 	playsound(M, draw_sound, 60, 1)
 	draw_load(M)
 	update_icon()
@@ -112,7 +112,7 @@
 				break
 			did_a_load = TRUE
 		if(did_a_load)
-			M.show_message(span_notice("You ready some arrows from your quiver."))
+			M.show_message(span_notice("I ready some arrows from your quiver."))
 
 /obj/item/gun/ballistic/bow/proc/load_from_quiver(mob/user)
 	if(!drawing_from_quiver)
@@ -165,7 +165,7 @@
 			return TRUE
 	our_quiver = WEAKREF(the_quiver)
 	if(our_quiver)
-		user.show_message(span_notice("You are now drawing from [the_quiver]!"))
+		user.show_message(span_notice("I am now drawing from [the_quiver]!"))
 		return TRUE
 
 /obj/item/gun/ballistic/bow/AltClick(mob/living/carbon/user)
@@ -186,7 +186,7 @@
 	/*if(istype(A, /obj/item/gun_upgrade))
 		return*/
 	if(magazine.attackby(A, user, params, 1))
-		to_chat(user, span_notice("You load [A] into \the [src]."))
+		to_chat(user, span_notice("I load [A] into \the [src]."))
 		update_icon()
 		return
 	// Bows hate attachments, this tries to check for them. I'm done fucking with it, someone skilled is needed
@@ -197,7 +197,7 @@
 /obj/item/gun/ballistic/bow/do_fire(atom/target, mob/living/user, message = TRUE, params, zone_override = "", bonus_spread = 0, stam_cost = 0)
 	..()
 	if(HAS_TRAIT(user, TRAIT_AUTO_DRAW) && !chambered && get_ammo(FALSE))
-		user.visible_message(span_warning("[user] instinctively draws the string on [src]!"), span_warning("You instinctively draw the string on [src]!"))
+		user.visible_message(span_warning("[user] instinctively draws the string on [src]!"), span_warning("I instinctively draw the string on [src]!"))
 		draw(user, FALSE)
 		recentdraw = world.time + 2
 

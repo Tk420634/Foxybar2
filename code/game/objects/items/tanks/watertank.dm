@@ -42,7 +42,7 @@
 	if(noz in src)
 		//Detach the nozzle into the user's hands
 		if(!user.put_in_hands(noz))
-			to_chat(user, span_warning("You need a free hand to hold the mister!"))
+			to_chat(user, span_warning("I need a free hand to hold the mister!"))
 			return
 	else
 		//Remove from their hands and put back "into" the tank
@@ -167,7 +167,7 @@
 
 /obj/item/reagent_containers/spray/mister/janitor/attack_self(mob/user)
 	amount_per_transfer_from_this = (amount_per_transfer_from_this == 10 ? 5 : 10)
-	to_chat(user, span_notice("You [amount_per_transfer_from_this == 10 ? "remove" : "fix"] the nozzle. You'll now use [amount_per_transfer_from_this] units per spray."))
+	to_chat(user, span_notice("I [amount_per_transfer_from_this == 10 ? "remove" : "fix"] the nozzle. You'll now use [amount_per_transfer_from_this] units per spray."))
 
 //ATMOS FIRE FIGHTING BACKPACK
 
@@ -265,7 +265,7 @@
 			return //Safety check so you don't blast yourself trying to refill your tank
 		var/datum/reagents/R = reagents
 		if(R.total_volume < 100)
-			to_chat(user, span_warning("You need at least 100 units of water to use the resin launcher!"))
+			to_chat(user, span_warning("I need at least 100 units of water to use the resin launcher!"))
 			return
 		if(resin_cooldown)
 			to_chat(user, span_warning("Resin launcher is still recharging..."))

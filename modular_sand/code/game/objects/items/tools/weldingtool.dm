@@ -1,6 +1,6 @@
 /obj/item/weldingtool/makeshift
 	name = "Makeshift Welding Tool"
-	desc = "You begin to think that your hands would do a better job."
+	desc = "I begin to think that your hands would do a better job."
 	icon = 'modular_sand/icons/obj/tools.dmi'
 	icon_state = "welder"
 	max_fuel = 10

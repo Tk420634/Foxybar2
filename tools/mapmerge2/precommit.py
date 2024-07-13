@@ -8,7 +8,7 @@ from .mapmerge import merge_map
 
 def main(repo, *, use_workdir=False):
     if repo.index.conflicts:
-        print("You need to resolve merge conflicts first.")
+        print("I need to resolve merge conflicts first.")
         return 1
 
     try:

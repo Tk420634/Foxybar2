@@ -105,7 +105,7 @@
 					message_admins(span_notice("[ADMIN_LOOKUPFLW(usr)] [!R.locked_down ? "locked down" : "released"] [ADMIN_LOOKUPFLW(R)]!"))
 					log_game("[key_name(usr)] [!R.locked_down ? "locked down" : "released"] [key_name(R)]!")
 					R.SetLockdown(!R.locked_down)
-					to_chat(R, "[!R.locked_down ? span_notice("Your lockdown has been lifted!") : span_alert("You have been locked down!")]")
+					to_chat(R, "[!R.locked_down ? span_notice("My lockdown has been lifted!") : span_alert("I have been locked down!")]")
 					if(R.connected_ai)
 						to_chat(R.connected_ai, "[!R.locked_down ? "<span class='notice'>NOTICE - Cyborg lockdown lifted" : "<span class='alert'>ALERT - Cyborg lockdown detected"]: <a href='?src=[REF(R.connected_ai)];track=[html_encode(R.name)]'>[R.name]</a></span><br>")
 			else

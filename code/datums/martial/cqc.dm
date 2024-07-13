@@ -202,7 +202,7 @@
 
 /mob/living/carbon/human/proc/CQC_help()
 	set name = "Remember The Basics"
-	set desc = "You try to remember some of the basics of CQC."
+	set desc = "I try to remember some of the basics of CQC."
 	set category = "CQC"
 	to_chat(usr, "<b><i>You try to remember some of the basics of CQC.</i></b>")
 

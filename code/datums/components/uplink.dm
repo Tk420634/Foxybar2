@@ -88,7 +88,7 @@ GLOBAL_LIST_EMPTY(uplinks)
 
 /datum/component/uplink/proc/LoadTC(mob/user, obj/item/stack/telecrystal/TC, silent = FALSE)
 	if(!silent)
-		to_chat(user, span_notice("You slot [TC] into [parent] and charge its internal uplink."))
+		to_chat(user, span_notice("I slot [TC] into [parent] and charge its internal uplink."))
 	var/amt = TC.amount
 	telecrystals += amt
 	TC.use(amt)
@@ -311,7 +311,7 @@ GLOBAL_LIST_EMPTY(uplinks)
 	locked = FALSE
 	master.degrees = 0
 	interact(null, user)
-	to_chat(user, span_warning("Your pen makes a clicking noise, before quickly rotating back to 0 degrees!"))
+	to_chat(user, span_warning("My pen makes a clicking noise, before quickly rotating back to 0 degrees!"))
 
 /datum/component/uplink/proc/setup_unlock_code()
 	unlock_code = generate_code()

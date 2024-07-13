@@ -166,7 +166,7 @@
 
 /obj/item/clothing/underwear/shirt/bra/uk
 	name = "uk bra"
-	desc = "You got a loicense for those tiddies?"
+	desc = "I got a loicense for those tiddies?"
 	icon_state = "bra_uk"
 
 /obj/item/clothing/underwear/shirt/bra/usa

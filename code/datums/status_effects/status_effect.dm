@@ -108,7 +108,7 @@
 
 /atom/movable/screen/alert/status_effect
 	name = "Curse of Mundanity"
-	desc = "You don't feel any different..."
+	desc = "I don't feel any different..."
 	var/datum/status_effect/attached_effect
 
 //////////////////

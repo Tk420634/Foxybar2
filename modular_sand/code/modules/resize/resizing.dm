@@ -126,18 +126,18 @@
 	if(ishuman(src))
 		var/mob/living/carbon/human/validmob = src
 		if(validmob?.dna?.features["taur"] == "Naga" || validmob?.dna?.features["taur"] == "Tentacle")
-			visible_message(span_notice("[validmob] carefully slithers around [target]."), span_notice("You carefully slither around [target]."))
+			visible_message(span_notice("[validmob] carefully slithers around [target]."), span_notice("I carefully slither around [target]."))
 		else
-			visible_message(span_notice("[validmob] carefully steps around [target]."), span_notice("You carefully steps around [target]."))
+			visible_message(span_notice("[validmob] carefully steps around [target]."), span_notice("I carefully steps around [target]."))
 
 //smaller person stepping under another person... TO DO, fix and allow special interactions with naga legs to be seen
 /mob/living/proc/micro_step_under(mob/living/target)
 	if(ishuman(src))
 		var/mob/living/carbon/human/validmob = src
 		if(validmob?.dna?.features["taur"] == "Naga" || validmob?.dna?.features["taur"] == "Tentacle")
-			visible_message(span_notice("[validmob] bounds over [target]'s tail."), span_notice("You jump over [target]'s thick tail."))
+			visible_message(span_notice("[validmob] bounds over [target]'s tail."), span_notice("I jump over [target]'s thick tail."))
 		else
-			visible_message(span_notice("[validmob] runs between [target]'s legs."), span_notice("You run between [target]'s legs."))
+			visible_message(span_notice("[validmob] runs between [target]'s legs."), span_notice("I run between [target]'s legs."))
 
 //Proc for scaling stamina damage on size difference
 /mob/living/carbon/proc/sizediffStamLoss(mob/living/carbon/target)

@@ -190,7 +190,7 @@ Difficulty: Medium
 				to_chat(user, span_warning("The storm is already ending! It would be a waste to use the staff now."))
 				return
 			user.visible_message(span_warning("[user] holds [src] skywards as an orange beam travels into the sky!"), \
-			span_notice("You hold [src] skyward, dispelling the storm!"))
+			span_notice("I hold [src] skyward, dispelling the storm!"))
 			playsound(user, 'sound/magic/staff_change.ogg', 200, 0)
 			A.wind_down()
 			log_game("[user] ([key_name(user)]) has dispelled a storm at [AREACOORD(user_turf)]")
@@ -206,7 +206,7 @@ Difficulty: Medium
 		A.end_duration = 100
 
 	user.visible_message(span_warning("[user] holds [src] skywards as red lightning crackles into the sky!"), \
-	span_notice("You hold [src] skyward, calling down a terrible storm!"))
+	span_notice("I hold [src] skyward, calling down a terrible storm!"))
 	playsound(user, 'sound/magic/staff_change.ogg', 200, 0)
 	A.telegraph()
 	storm_cooldown = world.time + 200

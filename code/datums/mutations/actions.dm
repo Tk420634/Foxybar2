@@ -2,8 +2,8 @@
 	name = "Telepathy"
 	desc = "A rare mutation that allows the user to telepathically communicate to others."
 	quality = POSITIVE
-	text_gain_indication = span_notice("You can hear your own voice echoing in your mind!")
-	text_lose_indication = span_notice("You don't hear your mind echo anymore.")
+	text_gain_indication = span_notice("I can hear your own voice echoing in your mind!")
+	text_lose_indication = span_notice("I don't hear your mind echo anymore.")
 	difficulty = 12
 	power = /obj/effect/proc_holder/spell/targeted/telepathy/genetic
 	instability = 10
@@ -24,8 +24,8 @@
 	quality = POSITIVE
 	difficulty = 12
 	locked = TRUE
-	text_gain_indication = span_notice("Your throat is burning!")
-	text_lose_indication = span_notice("Your throat is cooling down.")
+	text_gain_indication = span_notice("My throat is burning!")
+	text_lose_indication = span_notice("My throat is cooling down.")
 	power = /obj/effect/proc_holder/spell/aimed/firebreath
 	instability = 30
 	energy_coeff = 1
@@ -38,7 +38,7 @@
 
 /obj/effect/proc_holder/spell/aimed/firebreath
 	name = "Fire Breath"
-	desc = "You can breathe fire at a target."
+	desc = "I can breathe fire at a target."
 	school = "evocation"
 	charge_max = 600
 	clothes_req = NONE
@@ -47,8 +47,8 @@
 	base_icon_state = "fireball"
 	action_icon_state = "fireball0"
 	sound = 'sound/magic/demon_dies.ogg' //horrifying lizard noises
-	active_msg = "You built up heat in your mouth."
-	deactive_msg = "You swallow the flame."
+	active_msg = "I built up heat in your mouth."
+	deactive_msg = "I swallow the flame."
 	var/strength = 4
 
 /obj/effect/proc_holder/spell/aimed/firebreath/before_cast(list/targets)
@@ -106,7 +106,7 @@
 	name = "Void Magnet"
 	desc = "A rare genome that attracts odd forces not usually observed."
 	quality = MINOR_NEGATIVE //upsides and downsides
-	text_gain_indication = span_notice("You feel a heavy, dull force just beyond the walls watching you.")
+	text_gain_indication = span_notice("I feel a heavy, dull force just beyond the walls watching you.")
 	instability = 30
 	power = /obj/effect/proc_holder/spell/self/void
 	energy_coeff = 1
@@ -145,7 +145,7 @@
 	quality = POSITIVE
 	locked = TRUE
 	difficulty = 16
-	text_gain_indication = span_notice("You feel power flow through your hands.")
+	text_gain_indication = span_notice("I feel power flow through your hands.")
 	text_lose_indication = span_notice("The energy in your hands subsides.")
 	power = /obj/effect/proc_holder/spell/targeted/touch/shock
 	instability = 30
@@ -153,8 +153,8 @@
 /obj/effect/proc_holder/spell/targeted/touch/shock
 	name = "Shock Touch"
 	desc = "Channel electricity to your hand to shock people with."
-	drawmessage = "You channel electricity into your hand."
-	dropmessage = "You let the electricity from your hand dissipate."
+	drawmessage = "I channel electricity into your hand."
+	dropmessage = "I let the electricity from your hand dissipate."
 	hand_path = /obj/item/melee/touch_attack/shock
 	charge_max = 400
 	antimagic_allowed = TRUE
@@ -195,11 +195,11 @@
 
 /datum/mutation/human/olfaction
 	name = "Transcendent Olfaction"
-	desc = "Your sense of smell is comparable to that of a canine."
+	desc = "My sense of smell is comparable to that of a canine."
 	quality = POSITIVE
 	difficulty = 12
 	text_gain_indication = span_notice("Smells begin to make more sense...")
-	text_lose_indication = span_notice("Your sense of smell goes back to normal.")
+	text_lose_indication = span_notice("My sense of smell goes back to normal.")
 	power = /obj/effect/proc_holder/spell/targeted/olfaction
 	instability = 30
 	synchronizer_coeff = 1
@@ -245,12 +245,12 @@
 		tracking_target = input(user, "Choose a scent to remember.", "Scent Tracking") as null|anything in sortNames(possible)
 		if(!tracking_target)
 			if(!old_target)
-				to_chat(user,span_warning("You decide against remembering any scents. Instead, you notice your own nose in your peripheral vision. This goes on to remind you of that one time you started breathing manually and couldn't stop. What an awful day that was."))
+				to_chat(user,span_warning("I decide against remembering any scents. Instead, you notice your own nose in your peripheral vision. This goes on to remind you of that one time you started breathing manually and couldn't stop. What an awful day that was."))
 				return
 			tracking_target = old_target
 			on_the_trail(user)
 			return
-		to_chat(user,span_notice("You pick up the scent of [tracking_target]. The hunt begins."))
+		to_chat(user,span_notice("I pick up the scent of [tracking_target]. The hunt begins."))
 		on_the_trail(user)
 		return
 
@@ -265,7 +265,7 @@
 		to_chat(user,span_warning("You're not tracking a scent, but the game thought you were. Something's gone wrong! Report this as a bug."))
 		return
 	if(tracking_target == user)
-		to_chat(user,span_warning("You smell out the trail to yourself. Yep, it's you."))
+		to_chat(user,span_warning("I smell out the trail to yourself. Yep, it's you."))
 		return
 	if(usr.z < tracking_target.z)
 		to_chat(user,span_warning("The trail leads... way up above you? Huh. They must be really, really far away."))
@@ -275,14 +275,14 @@
 		return
 	var/direction_text = "[dir2text(get_dir(usr, tracking_target))]"
 	if(direction_text)
-		to_chat(user,span_notice("You consider [tracking_target]'s scent. The trail leads <b>[direction_text].</b>"))
+		to_chat(user,span_notice("I consider [tracking_target]'s scent. The trail leads <b>[direction_text].</b>"))
 
 
 /datum/mutation/human/self_amputation
 	name = "Autotomy"
 	desc = "Allows a creature to voluntary discard a random appendage."
 	quality = POSITIVE
-	text_gain_indication = span_notice("Your joints feel loose.")
+	text_gain_indication = span_notice("My joints feel loose.")
 	instability = 30
 	power = /obj/effect/proc_holder/spell/self/self_amputation
 
@@ -312,7 +312,7 @@
 			if(BP.dismemberable)
 				parts += BP
 	if(!parts.len)
-		to_chat(usr, span_notice("You can't shed any more limbs!"))
+		to_chat(usr, span_notice("I can't shed any more limbs!"))
 		return
 
 	var/obj/item/bodypart/BP = pick(parts)
@@ -323,7 +323,7 @@
 	name = "Webbing Production"
 	desc = "Allows the user to lay webbing, and travel through it."
 	quality = POSITIVE
-	text_gain_indication = span_notice("Your skin feels webby.")
+	text_gain_indication = span_notice("My skin feels webby.")
 	instability = 15
 	power = /obj/effect/proc_holder/spell/self/lay_genetic_web
 
@@ -339,7 +339,7 @@
 /obj/effect/proc_holder/spell/self/lay_genetic_web/cast(list/targets, mob/user = usr)
 	var/failed = FALSE
 	if(!isturf(user.loc))
-		to_chat(user, span_warning("You can't lay webs here!"))
+		to_chat(user, span_warning("I can't lay webs here!"))
 		failed = TRUE
 	var/turf/T = get_turf(user)
 	var/obj/structure/spider/stickyweb/genetic/W = locate() in T
@@ -350,9 +350,9 @@
 		revert_cast(user)
 		return FALSE
 
-	user.visible_message(span_notice("[user] begins to secrete a sticky substance."),span_notice("You begin to lay a web."))
+	user.visible_message(span_notice("[user] begins to secrete a sticky substance."),span_notice("I begin to lay a web."))
 	if(!do_after(user, 4 SECONDS, target = T))
-		to_chat(user, span_warning("Your web spinning was interrupted!"))
+		to_chat(user, span_warning("My web spinning was interrupted!"))
 		return
 	else
 		new /obj/structure/spider/stickyweb/genetic(T, user)
@@ -362,7 +362,7 @@
 	name = "Tongue Spike"
 	desc = "Allows a creature to voluntary shoot their tongue out as a deadly weapon."
 	quality = POSITIVE
-	text_gain_indication = span_notice("Your feel like you can throw your voice.")
+	text_gain_indication = span_notice("My feel like you can throw your voice.")
 	instability = 15
 	power = /obj/effect/proc_holder/spell/self/tongue_spike
 
@@ -393,7 +393,7 @@
 			break
 
 	if(!tongue)
-		to_chat(C, span_notice("You don't have a tongue to shoot!"))
+		to_chat(C, span_notice("I don't have a tongue to shoot!"))
 		return
 
 	tongue.Remove(C, special = TRUE)
@@ -440,7 +440,7 @@
 	name = "Chem Spike"
 	desc = "Allows a creature to voluntary shoot their tongue out as biomass, allowing a long range transfer of chemicals."
 	quality = POSITIVE
-	text_gain_indication = span_notice("Your feel like you can really connect with people by throwing your voice.")
+	text_gain_indication = span_notice("My feel like you can really connect with people by throwing your voice.")
 	instability = 15
 	locked = TRUE
 	power = /obj/effect/proc_holder/spell/self/tongue_spike/chem
@@ -492,7 +492,7 @@
 		return
 	var/mob/living/carbon/human/transferer = owner
 
-	to_chat(transfered, span_warning("You feel a tiny prick!"))
+	to_chat(transfered, span_warning("I feel a tiny prick!"))
 	transferer.reagents.trans_to(transfered, transferer.reagents.total_volume, 1, 1, 0)
 
 	var/obj/item/bodypart/L = spikey.checkembedded()

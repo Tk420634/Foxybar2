@@ -45,14 +45,14 @@
 				armed = 1
 				if(!user.put_in_hands(gun))
 					armed = 0
-					to_chat(user, span_warning("You need a free hand to hold the nozzle!"))
+					to_chat(user, span_warning("I need a free hand to hold the nozzle!"))
 					return
 				update_icon()
 				user.update_inv_back()
 			else
 				..()
 		else
-			to_chat(user, span_warning("You are already holding the nozzle!"))
+			to_chat(user, span_warning("I am already holding the nozzle!"))
 	else
 		..()
 
@@ -89,7 +89,7 @@
 	gun.forceMove(src)
 	armed = 0
 	if(user)
-		to_chat(user, span_notice("You attach the [gun.name] to the [name]."))
+		to_chat(user, span_notice("I attach the [gun.name] to the [name]."))
 	else
 		src.visible_message(span_warning("The [gun.name] snaps back onto the [name]!"))
 	update_icon()
@@ -110,22 +110,22 @@
 				pressureSetting = 3
 			if(3)
 				pressureSetting = 1
-		to_chat(user, span_notice("You tweak \the [src]'s pressure output to [pressureSetting]."))
+		to_chat(user, span_notice("I tweak \the [src]'s pressure output to [pressureSetting]."))
 	else if(istype(W, /obj/item/screwdriver))
 		switch(gun.settings)
 			if(1)
 				gun.fire_mode = PCANNON_FILO
 				gun.settings = 2
-				to_chat(user, span_notice("You switch \the [src]'s fire mode to fire the last item inserted first."))
+				to_chat(user, span_notice("I switch \the [src]'s fire mode to fire the last item inserted first."))
 			if(2)
 				gun.throw_amount = 5
 				gun.settings = 3
-				to_chat(user, span_notice("You switch \the [src]'s fire mode to fire five objects at once."))
+				to_chat(user, span_notice("I switch \the [src]'s fire mode to fire five objects at once."))
 			if(3)
 				gun.throw_amount = 1
 				gun.settings = 1
 				gun.fire_mode = PCANNON_FIFO
-				to_chat(user, span_notice("You switch \the [src]'s fire mode to fire the first item inserted first."))
+				to_chat(user, span_notice("I switch \the [src]'s fire mode to fire the first item inserted first."))
 	else if(loadedWeightClass >= maxWeightClass)
 		to_chat(user, span_warning("\The [src] can't hold any more items!"))
 	else if(isitem(W))
@@ -157,7 +157,7 @@
 	if(user)		//Only use transfer proc if there's a user, otherwise just set loc.
 		if(!user.transferItemToLoc(I, src))
 			return FALSE
-		to_chat(user, span_notice("You load \the [I] into \the [src]."))
+		to_chat(user, span_notice("I load \the [I] into \the [src]."))
 	else
 		I.forceMove(src)
 	if(istype (I, /obj/item/stack))
@@ -202,7 +202,7 @@ Possible solution: Only add the minimum weight class of a stack (which is basica
 
 /obj/item/rockitlauncher_pack/CtrlClick(mob/user)
 	eject_contents()
-	to_chat(user, span_warning("You open the storage compartment of \the [src], dumping the contents all over the floor."))
+	to_chat(user, span_warning("I open the storage compartment of \the [src], dumping the contents all over the floor."))
 
 /obj/item/rockitlauncher_pack/proc/eject_contents()
 	for(var/obj/item/I in loadedItems) //Item To Discharge
@@ -259,10 +259,10 @@ Possible solution: Only add the minimum weight class of a stack (which is basica
 	if(target == ammo_pack)
 		return
 	if(!wielded)
-		to_chat(user, span_warning("You need to hold the nozzle in both hands to fire!"))
+		to_chat(user, span_warning("I need to hold the nozzle in both hands to fire!"))
 		return
 	if(HAS_TRAIT(user, TRAIT_PACIFISM))
-		to_chat(user, span_warning("You feel like this could really hurt someone..."))
+		to_chat(user, span_warning("I feel like this could really hurt someone..."))
 		return
 	if(!istype(user) && !target)
 		return
@@ -279,7 +279,7 @@ Possible solution: Only add the minimum weight class of a stack (which is basica
 		return
 	if(!discharge)
 		user.visible_message(span_danger("[user] fires \the [src]!"), \
-							span_danger("You fire \the [src]!"))
+							span_danger("I fire \the [src]!"))
 	log_combat(user, target, "fired at", src)
 	var/turf/T = get_target(target, get_turf(src))
 	playsound(src, 'sound/f13weapons/rockitlauncher_fire.ogg', 50, 1)

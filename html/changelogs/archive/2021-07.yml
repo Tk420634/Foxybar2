@@ -161,7 +161,7 @@
       its contents.
   - refactor: Gave /obj/structure/closet the ability to protect its contents from
       weather.
-  - bugfix: Using wirecutters on an unlabeled bodybag no longer sends the "You cut
+  - bugfix: Using wirecutters on an unlabeled bodybag no longer sends the "I cut
       the tag off of the bodybag" message.
   - bugfix: Allows bodybags to be picked up again.
   KIBORG04:

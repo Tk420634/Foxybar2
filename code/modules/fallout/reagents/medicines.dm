@@ -109,13 +109,13 @@
 /datum/reagent/medicine/super_stimpak/on_mob_metabolize(mob/living/carbon/M) // Stim Sickness
 	. = ..()
 	M.add_movespeed_modifier(/datum/movespeed_modifier/super_stimpak_slowdown)
-	to_chat(M, span_alert("You feel a sudden violent <i>lurch</i> in your chest, followed shortly by your heart racing at an agonizing pace and your muscles burning like you've run one too many marathons."))
+	to_chat(M, span_alert("I feel a sudden violent <i>lurch</i> in your chest, followed shortly by your heart racing at an agonizing pace and your muscles burning like you've run one too many marathons."))
 
 /// Removes the slowdown and lets you know its safe to take another dose
 /datum/reagent/medicine/super_stimpak/on_mob_end_metabolize(mob/living/carbon/M)
 	. = ..()
 	M.remove_movespeed_modifier(/datum/movespeed_modifier/super_stimpak_slowdown)
-	to_chat(M, span_notice("Your heart slows to a more reasonable pace, and your aching muscular fatigue fades.")) // tells you when it's safe to take another dose
+	to_chat(M, span_notice("My heart slows to a more reasonable pace, and your aching muscular fatigue fades.")) // tells you when it's safe to take another dose
 
 /// Seals up bleeds like a weaker sanguirite, doesnt do any passive heals though
 /datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/carbon/M) // Heals fleshwounds like a weak sanguirite
@@ -128,10 +128,10 @@
 	M.adjustOrganLoss(ORGAN_SLOT_HEART, 4*REM)
 	if((M.getOrganLoss(ORGAN_SLOT_HEART) >= 20*REM) && prob(8))
 		var/superstim_od_message = pick(
-			"You feel like someone punched you in the chest, but from the inside.",
-			"You breathe heavily, yet still feel winded.",
-			"Your heart stops for a moment.",
-			"You feel an agonizing shudder in your chest.")
+			"I feel like someone punched you in the chest, but from the inside.",
+			"I breathe heavily, yet still feel winded.",
+			"My heart stops for a moment.",
+			"I feel an agonizing shudder in your chest.")
 		to_chat(M, span_warning("[superstim_od_message]"))
 	. = TRUE
 	..()
@@ -221,7 +221,7 @@
 /datum/reagent/medicine/healing_powder/poultice/on_mob_metabolize(mob/living/carbon/M) // a painful remedy!
 	. = ..()
 	M.add_movespeed_modifier(/datum/movespeed_modifier/healing_poultice_slowdown)
-	to_chat(M, span_alert("You feel a burning pain spread through your skin, concentrating around your wounds."))
+	to_chat(M, span_alert("I feel a burning pain spread through your skin, concentrating around your wounds."))
 
 /datum/reagent/medicine/healing_powder/poultice/on_mob_end_metabolize(mob/living/carbon/M)
 	. = ..()
@@ -242,8 +242,8 @@
 	if((M.getToxLoss() >= 30) && prob(8))
 		var/poultice_od_message = pick(
 			"Burning red streaks form on your skin.",
-			"You feel a searing pain shoot through your skin.",
-			"You feel like your blood's been replaced with acid. It burns.")
+			"I feel a searing pain shoot through your skin.",
+			"I feel like your blood's been replaced with acid. It burns.")
 		to_chat(M, span_notice("[poultice_od_message]"))
 	. = TRUE
 	..()
@@ -298,10 +298,10 @@
 
 /datum/reagent/medicine/radx/proc/add_the_traits(mob/living/L)
 	if(L.reagents.get_reagent_amount(/datum/reagent/medicine/radx) >= RADX_FULL_IMMUNITY_THRESHOLD && !HAS_TRAIT_FROM(L, TRAIT_75_RAD_RESIST, RADX_TRAIT))
-		to_chat(L, span_notice("You feel a deep, insulating tingle."))
+		to_chat(L, span_notice("I feel a deep, insulating tingle."))
 		ADD_TRAIT(L, TRAIT_75_RAD_RESIST, RADX_TRAIT)
 	else if (!HAS_TRAIT_FROM(L, TRAIT_50_RAD_RESIST, RADX_TRAIT))
-		to_chat(L, span_notice("You feel a slight tingle in your flesh."))
+		to_chat(L, span_notice("I feel a slight tingle in your flesh."))
 		ADD_TRAIT(L, TRAIT_50_RAD_RESIST, RADX_TRAIT)
 
 
@@ -353,7 +353,7 @@
 /datum/reagent/medicine/medx/on_mob_metabolize(mob/living/carbon/human/M)
 	..()
 	if(isliving(M))
-		to_chat(M, span_alert("You feel a dull warmth spread throughout your body, masking all sense of pain with a not-unpleasant tingle. Injuries don't seem to hurt as much."))
+		to_chat(M, span_alert("I feel a dull warmth spread throughout your body, masking all sense of pain with a not-unpleasant tingle. Injuries don't seem to hurt as much."))
 		M.maxHealth += 30
 		M.health += 30
 
@@ -385,7 +385,7 @@
 	/// Doesnt stop the severity ramping up, so if it goes below that... it all catches up
 	if(M.reagents.get_reagent_amount(/datum/reagent/medicine/mentat) >= 5 && M.reagents.has_reagent(/datum/reagent/medicine/epinephrine))
 		if(prob(5))
-			to_chat(M, span_danger("Your nerves buzz like a hive of angry bees, kept running by sheer force of mentat."))
+			to_chat(M, span_danger("My nerves buzz like a hive of angry bees, kept running by sheer force of mentat."))
 	else
 		switch(od_strikes)
 			if(0)
@@ -397,7 +397,7 @@
 				M.blur_eyes(5)
 				M.adjustOrganLoss(ORGAN_SLOT_EYES, 1)
 				if(prob(5))
-					to_chat(M, span_danger("You feel a dull, building pressure behind your eyes, this can't be good for you."))
+					to_chat(M, span_danger("I feel a dull, building pressure behind your eyes, this can't be good for you."))
 			if(4 to 6)
 				M.confused = clamp(M.confused + 1, 1, 20)
 				M.blur_eyes(10)
@@ -422,11 +422,11 @@
 				M.playsound_local(M, 'sound/effects/singlebeat.ogg', 100, 0)
 				if(prob(5))
 					M.vomit(30, 1, 1, 5, 0, 0, 0, 60)
-					to_chat(M, span_danger("You throw up everything you've eaten in the past week and some blood to boot. You're pretty sure your heart just stopped for a second, too."))
+					to_chat(M, span_danger("I throw up everything you've eaten in the past week and some blood to boot. You're pretty sure your heart just stopped for a second, too."))
 				if(prob(5))
 					M.visible_message(
 						span_danger("[M] stumbles around drunkenly, gasping for air in between long stretches of not breathing!"),
-						span_danger("Your muscles don't seem to obey you, feeling like they're being pushed through a raging river. You feel dead inside."))
+						span_danger("My muscles don't seem to obey you, feeling like they're being pushed through a raging river. You feel dead inside."))
 			if(13 to INFINITY)
 				M.adjustOrganLoss(ORGAN_SLOT_EYES, 3)
 				M.adjustOrganLoss(ORGAN_SLOT_LUNGS, 1, 40)
@@ -434,11 +434,11 @@
 				M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2, BRAIN_DAMAGE_MILD)
 				if(prob(10))
 					M.vomit(30, 1, 1, 5, 0, 0, 0, 60)
-					to_chat(M, span_danger("You throw up everything you've eaten in the past week and some blood to boot. You're pretty sure your heart just stopped for a second, too."))
+					to_chat(M, span_danger("I throw up everything you've eaten in the past week and some blood to boot. You're pretty sure your heart just stopped for a second, too."))
 				if(prob(20))
 					M.visible_message(
 						span_danger("[M] twitches violently!"),
-						span_danger("You feel an ominous slosh within you, your organs dissolving under the chemical stress and shutting down. You see a light..."))
+						span_danger("I feel an ominous slosh within you, your organs dissolving under the chemical stress and shutting down. You see a light..."))
 	if(od_next_strike <= world.time)
 		od_next_strike = world.time + od_strike_cooldown
 		od_strikes = clamp(od_strikes + (((volume + od_cycles) / 3) % overdose_threshold), od_strikes + 1, od_strikes + 3)
@@ -501,7 +501,7 @@
 		M.cure_all_traumas(TRAUMA_RESILIENCE_SURGERY)
 /*	if(HAS_TRAIT(M, TRAIT_BLIND, TRAIT_GENERIC))
 		if(prob(20))
-			to_chat(M, span_warning("Your vision slowly returns..."))
+			to_chat(M, span_warning("My vision slowly returns..."))
 			M.cure_blind(EYE_DAMAGE)
 			M.cure_nearsighted(EYE_DAMAGE)
 			M.blur_eyes(35)
@@ -512,12 +512,12 @@
 	if(M.eye_blind || M.eye_blurry)
 		M.set_blindness(0)
 		M.set_blurriness(0)
-		to_chat(M, span_warning("Your vision slowly returns to normal..."))
+		to_chat(M, span_warning("My vision slowly returns to normal..."))
 	M.adjustOrganLoss(ORGAN_SLOT_EYES, -1*REM)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -1*REM)
 	M.restoreEars() // yeah its a salt buff, what of it?
 	if (prob(5))
-		to_chat(M, span_notice("You feel a strange mental fortitude!"))
+		to_chat(M, span_notice("I feel a strange mental fortitude!"))
 	..()
 	. = TRUE
 
@@ -577,7 +577,7 @@
 //			M.reagents.remove_reagent(R.id,2)
 	for(var/datum/reagent/R in M.reagents.addiction_list)
 		M.reagents.addiction_list.Remove(R)
-		to_chat(M, span_notice("You feel like you've gotten over your need for [R.name]."))
+		to_chat(M, span_notice("I feel like you've gotten over your need for [R.name]."))
 	M.confused = max(M.confused, 4)
 	if(ishuman(M) && prob(5))
 		var/mob/living/carbon/human/H = M
@@ -649,16 +649,16 @@
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	ghoulfriendly = TRUE
 	var/list/misery_message = list(
-		"You feel everything bad in your body spew out! Along with a bunch of other stuff!",
+		"I feel everything bad in your body spew out! Along with a bunch of other stuff!",
 		"A war on toxicity rages in your gut! A nuclear war, it feels like!",
-		"You feel everything you've ever eaten come right up!",
-		"You feel extremely sick! But oddly better? Mostly sick though.",
+		"I feel everything you've ever eaten come right up!",
+		"I feel extremely sick! But oddly better? Mostly sick though.",
 		"Those toxins burn coming back up!",
 		"Radioactive sweat purges from every pore!",
-		"You emit ailing vomit!",
-		"You feel like you ate firecrackers!",
+		"I emit ailing vomit!",
+		"I feel like you ate firecrackers!",
 		"IT BURNS!!! AND SPEWS!!!",
-		"You feel several decades' worth of spring cleaning in your guts!",
+		"I feel several decades' worth of spring cleaning in your guts!",
 		"Everything is purging in a fiery manner.",
 		"You're going to be severely dehydrated after this...")
 

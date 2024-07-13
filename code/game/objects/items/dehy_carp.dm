@@ -14,7 +14,7 @@
 /obj/item/toy/plush/carpplushie/dehy_carp/attack_self(mob/user)
 	src.add_fingerprint(user)	//Anyone can add their fingerprints to it with this
 	if(!owned)
-		to_chat(user, span_notice("You pet [src]. You swear it looks up at you."))
+		to_chat(user, span_notice("I pet [src]. You swear it looks up at you."))
 		owner = user
 		owned = 1
 	else
@@ -44,7 +44,7 @@
 				factions -= F
 		M.faction = factions
 	if (!owner || owner.faction != M.faction)
-		visible_message(span_warning("You have a bad feeling about this.")) //welcome to the hostile carp enjoy your die
+		visible_message(span_warning("I have a bad feeling about this.")) //welcome to the hostile carp enjoy your die
 	else
 		visible_message(span_notice("The newly grown [M.name] looks up at you with friendly eyes."))
 	qdel(src)

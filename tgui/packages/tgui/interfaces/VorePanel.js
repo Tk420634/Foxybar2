@@ -510,7 +510,7 @@ const VoreUserPreferences = (props, context) => {
             + (allow_being_prey
               ? "Click here to prevent being prey."
               : "Click here to allow being prey.")}
-            content={allow_being_prey ? "You can be prey" : "You can not be prey"} />
+            content={allow_being_prey ? "I can be prey" : "I can not be prey"} />
         </Flex.Item>
         <Flex.Item basis="49.5%">
           <Button
@@ -523,7 +523,7 @@ const VoreUserPreferences = (props, context) => {
             + (allow_being_fed_prey
               ? "Click here to prevent others from feeding you prey."
               : "Click here to allow others to feed you prey.")}
-            content={allow_being_fed_prey ? "You can be fed prey" : "You can not be fed prey"} />
+            content={allow_being_fed_prey ? "I can be fed prey" : "I can not be fed prey"} />
         </Flex.Item>
 
         <Flex.Item basis="49.5%">
@@ -565,7 +565,7 @@ const VoreUserPreferences = (props, context) => {
             + (allow_absorbtion
               ? "Click here to prevent yourself being absorbed."
               : "Click here to allow yourself to be absorbed.")}
-            content={allow_absorbtion ? "You can be absorbed" : "You can not be absorbed"} />
+            content={allow_absorbtion ? "I can be absorbed" : "I can not be absorbed"} />
         </Flex.Item>
         <Flex.Item basis="25%">
           <Button
@@ -577,7 +577,7 @@ const VoreUserPreferences = (props, context) => {
             + (allow_healbelly_healing
               ? "Click here to prevent yourself being absorbed."
               : "Click here to allow yourself to be absorbed.")}
-            content={allow_healbelly_healing ? "You can be absorbed" : "You can not be absorbed"} />
+            content={allow_healbelly_healing ? "I can be absorbed" : "I can not be absorbed"} />
         </Flex.Item> */}
 
         <Flex.Item basis="49.5%">
@@ -681,7 +681,7 @@ const VoreUserPreferences = (props, context) => {
             + (smellable
               ? "Click here to turn off being able to be smelled."
               : "Click here to turn on being able to be smelled.")}
-            content={smellable ? "You are smellable" : "You are not smellable"} />
+            content={smellable ? "I am smellable" : "I am not smellable"} />
         </Flex.Item> */}
         {/* <Flex.Item basis="33%">
           <Button

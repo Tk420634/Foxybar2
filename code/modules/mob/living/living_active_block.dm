@@ -88,7 +88,7 @@
 		return
 	if(!I)
 		if(!length(other_items))
-			to_chat(src, span_warning("You can't block with your bare hands!"))
+			to_chat(src, span_warning("I can't block with your bare hands!"))
 			return
 		I = other_items[1]
 	if(!I.can_active_block())
@@ -97,14 +97,14 @@
 	// QOL: Attempt to toggle on combat mode if it isn't already
 	SEND_SIGNAL(src, COMSIG_ENABLE_COMBAT_MODE)
 	if(SEND_SIGNAL(src, COMSIG_COMBAT_MODE_CHECK, COMBAT_MODE_INACTIVE))
-		to_chat(src, span_warning("You must be in combat mode to actively block!"))
+		to_chat(src, span_warning("I must be in combat mode to actively block!"))
 		return FALSE
 	var/datum/block_parry_data/data = I.get_block_parry_data()
 	var/delay = data.block_start_delay
 	combat_flags |= COMBAT_FLAG_ACTIVE_BLOCK_STARTING
 	animate(src, pixel_x = get_standard_pixel_x_offset(), pixel_y = get_standard_pixel_y_offset(), time = delay, FALSE, SINE_EASING | EASE_IN)
 	if(!do_after_advanced(src, delay, src, DO_AFTER_REQUIRES_USER_ON_TURF|DO_AFTER_NO_COEFFICIENT, CALLBACK(src,PROC_REF(continue_starting_active_block)), MOBILITY_USE, null, null, I))
-		to_chat(src, span_warning("You fail to raise [I]."))
+		to_chat(src, span_warning("I fail to raise [I]."))
 		combat_flags &= ~(COMBAT_FLAG_ACTIVE_BLOCK_STARTING)
 		animate(src, pixel_x = get_standard_pixel_x_offset(), pixel_y = get_standard_pixel_y_offset(), time = 2.5, FALSE, SINE_EASING | EASE_IN, ANIMATION_END_NOW)
 		return

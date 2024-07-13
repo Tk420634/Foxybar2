@@ -78,12 +78,12 @@
 /obj/structure/sink/oil_well/on_attack_hand(mob/M)
 	flick("puddle-oil-splash",src)
 	reagents.reaction(M, TOUCH, 20) //Covers target in 20u of oil.
-	to_chat(M, span_notice("You touch the pool of oil, only to get oil all over yourself. It would be wise to wash this off with water."))
+	to_chat(M, span_notice("I touch the pool of oil, only to get oil all over yourself. It would be wise to wash this off with water."))
 
 /obj/structure/sink/oil_well/attackby(obj/item/O, mob/user, params)
 	flick("puddle-oil-splash",src)
 	if(O.tool_behaviour == TOOL_SHOVEL && !(flags_1&NODECONSTRUCT_1)) //attempt to deconstruct the puddle with a shovel
-		to_chat(user, "You fill in the oil well with soil.")
+		to_chat(user, "I fill in the oil well with soil.")
 		O.play_tool_sound(src)
 		deconstruct()
 		return 1
@@ -92,12 +92,12 @@
 		if(RG.is_refillable())
 			if(!RG.reagents.holder_full())
 				RG.reagents.add_reagent(dispensedreagent, min(RG.volume - RG.reagents.total_volume, RG.amount_per_transfer_from_this))
-				to_chat(user, span_notice("You fill [RG] from [src]."))
+				to_chat(user, span_notice("I fill [RG] from [src]."))
 				return TRUE
 			to_chat(user, span_notice("\The [RG] is full."))
 			return FALSE
 	if(user.a_intent != INTENT_HARM)
-		to_chat(user, span_notice("You won't have any luck getting \the [O] out if you drop it in the oil."))
+		to_chat(user, span_notice("I won't have any luck getting \the [O] out if you drop it in the oil."))
 		return 1
 	else
 		return ..()
@@ -160,7 +160,7 @@
 	if(user.a_intent == INTENT_HELP) //checks to attempt to dig the grave, must be done on help intent only.
 		if(!opened)
 			if(istype(S,cutting_tool) && S.tool_behaviour == TOOL_SHOVEL)
-				to_chat(user, span_notice("You start start to dig open \the [src]  with \the [S]..."))
+				to_chat(user, span_notice("I start start to dig open \the [src]  with \the [S]..."))
 				if (do_after(user,20, target = src))
 					opened = TRUE
 					locked = TRUE
@@ -174,7 +174,7 @@
 					return 1
 				return 1
 			else
-				to_chat(user, span_notice("You can't dig up a grave with \the [S.name]."))
+				to_chat(user, span_notice("I can't dig up a grave with \the [S.name]."))
 				return 1
 		else
 			to_chat(user, span_notice("The grave has already been dug up."))
@@ -182,9 +182,9 @@
 
 	else if((user.a_intent != INTENT_HELP) && opened) //checks to attempt to remove the grave entirely.
 		if(istype(S,cutting_tool) && S.tool_behaviour == TOOL_SHOVEL)
-			to_chat(user, span_notice("You start to remove \the [src]  with \the [S]."))
+			to_chat(user, span_notice("I start to remove \the [src]  with \the [S]."))
 			if (do_after(user,15, target = src))
-				to_chat(user, span_notice("You remove \the [src]  completely."))
+				to_chat(user, span_notice("I remove \the [src]  completely."))
 				SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "graverobbing", /datum/mood_event/graverobbing)
 				deconstruct(TRUE)
 				return 1
@@ -220,7 +220,7 @@
 	icon = 'icons/obj/library.dmi'
 	icon_state = "boneworking_learing"
 	oneuse = FALSE
-	remarks = list("Who knew you could bend bones that far back?", "I guess that was much easier before the planet heated up...", "So that's how they made those ruins survive the ashstorms. Neat!", "The page is just filled with insane ramblings about some 'legion' thing.", "But why would they need vinegar to polish the bones? And rags too?", "You spend a few moments cleaning dirt and blood off of the page, yeesh.")
+	remarks = list("Who knew you could bend bones that far back?", "I guess that was much easier before the planet heated up...", "So that's how they made those ruins survive the ashstorms. Neat!", "The page is just filled with insane ramblings about some 'legion' thing.", "But why would they need vinegar to polish the bones? And rags too?", "I spend a few moments cleaning dirt and blood off of the page, yeesh.")
 
 
 //***Fluff items for lore/intrigue

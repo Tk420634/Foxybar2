@@ -299,7 +299,7 @@
 	var/turf/T_cam = get_turf(C)
 	var/turf/T_bug = get_turf(loc)
 	if(!T_bug || T_cam.z != T_bug.z)
-		to_chat(usr, span_warning("You can't get a signal!"))
+		to_chat(usr, span_warning("I can't get a signal!"))
 		return FALSE
 	return TRUE
 

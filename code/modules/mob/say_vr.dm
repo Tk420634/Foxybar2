@@ -47,10 +47,10 @@
 
 /datum/emote/living/subtle/run_emote(mob/user, params, type_override = null)
 	if(jobban_isbanned(user, "emote"))
-		to_chat(user, "You cannot send subtle emotes (banned).")
+		to_chat(user, "I cannot send subtle emotes (banned).")
 		return FALSE
 	else if(user.client && user.client.prefs.muted & MUTE_IC)
-		to_chat(user, "You cannot send IC messages (muted).")
+		to_chat(user, "I cannot send IC messages (muted).")
 		return FALSE
 	else if(!params)
 		var/subtle_emote = stripped_multiline_input_or_reflect(user, "Choose an emote to display.", "[subtler ? "Subtler" : "Subtle"]", null, MAX_MESSAGE_LEN)
@@ -172,10 +172,10 @@
 
 /datum/emote/living/subtler/run_emote(mob/user, params, type_override = null)
 	if(jobban_isbanned(user, "emote"))
-		to_chat(user, "You cannot send subtle emotes (banned).")
+		to_chat(user, "I cannot send subtle emotes (banned).")
 		return FALSE
 	else if(user.client && user.client.prefs.muted & MUTE_IC)
-		to_chat(user, "You cannot send IC messages (muted).")
+		to_chat(user, "I cannot send IC messages (muted).")
 		return FALSE
 	else if(!params)
 		var/subtle_emote = stripped_multiline_input_or_reflect(user, "Choose an emote to display.", "Subtler" , null, MAX_MESSAGE_LEN)

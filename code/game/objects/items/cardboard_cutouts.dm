@@ -46,7 +46,7 @@
 /obj/item/cardboard_cutout/on_attack_hand(mob/living/user, act_intent = user.a_intent, unarmed_attack_flags)
 	if(user.a_intent == INTENT_HELP || pushed_over)
 		return ..()
-	user.visible_message(span_warning("[user] pushes over [src]!"), span_danger("You push over [src]!"))
+	user.visible_message(span_warning("[user] pushes over [src]!"), span_danger("I push over [src]!"))
 	playsound(src, 'sound/weapons/genhit.ogg', 50, 1)
 	push_over()
 
@@ -62,7 +62,7 @@
 /obj/item/cardboard_cutout/attack_self(mob/living/user)
 	if(!pushed_over)
 		return
-	to_chat(user, span_notice("You right [src]."))
+	to_chat(user, span_notice("I right [src]."))
 	desc = initial(desc)
 	icon = initial(icon)
 	icon_state = initial(icon_state) //This resets a cutout to its blank state - this is intentional to allow for resetting

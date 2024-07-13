@@ -43,7 +43,7 @@
 	if(user.mind && (user.mind in immune_minds))
 		return
 	if(get_dist(user, src) <= 1)
-		. += span_notice("You reveal [src]!")
+		. += span_notice("I reveal [src]!")
 		flare()
 
 /obj/structure/trap/proc/flare()

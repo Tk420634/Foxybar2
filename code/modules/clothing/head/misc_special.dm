@@ -38,7 +38,7 @@
  */
 /obj/item/clothing/head/hardhat/cakehat
 	name = "cakehat"
-	desc = "You put the cake on your head. Brilliant."
+	desc = "I put the cake on your head. Brilliant."
 	icon_state = "hardhat0_cakehat"
 	item_state = "hardhat0_cakehat"
 	hat_type = "cakehat"
@@ -102,12 +102,12 @@
 		src.icon_state = "ushankaup"
 		src.item_state = "ushankaup"
 		earflaps = 0
-		to_chat(user, span_notice("You raise the ear flaps on the ushanka."))
+		to_chat(user, span_notice("I raise the ear flaps on the ushanka."))
 	else
 		src.icon_state = "ushankadown"
 		src.item_state = "ushankadown"
 		earflaps = 1
-		to_chat(user, span_notice("You lower the ear flaps on the ushanka."))
+		to_chat(user, span_notice("I lower the ear flaps on the ushanka."))
 
 /*
  * Pumpkin head
@@ -308,7 +308,7 @@
 		return
 	QDEL_NULL(paranoia)
 	if(!target.IsUnconscious())
-		to_chat(target, span_warning("Your zealous conspirationism rapidly dissipates as the donned hat warps up into a ruined mess. All those theories starting to sound like nothing but a ridicolous fanfare."))
+		to_chat(target, span_warning("My zealous conspirationism rapidly dissipates as the donned hat warps up into a ruined mess. All those theories starting to sound like nothing but a ridicolous fanfare."))
 
 /obj/item/clothing/head/foilhat/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
 	if(!warped && iscarbon(user))
@@ -543,7 +543,7 @@
 
 /obj/item/clothing/head/coyote/leatherhelmet
 	name = "Leather Helmet"
-	desc = "You got a great deal for this, only three silver pieces!"
+	desc = "I got a great deal for this, only three silver pieces!"
 	icon_state = "leatherhelmet"
 	item_state = "leatherhelmet"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
@@ -720,7 +720,7 @@
 
 /obj/item/clothing/head/coyote/cavalier
 	name = "Cavalier"
-	desc = "You lost a donkey around here somewhere..."
+	desc = "I lost a donkey around here somewhere..."
 	icon_state = "cavalier"
 	item_state = "cavalier"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet

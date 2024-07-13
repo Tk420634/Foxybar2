@@ -152,7 +152,7 @@
 
 /datum/reagent/consumable/ethanol/deathroach/on_mob_life(mob/living/carbon/M)
 	if(prob(10))
-		var/drink_message = pick("You feel rugged.", "You feel manly.","You feel western.","You feel like a madman.")
+		var/drink_message = pick("I feel rugged.", "I feel manly.","I feel western.","I feel like a madman.")
 		to_chat(M, span_notice("[drink_message]"))
 	M.AdjustStun(-20, 0)
 	M.AdjustKnockdown(-20, 0)
@@ -1032,7 +1032,7 @@
 /datum/reagent/consumable/ethanol/henessey/on_mob_delete(mob/living/M)
 	REMOVE_TRAIT(M, TRAIT_SLEEPIMMUNE, "[type]")
 	REMOVE_TRAIT(M, TRAIT_IRONFIST, "[type]")
-	to_chat(M, span_danger("You feel light-headed as you start to return to your senses."))
+	to_chat(M, span_danger("I feel light-headed as you start to return to your senses."))
 	M.Dizzy(5)
 	M.blur_eyes(5)
 	if(rage)
@@ -1205,7 +1205,7 @@
 
 /datum/reagent/consumable/ethanol/ranchwhiskey/on_mob_life(mob/living/carbon/M)
 	if(prob(50))
-		var/smoke_message = pick("You feel relaxed.", "You feel calmed.","You feel alert.","You feel rugged.")
+		var/smoke_message = pick("I feel relaxed.", "I feel calmed.","I feel alert.","I feel rugged.")
 		to_chat(M, span_notice("[smoke_message]"))
 	M.adjustBruteLoss(-0.4*REM, 0)
 	M.adjustFireLoss(-0.4*REM, 0)

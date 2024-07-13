@@ -113,7 +113,7 @@
 	var/deg = input(user, "What angle would you like to rotate the pen head to? (1-360)", "Rotate Pen Head") as null|num
 	if(deg && (deg > 0 && deg <= 360))
 		degrees = deg
-		to_chat(user, span_notice("You rotate the top of the pen to [degrees] degrees."))
+		to_chat(user, span_notice("I rotate the top of the pen to [degrees] degrees."))
 		SEND_SIGNAL(src, COMSIG_PEN_ROTATED, deg, user)
 
 /obj/item/pen/attack(mob/living/M, mob/user,stealth)
@@ -122,9 +122,9 @@
 
 	if(!force)
 		if(M.can_inject(user, 1))
-			to_chat(user, span_warning("You stab [M] with the pen."))
+			to_chat(user, span_warning("I stab [M] with the pen."))
 			if(!stealth)
-				to_chat(M, span_danger("You feel a tiny prick!"))
+				to_chat(M, span_danger("I feel a tiny prick!"))
 			. = 1
 
 		log_combat(user, M, "stabbed", src)
@@ -137,14 +137,14 @@
 		naming = TRUE
 		w_class = WEIGHT_CLASS_GIGANTIC
 		sharpness = SHARP_NONE
-		to_chat(usr, span_notice("You firmly grip the pen in preparation to rename something."))
+		to_chat(usr, span_notice("I firmly grip the pen in preparation to rename something."))
 		playsound(src, 'sound/machines/button2.ogg', 100, 1)
 		return
 	if(naming)
 		naming = FALSE
 		w_class = WEIGHT_CLASS_TINY
 		sharpness = SHARP_POINTY
-		to_chat(usr, span_notice("You reset the grip on the pen"))
+		to_chat(usr, span_notice("I reset the grip on the pen"))
 		playsound(src, 'sound/machines/button2.ogg', 100, 1)
 		return
 
@@ -163,7 +163,7 @@
 				if(QDELETED(O) || !user.canUseTopic(O, BE_CLOSE))
 					return
 				if(oldname == input)
-					to_chat(user, span_notice("You changed \the [O.name] to... well... \the [O.name]."))
+					to_chat(user, span_notice("I changed \the [O.name] to... well... \the [O.name]."))
 				else
 					O.name = input
 					to_chat(user, span_notice("\The [oldname] has been successfully been renamed to \the [input]."))
@@ -174,7 +174,7 @@
 				if(QDELETED(O) || !user.canUseTopic(O, BE_CLOSE))
 					return
 				O.desc = input
-				to_chat(user, span_notice("You have successfully changed \the [O.name]'s description."))
+				to_chat(user, span_notice("I have successfully changed \the [O.name]'s description."))
 	else
 		return
 /*

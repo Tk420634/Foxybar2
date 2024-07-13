@@ -102,9 +102,9 @@
 	if(href_list["view_wireset"])
 		legend = href_list["view_wireset"];
 	if(href_list["view_blueprints"])
-		set_viewer(usr, span_notice("You flip the blueprints over to view the complex information diagram."))
+		set_viewer(usr, span_notice("I flip the blueprints over to view the complex information diagram."))
 	if(href_list["hide_blueprints"])
-		clear_viewer(usr,span_notice("You flip the blueprints over to view the simple information diagram."))
+		clear_viewer(usr,span_notice("I flip the blueprints over to view the simple information diagram."))
 	if(href_list["refresh"])
 		clear_viewer(usr)
 		set_viewer(usr)
@@ -196,7 +196,7 @@
 		for(var/D in A.firedoors)
 			var/obj/machinery/door/firedoor/FD = D
 			FD.CalculateAffectingAreas()
-	to_chat(usr, span_notice("You rename the '[prevname]' to '[str]'."))
+	to_chat(usr, span_notice("I rename the '[prevname]' to '[str]'."))
 	log_game("[key_name(usr)] has renamed [prevname] to [str]")
 	A.update_areasize()
 	interact()

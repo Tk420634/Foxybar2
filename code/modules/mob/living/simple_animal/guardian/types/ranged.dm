@@ -63,16 +63,16 @@
 	switch(lighting_alpha)
 		if (LIGHTING_PLANE_ALPHA_VISIBLE)
 			lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE
-			msg = "You activate your night vision."
+			msg = "I activate your night vision."
 		if (LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE)
 			lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
-			msg = "You increase your night vision."
+			msg = "I increase your night vision."
 		if (LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE)
 			lighting_alpha = LIGHTING_PLANE_ALPHA_INVISIBLE
-			msg = "You maximize your night vision."
+			msg = "I maximize your night vision."
 		else
 			lighting_alpha = LIGHTING_PLANE_ALPHA_VISIBLE
-			msg = "You deactivate your night vision."
+			msg = "I deactivate your night vision."
 
 	to_chat(src, span_notice("[msg]"))
 
@@ -103,7 +103,7 @@
 
 /obj/effect/snare
 	name = "snare"
-	desc = "You shouldn't be seeing this!"
+	desc = "I shouldn't be seeing this!"
 	var/mob/living/simple_animal/hostile/guardian/spawner
 	invisibility = INVISIBILITY_ABSTRACT
 

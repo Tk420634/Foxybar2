@@ -74,7 +74,7 @@
 			var/mob/living/A = AM
 			if(A.mob_size > MOB_SIZE_SMALL && !(A.movement_type & FLYING))
 				if(prob(squish_chance))
-					A.visible_message(span_notice("[A] squashed [src]."), span_notice("You squashed [src] under your weight as you fell."))
+					A.visible_message(span_notice("[A] squashed [src]."), span_notice("I squashed [src] under your weight as you fell."))
 					adjustBruteLoss(1)
 				else
 					visible_message(span_notice("[src] avoids getting crushed."))

@@ -36,4 +36,4 @@
 	var/obj/machinery/computer/custom_shuttle/link_comp = O
 	link_comp.distance_multiplier = clamp(link_comp.distance_multiplier, 0, upgrade_amount)
 	playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, 0)
-	to_chat(usr, span_notice("You insert the disk into the flight computer, allowing for routes to be [upgrade_amount]x the original distance."))
+	to_chat(usr, span_notice("I insert the disk into the flight computer, allowing for routes to be [upgrade_amount]x the original distance."))

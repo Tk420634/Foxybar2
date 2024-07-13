@@ -2,7 +2,7 @@
 
 /obj/item/reagent_containers/food/drinks/drinkingglass
 	name = "drinking glass"
-	desc = "Your standard drinking glass."
+	desc = "My standard drinking glass."
 	icon_state = "glass_empty"
 	amount_per_transfer_from_this = 10
 	volume = 50
@@ -153,7 +153,7 @@
 			if(reagents.total_volume >= reagents.maximum_volume)
 				to_chat(user, span_notice("[src] is full."))
 			else
-				to_chat(user, span_notice("You break [E] in [src]."))
+				to_chat(user, span_notice("I break [E] in [src]."))
 				reagents.add_reagent_list(/datum/reagent/consumable/eggyolk = 2, /datum/reagent/consumable/eggyolk = 4)
 				qdel(E)
 			return
@@ -177,7 +177,7 @@
 
 	else if(reagents.total_volume && user.a_intent == INTENT_HARM)
 		user.visible_message(span_danger("[user] splashes the contents of [src] onto [target]!"), \
-							span_notice("You splash the contents of [src] onto [target]."))
+							span_notice("I splash the contents of [src] onto [target]."))
 		reagents.reaction(target, TOUCH)
 		reagents.clear_reagents()
 		return

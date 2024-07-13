@@ -12,7 +12,7 @@
 
 /atom/movable/screen/alert/status_effect/music
 	name = "Hunting Horn Music"
-	desc = "You feel the music empower you!"
+	desc = "I feel the music empower you!"
 
 /datum/status_effect/music/on_creation()
 	. = ..()
@@ -34,7 +34,7 @@
 
 /datum/status_effect/music/attack_up_xs
 	id = "\proper Strength"
-	desc = "You feel empowered."
+	desc = "I feel empowered."
 	var/added_unarmed_trait = null
 	var/added_melee_trait = null
 
@@ -66,7 +66,7 @@
 
 /datum/status_effect/music/speed_up
 	id = "\proper Agility"
-	desc = "You feel light on your feet."
+	desc = "I feel light on your feet."
 
 /datum/status_effect/music/speed_up/on_apply()
 	. = ..()
@@ -84,7 +84,7 @@
 // check click.dm inside /mob/ClickOn()
 /datum/status_effect/music/cooldown_ignore
 	id = "\proper Ruthlessness"
-	desc = "You feel like really pummelling something."
+	desc = "I feel like really pummelling something."
 	associated_trait = TRAIT_HH_COOLDOWN_IGNORE
 
 
@@ -94,17 +94,17 @@
 
 /datum/status_effect/music/iron_skin
 	id = "\proper Endurance"
-	desc = "You feel tough."
+	desc = "I feel tough."
 	associated_trait = TRAIT_HH_IRON_SKIN
 
 /datum/status_effect/music/knockdown_res
 	id = "\proper Steadiness"
-	desc = "You feel sturdy."
+	desc = "I feel sturdy."
 	associated_trait = TRAIT_HH_KNOCKDOWN_RES
 
 /datum/status_effect/music/divine_blessing
 	id = "\proper Luck"
-	desc = "You feel like you could shrug off some pain."
+	desc = "I feel like you could shrug off some pain."
 	associated_trait = TRAIT_HH_DIVINE_BLESSING
 
 
@@ -112,12 +112,12 @@
 
 /datum/status_effect/music/draw_speed
 	id = "\proper Alertness"
-	desc = "You feel like the fastest gun in the west."
+	desc = "I feel like the fastest gun in the west."
 	associated_trait = TRAIT_HH_DRAW_SPEED
 
 /datum/status_effect/music/fast_actions
 	id = "\proper Dexterity"
-	desc = "You feel like a magician."
+	desc = "I feel like a magician."
 
 /datum/status_effect/music/fast_actions/interact_speed_modifier()
 	return 0.4
@@ -125,7 +125,7 @@
 
 /datum/status_effect/music/stamina_up
 	id = "\proper Persistence"
-	desc = "You feel like you could do this all day."
+	desc = "I feel like you could do this all day."
 
 /datum/status_effect/music/stamina_up/on_apply()
 	. = ..()
@@ -160,7 +160,7 @@
 
 /datum/status_effect/music/recovery
 	id = "\proper Tenacity"
-	desc = "You feel soothed."
+	desc = "I feel soothed."
 
 /datum/status_effect/music/recovery/tick()
 	owner.heal_overall_damage(brute = 1.5, burn = 1.5, only_organic = FALSE)
@@ -170,7 +170,7 @@
 
 /datum/status_effect/music/maxhp_up
 	id = "\proper Vigor"
-	desc = "You feel hearty."
+	desc = "I feel hearty."
 
 /datum/status_effect/music/maxhp_up/on_apply()
 	. = ..()

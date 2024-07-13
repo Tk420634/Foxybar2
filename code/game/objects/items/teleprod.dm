@@ -14,7 +14,7 @@
 
 /obj/item/melee/baton/cattleprod/teleprod/clowning_around(mob/living/user)
 	user.visible_message(span_danger("[user] accidentally hits [user.p_them()]self with [src]!"), \
-						span_userdanger("You accidentally hit yourself with [src]!"))
+						span_userdanger("I accidentally hit yourself with [src]!"))
 	SEND_SIGNAL(user, COMSIG_LIVING_MINOR_SHOCK)
 	user.DefaultCombatKnockdown(stamforce * 6)
 	playsound(loc, 'sound/weapons/egloves.ogg', 50, 1, -1)
@@ -33,9 +33,9 @@
 			qdel(src)
 			BSC.use(1)
 			user.put_in_hands(S)
-			to_chat(user, span_notice("You place the bluespace crystal firmly into the igniter."))
+			to_chat(user, span_notice("I place the bluespace crystal firmly into the igniter."))
 		else
-			user.visible_message(span_warning("You can't put the crystal onto the stunprod while it has a power cell installed!"))
+			user.visible_message(span_warning("I can't put the crystal onto the stunprod while it has a power cell installed!"))
 	else
 		return ..()
 */

@@ -170,7 +170,7 @@
 
 /datum/reagent/consumable/superlaughter/on_mob_life(mob/living/carbon/M)
 	if(prob(30))
-		M.visible_message(span_danger("[M] bursts out into a fit of uncontrollable laughter!"), span_userdanger("You burst out in a fit of uncontrollable laughter!"))
+		M.visible_message(span_danger("[M] bursts out into a fit of uncontrollable laughter!"), span_userdanger("I burst out in a fit of uncontrollable laughter!"))
 		M.Stun(5)
 		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "chemical_laughter", /datum/mood_event/chemical_superlaughter)
 	..()
@@ -442,12 +442,12 @@
 	taste_description = "bitter tea"
 	glass_icon_state = "arnold_palmer"
 	glass_name = "Arnold Palmer"
-	glass_desc = "You feel like taking a few golf swings after a few swigs of this."
+	glass_desc = "I feel like taking a few golf swings after a few swigs of this."
 	value = REAGENT_VALUE_VERY_COMMON
 
 /datum/reagent/consumable/tea/arnold_palmer/on_mob_life(mob/living/carbon/M)
 	if(prob(5))
-		to_chat(M, "<span class = 'notice'>[pick("You remember to square your shoulders.","You remember to keep your head down.","You can't decide between squaring your shoulders and keeping your head down.","You remember to relax.","You think about how someday you'll get two strokes off your golf game.")]</span>")
+		to_chat(M, "<span class = 'notice'>[pick("I remember to square your shoulders.","I remember to keep your head down.","I can't decide between squaring your shoulders and keeping your head down.","I remember to relax.","I think about how someday you'll get two strokes off your golf game.")]</span>")
 	..()
 	. = 1
 
@@ -1219,7 +1219,7 @@
 
 /datum/reagent/consumable/pinkmilk/on_mob_life(mob/living/carbon/M)
 	if(prob(15))
-		to_chat(M, "<span class = 'notice'>[pick("You cant help to smile.","You feel nostalgia all of sudden.","You remember to relax.")]</span>")
+		to_chat(M, "<span class = 'notice'>[pick("I cant help to smile.","I feel nostalgia all of sudden.","I remember to relax.")]</span>")
 	..()
 	. = 1
 
@@ -1260,7 +1260,7 @@
 	taste_description = "barbecue and nostalgia"
 	glass_icon_state = "monkey_energy_glass"
 	glass_name = "glass of Monkey Energy"
-	glass_desc = "You can unleash the ape, but without the pop of the can?"
+	glass_desc = "I can unleash the ape, but without the pop of the can?"
 	value = REAGENT_VALUE_COMMON
 	sodie_tier = SODIE_TIER_1 // whats a monkey's worst enemy? a banana peel, protect the brain!
 	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_1, SODIE_HEALRANK_HIGHER)
@@ -1317,7 +1317,7 @@
 
 /datum/reagent/consumable/baked_banana_peel
 	name = "Baked Banana Peel Powder"
-	description = "You took a banana peel... pulped it... baked it... Where are you going with this?"
+	description = "I took a banana peel... pulped it... baked it... Where are you going with this?"
 	color = "#863333" // rgb: 175, 175, 0
 	reagent_state = SOLID
 	taste_description = "bitter powder"

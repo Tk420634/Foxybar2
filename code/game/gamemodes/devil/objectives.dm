@@ -1,7 +1,7 @@
 /datum/objective/devil
 
 /datum/objective/devil/soulquantity
-	explanation_text = "You shouldn't see this text.  Error:DEVIL1"
+	explanation_text = "I shouldn't see this text.  Error:DEVIL1"
 	target_amount = 4
 
 /datum/objective/devil/soulquantity/New()
@@ -24,7 +24,7 @@
 
 
 /datum/objective/devil/soulquality
-	explanation_text = "You shouldn't see this text.  Error:DEVIL2"
+	explanation_text = "I shouldn't see this text.  Error:DEVIL2"
 	var/contractType
 	var/contractName
 
@@ -62,7 +62,7 @@
 
 
 /datum/objective/devil/sintouch
-	explanation_text = "You shouldn't see this text.  Error:DEVIL3"
+	explanation_text = "I shouldn't see this text.  Error:DEVIL3"
 
 /datum/objective/devil/sintouch/New()
 	target_amount = pick(4,5)
@@ -74,7 +74,7 @@
 
 
 /datum/objective/devil/buy_target
-	explanation_text = "You shouldn't see this text.  Error:DEVIL4"
+	explanation_text = "I shouldn't see this text.  Error:DEVIL4"
 
 /datum/objective/devil/buy_target/update_explanation_text()
 	if(target)
@@ -87,7 +87,7 @@
 
 
 /datum/objective/devil/outsell
-	explanation_text = "You shouldn't see this text.  Error:DEVIL5"
+	explanation_text = "I shouldn't see this text.  Error:DEVIL5"
 
 /datum/objective/devil/outsell/New()
 

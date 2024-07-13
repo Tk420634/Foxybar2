@@ -41,7 +41,7 @@
 		. += "bomb_assembly"
 
 /obj/item/onetankbomb/wrench_act(mob/living/user, obj/item/I)
-	to_chat(user, span_notice("You disassemble [src]!"))
+	to_chat(user, span_notice("I disassemble [src]!"))
 	if(bombassembly)
 		bombassembly.forceMove(drop_location())
 		bombassembly.master = null
@@ -151,7 +151,7 @@
 	bomb.update_icon()
 
 	user.put_in_hands(bomb)		//Equips the bomb if possible, or puts it on the floor.
-	to_chat(user, span_notice("You attach [assembly] to [src]."))
+	to_chat(user, span_notice("I attach [assembly] to [src]."))
 	return
 
 /obj/item/tank/proc/ignite()	//This happens when a bomb is told to explode

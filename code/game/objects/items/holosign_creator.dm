@@ -26,7 +26,7 @@
 		var/turf/T = get_turf(target)
 		var/obj/structure/holosign/H = locate(holosign_type) in T
 		if(H)
-			to_chat(user, span_notice("You use [src] to deactivate [H]."))
+			to_chat(user, span_notice("I use [src] to deactivate [H]."))
 			qdel(H)
 		else
 			if(!is_blocked_turf(T, TRUE)) //can't put holograms on a tile that has dense stuff
@@ -46,7 +46,7 @@
 						if(is_blocked_turf(T, TRUE)) //don't try to sneak dense stuff on our tile during the wait.
 							return
 					H = new holosign_type(get_turf(target), src)
-					to_chat(user, span_notice("You create \a [H] with [src]."))
+					to_chat(user, span_notice("I create \a [H] with [src]."))
 				else
 					to_chat(user, span_notice("[src] is projecting at max capacity!"))
 
@@ -57,7 +57,7 @@
 	if(signs.len)
 		for(var/H in signs)
 			qdel(H)
-		to_chat(user, span_notice("You clear all active holograms."))
+		to_chat(user, span_notice("I clear all active holograms."))
 
 
 /obj/item/holosign_creator/security
@@ -121,7 +121,7 @@
 		var/mob/living/silicon/robot/R = user
 
 		if(shock)
-			to_chat(user, span_notice("You clear all active holograms, and reset your projector to normal."))
+			to_chat(user, span_notice("I clear all active holograms, and reset your projector to normal."))
 			holosign_type = /obj/structure/holosign/barrier/cyborg
 			creation_time = 5
 			if(signs.len)
@@ -130,7 +130,7 @@
 			shock = 0
 			return
 		else if(R.emagged&&!shock)
-			to_chat(user, span_warning("You clear all active holograms, and overload your energy projector!"))
+			to_chat(user, span_warning("I clear all active holograms, and overload your energy projector!"))
 			holosign_type = /obj/structure/holosign/barrier/cyborg/hacked
 			creation_time = 30
 			if(signs.len)
@@ -142,8 +142,8 @@
 			if(signs.len)
 				for(var/H in signs)
 					qdel(H)
-				to_chat(user, span_notice("You clear all active holograms."))
+				to_chat(user, span_notice("I clear all active holograms."))
 	if(signs.len)
 		for(var/H in signs)
 			qdel(H)
-		to_chat(user, span_notice("You clear all active holograms."))
+		to_chat(user, span_notice("I clear all active holograms."))

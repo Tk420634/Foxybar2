@@ -30,7 +30,7 @@
 			stomach_contents.Remove(M)
 		M.forceMove(Tsec)
 		M.visible_message(span_danger("[M] bursts out of [src]!"),
-			span_danger("You burst out of [src]!"))
+			span_danger("I burst out of [src]!"))
 	..()
 
 //proc used to ressuscitate a mob

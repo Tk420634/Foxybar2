@@ -55,7 +55,7 @@
 /obj/item/soulstone/attack(mob/living/carbon/human/M, mob/living/user)
 	if(!iscultist(user, TRUE) && !iswizard(user) && !usability)
 		user.Unconscious(100)
-		to_chat(user, span_userdanger("Your body is wracked with debilitating pain!"))
+		to_chat(user, span_userdanger("My body is wracked with debilitating pain!"))
 		return
 	if(spent)
 		to_chat(user, span_warning("There is no power left in the shard."))
@@ -76,7 +76,7 @@
 		return
 	if(!iscultist(user, TRUE) && !iswizard(user) && !usability)
 		user.Unconscious(100)
-		to_chat(user, span_userdanger("Your body is wracked with debilitating pain!"))
+		to_chat(user, span_userdanger("My body is wracked with debilitating pain!"))
 		return
 	release_shades(user)
 
@@ -177,7 +177,7 @@
 				T.health = T.maxHealth
 				icon_state = "soulstone2"
 				name = "soulstone: Shade of [T.real_name]"
-				to_chat(T, span_notice("Your soul has been captured by the soulstone. Its arcane energies are reknitting your ethereal form."))
+				to_chat(T, span_notice("My soul has been captured by the soulstone. Its arcane energies are reknitting your ethereal form."))
 				if(user != T)
 					to_chat(user, "<span class='info'><b>Capture successful!</b>:</span> [T.real_name]'s soul has been captured and stored within the soulstone.")
 
@@ -257,9 +257,9 @@
 	name = "soulstone: Shade of [T.real_name]"
 	icon_state = "soulstone2"
 	if(user && (iswizard(user) || usability))
-		to_chat(S, "Your soul has been captured! You are now bound to [user.real_name]'s will. Help [user.p_them()] succeed in [user.p_their()] goals at all costs.")
+		to_chat(S, "My soul has been captured! You are now bound to [user.real_name]'s will. Help [user.p_them()] succeed in [user.p_their()] goals at all costs.")
 	else if(user && iscultist(user))
-		to_chat(S, "Your soul has been captured! You are now bound to the cult's will. Help them succeed in their goals at all costs.")
+		to_chat(S, "My soul has been captured! You are now bound to the cult's will. Help them succeed in their goals at all costs.")
 	if(vic && user)
 		to_chat(user, "<span class='info'><b>Capture successful!</b>:</span> [T.real_name]'s soul has been ripped from [T.p_their()] body and stored within the soul stone.")
 

@@ -132,7 +132,7 @@
 		var/mob/living/carbon/human/H = M
 		if(istype(H))
 			if(!silent)
-				to_chat(H, "Your training has allowed you to overcome your clownish nature, allowing you to wield weapons without harming yourself.")
+				to_chat(H, "My training has allowed you to overcome your clownish nature, allowing you to wield weapons without harming yourself.")
 			H.dna.remove_mutation(CLOWNMUT)
 	RegisterSignal(M, COMSIG_MOVABLE_HEAR,PROC_REF(handle_hearing))
 
@@ -171,7 +171,7 @@
 	var/law_borg = "Accomplish your AI's objectives at all costs."
 	killer.set_zeroth_law(law, law_borg)
 	killer.set_syndie_radio()
-	to_chat(killer, "Your radio has been upgraded! Use :t to speak on an encrypted channel with Syndicate Agents!")
+	to_chat(killer, "My radio has been upgraded! Use :t to speak on an encrypted channel with Syndicate Agents!")
 	killer.add_malf_picker()
 
 /datum/antagonist/traitor/proc/equip(silent = FALSE)

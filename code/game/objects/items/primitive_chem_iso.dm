@@ -16,12 +16,12 @@
 	if(!reagents)
 		to_chat(user, span_warning("There are no chemicals to spin out."))
 		return
-	to_chat(user, span_notice("You see some chemicals you can spin out of [src]."))
+	to_chat(user, span_notice("I see some chemicals you can spin out of [src]."))
 	var/datum/reagent/choice = input(user, "Which chemical would you like to remove?") as null|anything in reagents.reagent_list
 	if(!choice)
 		return
-	to_chat(user, span_notice("You slowly start to spin [src], attempting to remove the chemical."))
+	to_chat(user, span_notice("I slowly start to spin [src], attempting to remove the chemical."))
 	if(!do_after(user, 5 SECONDS, target = src))
 		return
-	to_chat(user, span_notice("You successfully spin out the chemical from [src]."))
+	to_chat(user, span_notice("I successfully spin out the chemical from [src]."))
 	reagents.remove_reagent(choice.type, 1000)

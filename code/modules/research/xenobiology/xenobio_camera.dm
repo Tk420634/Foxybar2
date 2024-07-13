@@ -142,13 +142,13 @@
 			if(I == XENOBIO_UPGRADE_SLIMEADV)
 				max_slimes = 10
 		if(successfulupgrade)
-			to_chat(user, span_notice("You have successfully upgraded [src] with [O]."))
+			to_chat(user, span_notice("I have successfully upgraded [src] with [O]."))
 		else
 			to_chat(user, span_warning("[src] already has the contents of [O] installed!"))
 		return
 	if(istype(O, /obj/item/reagent_containers/food/snacks/cube/monkey) && (upgradetier & XENOBIO_UPGRADE_MONKEYS)) //CIT CHANGE - makes monkey-related actions require XENOBIO_UPGRADE_MONKEYS
 		monkeys++
-		to_chat(user, span_notice("You feed [O] to [src]. It now has [monkeys] monkey cubes stored."))
+		to_chat(user, span_notice("I feed [O] to [src]. It now has [monkeys] monkey cubes stored."))
 		qdel(O)
 		return
 	else if(istype(O, /obj/item/storage/bag) && (upgradetier & XENOBIO_UPGRADE_MONKEYS)) //CIT CHANGE - makes monkey-related actions require XENOBIO_UPGRADE_MONKEYS
@@ -160,7 +160,7 @@
 				monkeys++
 				qdel(G)
 		if(loaded)
-			to_chat(user, span_notice("You fill [src] with the monkey cubes stored in [O]. [src] now has [monkeys] monkey cubes stored."))
+			to_chat(user, span_notice("I fill [src] with the monkey cubes stored in [O]. [src] now has [monkeys] monkey cubes stored."))
 		return
 	else if(istype(O, /obj/item/slimepotion/slime)  && (upgradetier & XENOBIO_UPGRADE_SLIMEADV)) // CIT CHANGE - makes giving slimes potions via console require XENOBIO_UPGRADE_SLIMEADV
 		var/replaced = FALSE
@@ -170,7 +170,7 @@
 			current_potion.forceMove(drop_location())
 			replaced = TRUE
 		current_potion = O
-		to_chat(user, span_notice("You load [O] in the console's potion slot[replaced ? ", replacing the one that was there before" : ""]."))
+		to_chat(user, span_notice("I load [O] in the console's potion slot[replaced ? ", replacing the one that was there before" : ""]."))
 		return
 	..()
 

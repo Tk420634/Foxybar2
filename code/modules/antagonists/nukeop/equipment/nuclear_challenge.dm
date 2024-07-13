@@ -80,11 +80,11 @@ GLOBAL_VAR_INIT(war_declared, FALSE)
 
 /obj/item/nuclear_challenge/proc/check_allowed(mob/living/user)
 	if(declaring_war)
-		to_chat(user, "You are already in the process of declaring war! Make your mind up.")
+		to_chat(user, "I am already in the process of declaring war! Make your mind up.")
 		return FALSE
 
 	if(!user.onSyndieBase())
-		to_chat(user, "You have to be at your base to use this.")
+		to_chat(user, "I have to be at your base to use this.")
 		return FALSE
 	if(world.time-SSticker.round_start_time > CHALLENGE_TIME_LIMIT)
 		to_chat(user, "It's too late to declare hostilities. Your benefactors are already busy with other schemes. You'll have to make do with what you have on hand.")

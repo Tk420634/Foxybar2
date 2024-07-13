@@ -43,21 +43,21 @@
 		return TRUE
 	switch(aggressiveness)
 		if(1)
-			to_chat(user, span_notice("You set the restrictor to the middle position."))
+			to_chat(user, span_notice("I set the restrictor to the middle position."))
 			aggressiveness = 2
 		if(2)
-			to_chat(user, span_notice("You set the restrictor to the last position."))
+			to_chat(user, span_notice("I set the restrictor to the last position."))
 			aggressiveness = 3
 		if(3)
-			to_chat(user, span_notice("You set the restrictor to the first position."))
+			to_chat(user, span_notice("I set the restrictor to the first position."))
 			aggressiveness = 1
 		if(4)
-			to_chat(user, span_danger("You adjust the restrictor but nothing happens, probably because it's broken."))
+			to_chat(user, span_danger("I adjust the restrictor but nothing happens, probably because it's broken."))
 	return TRUE
 
 /obj/item/clothing/mask/gas/sechailer/wirecutter_act(mob/living/user, obj/item/I)
 	if(aggressiveness != 4)
-		to_chat(user, span_danger("You broke the restrictor!"))
+		to_chat(user, span_danger("I broke the restrictor!"))
 		aggressiveness = 4
 	return TRUE
 
@@ -75,7 +75,7 @@
 	if(!safety)
 		return
 	safety = FALSE
-	to_chat(user, span_warning("You silently fry [src]'s vocal circuit with the cryptographic sequencer."))
+	to_chat(user, span_warning("I silently fry [src]'s vocal circuit with the cryptographic sequencer."))
 	return TRUE
 
 /obj/item/clothing/mask/gas/sechailer/verb/halt()
@@ -169,7 +169,7 @@
 					phrase_text = "Stop breaking the law, ass hole."
 					phrase_sound = "asshole"
 				if(15)
-					phrase_text = "You have the right to shut the fuck up."
+					phrase_text = "I have the right to shut the fuck up."
 					phrase_sound = "stfu"
 				if(16)
 					phrase_text = "Shut up crime!"

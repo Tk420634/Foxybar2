@@ -87,7 +87,7 @@
 	if(ishuman(mover))
 		var/mob/living/carbon/human/H = mover
 		if(cmegalist.len <= megalist.len - 2)
-			H.visible_message(span_warning("[H] pushes through [src]!"), span_notice("You deserve your reward. Reap your hunt."))
+			H.visible_message(span_warning("[H] pushes through [src]!"), span_notice("I deserve your reward. Reap your hunt."))
 			return TRUE
 		else
 			to_chat(H, span_warning("Just touching the door burns your hand... You're not ready."))

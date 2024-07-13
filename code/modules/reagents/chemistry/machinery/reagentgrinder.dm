@@ -104,7 +104,7 @@
 		if(!user.transferItemToLoc(B, src))
 			return
 		replace_beaker(user, B)
-		to_chat(user, span_notice("You add [B] to [src]."))
+		to_chat(user, span_notice("I add [B] to [src]."))
 		update_icon()
 		return
 
@@ -119,23 +119,23 @@
 			for(var/i in inserted)
 				holdingitems[i] = TRUE
 			if(!I.contents.len)
-				to_chat(user, span_notice("You empty [I] into [src]."))
+				to_chat(user, span_notice("I empty [I] into [src]."))
 			else
-				to_chat(user, span_notice("You fill [src] to the brim."))
+				to_chat(user, span_notice("I fill [src] to the brim."))
 		return TRUE
 
 	if(!I.grind_results && !I.juice_results)
 		if(user.a_intent == INTENT_HARM)
 			return ..()
 		else
-			to_chat(user, span_warning("You cannot grind [I] into reagents!"))
+			to_chat(user, span_warning("I cannot grind [I] into reagents!"))
 			return TRUE
 
 	if(I.grind_requirements(src)) //Error messages should be in the objects' definitions
 		return
 
 	if(user.transferItemToLoc(I, src))
-		to_chat(user, span_notice("You add [I] to [src]."))
+		to_chat(user, span_notice("I add [I] to [src]."))
 		holdingitems[I] = TRUE
 		return FALSE
 

@@ -41,10 +41,10 @@
 	if(!istype(haaay))
 		return FALSE
 	if(!haaay.use(1))
-		user.show_message(span_alert("You need at least one clump of hay for this!"))
+		user.show_message(span_alert("I need at least one clump of hay for this!"))
 		return FALSE
 	has_hay = TRUE
-	user.show_message(span_notice("You strap some hay to the base of the shaft, giving it a basic set of fletching."))
+	user.show_message(span_notice("I strap some hay to the base of the shaft, giving it a basic set of fletching."))
 	update_icon()
 	check_constructed(user)
 	return TRUE
@@ -55,7 +55,7 @@
 	var/obj/item/stack/sheet/hay/newhay = new(get_turf(src))
 	user.put_in_hands(newhay)
 	has_hay = FALSE
-	user.show_message(span_notice("You pull the fletching off the shaft."))
+	user.show_message(span_notice("I pull the fletching off the shaft."))
 	update_icon()
 	check_constructed(user)
 
@@ -65,11 +65,11 @@
 	if(the_head || the_arrow)
 		return FALSE
 	if(!a_head.use(1))
-		user.show_message(span_alert("You need at least one arrow head!"))
+		user.show_message(span_alert("I need at least one arrow head!"))
 		return FALSE
 	the_head = a_head.type
 	the_arrow = a_head.result_arrow
-	user.show_message(span_notice("You tie \the [a_head] to the head of the shaft."))
+	user.show_message(span_notice("I tie \the [a_head] to the head of the shaft."))
 	update_icon()
 	check_constructed(user)
 
@@ -80,7 +80,7 @@
 	user.put_in_hands(new_head)
 	the_head = null
 	the_arrow = null
-	user.show_message(span_notice("You pull the head off the shaft."))
+	user.show_message(span_notice("I pull the head off the shaft."))
 	update_icon()
 	check_constructed(user)
 

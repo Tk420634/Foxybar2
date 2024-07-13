@@ -50,7 +50,7 @@
 		qdel(src)
 		return // gotta have a valid interaction
 	if(!I.can_autoplap)
-		to_chat(plapper, span_alert("You really shouldn't automate that!"))
+		to_chat(plapper, span_alert("I really shouldn't automate that!"))
 		qdel(src)
 		return // gotta have a valid interaction
 	if(!I.can_do_interaction(plapper, plappee))
@@ -127,7 +127,7 @@
 	else
 		plappeemob = ckey2mob(plappee)
 	if(!can_plap())
-		to_chat(plappermob, span_alert("You can't do that right now!"))
+		to_chat(plappermob, span_alert("I can't do that right now!"))
 		return // we cant plap
 	to_chat(plappermob, span_green("Autointeraction started! You will '[plap_name]' [plappeemob] every [DisplayTimeText(plap_interval)]! You can turn it off in the interactions menu, or by getting more than 2 tiles away from your partner."))
 	COOLDOWN_START(src, last_plap, plap_interval)
@@ -170,7 +170,7 @@
 	// if(!P)
 	// 	return // they nont
 	// if(LAZYLEN(P.autoplappers) >= 20)
-	// 	to_chat(me, span_alert("You have too many autointeraction saved!"))
+	// 	to_chat(me, span_alert("I have too many autointeraction saved!"))
 	// 	return // too many!
 	// var/list/plapdata = list()
 	// plapdata["plap_key"] = plap_key
@@ -240,7 +240,7 @@
 /datum/autoplapper/proc/give_up()
 	var/mob/living/plappermob = ckey2mob(plapper)
 	if(plappermob)
-		to_chat(plapper, span_alert("You took too long to plap!"))
+		to_chat(plapper, span_alert("I took too long to plap!"))
 	qdel(src)
 
 /datum/autoplapper/proc/generate_unique_id()
@@ -252,13 +252,13 @@
 	entry["APPlapKey"] = plap_key || "???"
 	entry["APPlapName"] = plap_name || "Hold Handing"
 	var/mob/living/pLapper = ckey2mob(plapper)
-	entry["APPlapper"] = pLapper?.name || "Your Mom"
+	entry["APPlapper"] = pLapper?.name || "My Mom"
 	var/mob/living/plappeemob
 	if(SSinteractions.debug_store_plapper_weakref)
 		plappeemob = GET_WEAKREF(debug_plappee)
 	else
 		plappeemob = ckey2mob(plappee)	
-	entry["APPartner"] = plappeemob?.name || "Your Dad"
+	entry["APPartner"] = plappeemob?.name || "My Dad"
 	entry["APInterval"] = plap_interval || 10 SECONDS
 	entry["APPlapping"] = plapping_active || FALSE
 	entry["APPlapcount"] = plap_count || 0

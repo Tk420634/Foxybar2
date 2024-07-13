@@ -14,7 +14,7 @@
 		return ..()
 
 	C.preserved()
-	to_chat(user, span_notice("You inject the [M] with the stabilizer. It will no longer go inert."))
+	to_chat(user, span_notice("I inject the [M] with the stabilizer. It will no longer go inert."))
 	qdel(src)
 
 /************************Hivelord core*******************/
@@ -88,7 +88,7 @@
 		H.visible_message("[user] forces [H] to apply [src]... Black tendrils entangle and reinforce [H.p_them()]!")
 		SSblackbox.record_feedback("nested tally", "hivelord_core", 1, list("[type]", "used", "other"))
 	else
-		to_chat(user, span_notice("You start to smear [src] on yourself. Disgusting tendrils hold you together and allow you to keep moving, but for how long?"))
+		to_chat(user, span_notice("I start to smear [src] on yourself. Disgusting tendrils hold you together and allow you to keep moving, but for how long?"))
 		SSblackbox.record_feedback("nested tally", "hivelord_core", 1, list("[type]", "used", "self"))
 	H.apply_status_effect(STATUS_EFFECT_REGENERATIVE_CORE)
 	qdel(src)

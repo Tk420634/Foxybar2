@@ -14,7 +14,7 @@
 	desc = "Through some sort of adaptation to a questionable seafood diet, your tongue is specially shaped for yoinking the meat out of various bivalves (clams, oysters, etc)."
 	value = 5
 	category = "Food Quirks"
-	mechanics = "You can *lick clams to extract their meat and eat it, like some kind of wierd bird rat."
+	mechanics = "I can *lick clams to extract their meat and eat it, like some kind of wierd bird rat."
 	conflicts = list(
 	)
 	mob_trait = TRAIT_CLAM_TONGUE
@@ -24,7 +24,7 @@
 
 /datum/quirk/clam_lover
 	name = "Clam Lover"
-	desc = "You really, really *really* like clams."
+	desc = "I really, really *really* like clams."
 	value = 7
 	category = "Food Quirks"
 	mechanics = "Clam meat and juice gives you a significant mood boost!"
@@ -40,7 +40,7 @@
 	desc = "You're a master at fishing for clams! You're so good in fact that you can just jab your hand into the water and snag em!"
 	value = 7
 	category = "Food Quirks"
-	mechanics = "You can click on water tiles to fish for clams with your bare hands. Otherwise, clam fishing takes around 5 seconds, and has a chance of failing!"
+	mechanics = "I can click on water tiles to fish for clams with your bare hands. Otherwise, clam fishing takes around 5 seconds, and has a chance of failing!"
 	mob_trait = TRAIT_CLAM_FISHER
 	gain_text = span_notice("Zhere isn't a clam alive zhat can escape your grazhp!")
 	lose_text = span_notice("You've lost your touch for clam fishing.")
@@ -192,10 +192,10 @@
 	if(brokecheck(likcer))
 		return
 	if(!HAS_TRAIT(likcer, TRAIT_CLAM_TONGUE))
-		to_chat(likcer, span_alert(oysterclam("You can't quite get your tongue in there! Maybe try a screwdriver or knife?", likcer)))
+		to_chat(likcer, span_alert(oysterclam("I can't quite get your tongue in there! Maybe try a screwdriver or knife?", likcer)))
 		return // fun fact, copilot can't STAND the word lic*er
 	if(!guts)
-		to_chat(likcer, span_alert(oysterclam("You fish your tongue around in there for a bit, but aw man, there's no meat!", likcer)))
+		to_chat(likcer, span_alert(oysterclam("I fish your tongue around in there for a bit, but aw man, there's no meat!", likcer)))
 		return // no guts no glory
 	likcer.visible_message(
 		self_message = oysterclam("Wizh a deft flick of your tongue, you dart in between a gap in the shell and lap out the meat!", likcer),
@@ -207,7 +207,7 @@
 	if(!screwer || !likcer)
 		return
 	if(screwer.tool_behaviour != TOOL_SCREWDRIVER)
-		to_chat(likcer, span_alert(oysterclam("You can't quite get that in there! Maybe try a knife or a screwdriver? Maybe ask someone for a scav?", likcer)))
+		to_chat(likcer, span_alert(oysterclam("I can't quite get that in there! Maybe try a knife or a screwdriver? Maybe ask someone for a scav?", likcer)))
 		return
 	if(brokecheck(likcer))
 		return
@@ -232,13 +232,13 @@
 	playsound(src, "swing_hit", 75, TRUE)
 	switch(otter_smacks_remaining)
 		if(3 to INFINITY)
-			to_chat(likcer, span_alert(oysterclam("You pound the clam with the rock! It's starting to crack!")))
+			to_chat(likcer, span_alert(oysterclam("I pound the clam with the rock! It's starting to crack!")))
 		if(2)
-			to_chat(likcer, span_alert(oysterclam("You pound the clam with the rock! Cracks are forming in the shell!")))
+			to_chat(likcer, span_alert(oysterclam("I pound the clam with the rock! Cracks are forming in the shell!")))
 		if(1)
-			to_chat(likcer, span_alert(oysterclam("You pound the clam with the rock! The shell is starting to give!")))
+			to_chat(likcer, span_alert(oysterclam("I pound the clam with the rock! The shell is starting to give!")))
 		if(-INFINITY to 0)
-			to_chat(likcer, span_alert(oysterclam("You pound the clam with the rock! The shell shatters and dumps out everything inside! Ew.")))
+			to_chat(likcer, span_alert(oysterclam("I pound the clam with the rock! The shell shatters and dumps out everything inside! Ew.")))
 			QDEL_NULL(shell) // smash!
 			eviscerate_clam(likcer, FALSE, rock)
 	return TRUE
@@ -250,30 +250,30 @@
 		return
 	if(HAS_TRAIT(likcer, TRAIT_CLAM_LOVER)) // zhey got shelltooth
 		playsound(src, 'sound/items/Crowbar.ogg', 75, TRUE)
-		to_chat(likcer, span_alert(oysterclam("You slot the clam around your shelltooth (or whatever it is you use to eat clams) and pop it open like a true scav!", likcer)))
+		to_chat(likcer, span_alert(oysterclam("I slot the clam around your shelltooth (or whatever it is you use to eat clams) and pop it open like a true scav!", likcer)))
 		eviscerate_clam(likcer, FALSE, null)
 		return
 	getting_screwed = TRUE
-	to_chat(likcer, span_alert(oysterclam("You stick the clam in your mouth and start to chomp down into the hard, gritty shell...", likcer)))
+	to_chat(likcer, span_alert(oysterclam("I stick the clam in your mouth and start to chomp down into the hard, gritty shell...", likcer)))
 	if(!do_after(likcer, 3 SECONDS, TRUE, src))
-		to_chat(likcer, span_notice(oysterclam("You spit out the clam shell cus seriously, why would you do that?", likcer)))
+		to_chat(likcer, span_notice(oysterclam("I spit out the clam shell cus seriously, why would you do that?", likcer)))
 		getting_screwed = FALSE
 		return
 	getting_screwed = FALSE
 	otter_smacks_remaining--
 	INVOKE_ASYNC(src,PROC_REF(attempt_forcefeed), likcer, likcer)
 	if(otter_smacks_remaining <= 0)
-		to_chat(likcer, span_alert(oysterclam("You crunch down on the clam shell and it shatters in your mouth, dumping out everything inside all over the place! Ouch.", likcer)))
+		to_chat(likcer, span_alert(oysterclam("I crunch down on the clam shell and it shatters in your mouth, dumping out everything inside all over the place! Ouch.", likcer)))
 		QDEL_NULL(shell) // smash!
 		eviscerate_clam(likcer, FALSE, null)
 		return
-	to_chat(likcer, span_alert(oysterclam("You crunch down on the clam shell and hear it (and your teeth, probably) crack! Maybe try again?", likcer)))
+	to_chat(likcer, span_alert(oysterclam("I crunch down on the clam shell and hear it (and your teeth, probably) crack! Maybe try again?", likcer)))
 	return TRUE
 
 /obj/item/reagent_containers/food/snacks/clam/proc/brokecheck(mob/living/carbon/likcer)
 	if(guts || shell || perl)
 		return
-	to_chat(likcer, span_alert(oysterclam("You jimmy open the clam and find a note taped to the inner shell. it reads: 'Property of Buggerry Barne's Bugged Shellfish Emporium. If found, please call 1-800-IM-CODER and describe the events leading up to this thing's discovery. Thanks! -Lagg'", likcer)))
+	to_chat(likcer, span_alert(oysterclam("I jimmy open the clam and find a note taped to the inner shell. it reads: 'Property of Buggerry Barne's Bugged Shellfish Emporium. If found, please call 1-800-IM-CODER and describe the events leading up to this thing's discovery. Thanks! -Lagg'", likcer)))
 
 /obj/item/reagent_containers/food/snacks/clam/proc/eviscerate_clam(mob/living/carbon/likcer, eatit, obj/item/hand_item/tongue)
 	if(is_actually_oyster && !secret_identity_revealed)
@@ -320,7 +320,7 @@
 			if(perl)
 				msg_out += " Oooh hey is that a clam pearl?"
 		else
-			msg_out += "You fish around in the clam for a bit, but there's no meat to be found!"
+			msg_out += "I fish around in the clam for a bit, but there's no meat to be found!"
 			if(shell)
 				msg_out += " At least you've got the clam shell!"
 				if(perl)
@@ -397,8 +397,8 @@
 
 /obj/item/reagent_containers/food/snacks/clam_shell/examine(mob/user)
 	. = ..()
-	. += span_notice("You can wear this as a tiny dorky hat! Or craft it into a cute, uncomfortable bra or codpiece!")
-	. += span_notice("You *could* eat it, but that would be a terrible idea.")
+	. += span_notice("I can wear this as a tiny dorky hat! Or craft it into a cute, uncomfortable bra or codpiece!")
+	. += span_notice("I *could* eat it, but that would be a terrible idea.")
 
 /obj/item/reagent_containers/food/snacks/clam_shell/proc/oysterize()
 	name = "oyster shell"
@@ -674,7 +674,7 @@
 					sharpness = SHARP_EDGED,
 					damage_coverings = FALSE
 				)
-			to_chat(M, span_alert("You get a mouth full of sharp shell fragments! They really hurt!"))
+			to_chat(M, span_alert("I get a mouth full of sharp shell fragments! They really hurt!"))
 		else
 			var/obj/item/bodypart/party = M.get_bodypart(BODY_ZONE_CHEST)
 			if(party)
@@ -690,7 +690,7 @@
 					sharpness = SHARP_EDGED,
 					damage_coverings = FALSE
 				)
-			to_chat(M, span_alert("You feel sharp shell fragments enter your blood! They really hurt!"))
+			to_chat(M, span_alert("I feel sharp shell fragments enter your blood! They really hurt!"))
 		M.emote("scream")
 	..()
 
@@ -740,7 +740,7 @@ GLOBAL_LIST_EMPTY(clam_fished)
 	if(clam_when > world.time)
 		. += span_notice("This spot lacks clams! They should be back in around [DisplayTimeText(clam_when - world.time)].")
 	else
-		. += span_notice("You can see some clams in the water! Click on the water with an empty hand on grab intent to fish em out!")
+		. += span_notice("I can see some clams in the water! Click on the water with an empty hand on grab intent to fish em out!")
 
 /turf/open/indestructible/ground/outside/water/proc/ClamWhen()
 	var/coords = atom2coords(src)
@@ -765,29 +765,29 @@ GLOBAL_LIST_EMPTY(clam_fished)
 	if(user.a_intent != INTENT_GRAB)
 		return
 	if(!HasClam())
-		to_chat(user, span_notice("You fish around in the water for a bit, but there's no clams to be found! Someone must have dug em all up. Dang. Check back in about [DisplayTimeText(ClamWhen() - world.time)]."))
+		to_chat(user, span_notice("I fish around in the water for a bit, but there's no clams to be found! Someone must have dug em all up. Dang. Check back in about [DisplayTimeText(ClamWhen() - world.time)]."))
 		return
 	if(HAS_TRAIT(user, TRAIT_CLAM_FISHER))
 		var/obj/item/reagent_containers/food/snacks/clam/clam = new /obj/item/reagent_containers/food/snacks/clam(get_turf(src))
 		ClamFished()
 		user.put_in_hands(clam)
 		if(HAS_TRAIT(user, TRAIT_CLAM_LOVER))
-			to_chat(user, span_notice("You jab your hand into the water and pull out a [span_love("clam~")]"))
+			to_chat(user, span_notice("I jab your hand into the water and pull out a [span_love("clam~")]"))
 		else
-			to_chat(user, span_notice("You jab your hand into the water and pull out a clam!"))
+			to_chat(user, span_notice("I jab your hand into the water and pull out a clam!"))
 		playsound(user, 'sound/effects/grab_clam.ogg', 75, TRUE)
 		return
 	else
-		to_chat(user, span_notice("You start sifting through the mud for some clams..."))
+		to_chat(user, span_notice("I start sifting through the mud for some clams..."))
 		playsound(user, 'sound/effects/fish_for_clam.ogg', 75, TRUE)
 		if(!do_after(user, 5 SECONDS, TRUE, src))
-			to_chat(user, span_alert("You were interrupted!"))
+			to_chat(user, span_alert("I were interrupted!"))
 			return
 		if(prob(50))
 			if(HAS_TRAIT(user, TRAIT_CLAM_LOVER))
-				to_chat(user, span_notice("You find a [span_love("clam~")]"))
+				to_chat(user, span_notice("I find a [span_love("clam~")]"))
 			else
-				to_chat(user, span_notice("You find a clam! Neat!"))
+				to_chat(user, span_notice("I find a clam! Neat!"))
 			var/obj/item/reagent_containers/food/snacks/clam/clam = new /obj/item/reagent_containers/food/snacks/clam(get_turf(src))
 			ClamFished()
 			user.put_in_hands(clam)

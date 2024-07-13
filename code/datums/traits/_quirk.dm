@@ -167,7 +167,7 @@ Use this as a guideline
 	name = "Nearsighted"
 	///The trait's name
 
-	desc = "You are nearsighted without prescription glasses, but spawn with a pair."
+	desc = "I am nearsighted without prescription glasses, but spawn with a pair."
 	///Short description, shows next to name in the trait panel
 
 	value = -1
@@ -179,7 +179,7 @@ Use this as a guideline
 	///If you need help finding where to put it, the declaration finder on GitHub is the best way to locate it
 
 	gain_text = span_danger("Things far away from you start looking blurry.")
-	lose_text = span_notice("You start seeing faraway things normally again.")
+	lose_text = span_notice("I start seeing faraway things normally again.")
 	medical_record_text = "Subject has permanent nearsightedness."
 	///These three are self-explanatory
 

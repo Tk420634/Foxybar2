@@ -17,7 +17,7 @@
 		var/mob/living/living = get_atom_on_turf(micro.loc, /mob/living)
 		if(living && (COMPARE_SIZES(living, micro)) < (1 / CONFIG_GET(number/max_pick_ratio)))
 			living.visible_message(span_warning("\The [living] drops [micro] as [micro.p_they()] grow\s too big to carry."),
-								span_warning("You drop \The [living] as [living.p_they()] grow\s too big to carry."),
+								span_warning("I drop \The [living] as [living.p_they()] grow\s too big to carry."),
 								target=micro,
 								target_message=span_notice("\The [living] drops you as you grow too big to carry."))
 			holder.release()
@@ -61,7 +61,7 @@
 	if(!ishuman(user) || !user.Adjacent(source) || user.incapacitated())
 		return FALSE
 	if(source == user)
-		to_chat(user, span_warning("You can't pick yourself up."))
+		to_chat(user, span_warning("I can't pick yourself up."))
 		//source.balloon_alert(user, "cannot pick yourself!")
 		return FALSE
 	if(COMPARE_SIZES(user, source) < (1 / CONFIG_GET(number/max_pick_ratio)))
@@ -69,7 +69,7 @@
 		//source.balloon_alert(user, "too big to pick up!")
 		return FALSE
 	if(user.get_active_held_item())
-		to_chat(user, span_warning("Your hands are full!"))
+		to_chat(user, span_warning("My hands are full!"))
 		//source.balloon_alert(user, "hands are full!")
 		return FALSE
 	if(source.buckled)
@@ -84,7 +84,7 @@
 		return FALSE
 
 	if(user.get_active_held_item())
-		to_chat(user, span_warning("Your hands are full!"))
+		to_chat(user, span_warning("My hands are full!"))
 		//source.balloon_alert(user, "hands full!")
 		return FALSE
 	if(source.buckled)
@@ -95,7 +95,7 @@
 	source.visible_message(span_warning("[user] picks up [source]!"),
 					span_userdanger("[user] picks you up!"),
 					target = user,
-					target_message = span_notice("You pick [source] up."))
+					target_message = span_notice("I pick [source] up."))
 	source.drop_all_held_items()
 	mob_pickup_micro(source, user)
 	return TRUE
@@ -110,7 +110,7 @@
 
 /obj/item/clothing/head/mob_holder/micro/container_resist(mob/living/user)
 	if(user.incapacitated())
-		to_chat(user, span_warning("You can't escape while you're restrained like this!"))
+		to_chat(user, span_warning("I can't escape while you're restrained like this!"))
 		return
 	var/mob/living/L = get_atom_on_turf(src, /mob/living)
 	visible_message(span_warning("[src] begins to squirm in [L]'s grasp!"))
@@ -181,11 +181,11 @@
 
 	var/datum/component/interaction_menu_granter/menu = usr.GetComponent(/datum/component/interaction_menu_granter)
 	if(!menu)
-		to_chat(usr, span_warning("You must have done something really bad to not have an interaction component."))
+		to_chat(usr, span_warning("I must have done something really bad to not have an interaction component."))
 		return
 
 	if(!src)
-		to_chat(usr, span_warning("Your interaction target is gone!"))
+		to_chat(usr, span_warning("My interaction target is gone!"))
 		return
 	menu.open_menu(usr, held_mob)
 

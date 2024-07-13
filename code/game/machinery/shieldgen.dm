@@ -132,14 +132,14 @@
 
 	if (active)
 		user.visible_message("[user] deactivated \the [src].", \
-			span_notice("You deactivate \the [src]."), \
-			span_italic("You hear heavy droning fade out."))
+			span_notice("I deactivate \the [src]."), \
+			span_italic("I hear heavy droning fade out."))
 		shields_down()
 	else
 		if(anchored)
 			user.visible_message("[user] activated \the [src].", \
-				span_notice("You activate \the [src]."), \
-				span_italic("You hear heavy droning."))
+				span_notice("I activate \the [src]."), \
+				span_italic("I hear heavy droning."))
 			shields_up()
 		else
 			to_chat(user, span_warning("The device must first be secured to the floor!"))
@@ -150,19 +150,19 @@
 		W.play_tool_sound(src, 100)
 		panel_open = !panel_open
 		if(panel_open)
-			to_chat(user, span_notice("You open the panel and expose the wiring."))
+			to_chat(user, span_notice("I open the panel and expose the wiring."))
 		else
-			to_chat(user, span_notice("You close the panel."))
+			to_chat(user, span_notice("I close the panel."))
 	else if(istype(W, /obj/item/stack/cable_coil) && (stat & BROKEN) && panel_open)
 		var/obj/item/stack/cable_coil/coil = W
 		if (coil.get_amount() < 1)
-			to_chat(user, span_warning("You need one length of cable to repair [src]!"))
+			to_chat(user, span_warning("I need one length of cable to repair [src]!"))
 			return
-		to_chat(user, span_notice("You begin to replace the wires..."))
+		to_chat(user, span_notice("I begin to replace the wires..."))
 		if(W.use_tool(src, user, 30, 1))
 			obj_integrity = max_integrity
 			stat &= ~BROKEN
-			to_chat(user, span_notice("You repair \the [src]."))
+			to_chat(user, span_notice("I repair \the [src]."))
 			update_icon()
 
 	else if(istype(W, /obj/item/wrench))
@@ -171,11 +171,11 @@
 			return
 		if(!anchored && !isinspace())
 			W.play_tool_sound(src, 100)
-			to_chat(user, span_notice("You secure \the [src] to the floor!"))
+			to_chat(user, span_notice("I secure \the [src] to the floor!"))
 			setAnchored(TRUE)
 		else if(anchored)
 			W.play_tool_sound(src, 100)
-			to_chat(user, span_notice("You unsecure \the [src] from the floor!"))
+			to_chat(user, span_notice("I unsecure \the [src] from the floor!"))
 			if(active)
 				to_chat(user, span_notice("\The [src] shuts off!"))
 				shields_down()
@@ -184,7 +184,7 @@
 	else if(W.GetID())
 		if(allowed(user) && !(obj_flags & EMAGGED))
 			locked = !locked
-			to_chat(user, span_notice("You [locked ? "lock" : "unlock"] the controls."))
+			to_chat(user, span_notice("I [locked ? "lock" : "unlock"] the controls."))
 		else if(obj_flags & EMAGGED)
 			to_chat(user, span_danger("Error, access controller damaged!"))
 		else
@@ -201,7 +201,7 @@
 	obj_flags |= EMAGGED
 	locked = FALSE
 	playsound(src, "sparks", 100, 1)
-	to_chat(user, span_warning("You short out the access controller."))
+	to_chat(user, span_warning("I short out the access controller."))
 	return TRUE
 
 /obj/machinery/shieldgen/update_icon_state()
@@ -281,7 +281,7 @@
 				active = ACTIVE_HASFIELDS
 		if(!power)
 			visible_message(span_danger("The [src.name] shuts down due to lack of power!"), \
-				span_italic("You hear heavy droning fade out."))
+				span_italic("I hear heavy droning fade out."))
 			icon_state = "Shield_Gen"
 			active = FALSE
 			for(var/d in GLOB.cardinals)
@@ -349,7 +349,7 @@
 	else if(W.GetID())
 		if(allowed(user) && !(obj_flags & EMAGGED))
 			locked = !locked
-			to_chat(user, span_notice("You [src.locked ? "lock" : "unlock"] the controls."))
+			to_chat(user, span_notice("I [src.locked ? "lock" : "unlock"] the controls."))
 		else if(obj_flags & EMAGGED)
 			to_chat(user, span_danger("Error, access controller damaged!"))
 		else
@@ -375,14 +375,14 @@
 
 	if(active)
 		user.visible_message("[user] turned \the [src] off.", \
-			span_notice("You turn off \the [src]."), \
-			span_italic("You hear heavy droning fade out."))
+			span_notice("I turn off \the [src]."), \
+			span_italic("I hear heavy droning fade out."))
 		active = FALSE
 		update_activity()
 	else
 		user.visible_message("[user] turned \the [src] on.", \
-			span_notice("You turn on \the [src]."), \
-			span_italic("You hear heavy droning."))
+			span_notice("I turn on \the [src]."), \
+			span_italic("I hear heavy droning."))
 		active = ACTIVE_SETUPFIELDS
 		update_activity()
 	add_fingerprint(user)
@@ -395,7 +395,7 @@
 	obj_flags |= EMAGGED
 	locked = FALSE
 	playsound(src, "sparks", 100, 1)
-	to_chat(user, span_warning("You short out the access controller."))
+	to_chat(user, span_warning("I short out the access controller."))
 	return TRUE
 
 //////////////Containment Field START

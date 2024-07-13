@@ -34,14 +34,14 @@
 
 	if(locate(src.type) in G.contents)
 		if(user == G.owner)
-			to_chat(user, span_notice("You already have a vibrator inside your [G]!"))
+			to_chat(user, span_notice("I already have a vibrator inside your [G]!"))
 		else
 			to_chat(user, span_notice("\The <b>[G.owner]</b>'s [G] already has a vibrator inside!"))
 		return FALSE
 
 	if(user == G.owner)
 		G.owner.visible_message(span_warning("\The <b>[user]</b> is trying to [style == "long" ? "insert" : "attach"] a vibrator [style == "long" ? "inside" : "to"] themselves!"),\
-			span_warning("You try to [style == "long" ? "insert" : "attach"] a vibrator [style == "long" ? "inside" : "to"] yourself!"))
+			span_warning("I try to [style == "long" ? "insert" : "attach"] a vibrator [style == "long" ? "inside" : "to"] yourself!"))
 	else
 		G.owner.visible_message(span_warning("\The <b>[user]</b> is trying to [style == "long" ? "insert" : "attach"] a vibrator [style == "long" ? "inside" : "to"] \the <b>[G.owner]</b>!"),\
 			span_warning("\The <b>[user]</b> is trying to [style == "long" ? "insert" : "attach"] a vibrator [style == "long" ? "inside" : "to"] you!"))
@@ -51,7 +51,7 @@
 
 /obj/item/electropack/vibrator/proc/item_inserted(datum/source, obj/item/organ/genital/G, mob/user)
 	. = TRUE
-	to_chat(user, span_userlove("You attach [src] to <b>\The [G.owner]</b>'s [G]."))
+	to_chat(user, span_userlove("I attach [src] to <b>\The [G.owner]</b>'s [G]."))
 	playsound(G.owner, 'modular_sand/sound/lewd/champ_fingering.ogg', 50, 1, -1)
 	inside = TRUE
 
@@ -85,15 +85,15 @@ Code:
 		switch(mode)
 			if(1)
 				mode = 2
-				to_chat(user, span_notice("You twist the bottom of [src], setting it to the medium setting."))
+				to_chat(user, span_notice("I twist the bottom of [src], setting it to the medium setting."))
 				return
 			if(2)
 				mode = 3
-				to_chat(user, span_warning("You twist the bottom of [src], setting it to the high setting."))
+				to_chat(user, span_warning("I twist the bottom of [src], setting it to the high setting."))
 				return
 			if(3)
 				mode = 1
-				to_chat(user, span_notice("You twist the bottom of [src], setting it to the low setting."))
+				to_chat(user, span_notice("I twist the bottom of [src], setting it to the low setting."))
 				return
 
 /obj/item/electropack/vibrator/receive_signal(datum/signal/signal)
@@ -124,13 +124,13 @@ Code:
 
 			switch(mode)
 				if(1) //low, setting for RP, it wont force your character to do anything.
-					to_chat(U, span_love("You feel pleasure surge through your [G.name]"))
+					to_chat(U, span_love("I feel pleasure surge through your [G.name]"))
 					U.do_jitter_animation() //do animation without heartbeat
 				if(2) //med, can make you cum
-					to_chat(U, span_love("You feel intense pleasure surge through your [G.name]"))
+					to_chat(U, span_love("I feel intense pleasure surge through your [G.name]"))
 					U.do_jitter_animation()
 				if(3) //high, makes you stun
-					to_chat(U, span_userdanger("You feel overpowering pleasure surge through your [G.name]"))
+					to_chat(U, span_userdanger("I feel overpowering pleasure surge through your [G.name]"))
 					U.Jitter(3)
 					U.Stun(30)
 					if(prob(50))

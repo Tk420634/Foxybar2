@@ -98,7 +98,7 @@
 //Legion
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion
 	name = "legion"
-	desc = "You can still see what was once a human under the shifting mass of corruption."
+	desc = "I can still see what was once a human under the shifting mass of corruption."
 	icon = 'icons/mob/lavaland/lavaland_monsters.dmi'
 	icon_state = "legion"
 	icon_living = "legion"
@@ -130,7 +130,7 @@
 
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf
 	name = "dwarf legion"
-	desc = "You can still see what was once a rather small human under the shifting mass of corruption."
+	desc = "I can still see what was once a rather small human under the shifting mass of corruption."
 	icon_state = "dwarf_legion"
 	icon_living = "dwarf_legion"
 	icon_aggro = "dwarf_legion"
@@ -144,7 +144,7 @@
 
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/beegion
 	name = "beegion"
-	desc = "You can still see what was once a human under the shifting mass of - oh my God, those are bees."
+	desc = "I can still see what was once a human under the shifting mass of - oh my God, those are bees."
 	brood_type = /mob/living/simple_animal/hostile/poison/bees/toxin
 
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/death(gibbed)
@@ -432,7 +432,7 @@
 // Snow Legion
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/snow
 	name = "snow legion"
-	desc = "You can still see what was once a human under the shifting snowy mass, clearly decorated by a clown."
+	desc = "I can still see what was once a human under the shifting snowy mass, clearly decorated by a clown."
 	icon = 'icons/mob/icemoon/icemoon_monsters.dmi'
 	icon_state = "snowlegion"
 	icon_living = "snowlegion"

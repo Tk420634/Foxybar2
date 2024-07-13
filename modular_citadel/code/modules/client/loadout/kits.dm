@@ -2,6 +2,6 @@
 
 /obj/item/storage/box/large/custom_kit
 	name = "Custom Loadout"
-	desc = "Your custom loadout items!"
+	desc = "My custom loadout items!"
 	w_class = WEIGHT_CLASS_NORMAL
 	

@@ -117,7 +117,7 @@
 		to_chat(user, span_alert("Couldn't find anything in [bawx] that fits in [src]."))
 		return
 	if(!load_casing(user, to_load)) //load the ammo casing into the gun
-		to_chat(user, span_alert("You can't seem to load [to_load] into [src].")) //tell the user the gun cannot be loaded
+		to_chat(user, span_alert("I can't seem to load [to_load] into [src].")) //tell the user the gun cannot be loaded
 		return //return
 	bawx.stored_ammo -= to_load //remove the ammo casing from the boxx
 	bawx.update_icon() //update the icon of the boxx
@@ -135,17 +135,17 @@
 		to_chat(user, span_alert("[bluuet] doesn't fit in [src].")) //tell the user the casing does not fit
 		return //return
 	load_loop.start()
-	to_chat(user, span_notice("You begin loading [bluuet] into [src].")) //tell the user the gun is being loaded
+	to_chat(user, span_notice("I begin loading [bluuet] into [src].")) //tell the user the gun is being loaded
 	if(!do_after(user, load_time, TRUE, src, allow_movement = TRUE)) //do after for loading the gun
 		load_loop.stop()
-		to_chat(user, span_alert("You were interrupted!")) //tell the user they stopped loading the gun
+		to_chat(user, span_alert("I were interrupted!")) //tell the user they stopped loading the gun
 		return //return
 	load_loop.stop()
 	if(!user.transferItemToLoc(bluuet, src)) //if the user cannot transfer the item to the location of the gun
-		to_chat(user, span_alert("You can't seem to load [bluuet] into [src].")) //tell the user the gun cannot be loaded
+		to_chat(user, span_alert("I can't seem to load [bluuet] into [src].")) //tell the user the gun cannot be loaded
 		return //return
 	chambered = bluuet //set the chambered variable to the ammo casing being loaded
-	to_chat(user, span_notice("You load [bluuet] into [src].")) //tell the user the gun is loaded
+	to_chat(user, span_notice("I load [bluuet] into [src].")) //tell the user the gun is loaded
 	playsound(get_turf(src), 'sound/weapons/stuff_casing_end.ogg', 80, TRUE)
 	update_icon()
 	return TRUE
@@ -161,7 +161,7 @@
 	cocked = FALSE
 	playsound(get_turf(src), 'sound/weapons/stuff_casing.ogg', 80, TRUE)
 	playsound(get_turf(src), 'sound/weapons/hammer_click2.ogg', 90, 1)
-	to_chat(user, span_notice("You unload [src]."))
+	to_chat(user, span_notice("I unload [src]."))
 	update_icon()
 	if(!user.put_in_hands(chambered))
 		chambered.forceMove(get_turf(src))

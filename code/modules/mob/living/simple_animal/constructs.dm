@@ -99,7 +99,7 @@
 			if(src != M)
 				to_chat(M, "<span class='cult'>You cannot repair <b>[src]'s</b> dents, as [p_they()] [p_have()] none!</span>")
 			else
-				to_chat(M, span_cult("You cannot repair your own dents, as you have none!"))
+				to_chat(M, span_cult("I cannot repair your own dents, as you have none!"))
 	else if(src != M)
 		return ..()
 
@@ -385,7 +385,7 @@
 
 /datum/action/innate/seek_master
 	name = "Seek your Master"
-	desc = "You and your master share a soul-link that informs you of their location"
+	desc = "I and your master share a soul-link that informs you of their location"
 	background_icon_state = "bg_demon"
 	buttontooltipstyle = "cult"
 	button_icon_state = "cult_mark"

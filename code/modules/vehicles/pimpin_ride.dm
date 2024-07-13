@@ -40,7 +40,7 @@
 			return
 		if(!user.transferItemToLoc(I, src))
 			return
-		to_chat(user, span_notice("You hook the trashbag onto [src]."))
+		to_chat(user, span_notice("I hook the trashbag onto [src]."))
 		mybag = I
 		update_icon()
 	else if(istype(I, /obj/item/janiupgrade))
@@ -49,7 +49,7 @@
 			return
 		floorbuffer = TRUE
 		qdel(I)
-		to_chat(user, span_notice("You upgrade [src] with the floor buffer."))
+		to_chat(user, span_notice("I upgrade [src] with the floor buffer."))
 		AddElement(/datum/element/cleaning)
 		update_icon()
 	else

@@ -681,9 +681,9 @@
 		var/my_little_deity = stripped_input(user, "Dedicate this to which deity?", "Insert deity", "Giex", 64, FALSE)
 		if(my_little_deity)
 			deity_name = my_little_deity
-			to_chat(user, span_revennotice("You re-dedicate [src] to [deity_name], praise be their name."))
+			to_chat(user, span_revennotice("I re-dedicate [src] to [deity_name], praise be their name."))
 		else if(deity_name)
-			to_chat(user, span_revennotice("You keep [src] dedicated to [deity_name], praise be their name."))
+			to_chat(user, span_revennotice("I keep [src] dedicated to [deity_name], praise be their name."))
 		else
 			deity_name = "Giex"
 			to_chat(user, span_phobia("Something went wrong, now [src] is dedicated to [deity_name], praise be their name."))
@@ -695,15 +695,15 @@
 		return ..()
 
 	/* if(!user.mind || user.mind.assigned_role != "Chaplain")
-		to_chat(user, span_notice("You are not close enough with [deity_name] to use [src]."))
+		to_chat(user, span_notice("I am not close enough with [deity_name] to use [src]."))
 		return */
 
 	if(praying)
-		to_chat(user, span_notice("You are already using [src]."))
+		to_chat(user, span_notice("I am already using [src]."))
 		return
 
 	user.visible_message(span_info("[user] kneels[M == user ? null : " next to [M]"] and begins to utter a prayer to [deity_name]."), \
-		span_info("You kneel[M == user ? null : " next to [M]"] and begin a prayer to [deity_name]."))
+		span_info("I kneel[M == user ? null : " next to [M]"] and begin a prayer to [deity_name]."))
 
 	praying = TRUE
 	if(do_after(user, 100, target = M)) //I made their time to cast about 5x longer, which isnt much still.
@@ -716,7 +716,7 @@
 		M.adjustFireLoss(-20, include_roboparts = TRUE) //I quadrupled their healing
 		praying = FALSE
 	else
-		to_chat(user, span_notice("Your prayer to [deity_name] was interrupted."))
+		to_chat(user, span_notice("My prayer to [deity_name] was interrupted."))
 		praying = FALSE
 
 
@@ -769,7 +769,7 @@
 
 /obj/item/nullrod/carp/attack_self(mob/living/user)
 	if(!user.faction.Find("carp"))
-		to_chat(user, "You are blessed by Carp-Sie. Wild space carp will no longer attack you.")
+		to_chat(user, "I am blessed by Carp-Sie. Wild space carp will no longer attack you.")
 		user.faction |= "carp"
 
 // Talking weapons are kind of a silly meme.
@@ -803,7 +803,7 @@
 	if(possessed)
 		return
 
-	to_chat(user, "You attempt to wake the spirit of the blade...")
+	to_chat(user, "I attempt to wake the spirit of the blade...")
 
 	possessed = TRUE
 
@@ -833,7 +833,7 @@
 
 /obj/item/nullrod/scythe/talking/Destroy()
 	for(var/mob/living/simple_animal/shade/S in contents)
-		to_chat(S, "You were destroyed!")
+		to_chat(S, "I were destroyed!")
 		qdel(S)
 	return ..()
 

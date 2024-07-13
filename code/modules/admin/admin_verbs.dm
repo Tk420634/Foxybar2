@@ -686,10 +686,10 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 		return
 	if(blocked)
 		P.aghost_squelches -= blockem
-		to_chat(usr, "You can now hear [dork]'s emotes while a ghost.")
+		to_chat(usr, "I can now hear [dork]'s emotes while a ghost.")
 	else
 		P.aghost_squelches |= blockem
-		to_chat(usr, "You will no longer hear [dork]'s emotes while a ghost.")
+		to_chat(usr, "I will no longer hear [dork]'s emotes while a ghost.")
 	P.save_preferences()
 	to_chat(usr, "Preferences saved.")
 
@@ -700,7 +700,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 
 	TOGGLE_VAR(prefs.admin_wire_tap)
 	prefs.save_preferences()
-	to_chat(src, span_abductor("You will [prefs.admin_wire_tap ? "now" : "no longer"] eavesdrop on other players' DMs."))
+	to_chat(src, span_abductor("I will [prefs.admin_wire_tap ? "now" : "no longer"] eavesdrop on other players' DMs."))
 	to_chat(src, "Preferences saved.")
 
 /client/proc/edit_quest_bank()
@@ -709,7 +709,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	set desc = "Modify someone's questbank balance!"
 
 	if(!holder || !check_rights(R_ADMIN, 0))
-		to_chat(usr, span_notice("You don't have the rights to do that!"))
+		to_chat(usr, span_notice("I don't have the rights to do that!"))
 		log_admin("[key_name(usr)] tried to edit a questbank without the rights.")
 		return
 	
@@ -722,7 +722,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	set name = "Test Dailies Spree"
 
 	if(!SSeconomy.debug_daily_spawn_in_stuff)
-		to_chat(usr, "You need to enable the debug flag SSeconomy.debug_daily_spawn_in_stuff to use this verb. Mainly cus it will utterly wreck your saved data if used.")
+		to_chat(usr, "I need to enable the debug flag SSeconomy.debug_daily_spawn_in_stuff to use this verb. Mainly cus it will utterly wreck your saved data if used.")
 		return
 
 	var/datum/preferences/P = extract_prefs(usr) // me!
@@ -735,14 +735,14 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	P.days_spawned_in += REALTIME2QDAYS(-12)
 	P.saved_unclaimed_points = COINS_TO_CREDITS(10000)
 	P.save_character()
-	to_chat(usr, "You have now spawned in on the last 3 days, starting yesterday. Should return 3 bonuses.")
+	to_chat(usr, "I have now spawned in on the last 3 days, starting yesterday. Should return 3 bonuses.")
 
 /client/proc/test_dailies_penalty()
 	set category = "Debug"
 	set name = "Test Dailies penalty"
 
 	if(!SSeconomy.debug_daily_spawn_in_stuff)
-		to_chat(usr, "You need to enable the debug flag SSeconomy.debug_daily_spawn_in_stuff to use this verb. Mainly cus it will utterly wreck your saved data if used.")
+		to_chat(usr, "I need to enable the debug flag SSeconomy.debug_daily_spawn_in_stuff to use this verb. Mainly cus it will utterly wreck your saved data if used.")
 		return
 
 	var/datum/preferences/P = extract_prefs(usr) // me!
@@ -757,7 +757,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	P.days_spawned_in += REALTIME2QDAYS(-30)
 	P.saved_unclaimed_points = COINS_TO_CREDITS(10000)
 	P.save_character()
-	to_chat(usr, "You have now spawned in on the last 4 days ago. Should return 4 penalties.")
+	to_chat(usr, "I have now spawned in on the last 4 days ago. Should return 4 penalties.")
 
 /client/proc/give_spell(mob/T in GLOB.mob_list)
 	set category = "Admin.Fun"
@@ -801,7 +801,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	set name = "Give Disease"
 	set desc = "Gives a Disease to a mob."
 	if(!istype(T))
-		to_chat(src, span_notice("You can only give a disease to a mob of type /mob/living."))
+		to_chat(src, span_notice("I can only give a disease to a mob of type /mob/living."))
 		return
 	var/datum/disease/D = input("Choose the disease to give to that guy", "ACHOO") as null|anything in SSdisease.diseases
 	if(!D)
@@ -850,7 +850,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 
 	holder.deactivate()
 
-	to_chat(src, span_interface("You are now a normal player."))
+	to_chat(src, span_interface("I am now a normal player."))
 	log_admin("[src] deadmined themself.")
 	message_admins("[src] deadmined themself.")
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Deadmin")
@@ -875,7 +875,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	if (!holder)
 		return //This can happen if an admin attempts to vv themself into somebody elses's deadmin datum by getting ref via brute force
 
-	to_chat(src, span_interface("You are now an admin."))
+	to_chat(src, span_interface("I am now an admin."))
 	message_admins("[src] re-adminned themselves.")
 	log_admin("[src] re-adminned themselves.")
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Readmin")

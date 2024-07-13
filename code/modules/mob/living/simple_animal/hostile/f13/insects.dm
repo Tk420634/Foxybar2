@@ -440,7 +440,7 @@
 	if (M.confused < 20)
 		M.confused += 3
 	if(prob(10))
-		var/pain_message = pick("You feel horrible pain.", "It burns like a red hot iron", "You can hardly bear the agony")
+		var/pain_message = pick("I feel horrible pain.", "It burns like a red hot iron", "I can hardly bear the agony")
 		to_chat(M, span_warning("[pain_message]"))
 	..()
 
@@ -451,7 +451,7 @@
 	if (M.confused < 20)
 		M.confused += 3
 	if(prob(5))
-		var/pain_message = pick("Your electronics can't handle the potent venom.", "Your pain sensors are overloaded.", "Invasive chemicals are making you short curcuit.")
+		var/pain_message = pick("My electronics can't handle the potent venom.", "My pain sensors are overloaded.", "Invasive chemicals are making you short curcuit.")
 		to_chat(M, span_notice("[pain_message]"))
 	..()
 

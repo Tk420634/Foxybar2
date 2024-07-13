@@ -282,7 +282,7 @@
 	var/mob/living/carbon/itemUser = user
 	usedHand = itemUser.get_held_index_of_item(src)
 	if(itemUser.has_status_effect(STATUS_EFFECT_HIPPOCRATIC_OATH))
-		to_chat(user, span_warning("You can't possibly handle the responsibility of more than one rod!"))
+		to_chat(user, span_warning("I can't possibly handle the responsibility of more than one rod!"))
 		return
 	var/failText = span_warning("The snake seems unsatisfied with your incomplete oath and returns to it's previous place on the rod, returning to its dormant, wooden state. You must stand still while completing your oath!")
 	to_chat(itemUser, span_notice("The wooden snake that was carved into the rod seems to suddenly come alive and begins to slither down your arm! The compulsion to help others grows abnormally strong..."))
@@ -343,9 +343,9 @@
 	return ..()
 
 /obj/item/clothing/neck/necklace/memento_mori/proc/memento(mob/living/carbon/human/user)
-	to_chat(user, span_warning("You feel your life being drained by the pendant..."))
+	to_chat(user, span_warning("I feel your life being drained by the pendant..."))
 	if(do_after(user, 40, target = user))
-		to_chat(user, span_notice("Your lifeforce is now linked to the pendant! You feel like removing it would kill you, and yet you instinctively know that until then, you won't die."))
+		to_chat(user, span_notice("My lifeforce is now linked to the pendant! You feel like removing it would kill you, and yet you instinctively know that until then, you won't die."))
 		ADD_TRAIT(user, TRAIT_NODEATH, "memento_mori")
 		ADD_TRAIT(user, TRAIT_NOCRITDAMAGE, "memento_mori")
 		icon_state = "memento_mori_active"
@@ -357,7 +357,7 @@
 		return
 	var/mob/living/carbon/human/H = active_owner //to avoid infinite looping when dust unequips the pendant
 	active_owner = null
-	to_chat(H, span_userdanger("You feel your life rapidly slipping away from you!"))
+	to_chat(H, span_userdanger("I feel your life rapidly slipping away from you!"))
 	H.dust(TRUE, TRUE)
 
 /datum/action/item_action/hands_free/memento_mori
@@ -371,7 +371,7 @@
 		if(ishuman(owner))
 			MM.memento(owner)
 	else
-		to_chat(owner, span_warning("You try to free your lifeforce from the pendant..."))
+		to_chat(owner, span_warning("I try to free your lifeforce from the pendant..."))
 		if(do_after(owner, 40, target = owner))
 			MM.mori()
 
@@ -393,13 +393,13 @@
 		return
 
 	if(wisp.loc == src)
-		to_chat(user, span_notice("You release the wisp. It begins to bob around your head."))
+		to_chat(user, span_notice("I release the wisp. It begins to bob around your head."))
 		icon_state = "lantern"
 		wisp.orbit(user, 20)
 		SSblackbox.record_feedback("tally", "wisp_lantern", 1, "Freed")
 
 	else
-		to_chat(user, span_notice("You return the wisp to the lantern."))
+		to_chat(user, span_notice("I return the wisp to the lantern."))
 		icon_state = "lantern-blue"
 		wisp.forceMove(src)
 		SSblackbox.record_feedback("tally", "wisp_lantern", 1, "Returned")
@@ -438,7 +438,7 @@
 	. = ..()
 	if(ismob(orbits.parent))
 		UnregisterSignal(orbits.parent, COMSIG_MOB_UPDATE_SIGHT)
-		to_chat(orbits.parent, span_notice("Your vision returns to normal."))
+		to_chat(orbits.parent, span_notice("My vision returns to normal."))
 
 /obj/effect/wisp/proc/update_user_sight(mob/user)
 	user.sight |= sight_flags
@@ -684,7 +684,7 @@
 	w_class = 2
 
 /obj/item/book_of_babel/attack_self(mob/user)
-	to_chat(user, "You flip through the pages of the book, quickly and conveniently learning every language in existence. Somewhat less conveniently, the aging book crumbles to dust in the process. Whoops.")
+	to_chat(user, "I flip through the pages of the book, quickly and conveniently learning every language in existence. Somewhat less conveniently, the aging book crumbles to dust in the process. Whoops.")
 	user.grant_all_languages()
 	new /obj/effect/decal/cleanable/ash(get_turf(user))
 	qdel(src)
@@ -738,7 +738,7 @@
 	var/turf/T = get_turf(src)
 	var/ladder_x = T.x
 	var/ladder_y = T.y
-	to_chat(user, span_notice("You unfold the ladder. It extends much farther than you were expecting."))
+	to_chat(user, span_notice("I unfold the ladder. It extends much farther than you were expecting."))
 	var/last_ladder = null
 	for(var/i in 1 to world.maxz)
 		if(is_centcom_level(i) || is_reserved_level(i) || is_reebe(i) || is_away_level(i))
@@ -810,14 +810,14 @@
 /obj/item/melee/transforming/cleaving_saw/transform_messages(mob/living/user, supress_message_text)
 	if(!supress_message_text)
 		if(active)
-			to_chat(user, span_notice("You open [src]. It will now cleave enemies in a wide arc."))
+			to_chat(user, span_notice("I open [src]. It will now cleave enemies in a wide arc."))
 		else
-			to_chat(user, span_notice("You close [src]. It will now attack rapidly and cause beastly enemies to bleed."))
+			to_chat(user, span_notice("I close [src]. It will now attack rapidly and cause beastly enemies to bleed."))
 	playsound(user, 'sound/magic/clockwork/fellowship_armory.ogg', 35, TRUE, frequency = 90000 - (active * 30000))
 
 /obj/item/melee/transforming/cleaving_saw/clumsy_transform_effect(mob/living/user)
 	if(HAS_TRAIT(user, TRAIT_CLUMSY) && prob(50))
-		to_chat(user, span_warning("You accidentally cut yourself with [src], like a doofus!"))
+		to_chat(user, span_warning("I accidentally cut yourself with [src], like a doofus!"))
 		user.take_bodypart_damage(10)
 
 /*/obj/item/melee/transforming/cleaving_saw/nemesis_effects(mob/living/user, mob/living/target)
@@ -905,9 +905,9 @@
 
 /obj/item/melee/ghost_sword/attack_self(mob/user)
 	if(summon_cooldown > world.time)
-		to_chat(user, "You just recently called out for aid. You don't want to annoy the spirits.")
+		to_chat(user, "I just recently called out for aid. You don't want to annoy the spirits.")
 		return
-	to_chat(user, "You call out for aid, attempting to summon spirits to your side.")
+	to_chat(user, "I call out for aid, attempting to summon spirits to your side.")
 
 	notify_ghosts("[user] is raising [user.p_their()] [src], calling for your help!",
 		enter_link="<a href=?src=[REF(src)];orbit=1>(Click to help)</a>",
@@ -979,7 +979,7 @@
 
 	switch(random)
 		if(1)
-			to_chat(user, span_danger("Your appearance morphs to that of a very small humanoid ash dragon! You get to look like a freak without the cool abilities."))
+			to_chat(user, span_danger("My appearance morphs to that of a very small humanoid ash dragon! You get to look like a freak without the cool abilities."))
 			H.dna.features["mcolor"] = "A02720"
 			H.dna.features["tail_lizard"] = "Dark Tiger"
 			H.dna.features["tail_human"] = "None"
@@ -995,7 +995,7 @@
 			H.right_eye_color = "fee5a3"
 			H.set_species(/datum/species/lizard)
 		if(2)
-			to_chat(user, span_danger("Your flesh begins to melt! Miraculously, you seem fine otherwise."))
+			to_chat(user, span_danger("My flesh begins to melt! Miraculously, you seem fine otherwise."))
 			H.set_species(/datum/species/skeleton)
 		if(3)
 			to_chat(user, span_danger("Power courses through you! You can now shift your form at will."))
@@ -1003,7 +1003,7 @@
 				var/obj/effect/proc_holder/spell/targeted/shapeshift/dragon/D = new
 				user.mind.AddSpell(D)
 		if(4)
-			to_chat(user, span_danger("You feel like you could walk straight through lava now."))
+			to_chat(user, span_danger("I feel like you could walk straight through lava now."))
 			H.weather_immunities |= "lava"
 
 	playsound(user.loc,'sound/items/drink.ogg', rand(10,50), 1)
@@ -1018,10 +1018,10 @@
 	stage_prob = 20
 	severity = DISEASE_SEVERITY_BIOHAZARD
 	visibility_flags = 0
-	stage1	= list("Your bones ache.")
-	stage2	= list("Your skin feels scaly.")
-	stage3	= list(span_danger("You have an overwhelming urge to terrorize some peasants."), span_danger("Your teeth feel sharper."))
-	stage4	= list(span_danger("Your blood burns."))
+	stage1	= list("My bones ache.")
+	stage2	= list("My skin feels scaly.")
+	stage3	= list(span_danger("I have an overwhelming urge to terrorize some peasants."), span_danger("My teeth feel sharper."))
+	stage4	= list(span_danger("My blood burns."))
 	stage5	= list(span_danger("You're a fucking dragon. However, any previous allegiances you held still apply. It'd be incredibly rude to eat your still human friends for no reason."))
 	new_form = /mob/living/simple_animal/hostile/megafauna/dragon/lesser
 
@@ -1133,7 +1133,7 @@
 	for(var/mob/living/carbon/human/H in range(7,user))
 		var/obj/effect/mine/pickup/bloodbath/B = new(H)
 		INVOKE_ASYNC(B, TYPE_PROC_REF(/obj/effect/mine/pickup/bloodbath/,mineEffect), H)
-	to_chat(user, span_notice("You shatter the bottle!"))
+	to_chat(user, span_notice("I shatter the bottle!"))
 	playsound(user.loc, 'sound/effects/glassbr1.ogg', 100, 1)
 	message_admins(span_adminnotice("[ADMIN_LOOKUPFLW(user)] has activated a bottle of mayhem!"))
 	log_combat(user, null, "activated a bottle of mayhem", src)
@@ -1169,7 +1169,7 @@
 		used = FALSE
 		return
 	if(choice == user)
-		to_chat(user, "You feel like writing your own name into a cursed death warrant would be unwise.")
+		to_chat(user, "I feel like writing your own name into a cursed death warrant would be unwise.")
 		used = FALSE
 		return
 
@@ -1290,17 +1290,17 @@
 /obj/item/hierophant_club/ui_action_click(mob/user, action)
 	if(istype(action, /datum/action/item_action/toggle_unfriendly_fire)) //toggle friendly fire...
 		friendly_fire_check = !friendly_fire_check
-		to_chat(user, span_warning("You toggle friendly fire [friendly_fire_check ? "off":"on"]!"))
+		to_chat(user, span_warning("I toggle friendly fire [friendly_fire_check ? "off":"on"]!"))
 		return
 	if(timer > world.time)
 		return
 	if(!user.is_holding(src)) //you need to hold the staff to teleport
-		to_chat(user, span_warning("You need to hold the club in your hands to [beacon ? "teleport with it":"detach the beacon"]!"))
+		to_chat(user, span_warning("I need to hold the club in your hands to [beacon ? "teleport with it":"detach the beacon"]!"))
 		return
 	if(!beacon || QDELETED(beacon))
 		if(isturf(user.loc))
 			user.visible_message(span_hierophant_warning("[user] starts fiddling with [src]'s pommel..."), \
-			span_notice("You start detaching the hierophant beacon..."))
+			span_notice("I start detaching the hierophant beacon..."))
 			timer = world.time + 51
 			INVOKE_ASYNC(src,PROC_REF(prepare_icon_update))
 			if(do_after(user, 50, target = user) && !beacon)
@@ -1316,16 +1316,16 @@
 				timer = world.time
 				INVOKE_ASYNC(src,PROC_REF(prepare_icon_update))
 		else
-			to_chat(user, span_warning("You need to be on solid ground to detach the beacon!"))
+			to_chat(user, span_warning("I need to be on solid ground to detach the beacon!"))
 		return
 	if(get_dist(user, beacon) <= 2) //beacon too close abort
-		to_chat(user, span_warning("You are too close to the beacon to teleport to it!"))
+		to_chat(user, span_warning("I am too close to the beacon to teleport to it!"))
 		return
 	if(is_blocked_turf(get_turf(beacon), TRUE))
 		to_chat(user, span_warning("The beacon is blocked by something, preventing teleportation!"))
 		return
 	if(!isturf(user.loc))
-		to_chat(user, span_warning("You don't have enough space to teleport from here!"))
+		to_chat(user, span_warning("I don't have enough space to teleport from here!"))
 		return
 	teleporting = TRUE //start channel
 	user.update_action_buttons_icon()

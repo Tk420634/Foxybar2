@@ -28,9 +28,9 @@ superlagg says: cool story, oranges
 
 /obj/item/banhammer/attack(mob/M, mob/user)
 	if(user.zone_selected == BODY_ZONE_HEAD)
-		M.visible_message(span_danger("[user] strikes [M]'s head with [src]."), span_userdanger("[user] strikes your head with [src]."), "You hear a banhammer striking someone's head.");
+		M.visible_message(span_danger("[user] strikes [M]'s head with [src]."), span_userdanger("[user] strikes your head with [src]."), "I hear a banhammer striking someone's head.");
 	else
-		M.visible_message(span_danger("[M] has been banned FOR NO REISIN by [user]"), span_userdanger("You have been banned FOR NO REISIN by [user]"), "you hear a banhammer banning someone")
+		M.visible_message(span_danger("[M] has been banned FOR NO REISIN by [user]"), span_userdanger("I have been banned FOR NO REISIN by [user]"), "you hear a banhammer banning someone")
 	playsound(loc, 'sound/effects/adminnotification.ogg', 15) //keep it at 15% volume so people don't jump out of their skin too much
 	if(user.a_intent != INTENT_HELP)
 		return ..(M, user)
@@ -268,14 +268,14 @@ superlagg says: cool story, oranges
 		qdel(src)
 
 		user.put_in_hands(S)
-		to_chat(user, span_notice("You fasten the glass shard to the top of the rod with the cable."))
+		to_chat(user, span_notice("I fasten the glass shard to the top of the rod with the cable."))
 
 	else if(istype(I, /obj/item/assembly/igniter) && !HAS_TRAIT(I, TRAIT_NODROP))
 		var/obj/item/melee/baton/cattleprod/P = new /obj/item/melee/baton/cattleprod
 
 		remove_item_from_storage(user)
 
-		to_chat(user, span_notice("You fasten [I] to the top of the rod with the cable."))
+		to_chat(user, span_notice("I fasten [I] to the top of the rod with the cable."))
 
 		qdel(I)
 		qdel(src)
@@ -452,12 +452,12 @@ superlagg says: cool story, oranges
 	if(proximity_flag)
 		if(is_type_in_typecache(target, strong_against))
 			new /obj/effect/decal/cleanable/insectguts(target.drop_location())
-			to_chat(user, span_warning("You easily splat the [target]."))
+			to_chat(user, span_warning("I easily splat the [target]."))
 			if(istype(target, /mob/living/))
 				var/mob/living/bug = target
 				bug.death(1)
 		if(is_type_in_typecache(target, spider_panic))
-			to_chat(user, span_warning("You easily land a critical blow on the [target]."))
+			to_chat(user, span_warning("I easily land a critical blow on the [target]."))
 			if(istype(target, /mob/living/))
 				var/mob/living/bug = target
 				bug.adjustBruteLoss(35) //What kinda mad man would go into melee with a spider?!
@@ -515,8 +515,8 @@ superlagg says: cool story, oranges
 		return
 
 	playsound(get_turf(owner), 'sound/effects/hit_punch.ogg', 50, TRUE, -1)
-	owner.visible_message(span_danger("[owner] shamefully bops [owner.p_them()]self with [owner.p_their()] [src.name]."), span_userdanger("You shamefully bop yourself with your [src.name]."), \
-		span_hear("You hear a dull thud!"))
+	owner.visible_message(span_danger("[owner] shamefully bops [owner.p_them()]self with [owner.p_their()] [src.name]."), span_userdanger("I shamefully bop yourself with your [src.name]."), \
+		span_hear("I hear a dull thud!"))
 	log_combat(owner, owner, "bopped", src.name, "(self)")
 	owner.do_attack_animation(owner)
 	owner.apply_damage(100, STAMINA)
@@ -544,7 +544,7 @@ superlagg says: cool story, oranges
 
 	if(HAS_TRAIT(owner, TRAIT_HULK))
 		owner.visible_message(span_danger("[owner] bops [sucker] with [owner.p_their()] [src.name] much harder than intended, sending [sucker.p_them()] flying!"), \
-			span_danger("You bop [sucker] with your [src.name] much harder than intended, sending [sucker.p_them()] flying!"), span_hear("You hear a sickening sound of flesh hitting flesh!"), ignored_mobs=list(sucker))
+			span_danger("I bop [sucker] with your [src.name] much harder than intended, sending [sucker.p_them()] flying!"), span_hear("I hear a sickening sound of flesh hitting flesh!"), ignored_mobs=list(sucker))
 		to_chat(sucker, span_userdanger("[owner] bops you incredibly hard with [owner.p_their()] [src.name], sending you flying!"))
 		sucker.apply_damage(50, STAMINA)
 		sucker.Knockdown(50)
@@ -552,8 +552,8 @@ superlagg says: cool story, oranges
 		var/atom/throw_target = get_edge_target_turf(sucker, owner.dir)
 		sucker.throw_at(throw_target, 6, 3, owner)
 	else
-		owner.visible_message(span_danger("[owner] bops [sucker] with [owner.p_their()] [src.name]!"), span_danger("You bop [sucker] with your [src.name]!"), \
-			span_hear("You hear a dull thud!"), ignored_mobs=list(sucker))
+		owner.visible_message(span_danger("[owner] bops [sucker] with [owner.p_their()] [src.name]!"), span_danger("I bop [sucker] with your [src.name]!"), \
+			span_hear("I hear a dull thud!"), ignored_mobs=list(sucker))
 		sucker.apply_damage(15, STAMINA)
 		log_combat(owner, sucker, "bopped", src.name, "(setup)")
 		to_chat(sucker, span_userdanger("[owner] bops you with [owner.p_their()] [src.name]!"))
@@ -579,8 +579,8 @@ superlagg says: cool story, oranges
 		user.do_attack_animation(M)
 		playsound(M, 'sound/weapons/slap.ogg', 50, 1, -1)
 		user.visible_message(span_danger("[user] slaps [M]!"),
-		span_notice("You slap [M]!"),\
-		"You hear a slap.")
+		span_notice("I slap [M]!"),\
+		"I hear a slap.")
 		return
 	else
 		..()
@@ -786,10 +786,10 @@ BASEBALL HOMERUN
 		to_chat(user, span_notice("You're already ready to do a home run!"))
 		..()
 		return
-	to_chat(user, span_warning("You begin gathering strength..."))
+	to_chat(user, span_warning("I begin gathering strength..."))
 	playsound(get_turf(src), 'sound/magic/lightning_chargeup.ogg', 65, 1)
 	if(do_after(user, 90, target = src))
-		to_chat(user, span_userdanger("You gather power! Time for a home run!"))
+		to_chat(user, span_userdanger("I gather power! Time for a home run!"))
 		homerun_ready = 1
 	..()
 

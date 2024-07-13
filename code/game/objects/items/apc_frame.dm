@@ -19,10 +19,10 @@
 	var/turf/T = get_turf(user)
 	var/area/A = get_area(T)
 	if(!isfloorturf(T))
-		to_chat(user, span_warning("You cannot place [src] on this spot!"))
+		to_chat(user, span_warning("I cannot place [src] on this spot!"))
 		return
 	if(A.always_unpowered)
-		to_chat(user, span_warning("You cannot place [src] in this area!"))
+		to_chat(user, span_warning("I cannot place [src] in this area!"))
 		return
 	if(gotwallitem(T, ndir, inverse*2))
 		to_chat(user, span_warning("There's already an item on this wall!"))
@@ -34,8 +34,8 @@
 	if(result_path)
 		playsound(src.loc, 'sound/machines/click.ogg', 75, 1)
 		user.visible_message("[user.name] attaches [src] to the wall.",
-			span_notice("You attach [src] to the wall."),
-			span_italic("You hear clicking."))
+			span_notice("I attach [src] to the wall."),
+			span_italic("I hear clicking."))
 		var/ndir = get_dir(on_wall,user)
 		if(inverse)
 			ndir = turn(ndir, 180)
@@ -74,7 +74,7 @@
 	var/glass_amt = round(custom_materials[SSmaterials.GetMaterialRef(/datum/material/glass)]/MINERAL_MATERIAL_AMOUNT)
 
 	if(metal_amt || glass_amt)
-		to_chat(user, span_notice("You dismantle [src]."))
+		to_chat(user, span_notice("I dismantle [src]."))
 		if(metal_amt)
 			new /obj/item/stack/sheet/metal(get_turf(src), metal_amt)
 		if(glass_amt)
@@ -101,7 +101,7 @@
 		to_chat(user, span_warning("This area already has an APC!"))
 		return //only one APC per area
 	if(!A.requires_power)
-		to_chat(user, span_warning("You cannot place [src] in this area!"))
+		to_chat(user, span_warning("I cannot place [src] in this area!"))
 		return //can't place apcs in areas with no power requirement
 	/*fortuna edit. 
 	stops our very many duplicated areas from going powerless from one apc placement. 
@@ -117,7 +117,7 @@
 			return
 		else
 			new /obj/item/stack/cable_coil(T, 10)
-			to_chat(user, span_notice("You cut the cables and disassemble the unused power terminal."))
+			to_chat(user, span_notice("I cut the cables and disassemble the unused power terminal."))
 			qdel(E)
 	return TRUE
 

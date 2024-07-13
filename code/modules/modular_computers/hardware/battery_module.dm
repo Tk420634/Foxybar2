@@ -32,7 +32,7 @@
 		return FALSE
 
 	if(battery)
-		to_chat(user, span_warning("You try to connect \the [I] to \the [src], but its connectors are occupied."))
+		to_chat(user, span_warning("I try to connect \the [I] to \the [src], but its connectors are occupied."))
 		return FALSE
 
 	if(I.w_class > holder.max_hardware_size)
@@ -43,7 +43,7 @@
 		return FALSE
 
 	battery = I
-	to_chat(user, span_notice("You connect \the [I] to \the [src]."))
+	to_chat(user, span_notice("I connect \the [I] to \the [src]."))
 
 	return TRUE
 
@@ -57,7 +57,7 @@
 			user.put_in_hands(battery)
 		else
 			battery.forceMove(drop_location())
-		to_chat(user, span_notice("You detach \the [battery] from \the [src]."))
+		to_chat(user, span_notice("I detach \the [battery] from \the [src]."))
 		battery = null
 
 		if(holder)

@@ -94,7 +94,7 @@
 /datum/species/ethereal/proc/on_emp_act(mob/living/carbon/human/H, severity)
 	EMPeffect = TRUE
 	spec_updatehealth(H)
-	to_chat(H, span_notice("You feel the light of your body leave you."))
+	to_chat(H, span_notice("I feel the light of your body leave you."))
 	addtimer(CALLBACK(src,PROC_REF(stop_emp), H), (severity/5) SECONDS, TIMER_UNIQUE|TIMER_OVERRIDE) //lights out
 
 /datum/species/ethereal/proc/on_emag_act(mob/living/carbon/human/H, mob/user)
@@ -102,7 +102,7 @@
 		return
 	emageffect = TRUE
 	if(user)
-		to_chat(user, span_notice("You tap [H] on the back with your card."))
+		to_chat(user, span_notice("I tap [H] on the back with your card."))
 	H.visible_message(span_danger("[H] starts flickering in an array of colors!"))
 	handle_emag(H)
 	addtimer(CALLBACK(src,PROC_REF(stop_emag), H), 30 SECONDS) //Disco mode for 30 seconds! This doesn't affect the ethereal at all besides either annoying some players, or making someone look badass.
@@ -116,7 +116,7 @@
 /datum/species/ethereal/proc/stop_emp(mob/living/carbon/human/H)
 	EMPeffect = FALSE
 	spec_updatehealth(H)
-	to_chat(H, span_notice("You feel more energized as your shine comes back."))
+	to_chat(H, span_notice("I feel more energized as your shine comes back."))
 
 
 /datum/species/ethereal/proc/handle_emag(mob/living/carbon/human/H)
@@ -159,7 +159,7 @@
 			H.clear_alert("ethereal_overcharge")
 
 /datum/species/ethereal/proc/discharge_process(mob/living/carbon/human/H)
-	to_chat(H, span_warning("You begin to lose control over your charge!"))
+	to_chat(H, span_warning("I begin to lose control over your charge!"))
 	H.visible_message(span_danger("[H] begins to spark violently!"))
 	var/static/mutable_appearance/overcharge //shameless copycode from lightning spell
 	overcharge = overcharge || mutable_appearance('icons/effects/effects.dmi', "electricity", EFFECTS_LAYER)
@@ -172,7 +172,7 @@
 		tesla_zap(H, 2, stomach.crystal_charge*50, ZAP_OBJ_DAMAGE | ZAP_ALLOW_DUPLICATES)
 		if(istype(stomach))
 			stomach.adjust_charge(100 - stomach.crystal_charge)
-		to_chat(H, span_warning("You violently discharge energy!"))
+		to_chat(H, span_warning("I violently discharge energy!"))
 		H.visible_message(span_danger("[H] violently discharges energy!"))
 		if(prob(10)) //chance of developing heart disease to dissuade overcharging oneself
 			var/datum/disease/D = new /datum/disease/heart_failure

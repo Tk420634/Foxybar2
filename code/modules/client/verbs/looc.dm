@@ -18,10 +18,10 @@ GLOBAL_VAR_INIT(normal_looc_colour, "#6699CC") //unused
 		return
 
 	/* if(!(prefs.chat_toggles & CHAT_OOC))
-		to_chat(src, span_danger("You have OOC muted."))
+		to_chat(src, span_danger("I have OOC muted."))
 		return
 	if(jobban_isbanned(mob, "OOC"))
-		to_chat(src, span_danger("You have been banned from OOC."))
+		to_chat(src, span_danger("I have been banned from OOC."))
 		return */
 
 	if(!holder)
@@ -29,7 +29,7 @@ GLOBAL_VAR_INIT(normal_looc_colour, "#6699CC") //unused
 		//	to_chat(src, span_danger("LOOC is globally muted"))
 		//	return
 		//if(prefs.muted & MUTE_OOC)
-		//	to_chat(src, span_danger("You cannot use OOC (muted)."))
+		//	to_chat(src, span_danger("I cannot use OOC (muted)."))
 		//	return
 		if(handle_spam_prevention(msg,MUTE_OOC))
 			return
@@ -38,13 +38,13 @@ GLOBAL_VAR_INIT(normal_looc_colour, "#6699CC") //unused
 		//	log_admin("[key_name(src)] has attempted to advertise in LOOC: [msg]")
 		//	return
 		//if(mob.stat)
-		//	to_chat(src, span_danger("You cannot use LOOC while unconscious or dead."))
+		//	to_chat(src, span_danger("I cannot use LOOC while unconscious or dead."))
 		//	return
 		//if(isdead(mob))
-		//	to_chat(src, span_danger("You cannot use LOOC while ghosting or observing. If you previously died in the round, return to your body to be able to LOOC."))
+		//	to_chat(src, span_danger("I cannot use LOOC while ghosting or observing. If you previously died in the round, return to your body to be able to LOOC."))
 		//	return
 		//if(HAS_TRAIT(mob, TRAIT_LOOC_MUTE))
-		//	to_chat(src, span_danger("You cannot use LOOC right now."))
+		//	to_chat(src, span_danger("I cannot use LOOC right now."))
 		//	return
 
 

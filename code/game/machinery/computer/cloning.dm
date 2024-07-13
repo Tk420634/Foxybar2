@@ -40,7 +40,7 @@
 /obj/machinery/computer/cloning/examine(mob/user)
 	. = ..()
 	if(!HAS_TRAIT(user, TRAIT_CHEMWHIZ))
-		. += "You don't know how this works, you're not enough of a [span_notice("whiz")]."
+		. += "I don't know how this works, you're not enough of a [span_notice("whiz")]."
 
 /obj/machinery/computer/cloning/proc/GetAvailablePod(mind = null)
 	if(!pods)
@@ -134,7 +134,7 @@
 			if (!user.transferItemToLoc(W,src))
 				return
 			src.diskette = W
-			to_chat(user, span_notice("You insert [W]."))
+			to_chat(user, span_notice("I insert [W]."))
 			playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, 0)
 			src.updateUsrDialog()
 	else if(istype(W, /obj/item/multitool))
@@ -160,7 +160,7 @@
 /obj/machinery/computer/cloning/ui_interact(mob/user)
 	. = ..()
 	if(!HAS_TRAIT(user, TRAIT_CHEMWHIZ))
-		to_chat(user, span_alert("You don't know how this works, you're not enough of a [span_notice("whiz")]."))
+		to_chat(user, span_alert("I don't know how this works, you're not enough of a [span_notice("whiz")]."))
 		return
 
 	updatemodules(TRUE)

@@ -249,7 +249,7 @@
 		if(is_calf)
 			to_chat(user, span_warning("The young animal cannot carry the bags!"))
 			return
-		to_chat(user, span_notice("You add [O] to [src]..."))
+		to_chat(user, span_notice("I add [O] to [src]..."))
 		bags = TRUE
 		qdel(O)
 		ComponentInitialize()
@@ -257,7 +257,7 @@
 
 	if(istype(O,/obj/item/brahmincollar))
 		if(user != owner)
-			to_chat(user, span_warning("You need to claim the mount with a bridle before you can rename it!"))
+			to_chat(user, span_warning("I need to claim the mount with a bridle before you can rename it!"))
 			return
 
 		name = input("Choose a new name for your mount!","Name", name)
@@ -266,7 +266,7 @@
 			return
 
 		collar = TRUE
-		to_chat(user, span_notice("You add [O] to [src]..."))
+		to_chat(user, span_notice("I add [O] to [src]..."))
 		message_admins(span_notice("[ADMIN_LOOKUPFLW(user)] renamed a mount to [name].")) //So people don't name their brahmin the N-Word without notice
 		qdel(O)
 		return
@@ -279,7 +279,7 @@
 		owner = user
 		bridle = TRUE
 		tame = TRUE
-		to_chat(user, span_notice("You add [O] to [src], claiming it as yours."))
+		to_chat(user, span_notice("I add [O] to [src], claiming it as yours."))
 		qdel(O)
 		return
 
@@ -299,7 +299,7 @@
 		D.set_vehicle_dir_layer(WEST, OBJ_LAYER)
 		D.vehicle_move_delay = ride_move_delay
 		D.drive_verb = "ride"
-		to_chat(user, span_notice("You add [O] to [src]."))
+		to_chat(user, span_notice("I add [O] to [src]."))
 		qdel(O)
 		return
 
@@ -361,8 +361,8 @@
 /mob/living/simple_animal/cow/on_attack_hand(mob/living/carbon/M)
 	if(!stat && M.a_intent == INTENT_DISARM && icon_state != icon_dead)
 		M.visible_message(span_warning("[M] tips over [src]."),
-			span_notice("You tip over [src]."))
-		to_chat(src, span_userdanger("You are tipped over by [M]!"))
+			span_notice("I tip over [src]."))
+		to_chat(src, span_userdanger("I am tipped over by [M]!"))
 		DefaultCombatKnockdown(30, ignore_canknockdown = TRUE)
 		icon_state = icon_dead
 
@@ -383,10 +383,10 @@
 							var/text = pick("imploringly.", "pleadingly.",
 								"with a resigned expression.")
 							external = "[src] looks at [M] [text]"
-							internal = "You look at [M] [text]"
+							internal = "I look at [M] [text]"
 						if(4)
 							external = "[src] seems resigned to its fate."
-							internal = "You resign yourself to your fate."
+							internal = "I resign yourself to your fate."
 					visible_message(span_notice("[external]"),
 						span_revennotice("[internal]"))
 	else
@@ -442,13 +442,13 @@
 		bridle = FALSE
 		tame = FALSE
 		owner = null
-		to_chat(user, span_notice("You remove the bridle gear from [src], dropping it on the ground."))
+		to_chat(user, span_notice("I remove the bridle gear from [src], dropping it on the ground."))
 		new /obj/item/brahminbridle(get_turf(user))
 
 	if(collar && user.a_intent == INTENT_GRAB)
 		collar = FALSE
 		name = initial(name)
-		to_chat(user, span_notice("You remove the collar from [src], dropping it on the ground."))
+		to_chat(user, span_notice("I remove the collar from [src], dropping it on the ground."))
 		new /obj/item/brahmincollar(get_turf(user))
 
 	if(user == owner)
@@ -457,11 +457,11 @@
 				to_chat(user, span_alert("[src] can't obey your commands anymore. It is dead."))
 				return
 			if(follow)
-				to_chat(user, span_notice("You tug on the reins of [src], telling it to stay."))
+				to_chat(user, span_notice("I tug on the reins of [src], telling it to stay."))
 				follow = FALSE
 				return
 			else if(!follow)
-				to_chat(user, span_notice("You tug on the reins of [src], telling it to follow."))
+				to_chat(user, span_notice("I tug on the reins of [src], telling it to follow."))
 				follow = TRUE
 				return
 
@@ -680,7 +680,7 @@
 		return
 	var/transfered = reagents.trans_to(O, rand(5,10))
 	if(transfered)
-		user.visible_message("[user] milks [src] using \the [O].", span_notice("You milk [src] using \the [O]."))
+		user.visible_message("[user] milks [src] using \the [O].", span_notice("I milk [src] using \the [O]."))
 	else
 		to_chat(user, span_danger("The udder is dry. Wait a bit longer..."))
 
@@ -1676,7 +1676,7 @@ mob/living/simple_animal/cow/brahmin/Topic(href, href_list)
 				else
 					var/obj/item/item_to_add = usr.get_active_held_item()
 					if(!item_to_add)
-						usr.visible_message("[usr] pets [src].",span_notice("You rest your hand on [src]'s back for a moment."))
+						usr.visible_message("[usr] pets [src].",span_notice("I rest your hand on [src]'s back for a moment."))
 						return
 					if(!usr.temporarilyRemoveItemFromInventory(item_to_add))
 						to_chat(usr, span_warning("\The [item_to_add] is stuck to your hand, you cannot put it on [src]'s back!"))
@@ -1686,7 +1686,7 @@ mob/living/simple_animal/cow/brahmin/Topic(href, href_list)
 					if(ispath(item_to_add.brahmin_fashion, /datum/brahmin_fashion/back))
 						allowed = TRUE
 					if(!allowed)
-						to_chat(usr, span_warning("You set [item_to_add] on [src]'s back, but it falls off!"))
+						to_chat(usr, span_warning("I set [item_to_add] on [src]'s back, but it falls off!"))
 						item_to_add.forceMove(drop_location())
 						if(prob(25))
 							step_rand(item_to_add)

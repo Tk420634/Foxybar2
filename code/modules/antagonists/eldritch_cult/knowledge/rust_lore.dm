@@ -47,7 +47,7 @@
 
 /datum/eldritch_knowledge/spell/rust_wave
 	name = "Patron's Reach"
-	desc = "You can now send a bolt of rust that corrupts the immediate area, and poisons the first target hit."
+	desc = "I can now send a bolt of rust that corrupts the immediate area, and poisons the first target hit."
 	gain_text = "Messengers of hope fear the Rustbringer."
 	cost = 1
 	spell_to_add = /obj/effect/proc_holder/spell/aimed/rust_wave
@@ -75,7 +75,7 @@
 
 /datum/eldritch_knowledge/rust_mark
 	name = "Mark of Rust"
-	desc = "Your eldritch blade now applies a rust mark. Rust marks have a chance to deal between 0 to 200 damage to 75% of enemies items. To activate the mark use your Mansus Grasp on it."
+	desc = "My eldritch blade now applies a rust mark. Rust marks have a chance to deal between 0 to 200 damage to 75% of enemies items. To activate the mark use your Mansus Grasp on it."
 	gain_text = "Lords of the depths help those in dire need at a cost."
 	cost = 2
 	next_knowledge = list(/datum/eldritch_knowledge/spell/area_conversion)
@@ -91,7 +91,7 @@
 /datum/eldritch_knowledge/rust_blade_upgrade
 	name = "Toxic Steel"
 	gain_text = "Let the blade guide you through the flesh."
-	desc = "Your blade of choice will now add toxin to enemies bloodstream."
+	desc = "My blade of choice will now add toxin to enemies bloodstream."
 	cost = 2
 	next_knowledge = list(/datum/eldritch_knowledge/spell/entropic_plume)
 	banned_knowledge = list(/datum/eldritch_knowledge/ash_blade_upgrade,/datum/eldritch_knowledge/flesh_blade_upgrade)
@@ -106,7 +106,7 @@
 
 /datum/eldritch_knowledge/spell/entropic_plume
 	name = "Entropic Plume"
-	desc = "You can now send a befuddling plume that blinds, poisons and makes enemies strike each other, while also converting the immediate area into rust."
+	desc = "I can now send a befuddling plume that blinds, poisons and makes enemies strike each other, while also converting the immediate area into rust."
 	gain_text = "If they knew, the truth would turn them against eachother."
 	cost = 1
 	spell_to_add = /obj/effect/proc_holder/spell/cone/staggered/entropic_plume
@@ -115,7 +115,7 @@
 
 /datum/eldritch_knowledge/armor
 	name = "Armorer's Ritual"
-	desc = "You can now create eldritch armor using a built table and a gas mask on top of a transmutation rune."
+	desc = "I can now create eldritch armor using a built table and a gas mask on top of a transmutation rune."
 	gain_text = "For I am the heir to the throne of doom."
 	cost = 1
 	next_knowledge = list(/datum/eldritch_knowledge/rust_regen,/datum/eldritch_knowledge/flesh_ghoul)
@@ -124,7 +124,7 @@
 
 /datum/eldritch_knowledge/essence
 	name = "Priest's Ritual"
-	desc = "You can now transmute a tank of water into a bottle of eldritch fluid."
+	desc = "I can now transmute a tank of water into a bottle of eldritch fluid."
 	gain_text = "This is an old recipe, I got it from an owl."
 	cost = 1
 	next_knowledge = list(/datum/eldritch_knowledge/rust_regen,/datum/eldritch_knowledge/spell/ashen_shift)

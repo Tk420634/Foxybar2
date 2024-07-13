@@ -62,7 +62,7 @@
 	// Check if user is Saliith himself
 	if(user.ckey == "sandpoot")
 		// Update examine text and return
-		. += span_deadsay("You feel a sense of familiarity from [p_them].")
+		. += span_deadsay("I feel a sense of familiarity from [p_them].")
 		return
 
 	// Check for antag datums
@@ -210,7 +210,7 @@
 
 		// User is not Saliith
 		// Warn in local chat
-		user.visible_message(span_warning("[user] tried to force [Kisser] to kiss [src] against their will, and has been yeeted!"), span_warning("You try to force [Kisser] to kiss [src], but get yeeted instead!"))
+		user.visible_message(span_warning("[user] tried to force [Kisser] to kiss [src] against their will, and has been yeeted!"), span_warning("I try to force [Kisser] to kiss [src], but get yeeted instead!"))
 
 		// Display voice of god message
 		say("YEET", spans = list("colossus","yell"))

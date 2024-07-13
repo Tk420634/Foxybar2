@@ -193,7 +193,7 @@
 
 /atom/movable/screen/alert/fat
 	name = "Stuffed"
-	desc = "You ate too much food, now your satiated gut is slowing you down."
+	desc = "I ate too much food, now your satiated gut is slowing you down."
 	icon_state = "fat"
 
 /atom/movable/screen/alert/hungry
@@ -252,7 +252,7 @@
 
 /atom/movable/screen/alert/blind
 	name = "Blind"
-	desc = "You can't see! This may be caused by a genetic defect, eye trauma, being unconscious, \
+	desc = "I can't see! This may be caused by a genetic defect, eye trauma, being unconscious, \
 or something covering your eyes."
 	icon_state = "blind"
 
@@ -263,7 +263,7 @@ or something covering your eyes."
 
 /atom/movable/screen/alert/mind_control
 	name = "Mind Control"
-	desc = "Your mind has been hijacked! Click to view the mind control command."
+	desc = "My mind has been hijacked! Click to view the mind control command."
 	icon_state = "mind_control"
 	var/command
 
@@ -337,7 +337,7 @@ or shoot a gun to move around via Newton's 3rd Law of Motion."
 	if(!istype(L))
 		return
 	if(GLOB.clicky_portal_pairs[L.ckey] >= world.time)
-		to_chat(L, span_alert("You already have a portal open! Give it a few seconds to close before opening another one."))
+		to_chat(L, span_alert("I already have a portal open! Give it a few seconds to close before opening another one."))
 		return
 	var/turf/there = coords2turf(GLOB.home_portal_coords)
 	if(!there)
@@ -384,7 +384,7 @@ GLOBAL_VAR(home_portal_coords)
 
 /atom/movable/screen/alert/alien_vulnerable
 	name = "Severed Matriarchy"
-	desc = "Your queen has been killed, you will suffer movement penalties and loss of hivemind. A new queen cannot be made until you recover."
+	desc = "My queen has been killed, you will suffer movement penalties and loss of hivemind. A new queen cannot be made until you recover."
 	icon_state = "alien_noqueen"
 	alerttooltipstyle = "alien"
 
@@ -392,7 +392,7 @@ GLOBAL_VAR(home_portal_coords)
 
 /atom/movable/screen/alert/nofactory
 	name = "No Factory"
-	desc = "You have no factory, and are slowly dying!"
+	desc = "I have no factory, and are slowly dying!"
 	icon_state = "blobbernaut_nofactory"
 	alerttooltipstyle = "blob"
 
@@ -435,7 +435,7 @@ GLOBAL_VAR(home_portal_coords)
 			blood_target = antag.cult_team.blood_target
 	if(Cviewer && Cviewer.seeking && Cviewer.master)
 		blood_target = Cviewer.master
-		desc = "Your blood sense is leading you to [Cviewer.master]"
+		desc = "My blood sense is leading you to [Cviewer.master]"
 	if(!blood_target)
 		if(sac_objective && !sac_objective.check_completion())
 			if(icon_state == "runed_sense0")
@@ -463,13 +463,13 @@ GLOBAL_VAR(home_portal_coords)
 	var/turf/Q = get_turf(mob_viewer)
 	if(!P || !Q || (P.z != Q.z)) //The target is on a different Z level, we cannot sense that far.
 		icon_state = "runed_sense2"
-		desc = "You can no longer sense your target's presence."
+		desc = "I can no longer sense your target's presence."
 		return
 	if(isliving(blood_target))
 		var/mob/living/real_target = blood_target
-		desc = "You are currently tracking [real_target.real_name] in [get_area_name(blood_target)]."
+		desc = "I am currently tracking [real_target.real_name] in [get_area_name(blood_target)]."
 	else
-		desc = "You are currently tracking [blood_target] in [get_area_name(blood_target)]."
+		desc = "I am currently tracking [blood_target] in [get_area_name(blood_target)]."
 	var/target_angle = Get_Angle(Q, P)
 	var/target_dist = get_dist(P, Q)
 	cut_overlays()
@@ -512,7 +512,7 @@ GLOBAL_VAR(home_portal_coords)
 
 /atom/movable/screen/alert/clockwork/infodump
 	name = "Global Records"
-	desc = "You shouldn't be seeing this description, because it should be dynamically generated."
+	desc = "I shouldn't be seeing this description, because it should be dynamically generated."
 	icon_state = "clockinfo"
 
 /atom/movable/screen/alert/clockwork/infodump/MouseEntered(location,control,params)
@@ -549,19 +549,19 @@ GLOBAL_VAR(home_portal_coords)
 
 /atom/movable/screen/alert/cancharge
 	name = "Charge Ready"
-	desc = "You are ready to charge at a location!"
+	desc = "I am ready to charge at a location!"
 	icon_state = "guardian_charge"
 	alerttooltipstyle = "parasite"
 
 /atom/movable/screen/alert/canstealth
 	name = "Stealth Ready"
-	desc = "You are ready to enter stealth!"
+	desc = "I am ready to enter stealth!"
 	icon_state = "guardian_canstealth"
 	alerttooltipstyle = "parasite"
 
 /atom/movable/screen/alert/instealth
 	name = "In Stealth"
-	desc = "You are in stealth and your next attack will do bonus damage!"
+	desc = "I am in stealth and your next attack will do bonus damage!"
 	icon_state = "guardian_instealth"
 	alerttooltipstyle = "parasite"
 
@@ -585,12 +585,12 @@ Recharging stations are available in robotics, the dormitory bathrooms, and the 
 
 /atom/movable/screen/alert/etherealcharge
 	name = "Low Blood Charge"
-	desc = "Your blood's electric charge is running low, find a source of charge for your blood. Use a recharging station found in robotics or the dormitory bathrooms, or eat some Ethereal-friendly food."
+	desc = "My blood's electric charge is running low, find a source of charge for your blood. Use a recharging station found in robotics or the dormitory bathrooms, or eat some Ethereal-friendly food."
 	icon_state = "etherealcharge"
 
 /atom/movable/screen/alert/ethereal_overcharge
 	name = "Blood Overcharge"
-	desc = "Your blood's electric charge is becoming dangerously high, find an outlet for your energy. Use Grab Intent on an APC to channel your energy into it."
+	desc = "My blood's electric charge is becoming dangerously high, find an outlet for your energy. Use Grab Intent on an APC to channel your energy into it."
 	icon_state = "ethereal_overcharge"
 
 //Need to cover all use cases - emag, illegal upgrade module, malf AI hack, traitor cyborg
@@ -710,7 +710,7 @@ so as to remain in compliance with the most up-to-date laws."
 
 /atom/movable/screen/alert/shoes/untied
 	name = "Untied Shoes"
-	desc = "Your shoes are untied! Click the alert or your shoes to tie them."
+	desc = "My shoes are untied! Click the alert or your shoes to tie them."
 	icon_state = "shoealert"
 
 /atom/movable/screen/alert/shoes/knotted

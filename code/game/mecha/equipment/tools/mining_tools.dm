@@ -34,7 +34,7 @@
 			return
 	target.visible_message(span_warning("[chassis] starts to drill [target]."), \
 					span_userdanger("[chassis] starts to drill [target]..."), \
-					span_italic("You hear drilling."))
+					span_italic("I hear drilling."))
 
 	if(do_after_cooldown(target))
 		set_ready_state(FALSE)

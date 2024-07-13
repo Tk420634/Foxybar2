@@ -35,7 +35,7 @@
 	locked = FALSE
 	open(user)
 	desc = "It's a secure locker for prisoner effects."
-	to_chat(user, span_notice("You insert your prisoner id into \the [src] and it springs open!"))
+	to_chat(user, span_notice("I insert your prisoner id into \the [src] and it springs open!"))
 
 	return TRUE
 

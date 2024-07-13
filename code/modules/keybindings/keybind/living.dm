@@ -42,7 +42,7 @@
 	var/mob/M = user.mob
 	if(length(M.do_afters))
 		var/atom/target = M.do_afters[M.do_afters.len]
-		to_chat(M, span_notice("You stop interacting with \the [target]."))
+		to_chat(M, span_notice("I stop interacting with \the [target]."))
 		LAZYREMOVE(M.do_afters, target)
 	else
 		to_chat(M, span_notice("There's nothing that you can cancel right now."))

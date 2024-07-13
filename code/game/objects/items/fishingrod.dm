@@ -58,7 +58,7 @@ GLOBAL_LIST_INIT(fish_rates, list(
 /obj/item/fishingrod/AltClick(mob/user)
 	if(alert_sound == 1)
 		alert_sound = 2
-		balloon_alert(user, "You feel like you could catch a Legend!")
+		balloon_alert(user, "I feel like you could catch a Legend!")
 	else
 		alert_sound = 1
 		balloon_alert(user, "Perhaps we shouldn't take this so seriously...")
@@ -91,16 +91,16 @@ GLOBAL_LIST_INIT(fish_rates, list(
 			var/fish_result = complete_fishing()
 			switch(fish_result)
 				if(1)
-					balloon_alert(user, "You got trash, lame.")
+					balloon_alert(user, "I got trash, lame.")
 					playsound(src.loc, 'sound/f13effects/karma_down.ogg', 100, TRUE, -1)
 				if(2)
-					balloon_alert(user, "You got nothing!")
+					balloon_alert(user, "I got nothing!")
 					playsound(src.loc, 'sound/f13effects/karma_down.ogg', 100, TRUE, -1)
 				if(3)
-					balloon_alert(user, "You caught a fish!")
+					balloon_alert(user, "I caught a fish!")
 					playsound(src.loc, 'sound/f13effects/karma_up.ogg', 100, TRUE, -1)
 		else	// If we catch trash, a fish, or nothing, we know we reel our line back in.
-			balloon_alert(user, "You reel your line back in.")
+			balloon_alert(user, "I reel your line back in.")
 		playsound(src.loc, 'sound/f13items/youpullbackyourline.ogg', 100, TRUE, -1)
 		inuse = FALSE
 		return //yea, we aren't terraria with a fishing rod that has multiple lines
@@ -109,7 +109,7 @@ GLOBAL_LIST_INIT(fish_rates, list(
 	addtimer(CALLBACK(src,PROC_REF(play_readysound)), random_fishtime)
 	current_wait = world.time + random_fishtime
 	current_waitfail = current_wait + max_afterfish
-	balloon_alert(user, "You cast out your fishing line!")
+	balloon_alert(user, "I cast out your fishing line!")
 	playsound(src.loc, 'sound/f13items/youcastyourfishingline.ogg', 100, TRUE, -1)
 	current_turf = get_turf(current_user)
 
@@ -187,15 +187,15 @@ GLOBAL_LIST_INIT(fish_rates, list(
 			var/fish_result = complete_fishing()
 			switch(fish_result)
 				if(1)
-					to_chat(current_user, span_warning("You got trash, lame..."))
+					to_chat(current_user, span_warning("I got trash, lame..."))
 					playsound(src.loc, 'sound/f13effects/karma_down.ogg', 100, TRUE, -1)
 				if(2)
-					to_chat(current_user, span_warning("You got nothing, lame..."))
+					to_chat(current_user, span_warning("I got nothing, lame..."))
 					playsound(src.loc, 'sound/f13effects/karma_down.ogg', 100, TRUE, -1)
 				if(3)
-					to_chat(current_user, span_green("You got a fish, nice!"))
+					to_chat(current_user, span_green("I got a fish, nice!"))
 					playsound(src.loc, 'sound/f13effects/karma_up.ogg', 100, TRUE, -1)
-		to_chat(current_user, span_notice("You pull back your line!"))
+		to_chat(current_user, span_notice("I pull back your line!"))
 		playsound(src.loc, 'sound/f13items/youpullbackyourline.ogg', 100, TRUE, -1)
 		inuse = FALSE
 		return //yea, we aren't terraria with a fishing rod that has multiple lines
@@ -204,7 +204,7 @@ GLOBAL_LIST_INIT(fish_rates, list(
 	addtimer(CALLBACK(src,PROC_REF(play_readysound)), random_fishtime)
 	current_wait = world.time + random_fishtime
 	current_waitfail = current_wait + max_afterfish
-	to_chat(current_user, span_notice("You cast your fishing line, get ready to reel it back in!"))
+	to_chat(current_user, span_notice("I cast your fishing line, get ready to reel it back in!"))
 
 /obj/item/fishingrod/sleepyrod/CtrlShiftClick(mob/user) // ...wuh. It just...plays a sound? Weird!
 	balloon_alert(user, "Time to vibe...")

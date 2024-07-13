@@ -87,17 +87,17 @@
 /obj/effect/proc_holder/alien/royal/queen/promote/fire(mob/living/carbon/alien/user)
 	var/obj/item/queenpromote/prom
 	if(get_alien_type(/mob/living/carbon/alien/humanoid/royal/praetorian/))
-		to_chat(user, span_noticealien("You already have a Praetorian!"))
+		to_chat(user, span_noticealien("I already have a Praetorian!"))
 		return 0
 	else
 		for(prom in user)
-			to_chat(user, span_noticealien("You discard [prom]."))
+			to_chat(user, span_noticealien("I discard [prom]."))
 			qdel(prom)
 			return 0
 
 		prom = new (user.loc)
 		if(!user.put_in_active_hand(prom, 1))
-			to_chat(user, span_warning("You must empty your hands before preparing the parasite."))
+			to_chat(user, span_warning("I must empty your hands before preparing the parasite."))
 			return 0
 		else //Just in case telling the player only once is not enough!
 			to_chat(user, span_noticealien("Use the royal parasite on one of your children to promote her to Praetorian!"))
@@ -116,16 +116,16 @@
 
 /obj/item/queenpromote/attack(mob/living/M, mob/living/carbon/alien/humanoid/user)
 	if(!isalienadult(M) || isalienroyal(M))
-		to_chat(user, span_noticealien("You may only use this with your adult, non-royal children!"))
+		to_chat(user, span_noticealien("I may only use this with your adult, non-royal children!"))
 		return
 	if(get_alien_type(/mob/living/carbon/alien/humanoid/royal/praetorian/))
-		to_chat(user, span_noticealien("You already have a Praetorian!"))
+		to_chat(user, span_noticealien("I already have a Praetorian!"))
 		return
 
 	var/mob/living/carbon/alien/humanoid/A = M
 	if(A.stat == CONSCIOUS && A.mind && A.key)
 		if(!user.usePlasma(500))
-			to_chat(user, span_noticealien("You must have 500 plasma stored to use this!"))
+			to_chat(user, span_noticealien("I must have 500 plasma stored to use this!"))
 			return
 
 		to_chat(A, span_noticealien("The queen has granted you a promotion to Praetorian!"))
@@ -139,5 +139,5 @@
 		to_chat(user, span_warning("This child must be alert and responsive to become a Praetorian!"))
 
 /obj/item/queenpromote/attack_self(mob/user)
-	to_chat(user, span_noticealien("You discard [src]."))
+	to_chat(user, span_noticealien("I discard [src]."))
 	qdel(src)

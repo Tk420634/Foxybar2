@@ -307,7 +307,7 @@
 		if(points)
 			var/obj/item/card/id/C = I
 			C.mining_points += points
-			to_chat(user, span_info("You transfer [points] points to [C]."))
+			to_chat(user, span_info("I transfer [points] points to [C]."))
 			points = 0
 		else
 			to_chat(user, span_info("There's no points left on [src]."))
@@ -331,7 +331,7 @@
 		I.access |= ACCESS_MINING_STATION
 		I.access |= ACCESS_MINERAL_STOREROOM
 		I.access |= ACCESS_CARGO
-		to_chat(user, "You upgrade [I] with mining access.")
+		to_chat(user, "I upgrade [I] with mining access.")
 		qdel(src)
 
 /obj/item/storage/backpack/duffelbag/mining_conscript

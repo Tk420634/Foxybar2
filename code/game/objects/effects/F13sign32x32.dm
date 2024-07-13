@@ -7,5 +7,5 @@
 
 /obj/structure/sign/sing/ratnest
 	name = "Rat Nest sign"
-	desc =  "You will never find a more wretched nest of scum and villainy."
+	desc =  "I will never find a more wretched nest of scum and villainy."
 	icon_state = "ratnest"

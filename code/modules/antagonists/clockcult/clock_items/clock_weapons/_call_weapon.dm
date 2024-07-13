@@ -22,21 +22,21 @@
 
 /datum/action/innate/call_weapon/Activate()
 	if(!owner.get_empty_held_indexes())
-		to_chat(usr, span_warning("You need an empty hand to call forth your [initial(weapon_type.name)]!"))
+		to_chat(usr, span_warning("I need an empty hand to call forth your [initial(weapon_type.name)]!"))
 		return
 	if(weapon)
 		if(weapon.loc == owner)
 			owner.visible_message(span_danger("[owner]'s [weapon.name] flickers and disappears!"))
-			to_chat(owner, span_brass("You dismiss [weapon]."))
+			to_chat(owner, span_brass("I dismiss [weapon]."))
 			QDEL_NULL(weapon)
 			weapon_reset(RATVARIAN_WEAPON_COOLDOWN * 0.5)
 			return
 		else
 			weapon.visible_message(span_warning("[weapon] suddenly flickers and disappears!"))
-			owner.visible_message(span_danger("A [weapon.name] suddenly flickers into [owner]'s hands!"), span_brass("You recall [weapon] to you."))
+			owner.visible_message(span_danger("A [weapon.name] suddenly flickers into [owner]'s hands!"), span_brass("I recall [weapon] to you."))
 	else
 		weapon = new weapon_type (get_turf(usr), src)
-		owner.visible_message(span_warning("A [weapon.name] materializes in [owner]'s hands!"), span_brass("You call forth your [weapon.name]!"))
+		owner.visible_message(span_warning("A [weapon.name] materializes in [owner]'s hands!"), span_brass("I call forth your [weapon.name]!"))
 	weapon.forceMove(get_turf(owner))
 	owner.put_in_hands(weapon)
 	owner.update_action_buttons_icon()

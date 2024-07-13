@@ -474,14 +474,14 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 
 	if(player_lock ? (!user.mind || !(src in user.mind.spell_list) && !(src in user.mob_spell_list)) : !(src in user.mob_spell_list))
 		if(!silent)
-			to_chat(user, span_warning("You shouldn't have this spell! Something's wrong."))
+			to_chat(user, span_warning("I shouldn't have this spell! Something's wrong."))
 		return FALSE
 
 	if(!centcom_cancast && !(magic_flags & SPELL_SKIP_CENTCOM)) //Certain spells are not allowed on the centcom zlevel
 		var/turf/T = get_turf(user)
 		if(is_centcom_level(T.z))
 			if(!silent)
-				to_chat(user, span_notice("You can't cast this spell here."))
+				to_chat(user, span_notice("I can't cast this spell here."))
 			return FALSE
 
 	if(!skipcharge && !charge_check(user, silent))
@@ -517,7 +517,7 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 		var/mob/living/L = user
 		if(!L.can_speak_vocal())
 			if(!silent)
-				to_chat(L, span_notice("You can't get the words out!"))
+				to_chat(L, span_notice("I can't get the words out!"))
 			return FALSE
 
 	if(!(magic_flags & SPELL_SKIP_MOBTYPE) && ((mobs_whitelist && !mobs_whitelist[user.type]) || (mobs_blacklist && mobs_blacklist[user.type])))
@@ -549,6 +549,6 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 
 /obj/effect/proc_holder/spell/self/basic_heal/cast(mob/living/carbon/human/user) //Note the lack of "list/targets" here. Instead, use a "user" var depending on mob requirements.
 	//Also, notice the lack of a "for()" statement that looks through the targets. This is, again, because the spell can only have a single target.
-	user.visible_message(span_warning("A wreath of gentle light passes over [user]!"), span_notice("You wreath yourself in healing light!"))
+	user.visible_message(span_warning("A wreath of gentle light passes over [user]!"), span_notice("I wreath yourself in healing light!"))
 	user.adjustBruteLoss(-10)
 	user.adjustFireLoss(-10)

@@ -70,11 +70,11 @@
 /mob/living/proc/ZImpactDamage(turf/T, levels)
 	if(levels <= 2 && HAS_TRAIT(src, TRAIT_FREERUNNING)) //levels is incremented prior to damage proc and is always >= 2
 		visible_message(span_danger("[src] slams into [T], rolling as they land and keeping their pace!"),
-						span_userdanger("You slam into [T], rolling and keeping your momentum!"))
+						span_userdanger("I slam into [T], rolling and keeping your momentum!"))
 		adjustBruteLoss(5)
 	else
 		visible_message(span_danger("[src] crashes into [T] with a sickening noise!"),
-						span_userdanger("You crash into [T] with a sickening noise!"))
+						span_userdanger("I crash into [T] with a sickening noise!"))
 		adjustBruteLoss((levels * 5) ** 1.5)
 		DefaultCombatKnockdown(levels * 50)
 
@@ -153,7 +153,7 @@
 					to_chat(src, span_warning("You're too exhausted to scoot closer to [L]."))
 					return TRUE
 				visible_message(span_notice("[src] is attempting to scoot closer to [L]."),
-					span_notice("You are now attempting to scoot closer to [L]."),
+					span_notice("I am now attempting to scoot closer to [L]."),
 					target = L, target_message = span_notice("[src] is attempting to scoot closer to you."))
 			var/src_passmob = (pass_flags & PASSMOB)
 			pass_flags |= PASSMOB
@@ -183,7 +183,7 @@
 					return TRUE
 				ENABLE_BITFIELD(combat_flags, COMBAT_FLAG_ATTEMPTING_CRAWL)
 				visible_message(span_notice("[src] is attempting to crawl under [L]."),
-					span_notice("You are now attempting to crawl under [L]."),
+					span_notice("I am now attempting to crawl under [L]."),
 					target = L, target_message = span_notice("[src] is attempting to crawl under you."))
 				if(!do_after(src, CRAWLUNDER_DELAY, target = src) || CHECK_MOBILITY(src, MOBILITY_STAND))
 					DISABLE_BITFIELD(combat_flags, COMBAT_FLAG_ATTEMPTING_CRAWL)
@@ -271,7 +271,7 @@
 			else
 				holding += ", \a [I]"
 	holding += "."
-	mob_details += "You can also see [src] on the photo[health < (maxHealth * 0.75) ? ", looking a bit hurt":""][holding ? ". [holding.Join("")]":"."]."
+	mob_details += "I can also see [src] on the photo[health < (maxHealth * 0.75) ? ", looking a bit hurt":""][holding ? ". [holding.Join("")]":"."]."
 	return mob_details.Join("")
 
 //Called when we bump onto an obj
@@ -347,7 +347,7 @@
 		if(!supress_message)
 			AM.pulledby.visible_message(span_danger("[src] has pulled [AM] from [AM.pulledby]'s grip."),
 				span_danger("[src] has pulled [AM] from your grip."), target = src,
-				target_message = span_danger("You have pulled [AM] from [AM.pulledby]'s grip."))
+				target_message = span_danger("I have pulled [AM] from [AM.pulledby]'s grip."))
 		log_combat(AM, AM.pulledby, "pulled from", src)
 		AM.pulledby.stop_pulling() //an object can't be pulled by two mobs at once.
 
@@ -363,7 +363,7 @@
 		log_combat(src, M, "grabbed", addition="passive grab")
 		if(!supress_message && !(iscarbon(AM) && HAS_TRAIT(src, TRAIT_STRONG_GRABBER)))
 			visible_message(span_warning("[src] has grabbed [M][(zone_selected == "l_arm" || zone_selected == "r_arm")? " by [M.p_their()] hands":" passively"]!"),
-				span_warning("You have grabbed [M][(zone_selected == "l_arm" || zone_selected == "r_arm")? " by [M.p_their()] hands":" passively"]!"), target = M,
+				span_warning("I have grabbed [M][(zone_selected == "l_arm" || zone_selected == "r_arm")? " by [M.p_their()] hands":" passively"]!"), target = M,
 				target_message = span_warning("[src] has grabbed you[(zone_selected == "l_arm" || zone_selected == "r_arm")? " by your hands":" passively"]!"))
 		if(!iscarbon(src))
 			M.LAssailant = null
@@ -459,7 +459,7 @@
 		return FALSE
 	if(!..())
 		return FALSE
-	visible_message("<b>[src]</b> points at [A].", span_notice("You point at [A]."))
+	visible_message("<b>[src]</b> points at [A].", span_notice("I point at [A]."))
 	return TRUE
 
 /mob/living/verb/succumb()
@@ -469,28 +469,28 @@
 		var/datum/status_effect/chem/enthrall/E = src.has_status_effect(/datum/status_effect/chem/enthrall)
 		if(E.phase < 3)
 			if(HAS_TRAIT(src, TRAIT_MINDSHIELD))
-				to_chat(src, span_notice("Your mindshield prevents your mind from giving in!"))
+				to_chat(src, span_notice("My mindshield prevents your mind from giving in!"))
 			else if(src.mind.assigned_role in GLOB.command_positions)
-				to_chat(src, span_notice("Your dedication to your department prevents you from giving in!"))
+				to_chat(src, span_notice("My dedication to your department prevents you from giving in!"))
 			else
 				E.enthrallTally += 20
-				to_chat(src, span_notice("You give into [E.master]'s influence."))
+				to_chat(src, span_notice("I give into [E.master]'s influence."))
 	if (InCritical())
 		log_message("Has succumbed to death while in [InFullCritical() ? "hard":"soft"] critical with [round(health, 0.1)] points of health!", LOG_ATTACK)
 		adjustOxyLoss(health - HEALTH_THRESHOLD_DEAD)
 		updatehealth()
-		to_chat(src, span_notice("You have given up life and succumbed to death."))
+		to_chat(src, span_notice("I have given up life and succumbed to death."))
 		death()
 
 /mob/living/verb/lookup()
 	set name = "Look Up"
 	set category = "IC"
 	if(src.incapacitated(allow_crit = TRUE))
-		to_chat(src, span_warning("You can't look up right now!"))
+		to_chat(src, span_warning("I can't look up right now!"))
 	var/turf/T = SSmapping.get_turf_above(get_turf(src))
 	if(!istype(T, /turf/open/transparent/openspace))
 		if(istype(T, /turf/open) || istype(T, /turf/closed))
-			to_chat(src, span_notice("You look up at the ceiling. You can see ceiling."))
+			to_chat(src, span_notice("I look up at the ceiling. You can see ceiling."))
 		return
 	else
 		src.reset_perspective(T)
@@ -566,10 +566,10 @@
 	set category = "IC"
 
 	if(IsSleeping())
-		to_chat(src, span_notice("You are already sleeping."))
+		to_chat(src, span_notice("I am already sleeping."))
 		return
 	else
-		if(alert(src, "You sure you want to sleep for a while?", "Sleep", "Yes", "No") == "Yes")
+		if(alert(src, "I sure you want to sleep for a while?", "Sleep", "Yes", "No") == "Yes")
 			SetSleeping(400) //Short nap
 
 /mob/living/proc/toggle_mob_sleep()
@@ -580,10 +580,10 @@
 		if(alert(src, "Would you like to wake up soon? (You'll wake up after sleeping a little more, be patient and don't spam the button!)", "Wake Up", "Yes", "No") == "Yes")
 			if(HAS_TRAIT(src, TRAIT_HEAVY_SLEEPER))
 				SetSleeping(800)	//puts you to sleep for 80 seconds, so it's not abusable.
-				to_chat(src, span_notice("You start to wake up groggily, this is going to take a minute."))
+				to_chat(src, span_notice("I start to wake up groggily, this is going to take a minute."))
 			else
 				SetSleeping(400)
-				to_chat(src, span_notice("You start to wake up."))
+				to_chat(src, span_notice("I start to wake up."))
 	else
 		if(alert(src, "Are you sure you want to sleep for a long time? (You can wake up by pressing this button again)", "Sleep", "Yes", "No") == "Yes")
 			SetSleeping(18000)	//puts you to sleep for 30 minutes, better than never waking up in case my code sucks badly.
@@ -596,7 +596,7 @@
 	set category = "IC"
 
 	resting = !resting
-	to_chat(src, span_notice("You are now [resting ? "resting" : "getting up"]."))
+	to_chat(src, span_notice("I am now [resting ? "resting" : "getting up"]."))
 	update_canmove()
 */
 
@@ -899,14 +899,14 @@
 		if(CHECK_MOBILITY(src, MOBILITY_RESIST) && prob(30/pulledby.grab_state))
 			pulledby.visible_message(span_danger("[src] has broken free of [pulledby]'s grip!"),
 				span_danger("[src] has broken free of your grip!"), target = src,
-				target_message = span_danger("You have broken free of [pulledby]'s grip!"))
+				target_message = span_danger("I have broken free of [pulledby]'s grip!"))
 			pulledby.stop_pulling()
 			return TRUE
 		else if(moving_resist && client) //we resisted by trying to move // this is a horrible system and whoever thought using client instead of mob is okay is not an okay person
 			client.move_delay = world.time + 20
 		pulledby.visible_message(span_danger("[src] resists against [pulledby]'s grip!"),
 			span_danger("[src] resists against your grip!"), target = src,
-			target_message = span_danger("You resist against [pulledby]'s grip!"))
+			target_message = span_danger("I resist against [pulledby]'s grip!"))
 	else
 		pulledby.stop_pulling()
 		return TRUE
@@ -959,7 +959,7 @@
 // Override if a certain type of mob should be behave differently when stripping items (can't, for example)
 /mob/living/stripPanelUnequip(obj/item/what, mob/who, where)
 	if(HAS_TRAIT(what, TRAIT_NODROP))
-		to_chat(src, span_warning("You can't remove \the [what.name], it appears to be stuck!"))
+		to_chat(src, span_warning("I can't remove \the [what.name], it appears to be stuck!"))
 		return
 	var/strip_mod = 1
 	var/strip_silence = FALSE
@@ -972,7 +972,7 @@
 	if(!strip_silence)
 		who.visible_message(span_danger("[src] tries to remove [who]'s [what.name]."), \
 					span_userdanger("[src] tries to remove your [what.name]."), target = src,
-					target_message = span_danger("You try to remove [who]'s [what.name]."))
+					target_message = span_danger("I try to remove [who]'s [what.name]."))
 		what.add_fingerprint(src)
 		if(ishuman(who))
 			var/mob/living/carbon/human/victim_human = who
@@ -981,7 +981,7 @@
 					var/list/new_entry = list(list(src.name, "tried unequipping your [what]", world.time))
 					LAZYADD(victim_human.afk_thefts, new_entry)
 	else
-		to_chat(src,span_notice("You try to remove [who]'s [what.name]."))
+		to_chat(src,span_notice("I try to remove [who]'s [what.name]."))
 		what.add_fingerprint(src)
 	if(do_mob(src, who, round(what.strip_delay / strip_mod), ignorehelditem = TRUE))
 		if(what.is_dual_wielded)
@@ -1012,7 +1012,7 @@
 /mob/living/stripPanelEquip(obj/item/what, mob/who, where)
 	what = src.get_active_held_item()
 	if(what && HAS_TRAIT(what, TRAIT_NODROP))
-		to_chat(src, span_warning("You can't put \the [what.name] on [who], it's stuck to your hand!"))
+		to_chat(src, span_warning("I can't put \the [what.name] on [who], it's stuck to your hand!"))
 		return
 	if(what)
 		var/list/where_list
@@ -1037,7 +1037,7 @@
 
 		who.visible_message(span_notice("[src] tries to put [what] on [who]."),
 			span_notice("[src] tries to put [what] on you."), target = src,
-			target_message = span_notice("You try to put [what] on [who]."))
+			target_message = span_notice("I try to put [what] on [who]."))
 		if(do_mob(src, who, what.equip_delay_other))
 			if(what && Adjacent(who) && what.mob_can_equip(who, src, final_where, TRUE, TRUE))
 				if(temporarilyRemoveItemFromInventory(what))
@@ -1152,19 +1152,19 @@
 
 /mob/living/canUseTopic(atom/movable/M, be_close=FALSE, no_dextery=FALSE, no_tk=FALSE)
 	if(incapacitated(allow_crit = TRUE))
-		to_chat(src, span_warning("You can't do that right now!"))
+		to_chat(src, span_warning("I can't do that right now!"))
 		return FALSE
 	if(be_close && !in_range(M, src))
-		to_chat(src, span_warning("You are too far away!"))
+		to_chat(src, span_warning("I am too far away!"))
 		return FALSE
 	if(!no_dextery)
-		to_chat(src, span_warning("You don't have the dexterity to do this!"))
+		to_chat(src, span_warning("I don't have the dexterity to do this!"))
 		return FALSE
 	return TRUE
 
 /mob/living/proc/can_use_guns(obj/item/G)//actually used for more than guns!
 	if(G.trigger_guard != TRIGGER_GUARD_ALLOW_ALL && !IsAdvancedToolUser())
-		to_chat(src, span_warning("You don't have the dexterity to do this!"))
+		to_chat(src, span_warning("I don't have the dexterity to do this!"))
 		return FALSE
 	return TRUE
 
@@ -1220,7 +1220,7 @@
 		var/mob/living/simple_animal/hostile/guardian/G = para
 		G.summoner = new_mob
 		G.Recall()
-		to_chat(G, span_holoparasite("Your summoner has changed form!"))
+		to_chat(G, span_holoparasite("My summoner has changed form!"))
 
 /mob/living/rad_act(amount, skip_protection = FALSE)
 	. = ..()
@@ -1438,7 +1438,7 @@
 			clamp_immobility_to = 0,
 			reset_misc = TRUE,
 			healing_chems = list(/datum/reagent/medicine/inaprovaline = 3, /datum/reagent/medicine/synaptizine = 10, /datum/reagent/medicine/regen_jelly = 10, /datum/reagent/medicine/stimulants = 10),
-			message = span_boldnotice("You feel a surge of energy!"),
+			message = span_boldnotice("I feel a surge of energy!"),
 			stamina_buffer_boost = 0,				//restores stamina buffer rather than just health
 			scale_stamina_loss_recovery,			//defaults to null. if this is set, restores loss * this stamina. make sure it's a fraction.
 			stamina_loss_recovery_bypass = 0		//amount of stamina loss to ignore during calculation
@@ -1520,7 +1520,7 @@
 		return
 
 	if(INTERACTING_WITH(src, target))
-		to_chat(src, span_warning("You are already interacting with [target]."))
+		to_chat(src, span_warning("I am already interacting with [target]."))
 		return
 
 	if(!target.can_hold_items())
@@ -1531,7 +1531,7 @@
 	if(!gift)
 		gift = get_inactive_held_item()
 		if(!gift)
-			to_chat(src, span_warning("You don't have anything in your hands to give."))
+			to_chat(src, span_warning("I don't have anything in your hands to give."))
 			return
 
 	if(SEND_SIGNAL(target, COMSIG_COMBAT_MODE_CHECK, COMBAT_MODE_ACTIVE))
@@ -1546,7 +1546,7 @@
 		to_chat(src, span_warning("[target] is unable to receive \a [gift] right now."))
 		return
 
-	to_chat(src, span_notice("You offer \a [gift] to [target] ."))
+	to_chat(src, span_notice("I offer \a [gift] to [target] ."))
 
 	START_INTERACTING_WITH(src, target)
 	var/target_answer = alert(target, "[src] wants to give you \a [gift]. Will you accept it?", "An offer you can't refuse", "Accept", "Visibly reject", "Quietly ignore")
@@ -1592,7 +1592,7 @@
 	target.put_in_hands(gift)
 	visible_message(
 		"<b>[src]</b> hands [target] \a [gift].",
-		span_notice("You give \the [target] a [gift].")
+		span_notice("I give \the [target] a [gift].")
 		)
 
 
@@ -1627,7 +1627,7 @@
 	set name = "Perform Handstand "
 	set desc = "Button that turns your character upside down."
 
-	to_chat(src, span_notice("You try to perform a handstand."))
+	to_chat(src, span_notice("I try to perform a handstand."))
 	if(do_after(src, 1 SECONDS, target = src))
 		for(var/i in 1 to 180)  //I know this is awful
 			src.tilt_left()

@@ -41,7 +41,7 @@
 
 /obj/item/reagent_containers/food/snacks/jellysandwich
 	name = "jelly sandwich"
-	desc = "You wish you had some peanut butter to go with this..."
+	desc = "I wish you had some peanut butter to go with this..."
 	icon = 'icons/obj/food/burgerbread.dmi'
 	icon_state = "jellysandwich"
 	bitesize = 3
@@ -76,7 +76,7 @@
 
 /obj/item/reagent_containers/food/snacks/peanutbutter_sandwich
 	name = "peanut butter sandwich"
-	desc = "You wish you had some jelly to go with this..."
+	desc = "I wish you had some jelly to go with this..."
 	icon = 'icons/obj/food/burgerbread.dmi'
 	icon_state = "peanutbuttersandwich"
 	bitesize = 3

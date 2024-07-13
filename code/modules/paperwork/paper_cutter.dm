@@ -31,14 +31,14 @@
 		if(!user.transferItemToLoc(P, src))
 			return
 		playsound(loc, "pageturn", 60, TRUE)
-		to_chat(user, span_notice("You place [P] in [src]."))
+		to_chat(user, span_notice("I place [P] in [src]."))
 		storedpaper = P
 		update_icon()
 		return
 	if(istype(P, /obj/item/hatchet/cutterblade) && !storedcutter)
 		if(!user.transferItemToLoc(P, src))
 			return
-		to_chat(user, span_notice("You replace [src]'s [P]."))
+		to_chat(user, span_notice("I replace [src]'s [P]."))
 		P.forceMove(src)
 		storedcutter = P
 		update_icon()
@@ -57,14 +57,14 @@
 		return
 
 	if(!cuttersecured)
-		to_chat(user, span_notice("You remove [src]'s [storedcutter]."))
+		to_chat(user, span_notice("I remove [src]'s [storedcutter]."))
 		user.put_in_hands(storedcutter)
 		storedcutter = null
 		update_icon()
 
 	if(storedpaper)
 		playsound(src.loc, 'sound/weapons/slash.ogg', 50, TRUE)
-		to_chat(user, span_notice("You neatly cut [storedpaper]."))
+		to_chat(user, span_notice("I neatly cut [storedpaper]."))
 		storedpaper = null
 		qdel(storedpaper)
 		new /obj/item/paperslip(get_turf(src))

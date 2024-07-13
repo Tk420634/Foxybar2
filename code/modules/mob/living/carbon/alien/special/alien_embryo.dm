@@ -28,7 +28,7 @@
 			if(prob(2))
 				owner.emote("cough")
 			if(prob(2))
-				to_chat(owner, span_danger("Your throat feels sore."))
+				to_chat(owner, span_danger("My throat feels sore."))
 			if(prob(2))
 				to_chat(owner, span_danger("Mucous runs down the back of your throat."))
 		if(4)
@@ -37,15 +37,15 @@
 			if(prob(2))
 				owner.emote("cough")
 			if(prob(4))
-				to_chat(owner, span_danger("Your muscles ache."))
+				to_chat(owner, span_danger("My muscles ache."))
 				if(prob(20))
 					owner.take_bodypart_damage(1)
 			if(prob(4))
-				to_chat(owner, span_danger("Your stomach hurts."))
+				to_chat(owner, span_danger("My stomach hurts."))
 				if(prob(20))
 					owner.adjustToxLoss(1)
 		if(5)
-			to_chat(owner, span_danger("You feel something tearing its way out of your stomach..."))
+			to_chat(owner, span_danger("I feel something tearing its way out of your stomach..."))
 			owner.adjustToxLoss(10)
 
 /obj/item/organ/body_egg/alien_embryo/egg_process()
@@ -103,13 +103,13 @@
 
 	var/mob/living/carbon/old_owner = owner
 	if(kill_on_sucess) //ITS TOO LATE
-		new_xeno.visible_message(span_danger("[new_xeno] bursts out of [owner]!"), span_userdanger("You exit [owner], your previous host."), span_italic("You hear organic matter ripping and tearing!"))
+		new_xeno.visible_message(span_danger("[new_xeno] bursts out of [owner]!"), span_userdanger("I exit [owner], your previous host."), span_italic("I hear organic matter ripping and tearing!"))
 		owner.apply_damage(rand(100,300),BRUTE,zone,FALSE) //Random high damage to torso so health sensors don't metagame.
 		var/obj/item/bodypart/B = owner.get_bodypart(zone)
 		B.drop_organs(owner) //Lets still make the death gruesome and impossible to just simply defib someone.
 		owner.death(FALSE) //Just in case some freak occurance occurs where you somehow survive all your organs being removed from you and the 100-300 brute damage.
 	else //When it is removed via surgery at a late stage, rather than forced.
-		new_xeno.visible_message(span_danger("[new_xeno] wriggles out of [owner]!"), span_userdanger("You exit [owner], your previous host."))
+		new_xeno.visible_message(span_danger("[new_xeno] wriggles out of [owner]!"), span_userdanger("I exit [owner], your previous host."))
 		owner.adjustBruteLoss(40)
 	old_owner.cut_overlay(overlay)
 	qdel(src)

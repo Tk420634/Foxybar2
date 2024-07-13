@@ -140,7 +140,7 @@
 				continue
 			else
 				if(!bloodsuckerdatum.warn_sun_locker)
-					to_chat(M, span_warning("Your skin sizzles. The [M.current.loc] doesn't protect well against UV bombardment."))
+					to_chat(M, span_warning("My skin sizzles. The [M.current.loc] doesn't protect well against UV bombardment."))
 					bloodsuckerdatum.warn_sun_locker = TRUE
 				M.current.adjustFireLoss(0.5 + bloodsuckerdatum.bloodsucker_level / 2) // M.current.fireloss += 0.5 + bloodsuckerdatum.bloodsucker_level / 2  //  Do DIRECT damage. Being spaced was causing this to not occur. setFireLoss(bloodsuckerdatum.bloodsucker_level)
 				M.current.updatehealth()

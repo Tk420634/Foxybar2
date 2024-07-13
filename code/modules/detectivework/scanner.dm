@@ -77,7 +77,7 @@
 		scanning = TRUE
 
 		user.visible_message("\The [user] points the [src.name] at \the [A] and performs a forensic scan.")
-		to_chat(user, span_notice("You scan \the [A]. The scanner is now analysing the results..."))
+		to_chat(user, span_notice("I scan \the [A]. The scanner is now analysing the results..."))
 
 
 		// GATHER INFORMATION
@@ -174,7 +174,7 @@
 				to_chat(holder, span_warning("Unable to locate any fingerprints, materials, fibers, or blood on \the [target_name]!"))
 		else
 			if(holder)
-				to_chat(holder, span_notice("You finish scanning \the [target_name]."))
+				to_chat(holder, span_notice("I finish scanning \the [target_name]."))
 
 		add_log("---------------------------------------------------------", 0)
 		scanning = FALSE

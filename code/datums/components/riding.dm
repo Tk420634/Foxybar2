@@ -190,7 +190,7 @@
 		if(!istype(next) || !istype(current))
 			return	//not happening.
 		if(!turf_check(next, current))
-			to_chat(user, "Your \the [AM] can not go onto [next]!")
+			to_chat(user, "My \the [AM] can not go onto [next]!")
 			return
 		if(!Process_Spacemove(direction) || !isturf(AM.loc))
 			return
@@ -306,14 +306,14 @@
 			if(R.module && R.module.ride_allow_incapacitated)
 				kick = FALSE
 		if(kick)
-			to_chat(user, span_userdanger("You fall off of [AM]!"))
+			to_chat(user, span_userdanger("I fall off of [AM]!"))
 			Unbuckle(user)
 			return
 	if(iscarbon(user))
 		var/mob/living/carbon/carbonuser = user
 		if(!carbonuser.get_num_arms())
 			Unbuckle(user)
-			to_chat(user, span_userdanger("You can't grab onto [AM] with no hands!"))
+			to_chat(user, span_userdanger("I can't grab onto [AM] with no hands!"))
 			return
 
 /datum/component/riding/cyborg/handle_vehicle_layer()

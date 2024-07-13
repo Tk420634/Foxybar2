@@ -180,9 +180,9 @@ GLOBAL_LIST_INIT(concrete_recipes, list ( \
 	if(istype(I,/obj/item/stack/sheet/plastic))
 		var/obj/item/stack/sheet/plastic/C = I
 		if(C.amount < 3)
-			to_chat(user, span_warning("You need at least three plastic sheets to sheathe the wall!"))
+			to_chat(user, span_warning("I need at least three plastic sheets to sheathe the wall!"))
 			return
-		to_chat(user, span_notice("You start adding [I] to [src]..."))
+		to_chat(user, span_notice("I start adding [I] to [src]..."))
 		if(do_after(user, 50, target=src))
 			C.use(3)
 			var/turf/T = get_turf(src)
@@ -194,8 +194,8 @@ GLOBAL_LIST_INIT(concrete_recipes, list ( \
 			return
 
 		if(I.use_tool(src, user, 60, volume=50))
-			user.visible_message("[user] welds the [src] apart.", "You start to weld the [src] apart...")
-			to_chat(user, span_notice("You weld the [src] apart."))
+			user.visible_message("[user] welds the [src] apart.", "I start to weld the [src] apart...")
+			to_chat(user, span_notice("I weld the [src] apart."))
 			qdel(src)
 			return
 	return ..()
@@ -216,9 +216,9 @@ GLOBAL_LIST_INIT(concrete_recipes, list ( \
 	if(istype(I,/obj/item/stack/sheet/mineral/concrete))
 		var/obj/item/stack/sheet/mineral/concrete/C = I
 		if(C.amount < 2)
-			to_chat(user, span_warning("You need at least two concrete bags to make a wall!"))
+			to_chat(user, span_warning("I need at least two concrete bags to make a wall!"))
 			return
-		to_chat(user, span_notice("You start adding [I] to [src]..."))
+		to_chat(user, span_notice("I start adding [I] to [src]..."))
 		if(do_after(user, 50, target=src))
 			C.use(2)
 			var/turf/T = get_turf(src)
@@ -230,8 +230,8 @@ GLOBAL_LIST_INIT(concrete_recipes, list ( \
 			return
 
 		if(I.use_tool(src, user, 60, volume=50))
-			user.visible_message("[user] welds the [src] apart.", "You start to weld the [src] apart...")
-			to_chat(user, span_notice("You weld the [src] apart."))
+			user.visible_message("[user] welds the [src] apart.", "I start to weld the [src] apart...")
+			to_chat(user, span_notice("I weld the [src] apart."))
 			qdel(src)
 			return
 

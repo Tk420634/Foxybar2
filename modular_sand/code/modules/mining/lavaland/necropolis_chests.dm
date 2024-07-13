@@ -179,9 +179,9 @@
 	alternate_magazine = current_mag
 	toggled = !toggled
 	if(toggled)
-		to_chat(user, "You will now fire a hookshot.")
+		to_chat(user, "I will now fire a hookshot.")
 	else
-		to_chat(user, "You will now fire normal shotgun rounds.")
+		to_chat(user, "I will now fire normal shotgun rounds.")
 
 /obj/item/gun/ballistic/revolver/doublebarrel/super/sawoff(mob/user)
 	to_chat(user, span_warning("Why would you mutilate this work of art?"))
@@ -891,7 +891,7 @@
 					to_chat(user, span_warning("The storm is already ending! It would be a waste to use the [src] now."))
 					return
 				user.visible_message(span_warning("[user] gazes into the sky with [src], seemingly repelling the current storm!"), \
-				span_notice("You gaze intently skyward, dispelling the storm!"))
+				span_notice("I gaze intently skyward, dispelling the storm!"))
 				playsound(user, 'sound/magic/staff_change.ogg', 200, 0)
 				A.wind_down()
 				log_game("[user] ([key_name(user)]) has dispelled a storm at [AREACOORD(user_turf)]")
@@ -907,7 +907,7 @@
 			A.end_duration = 100
 
 		user.visible_message(span_warning("[user] gazes skyward with his [src], terrible red lightning strikes seem to accompany them!"), \
-		span_notice("You gaze skyward with [src], calling down a terrible storm!"))
+		span_notice("I gaze skyward with [src], calling down a terrible storm!"))
 		playsound(user, 'sound/magic/staff_change.ogg', 200, 0)
 		A.telegraph()
 		storm_cooldown = world.time + 200
@@ -1021,7 +1021,7 @@
 
 //Apply a temp buff until the necklace is used
 /obj/item/clothing/neck/necklace/necklace_of_the_forsaken/proc/temp_buff(mob/living/carbon/human/user)
-	to_chat(user, span_warning("You feel as if you have a second chance at something, but you're not sure what."))
+	to_chat(user, span_warning("I feel as if you have a second chance at something, but you're not sure what."))
 	if(do_after(user, 4 SECONDS, user))
 		to_chat(user, span_notice("The ember warms you..."))
 		ADD_TRAIT(user, TRAIT_NOHARDCRIT, "necklace_of_the_forsaken")//less chance of being gibbed
@@ -1034,7 +1034,7 @@
 		return
 	var/mob/living/carbon/C = active_owner
 	active_owner = null
-	to_chat(C, span_userdanger("You feel a scorching burn fill your body and limbs!"))
+	to_chat(C, span_userdanger("I feel a scorching burn fill your body and limbs!"))
 	C.revive(TRUE, FALSE)
 	remove_necklace() //remove buffs
 
@@ -1061,7 +1061,7 @@
 		if(iscarbon(owner))
 			MM.temp_buff(owner)
 		src.desc = "Revive or fully heal yourself, but you can only do this once! Can be used when knocked out or dead."
-		to_chat(MM.active_owner, span_userdanger("You have binded the ember to yourself! The next time you use the necklace it will heal you!"))
+		to_chat(MM.active_owner, span_userdanger("I have binded the ember to yourself! The next time you use the necklace it will heal you!"))
 	else if(MM.numUses >= 1 && MM.active_owner)//revive / heal then remove usage
 		MM.second_chance()
 		MM.numUses = 0

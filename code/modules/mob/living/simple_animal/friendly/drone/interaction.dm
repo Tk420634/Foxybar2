@@ -16,14 +16,14 @@
 
 				if("Cannibalize")
 					if(D.health < D.maxHealth)
-						D.visible_message(span_notice("[D] begins to cannibalize parts from [src]."), span_notice("You begin to cannibalize parts from [src]..."))
+						D.visible_message(span_notice("[D] begins to cannibalize parts from [src]."), span_notice("I begin to cannibalize parts from [src]..."))
 						if(do_after(D, 60, 0, target = src))
-							D.visible_message(span_notice("[D] repairs itself using [src]'s remains!"), span_notice("You repair yourself using [src]'s remains."))
+							D.visible_message(span_notice("[D] repairs itself using [src]'s remains!"), span_notice("I repair yourself using [src]'s remains."))
 							D.adjustBruteLoss(-src.maxHealth)
 							new /obj/effect/decal/cleanable/oil/streak(get_turf(src))
 							qdel(src)
 						else
-							to_chat(D, span_warning("You need to remain still to cannibalize [src]!"))
+							to_chat(D, span_warning("I need to remain still to cannibalize [src]!"))
 					else
 						to_chat(D, span_warning("You're already in perfect condition!"))
 				if("Nothing")
@@ -41,37 +41,37 @@
 									  "can't tell if their ethernet detour is moving or not", "won't be able to reseed enough"+\
 									  " kernels to function properly","can't start their neurotube console")
 
-		to_chat(user, span_warning("You can't seem to find the [pick(faux_gadgets)]! Without it, [src] [pick(faux_problems)]."))
+		to_chat(user, span_warning("I can't seem to find the [pick(faux_gadgets)]! Without it, [src] [pick(faux_problems)]."))
 		return
-	user.visible_message(span_notice("[user] begins to reactivate [src]."), span_notice("You begin to reactivate [src]..."))
+	user.visible_message(span_notice("[user] begins to reactivate [src]."), span_notice("I begin to reactivate [src]..."))
 	if(do_after(user, 30, 1, target = src))
 		revive(full_heal = 1)
-		user.visible_message(span_notice("[user] reactivates [src]!"), span_notice("You reactivate [src]."))
+		user.visible_message(span_notice("[user] reactivates [src]!"), span_notice("I reactivate [src]."))
 		alert_drones(DRONE_NET_CONNECT)
 		if(G)
 			to_chat(G, span_ghostalert("You([name]) were reactivated by [user]!"))
 	else
-		to_chat(user, span_warning("You need to remain still to reactivate [src]!"))
+		to_chat(user, span_warning("I need to remain still to reactivate [src]!"))
 
 
 /mob/living/simple_animal/drone/attackby(obj/item/I, mob/user)
 	if(istype(I, /obj/item/screwdriver) && stat != DEAD)
 		if(health < maxHealth)
-			to_chat(user, span_notice("You start to tighten loose screws on [src]..."))
+			to_chat(user, span_notice("I start to tighten loose screws on [src]..."))
 			if(I.use_tool(src, user, 80))
 				adjustBruteLoss(-getBruteLoss())
-				visible_message(span_notice("[user] tightens [src == user ? "[user.p_their()]" : "[src]'s"] loose screws!"), span_notice("You tighten [src == user ? "your" : "[src]'s"] loose screws."))
+				visible_message(span_notice("[user] tightens [src == user ? "[user.p_their()]" : "[src]'s"] loose screws!"), span_notice("I tighten [src == user ? "your" : "[src]'s"] loose screws."))
 			else
-				to_chat(user, span_warning("You need to remain still to tighten [src]'s screws!"))
+				to_chat(user, span_warning("I need to remain still to tighten [src]'s screws!"))
 		else
 			to_chat(user, span_warning("[src]'s screws can't get any tighter!"))
 		return //This used to not exist and drones who repaired themselves also stabbed the shit out of themselves.
 	else if(istype(I, /obj/item/wrench) && user != src) //They aren't required to be hacked, because laws can change in other ways (i.e. admins)
 		user.visible_message(span_notice("[user] starts resetting [src]..."), \
-							span_notice("You press down on [src]'s factory reset control..."))
+							span_notice("I press down on [src]'s factory reset control..."))
 		if(I.use_tool(src, user, 50, volume=50))
 			user.visible_message(span_notice("[user] resets [src]!"), \
-								span_notice("You reset [src]'s directives to factory defaults!"))
+								span_notice("I reset [src]'s directives to factory defaults!"))
 			update_drone_hack(FALSE)
 		return
 	else

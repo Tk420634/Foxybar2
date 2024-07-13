@@ -48,7 +48,7 @@
 			to_chat(user, span_warning("There's already a brain in the MMI!"))
 			return
 		if(!newbrain.brainmob)
-			to_chat(user, span_warning("You aren't sure where this brain came from, but you're pretty sure it's a useless brain!"))
+			to_chat(user, span_warning("I amn't sure where this brain came from, but you're pretty sure it's a useless brain!"))
 			return
 
 		if(!user.transferItemToLoc(O, src))
@@ -89,9 +89,9 @@
 /obj/item/mmi/attack_self(mob/user)
 	if(!brain)
 		radio.on = !radio.on
-		to_chat(user, span_notice("You toggle the MMI's radio system [radio.on==1 ? "on" : "off"]."))
+		to_chat(user, span_notice("I toggle the MMI's radio system [radio.on==1 ? "on" : "off"]."))
 	else
-		to_chat(user, span_notice("You unlock and upend the MMI, spilling the brain onto the floor."))
+		to_chat(user, span_notice("I unlock and upend the MMI, spilling the brain onto the floor."))
 		eject_brain(user)
 		update_icon()
 		name = initial(name)
@@ -156,7 +156,7 @@
 	if(brainmob.stat)
 		to_chat(brainmob, span_warning("Can't do that while incapacitated or dead!"))
 	if(!radio.on)
-		to_chat(brainmob, span_warning("Your radio is disabled!"))
+		to_chat(brainmob, span_warning("My radio is disabled!"))
 		return
 
 	radio.listening = radio.listening==1 ? 0 : 1

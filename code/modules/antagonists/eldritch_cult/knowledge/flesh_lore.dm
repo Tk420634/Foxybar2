@@ -99,11 +99,11 @@
 		return
 
 	if(HAS_TRAIT(human_target, TRAIT_HUSK))
-		to_chat(user, span_warning("You cannot revive a dead ghoul!"))
+		to_chat(user, span_warning("I cannot revive a dead ghoul!"))
 		return
 
 	if(LAZYLEN(spooky_scaries) >= ghoul_amt)
-		to_chat(user, span_warning("Your patron cannot support more ghouls on this plane!"))
+		to_chat(user, span_warning("My patron cannot support more ghouls on this plane!"))
 		return
 
 	LAZYADD(spooky_scaries, human_target)
@@ -131,7 +131,7 @@
 /datum/eldritch_knowledge/flesh_mark
 	name = "Mark of Flesh"
 	gain_text = "I saw them, the marked ones. The screams... the silence."
-	desc = "Your sickly blade now applies a mark of flesh to those cut by it. Once marked, using your Mansus Grasp upon them will cause additional bleeding from the target."
+	desc = "My sickly blade now applies a mark of flesh to those cut by it. Once marked, using your Mansus Grasp upon them will cause additional bleeding from the target."
 	cost = 2
 	next_knowledge = list(/datum/eldritch_knowledge/summon/raw_prophet)
 	banned_knowledge = list(/datum/eldritch_knowledge/rust_mark,/datum/eldritch_knowledge/ash_mark)
@@ -146,7 +146,7 @@
 /datum/eldritch_knowledge/flesh_blade_upgrade
 	name = "Bleeding Steel"
 	gain_text = "It rained blood, that's when I understood the gravekeeper's advice."
-	desc = "Your blade will now cause additional bleeding to those hit by it."
+	desc = "My blade will now cause additional bleeding to those hit by it."
 	cost = 2
 	next_knowledge = list(/datum/eldritch_knowledge/summon/stalker)
 	banned_knowledge = list(/datum/eldritch_knowledge/ash_blade_upgrade,/datum/eldritch_knowledge/rust_blade_upgrade)
@@ -163,7 +163,7 @@
 /datum/eldritch_knowledge/summon/raw_prophet
 	name = "Raw Ritual"
 	gain_text = "The uncanny man walks alone in the valley, I was able to call his aid."
-	desc = "You can now summon a Raw Prophet using eyes, a left arm, right arm and a pool of blood using a transmutation circle. Raw prophets have increased seeing range, and can see through walls. They can jaunt long distances, though they are fragile."
+	desc = "I can now summon a Raw Prophet using eyes, a left arm, right arm and a pool of blood using a transmutation circle. Raw prophets have increased seeing range, and can see through walls. They can jaunt long distances, though they are fragile."
 	cost = 1
 	required_atoms = list(/obj/item/organ/eyes,/obj/item/bodypart/l_arm,/obj/item/bodypart/r_arm,/obj/effect/decal/cleanable/blood)
 	mob_to_summon = /mob/living/simple_animal/hostile/eldritch/raw_prophet
@@ -173,7 +173,7 @@
 /datum/eldritch_knowledge/summon/stalker
 	name = "Lonely Ritual"
 	gain_text = "I was able to combine my greed and desires to summon an eldritch beast I have not seen before."
-	desc = "You can now summon a Stalker using a knife, a flower, a pen and a piece of paper using a transmutation circle. Stalkers possess the ability to shapeshift into various forms while assuming the vigor and powers of that form."
+	desc = "I can now summon a Stalker using a knife, a flower, a pen and a piece of paper using a transmutation circle. Stalkers possess the ability to shapeshift into various forms while assuming the vigor and powers of that form."
 	cost = 1
 	required_atoms = list(/obj/item/kitchen/knife,/obj/item/reagent_containers/food/snacks/grown/poppy,/obj/item/pen,/obj/item/paper)
 	mob_to_summon = /mob/living/simple_animal/hostile/eldritch/stalker
@@ -183,7 +183,7 @@
 /datum/eldritch_knowledge/summon/ashy
 	name = "Ashen Ritual"
 	gain_text = "I combined principle of hunger with desire of destruction. The eyeful lords have noticed me."
-	desc = "You can now summon an Ashen One by transmuting a pile of ash, a head and a book using a transmutation circle. They possess the ability to jaunt short distances and create a cascade of flames."
+	desc = "I can now summon an Ashen One by transmuting a pile of ash, a head and a book using a transmutation circle. They possess the ability to jaunt short distances and create a cascade of flames."
 	cost = 1
 	required_atoms = list(/obj/effect/decal/cleanable/ash,/obj/item/bodypart/head,/obj/item/book)
 	mob_to_summon = /mob/living/simple_animal/hostile/eldritch/ash_spirit
@@ -192,7 +192,7 @@
 /datum/eldritch_knowledge/summon/rusty
 	name = "Rusted Ritual"
 	gain_text = "I combined principle of hunger with desire of corruption. The rusted hills call my name."
-	desc = "You can now summon a Rust Walker transmuting a vomit pool, a head, and a book using a transmutation circle. Rust Walkers possess the ability to spread rust and can fire bolts of rust to further corrode the area."
+	desc = "I can now summon a Rust Walker transmuting a vomit pool, a head, and a book using a transmutation circle. Rust Walkers possess the ability to spread rust and can fire bolts of rust to further corrode the area."
 	cost = 1
 	required_atoms = list(/obj/effect/decal/cleanable/vomit,/obj/item/bodypart/head,/obj/item/book)
 	mob_to_summon = /mob/living/simple_animal/hostile/eldritch/rust_spirit
@@ -201,7 +201,7 @@
 /datum/eldritch_knowledge/spell/blood_siphon
 	name = "Blood Siphon"
 	gain_text = "Our blood is all the same after all, the owl told me."
-	desc = "You are granted a spell that drains some of the targets health, and returns it to you. It also has a chance to transfer any wounds you possess onto the target."
+	desc = "I am granted a spell that drains some of the targets health, and returns it to you. It also has a chance to transfer any wounds you possess onto the target."
 	cost = 1
 	spell_to_add = /obj/effect/proc_holder/spell/targeted/touch/blood_siphon
 	next_knowledge = list(/datum/eldritch_knowledge/summon/raw_prophet,/datum/eldritch_knowledge/spell/area_conversion)
@@ -254,7 +254,7 @@
 /datum/eldritch_knowledge/flesh_blade_upgrade_2
 	name = "Remembrance"
 	gain_text = "Pain isn't something easily forgotten."
-	desc = "Your blade remembers more, and remembers how easily bones broke just as its flesh did, guaranteeing dislocated, or broken bones."
+	desc = "My blade remembers more, and remembers how easily bones broke just as its flesh did, guaranteeing dislocated, or broken bones."
 	cost = 2
 	next_knowledge = list(/datum/eldritch_knowledge/spell/touch_of_madness)
 	route = PATH_FLESH

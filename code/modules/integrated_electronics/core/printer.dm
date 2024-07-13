@@ -52,7 +52,7 @@
 		if(upgraded)
 			to_chat(user, span_warning("[src] already has this upgrade. "))
 			return TRUE
-		to_chat(user, span_notice("You install [O] into [src]. "))
+		to_chat(user, span_notice("I install [O] into [src]. "))
 		upgraded = TRUE
 		return TRUE
 
@@ -60,7 +60,7 @@
 		if(fast_clone)
 			to_chat(user, span_warning("[src] already has this upgrade. "))
 			return TRUE
-		to_chat(user, span_notice("You install [O] into [src]. Circuit cloning will now be instant. "))
+		to_chat(user, span_notice("I install [O] into [src]. Circuit cloning will now be instant. "))
 		fast_clone = TRUE
 		return TRUE
 
@@ -70,7 +70,7 @@
 			if(recycling)
 				return
 			if(!EA.opened)
-				to_chat(user, span_warning("You can't reach [EA]'s components to remove them!"))
+				to_chat(user, span_warning("I can't reach [EA]'s components to remove them!"))
 				return
 			if(EA.battery)
 				to_chat(user, span_warning("Remove [EA]'s power cell first!"))
@@ -80,7 +80,7 @@
 				if(!IC.removable)
 					to_chat(user, span_warning("[EA] has irremovable components in the casing, preventing you from emptying it."))
 					return
-			to_chat(user, span_notice("You begin recycling [EA]'s components..."))
+			to_chat(user, span_notice("I begin recycling [EA]'s components..."))
 			playsound(src, 'sound/items/electronic_assembly_emptying.ogg', 50, TRUE)
 			if(!do_after(user, 30, target = src) || recycling) //short channel so you don't accidentally start emptying out a complex assembly
 				return
@@ -97,7 +97,7 @@
 				playsound(src, 'sound/items/crowbar.ogg', 50, TRUE)
 				if(EA.try_remove_component(IC, user, TRUE))
 					mats.user_insert(IC, user)
-			to_chat(user, span_notice("You recycle all the components[EA.assembly_components.len ? " you could " : " "]from [EA]!"))
+			to_chat(user, span_notice("I recycle all the components[EA.assembly_components.len ? " you could " : " "]from [EA]!"))
 			playsound(src, 'sound/items/electronic_assembly_empty.ogg', 50, TRUE)
 			recycling = FALSE
 			return TRUE
@@ -200,7 +200,7 @@
 		var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
 
 		if(!debug && !materials.use_amount_mat(cost, /datum/material/iron))
-			to_chat(usr, span_warning("You need [cost] metal to build that!"))
+			to_chat(usr, span_warning("I need [cost] metal to build that!"))
 			return TRUE
 
 		var/obj/item/built = new build_type(drop_location())
@@ -275,11 +275,11 @@
 						cloning = TRUE
 						print_program(usr)
 					else
-						to_chat(usr, span_warning("You need [program["metal_cost"]] metal to build that!"))
+						to_chat(usr, span_warning("I need [program["metal_cost"]] metal to build that!"))
 				else
 					var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
 					if(!materials.use_amount_mat(program["metal_cost"], /datum/material/iron))
-						to_chat(usr, span_warning("You need [program["metal_cost"]] metal to build that!"))
+						to_chat(usr, span_warning("I need [program["metal_cost"]] metal to build that!"))
 						return
 					var/cloning_time = round(program["metal_cost"] / 15)
 					cloning_time = min(cloning_time, MAX_CIRCUIT_CLONE_TIME)

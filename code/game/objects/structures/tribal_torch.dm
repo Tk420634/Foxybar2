@@ -36,8 +36,8 @@
 		licker.IgniteMob()
 		licker.visible_message(
 			span_warning("[licker] burns their tongue on \the [src]!"),
-			span_danger("You lick \the [src], and it, of course, burns your tongue!"),
-			span_warning("You hear a sizzle!")
+			span_danger("I lick \the [src], and it, of course, burns your tongue!"),
+			span_warning("I hear a sizzle!")
 		)
 		return TRUE
 	return FALSE
@@ -50,15 +50,15 @@
 	if(.)
 		return
 	if(burning)
-		user.visible_message(span_notice("[user] snuffs [src] out."), span_notice("You snuff [src] out."))
+		user.visible_message(span_notice("[user] snuffs [src] out."), span_notice("I snuff [src] out."))
 		burning = FALSE
 		update_icon()
 		set_light(0)
 		return
 	if(!burning)
-		user.visible_message(span_notice("[user] starts to pull [src] free from the ground...."), span_notice("You start to pull [src] free from the ground..."))
+		user.visible_message(span_notice("[user] starts to pull [src] free from the ground...."), span_notice("I start to pull [src] free from the ground..."))
 		if(do_after(user, 20, progress = 1, target = src))
-			to_chat(user, span_notice("You pull [src] free from the ground."))
+			to_chat(user, span_notice("I pull [src] free from the ground."))
 			var/torch = new /obj/item/candle/tribal_torch
 			user.put_in_hands(torch)
 			qdel(src)
@@ -67,7 +67,7 @@
 /obj/structure/destructible/tribal_torch/attackby(obj/item/W, mob/user, params)
 	if(W.get_temperature())
 		StartBurning()
-		user.visible_message(span_notice("[user] lights [src] with [W]."), span_notice("You light [src] with [W]."))
+		user.visible_message(span_notice("[user] lights [src] with [W]."), span_notice("I light [src] with [W]."))
 		return
 	..()
 

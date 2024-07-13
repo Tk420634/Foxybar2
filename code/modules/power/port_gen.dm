@@ -176,7 +176,7 @@
 		if(amount < 1)
 			to_chat(user, span_notice("The [src.name] is full!"))
 			return
-		to_chat(user, span_notice("You add [amount] sheets to the [src.name]."))
+		to_chat(user, span_notice("I add [amount] sheets to the [src.name]."))
 		sheets += amount
 		addstack.use(amount)
 		return
@@ -185,11 +185,11 @@
 			if(!anchored && !isinspace())
 				anchored = TRUE
 				connect_to_network()
-				to_chat(user, span_notice("You secure the generator to the floor."))
+				to_chat(user, span_notice("I secure the generator to the floor."))
 			else if(anchored)
 				anchored = FALSE
 				disconnect_from_network()
-				to_chat(user, span_notice("You unsecure the generator from the floor."))
+				to_chat(user, span_notice("I unsecure the generator from the floor."))
 
 			playsound(src, 'sound/items/deconstruct.ogg', 50, TRUE)
 			return
@@ -197,9 +197,9 @@
 			panel_open = !panel_open
 			O.play_tool_sound(src)
 			if(panel_open)
-				to_chat(user, span_notice("You open the access panel."))
+				to_chat(user, span_notice("I open the access panel."))
 			else
-				to_chat(user, span_notice("You close the access panel."))
+				to_chat(user, span_notice("I close the access panel."))
 			return
 		else if(default_deconstruction_crowbar(O))
 			return

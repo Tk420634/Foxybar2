@@ -20,10 +20,10 @@ GLOBAL_VAR_INIT(normal_newbie_colour, "#ff00dd")
 			to_chat(usr, span_danger("NEWBIE for dead mobs has been turned off."))
 			return
 		if(prefs.muted & MUTE_NEWBIE)
-			to_chat(src, span_danger("You cannot use NEWBIE/HELP (muted)."))
+			to_chat(src, span_danger("I cannot use NEWBIE/HELP (muted)."))
 			return
 	if(jobban_isbanned(src.mob, "NEWBIE"))
-		to_chat(src, span_danger("You have been banned from NEWBIE/HELP."))
+		to_chat(src, span_danger("I have been banned from NEWBIE/HELP."))
 		return
 	if(QDELETED(src))
 		return
@@ -37,7 +37,7 @@ GLOBAL_VAR_INIT(normal_newbie_colour, "#ff00dd")
 	msg = emoji_parse(msg)
 
 	if((msg[1] in list(".",";",":","#")) || findtext_char(msg, "say", 1, 5))
-		if(alert("Your message \"[raw_msg]\" looks like it was meant for in game communication, say it in NEWBIE?", "Meant for NEWBIE?", "No", "Yes") != "Yes")
+		if(alert("My message \"[raw_msg]\" looks like it was meant for in game communication, say it in NEWBIE?", "Meant for NEWBIE?", "No", "Yes") != "Yes")
 			return
 
 	if(!holder)
@@ -50,7 +50,7 @@ GLOBAL_VAR_INIT(normal_newbie_colour, "#ff00dd")
 			return
 
 	if(!(prefs.chat_toggles & CHAT_NEWBIE))
-		to_chat(src, span_danger("You have NEWBIE muted."))
+		to_chat(src, span_danger("I have NEWBIE muted."))
 		return
 
 	mob.log_talk(raw_msg, LOG_OOC, tag="(NEWBIE)")

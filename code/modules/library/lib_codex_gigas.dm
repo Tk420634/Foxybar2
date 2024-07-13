@@ -25,7 +25,7 @@
 		to_chat(user, span_warning("As you are trying to read, you suddenly feel very stupid."))
 		return
 	if(!user.is_literate())
-		to_chat(user, span_notice("You skim through the book but can't comprehend any of it."))
+		to_chat(user, span_notice("I skim through the book but can't comprehend any of it."))
 		return
 	if(inUse)
 		to_chat(user, span_notice("Someone else is reading it."))

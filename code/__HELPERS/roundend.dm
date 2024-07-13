@@ -380,14 +380,14 @@
 					parts += "<span class='marooned'>You managed to survive the events in [station_name()]...</span>"
 				else
 					parts += "<div class='panel greenborder'>"
-					parts += span_greentext("You managed to survive the events in [station_name()] as [M.real_name].")
+					parts += span_greentext("I managed to survive the events in [station_name()] as [M.real_name].")
 			else
 				parts += "<div class='panel greenborder'>"
-				parts += span_greentext("You managed to survive the events in [station_name()] as [M.real_name].")
+				parts += span_greentext("I managed to survive the events in [station_name()] as [M.real_name].")
 
 		else
 			parts += "<div class='panel redborder'>"
-			parts += span_redtext("You did not survive the events in [station_name()]...")
+			parts += span_redtext("I did not survive the events in [station_name()]...")
 	else
 		parts += "<div class='panel stationborder'>"
 	parts += "<br>"

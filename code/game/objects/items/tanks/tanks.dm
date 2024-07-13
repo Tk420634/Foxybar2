@@ -32,7 +32,7 @@
 		return
 
 	if(H.internal == src)
-		to_chat(H, span_notice("You close [src] valve."))
+		to_chat(H, span_notice("I close [src] valve."))
 		H.internal = null
 		H.update_internals_hud_icon(0)
 	else
@@ -52,13 +52,13 @@
 					internals = TRUE
 
 			if(!internals)
-				to_chat(H, span_warning("You are not wearing an internals mask!"))
+				to_chat(H, span_warning("I am not wearing an internals mask!"))
 				return
 
 		if(H.internal)
-			to_chat(H, span_notice("You switch your internals to [src]."))
+			to_chat(H, span_notice("I switch your internals to [src]."))
 		else
-			to_chat(H, span_notice("You open [src] valve."))
+			to_chat(H, span_notice("I open [src] valve."))
 		H.internal = src
 		H.update_internals_hud_icon(1)
 	H.update_action_buttons_icon()

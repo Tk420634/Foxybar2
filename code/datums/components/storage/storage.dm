@@ -223,14 +223,14 @@
 		things = typecache_filter_list(things, typecacheof(I.type))
 	var/len = length(things)
 	if(!len)
-		to_chat(M, span_notice("You failed to pick up anything with [parent]."))
+		to_chat(M, span_notice("I failed to pick up anything with [parent]."))
 		return
 	var/my_bar = SSprogress_bars.add_bar(I.loc, list(), len, FALSE, FALSE)
 	var/list/rejections = list()
 	while(do_after(M, 10, TRUE, parent, FALSE, CALLBACK(src,PROC_REF(handle_mass_pickup), things, I.loc, rejections, my_bar)))
 		stoplag(1)
 	SSprogress_bars.remove_bar(my_bar)
-	to_chat(M, span_notice("You put everything you could [insert_preposition] [parent]."))
+	to_chat(M, span_notice("I put everything you could [insert_preposition] [parent]."))
 	A.do_squish(1.4, 0.4)
 
 /datum/component/storage/proc/handle_mass_item_insertion(list/things, datum/component/storage/src_object, mob/user, my_bar)
@@ -265,7 +265,7 @@
 			rejections += I.type	// therefore full bags are still a little spammy
 			continue
 
-		handle_item_insertion(I, TRUE)	//The TRUE stops the "You put the [parent] into [S]" insertion message from being displayed.
+		handle_item_insertion(I, TRUE)	//The TRUE stops the "I put the [parent] into [S]" insertion message from being displayed.
 
 		if (TICK_CHECK)
 			SSprogress_bars.update_bar(my_bar, things.len)
@@ -281,7 +281,7 @@
 	if(check_locked(null, M, TRUE))
 		return FALSE
 	A.add_fingerprint(M)
-	to_chat(M, span_notice("You start dumping out [parent]."))
+	to_chat(M, span_notice("I start dumping out [parent]."))
 	var/turf/T = get_turf(A)
 	var/list/things = get_quickempty_list()
 	var/my_bar = SSprogress_bars.add_bar(T, list(), length(things), FALSE, FALSE)
@@ -601,7 +601,7 @@
 		return
 	if(rustle_sound)
 		playsound(parent, "rustle", 50, 1, -5)
-	to_chat(user, span_notice("You put [I] [insert_preposition]to [parent]."))
+	to_chat(user, span_notice("I put [I] [insert_preposition]to [parent]."))
 	for(var/mob/viewing in fov_viewers(world.view, user)-M)
 		if(in_range(M, viewing)) //If someone is standing close enough, they can tell what it is...
 			viewing.show_message(span_notice("[M] puts [I] [insert_preposition]to [parent]."), MSG_VISUAL)
@@ -737,9 +737,9 @@
 		remove_from_storage(I, get_turf(user))
 		if(!user.put_in_hands(I))
 			user.visible_message(span_warning("[user] fumbles with the [parent], letting [I] fall on the floor."), \
-								span_notice("You fumble with [parent], letting [I] fall on the floor."))
+								span_notice("I fumble with [parent], letting [I] fall on the floor."))
 			return TRUE
-		user.visible_message(span_warning("[user] draws [I] from [parent]!"), span_notice("You draw [I] from [parent]."))
+		user.visible_message(span_warning("[user] draws [I] from [parent]!"), span_notice("I draw [I] from [parent]."))
 		return TRUE
 
 /datum/component/storage/proc/action_trigger(datum/action/source, obj/target)

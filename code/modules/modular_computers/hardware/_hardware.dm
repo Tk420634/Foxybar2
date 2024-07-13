@@ -41,7 +41,7 @@
 			to_chat(user, span_warning("\The [src] doesn't seem to require repairs."))
 			return 1
 		if(S.use(1))
-			to_chat(user, span_notice("You patch up \the [src] with a bit of \the [I]."))
+			to_chat(user, span_notice("I patch up \the [src] with a bit of \the [I]."))
 			obj_integrity = min(obj_integrity + 10, max_integrity)
 		return 1
 

@@ -921,7 +921,7 @@
 	pixel_y = 0;
 	pixel_x = -5
 	},
-/obj/item/storage/bag/tray/dice_cup,
+/obj/item/storage/bag/dice_cup,
 /turf/open/floor/carpet/black{
 	color = "#CCCCCC"
 	},

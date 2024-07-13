@@ -111,4 +111,4 @@
 	H.set_species(/datum/species/human)
 
 	if(!silent)
-		to_chat(H, "You are no longer a cat.")
+		to_chat(H, "I am no longer a cat.")

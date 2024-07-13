@@ -111,7 +111,7 @@ In my current plan for it, 'solid' will be defined as anything with density == 1
 /obj/effect/immovablerod/Bump(atom/clong)
 	if(prob(10))
 		playsound(src, 'sound/effects/bang.ogg', 50, 1)
-		audible_message(span_danger("You hear a CLANG!"))
+		audible_message(span_danger("I hear a CLANG!"))
 
 	if(clong && prob(25))
 		x = clong.x
@@ -159,7 +159,7 @@ In my current plan for it, 'solid' will be defined as anything with density == 1
 				wizard.apply_damage(25, BRUTE)
 				qdel(src)
 			else
-				U.visible_message(span_boldwarning("[U] suplexes [src] into the ground!"), span_warning("You suplex [src] into the ground!"))
+				U.visible_message(span_boldwarning("[U] suplexes [src] into the ground!"), span_warning("I suplex [src] into the ground!"))
 				new /obj/structure/festivus/anchored(drop_location())
 				new /obj/effect/anomaly/flux(drop_location())
 				qdel(src)

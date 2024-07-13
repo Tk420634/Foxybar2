@@ -236,7 +236,7 @@
 			return
 		if (R.time)
 			var/adjusted_time = 0
-			usr.visible_message(span_notice("[usr] starts building [R.title]."), span_notice("You start building [R.title]..."))
+			usr.visible_message(span_notice("[usr] starts building [R.title]."), span_notice("I start building [R.title]..."))
 			if(HAS_TRAIT(usr, R.trait_booster))
 				adjusted_time = (R.time * R.trait_modifier)
 			else
@@ -301,9 +301,9 @@
 /obj/item/stack/proc/building_checks(datum/stack_recipe/R, multiplier)
 	if (get_amount() < R.req_amount*multiplier)
 		if (R.req_amount*multiplier>1)
-			to_chat(usr, span_warning("You haven't got enough [src] to build \the [R.req_amount*multiplier] [R.title]\s!"))
+			to_chat(usr, span_warning("I haven't got enough [src] to build \the [R.req_amount*multiplier] [R.title]\s!"))
 		else
-			to_chat(usr, span_warning("You haven't got enough [src] to build \the [R.title]!"))
+			to_chat(usr, span_warning("I haven't got enough [src] to build \the [R.title]!"))
 		return FALSE
 	var/turf/T = get_turf(usr)
 
@@ -371,11 +371,11 @@
 		return FALSE
 	if(singular_name)
 		if(amount > 1)
-			to_chat(user, span_warning("You need at least [amount] [singular_name]\s to do this!"))
+			to_chat(user, span_warning("I need at least [amount] [singular_name]\s to do this!"))
 		else
-			to_chat(user, span_warning("You need at least [amount] [singular_name] to do this!"))
+			to_chat(user, span_warning("I need at least [amount] [singular_name] to do this!"))
 	else
-		to_chat(user, span_warning("You need at least [amount] to do this!"))
+		to_chat(user, span_warning("I need at least [amount] to do this!"))
 	return FALSE
 
 /obj/item/stack/proc/zero_amount()
@@ -508,7 +508,7 @@
 			return TRUE
 		else
 			change_stack(user, stackmaterial)
-			to_chat(user, span_notice("You take [stackmaterial] sheets out of the stack"))
+			to_chat(user, span_notice("I take [stackmaterial] sheets out of the stack"))
 		return TRUE
 
 /obj/item/stack/proc/change_stack(mob/user, amount)
@@ -528,7 +528,7 @@
 	if(can_merge(W, TRUE))
 		var/obj/item/stack/S = W
 		if(merge(S))
-			to_chat(user, span_notice("Your [S.name] stack now contains [S.get_amount()] [S.singular_name]\s."))
+			to_chat(user, span_notice("My [S.name] stack now contains [S.get_amount()] [S.singular_name]\s."))
 	else
 		. = ..()
 

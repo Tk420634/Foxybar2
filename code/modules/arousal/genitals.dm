@@ -12,8 +12,8 @@
 	var/hide_flag = HIDE_MISC
 	var/masturbation_verb = "masturbate"
 	var/orgasm_verb = "cumming" //present continous
-	var/arousal_verb = "You feel aroused"
-	var/unarousal_verb = "You no longer feel aroused"
+	var/arousal_verb = "I feel aroused"
+	var/unarousal_verb = "I no longer feel aroused"
 	var/fluid_transfer_factor = 0 //How much would a partner get in them if they climax using this?
 	var/size = 2 //can vary between num or text, just used in icon_state strings
 	var/prev_size = 2 // the last size we were, for determining resizedness. should always be a number

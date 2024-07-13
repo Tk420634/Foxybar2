@@ -11,7 +11,7 @@
 	channel_time = 50
 	power_cost = 200
 	object_path = /obj/structure/destructible/clockwork/stargazer
-	creator_message = span_brass("You form a stargazer, which will generate power near starlight.")
+	creator_message = span_brass("I form a stargazer, which will generate power near starlight.")
 	observer_message = span_warning("A large lantern-shaped machine forms!")
 	usage_tip = "For obvious reasons, make sure to place this near a window or somewhere else that can see space!"
 	tier = SCRIPTURE_DRIVER
@@ -39,7 +39,7 @@
 	power_cost = 10
 	whispered = TRUE
 	object_path = /obj/item/clockwork/integration_cog
-	creator_message = span_brass("You form an integration cog, which can be inserted into an open APC to passively siphon power.")
+	creator_message = span_brass("I form an integration cog, which can be inserted into an open APC to passively siphon power.")
 	usage_tip = "Tampering isn't visible unless the APC is opened. You can use the cog on a locked APC to unlock it."
 	tier = SCRIPTURE_DRIVER
 	space_allowed = TRUE
@@ -170,7 +170,7 @@
 	invocations = list("Shield me...", "...from darkness!")
 	channel_time = 30
 	power_cost = 75
-	usage_tip = "You cannot reactivate Vanguard while still shielded by it."
+	usage_tip = "I cannot reactivate Vanguard while still shielded by it."
 	tier = SCRIPTURE_DRIVER
 	primary_component = VANGUARD_COGWHEEL
 	sort_priority = 8
@@ -179,7 +179,7 @@
 
 /datum/clockwork_scripture/vanguard/check_special_requirements()
 	if(!GLOB.ratvar_awakens && islist(invoker.stun_absorption) && invoker.stun_absorption["vanguard"] && invoker.stun_absorption["vanguard"]["end_time"] > world.time)
-		to_chat(invoker, span_warning("You are already shielded by a Vanguard!"))
+		to_chat(invoker, span_warning("I am already shielded by a Vanguard!"))
 		return FALSE
 	return TRUE
 
@@ -240,7 +240,7 @@
 		to_chat(invoker, span_danger("You're at Reebe, attempting to warp in the void could cause you to share your masters fate of banishment!."))
 		return
 	if(!isturf(invoker.loc))
-		to_chat(invoker, span_danger("You must be visible to warp!"))
+		to_chat(invoker, span_danger("I must be visible to warp!"))
 		return
 	return TRUE
 
@@ -274,7 +274,7 @@
 	power_cost = 25
 	whispered = TRUE
 	object_path = /obj/item/clockwork/slab
-	creator_message = span_brass("You copy a piece of replicant alloy and command it into a new slab.")
+	creator_message = span_brass("I copy a piece of replicant alloy and command it into a new slab.")
 	usage_tip = "This is inefficient as a way to produce power, as the slab produced must be held by someone with no other slabs to produce any."
 	tier = SCRIPTURE_DRIVER
 	space_allowed = TRUE
@@ -295,7 +295,7 @@
 	power_cost = 50
 	whispered = TRUE
 	object_path = /obj/item/clothing/glasses/wraith_spectacles
-	creator_message = span_brass("You form a pair of wraith spectacles, which grant true sight but cause gradual vision loss.")
+	creator_message = span_brass("I form a pair of wraith spectacles, which grant true sight but cause gradual vision loss.")
 	usage_tip = "\"True sight\" means that you are able to see through walls and in darkness."
 	tier = SCRIPTURE_DRIVER
 	space_allowed = TRUE
@@ -325,7 +325,7 @@
 
 /datum/clockwork_scripture/spatial_gateway/check_special_requirements()
 	if(!isturf(invoker.loc))
-		to_chat(invoker, span_warning("You must not be inside an object to use this scripture!"))
+		to_chat(invoker, span_warning("I must not be inside an object to use this scripture!"))
 		return FALSE
 	var/other_servants = 0
 	for(var/mob/living/L in GLOB.alive_mob_list)

@@ -62,7 +62,7 @@
 				return
 
 			charging = W
-			user.visible_message("[user] inserts a cell into [src].", span_notice("You insert a cell into [src]."))
+			user.visible_message("[user] inserts a cell into [src].", span_notice("I insert a cell into [src]."))
 			update_icon()
 	else
 		if(!charging && default_deconstruction_screwdriver(user, icon_state, icon_state, W))
@@ -94,7 +94,7 @@
 	user.put_in_hands(charging)
 	charging.add_fingerprint(user)
 
-	user.visible_message("[user] removes [charging] from [src].", span_notice("You remove [charging] from [src]."))
+	user.visible_message("[user] removes [charging] from [src].", span_notice("I remove [charging] from [src]."))
 
 	removecell()
 
@@ -103,7 +103,7 @@
 		return
 
 	charging.forceMove(loc)
-	to_chat(user, span_notice("You telekinetically remove [charging] from [src]."))
+	to_chat(user, span_notice("I telekinetically remove [charging] from [src]."))
 
 	removecell()
 
@@ -112,7 +112,7 @@
 		return
 
 	charging.forceMove(loc)
-	to_chat(user, span_notice("You remotely disconnect the battery port and eject [charging] from [src]."))
+	to_chat(user, span_notice("I remotely disconnect the battery port and eject [charging] from [src]."))
 
 	removecell()
 	return

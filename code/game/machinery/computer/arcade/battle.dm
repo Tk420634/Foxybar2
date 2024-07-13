@@ -59,7 +59,7 @@
 		if (href_list["attack"])
 			blocked = TRUE
 			var/attackamt = rand(2,6)
-			temp = "You attack for [attackamt] damage!"
+			temp = "I attack for [attackamt] damage!"
 			playsound(loc, 'sound/arcade/hit.ogg', 10, 1, extrarange = -3, falloff_distance = 10)
 			updateUsrDialog()
 			if(turtle > 0)
@@ -73,7 +73,7 @@
 			blocked = TRUE
 			var/pointamt = rand(1,3)
 			var/healamt = rand(6,8)
-			temp = "You use [pointamt] magic to heal for [healamt] damage!"
+			temp = "I use [pointamt] magic to heal for [healamt] damage!"
 			playsound(loc, 'sound/arcade/heal.ogg', 10, 1, extrarange = -3, falloff_distance = 10)
 			updateUsrDialog()
 			turtle++
@@ -88,7 +88,7 @@
 		else if (href_list["charge"])
 			blocked = TRUE
 			var/chargeamt = rand(4,7)
-			temp = "You regain [chargeamt] points"
+			temp = "I regain [chargeamt] points"
 			playsound(loc, 'sound/arcade/mana.ogg', 10, 1, extrarange = -3, falloff_distance = 10)
 			player_mp += chargeamt
 			if(turtle > 0)
@@ -154,7 +154,7 @@
 		if (player_mp <= 0)
 			gameover = TRUE
 			sleep(turn_speed)
-			temp = "You have been drained! GAME OVER"
+			temp = "I have been drained! GAME OVER"
 			playsound(loc, 'sound/arcade/lose.ogg', 10, 1, extrarange = -3, falloff_distance = 10)
 			if(obj_flags & EMAGGED)
 				usr.gib()
@@ -174,7 +174,7 @@
 
 	if ((player_mp <= 0) || (player_hp <= 0))
 		gameover = TRUE
-		temp = "You have been crushed! GAME OVER"
+		temp = "I have been crushed! GAME OVER"
 		playsound(loc, 'sound/arcade/lose.ogg', 10, 1, extrarange = -3, falloff_distance = 10)
 		if(obj_flags & EMAGGED)
 			usr.gib()

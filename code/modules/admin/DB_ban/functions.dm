@@ -107,7 +107,7 @@
 
 	if(blockselfban)
 		if(a_ckey == ckey)
-			to_chat(usr, span_danger("You cannot apply this ban type on yourself."))
+			to_chat(usr, span_danger("I cannot apply this ban type on yourself."))
 			return
 
 	var/who
@@ -138,7 +138,7 @@
 			if (check_rights(R_PERMISSIONS, FALSE))
 				max_bans = MAX_ADMIN_BANS_PER_HEADMIN
 			if(adm_bans >= max_bans)
-				to_chat(usr, span_danger("You already logged [max_bans] admin ban(s) or more. Do not abuse this function!"))
+				to_chat(usr, span_danger("I already logged [max_bans] admin ban(s) or more. Do not abuse this function!"))
 				qdel(query_check_adminban_amt)
 				return
 		qdel(query_check_adminban_amt)

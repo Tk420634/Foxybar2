@@ -144,33 +144,33 @@
 	var/next_warning = 0
 	var/min_warning_cooldown = 120
 	var/max_warning_cooldown = 350
-	var/volume_warnings_stage_1 = list("You feel a dull pain in your abdomen.",
-									"You feel a tickling sensation in your abdomen.")
-	var/volume_warnings_stage_2 = list("You feel a dull pain in your stomach.",
-									"You feel a dull pain when breathing.",
-									"Your stomach grumbles.",
-									"You feel a tickling sensation in your throat.",
-									"You feel a tickling sensation in your lungs.",
-									"You feel a tickling sensation in your stomach.",
-									"Your lungs feel stiff.")
-	var/volume_warnings_stage_3 = list("You feel a dull pain in your chest.",
-									"You hear a faint buzzing coming from nowhere.",
-									"You hear a faint buzzing inside your head.",
-									"Your head aches.")
-	var/volume_warnings_stage_4 = list("You feel a dull pain in your ears.",
-									"You feel a dull pain behind your eyes.",
-									"You hear a loud, echoing buzz inside your ears.",
-									"You feel dizzy.",
-									"You feel an itch coming from behind your eyes.",
-									"Your eardrums itch.",
-									"You see tiny grey motes drifting in your field of view.")
-	var/volume_warnings_stage_5 = list("You feel sick.",
-									"You feel a dull pain from every part of your body.",
-									"You feel nauseous.")
-	var/volume_warnings_stage_6 = list("Your skin itches and burns.",
-									"Your muscles ache.",
-									"You feel tired.",
-									"You feel something skittering under your skin.",)
+	var/volume_warnings_stage_1 = list("I feel a dull pain in your abdomen.",
+									"I feel a tickling sensation in your abdomen.")
+	var/volume_warnings_stage_2 = list("I feel a dull pain in your stomach.",
+									"I feel a dull pain when breathing.",
+									"My stomach grumbles.",
+									"I feel a tickling sensation in your throat.",
+									"I feel a tickling sensation in your lungs.",
+									"I feel a tickling sensation in your stomach.",
+									"My lungs feel stiff.")
+	var/volume_warnings_stage_3 = list("I feel a dull pain in your chest.",
+									"I hear a faint buzzing coming from nowhere.",
+									"I hear a faint buzzing inside your head.",
+									"My head aches.")
+	var/volume_warnings_stage_4 = list("I feel a dull pain in your ears.",
+									"I feel a dull pain behind your eyes.",
+									"I hear a loud, echoing buzz inside your ears.",
+									"I feel dizzy.",
+									"I feel an itch coming from behind your eyes.",
+									"My eardrums itch.",
+									"I see tiny grey motes drifting in your field of view.")
+	var/volume_warnings_stage_5 = list("I feel sick.",
+									"I feel a dull pain from every part of your body.",
+									"I feel nauseous.")
+	var/volume_warnings_stage_6 = list("My skin itches and burns.",
+									"My muscles ache.",
+									"I feel tired.",
+									"I feel something skittering under your skin.",)
 
 /datum/nanite_program/protocol/unsafe_storage/enable_passive_effect()
 	. = ..()

@@ -75,7 +75,7 @@
 	src.cards -= choice
 	H.pickup(user)
 	user.put_in_hands(H)
-	user.visible_message("[user] draws a card from the deck.", span_notice("You draw a card from the deck."))
+	user.visible_message("[user] draws a card from the deck.", span_notice("I draw a card from the deck."))
 	update_icon()
 
 /obj/item/toy/cards/deck/cas/attackby(obj/item/I, mob/living/user, params)
@@ -89,7 +89,7 @@
 		RC.name = "[SC.name]"
 		RC.card_icon = SC.card_face
 		cards += RC
-		user.visible_message("[user] adds a card to the bottom of the deck.",span_notice("You add the card to the bottom of the deck."))
+		user.visible_message("[user] adds a card to the bottom of the deck.",span_notice("I add the card to the bottom of the deck."))
 		qdel(SC)
 	update_icon()
 
@@ -145,10 +145,10 @@
 /obj/item/toy/cards/singlecard/cas/attackby(obj/item/I, mob/living/user, params)
 	if(istype(I, /obj/item/pen))
 		if(!user.is_literate())
-			to_chat(user, span_notice("You scribble illegibly on [src]!"))
+			to_chat(user, span_notice("I scribble illegibly on [src]!"))
 			return
 		if(!blank)
-			to_chat(user, "You cannot write on that card.")
+			to_chat(user, "I cannot write on that card.")
 			return
 		var/cardtext = stripped_input(user, "What do you wish to write on the card?", "Card Writing", "", 50)
 		if(!cardtext || !user.canUseTopic(src, BE_CLOSE))

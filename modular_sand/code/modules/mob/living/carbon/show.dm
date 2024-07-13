@@ -15,6 +15,6 @@
 	if(!I && arm)
 		usr.show_message("[usr] holds up [arm].", 1)
 	else if(!arm && !I)
-		to_chat(usr, span_notice("You frown because now there's nothing you can show."))
+		to_chat(usr, span_notice("I frown because now there's nothing you can show."))
 	else if(!HAS_TRAIT(I, ABSTRACT_ITEM_TRAIT))
 		I.showoff(src)

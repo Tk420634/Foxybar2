@@ -190,7 +190,7 @@
 	node["call"] = func
 
 	if(tokenl(i) != "on")
-		return parse_error("You need to specify what to call ON.")
+		return parse_error("I need to specify what to call ON.")
 
 	var/list/select = list()
 	i = object_selectors(i + 1, select)

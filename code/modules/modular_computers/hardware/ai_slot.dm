@@ -28,13 +28,13 @@
 		return FALSE
 
 	if(stored_card)
-		to_chat(user, span_warning("You try to insert \the [I] into \the [src], but the slot is occupied."))
+		to_chat(user, span_warning("I try to insert \the [I] into \the [src], but the slot is occupied."))
 		return FALSE
 	if(user && !user.transferItemToLoc(I, src))
 		return FALSE
 
 	stored_card = I
-	to_chat(user, span_notice("You insert \the [I] into \the [src]."))
+	to_chat(user, span_notice("I insert \the [I] into \the [src]."))
 
 	return TRUE
 
@@ -49,7 +49,7 @@
 		return FALSE
 
 	if(stored_card)
-		to_chat(user, span_notice("You remove [stored_card] from [src]."))
+		to_chat(user, span_notice("I remove [stored_card] from [src]."))
 		locked = FALSE
 		if(user)
 			user.put_in_hands(stored_card)
@@ -64,6 +64,6 @@
 	if(..())
 		return
 	if(I.tool_behaviour == TOOL_SCREWDRIVER)
-		to_chat(user, span_notice("You press down on the manual eject button with \the [I]."))
+		to_chat(user, span_notice("I press down on the manual eject button with \the [I]."))
 		try_eject(,user,1)
 		return

@@ -525,7 +525,7 @@
 		owner.put_in_hands(I)
 		I.attack_self(owner)
 	else
-		to_chat(owner, span_cultitalic("Your hands are full!"))
+		to_chat(owner, span_cultitalic("My hands are full!"))
 
 //MGS Box
 /datum/action/item_action/agent_box
@@ -620,7 +620,7 @@
 			apc.update_icon()
 	H.stealthcooldown = world.time + 15 SECONDS
 	H.toggle_eyes()
-	to_chat(owner,span_notice("You toggle the hijack implant's stealthmode [H.stealthmode ? "on" : "off"]."))
+	to_chat(owner,span_notice("I toggle the hijack implant's stealthmode [H.stealthmode ? "on" : "off"]."))
 
 /datum/action/item_action/flash
 	name = "Flash"

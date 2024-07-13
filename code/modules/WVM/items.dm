@@ -17,7 +17,7 @@
 	if(istype(P, /obj/item/pen) || istype(P, /obj/item/toy/crayon))
 		var/newkeyname = input(usr, "Input a new key name", "Name change", name) as null|text
 		set_name(newkeyname)
-		to_chat(usr, "You changed the name to - " + name)
+		to_chat(usr, "I changed the name to - " + name)
 
 // -- Lock --
 /obj/item/lock_part

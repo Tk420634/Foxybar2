@@ -21,4 +21,4 @@
 		return
 	link_comp.smooth_sailing = TRUE
 	playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, 0)
-	to_chat(usr, span_notice("You insert the disk into the flight computer, allowing you to not be thrown around like a ragdoll when launching."))
+	to_chat(usr, span_notice("I insert the disk into the flight computer, allowing you to not be thrown around like a ragdoll when launching."))

@@ -18,5 +18,5 @@
 		O.update_mobility()
 		return TRUE
 	else
-		to_chat(owner,span_notice("You shouldn't have this!"))
+		to_chat(owner,span_notice("I shouldn't have this!"))
 		return FALSE

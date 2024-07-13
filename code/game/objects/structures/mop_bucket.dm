@@ -18,7 +18,7 @@
 			to_chat(user, "[src] is out of water!</span>")
 		else
 			reagents.trans_to(I, 5)
-			to_chat(user, span_notice("You wet [I] in [src]."))
+			to_chat(user, span_notice("I wet [I] in [src]."))
 			playsound(loc, 'sound/effects/slosh.ogg', 25, 1)
 			update_icon()
 	else

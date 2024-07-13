@@ -98,7 +98,7 @@
 				if(!user.transferItemToLoc(O, src))
 					return
 				beaker = O
-				to_chat(user, span_notice("You add the container to the machine."))
+				to_chat(user, span_notice("I add the container to the machine."))
 				update_icon()
 		else
 			to_chat(user, span_warning("Close the maintenance panel first."))
@@ -118,11 +118,11 @@
 				if(SEND_SIGNAL(PB, COMSIG_TRY_STORAGE_TAKE, G, src))
 					i++
 			if(i<max_items)
-				to_chat(user, span_info("You empty the plant bag into the biogenerator."))
+				to_chat(user, span_info("I empty the plant bag into the biogenerator."))
 			else if(PB.contents.len == 0)
-				to_chat(user, span_info("You empty the plant bag into the biogenerator, filling it to its capacity."))
+				to_chat(user, span_info("I empty the plant bag into the biogenerator, filling it to its capacity."))
 			else
-				to_chat(user, span_info("You fill the biogenerator to its capacity."))
+				to_chat(user, span_info("I fill the biogenerator to its capacity."))
 		return TRUE //no afterattack
 
 	else if(istype(O, /obj/item/reagent_containers/food/snacks/grown))
@@ -133,12 +133,12 @@
 			to_chat(user, span_warning("The biogenerator is full! Activate it."))
 		else
 			if(user.transferItemToLoc(O, src))
-				to_chat(user, span_info("You put [O.name] in [src.name]"))
+				to_chat(user, span_info("I put [O.name] in [src.name]"))
 		return TRUE //no afterattack
 	else if (istype(O, /obj/item/disk/design_disk))
 		user.visible_message(span_notice("[user] begins to load \the [O] in \the [src]..."),
-			span_notice("You begin to load a design from \the [O]..."),
-			span_hear("You hear the chatter of a floppy drive."))
+			span_notice("I begin to load a design from \the [O]..."),
+			span_hear("I hear the chatter of a floppy drive."))
 		processing = TRUE
 		var/obj/item/disk/design_disk/D = O
 		if(do_after(user, 10, target = src))
@@ -148,7 +148,7 @@
 		processing = FALSE
 		return TRUE
 	else
-		to_chat(user, span_warning("You cannot put this in [src.name]!"))
+		to_chat(user, span_warning("I cannot put this in [src.name]!"))
 
 /obj/machinery/biogenerator/AltClick(mob/living/user)
 	. = ..()

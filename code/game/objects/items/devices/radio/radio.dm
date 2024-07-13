@@ -456,7 +456,7 @@
 					keyslot = null
 
 			recalculateChannels()
-			to_chat(user, span_notice("You pop out the encryption key in the radio."))
+			to_chat(user, span_notice("I pop out the encryption key in the radio."))
 
 		else
 			to_chat(user, span_warning("This radio doesn't have any encryption keys!"))

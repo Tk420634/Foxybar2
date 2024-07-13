@@ -28,19 +28,19 @@
 		var/obj/item/stack/tile/plasteel/S = C
 		if(S.use(1))
 			playsound(src, 'sound/weapons/Genhit.ogg', 50, 1)
-			to_chat(user, span_notice("You build a floor."))
+			to_chat(user, span_notice("I build a floor."))
 			ChangeTurf(/turf/open/floor/plating)
 		else
-			to_chat(user, span_warning("You need one floor tile to build a floor!"))
+			to_chat(user, span_warning("I need one floor tile to build a floor!"))
 		return
 	if(istype(C,/obj/item/stack/tile/wood))
 		var/obj/item/stack/tile/wood/S = C
 		if(S.use(1))
 			playsound(src, 'sound/weapons/Genhit.ogg', 50, 1)
-			to_chat(user, span_notice("You build a house base."))
+			to_chat(user, span_notice("I build a house base."))
 			ChangeTurf(/turf/open/floor/plating/wooden)
 		else
-			to_chat(user, span_warning("You need one floor tile to build a house base!"))
+			to_chat(user, span_warning("I need one floor tile to build a house base!"))
 		return
 	else
 		return ..()
@@ -586,7 +586,7 @@ GLOBAL_LIST_INIT(junk_type_weighted, list(
 	// 	if(L.check_submerged() <= 0)
 	// 		return
 	// 	if(!istype(oldloc, /turf/open/indestructible/ground/outside/water))
-	// 		to_chat(L, span_warning("You get drenched in water!"))
+	// 		to_chat(L, span_warning("I get drenched in water!"))
 	AM.water_act(5)
 
 // /turf/open/indestructible/ground/outside/water/Exited(atom/movable/AM, atom/newloc)
@@ -597,7 +597,7 @@ GLOBAL_LIST_INIT(junk_type_weighted, list(
 // 		if(L.check_submerged() <= 0)
 // 			return
 // 		if(!istype(newloc, /turf/open/indestructible/ground/outside/water))
-// 			to_chat(L, span_warning("You climb out of \the [src]."))
+// 			to_chat(L, span_warning("I climb out of \the [src]."))
 
 /turf/open/indestructible/ground/outside/water/update_icon()
 	. = ..()
@@ -609,13 +609,13 @@ GLOBAL_LIST_INIT(junk_type_weighted, list(
 		L.DelayNextAction(CLICK_CD_MELEE)
 		if(!user.incapacitated(allow_crit = TRUE) && Adjacent(user))
 			user.visible_message(span_notice("[L] starts washing in \the [src]."),
-								span_notice("You start washing in \the [src]."),
-								span_notice("You hear splashing water and scrubbing."))
+								span_notice("I start washing in \the [src]."),
+								span_notice("I hear splashing water and scrubbing."))
 			playsound(user,"water_wade",100,TRUE)
 			if(do_after(user,5 SECONDS, TRUE, src, TRUE,allow_movement=FALSE,stay_close=TRUE))
 				give_mob_washies(L)
 				user.visible_message(span_notice("[L] finishes washing in \the [src]."),
-									span_notice("You finish washing in \the [src]."),
+									span_notice("I finish washing in \the [src]."),
 									span_notice("The splashing and scrubbing stops."))
 				playsound(user,"water_wade",100,TRUE)
 

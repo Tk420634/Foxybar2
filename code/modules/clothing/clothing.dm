@@ -129,9 +129,9 @@
 				repair(user, params)
 			if(CLOTHING_SHREDDED)
 				if(S.amount < 3)
-					to_chat(user, span_warning("You require 3 [S.name] to repair [src]."))
+					to_chat(user, span_warning("I require 3 [S.name] to repair [src]."))
 					return
-				to_chat(user, span_notice("You begin fixing the damage to [src] with [S]..."))
+				to_chat(user, span_notice("I begin fixing the damage to [src] with [S]..."))
 				if(do_after(user, 6 SECONDS, TRUE, src))
 					if(S.use(3))
 						repair(user, params)
@@ -139,13 +139,13 @@
 
 	if(LAZYLEN(salvage_loot) && (W.tool_behaviour == salvage_tool_behavior))
 		user.visible_message("[user] begins recycling the [src].", \
-				span_notice("You begin recycling the [src]."), \
-				span_italic("You hear the noise of a [salvage_tool_behavior] working on metal and ceramic."))
+				span_notice("I begin recycling the [src]."), \
+				span_italic("I hear the noise of a [salvage_tool_behavior] working on metal and ceramic."))
 		W.play_tool_sound(get_turf(src))
 		if(!do_after(user, 60, TRUE, src))
 			return
 		drop_salvage()
-		to_chat(user, span_notice("You finish recycling \the [src]."))
+		to_chat(user, span_notice("I finish recycling \the [src]."))
 		qdel(src)
 		return TRUE
 
@@ -161,7 +161,7 @@
 	damage_by_parts = null
 	if(user)
 		UnregisterSignal(user, COMSIG_MOVABLE_MOVED)
-		to_chat(user, span_notice("You fix the damage on [src]."))
+		to_chat(user, span_notice("I fix the damage on [src]."))
 
 /**
  * take_damage_zone() is used for dealing damage to specific bodyparts on a worn piece of clothing, meant to be called from [/obj/item/bodypart/proc/check_woundings_mods()]
@@ -286,7 +286,7 @@
 		how_cool_are_your_threads += "[src] can store [pockets.max_items] item\s.\n"
 		how_cool_are_your_threads += "[src] can store items that are [weightclass2text(pockets.max_w_class)] or smaller.\n"
 		if(pockets.quickdraw)
-			how_cool_are_your_threads += "You can quickly remove an item from [src] using Alt-Click.\n"
+			how_cool_are_your_threads += "I can quickly remove an item from [src] using Alt-Click.\n"
 		if(pockets.silent)
 			how_cool_are_your_threads += "Adding or removing items from [src] makes no noise.\n"
 		how_cool_are_your_threads += "</span>"
@@ -360,7 +360,7 @@
 	update_clothes_damaged_state()
 	if(ismob(loc)) //It's not important enough to warrant a message if nobody's wearing it
 		var/mob/M = loc
-		to_chat(M, span_warning("Your [name] starts to fall apart!"))
+		to_chat(M, span_warning("My [name] starts to fall apart!"))
 
 //This mostly exists so subtypes can call appriopriate update icon calls on the wearer.
 /obj/item/clothing/proc/update_clothes_damaged_state(damaged_state = CLOTHING_DAMAGED)
@@ -410,7 +410,7 @@ BLIND     // can't see anything
 
 	visor_toggling()
 
-	to_chat(user, span_notice("You adjust \the [src] [up ? "up" : "down"]."))
+	to_chat(user, span_notice("I adjust \the [src] [up ? "up" : "down"]."))
 
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
@@ -488,7 +488,7 @@ BLIND     // can't see anything
 					wearable = TRUE
 
 			if(!wearable)
-				to_chat(M, span_warning("Your species cannot wear [src]."))
+				to_chat(M, span_warning("My species cannot wear [src]."))
 				return FALSE
 
 	return TRUE

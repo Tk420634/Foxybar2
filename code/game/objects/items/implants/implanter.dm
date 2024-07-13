@@ -32,7 +32,7 @@
 			if(src && imp)
 				if(imp.implant(M, user))
 					if (M == user)
-						to_chat(user, span_notice("You implant yourself."))
+						to_chat(user, span_notice("I implant yourself."))
 					else
 						M.visible_message("[user] has implanted [M].", span_notice("[user] implants you."))
 					imp = null
@@ -43,7 +43,7 @@
 /obj/item/implanter/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/pen))
 		if(!user.is_literate())
-			to_chat(user, span_notice("You prod at [src] with [W]!"))
+			to_chat(user, span_notice("I prod at [src] with [W]!"))
 			return
 		var/t = stripped_input(user, "What would you like the label to be?", name, null)
 		if(user.get_active_held_item() != W)

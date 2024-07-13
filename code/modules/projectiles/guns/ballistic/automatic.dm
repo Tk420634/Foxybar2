@@ -55,11 +55,11 @@
 			if(user.transferItemToLoc(new_mag, src))
 				magazine = new_mag
 				if(oldmag)
-					to_chat(user, span_notice("You perform a tactical reload on \the [src], replacing the magazine."))
+					to_chat(user, span_notice("I perform a tactical reload on \the [src], replacing the magazine."))
 					oldmag.forceMove(get_turf(src.loc))
 					oldmag.update_icon()
 				else
-					to_chat(user, span_notice("You insert the magazine into \the [src]."))
+					to_chat(user, span_notice("I insert the magazine into \the [src]."))
 
 				playsound(user, 'sound/weapons/autoguninsert.ogg', 60, 1)
 				chamber_round()
@@ -67,7 +67,7 @@
 				update_icon()
 				return 1
 			else
-				to_chat(user, span_warning("You cannot seem to get \the [src] out of your hands!")) */
+				to_chat(user, span_warning("I cannot seem to get \the [src] out of your hands!")) */
 
 /obj/item/gun/ballistic/automatic/can_shoot()
 	return get_ammo()
@@ -854,7 +854,7 @@
 	change_the_ammo(user)
 
 /obj/item/gun/ballistic/automatic/smg/sidewinder/proc/change_the_ammo(mob/user)
-	var/message2self = "You wrench the upper receiver of [src] out of its socket and give it one full turn."
+	var/message2self = "I wrench the upper receiver of [src] out of its socket and give it one full turn."
 	var/message2everyone = "[user] spins [user.p_their()] their gun around. It makes a wierd click."
 	switch(current_caliber)
 		if("22LR")
@@ -930,7 +930,7 @@
 	//fire_sound = 'sound/f13weapons/44mag.ogg'
 
 /obj/item/gun/ballistic/automatic/smg/sidewinder/magnum/change_the_ammo(mob/user)
-	var/message2self = "You wrench the upper receiver of [src] out of its socket and give it one full turn. "
+	var/message2self = "I wrench the upper receiver of [src] out of its socket and give it one full turn. "
 	var/message2everyone = "[user] spins [user.p_their()] their gun around. It makes a wierd click."
 	switch(current_caliber)
 		if("44")
@@ -1093,11 +1093,11 @@
 	stock = !stock
 	if(stock)
 		w_class = WEIGHT_CLASS_NORMAL
-		to_chat(user, "You unfold the stock.")
+		to_chat(user, "I unfold the stock.")
 		recoil_tag = SSrecoil.give_recoil_tag(RIFLE_RECOIL(1, 1))
 	else
 		w_class = WEIGHT_CLASS_SMALL
-		to_chat(user, "You fold the stock.")
+		to_chat(user, "I fold the stock.")
 		recoil_tag = SSrecoil.give_recoil_tag(init_recoil)
 	update_icon()
 
@@ -3638,7 +3638,7 @@
 
 /obj/item/gun/ballistic/automatic/m1919/attack_self(mob/user)
 	cover_open = !cover_open
-	to_chat(user, span_notice("You [cover_open ? "open" : "close"] [src]'s cover."))
+	to_chat(user, span_notice("I [cover_open ? "open" : "close"] [src]'s cover."))
 	if(cover_open)
 		playsound(user, 'sound/weapons/sawopen.ogg', 60, 1)
 	else
@@ -3665,7 +3665,7 @@
 		user.put_in_hands(magazine)
 		magazine = null
 		update_icon()
-		to_chat(user, span_notice("You remove the magazine from [src]."))
+		to_chat(user, span_notice("I remove the magazine from [src]."))
 		playsound(user, 'sound/weapons/magout.ogg', 60, 1)
 
 /obj/item/gun/ballistic/automatic/m1919/attackby(obj/item/A, mob/user, params)

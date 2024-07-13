@@ -54,9 +54,9 @@
 		return ..()
 
 	if(istype(W,/obj/item/kitchen/fork) || istype(W,/obj/item/melee/onehanded/knife) || istype(W,/obj/item/hand_item/healable/licker))
-		if(alert(U, "You sure you want to jam that in there?",,"Yes","No") == "Yes")
+		if(alert(U, "I sure you want to jam that in there?",,"Yes","No") == "Yes")
 			if(do_after(user, 10, 1, target = src))
-				U.visible_message(span_warning("[user] jams [W] into [src]!"), span_notice("You jam [W] into [src]!"))
+				U.visible_message(span_warning("[user] jams [W] into [src]!"), span_notice("I jam [W] into [src]!"))
 				U.transferItemToLoc(W,src)
 				playsound(get_turf(src), "sparks", 40, 1)
 				if(cell && cell.charge)
@@ -83,7 +83,7 @@
 
 	if(is_type_in_typecache(W,toastables))
 		if(user.transferItemToLoc(W, src))
-			U.visible_message(span_notice("[user] slides [W] smoothly into [src]."), span_notice("You slide [W] smoothly into [src]."))
+			U.visible_message(span_notice("[user] slides [W] smoothly into [src]."), span_notice("I slide [W] smoothly into [src]."))
 			is_toasting = 1
 			addtimer(CALLBACK(src,PROC_REF(toasterize)),toast_time)
 			return

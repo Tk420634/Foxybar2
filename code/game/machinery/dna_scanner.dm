@@ -35,7 +35,7 @@
 		if(scan_level >= 3)
 			. += span_notice("Scanner has been upgraded to support autoprocessing.")
 	if(!HAS_TRAIT(user, TRAIT_CHEMWHIZ))
-		to_chat(user, span_alert("You don't know how this works, you're not enough of a [span_notice("whiz")]."))
+		to_chat(user, span_alert("I don't know how this works, you're not enough of a [span_notice("whiz")]."))
 
 /obj/machinery/dna_scannernew/update_icon_state()
 	//no power or maintenance
@@ -74,15 +74,15 @@
 	if(!locked)
 		open_machine()
 		return
-	user.visible_message(span_notice("You see [user] kicking against the door of [src]!"), \
-		span_notice("You lean on the back of [src] and start pushing the door open... (this will take about [DisplayTimeText(breakout_time)].)"), \
-		span_hear("You hear a metallic creaking from [src]."))
+	user.visible_message(span_notice("I see [user] kicking against the door of [src]!"), \
+		span_notice("I lean on the back of [src] and start pushing the door open... (this will take about [DisplayTimeText(breakout_time)].)"), \
+		span_hear("I hear a metallic creaking from [src]."))
 	if(do_after(user,(breakout_time), target = src))
 		if(!user || user.stat != CONSCIOUS || user.loc != src || state_open || !locked)
 			return
 		locked = FALSE
 		user.visible_message(span_warning("[user] successfully broke out of [src]!"), \
-			span_notice("You successfully break out of [src]!"))
+			span_notice("I successfully break out of [src]!"))
 		open_machine()
 
 /obj/machinery/dna_scannernew/proc/locate_computer(type_)
@@ -103,7 +103,7 @@
 	if(istype(mob_occupant))
 		if(locate_computer(/obj/machinery/computer/cloning))
 			if(!(HAS_TRAIT(mob_occupant, TRAIT_NOCLONE)) && !mob_occupant.hellbound)
-				mob_occupant.notify_ghost_cloning("Your corpse has been placed into a cloning scanner. Re-enter your corpse if you want to be cloned!", source = src)
+				mob_occupant.notify_ghost_cloning("My corpse has been placed into a cloning scanner. Re-enter your corpse if you want to be cloned!", source = src)
 
 
 	// DNA manipulators cannot operate on severed heads or brains
@@ -185,7 +185,7 @@
 
 /obj/item/disk/data/attack_self(mob/user)
 	read_only = !read_only
-	to_chat(user, span_notice("You flip the write-protect tab to [read_only ? "protected" : "unprotected"]."))
+	to_chat(user, span_notice("I flip the write-protect tab to [read_only ? "protected" : "unprotected"]."))
 
 /obj/item/disk/data/examine(mob/user)
 	. = ..()

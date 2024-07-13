@@ -103,7 +103,7 @@
 		if(!user.transferItemToLoc(O, src))
 			return
 		loaded_item = O
-		to_chat(user, span_notice("You add [O] to the machine."))
+		to_chat(user, span_notice("I add [O] to the machine."))
 		flick("h_lathe_load", src)
 
 /obj/machinery/rnd/experimentor/default_deconstruction_crowbar(obj/item/O)
@@ -475,7 +475,7 @@
 		if(globalMalf > 36 && globalMalf < 50)
 			visible_message(span_warning("Experimentor draws the life essence of those nearby!"))
 			for(var/mob/living/m in view(4,src))
-				to_chat(m, span_danger("You feel your flesh being torn from you, mists of blood drifting to [src]!"))
+				to_chat(m, span_danger("I feel your flesh being torn from you, mists of blood drifting to [src]!"))
 				m.apply_damage(50, BRUTE, BODY_ZONE_CHEST)
 				investigate_log("Experimentor has taken 50 brute a blood sacrifice from [m]", INVESTIGATE_EXPERIMENTOR)
 		if(globalMalf > 51 && globalMalf < 75)
@@ -562,7 +562,7 @@
 			if(!QDELETED(src))
 				addtimer(CALLBACK(src,PROC_REF(cd)), cooldownMax)
 	else
-		to_chat(user, span_notice("You aren't quite sure what to do with this yet."))
+		to_chat(user, span_notice("I amn't quite sure what to do with this yet."))
 
 /obj/item/relic/proc/cd()
 	cooldown = FALSE

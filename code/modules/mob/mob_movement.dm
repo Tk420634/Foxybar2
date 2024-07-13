@@ -248,7 +248,7 @@
 	if(backup.newtonian_move(turn(movement_dir, 180), instant = TRUE)) //You're pushing off something movable, so it moves
 		// We set it down here so future calls to Process_Spacemove by the same pair in the same tick don't lead to fucky
 		backup.last_pushoff = world.time
-		to_chat(src, span_info("You push off of [backup] to propel yourself."))
+		to_chat(src, span_info("I push off of [backup] to propel yourself."))
 	return TRUE
 
 /**
@@ -413,7 +413,7 @@
 		m_intent = MOVE_INTENT_WALK
 	else
 		if (HAS_TRAIT(src,TRAIT_NORUNNING))
-			to_chat(src, "You find yourself unable to run.")
+			to_chat(src, "I find yourself unable to run.")
 			return FALSE
 		m_intent = MOVE_INTENT_RUN
 	if(hud_used && hud_used.static_inventory)
@@ -431,23 +431,23 @@
 	set category = "IC"
 
 	// if(incapacitated(allow_crit = TRUE))
-	// 	to_chat(src, span_warning("You can't do that right now!"))
+	// 	to_chat(src, span_warning("I can't do that right now!"))
 	// 	return
 
 	if(layer >= MOB_LAYER_SHIFT_MAX)
-		to_chat(src, span_warning("You cannot increase your layer priority any further."))
+		to_chat(src, span_warning("I cannot increase your layer priority any further."))
 		return
 
 	layer += MOB_LAYER_SHIFT_INCREMENT
 	var/layer_priority = (layer - MOB_LAYER) * 100 // Just for text feedback
-	to_chat(src, span_notice("Your layer priority is now [layer_priority]."))
+	to_chat(src, span_notice("My layer priority is now [layer_priority]."))
 
 /mob/living/verb/layershift_reset()
 	set name = "Reset Layer"
 	set category = "IC"
 
 	// if(incapacitated(allow_crit = TRUE))
-	// 	to_chat(src, span_warning("You can't do that right now!"))
+	// 	to_chat(src, span_warning("I can't do that right now!"))
 	// 	return
 
 	if(lying)
@@ -455,23 +455,23 @@
 	else
 		layer = initial(layer)
 	var/layer_priority = (layer - MOB_LAYER) * 100 // Just for text feedback
-	to_chat(src, span_notice("Your layer priority is now [layer_priority]."))
+	to_chat(src, span_notice("My layer priority is now [layer_priority]."))
 
 /mob/living/verb/layershift_down()
 	set name = "Shift Layer Downwards"
 	set category = "IC"
 
 	// if(incapacitated(allow_crit = TRUE))
-	// 	to_chat(src, span_warning("You can't do that right now!"))
+	// 	to_chat(src, span_warning("I can't do that right now!"))
 	// 	return
 
 	if(layer <= MOB_LAYER_SHIFT_MIN)
-		to_chat(src, span_warning("You cannot decrease your layer priority any further."))
+		to_chat(src, span_warning("I cannot decrease your layer priority any further."))
 		return
 
 	layer -= MOB_LAYER_SHIFT_INCREMENT
 	var/layer_priority = (layer - MOB_LAYER) * 100 // Just for text feedback
-	to_chat(src, span_notice("Your layer priority is now [layer_priority]."))
+	to_chat(src, span_notice("My layer priority is now [layer_priority]."))
 	
 /mob/verb/up()
 	set name = "Move Upwards"
@@ -489,11 +489,11 @@
 		if(buckled)
 			to_chat(src, span_warning("[buckled] is is not capable of flight."))
 		else
-			to_chat(src, span_warning("You are not Superman."))
+			to_chat(src, span_warning("I am not Superman."))
 		return
 
 	if(zMove(UP, z_move_flags = ZMOVE_FLIGHT_FLAGS|ZMOVE_FEEDBACK|ventcrawling_flag))
-		to_chat(src, span_notice("You move upwards."))
+		to_chat(src, span_notice("I move upwards."))
 
 /mob/verb/down()
 	set name = "Move Down"
@@ -501,5 +501,5 @@
 
 	var/ventcrawling_flag = HAS_TRAIT(src, TRAIT_MOVE_VENTCRAWLING) ? ZMOVE_VENTCRAWLING : 0
 	if(zMove(DOWN, z_move_flags = ZMOVE_FLIGHT_FLAGS|ZMOVE_FEEDBACK|ventcrawling_flag))
-		to_chat(src, span_notice("You move down."))
+		to_chat(src, span_notice("I move down."))
 	return FALSE

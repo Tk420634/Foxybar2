@@ -229,7 +229,7 @@
 /mob/living/simple_animal/hostile/blob/blobbernaut/start_pulling(atom/movable/AM, state, force = pull_force, supress_message = FALSE)
 	if(!independent && ismob(AM))
 		if(!supress_message)
-			to_chat(src, span_warning("You are unable to grasp people in this form."))
+			to_chat(src, span_warning("I am unable to grasp people in this form."))
 		return FALSE
 	return ..()
 

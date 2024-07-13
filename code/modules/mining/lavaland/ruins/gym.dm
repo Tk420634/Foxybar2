@@ -49,7 +49,7 @@
 		playsound(user, 'sound/machines/click.ogg', 60, 1)
 		obj_flags &= ~IN_USE
 		user.pixel_y = 0
-		var/finishmessage = pick("You feel stronger!","You feel like you can take on the world!","You feel robust!","You feel indestructible!")
+		var/finishmessage = pick("I feel stronger!","I feel like you can take on the world!","I feel robust!","I feel indestructible!")
 		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "exercise", /datum/mood_event/exercise)
 		icon_state = initial(icon_state)
 		to_chat(user, finishmessage)
@@ -138,7 +138,7 @@
 		playsound(user, 'sound/machines/click.ogg', 60, 1)
 		obj_flags &= ~IN_USE
 		user.pixel_y = 0
-		var/finishmessage = pick("You feel stronger!","You feel like you can take on the world!","You feel robust!","You feel indestructible!")
+		var/finishmessage = pick("I feel stronger!","I feel like you can take on the world!","I feel robust!","I feel indestructible!")
 		icon_state = "fitnesslifter"
 		to_chat(user, finishmessage)
 		user.apply_status_effect(STATUS_EFFECT_EXERCISED)
@@ -186,7 +186,7 @@
 		playsound(user, 'sound/machines/click.ogg', 60, 1)
 		obj_flags &= ~IN_USE
 		animate(user, pixel_y = 0, time = 3)
-		var/finishmessage = pick("You feel stronger!","You feel like you can take on the world!","You feel robust!","You feel indestructible!")
+		var/finishmessage = pick("I feel stronger!","I feel like you can take on the world!","I feel robust!","I feel indestructible!")
 		icon_state = "fitnessweight"
 		cut_overlay(swole_overlay)
 		to_chat(user, "[finishmessage]")

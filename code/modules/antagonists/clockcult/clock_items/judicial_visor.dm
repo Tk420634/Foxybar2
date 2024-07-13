@@ -45,7 +45,7 @@
 		update_status(FALSE)
 	if(iscultist(user)) //Cultists spontaneously combust
 		to_chat(user, span_heavy_brass("\"Consider yourself judged, whelp.\""))
-		to_chat(user, span_userdanger("You suddenly catch fire!"))
+		to_chat(user, span_userdanger("I suddenly catch fire!"))
 		user.adjust_fire_stacks(5)
 		user.IgniteMob()
 	return 1
@@ -90,7 +90,7 @@
 		return 0
 	recharging = FALSE
 	if(user && src == user.get_item_by_slot(SLOT_GLASSES))
-		to_chat(user, span_brass("Your [name] hums. It is ready."))
+		to_chat(user, span_brass("My [name] hums. It is ready."))
 	else
 		active = FALSE
 	icon_state = "judicial_visor_[active]"
@@ -106,7 +106,7 @@
 /obj/effect/proc_holder/judicial_visor/proc/toggle(mob/user)
 	var/message
 	if(active)
-		message = span_brass("You dispel the power of [visor].")
+		message = span_brass("I dispel the power of [visor].")
 		remove_ranged_ability(message)
 	else
 		message = "<span class='brass'><i>You harness [visor]'s power.</i> <b>Left-click to place a judicial marker!</b></span>"
@@ -133,7 +133,7 @@
 			V.update_status()
 			addtimer(CALLBACK(V, TYPE_PROC_REF(/obj/item/clothing/glasses/judicial_visor,recharge_visor), ranged_ability_user), (GLOB.ratvar_awakens ? visor.recharge_cooldown*0.1 : visor.recharge_cooldown) * 2)
 		clockwork_say(ranged_ability_user, text2ratvar("Kneel, heathens!"))
-		ranged_ability_user.visible_message(span_warning("[ranged_ability_user]'s judicial visor fires a stream of energy at [target], creating a strange mark!"), span_heavy_brass("You direct [visor]'s power to [target]. You must wait for some time before doing this again."))
+		ranged_ability_user.visible_message(span_warning("[ranged_ability_user]'s judicial visor fires a stream of energy at [target], creating a strange mark!"), span_heavy_brass("I direct [visor]'s power to [target]. You must wait for some time before doing this again."))
 		var/turf/targetturf = get_turf(target)
 		new/obj/effect/clockwork/judicial_marker(targetturf, ranged_ability_user)
 		log_combat(ranged_ability_user, targetturf, "created a judicial marker")
@@ -148,7 +148,7 @@
 //Judicial marker: Created by the judicial visor. Immediately applies Belligerent and briefly knocks down, then after 3 seconds does large damage and briefly knocks down again
 /obj/effect/clockwork/judicial_marker
 	name = "judicial marker"
-	desc = "You get the feeling that you shouldn't be standing here."
+	desc = "I get the feeling that you shouldn't be standing here."
 	clockwork_desc = "A sigil that will soon erupt and smite any unenlightened nearby."
 	icon = 'icons/effects/96x96.dmi'
 	icon_state = ""
@@ -195,7 +195,7 @@
 		if(I)
 			if(isitem(I))
 				L.visible_message(span_warning("Strange energy flows into [L]'s [I.name]!"), \
-				span_userdanger("Your [I.name] shields you from [src]!"))
+				span_userdanger("My [I.name] shields you from [src]!"))
 			continue
 		L.DefaultCombatKnockdown(15) //knocks down briefly when exploding
 		if(!iscultist(L))

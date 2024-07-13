@@ -65,12 +65,12 @@
 					apply_cuffs(C, user, TRUE)
 				else
 					apply_cuffs(C, user)
-				to_chat(user, span_notice("You handcuff [C]."))
+				to_chat(user, span_notice("I handcuff [C]."))
 				SSblackbox.record_feedback("tally", "handcuffs", 1, type)
 
 				log_combat(user, C, "handcuffed")
 			else
-				to_chat(user, span_warning("You fail to handcuff [C]!"))
+				to_chat(user, span_warning("I fail to handcuff [C]!"))
 		else
 			to_chat(user, span_warning("[C] doesn't have two hands..."))
 
@@ -116,7 +116,7 @@
 	cuffsound = 'sound/weapons/cablecuff.ogg'
 
 /obj/item/restraints/handcuffs/cable/attack_self(mob/user)
-	to_chat(user, span_notice("You start unwinding the cable restraints back into coil"))
+	to_chat(user, span_notice("I start unwinding the cable restraints back into coil"))
 	if(!do_after(user, 25, TRUE, user))
 		return
 	qdel(src)
@@ -124,7 +124,7 @@
 	coil.amount = 15
 	user.put_in_hands(coil)
 	coil.color = color
-	to_chat(user, span_notice("You unwind the cable restraints back into coil"))
+	to_chat(user, span_notice("I unwind the cable restraints back into coil"))
 
 /obj/item/restraints/handcuffs/cable/red
 	color = "#ff0000"
@@ -164,24 +164,24 @@
 			var/obj/item/wirerod/W = new /obj/item/wirerod
 			remove_item_from_storage(user)
 			user.put_in_hands(W)
-			to_chat(user, span_notice("You wrap the cable restraint around the top of the rod."))
+			to_chat(user, span_notice("I wrap the cable restraint around the top of the rod."))
 			qdel(src)
 		else
-			to_chat(user, span_warning("You need one rod to make a wired rod!"))
+			to_chat(user, span_warning("I need one rod to make a wired rod!"))
 			return
 	else if(istype(I, /obj/item/stack/sheet/metal))
 		var/obj/item/stack/sheet/metal/M = I
 		if(M.get_amount() < 6)
-			to_chat(user, span_warning("You need at least six metal sheets to make good enough weights!"))
+			to_chat(user, span_warning("I need at least six metal sheets to make good enough weights!"))
 			return
-		to_chat(user, span_notice("You begin to apply [I] to [src]..."))
+		to_chat(user, span_notice("I begin to apply [I] to [src]..."))
 		if(do_after(user, 35, target = src))
 			if(M.get_amount() < 6 || !M)
 				return
 			var/obj/item/restraints/legcuffs/bola/S = new /obj/item/restraints/legcuffs/bola
 			M.use(6)
 			user.put_in_hands(S)
-			to_chat(user, span_notice("You make some weights out of [I] and tie them to [src]."))
+			to_chat(user, span_notice("I make some weights out of [I] and tie them to [src]."))
 			remove_item_from_storage(user)
 			qdel(src)
 	else
@@ -297,7 +297,7 @@
 		close_trap()
 		if(!thrown_at)
 			L.visible_message(span_danger("[L] triggers \the [src]."), \
-					span_userdanger("You trigger \the [src]!"))
+					span_userdanger("I trigger \the [src]!"))
 		else
 			L.visible_message(span_danger("\The [src] ensnares [L]!"), \
 					span_userdanger("\The [src] ensnares you!"))

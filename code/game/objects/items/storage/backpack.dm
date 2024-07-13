@@ -37,7 +37,7 @@
 
 /obj/item/storage/backpack
 	name = "hiking backpack"
-	desc = "You wear this on your back and put items into it."
+	desc = "I wear this on your back and put items into it."
 	icon_state = "backpack"
 	item_state = "backpack"
 	lefthand_file = 'icons/mob/inhands/equipment/backpack_lefthand.dmi'
@@ -100,19 +100,19 @@
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		return
 	if(!length(user.get_empty_held_indexes()))
-		to_chat(user, span_warning("Your hands are full!"))
+		to_chat(user, span_warning("My hands are full!"))
 		return
 	var/obj/item/throwing_star/L = locate() in contents
 	if(L)
 		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, L, user, FALSE)
 		user.put_in_hands(L)
-		to_chat(user, span_notice("You take a spear out of the quiver."))
+		to_chat(user, span_notice("I take a spear out of the quiver."))
 		return TRUE
 	var/obj/item/restraints/legcuffs/W = locate() in contents
 	if(W && contents.len > 0)
 		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, W, user, FALSE)
 		user.put_in_hands(W)
-		to_chat(user, span_notice("You take a bola out of the quiver."))
+		to_chat(user, span_notice("I take a bola out of the quiver."))
 	else
 		to_chat(user, span_notice("There is nothing left in the quiver."))
 	return TRUE

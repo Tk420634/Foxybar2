@@ -92,8 +92,8 @@
 	set_weapon()
 
 /mob/living/simple_animal/bot/ed209/set_custom_texts()
-	text_hack = "You disable [name]'s combat inhibitor."
-	text_dehack = "You restore [name]'s combat inhibitor."
+	text_hack = "I disable [name]'s combat inhibitor."
+	text_dehack = "I restore [name]'s combat inhibitor."
 	text_dehack_fail = "[name] ignores your attempts to restrict him!"
 
 /mob/living/simple_animal/bot/ed209/get_controls(mob/user)
@@ -196,7 +196,7 @@ Auto Patrol[]"},
 	. = ..()
 	if(emagged == 2)
 		if(user)
-			to_chat(user, span_warning("You short out [src]'s target assessment circuits."))
+			to_chat(user, span_warning("I short out [src]'s target assessment circuits."))
 			oldtarget_name = user.name
 		audible_message(span_danger("[src] buzzes oddly!"))
 		declare_arrests = FALSE

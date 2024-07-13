@@ -157,7 +157,7 @@
 
 /obj/item/reagent_containers/food/snacks/donut/jelly
 	name = "jelly donut"
-	desc = "You jelly?"
+	desc = "I jelly?"
 	icon_state = "jelly"
 	decorated_icon = "jelly_homer"
 	bonus_reagents = list(/datum/reagent/consumable/sugar = 1, /datum/reagent/consumable/nutriment/vitamin = 1)
@@ -256,7 +256,7 @@
 
 /obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly
 	name = "jelly donut"
-	desc = "You jelly?"
+	desc = "I jelly?"
 	icon_state = "jelly"
 	extra_reagent = /datum/reagent/toxin/slimejelly
 	foodtype = JUNKFOOD | GRAIN | FRIED | TOXIC | SUGAR | BREAKFAST
@@ -869,11 +869,11 @@
 	if(istype(I, /obj/item/reagent_containers/food/snacks/pancakes/))
 		var/obj/item/reagent_containers/food/snacks/pancakes/P = I
 		if((contents.len >= PANCAKE_MAX_STACK) || ((P.contents.len + contents.len) > PANCAKE_MAX_STACK) || (reagents.total_volume >= volume))
-			to_chat(user, span_warning("You can't add that many pancakes to [src]!"))
+			to_chat(user, span_warning("I can't add that many pancakes to [src]!"))
 		else
 			if(!user.transferItemToLoc(I, src))
 				return
-			to_chat(user, span_notice("You add the [I] to the [name]."))
+			to_chat(user, span_notice("I add the [I] to the [name]."))
 			P.name = initial(P.name)
 			contents += P
 			update_snack_overlays(P)

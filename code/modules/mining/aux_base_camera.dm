@@ -154,7 +154,7 @@
 	var/area/build_area = get_area(build_target)
 
 	if(!istype(build_area, /area/shuttle/auxillary_base))
-		to_chat(owner, span_warning("You can only build within the mining base!"))
+		to_chat(owner, span_warning("I can only build within the mining base!"))
 		return FALSE
 
 	if(!is_station_level(build_target.z))

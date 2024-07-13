@@ -57,7 +57,7 @@
 		to_chat(user, "Non players shouldn't be moving the flag!")
 		return
 	if(team in user.faction)
-		to_chat(user, "You can't move your own flag!")
+		to_chat(user, "I can't move your own flag!")
 		return
 	if(loc == user)
 		if(!user.dropItemToGround(src))
@@ -599,7 +599,7 @@
 
 /obj/effect/ctf/ammo
 	name = "ammo pickup"
-	desc = "You like revenge, right? Everybody likes revenge! Well, \
+	desc = "I like revenge, right? Everybody likes revenge! Well, \
 		let's go get some!"
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "at_shield1"
@@ -662,7 +662,7 @@
 
 /obj/machinery/control_point
 	name = "control point"
-	desc = "You should capture this."
+	desc = "I should capture this."
 	icon = 'icons/obj/machines/dominator.dmi'
 	icon_state = "dominator"
 	resistance_flags = INDESTRUCTIBLE

@@ -56,7 +56,7 @@
 			user.visible_message(span_notice("[user] revives [target] with [src], as a friendly legion."))
 			playsound(src,'sound/effects/supermatter.ogg',50,1)
 		else
-			(to_chat(user, span_notice("You cancel turning [target] into a legion.")))
+			(to_chat(user, span_notice("I cancel turning [target] into a legion.")))
 
 //rogue process
 /obj/item/crusher_trophy/brokentech
@@ -353,7 +353,7 @@
 /obj/item/melee/zweihander/attackby(obj/item/I, mob/living/user)
 	if(istype(I, /obj/item/crowbar))
 		if(LAZYLEN(trophies))
-			to_chat(user, span_notice("You remove [src]'s trophies."))
+			to_chat(user, span_notice("I remove [src]'s trophies."))
 			I.play_tool_sound(src)
 			for(var/t in trophies)
 				var/obj/item/crusher_trophy/T = t

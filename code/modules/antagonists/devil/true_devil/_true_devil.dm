@@ -78,9 +78,9 @@
 	if(stat == DEAD)
 		. += span_deadsay("The hellfire seems to have been extinguished, for now at least.")
 	else if(health < (maxHealth/10))
-		. += span_warning("You can see hellfire inside its gaping wounds.")
+		. += span_warning("I can see hellfire inside its gaping wounds.")
 	else if(health < (maxHealth/2))
-		. += span_warning("You can see hellfire inside its wounds.")
+		. += span_warning("I can see hellfire inside its wounds.")
 	. += "*---------*</span>"
 
 /mob/living/carbon/true_devil/IsAdvancedToolUser()
@@ -94,10 +94,10 @@
 
 /mob/living/carbon/true_devil/canUseTopic(atom/movable/M, be_close=FALSE, no_dextery=FALSE, no_tk=FALSE)
 	if(incapacitated())
-		to_chat(src, span_warning("You can't do that right now!"))
+		to_chat(src, span_warning("I can't do that right now!"))
 		return FALSE
 	if(be_close && !in_range(M, src))
-		to_chat(src, span_warning("You are too far away!"))
+		to_chat(src, span_warning("I am too far away!"))
 		return FALSE
 	return TRUE
 

@@ -60,7 +60,7 @@
 	mood_change = -8
 
 /datum/mood_event/disgust/bad_smell
-	description = span_warning("You smell something horribly decayed inside this room.")
+	description = span_warning("I smell something horribly decayed inside this room.")
 	mood_change = -3
 
 /datum/mood_event/disgust/nauseating_stench

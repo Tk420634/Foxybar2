@@ -25,7 +25,7 @@ This file contains the cult dagger and rune list code
 /obj/item/melee/cultblade/dagger/attack(mob/living/M, mob/living/user)
 	if(iscultist(M))
 		if(M.reagents && M.reagents.has_reagent(/datum/reagent/water/holywater)) //allows cultists to be rescued from the clutches of ordained religion
-			to_chat(user, span_cult("You remove the taint from [M].") )
+			to_chat(user, span_cult("I remove the taint from [M].") )
 			var/holy2unholy = M.reagents.get_reagent_amount(/datum/reagent/water/holywater)
 			M.reagents.del_reagent(/datum/reagent/water/holywater)
 			M.reagents.add_reagent(/datum/reagent/fuel/unholywater,holy2unholy)
@@ -60,7 +60,7 @@ This file contains the cult dagger and rune list code
 	if(!rune_to_scribe)
 		return
 	if(!iscultist(user, initial(rune_to_scribe.requires_full_power)))
-		to_chat(user, span_warning("You aren't strongly connected enough to Nar'sie to do draw this."))
+		to_chat(user, span_warning("I amn't strongly connected enough to Nar'sie to do draw this."))
 		return
 	if(initial(rune_to_scribe.req_keyword))
 		chosen_keyword = stripped_input(user, "Enter a keyword for the new rune.", "Words of Power")
@@ -103,7 +103,7 @@ This file contains the cult dagger and rune list code
 			return
 		var/confirm_final = alert(user, "This is the FINAL step to summon Nar'Sie; it is a long, painful ritual and the crew will be alerted to your presence", "Are you prepared for the final battle?", "My life for Nar'Sie!", "No")
 		if(confirm_final == "No")
-			to_chat(user, span_cult("You decide to prepare further before scribing the rune."))
+			to_chat(user, span_cult("I decide to prepare further before scribing the rune."))
 			return
 		Turf = get_turf(user)
 		A = get_area(src)
@@ -115,7 +115,7 @@ This file contains the cult dagger and rune list code
 			var/obj/structure/emergency_shield/sanguine/N = new(B)
 			shields += N
 	user.visible_message(span_warning("[user] [user.blood_volume ? "cuts open [user.p_their()] arm and begins writing in [user.p_their()] own blood":"begins sketching out a strange design"]!"), \
-						span_cult("You [user.blood_volume ? "slice open your arm and ":""]begin drawing a sigil of the Geometer."))
+						span_cult("I [user.blood_volume ? "slice open your arm and ":""]begin drawing a sigil of the Geometer."))
 	if(user.blood_volume)
 		user.apply_damage(initial(rune_to_scribe.scribe_damage), BRUTE, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
 	var/scribe_mod = initial(rune_to_scribe.scribe_delay)
@@ -130,7 +130,7 @@ This file contains the cult dagger and rune list code
 	if(!check_rune_turf(Turf, user))
 		return
 	user.visible_message(span_warning("[user] creates a strange circle[user.blood_volume ? " in [user.p_their()] own blood":""]."), \
-						span_cult("You finish drawing the arcane markings of the Geometer."))
+						span_cult("I finish drawing the arcane markings of the Geometer."))
 	for(var/V in shields)
 		var/obj/structure/emergency_shield/S = V
 		if(S && !QDELETED(S))
@@ -142,7 +142,7 @@ This file contains the cult dagger and rune list code
 
 /obj/item/melee/cultblade/dagger/proc/check_rune_turf(turf/T, mob/user)
 	if(isspaceturf(T))
-		to_chat(user, span_warning("You cannot scribe runes in space!"))
+		to_chat(user, span_warning("I cannot scribe runes in space!"))
 		return FALSE
 	if(locate(/obj/effect/rune) in T)
 		to_chat(user, span_cult("There is already a rune here."))

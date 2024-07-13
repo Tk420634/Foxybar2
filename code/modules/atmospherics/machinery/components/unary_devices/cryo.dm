@@ -276,14 +276,14 @@
 		return occupant
 
 /obj/machinery/atmospherics/components/unary/cryo_cell/container_resist(mob/living/user)
-	user.visible_message(span_notice("You see [user] kicking against the glass of [src]!"), \
-		span_notice("You struggle inside [src], kicking the release with your foot... (this will take about [DisplayTimeText(breakout_time)].)"), \
-		span_italic("You hear a thump from [src]."))
+	user.visible_message(span_notice("I see [user] kicking against the glass of [src]!"), \
+		span_notice("I struggle inside [src], kicking the release with your foot... (this will take about [DisplayTimeText(breakout_time)].)"), \
+		span_italic("I hear a thump from [src]."))
 	if(do_after(user, breakout_time, target = src))
 		if(!user || user.stat != CONSCIOUS || user.loc != src )
 			return
 		user.visible_message(span_warning("[user] successfully broke out of [src]!"), \
-			span_notice("You successfully break out of [src]!"))
+			span_notice("I successfully break out of [src]!"))
 		open_machine()
 
 /obj/machinery/atmospherics/components/unary/cryo_cell/examine(mob/user)
@@ -292,7 +292,7 @@
 		if(on)
 			. += "Someone's inside [src]!"
 		else
-			. += "You can barely make out a form floating in [src]."
+			. += "I can barely make out a form floating in [src]."
 	else
 		. += "[src] seems empty."
 
@@ -302,7 +302,7 @@
 	if(!CHECK_MOBILITY(target, MOBILITY_MOVE))
 		close_machine(target)
 	else
-		user.visible_message("<b>[user]</b> starts shoving [target] inside [src].", span_notice("You start shoving [target] inside [src]."))
+		user.visible_message("<b>[user]</b> starts shoving [target] inside [src].", span_notice("I start shoving [target] inside [src]."))
 		if (do_after(user, 25, target=target))
 			close_machine(target)
 
@@ -316,7 +316,7 @@
 			return
 		beaker = I
 		user.visible_message("[user] places [I] in [src].", \
-							span_notice("You place [I] in [src]."))
+							span_notice("I place [I] in [src]."))
 		var/reagentlist = pretty_string_from_reagent_list(I.reagents.reagent_list)
 		log_game("[key_name(user)] added an [I] to cryo containing [reagentlist]")
 		return

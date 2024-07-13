@@ -282,7 +282,7 @@
 		var/timeleft_to_identify = get_identify_time_left(user)
 		if(!timeleft_to_identify)
 			return
-		var/reply = span_notice("You figure it'll take about [timeleft_to_identify] more to truly understand this thing.")
+		var/reply = span_notice("I figure it'll take about [timeleft_to_identify] more to truly understand this thing.")
 		examine_list += reply
 		return
 	var/list/descs = list()
@@ -863,8 +863,8 @@
 	base_value = 300
 	chance_weight = 1
 	var/hp_change = 0
-	var/equip_message = "You feel stronger."
-	var/unequip_message = "You feel weaker."
+	var/equip_message = "I feel stronger."
+	var/unequip_message = "I feel weaker."
 
 /datum/artifact_effect/max_hp_modifier/apply_parameters(list/parameters = list())
 	if(!isnull(LAZYACCESS(parameters, ARTVAR_HP_CHANGE)))
@@ -1157,8 +1157,8 @@
 	chance_weight = 0 // doesnt actually work................... yet
 	var/multiplicative_slowdown = 0 // more is slower
 	var/my_unique_id = "bingus"
-	var/equip_message = "You feel faster."
-	var/unequip_message = "You feel slower."
+	var/equip_message = "I feel faster."
+	var/unequip_message = "I feel slower."
 
 /datum/artifact_effect/speed/New()
 	. = ..()
@@ -1579,12 +1579,12 @@
 /// PASSIVE DAMAGE DEALER - RANDOM TYPE EDITION ///
 /datum/artifact_effect/passive_damage/random
 	kind = ARTMOD_PASSIVE_DOT_RANDOM
-	// var/brute_flavor = "You feel a dull ache."
-	// var/burn_flavor = "You feel a burning sensation."
-	// var/toxin_flavor = "You feel sick."
-	// var/oxy_flavor = "You feel out of breath."
-	// var/clone_flavor = "You feel a worrying growth shift about."
-	// var/brain_flavor = "Your head aches."
+	// var/brute_flavor = "I feel a dull ache."
+	// var/burn_flavor = "I feel a burning sensation."
+	// var/toxin_flavor = "I feel sick."
+	// var/oxy_flavor = "I feel out of breath."
+	// var/clone_flavor = "I feel a worrying growth shift about."
+	// var/brain_flavor = "My head aches."
 
 /datum/artifact_effect/passive_damage/random/apply_parameters(list/parameters = list())
 	// if(!isnull(LAZYACCESS(parameters, ARTVAR_BRUTE_FLAVOR)))
@@ -1635,7 +1635,7 @@
 /datum/artifact_effect/passive_damage/random/send_message(mob/living/target, damtype, zone) */
 	// if(!prob(1))
 	// 	return
-	// var/msg_out = "You hurt."
+	// var/msg_out = "I hurt."
 	// switch(damtype)
 	// 	if(BRUTE)
 	// 		msg_out = brute_flavor

@@ -125,7 +125,7 @@
 		sleeper.ghostize(TRUE, voluntary = TRUE)
 
 /obj/structure/table/abductor/wabbajack/left
-	desc = "You sleep so it may wake."
+	desc = "I sleep so it may wake."
 
 /obj/structure/table/abductor/wabbajack/right
 	desc = "It wakes so you may sleep."
@@ -271,7 +271,7 @@
 		check_times -= AM
 		return
 	else
-		to_chat(AM, span_warning("You don't have enough money to enter the main shuttle. You'll have to fly coach."))
+		to_chat(AM, span_warning("I don't have enough money to enter the main shuttle. You'll have to fly coach."))
 		return ..()
 
 /mob/living/simple_animal/hostile/bear/fightpit

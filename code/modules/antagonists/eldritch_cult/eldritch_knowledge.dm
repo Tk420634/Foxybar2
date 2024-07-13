@@ -153,7 +153,7 @@
 		to_chat(user, span_warning("The items don't posses required fingerprints."))
 		return FALSE
 
-	var/chosen_mob = input("Select the person you wish to curse","Your target") as null|anything in sortList(compiled_list, GLOBAL_PROC_REF(cmp_mob_realname_dsc))
+	var/chosen_mob = input("Select the person you wish to curse","My target") as null|anything in sortList(compiled_list, GLOBAL_PROC_REF(cmp_mob_realname_dsc))
 	if(!chosen_mob)
 		return FALSE
 	curse(compiled_list[chosen_mob])
@@ -245,7 +245,7 @@
 	for(var/obj/item/living_heart/LH in atoms)
 
 		if(LH.target && LH.target.stat == DEAD)
-			to_chat(carbon_user,span_danger("Your patrons accepts your offer..."))
+			to_chat(carbon_user,span_danger("My patrons accepts your offer..."))
 			var/mob/living/carbon/human/H = LH.target
 			H.become_husk("burn") //Husks the target with removable husking, but causes a bunch of additional burn damage to prevent it from being 'too easy' to do
 			H.adjustFireLoss(200)
@@ -268,7 +268,7 @@
 			LH.target = targeted.current
 			qdel(A)
 			if(LH.target)
-				to_chat(user,span_warning("Your new target has been selected, go and sacrifice [LH.target.real_name]!"))
+				to_chat(user,span_warning("My new target has been selected, go and sacrifice [LH.target.real_name]!"))
 
 			else
 				to_chat(user,span_warning("target could not be found for living heart."))

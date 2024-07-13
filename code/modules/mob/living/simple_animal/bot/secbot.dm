@@ -205,8 +205,8 @@
 
 /mob/living/simple_animal/bot/secbot/set_custom_texts()
 
-	text_hack = "You overload [name]'s target identification system."
-	text_dehack = "You reboot [name] and restore the target identification."
+	text_hack = "I overload [name]'s target identification system."
+	text_dehack = "I reboot [name] and restore the target identification."
 	text_dehack_fail = "[name] refuses to accept your authority!"
 
 /mob/living/simple_animal/bot/secbot/get_controls(mob/user)
@@ -291,7 +291,7 @@ Auto Patrol: []"},
 			return
 	if(H.a_intent == INTENT_HELP && bot_accessory)
 
-		to_chat(H, span_warning("You knock [bot_accessory] off of [src]'s head!"))
+		to_chat(H, span_warning("I knock [bot_accessory] off of [src]'s head!"))
 		reset_fashion()
 		return
 
@@ -318,12 +318,12 @@ Auto Patrol: []"},
 		return
 
 	if(H.beepsky_fashion)
-		to_chat(user, span_warning("You set [H] on [src]."))
+		to_chat(user, span_warning("I set [H] on [src]."))
 		bot_accessory = H
 		H.forceMove(src)
 		apply_fashion(H.beepsky_fashion)
 	else
-		to_chat(user, span_warning("You set [H] on [src]'s head, but it falls off!"))
+		to_chat(user, span_warning("I set [H] on [src]'s head, but it falls off!"))
 		H.forceMove(drop_location())
 
 /mob/living/simple_animal/bot/secbot/regenerate_icons()
@@ -347,7 +347,7 @@ Auto Patrol: []"},
 	. = ..()
 	if(emagged == 2)
 		if(user)
-			to_chat(user, span_danger("You short out [src]'s target assessment circuits."))
+			to_chat(user, span_danger("I short out [src]'s target assessment circuits."))
 			oldtarget_name = user.name
 		audible_message(span_danger("[src] buzzes oddly!"))
 		declare_arrests = FALSE

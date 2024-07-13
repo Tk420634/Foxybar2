@@ -798,7 +798,7 @@
 	// This is a horrible pattern.
 	// Move loops should almost never need to be one offs. Please don't do this if you can help it
 	if(!istype(moving, /obj/structure/disposalholder))
-		stack_trace("You tried to make a [moving.type] object move like a disposals holder, stop that!")
+		stack_trace("I tried to make a [moving.type] object move like a disposals holder, stop that!")
 		return FALSE
 	return ..()
 

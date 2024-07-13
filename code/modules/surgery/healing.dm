@@ -46,7 +46,7 @@
 		var/datum/surgery/healing/the_surgery = surgery
 		var/woundtype_out = "[english_list(woundtype)]"
 		if(!the_surgery.antispam)
-			display_results(user, target, span_notice("You attempt to patch some of [target]'s [woundtype_out]."),
+			display_results(user, target, span_notice("I attempt to patch some of [target]'s [woundtype_out]."),
 		span_notice("[user] attempts to patch some of [target]'s [woundtype_out]."),
 		span_notice("[user] attempts to patch some of [target]'s [woundtype_out]."))
 
@@ -57,7 +57,7 @@
 				break
 
 /datum/surgery_step/heal/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	var/umsg = "You succeed in fixing some of [target]'s wounds" //no period, add initial space to "addons"
+	var/umsg = "I succeed in fixing some of [target]'s wounds" //no period, add initial space to "addons"
 	var/tmsg = "[user] fixes some of [target]'s wounds" //see above
 	var/urhealedamt_brute = brutehealing
 	var/urhealedamt_burn = burnhealing
@@ -87,7 +87,7 @@
 	return TRUE
 
 /datum/surgery_step/heal/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, span_warning("You screwed up!"),
+	display_results(user, target, span_warning("I screwed up!"),
 		span_warning("[user] screws up!"),
 		span_notice("[user] fixes some of [target]'s wounds."), TRUE)
 	var/urdamageamt_burn = (burnhealing * 0.8) + woundhealing
@@ -222,7 +222,7 @@
 	missinghpbonus = 2.5
 
 /datum/surgery_step/heal/combo/upgraded/femto/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, span_warning("You screwed up!"),
+	display_results(user, target, span_warning("I screwed up!"),
 		span_warning("[user] screws up!"),
 		span_notice("[user] fixes some of [target]'s wounds."), TRUE)
 	target.take_bodypart_damage(5,5)

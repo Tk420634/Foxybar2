@@ -22,7 +22,7 @@
 
 /obj/effect/proc_holder/spell/targeted/tesla/proc/StartChargeup(mob/user = usr)
 	ready = 1
-	to_chat(user, span_notice("You start gathering the power."))
+	to_chat(user, span_notice("I start gathering the power."))
 	Snd = new/sound('sound/magic/lightning_chargeup.ogg',channel = 7)
 	halo = halo || mutable_appearance('icons/effects/effects.dmi', "electricity", EFFECTS_LAYER)
 	user.add_overlay(halo)
@@ -66,7 +66,7 @@
 	var/mob/living/carbon/current = target
 	if(current.anti_magic_check())
 		playsound(get_turf(current), 'sound/magic/lightningshock.ogg', 50, 1, -1)
-		current.visible_message(span_warning("[current] absorbs the spell, remaining unharmed!"), span_userdanger("You absorb the spell, remaining unharmed!"))
+		current.visible_message(span_warning("[current] absorbs the spell, remaining unharmed!"), span_userdanger("I absorb the spell, remaining unharmed!"))
 	if(bounces < 1)
 		current.electrocute_act(bolt_energy,"Lightning Bolt", flags = SHOCK_NOGLOVES)
 		playsound(get_turf(current), 'sound/magic/lightningshock.ogg', 50, 1, -1)

@@ -141,7 +141,7 @@
 		AddBloodVolume(50)
 		var/obj/item/bodypart/L = C.get_bodypart(targetLimbZone) // 2) Limb returns Damaged
 		L.brute_dam = 60
-		to_chat(C, span_notice("Your flesh knits as it regrows your [L]!"))
+		to_chat(C, span_notice("My flesh knits as it regrows your [L]!"))
 		playsound(C, 'sound/magic/demon_consume.ogg', 50, TRUE)
 		return TRUE
 
@@ -220,10 +220,10 @@
 	// Died? Convert to Torpor (fake death)
 	if(owner.current.stat >= DEAD)
 		Torpor_Begin()
-		to_chat(owner, span_danger("Your immortal body will not yet relinquish your soul to the abyss. You enter Torpor."))
+		to_chat(owner, span_danger("My immortal body will not yet relinquish your soul to the abyss. You enter Torpor."))
 		sleep(30) //To avoid spam
 		if(poweron_masquerade)
-			to_chat(owner, span_warning("Your wounds will not heal until you disable the <span class='boldnotice'>Masquerade</span> power."))
+			to_chat(owner, span_warning("My wounds will not heal until you disable the <span class='boldnotice'>Masquerade</span> power."))
 	// End Torpor:
 	else	// No damage, OR toxin healed AND brute healed and NOT in coffin (since you cannot heal burn)
 		if(total_damage <= 0 || total_toxloss <= 0 && total_brute <= 0 && !istype(owner.current.loc, /obj/structure/closet/crate/coffin))
@@ -256,7 +256,7 @@
 	REMOVE_TRAIT(owner.current, TRAIT_NODEATH, "bloodsucker")
 	REMOVE_TRAIT(owner.current, TRAIT_RESISTHIGHPRESSURE, "bloodsucker")
 	REMOVE_TRAIT(owner.current, TRAIT_RESISTLOWPRESSURE, "bloodsucker")
-	to_chat(owner, span_warning("You have recovered from Torpor."))
+	to_chat(owner, span_warning("I have recovered from Torpor."))
 
 
 /datum/antagonist/proc/AmFinalDeath()
@@ -289,15 +289,15 @@
 	// Elders get Dusted
 	if(bloodsucker_level >= 4) // (bloodsucker_title)
 		owner.current.visible_message(span_warning("[owner.current]'s skin crackles and dries, their skin and bones withering to dust. A hollow cry whips from what is now a sandy pile of remains."), \
-			span_userdanger("Your soul escapes your withering body as the abyss welcomes you to your Final Death."), \
-			span_italic("You hear a dry, crackling sound."))
+			span_userdanger("My soul escapes your withering body as the abyss welcomes you to your Final Death."), \
+			span_italic("I hear a dry, crackling sound."))
 		sleep(50)
 		owner.current.dust()
 	// Fledglings get Gibbed
 	else
 		owner.current.visible_message(span_warning("[owner.current]'s skin bursts forth in a spray of gore and detritus. A horrible cry echoes from what is now a wet pile of decaying meat."), \
-			span_userdanger("Your soul escapes your withering body as the abyss welcomes you to your Final Death."), \
-			span_italic("You hear a wet, bursting sound."))
+			span_userdanger("My soul escapes your withering body as the abyss welcomes you to your Final Death."), \
+			span_italic("I hear a wet, bursting sound."))
 		owner.current.gib(TRUE, FALSE, FALSE) //Brain cloning is wierd and allows hellbounds. Lets destroy the brain for safety.
 	playsound(owner.current, 'sound/effects/tendril_destroyed.ogg', 40, TRUE)
 
@@ -334,7 +334,7 @@
 		return
 	// Haven't eaten, but I'm in a Human Disguise.
 	else if(poweron_masquerade && !masquerade_override)
-		to_chat(C, span_notice("Your stomach turns, but your \"human disguise\" keeps the food down...for now."))
+		to_chat(C, span_notice("My stomach turns, but your \"human disguise\" keeps the food down...for now."))
 	// Keep looping until we purge. If we have activated our Human Disguise, we ignore the food. But it'll come up eventually...
 	var/sickphase = 0
 	while(foodInGut)
@@ -348,19 +348,19 @@
 		// Put up disguise? Then hold off the vomit.
 		if(poweron_masquerade && !masquerade_override)
 			if(sickphase > 0)
-				to_chat(C, span_notice("Your stomach settles temporarily. You regain your composure...for now."))
+				to_chat(C, span_notice("My stomach settles temporarily. You regain your composure...for now."))
 			sickphase = 0
 			continue
 		switch(sickphase)
 			if(1)
-				to_chat(C, span_warning("You feel unwell. You can taste ash on your tongue."))
+				to_chat(C, span_warning("I feel unwell. You can taste ash on your tongue."))
 				C.Stun(10)
 			if(2)
-				to_chat(C, span_warning("Your stomach turns. Whatever you ate tastes of grave dirt and brimstone."))
+				to_chat(C, span_warning("My stomach turns. Whatever you ate tastes of grave dirt and brimstone."))
 				C.Dizzy(15)
 				C.Stun(13)
 			if(3)
-				to_chat(C, span_warning("You purge the food of the living from your viscera! You've never felt worse."))
+				to_chat(C, span_warning("I purge the food of the living from your viscera! You've never felt worse."))
 				//Puke blood only if puke_blood is true, and loose some blood, else just puke normally.
 				if(puke_blood)
 					C.blood_volume = max(0, C.get_blood(TRUE) - foodInGut * 2)

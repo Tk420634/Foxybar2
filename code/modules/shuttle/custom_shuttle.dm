@@ -210,13 +210,13 @@
 		return	//Only way this would happen is if someone else delinks the console while in use somehow
 	var/obj/docking_port/mobile/M = SSshuttle.getShuttle(shuttleId)
 	if(M?.mode != SHUTTLE_IDLE)
-		to_chat(usr, span_warning("You cannot target locations while in transit."))
+		to_chat(usr, span_warning("I cannot target locations while in transit."))
 		return
 	..()
 
 /obj/machinery/computer/camera_advanced/shuttle_docker/custom/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
 	if(!shuttleId)
-		to_chat(user, span_warning("You must link the console to a shuttle first."))
+		to_chat(user, span_warning("I must link the console to a shuttle first."))
 		return
 	return ..()
 

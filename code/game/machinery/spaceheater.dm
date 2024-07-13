@@ -150,14 +150,14 @@
 			cell = I
 			I.add_fingerprint(usr)
 
-			user.visible_message("\The [user] inserts a power cell into \the [src].", span_notice("You insert the power cell into \the [src]."))
+			user.visible_message("\The [user] inserts a power cell into \the [src].", span_notice("I insert the power cell into \the [src]."))
 			SStgui.update_uis(src)
 		else
 			to_chat(user, span_warning("The hatch must be open to insert a power cell!"))
 			return
 	else if(istype(I, /obj/item/screwdriver))
 		panel_open = !panel_open
-		user.visible_message("\The [user] [panel_open ? "opens" : "closes"] the hatch on \the [src].", span_notice("You [panel_open ? "open" : "close"] the hatch on \the [src]."))
+		user.visible_message("\The [user] [panel_open ? "opens" : "closes"] the hatch on \the [src].", span_notice("I [panel_open ? "open" : "close"] the hatch on \the [src]."))
 		update_icon()
 		if(panel_open)
 			interact(user)
@@ -208,7 +208,7 @@
 		if("power")
 			on = !on
 			mode = HEATER_MODE_STANDBY
-			usr.visible_message(span_notice("[usr] switches [on ? "on" : "off"] \the [src]."), span_notice("You switch [on ? "on" : "off"] \the [src]."))
+			usr.visible_message(span_notice("[usr] switches [on ? "on" : "off"] \the [src]."), span_notice("I switch [on ? "on" : "off"] \the [src]."))
 			update_icon()
 			if (on)
 				SSair.atmos_air_machinery += src

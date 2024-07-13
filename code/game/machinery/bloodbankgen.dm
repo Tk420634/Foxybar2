@@ -196,7 +196,7 @@
 		else if(!outbag)
 			attachoutput(O, user)
 	else
-		to_chat(user, span_warning("You cannot put this in [src]!"))
+		to_chat(user, span_warning("I cannot put this in [src]!"))
 
 /obj/machinery/bloodbankgen/is_operational()
 	return ..() && anchored
@@ -295,7 +295,7 @@
 		if(!user.transferItemToLoc(O, src))
 			return
 		bag = O
-		to_chat(user, span_notice("You add [O] to the machine's input slot."))
+		to_chat(user, span_notice("I add [O] to the machine's input slot."))
 		update_icon()
 		updateUsrDialog()
 	else
@@ -306,7 +306,7 @@
 		if(!user.transferItemToLoc(O, src))
 			return
 		outbag = O
-		to_chat(user, span_notice("You add [O] to the machine's output slot."))
+		to_chat(user, span_notice("I add [O] to the machine's output slot."))
 		update_icon()
 		updateUsrDialog()
 	else

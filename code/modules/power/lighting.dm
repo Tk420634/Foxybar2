@@ -30,7 +30,7 @@
 		return
 	var/area/A = get_area(user)
 	if(!IS_DYNAMIC_LIGHTING(A))
-		to_chat(user, span_warning("You cannot place [src] in this area!"))
+		to_chat(user, span_warning("I cannot place [src] in this area!"))
 		return
 	return TRUE
 
@@ -77,7 +77,7 @@
 			. += "The casing is closed."
 	if(cell_connectors)
 		if(cell)
-			. += "You see [cell] inside the casing."
+			. += "I see [cell] inside the casing."
 		else
 			. += "The casing has no power cell for backup power."
 	else
@@ -95,12 +95,12 @@
 		user.dropItemToGround(W)
 		if(cell)
 			user.visible_message(span_notice("[user] swaps [W] out for [src]'s cell."), \
-			span_notice("You swap [src]'s power cells."))
+			span_notice("I swap [src]'s power cells."))
 			cell.forceMove(drop_location())
 			user.put_in_hands(cell)
 		else
 			user.visible_message(span_notice("[user] hooks up [W] to [src]."), \
-			span_notice("You add [W] to [src]."))
+			span_notice("I add [W] to [src]."))
 		playsound(src, 'sound/machines/click.ogg', 50, TRUE)
 		W.forceMove(src)
 		cell = W
@@ -109,11 +109,11 @@
 	switch(stage)
 		if(1)
 			if(istype(W, /obj/item/wrench))
-				to_chat(usr, span_notice("You begin deconstructing [src]..."))
+				to_chat(usr, span_notice("I begin deconstructing [src]..."))
 				if (W.use_tool(src, user, 30, volume=50))
 					new /obj/item/stack/sheet/metal(drop_location(), sheets_refunded)
 					user.visible_message("[user.name] deconstructs [src].", \
-						span_notice("You deconstruct [src]."), span_italic("You hear a ratchet."))
+						span_notice("I deconstruct [src]."), span_italic("I hear a ratchet."))
 					playsound(src.loc, 'sound/items/deconstruct.ogg', 75, 1)
 					qdel(src)
 				return
@@ -123,13 +123,13 @@
 					icon_state = "[fixture_type]-construct-stage2"
 					stage = 2
 					user.visible_message("[user.name] adds wires to [src].", \
-						span_notice("You add wires to [src]."))
+						span_notice("I add wires to [src]."))
 				else
-					to_chat(user, span_warning("You need one length of cable to wire [src]!"))
+					to_chat(user, span_warning("I need one length of cable to wire [src]!"))
 				return
 		if(2)
 			if(istype(W, /obj/item/wrench))
-				to_chat(usr, span_warning("You have to remove the wires first!"))
+				to_chat(usr, span_warning("I have to remove the wires first!"))
 				return
 
 			if(istype(W, /obj/item/wirecutters))
@@ -137,13 +137,13 @@
 				icon_state = "[fixture_type]-construct-stage1"
 				new /obj/item/stack/cable_coil(drop_location(), 1, "red")
 				user.visible_message("[user.name] removes the wiring from [src].", \
-					span_notice("You remove the wiring from [src]."), span_italic("You hear clicking."))
+					span_notice("I remove the wiring from [src]."), span_italic("I hear clicking."))
 				W.play_tool_sound(src, 100)
 				return
 
 			if(istype(W, /obj/item/screwdriver))
 				user.visible_message("[user.name] closes [src]'s casing.", \
-					span_notice("You close [src]'s casing."), span_italic("You hear screwing."))
+					span_notice("I close [src]'s casing."), span_italic("I hear screwing."))
 				W.play_tool_sound(src, 75)
 				switch(fixture_type)
 					if("tube")
@@ -318,8 +318,8 @@
 	licker.emote("scream")
 	licker.visible_message(
 		span_warning("[licker] burns their tongue on \the [src]!"),
-		span_danger("You lick \the [src], and it, of course, burns your tongue!"),
-		span_warning("You hear a sizzle!")
+		span_danger("I lick \the [src], and it, of course, burns your tongue!"),
+		span_warning("I hear a sizzle!")
 	)
 
 /obj/machinery/light/proc/slice_their_mouth(mob/living/carbon/licker, obj/item/hand_item/tongue)
@@ -333,8 +333,8 @@
 	licker.emote("scream")
 	licker.visible_message(
 		span_warning("[licker] slices their tongue on \the [src]!"),
-		span_danger("You lick \the [src], the broken light slices right through your tongue!"),
-		span_warning("You hear a slice!")
+		span_danger("I lick \the [src], the broken light slices right through your tongue!"),
+		span_warning("I hear a slice!")
 	)
 
 /obj/machinery/light/proc/zap_their_mouth(mob/living/carbon/licker, obj/item/hand_item/tongue)
@@ -349,8 +349,8 @@
 	licker.emote("scream")
 	licker.visible_message(
 		span_warning("[licker] sticks [licker.p_their()] tongue into the \the [src]'s open socket! ZAP!"),
-		span_danger("You jam your tongue into \the [src], and you feel Mass Fusion's might flow through your body! IT BURNS!"),
-		span_warning("You hear a ZAP!")
+		span_danger("I jam your tongue into \the [src], and you feel Mass Fusion's might flow through your body! IT BURNS!"),
+		span_warning("I hear a ZAP!")
 	)
 
 /obj/machinery/light/Destroy()
@@ -515,9 +515,9 @@
 				src.add_fingerprint(user)
 				if(status != LIGHT_EMPTY)
 					drop_light_tube(user)
-					to_chat(user, span_notice("You replace [L]."))
+					to_chat(user, span_notice("I replace [L]."))
 				else
-					to_chat(user, span_notice("You insert [L]."))
+					to_chat(user, span_notice("I insert [L]."))
 				status = L.status
 				switchcount = L.switchcount
 				rigged = L.rigged
@@ -537,10 +537,10 @@
 		if(istype(W, /obj/item/screwdriver)) //If it's a screwdriver open it.
 			W.play_tool_sound(src, 75)
 			user.visible_message("[user.name] opens [src]'s casing.", \
-				span_notice("You open [src]'s casing."), span_italic("You hear a noise."))
+				span_notice("I open [src]'s casing."), span_italic("I hear a noise."))
 			deconstruct()
 		else
-			to_chat(user, span_userdanger("You stick \the [W] into the light socket!"))
+			to_chat(user, span_userdanger("I stick \the [W] into the light socket!"))
 			if(has_power() && (W.flags_1 & CONDUCT_1))
 				do_sparks(3, TRUE, src)
 				if (prob(75))
@@ -667,14 +667,14 @@
 		if(istype(H))
 			var/datum/species/ethereal/eth_species = H.dna?.species
 			if(istype(eth_species))
-				to_chat(H, span_notice("You start channeling some power through the [fitting] into your body."))
+				to_chat(H, span_notice("I start channeling some power through the [fitting] into your body."))
 				if(do_after(user, 50, target = src))
 					var/obj/item/organ/stomach/ethereal/stomach = H.getorganslot(ORGAN_SLOT_STOMACH)
 					if(istype(stomach))
-						to_chat(H, span_notice("You receive some charge from the [fitting]."))
+						to_chat(H, span_notice("I receive some charge from the [fitting]."))
 						stomach.adjust_charge(2)
 					else
-						to_chat(H, span_warning("You can't receive charge from the [fitting]!"))
+						to_chat(H, span_warning("I can't receive charge from the [fitting]!"))
 				return
 
 			if(H.gloves)
@@ -685,18 +685,18 @@
 			prot = 1
 
 		if(prot > 0 || HAS_TRAIT(user, TRAIT_RESISTHEAT) || HAS_TRAIT(user, TRAIT_RESISTHEATHANDS))
-			to_chat(user, span_notice("You remove the light [fitting]."))
+			to_chat(user, span_notice("I remove the light [fitting]."))
 		else if(istype(user) && user.dna.check_mutation(TK))
-			to_chat(user, span_notice("You telekinetically remove the light [fitting]."))
+			to_chat(user, span_notice("I telekinetically remove the light [fitting]."))
 		else
-			to_chat(user, span_warning("You try to remove the light [fitting], but you burn your hand on it!"))
+			to_chat(user, span_warning("I try to remove the light [fitting], but you burn your hand on it!"))
 
 			var/obj/item/bodypart/affecting = H.get_bodypart("[(user.active_hand_index % 2 == 0) ? "r" : "l" ]_arm")
 			if(affecting && affecting.receive_damage( 0, 5 ))		// 5 burn damage
 				H.update_damage_overlays()
 			return				// if burned, don't remove the light
 	else
-		to_chat(user, span_notice("You remove the light [fitting]."))
+		to_chat(user, span_notice("I remove the light [fitting]."))
 	// create a light tube/bulb item and put it in the user's hand
 	drop_light_tube(user)
 
@@ -726,7 +726,7 @@
 		to_chat(user, "There is no [fitting] in this light.")
 		return
 
-	to_chat(user, span_notice("You telekinetically remove the light [fitting]."))
+	to_chat(user, span_notice("I telekinetically remove the light [fitting]."))
 	// create a light tube/bulb item and put it in the user's hand
 	var/obj/item/light/L = drop_light_tube()
 	L.attack_tk(user)
@@ -855,7 +855,7 @@
 	if(istype(I, /obj/item/reagent_containers/syringe))
 		var/obj/item/reagent_containers/syringe/S = I
 
-		to_chat(user, span_notice("You inject the solution into \the [src]."))
+		to_chat(user, span_notice("I inject the solution into \the [src]."))
 
 		if(S.reagents.has_reagent(/datum/reagent/toxin/plasma, 5))
 
@@ -876,7 +876,7 @@
 
 /obj/item/light/proc/shatter()
 	if(status == LIGHT_OK || status == LIGHT_BURNED)
-		visible_message(span_danger("[src] shatters."),span_italic("You hear a small glass object shatter."))
+		visible_message(span_danger("[src] shatters."),span_italic("I hear a small glass object shatter."))
 		status = LIGHT_BROKEN
 		force = 5
 		playsound(src.loc, 'sound/effects/glasshit.ogg', 75, 1)
@@ -967,7 +967,7 @@
 	flickering = TRUE
 	if(on && status == LIGHT_OK)
 		if(loud)
-			visible_message(span_warning("[src] begins flickering!"),span_italic("You hear an electrical sparking."))
+			visible_message(span_warning("[src] begins flickering!"),span_italic("I hear an electrical sparking."))
 		for(var/i = 0; i < amount; i++)
 			if(status != LIGHT_OK)
 				break

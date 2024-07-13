@@ -3,7 +3,7 @@
 	name = "Near Sightness"
 	desc = "The holder of this mutation has poor eyesight."
 	quality = MINOR_NEGATIVE
-	text_gain_indication = span_danger("You can't see very well.")
+	text_gain_indication = span_danger("I can't see very well.")
 
 /datum/mutation/human/nearsight/on_acquiring(mob/living/carbon/human/owner)
 	if(..())
@@ -21,7 +21,7 @@
 	name = "Blindness"
 	desc = "Renders the subject completely blind."
 	quality = NEGATIVE
-	text_gain_indication = span_danger("You can't seem to see anything.")
+	text_gain_indication = span_danger("I can't seem to see anything.")
 
 /datum/mutation/human/blind/on_acquiring(mob/living/carbon/human/owner)
 	if(..())
@@ -40,7 +40,7 @@
 	desc = "The user of this genome can visually percieve the unique human thermal signature."
 	quality = POSITIVE
 	difficulty = 18
-	text_gain_indication = span_notice("You can see the heat rising off of your skin...")
+	text_gain_indication = span_notice("I can see the heat rising off of your skin...")
 	time_coeff = 2
 	instability = 25
 	var/visionflag = TRAIT_THERMAL_VISION
@@ -75,7 +75,7 @@
 	quality = POSITIVE
 	locked = TRUE
 	difficulty = 16
-	text_gain_indication = span_notice("You feel pressure building up behind your eyes.")
+	text_gain_indication = span_notice("I feel pressure building up behind your eyes.")
 	layer_used = FRONT_MUTATIONS_LAYER
 	limb_req = BODY_ZONE_HEAD
 

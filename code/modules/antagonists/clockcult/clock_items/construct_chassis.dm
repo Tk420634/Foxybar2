@@ -42,16 +42,16 @@
 	if(!user.can_reenter_round())
 		return FALSE
 	if(!SSticker.mode)
-		to_chat(user, span_danger("You cannot use that before the game has started."))
+		to_chat(user, span_danger("I cannot use that before the game has started."))
 		return
 	if(QDELETED(src))
-		to_chat(user, span_danger("You were too late! Better luck next time."))
+		to_chat(user, span_danger("I were too late! Better luck next time."))
 		return
 	user.forceMove(get_turf(src)) //If we attack through the alert, jump to the chassis so we know what we're getting into
 	if(alert(user, "Become a [construct_name]? You can no longer be cloned!", construct_name, "Yes", "Cancel") == "Cancel")
 		return
 	if(QDELETED(src))
-		to_chat(user, span_danger("You were too late! Better luck next time."))
+		to_chat(user, span_danger("I were too late! Better luck next time."))
 		return
 	pre_spawn()
 	visible_message(creation_message)

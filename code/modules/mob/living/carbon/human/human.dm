@@ -266,7 +266,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 			var/obj/item/clothing/head/helmet/space/hardsuit/hardsuit_head = head
 			visible_message(span_danger("[usr] tries to [hardsuit_head ? "retract" : "extend"] [src]'s helmet."), \
 								span_userdanger("[usr] tries to [hardsuit_head ? "retract" : "extend"] [src]'s helmet."), \
-								target = usr, target_message = span_danger("You try to [hardsuit_head ? "retract" : "extend"] [src]'s helmet."))
+								target = usr, target_message = span_danger("I try to [hardsuit_head ? "retract" : "extend"] [src]'s helmet."))
 			if(!do_mob(usr, src, hardsuit_head ? head.strip_delay : POCKET_STRIP_DELAY))
 				return
 			if(!istype(wear_suit, /obj/item/clothing/suit/space/hardsuit) || (hardsuit_head ? (!head || head != hardsuit_head) : head))
@@ -275,12 +275,12 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 			if(hardsuit.ToggleHelmet(FALSE))
 				visible_message(span_danger("[usr] [hardsuit_head ? "retract" : "extend"] [src]'s helmet"), \
 										span_userdanger("[usr] [hardsuit_head ? "retract" : "extend"] [src]'s helmet"), \
-										target = usr, target_message = span_danger("You [hardsuit_head ? "retract" : "extend"] [src]'s helmet."))
+										target = usr, target_message = span_danger("I [hardsuit_head ? "retract" : "extend"] [src]'s helmet."))
 			return
 		if(href_list["item"])
 			var/slot = text2num(href_list["item"])
 			if(slot in check_obscured_slots())
-				to_chat(usr, span_warning("You can't reach that! Something is covering it."))
+				to_chat(usr, span_warning("I can't reach that! Something is covering it."))
 				return
 		if(href_list["pockets"])
 			var/strip_mod = 1
@@ -297,10 +297,10 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 			var/delay_denominator = 1
 			if(pocket_item && !(pocket_item.item_flags & ABSTRACT))
 				if(HAS_TRAIT(pocket_item, TRAIT_NODROP))
-					to_chat(usr, span_warning("You try to empty [src]'s [pocket_side] pocket, it seems to be stuck!"))
-				to_chat(usr, span_notice("You try to empty [src]'s [pocket_side] pocket."))
+					to_chat(usr, span_warning("I try to empty [src]'s [pocket_side] pocket, it seems to be stuck!"))
+				to_chat(usr, span_notice("I try to empty [src]'s [pocket_side] pocket."))
 			else if(place_item && place_item.mob_can_equip(src, usr, pocket_id, 1) && !(place_item.item_flags & ABSTRACT))
-				to_chat(usr, span_notice("You try to place [place_item] into [src]'s [pocket_side] pocket."))
+				to_chat(usr, span_notice("I try to place [place_item] into [src]'s [pocket_side] pocket."))
 				delay_denominator = 4
 			else
 				return
@@ -326,7 +326,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 			else
 				// Display a warning if the user mocks up
 				if(!strip_silence)
-					to_chat(src, span_warning("You feel your [pocket_side] pocket being fumbled with!"))
+					to_chat(src, span_warning("I feel your [pocket_side] pocket being fumbled with!"))
 				log_combat(usr, src, "failed to [pocket_item ? "pickpocket item [pocket_item] from" : "place item [place_item] onto "]")
 
 	if(usr.canUseTopic(src, BE_CLOSE, NO_DEXTERY, null, FALSE))
@@ -354,7 +354,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 				continue
 			tattoo_words += BP.get_tattoo_flavor(usr)
 		if(!LAZYLEN(tattoo_words))
-			to_chat(usr, span_alert("You can't seem to make anything out on [src]!"))
+			to_chat(usr, span_alert("I can't seem to make anything out on [src]!"))
 			return
 		to_chat(usr, span_notice("[jointext(tattoo_words, "<br>")]"))
 
@@ -601,7 +601,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 			var/new_shirt = input(usr, "Select a new shirt!", "Changing") as null|anything in GLOB.undershirt_list
 			if(new_shirt)
 				undershirt = new_shirt
-				show_message(span_notice("You put on a new [new_shirt]!"))
+				show_message(span_notice("I put on a new [new_shirt]!"))
 				update_body(TRUE)
 			else
 				show_message(span_notice("Nevermind!"))
@@ -610,7 +610,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 			var/n_color = input(usr, "Recolor your shirt!", "Character Preference", "#[shirt_color]") as color|null
 			if(n_color)
 				shirt_color = sanitize_hexcolor(n_color, 6, FALSE, shirt_color)
-				show_message(span_notice("You recolor your top!"))
+				show_message(span_notice("I recolor your top!"))
 				update_body(TRUE)
 			else
 				show_message(span_notice("Nevermind!"))
@@ -629,7 +629,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 			var/new_undies = input(usr, "Select some new undies!", "Changing") as null|anything in GLOB.underwear_list
 			if(new_undies)
 				underwear = new_undies
-				show_message(span_notice("You put on a new pair of [new_undies]!"))
+				show_message(span_notice("I put on a new pair of [new_undies]!"))
 				update_body(TRUE)
 			else
 				show_message(span_notice("Nevermind!"))
@@ -638,7 +638,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 			var/n_color = input(usr, "Recolor your undies!", "Character Preference", "#[undie_color]") as color|null
 			if(n_color)
 				undie_color = sanitize_hexcolor(n_color, 6, FALSE, undie_color)
-				show_message(span_notice("You recolor your undies!"))
+				show_message(span_notice("I recolor your undies!"))
 				update_body(TRUE)
 			else
 				show_message(span_notice("Nevermind!"))
@@ -657,7 +657,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 			var/new_sox = input(usr, "Select some socks!", "Changing") as null|anything in GLOB.socks_list
 			if(new_sox)
 				socks = new_sox
-				show_message(span_notice("You put on a new pair of [new_sox]!"))
+				show_message(span_notice("I put on a new pair of [new_sox]!"))
 				update_body(TRUE)
 			else
 				show_message(span_notice("Nevermind!"))
@@ -666,7 +666,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 			var/n_color = input(usr, "Recolor your socks!", "Character Preference", "#[socks_color]") as color|null
 			if(n_color)
 				socks_color = sanitize_hexcolor(n_color, 6, FALSE, socks_color)
-				show_message(span_notice("You recolor your socks!"))
+				show_message(span_notice("I recolor your socks!"))
 				update_body(TRUE)
 			else
 				show_message(span_notice("Nevermind!"))
@@ -1060,9 +1060,9 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 
 	if(C.cpr_time < world.time + 30)
 		visible_message(span_notice("[src] is trying to perform CPR on [C.name]!"), \
-						span_notice("You try to perform CPR on [C.name]... Hold still!"))
+						span_notice("I try to perform CPR on [C.name]... Hold still!"))
 		if(!do_mob(src, C))
-			to_chat(src, span_warning("You fail to perform CPR on [C]!"))
+			to_chat(src, span_warning("I fail to perform CPR on [C]!"))
 			return 0
 
 		var/they_breathe = !HAS_TRAIT(C, TRAIT_NOBREATH)
@@ -1071,7 +1071,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 		if(C.health > C.crit_threshold)
 			return
 
-		src.visible_message("[src] performs CPR on [C.name]!", span_notice("You perform CPR on [C.name]."))
+		src.visible_message("[src] performs CPR on [C.name]!", span_notice("I perform CPR on [C.name]."))
 		SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "perform_cpr", /datum/mood_event/perform_cpr)
 		C.cpr_time = world.time
 		log_combat(src, C, "CPRed")
@@ -1140,12 +1140,12 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 /mob/living/carbon/human/canUseTopic(atom/movable/M, be_close=FALSE, no_dextery=FALSE, no_tk=FALSE, check_resting = TRUE)
 	// if(incapacitated() || (check_resting && !CHECK_MOBILITY(src, MOBILITY_STAND)))
 	if(incapacitated(allow_crit = TRUE))
-		to_chat(src, span_warning("You can't do that right now!"))
+		to_chat(src, span_warning("I can't do that right now!"))
 		return FALSE
 	if(!Adjacent(M) && (M.loc != src))
 		if((be_close == 0) || (!no_tk && (dna.check_mutation(TK) && tkMaxRangeCheck(src, M))))
 			return TRUE
-		to_chat(src, span_warning("You are too far away!"))
+		to_chat(src, span_warning("I am too far away!"))
 		return FALSE
 	return TRUE
 
@@ -1249,7 +1249,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 	if(blood && dna?.species && (NOBLOOD in dna.species.species_traits))
 		if(message)
 			visible_message(span_warning("[src] dry heaves!"), \
-							span_userdanger("You try to throw up, but there's nothing in your stomach!"))
+							span_userdanger("I try to throw up, but there's nothing in your stomach!"))
 		if(stun)
 			DefaultCombatKnockdown(200)
 		return 1
@@ -1390,9 +1390,9 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 		visible_message("<span class='warning'>[src] fails to fireman carry [target]!")
 	else
 		if (ishuman(target))
-			to_chat(src, span_notice("You can't fireman carry [target] while they're standing!"))
+			to_chat(src, span_notice("I can't fireman carry [target] while they're standing!"))
 		else
-			to_chat(src, span_notice("You can't seem to fireman carry that kind of species."))
+			to_chat(src, span_notice("I can't seem to fireman carry that kind of species."))
 
 /mob/living/carbon/human/proc/piggyback(mob/living/carbon/target)
 	if(can_piggyback(target))
@@ -1412,7 +1412,7 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 		else
 			visible_message(span_warning("[target] fails to climb onto [src]!"))
 	else
-		to_chat(target, span_warning("You can't piggyback ride [src] right now!"))
+		to_chat(target, span_warning("I can't piggyback ride [src] right now!"))
 
 /mob/living/carbon/human/buckle_mob(mob/living/target, force = FALSE, check_loc = TRUE, lying_buckle = FALSE, hands_needed = 0, target_hands_needed = 0, fireman = FALSE)
 	if(!force)//humans are only meant to be ridden through piggybacking and special cases
@@ -1436,11 +1436,11 @@ GLOBAL_VAR_INIT(crotch_call_cooldown, 0)
 	if(hands_needed || target_hands_needed)
 		if(hands_needed && !equipped_hands_self)
 			src.visible_message(span_warning("[src] can't get a grip on [target] because their hands are full!"),
-				span_warning("You can't get a grip on [target] because your hands are full!"))
+				span_warning("I can't get a grip on [target] because your hands are full!"))
 			return
 		else if(target_hands_needed && !equipped_hands_target)
 			target.visible_message(span_warning("[target] can't get a grip on [src] because their hands are full!"),
-				span_warning("You can't get a grip on [src] because your hands are full!"))
+				span_warning("I can't get a grip on [src] because your hands are full!"))
 			return
 
 	stop_pulling()

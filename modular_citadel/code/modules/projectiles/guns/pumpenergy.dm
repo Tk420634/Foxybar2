@@ -77,7 +77,7 @@
 
 	if(ammo_type.len > 1)
 		if(user.incapacitated() || !istype(user))
-			to_chat(user, span_warning("You can't do that right now!"))
+			to_chat(user, span_warning("I can't do that right now!"))
 		else
 			select_fire(user)
 			update_icon()

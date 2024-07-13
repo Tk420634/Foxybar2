@@ -188,7 +188,7 @@
 		mytray.adjustPests(rand(1,2))
 
 /datum/reagent/consumable/sugar/overdose_start(mob/living/M)
-	to_chat(M, span_userdanger("You go into hyperglycaemic shock! Lay off the twinkies!"))
+	to_chat(M, span_userdanger("I go into hyperglycaemic shock! Lay off the twinkies!"))
 	M.AdjustSleeping(600, FALSE)
 	. = 1
 
@@ -469,7 +469,7 @@
 
 /datum/reagent/consumable/coyotejuice/on_mob_life(mob/living/carbon/M)
 	if(prob(10))
-		var/smoke_message = pick("You feel relaxed.", "You feel calmed.","You feel alert.","You feel rugged.")
+		var/smoke_message = pick("I feel relaxed.", "I feel calmed.","I feel alert.","I feel rugged.")
 		to_chat(M, span_notice("[smoke_message]"))
 	M.AdjustStun(-4, 0)
 	M.AdjustKnockdown(-4, 0)
@@ -572,7 +572,7 @@
 /datum/reagent/consumable/garlic/on_mob_life(mob/living/carbon/M)
 	if(isvampire(M)) //incapacitating but not lethal. Unfortunately, vampires cannot vomit.
 		if(prob(min(25, current_cycle)))
-			to_chat(M, span_danger("You can't get the scent of garlic out of your nose! You can barely think..."))
+			to_chat(M, span_danger("I can't get the scent of garlic out of your nose! You can barely think..."))
 			M.Stun(10)
 			M.Jitter(10)
 			return
@@ -590,7 +590,7 @@
 		switch(method)
 			if(INGEST)
 				if(prob(min(30, current_cycle)))
-					to_chat(M, span_warning("You cant get the smell of garlic out of your nose! You cant think straight because of it!"))
+					to_chat(M, span_warning("I cant get the smell of garlic out of your nose! You cant think straight because of it!"))
 					M.Jitter(15)
 				if(prob(min(15, current_cycle)))
 					M.visible_message(span_danger("Something you ate is burning your stomach!"), span_warning("[M] clutches their stomach and falls to the ground!"))
@@ -601,7 +601,7 @@
 					C.vomit()
 			if(INJECT)
 				if(prob(min(20, current_cycle)))
-					to_chat(M, span_warning("You feel like your veins are boiling!"))
+					to_chat(M, span_warning("I feel like your veins are boiling!"))
 					M.emote("scream")
 					M.adjustFireLoss(5)
 	..()

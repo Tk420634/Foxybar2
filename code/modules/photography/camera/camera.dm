@@ -40,7 +40,7 @@
 /obj/item/camera/attack_self(mob/user)
 	if(!disk)
 		return
-	to_chat(user, span_notice("You eject [disk] out the back of [src]."))
+	to_chat(user, span_notice("I eject [disk] out the back of [src]."))
 	user.put_in_hands(disk)
 	disk = null
 
@@ -68,7 +68,7 @@
 			return
 		if(!user.temporarilyRemoveItemFromInventory(I))
 			return
-		to_chat(user, span_notice("You insert [I] into [src]."))
+		to_chat(user, span_notice("I insert [I] into [src]."))
 		qdel(I)
 		pictures_left = pictures_max
 		return
@@ -77,7 +77,7 @@
 			if(!user.transferItemToLoc(I, src))
 				to_chat(user, span_warning("[I] is stuck to your hand!"))
 				return TRUE
-			to_chat(user, span_notice("You slide [I] into the back of [src]."))
+			to_chat(user, span_notice("I slide [I] into the back of [src]."))
 			disk = I
 		else
 			to_chat(user, span_warning("There's already a disk inside [src]."))

@@ -69,7 +69,7 @@
 /obj/item/reagent_containers/glass/maunamug/screwdriver_act(mob/living/user, obj/item/I)
 	. = ..()
 	open = !open
-	to_chat(user, span_notice("You screw the battery case on [src] [open ? "open" : "closed"] ."))
+	to_chat(user, span_notice("I screw the battery case on [src] [open ? "open" : "closed"] ."))
 	update_icon()
 
 /obj/item/reagent_containers/glass/maunamug/attackby(obj/item/I, mob/user, params)
@@ -85,7 +85,7 @@
 	else if(!user.transferItemToLoc(I, src))
 		return
 	cell = I
-	user.visible_message(span_notice("[user] inserts a power cell into [src]."), span_notice("You insert the power cell into [src]."))
+	user.visible_message(span_notice("[user] inserts a power cell into [src]."), span_notice("I insert the power cell into [src]."))
 	update_icon()
 
 /obj/item/reagent_containers/glass/maunamug/on_attack_hand(mob/living/user, act_intent = user.a_intent, unarmed_attack_flags)
@@ -93,7 +93,7 @@
 		cell.update_icon()
 		user.put_in_hands(cell)
 		cell = null
-		to_chat(user, span_notice("You remove the power cell from [src]."))
+		to_chat(user, span_notice("I remove the power cell from [src]."))
 		on = FALSE
 		update_icon()
 		return TRUE

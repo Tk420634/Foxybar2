@@ -81,7 +81,7 @@
 	return
 
 /obj/structure/closet/crate/proc/tear_manifest(mob/user)
-	to_chat(user, span_notice("You tear the manifest off of [src]."))
+	to_chat(user, span_notice("I tear the manifest off of [src]."))
 	playsound(src, 'sound/items/poster_ripped.ogg', 75, 1)
 
 	manifest.forceMove(loc)
@@ -106,7 +106,7 @@
 	. = ..()
 	if(user.mind?.has_antag_datum(ANTAG_DATUM_BLOODSUCKER))
 		. += span_cult("This is a coffin which you can use to regenerate your burns and other wounds faster.")
-		. += span_cult("You can also thicken your blood if you survive the day, and hide from the sun safely while inside.")
+		. += span_cult("I can also thicken your blood if you survive the day, and hide from the sun safely while inside.")
 	/*	if(user.mind.has_antag_datum(ANTAG_DATUM_VASSAL)
 			. += {"<span class='cult'>This is a coffin which your master can use to shield himself from the unforgiving sun.\n
 			You yourself are still human and dont need it. Yet.</span>"} */

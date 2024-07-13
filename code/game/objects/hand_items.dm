@@ -47,11 +47,11 @@
 	action_verb_ing = "tending"
 	can_taste = FALSE
 
-/obj/item/hand_item/healable/toucher
+/obj/item/hand_item/healable/toucher //being repurposed as a way to 'feel' the world around the player.  Specifically other players though, lets be real.
 	name = "touch"
 	desc = "A finger, for touching things."
-	icon = 'icons/obj/items_and_weapons.dmi'
-	icon_state = "healinghand"
+	icon = 'icons/obj/in_hands.dmi'
+	icon_state = "feeder"
 	attack_verb = list("touched", "poked", "prodded")
 	pokesound = 'sound/items/tendingwounds.ogg'
 	healthing = /obj/item/stack/medical/bruise_pack/lick/touch
@@ -125,15 +125,15 @@
 	if(isliving(licked))
 		user.visible_message(
 			span_notice("[user] [lick_words[LICK_INTENT]] [action_verb_s] [user == licked ? "[user.p_their()]" : "[licked]'s"] [lick_words[LICK_LOCATION]]."),
-			span_notice("You [lick_words[LICK_INTENT]] [action_verb] [user == licked ? "your" : "[licked]'s"] [lick_words[LICK_LOCATION]]."),
-			span_notice("You hear [action_verb_ing]."),
+			span_notice("I [lick_words[LICK_INTENT]] [action_verb] [user == licked ? "your" : "[licked]'s"] [lick_words[LICK_LOCATION]]."),
+			span_notice("I hear [action_verb_ing]."),
 			LICK_SOUND_TEXT_RANGE
 		)
 	else
 		user.visible_message(
 			span_notice("[user] [lick_words[LICK_INTENT]] [action_verb_s] [user == licked ? "[user.p_them()]self" : "[licked]"]."),
-			span_notice("You [lick_words[LICK_INTENT]] [action_verb] [user == licked ? "yourself" : "[licked]"]."),
-			span_notice("You hear [action_verb_ing]."),
+			span_notice("I [lick_words[LICK_INTENT]] [action_verb] [user == licked ? "yourself" : "[licked]"]."),
+			span_notice("I hear [action_verb_ing]."),
 			LICK_SOUND_TEXT_RANGE
 		)
 	if(can_taste && iscarbon(user))
@@ -300,7 +300,7 @@
 
 /obj/item/hand_item/biter/spicy
 	name = "Spicy Biter"
-	desc = "Your sickly little nibbler, good for dropping fools."
+	desc = "My sickly little nibbler, good for dropping fools."
 	color = "#44FF44"
 	force = 35
 	force_wielded = 45
@@ -405,7 +405,7 @@
 
 /obj/item/hand_item/clawer/spicy
 	name = "Spicy Clawer"
-	desc = "Your gross little litter box rakes, good for puttings idiots on the ground."
+	desc = "My gross little litter box rakes, good for puttings idiots on the ground."
 	color = "#44FF44"
 	force = 30
 	force_wielded = 40
@@ -653,8 +653,8 @@
 // 	working = TRUE
 // 	user.visible_message(
 // 		span_notice("[user] starts carefully lapping at the wounds on [user == mlemmed ? "[mlemmed.p_their()]" : "[mlemmed]'s"] [target_bodypart.name]..."), 
-// 		span_notice("You start running your tongue across the wounds on [user == mlemmed ? "your" : "[mlemmed]'s"] [target_bodypart.name]..."),
-// 		span_notice("You hear licking."),
+// 		span_notice("I start running your tongue across the wounds on [user == mlemmed ? "your" : "[mlemmed]'s"] [target_bodypart.name]..."),
+// 		span_notice("I hear licking."),
 // 		LICK_SOUND_TEXT_RANGE
 // 		)
 // 	lick_flavor(atom_licked = licked, licker = user)
@@ -669,8 +669,8 @@
 // 	if(target_bodypart.apply_gauze(tongue_bandage, 1, FALSE))
 // 		user.visible_message(
 // 			span_green("[user] applies a fresh coat of coagulating saliva on [user == mlemmed ? "[mlemmed.p_their()]" : "[mlemmed]'s"] [target_bodypart.name]!"), 
-// 			span_green("You apply a fresh coat of coagulating saliva to [user == mlemmed ? "your" : "[mlemmed]'s"] [target_bodypart.name]!"),
-// 			span_notice("You hear licking."),
+// 			span_green("I apply a fresh coat of coagulating saliva to [user == mlemmed ? "your" : "[mlemmed]'s"] [target_bodypart.name]!"),
+// 			span_notice("I hear licking."),
 // 			LICK_SOUND_TEXT_RANGE
 // 			)
 // 		lick_flavor(atom_licked = licked, licker = user)

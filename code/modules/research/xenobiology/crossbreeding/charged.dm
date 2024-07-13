@@ -19,7 +19,7 @@ Charged extracts:
 		to_chat(user, span_warning("This extract needs to be full of plasma to activate!"))
 		return
 	reagents.remove_reagent(/datum/reagent/toxin/plasma,10)
-	to_chat(user, span_notice("You squeeze the extract, and it absorbs the plasma!"))
+	to_chat(user, span_notice("I squeeze the extract, and it absorbs the plasma!"))
 	playsound(src, 'sound/effects/bubbles.ogg', 50, 1)
 	playsound(src, 'sound/effects/light_flicker.ogg', 50, 1)
 	do_effect(user)
@@ -146,11 +146,11 @@ Charged extracts:
 /obj/item/slimecross/charged/green/do_effect(mob/user)
 	var/mob/living/carbon/human/H = user
 	if(!istype(H))
-		to_chat(user, span_warning("You must be a humanoid to use this!"))
+		to_chat(user, span_warning("I must be a humanoid to use this!"))
 		return
 	var/racechoice = input(H, "Choose your slime subspecies.", "Slime Selection") as null|anything in subtypesof(/datum/species/jelly)
 	if(!racechoice)
-		to_chat(user, span_notice("You decide not to become a slime for now."))
+		to_chat(user, span_notice("I decide not to become a slime for now."))
 		return
 	if(!user.canUseTopic(src, BE_CLOSE))
 		return
@@ -209,7 +209,7 @@ Charged extracts:
 /obj/item/slimecross/charged/black/do_effect(mob/user)
 	var/mob/living/carbon/human/H = user
 	if(!istype(H))
-		to_chat(user, span_warning("You have to be able to have a species to get your species changed."))
+		to_chat(user, span_warning("I have to be able to have a species to get your species changed."))
 		return
 	var/list/allowed_species = list()
 	for(var/X in subtypesof(/datum/species))
@@ -219,7 +219,7 @@ Charged extracts:
 	var/datum/species/changed = pick(allowed_species)
 	if(changed)
 		H.set_species(changed, icon_update = 1)
-		to_chat(H, span_danger("You feel very different!"))
+		to_chat(H, span_danger("I feel very different!"))
 	..()
 
 /obj/item/slimecross/charged/lightpink
@@ -290,7 +290,7 @@ Charged extracts:
 		to_chat(user, span_warning("The slime already has no chance of mutating!"))
 		return
 
-	to_chat(user, span_notice("You feed the slime the omnistabilizer. It will not mutate this cycle!"))
+	to_chat(user, span_notice("I feed the slime the omnistabilizer. It will not mutate this cycle!"))
 	M.mutation_chance = 0
 	qdel(src)
 
@@ -321,7 +321,7 @@ Charged extracts:
 	if(C.min_cold_protection_temperature == SPACE_SUIT_MIN_TEMP_PROTECT && C.clothing_flags & STOPSPRESSUREDAMAGE)
 		to_chat(user, span_warning("The [C] is already pressure-resistant!"))
 		return ..()
-	to_chat(user, span_notice("You slather the blue gunk over the [C], making it airtight."))
+	to_chat(user, span_notice("I slather the blue gunk over the [C], making it airtight."))
 	C.name = "pressure-resistant [C.name]"
 	C.remove_atom_colour(WASHABLE_COLOUR_PRIORITY)
 	C.add_atom_colour("#000080", FIXED_COLOUR_PRIORITY)
@@ -353,9 +353,9 @@ Charged extracts:
 	if(!proximity)
 		return ..()
 	if(!istype(C))
-		to_chat(user, span_warning("You can't coat this with lavaproofing fluid!"))
+		to_chat(user, span_warning("I can't coat this with lavaproofing fluid!"))
 		return ..()
-	to_chat(user, span_notice("You slather the red gunk over the [C], making it lavaproof."))
+	to_chat(user, span_notice("I slather the red gunk over the [C], making it lavaproof."))
 	C.name = "lavaproof [C.name]"
 	C.remove_atom_colour(WASHABLE_COLOUR_PRIORITY)
 	C.add_atom_colour("#800000", FIXED_COLOUR_PRIORITY)
@@ -378,7 +378,7 @@ Charged extracts:
 		to_chat(user, span_warning("The love potion only works on living things, sicko!"))
 		return ..()
 	if(user == M)
-		to_chat(user, span_warning("You can't drink the love potion. What are you, a narcissist?"))
+		to_chat(user, span_warning("I can't drink the love potion. What are you, a narcissist?"))
 		return ..()
 	if(M.has_status_effect(STATUS_EFFECT_INLOVE))
 		to_chat(user, span_warning("[M] is already lovestruck!"))
@@ -389,10 +389,10 @@ Charged extracts:
 
 	if(!do_after(user, 50, target = M))
 		return
-	to_chat(user, span_notice("You feed [M] the love potion!"))
-	to_chat(M, span_notice("You develop feelings for [user], and anyone [user.p_they()] like."))
+	to_chat(user, span_notice("I feed [M] the love potion!"))
+	to_chat(M, span_notice("I develop feelings for [user], and anyone [user.p_they()] like."))
 	if(M.mind)
-		M.mind.store_memory("You are in love with [user].")
+		M.mind.store_memory("I am in love with [user].")
 	M.faction |= "[REF(user)]"
 	M.apply_status_effect(STATUS_EFFECT_INLOVE, user)
 	qdel(src)
@@ -412,14 +412,14 @@ Charged extracts:
 			span_userdanger("[user] starts to feed you a love potion!"))
 	else
 		M.visible_message(span_danger("[user] starts to drink the pacification potion!"),
-			span_danger("You start to drink the pacification potion!"))
+			span_danger("I start to drink the pacification potion!"))
 
 	if(!do_after(user, 100, target = M))
 		return
 	if(M != user)
-		to_chat(user, span_notice("You feed [M] the pacification potion!"))
+		to_chat(user, span_notice("I feed [M] the pacification potion!"))
 	else
-		to_chat(user, span_warning("You drink the pacification potion!"))
+		to_chat(user, span_warning("I drink the pacification potion!"))
 	if(isanimal(M))
 		ADD_TRAIT(M, TRAIT_PACIFISM, MAGIC_TRAIT)
 	else if(iscarbon(M))

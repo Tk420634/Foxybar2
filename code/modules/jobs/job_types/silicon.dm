@@ -106,7 +106,7 @@ Mr. Handy
 	//
 	total_positions = 5
 	spawn_positions = 1
-	supervisors = "Your Creators"	//Nodrak
+	supervisors = "My Creators"	//Nodrak
 	selection_color = "#ddffdd"
 
 /datum/job/cyborg/equip(mob/living/carbon/human/H, visualsOnly = FALSE, announce = TRUE, latejoin = FALSE, datum/outfit/outfit_override = null, client/preference_source)

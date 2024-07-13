@@ -105,7 +105,7 @@
 							add_fingerprint(user)
 						locked = !locked
 						user.visible_message(span_notice("[user] unlocks [src]'s privacy lock."),
-										span_notice("You unlock [src]'s privacy lock."))
+										span_notice("I unlock [src]'s privacy lock."))
 						privacy_lock = FALSE
 						update_icon()
 					else if(!silent)

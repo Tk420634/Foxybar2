@@ -78,7 +78,7 @@
 /mob/living/simple_animal/hostile/statue/Move(turf/NewLoc)
 	if(can_be_seen(NewLoc))
 		if(client)
-			to_chat(src, span_warning("You cannot move, there are eyes on you!"))
+			to_chat(src, span_warning("I cannot move, there are eyes on you!"))
 		return 0
 	return ..()
 
@@ -100,7 +100,7 @@
 /mob/living/simple_animal/hostile/statue/AttackingTarget()
 	if(can_be_seen(get_turf(loc)))
 		if(client)
-			to_chat(src, span_warning("You cannot attack, there are eyes on you!"))
+			to_chat(src, span_warning("I cannot attack, there are eyes on you!"))
 		return FALSE
 	else
 		return ..()
@@ -168,7 +168,7 @@
 // Flicker lights
 /obj/effect/proc_holder/spell/aoe_turf/flicker_lights
 	name = "Flicker Lights"
-	desc = "You will trigger a large amount of lights around you to flicker."
+	desc = "I will trigger a large amount of lights around you to flicker."
 
 	charge_max = 300
 	clothes_req = NONE
@@ -183,9 +183,9 @@
 //Blind AOE
 /obj/effect/proc_holder/spell/aoe_turf/blindness
 	name = "Blindness"
-	desc = "Your prey will be momentarily blind for you to advance on them."
+	desc = "My prey will be momentarily blind for you to advance on them."
 
-	message = span_notice("You glare your eyes.")
+	message = span_notice("I glare your eyes.")
 	charge_max = 600
 	clothes_req = NONE
 	range = 10
@@ -205,7 +205,7 @@
 	charge_max = 10
 	clothes_req = NONE
 
-	message = span_notice("You toggle your night vision!")
+	message = span_notice("I toggle your night vision!")
 	range = -1
 	include_user = 1
 

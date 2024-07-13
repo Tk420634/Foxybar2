@@ -26,11 +26,11 @@ LINEN BINS
 	if(layer == initial(layer))
 		plane = MOB_PLANE // makes it render on the mob plane to overlay the mobs.
 		layer = ABOVE_MOB_LAYER
-		to_chat(user, span_notice("You cover yourself with [src]."))
+		to_chat(user, span_notice("I cover yourself with [src]."))
 	else
 		plane = initial(plane) // sets it back!
 		layer = initial(layer)
-		to_chat(user, span_notice("You smooth [src] out beneath you."))
+		to_chat(user, span_notice("I smooth [src] out beneath you."))
 	add_fingerprint(user)
 	return
 // Want something to do? Refactor blankets into bedsheets.
@@ -68,11 +68,11 @@ LINEN BINS
 	if(layer == initial(layer))
 		plane = MOB_PLANE // makes it render on the mob plane to overlay the mobs.
 		layer = ABOVE_MOB_LAYER
-		to_chat(user, span_notice("You cover yourself with [src]."))
+		to_chat(user, span_notice("I cover yourself with [src]."))
 	else
 		plane = initial(plane) // sets it back!
 		layer = initial(layer)
-		to_chat(user, span_notice("You smooth [src] out beneath you."))
+		to_chat(user, span_notice("I smooth [src] out beneath you."))
 	add_fingerprint(user)
 	return
 
@@ -82,7 +82,7 @@ LINEN BINS
 		transfer_fingerprints_to(C)
 		C.add_fingerprint(user)
 		qdel(src)
-		to_chat(user, span_notice("You tear [src] up."))
+		to_chat(user, span_notice("I tear [src] up."))
 	else
 		return ..()
 
@@ -202,7 +202,7 @@ LINEN BINS
 
 /obj/item/bedsheet/cult
 	name = "cultist's bedsheet"
-	desc = "Your dreams are filled with blood. It seems rather tattered and leaves you feeling nauseous."
+	desc = "My dreams are filled with blood. It seems rather tattered and leaves you feeling nauseous."
 	icon_state = "sheetcult"
 	dream_messages = list("a tome", "a floating red crystal", "a glowing sword", "a bloody symbol", "a massive humanoid figure")
 
@@ -348,14 +348,14 @@ LINEN BINS
 			return
 		sheets.Add(I)
 		amount++
-		to_chat(user, span_notice("You put [I] in [src]."))
+		to_chat(user, span_notice("I put [I] in [src]."))
 		update_icon()
 	else if(amount && !hidden && I.w_class < WEIGHT_CLASS_BULKY)	//make sure there's sheets to hide it among, make sure nothing else is hidden in there.
 		if(!user.transferItemToLoc(I, src))
 			to_chat(user, span_warning("\The [I] is stuck to your hand, you cannot hide it among the sheets!"))
 			return
 		hidden = I
-		to_chat(user, span_notice("You hide [I] among the sheets."))
+		to_chat(user, span_notice("I hide [I] among the sheets."))
 
 
 /obj/structure/bedsheetbin/attack_paw(mob/user)
@@ -378,7 +378,7 @@ LINEN BINS
 
 		B.forceMove(drop_location())
 		user.put_in_hands(B)
-		to_chat(user, span_notice("You take [B] out of [src]."))
+		to_chat(user, span_notice("I take [B] out of [src]."))
 		update_icon()
 
 		if(hidden)
@@ -402,7 +402,7 @@ LINEN BINS
 			B = new chosen
 
 		B.forceMove(drop_location())
-		to_chat(user, span_notice("You telekinetically remove [B] from [src]."))
+		to_chat(user, span_notice("I telekinetically remove [B] from [src]."))
 		update_icon()
 
 		if(hidden)

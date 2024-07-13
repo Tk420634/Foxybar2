@@ -139,10 +139,10 @@
 	if(src.operating)
 		return
 	if(!src.occupant)
-		visible_message(span_italic("You hear a loud metallic grinding sound."))
+		visible_message(span_italic("I hear a loud metallic grinding sound."))
 		return
 	use_power(1000)
-	visible_message(span_italic("You hear a loud squelchy grinding sound."))
+	visible_message(span_italic("I hear a loud squelchy grinding sound."))
 	playsound(src.loc, 'sound/machines/juicer.ogg', 50, 1)
 	operating = TRUE
 	update_icon()

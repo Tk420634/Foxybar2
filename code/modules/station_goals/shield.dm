@@ -105,10 +105,10 @@
 /obj/machinery/satellite/proc/toggle(mob/user)
 	if(!active && !isinspace())
 		if(user)
-			to_chat(user, span_warning("You can only activate [src] in space."))
+			to_chat(user, span_warning("I can only activate [src] in space."))
 		return FALSE
 	if(user)
-		to_chat(user, span_notice("You [active ? "deactivate": "activate"] [src]."))
+		to_chat(user, span_notice("I [active ? "deactivate": "activate"] [src]."))
 	active = !active
 	if(active)
 		animate(src, pixel_y = 2, time = 10, loop = -1)
@@ -202,7 +202,7 @@
 	if(obj_flags & EMAGGED)
 		return
 	obj_flags |= EMAGGED
-	to_chat(user, span_notice("You access the satellite's debug mode, increasing the chance of meteor strikes."))
+	to_chat(user, span_notice("I access the satellite's debug mode, increasing the chance of meteor strikes."))
 	if(active)
 		change_meteor_chance(4)
 	return TRUE

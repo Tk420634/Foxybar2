@@ -101,7 +101,7 @@
 // wound alert
 /atom/movable/screen/alert/status_effect/wound
 	name = "Wounded"
-	desc = "Your body has sustained serious damage, click here to inspect yourself."
+	desc = "My body has sustained serious damage, click here to inspect yourself."
 
 /atom/movable/screen/alert/status_effect/wound/Click()
 	var/mob/living/carbon/C = usr

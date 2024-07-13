@@ -69,7 +69,7 @@ RSF
 		matter = 30 //borgs dont actually use the matter so this is mostly just so it doesnt fail the next check incase of shennanigans
 		var/mob/living/silicon/robot/R = user
 		if(!R.cell || R.cell.charge < 200)
-			to_chat(user, span_warning("You do not have enough power to use [src]."))
+			to_chat(user, span_warning("I do not have enough power to use [src]."))
 			return
 	if(matter < 1)
 		to_chat(user, span_warning("\The [src] doesn't have enough matter left."))
@@ -132,9 +132,9 @@ RSF
 	. = ..()
 	obj_flags ^= EMAGGED
 	if(obj_flags & EMAGGED)
-		to_chat(user, span_warning("You short out [src]'s reagent safety checker!"))
+		to_chat(user, span_warning("I short out [src]'s reagent safety checker!"))
 	else
-		to_chat(user, span_warning("You reset [src]'s reagent safety checker!"))
+		to_chat(user, span_warning("I reset [src]'s reagent safety checker!"))
 		toxin = FALSE
 	return TRUE
 
@@ -170,7 +170,7 @@ RSF
 	if(iscyborg(user))
 		var/mob/living/silicon/robot/R = user
 		if(!R.cell || R.cell.charge < 400)
-			to_chat(user, span_warning("You do not have enough power to use [src]."))
+			to_chat(user, span_warning("I do not have enough power to use [src]."))
 			return
 	var/turf/T = get_turf(A)
 	playsound(src.loc, 'sound/machines/click.ogg', 10, 1)

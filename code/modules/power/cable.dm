@@ -158,7 +158,7 @@ By design, d1 is the smallest direction and d2 is the highest
 	if(istype(W, /obj/item/wirecutters))
 		if (shock(user, 50))
 			return
-		user.visible_message("[user] cuts the cable.", span_notice("You cut the cable."))
+		user.visible_message("[user] cuts the cable.", span_notice("I cut the cable."))
 		stored.add_fingerprint(user)
 		investigate_log("was cut by [key_name(usr)] in [AREACOORD(src)]", INVESTIGATE_WIRES)
 		deconstruct()
@@ -554,7 +554,7 @@ By design, d1 is the smallest direction and d2 is the highest
 		if(difference >= 0)
 			heal_amount = difference
 		if(user == H)
-			user.visible_message(span_notice("[user] starts to fix some of the wires in [H]'s [affecting.name]."), span_notice("You start fixing some of the wires in [H]'s [affecting.name]."))
+			user.visible_message(span_notice("[user] starts to fix some of the wires in [H]'s [affecting.name]."), span_notice("I start fixing some of the wires in [H]'s [affecting.name]."))
 			if(!do_mob(user, H, 50))
 				return
 		if(item_heal_robotic(H, user, 0, heal_amount))
@@ -576,16 +576,16 @@ By design, d1 is the smallest direction and d2 is the highest
 
 /obj/item/stack/cable_coil/attack_self(mob/user)
 	if(amount < 15)
-		to_chat(user, span_notice("You don't have enough cable coil to make restraints out of them"))
+		to_chat(user, span_notice("I don't have enough cable coil to make restraints out of them"))
 		return
-	to_chat(user, span_notice("You start making some cable restraints."))
+	to_chat(user, span_notice("I start making some cable restraints."))
 	if(!do_after(user, 30, TRUE, user, TRUE) || !use(15))
-		to_chat(user, span_notice("You fail to make cable restraints, you need to be standing still to do it"))
+		to_chat(user, span_notice("I fail to make cable restraints, you need to be standing still to do it"))
 		return
 	var/obj/item/restraints/handcuffs/cable/result = new(get_turf(user))
 	user.put_in_hands(result)
 	result.color = color
-	to_chat(user, span_notice("You make some restraints out of cable"))
+	to_chat(user, span_notice("I make some restraints out of cable"))
 
 //add cables to the stack
 /obj/item/stack/cable_coil/proc/give(extra)
@@ -609,7 +609,7 @@ By design, d1 is the smallest direction and d2 is the highest
 		return
 
 	if(!isturf(T) || T.intact || !T.can_have_cabling())
-		to_chat(user, span_warning("You can only lay cables on catwalks and plating!"))
+		to_chat(user, span_warning("I can only lay cables on catwalks and plating!"))
 		return
 
 	if(get_amount() < 1) // Out of cable
@@ -617,7 +617,7 @@ By design, d1 is the smallest direction and d2 is the highest
 		return
 
 	if(get_dist(T,user) > 1) // Too far
-		to_chat(user, span_warning("You can't lay cable at a place that far away!"))
+		to_chat(user, span_warning("I can't lay cable at a place that far away!"))
 		return
 
 	var/dirn
@@ -674,7 +674,7 @@ By design, d1 is the smallest direction and d2 is the highest
 		return
 
 	if(get_dist(C, user) > 1)		// make sure it's close enough
-		to_chat(user, span_warning("You can't lay cable at a place that far away!"))
+		to_chat(user, span_warning("I can't lay cable at a place that far away!"))
 		return
 
 
@@ -688,10 +688,10 @@ By design, d1 is the smallest direction and d2 is the highest
 	if((C.d1 == dirn || C.d2 == dirn) && !forceddir)
 		if(!U.can_have_cabling())						//checking if it's a plating or catwalk
 			if (showerror)
-				to_chat(user, span_warning("You can only lay cables on catwalks and plating!"))
+				to_chat(user, span_warning("I can only lay cables on catwalks and plating!"))
 			return
 		if(U.intact)						//can't place a cable if it's a plating with a tile on it
-			to_chat(user, span_warning("You can't lay cable there unless the floor tiles are removed!"))
+			to_chat(user, span_warning("I can't lay cable there unless the floor tiles are removed!"))
 			return
 		else
 			// cable is pointing at us, we're standing on an open tile

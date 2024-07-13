@@ -26,11 +26,11 @@
 		if(digrange == 0)
 			digrange = initial(digrange)
 			toolspeed = initial(toolspeed)
-			to_chat(user, span_notice("You increase the tools dig range, decreasing its mining speed."))
+			to_chat(user, span_notice("I increase the tools dig range, decreasing its mining speed."))
 		else
 			digrange = 0
 			toolspeed = toolspeed/2
-			to_chat(user, span_notice("You decrease the tools dig range, increasing its mining speed."))
+			to_chat(user, span_notice("I decrease the tools dig range, increasing its mining speed."))
 	else
 		to_chat(user, span_notice("Tool does not have a configureable dig range."))
 
@@ -133,7 +133,7 @@
 	name = "diamond-tipped mining drill"
 	icon_state = "diamonddrill"
 	toolspeed = 0.4
-	desc = "Yours is the drill that will pierce the heavens!"
+	desc = "Mys is the drill that will pierce the heavens!"
 
 /obj/item/pickaxe/drill/cyborg/diamond //This is the BORG version!
 	name = "diamond-tipped cyborg mining drill" //To inherit the NODROP_1 flag, and easier to change borg specific drill mechanics.

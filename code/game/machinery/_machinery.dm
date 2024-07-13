@@ -370,7 +370,7 @@ Class Procs:
 	. = !(state_open || panel_open || is_operational() || (flags_1 & NODECONSTRUCT_1)) && I.tool_behaviour == TOOL_CROWBAR
 	if(.)
 		I.play_tool_sound(src, 50)
-		visible_message(span_notice("[usr] pries open \the [src]."), span_notice("You pry open \the [src]."))
+		visible_message(span_notice("[usr] pries open \the [src]."), span_notice("I pry open \the [src]."))
 		open_machine()
 
 /obj/machinery/proc/default_deconstruction_crowbar(obj/item/I, ignore_panel = 0)
@@ -420,11 +420,11 @@ Class Procs:
 		if(!panel_open)
 			panel_open = TRUE
 			icon_state = icon_state_open
-			to_chat(user, span_notice("You open the maintenance hatch of [src]."))
+			to_chat(user, span_notice("I open the maintenance hatch of [src]."))
 		else
 			panel_open = FALSE
 			icon_state = icon_state_closed
-			to_chat(user, span_notice("You close the maintenance hatch of [src]."))
+			to_chat(user, span_notice("I close the maintenance hatch of [src]."))
 		return TRUE
 	return FALSE
 
@@ -432,7 +432,7 @@ Class Procs:
 	if(panel_open && I.tool_behaviour == TOOL_WRENCH)
 		I.play_tool_sound(src, 50)
 		setDir(turn(dir,-90))
-		to_chat(user, span_notice("You rotate [src]."))
+		to_chat(user, span_notice("I rotate [src]."))
 		return 1
 	return 0
 
@@ -448,12 +448,12 @@ Class Procs:
 		if(!can_be_unfasten || can_be_unfasten == FAILED_UNFASTEN)
 			return can_be_unfasten
 		if(time)
-			to_chat(user, span_notice("You begin [anchored ? "un" : ""]securing [src]..."))
+			to_chat(user, span_notice("I begin [anchored ? "un" : ""]securing [src]..."))
 		I.play_tool_sound(src, 50)
 		var/prev_anchored = anchored
 		//as long as we're the same anchored state and we're either on a floor or are anchored, toggle our anchored state
 		if(I.use_tool(src, user, time, extra_checks = CALLBACK(src,PROC_REF(unfasten_wrench_check), prev_anchored, user)))
-			to_chat(user, span_notice("You [anchored ? "un" : ""]secure [src]."))
+			to_chat(user, span_notice("I [anchored ? "un" : ""]secure [src]."))
 			setAnchored(!anchored)
 			playsound(src, 'sound/items/deconstruct.ogg', 50, 1)
 			SEND_SIGNAL(src, COMSIG_OBJ_DEFAULT_UNFASTEN_WRENCH, anchored)

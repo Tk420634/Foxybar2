@@ -130,22 +130,22 @@ I'd like to point out from my calculations it'll take about 60-80 minutes to die
 		antiGenetics--
 	switch(antiGenetics)
 		if(245)
-			to_chat(M, span_warning("You notice your body starting to disappear, maybe you took too much Astrogen...?</b>"))
+			to_chat(M, span_warning("I notice your body starting to disappear, maybe you took too much Astrogen...?</b>"))
 			M.alpha--
 			antiGenetics--
 			log_reagent("FERMICHEM: [M] ckey: [M.key] has become addicted to Astrogen")
 		if(220)
-			to_chat(M, span_notice("Your addiction is only getting worse as your body disappears. Maybe you should get some more, and fast?</b>"))
+			to_chat(M, span_notice("My addiction is only getting worse as your body disappears. Maybe you should get some more, and fast?</b>"))
 			M.alpha--
 			antiGenetics--
 		if(200)
-			to_chat(M, span_notice("You feel a substantial part of your soul flake off into the ethereal world, rendering yourself unclonable.</b>"))
+			to_chat(M, span_notice("I feel a substantial part of your soul flake off into the ethereal world, rendering yourself unclonable.</b>"))
 			M.alpha--
 			antiGenetics--
 			ADD_TRAIT(M, TRAIT_NOCLONE, "astral") //So you can't scan yourself, then die, to metacomm. You can only use your memories if you come back as something else.
 			M.hellbound = TRUE
 		if(180)
-			to_chat(M, span_notice("You feel fear build up in yourself as more and more of your body and consciousness begins to fade.</b>"))
+			to_chat(M, span_notice("I feel fear build up in yourself as more and more of your body and consciousness begins to fade.</b>"))
 			M.alpha--
 			antiGenetics--
 		if(120)
@@ -153,7 +153,7 @@ I'd like to point out from my calculations it'll take about 60-80 minutes to die
 			M.alpha--
 			antiGenetics--
 		if(80)
-			to_chat(M, span_notice("You feel a thrill shoot through your body as what's left of your mind contemplates your forthcoming oblivion.</b>"))
+			to_chat(M, span_notice("I feel a thrill shoot through your body as what's left of your mind contemplates your forthcoming oblivion.</b>"))
 			M.alpha--
 			antiGenetics--
 		if(45)
@@ -161,7 +161,7 @@ I'd like to point out from my calculations it'll take about 60-80 minutes to die
 			M.alpha--
 			antiGenetics--
 		if(-INFINITY to 30)
-			to_chat(M, span_warning("Your body disperses from existence, as you become one with the universe.</b>"))
+			to_chat(M, span_warning("My body disperses from existence, as you become one with the universe.</b>"))
 			to_chat(M, span_userdanger("As your body disappears, your consciousness doesn't. Should you find a way back into the mortal coil, your memories of your previous life remain with you. (At the cost of staying in character while dead. Failure to do this may get you banned from this chem. You are still obligated to follow your directives if you play a midround antag, you do not remember the afterlife IC)"))//Legalised IC OOK? I have a suspicion this won't make it past the review. At least it'll be presented as a neat idea! If this is unacceptable how about the player can retain living memories across lives if they die in this way only.
 			deadchat_broadcast(span_warning("[M] has become one with the universe, meaning that their IC conciousness is continuous in a new life. If they find a way back to life, they are allowed to remember their previous life. Be careful what you say. If they abuse this, bwoink the FUCK outta them."))
 			M.visible_message("[M] suddenly disappears, their body evaporating from existence, freeing [M] from their mortal coil.")

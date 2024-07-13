@@ -64,7 +64,7 @@
 /obj/vehicle/sealed/attackby(obj/item/I, mob/user, params)
 	if(key_type && !is_key(inserted_key) && is_key(I))
 		if(user.transferItemToLoc(I, src))
-			to_chat(user, span_notice("You insert [I] into [src]."))
+			to_chat(user, span_notice("I insert [I] into [src]."))
 			if(inserted_key)	//just in case there's an invalid key
 				inserted_key.forceMove(drop_location())
 			inserted_key = I
@@ -78,9 +78,9 @@
 		to_chat(user, span_notice("There is no key in [src]!"))
 		return
 	if(!is_occupant(user) || !(occupants[user] & VEHICLE_CONTROL_DRIVE))
-		to_chat(user, span_notice("You must be driving [src] to remove [src]'s key!"))
+		to_chat(user, span_notice("I must be driving [src] to remove [src]'s key!"))
 		return
-	to_chat(user, span_notice("You remove [inserted_key] from [src]."))
+	to_chat(user, span_notice("I remove [inserted_key] from [src]."))
 	inserted_key.forceMove(drop_location())
 	user.put_in_hands(inserted_key)
 	inserted_key = null

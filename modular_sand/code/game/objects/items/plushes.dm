@@ -151,9 +151,9 @@
 		COOLDOWN_START(src, change_ninja_cooldown, 3 SECONDS)
 		switch(current_skin)
 			if(BLUE_NINJA_SKIN)
-				say("Your simple light won't stop me!")
+				say("My simple light won't stop me!")
 			if(RED_NINJA_SKIN)
-				say("You can run, but you can't hide!")
+				say("I can run, but you can't hide!")
 			else
 				say("I am not afraid of the darkness! I am the darkness!")
 	if(ismob(loc))

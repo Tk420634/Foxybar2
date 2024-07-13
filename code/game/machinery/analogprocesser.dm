@@ -47,7 +47,7 @@
 /obj/structure/chopping_block/attackby(obj/item/I, mob/living/user, params)
 	if(build_stage == 1)
 		if(!istype(I, /obj/item/reagent_containers/glass/bowl))
-			to_chat(user, span_warning("You require a bowl!"))
+			to_chat(user, span_warning("I require a bowl!"))
 			return
 		bowl = I
 		qdel(I)
@@ -56,7 +56,7 @@
 		return
 	if(build_stage == 2)
 		if(!istype(I, /obj/item/kitchen/knife/butcher))
-			to_chat(user, span_warning("You require a butcher's knife!"))
+			to_chat(user, span_warning("I require a butcher's knife!"))
 			return
 		var/turf/T = get_turf(src)
 		if(!T)
@@ -105,13 +105,13 @@
 					loaded++
 
 		if(loaded)
-			to_chat(user, span_notice("You insert [loaded] items into [src]."))
+			to_chat(user, span_notice("I insert [loaded] items into [src]."))
 		return
 
 	var/datum/food_processor_process/P = select_recipe(O)
 	if(P)
 		user.visible_message("[user] put [O] into [src].", \
-			"You put [O] into [src].")
+			"I put [O] into [src].")
 		user.transferItemToLoc(O, src, TRUE)
 		return 1
 	else

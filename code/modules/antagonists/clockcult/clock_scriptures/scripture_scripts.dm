@@ -13,7 +13,7 @@
 	power_cost = 250
 	whispered = TRUE
 	object_path = /obj/item/clockwork/replica_fabricator
-	creator_message = span_brass("You form a replica fabricator.")
+	creator_message = span_brass("I form a replica fabricator.")
 	usage_tip = "Clockwork Walls cause nearby Tinkerer's Caches to generate components passively, making this a vital tool. Clockwork Floors heal toxin damage in Servants standing on them."
 	tier = SCRIPTURE_SCRIPT
 	space_allowed = TRUE
@@ -33,7 +33,7 @@
 	channel_time = 100
 	power_cost = 250
 	object_path = /obj/structure/destructible/clockwork/ocular_warden
-	creator_message = span_brass("You form an ocular warden, which will automatically attack nearby unrestrained non-Servants that can see it.")
+	creator_message = span_brass("I form an ocular warden, which will automatically attack nearby unrestrained non-Servants that can see it.")
 	observer_message = span_warning("A brass eye takes shape and slowly rises into the air, its red iris glaring!")
 	usage_tip = "Although powerful, the warden is very fragile and should optimally be placed behind barricades."
 	tier = SCRIPTURE_SCRIPT
@@ -46,7 +46,7 @@
 
 /datum/clockwork_scripture/create_object/ocular_warden/check_special_requirements()
 	for(var/obj/structure/destructible/clockwork/ocular_warden/W in range(OCULAR_WARDEN_EXCLUSION_RANGE, invoker))
-		to_chat(invoker, span_neovgre("You sense another ocular warden too near this location. Placing another this close would cause them to fight.") )
+		to_chat(invoker, span_neovgre("I sense another ocular warden too near this location. Placing another this close would cause them to fight.") )
 		return FALSE
 	return ..()
 
@@ -110,7 +110,7 @@
 	power_cost = 400
 	whispered = TRUE
 	object_path = /obj/item/clothing/glasses/judicial_visor
-	creator_message = span_brass("You form a judicial visor, which is capable of smiting a small area.")
+	creator_message = span_brass("I form a judicial visor, which is capable of smiting a small area.")
 	usage_tip = "The visor has a thirty-second cooldown once used."
 	tier = SCRIPTURE_SCRIPT
 	space_allowed = TRUE
@@ -128,7 +128,7 @@
 	channel_time = 20
 	power_cost = 600 //Shouldn't be too spammable but not too hard to get either
 	whispered = TRUE
-	creator_message = "You form a ratvarian shield, which is capable of absorbing blocked attacks to empower its bashes."
+	creator_message = "I form a ratvarian shield, which is capable of absorbing blocked attacks to empower its bashes."
 	object_path = /obj/item/shield/riot/ratvarian
 	usage_tip = "Bashes will only use charge when performed with intent to harm."
 	tier = SCRIPTURE_SCRIPT
@@ -157,13 +157,13 @@
 
 /datum/clockwork_scripture/clockwork_armaments/check_special_requirements()
 	for(var/datum/action/innate/clockwork_armaments/F in invoker.actions)
-		to_chat(invoker, span_warning("You have already bound a Ratvarian spear to yourself!"))
+		to_chat(invoker, span_warning("I have already bound a Ratvarian spear to yourself!"))
 		return FALSE
 	return invoker.can_hold_items()
 
 /datum/clockwork_scripture/clockwork_armaments/scripture_effects()
 	invoker.visible_message(span_warning("A shimmer of yellow light infuses [invoker]!"), \
-	span_brass("You bind clockwork equipment to yourself. Use Clockwork Armaments and Call Spear to summon them."))
+	span_brass("I bind clockwork equipment to yourself. Use Clockwork Armaments and Call Spear to summon them."))
 	var/datum/action/innate/call_weapon/ratvarian_spear/S = new()
 	S.Grant(invoker)
 	var/datum/action/innate/clockwork_armaments/A = new()
@@ -364,7 +364,7 @@
 	sort_priority = 6
 	quickbind = TRUE
 	quickbind_desc = "Allows you to fire energy rays at target locations.<br><b>Maximum 5 chants.</b>"
-	var/static/list/nzcrentr_insults = list("You're not very good at aiming.", "You hunt badly.", "What a waste of energy.", "Almost funny to watch.",
+	var/static/list/nzcrentr_insults = list("You're not very good at aiming.", "I hunt badly.", "What a waste of energy.", "Almost funny to watch.",
 	"Boss says </span><span class='heavy_brass'>\"Click something, you idiot!\"</span><span class='nzcrentr'>.", "Stop wasting power if you can't aim.")
 
 /datum/clockwork_scripture/channeled/volt_blaster/chant_effects(chant_number)

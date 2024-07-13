@@ -28,7 +28,7 @@
 /obj/item/target/welder_act(mob/living/user, obj/item/I)
 	if(I.use_tool(src, user, 0, volume=40))
 		removeOverlays()
-		to_chat(user, span_notice("You slice off [src]'s uneven chunks of aluminium and scorch marks."))
+		to_chat(user, span_notice("I slice off [src]'s uneven chunks of aluminium and scorch marks."))
 	return TRUE
 
 /obj/item/target/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)

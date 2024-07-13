@@ -160,7 +160,7 @@
 			msg = "<b>[msg]</b>"
 			vis_dist = DEFAULT_MESSAGE_RANGE
 
-		victim.visible_message(msg, span_userdanger("Your [limb.name] [occur_text]!"), vision_distance = vis_dist)
+		victim.visible_message(msg, span_userdanger("My [limb.name] [occur_text]!"), vision_distance = vis_dist)
 		if(sound_effect)
 			playsound(L.owner, sound_effect, 70 + 20 * severity, TRUE)
 
@@ -283,9 +283,9 @@
 	//limb.heal_damage(I.heal_brute, I.heal_burn)
 
 	if(blood_flow <= 0)
-		to_chat(user, span_green("You successfully stop the bleeding in [self_applied ? "your" : "[victim]'s"] [limb.name]."))
+		to_chat(user, span_green("I successfully stop the bleeding in [self_applied ? "your" : "[victim]'s"] [limb.name]."))
 	else
-		to_chat(user, span_notice("You reduce the bleeding in [self_applied ? "your" : "[victim]'s"] [limb.name]."))
+		to_chat(user, span_notice("I reduce the bleeding in [self_applied ? "your" : "[victim]'s"] [limb.name]."))
 
 /// Return TRUE if we have an item that can only be used while aggro grabbed (unhanded aggro grab treatments go in [/datum/wound/proc/try_handling]). Treatment is still is handled in [/datum/wound/proc/treat]
 /datum/wound/proc/check_grab_treatments(obj/item/I, mob/user)
