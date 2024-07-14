@@ -285,6 +285,12 @@
 		)
 	outdoors = FALSE
 
+/area/f13/fb/private
+	name = "Foxy Private"
+	icon_state = "house"
+	outdoors = FALSE
+	private = TRUE
+
 /area/f13/fb/bar
 	name = "Foxy Bar"
 	icon_state = "alcohol"
