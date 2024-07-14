@@ -20,6 +20,7 @@ GLOBAL_VAR_INIT(areas_kill_ambience_for_players_when_players_move_from_one_area_
 	invisibility = INVISIBILITY_LIGHTING
 	alpha = 50
 	var/safe_town
+	var/private = FALSE
 
 	/// Set in New(); preserves the name set by the map maker, even if renamed by the Blueprints.
 	var/map_name

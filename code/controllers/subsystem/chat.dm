@@ -10,6 +10,22 @@ SUBSYSTEM_DEF(chat)
 	priority = FIRE_PRIORITY_CHAT
 	init_order = INIT_ORDER_CHAT
 
+	/* 
+	** Base 
+	 */
+	var/base_say_distance = 7
+	var/extended_say_distance = 16
+
+	var/base_whisper_distance = 1
+	var/extended_whisper_distance = 3
+	
+	var/base_sing_distance = 15
+	var/extended_sing_distance = INFINITY
+	var/base_yell_distance = 15
+	var/extended_yell_distance = INFINITY
+	var/far_distance = 6 // how far until they're considered offscreen
+
+
 	var/list/payload_by_client = list()
 	/// All the lookups for translating emotes to say prefixes
 	var/list/emoticon_cache = list()
@@ -38,6 +54,8 @@ SUBSYSTEM_DEF(chat)
 	/// how long between flirts can we flirt
 	var/flirt_cooldown_time = 5 SECONDS
 	var/debug_character_directory = 0
+
+	var/debug_chud = FALSE
 
 /datum/controller/subsystem/chat/Initialize(start_timeofday)
 	setup_emoticon_cache()
