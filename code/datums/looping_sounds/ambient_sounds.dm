@@ -607,7 +607,7 @@
 /datum/looping_sound/ambient/fb/bar_bacon
 	chance = 100
 	vary = FALSE
-	volume = SOUND_LOOP_VOL_RANGE(100, 100)
+	volume = SOUND_LOOP_VOL_RANGE(40, 65)
 	direct = TRUE
 	loop_delay = 0 SECONDS
 	chance = 100

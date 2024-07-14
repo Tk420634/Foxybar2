@@ -609,10 +609,11 @@
 	spawn(5 MINUTES)
 		if(character?.client?.is_in_game)
 			character?.client?.is_in_game = 2
-
-			for(var/i in GLOB.player_list)
+			
+			for(var/mob/living/i in GLOB.player_list)
 				if(isliving(i))
-					to_chat(i, span_nicegreen("I overhear a mention that [humanc.name] may be poking around the bar."))
+					to_chat(i, span_nicegreen("You overhear a mention that [humanc.name] may be poking around the bar."))
+					i.playsound_local(i, 'sound/doorbell.ogg', 75, TRUE)
 
 /mob/dead/new_player/proc/AddEmploymentContract(mob/living/carbon/human/employee)
 	//TODO:  figure out a way to exclude wizards/nukeops/demons from this.
