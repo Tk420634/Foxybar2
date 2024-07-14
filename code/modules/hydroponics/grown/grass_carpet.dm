@@ -36,7 +36,7 @@
 	distill_reagent = /datum/reagent/consumable/ethanol/beer/light
 
 /obj/item/reagent_containers/food/snacks/grown/grass/attack_self(mob/user)
-	to_chat(user, span_notice("You prepare the astroturf."))
+	to_chat(user, span_notice("I prepare the astroturf."))
 	var/grassAmt = 1 + round(seed.potency * tile_coefficient) // The grass we're holding
 	for(var/obj/item/reagent_containers/food/snacks/grown/grass/G in user.loc) // The grass on the floor
 		if(G.type != type)

@@ -10,10 +10,10 @@
 	stage_prob = 10
 	visibility_flags = HIDDEN_SCANNER|HIDDEN_PANDEMIC
 	disease_flags = CURABLE
-	var/list/stage1 = list("You feel unremarkable.")
-	var/list/stage2 = list("You feel boring.")
-	var/list/stage3 = list("You feel utterly plain.")
-	var/list/stage4 = list("You feel white bread.")
+	var/list/stage1 = list("I feel unremarkable.")
+	var/list/stage2 = list("I feel boring.")
+	var/list/stage3 = list("I feel utterly plain.")
+	var/list/stage4 = list("I feel white bread.")
 	var/list/stage5 = list("Oh the humanity!")
 	var/new_form = /mob/living/carbon/human
 	var/bantype
@@ -79,12 +79,12 @@
 	var/list/mob/candidates = pollCandidatesForMob("Do you want to play as [affected_mob.name]?", bantype, null, bantype, 50, affected_mob)
 	if(LAZYLEN(candidates))
 		var/mob/C = pick(candidates)
-		to_chat(affected_mob, "Your mob has been taken over by a ghost! Appeal your job ban if you want to avoid this in the future!")
+		to_chat(affected_mob, "My mob has been taken over by a ghost! Appeal your job ban if you want to avoid this in the future!")
 		message_admins("[key_name_admin(C)] has taken control of ([key_name_admin(affected_mob)]) to replace a jobbaned player.")
 		affected_mob.ghostize(0)
 		C.transfer_ckey(affected_mob)
 	else
-		to_chat(new_mob, "Your mob has been claimed by death! Appeal your job ban if you want to avoid this in the future!")
+		to_chat(new_mob, "My mob has been claimed by death! Appeal your job ban if you want to avoid this in the future!")
 		new_mob.death()
 		if (!QDELETED(new_mob))
 			new_mob.ghostize(can_reenter_corpse = FALSE)
@@ -112,9 +112,9 @@
 	stage1	= list()
 	stage2	= list()
 	stage3	= list()
-	stage4	= list(span_warning("Your back hurts."), span_warning("You breathe through your mouth."),
-					span_warning("You have a craving for bananas."), span_warning("Your mind feels clouded."))
-	stage5	= list(span_warning("You feel like monkeying around."))
+	stage4	= list(span_warning("My back hurts."), span_warning("I breathe through your mouth."),
+					span_warning("I have a craving for bananas."), span_warning("My mind feels clouded."))
+	stage5	= list(span_warning("I feel like monkeying around."))
 
 /datum/disease/transformation/jungle_fever/do_disease_transformation(mob/living/carbon/affected_mob)
 	if(affected_mob.mind && !is_monkey(affected_mob.mind))
@@ -129,10 +129,10 @@
 	switch(stage)
 		if(2)
 			if(prob(2))
-				to_chat(affected_mob, span_notice("Your [pick("back", "arm", "leg", "elbow", "head")] itches."))
+				to_chat(affected_mob, span_notice("My [pick("back", "arm", "leg", "elbow", "head")] itches."))
 		if(3)
 			if(prob(4))
-				to_chat(affected_mob, span_danger("You feel a stabbing pain in your head."))
+				to_chat(affected_mob, span_danger("I feel a stabbing pain in your head."))
 				affected_mob.confused += 10
 		if(4)
 			if(prob(3))
@@ -163,10 +163,10 @@
 	severity = DISEASE_SEVERITY_BIOHAZARD
 	visibility_flags = 0
 	stage1	= null
-	stage2	= list("Your joints feel stiff.", span_danger("Beep...boop.."))
-	stage3	= list(span_danger("Your joints feel very stiff."), "Your skin feels loose.", span_danger("You can feel something move...inside."))
-	stage4	= list(span_danger("Your skin feels very loose."), span_danger("You can feel... something...inside you."))
-	stage5	= list(span_danger("Your skin feels as if it's about to burst off!"))
+	stage2	= list("My joints feel stiff.", span_danger("Beep...boop.."))
+	stage3	= list(span_danger("My joints feel very stiff."), "My skin feels loose.", span_danger("I can feel something move...inside."))
+	stage4	= list(span_danger("My skin feels very loose."), span_danger("I can feel... something...inside you."))
+	stage5	= list(span_danger("My skin feels as if it's about to burst off!"))
 	new_form = /mob/living/silicon/robot
 	infectable_biotypes = MOB_ORGANIC|MOB_UNDEAD|MOB_ROBOTIC
 	bantype = "Cyborg"
@@ -178,7 +178,7 @@
 			if (prob(8))
 				affected_mob.say(pick("Beep, boop", "beep, beep!", "Boop...bop"), forced = "robotic transformation")
 			if (prob(4))
-				to_chat(affected_mob, span_danger("You feel a stabbing pain in your head."))
+				to_chat(affected_mob, span_danger("I feel a stabbing pain in your head."))
 				affected_mob.Unconscious(40)
 		if(4)
 			if (prob(20))
@@ -196,10 +196,10 @@
 	severity = DISEASE_SEVERITY_BIOHAZARD
 	visibility_flags = 0
 	stage1	= null
-	stage2	= list("Your throat feels scratchy.", span_danger("Kill..."))
-	stage3	= list(span_danger("Your throat feels very scratchy."), "Your skin feels tight.", span_danger("You can feel something move...inside."))
-	stage4	= list(span_danger("Your skin feels very tight."), span_danger("Your blood boils!"), span_danger("You can feel... something...inside you."))
-	stage5	= list(span_danger("Your skin feels as if it's about to burst off!"))
+	stage2	= list("My throat feels scratchy.", span_danger("Kill..."))
+	stage3	= list(span_danger("My throat feels very scratchy."), "My skin feels tight.", span_danger("I can feel something move...inside."))
+	stage4	= list(span_danger("My skin feels very tight."), span_danger("My blood boils!"), span_danger("I can feel... something...inside you."))
+	stage5	= list(span_danger("My skin feels as if it's about to burst off!"))
 	new_form = /mob/living/carbon/alien/humanoid/hunter
 	bantype = ROLE_ALIEN
 
@@ -208,11 +208,11 @@
 	switch(stage)
 		if(3)
 			if (prob(4))
-				to_chat(affected_mob, span_danger("You feel a stabbing pain in your head."))
+				to_chat(affected_mob, span_danger("I feel a stabbing pain in your head."))
 				affected_mob.Unconscious(40)
 		if(4)
 			if (prob(20))
-				affected_mob.say(pick("You look delicious.", "Going to... devour you...", "Hsssshhhhh!"), forced = "xenomorph transformation")
+				affected_mob.say(pick("I look delicious.", "Going to... devour you...", "Hsssshhhhh!"), forced = "xenomorph transformation")
 
 
 /datum/disease/transformation/slime
@@ -224,11 +224,11 @@
 	desc = "This highly concentrated extract converts anything into more of itself."
 	severity = DISEASE_SEVERITY_BIOHAZARD
 	visibility_flags = 0
-	stage1	= list("You don't feel very well.")
-	stage2	= list("Your skin feels a little slimy.")
-	stage3	= list(span_danger("Your appendages are melting away."), span_danger("Your limbs begin to lose their shape."))
-	stage4	= list(span_danger("You are turning into a slime."))
-	stage5	= list(span_danger("You have become a slime."))
+	stage1	= list("I don't feel very well.")
+	stage2	= list("My skin feels a little slimy.")
+	stage3	= list(span_danger("My appendages are melting away."), span_danger("My limbs begin to lose their shape."))
+	stage4	= list(span_danger("I am turning into a slime."))
+	stage5	= list(span_danger("I have become a slime."))
 	new_form = /mob/living/simple_animal/slime/random
 
 /datum/disease/transformation/slime/stage_act()
@@ -253,7 +253,7 @@
 	severity = DISEASE_SEVERITY_BIOHAZARD
 	visibility_flags = 0
 	stage1	= list("BARK.")
-	stage2	= list("You feel the need to wear silly hats.")
+	stage2	= list("I feel the need to wear silly hats.")
 	stage3	= list(span_danger("Must... eat... chocolate...."), span_danger("YAP"))
 	stage4	= list(span_danger("Visions of washing machines assail your mind!"))
 	stage5	= list(span_danger("AUUUUUU!!!"))
@@ -278,10 +278,10 @@
 	stage_prob = 20
 	severity = DISEASE_SEVERITY_BIOHAZARD
 	visibility_flags = 0
-	stage1	= list("Your stomach rumbles.")
-	stage2	= list("Your skin feels saggy.")
-	stage3	= list(span_danger("Your appendages are melting away."), span_danger("Your limbs begin to lose their shape."))
+	stage1	= list("My stomach rumbles.")
+	stage2	= list("My skin feels saggy.")
+	stage3	= list(span_danger("My appendages are melting away."), span_danger("My limbs begin to lose their shape."))
 	stage4	= list(span_danger("You're ravenous."))
-	stage5	= list(span_danger("You have become a morph."))
+	stage5	= list(span_danger("I have become a morph."))
 	new_form = /mob/living/simple_animal/hostile/morph
 	infectable_biotypes = MOB_ORGANIC|MOB_MINERAL|MOB_UNDEAD //magic!

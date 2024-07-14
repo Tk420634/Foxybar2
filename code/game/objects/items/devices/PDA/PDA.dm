@@ -298,7 +298,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 
 /obj/item/pda/interact(mob/user)
 	if(!user.IsAdvancedToolUser())
-		to_chat(user, span_warning("You don't have the dexterity to do this!"))
+		to_chat(user, span_warning("I don't have the dexterity to do this!"))
 		return
 
 	..()
@@ -623,7 +623,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 				if("Eject")//Ejects the cart, only done from hub.
 					if (!isnull(cartridge))
 						U.put_in_hands(cartridge)
-						to_chat(U, span_notice("You remove [cartridge] from [src]."))
+						to_chat(U, span_notice("I remove [cartridge] from [src]."))
 						scanmode = PDA_SCANNER_NONE
 						cartridge.host_pda = null
 						cartridge = null
@@ -900,7 +900,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 		return
 	if(user)
 		user.put_in_hands(id)
-		to_chat(user, span_notice("You remove the ID from the [name]."))
+		to_chat(user, span_notice("I remove the ID from the [name]."))
 	else
 		id.forceMove(get_turf(src))
 
@@ -1132,7 +1132,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 
 	if(inserted_item)
 		usr.put_in_hands(inserted_item)
-		to_chat(usr, span_notice("You remove [inserted_item] from [src]."))
+		to_chat(usr, span_notice("I remove [inserted_item] from [src]."))
 		inserted_item = null
 		update_icon()
 	else
@@ -1177,7 +1177,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 			return
 		cartridge = C
 		cartridge.host_pda = src
-		to_chat(user, span_notice("You insert [cartridge] into [src]."))
+		to_chat(user, span_notice("I insert [cartridge] into [src]."))
 		update_icon()
 		playsound(src, 'sound/machines/button.ogg', 50, 1)
 
@@ -1204,7 +1204,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 			if(((src in user.contents) || (isturf(loc) && in_range(src, user))) && (C in user.contents))
 				if(!id_check(user, idcard))
 					return
-				to_chat(user, span_notice("You put the ID into \the [src]'s slot."))
+				to_chat(user, span_notice("I put the ID into \the [src]'s slot."))
 				updateSelfDialog()//Update self dialog on success.
 			return	//Return in case of failed check or when successful.
 		updateSelfDialog()//For the non-input related code.
@@ -1212,7 +1212,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 		if(!user.transferItemToLoc(C, src))
 			return
 		pai = C
-		to_chat(user, span_notice("You slot \the [C] into [src]."))
+		to_chat(user, span_notice("I slot \the [C] into [src]."))
 		update_icon()
 		updateUsrDialog()
 	else if(is_type_in_list(C, contained_item)) //Checks if there is a pen
@@ -1222,7 +1222,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 		else
 			if(!user.transferItemToLoc(C, src))
 				return
-			to_chat(user, span_notice("You slide \the [C] into \the [src]."))
+			to_chat(user, span_notice("I slide \the [C] into \the [src]."))
 			inserted_item = C
 			update_icon()
 			playsound(src, 'sound/machines/button.ogg', 50, 1)
@@ -1230,7 +1230,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	else if(istype(C, /obj/item/photo))
 		var/obj/item/photo/P = C
 		picture = P.picture
-		to_chat(user, span_notice("You scan \the [C]."))
+		to_chat(user, span_notice("I scan \the [C]."))
 	else
 		return ..()
 
@@ -1294,9 +1294,9 @@ GLOBAL_LIST_EMPTY(PDAs)
 
 	if (ismob(loc))
 		var/mob/M = loc
-		M.show_message(span_userdanger("Your [src] explodes!"), MSG_VISUAL, span_warning("You hear a loud *pop*!"), MSG_AUDIBLE)
+		M.show_message(span_userdanger("My [src] explodes!"), MSG_VISUAL, span_warning("I hear a loud *pop*!"), MSG_AUDIBLE)
 	else
-		visible_message(span_danger("[src] explodes!"), span_warning("You hear a loud *pop*!"))
+		visible_message(span_danger("[src] explodes!"), span_warning("I hear a loud *pop*!"))
 
 	if(T)
 		T.hotspot_expose(700,125)
@@ -1371,7 +1371,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 		aiPDA.toff = !aiPDA.toff
 		to_chat(usr, span_notice("PDA sender/receiver toggled [(aiPDA.toff ? "Off" : "On")]!"))
 	else
-		to_chat(usr, "You do not have a PDA. You should make an issue report about this.")
+		to_chat(usr, "I do not have a PDA. You should make an issue report about this.")
 
 /mob/living/silicon/ai/verb/cmd_toggle_pda_silent()
 	set category = "AI Commands"
@@ -1383,7 +1383,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 		aiPDA.silent = !aiPDA.silent
 		to_chat(usr, span_notice("PDA ringer toggled [(aiPDA.silent ? "Off" : "On")]!"))
 	else
-		to_chat(usr, "You do not have a PDA. You should make an issue report about this.")
+		to_chat(usr, "I do not have a PDA. You should make an issue report about this.")
 
 /mob/living/silicon/ai/proc/cmd_show_message_log(mob/user)
 	if(incapacitated(allow_crit = TRUE))
@@ -1392,7 +1392,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 		var/HTML = "<html><head><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'><title>AI PDA Message Log</title></head><body>[aiPDA.tnote]</body></html>"
 		user << browse(HTML, "window=log;size=400x444;border=1;can_resize=1;can_close=1;can_minimize=0")
 	else
-		to_chat(user, "You do not have a PDA. You should make an issue report about this.")
+		to_chat(user, "I do not have a PDA. You should make an issue report about this.")
 
 
 // Pass along the pulse to atoms in contents, largely added so pAIs are vulnerable to EMP

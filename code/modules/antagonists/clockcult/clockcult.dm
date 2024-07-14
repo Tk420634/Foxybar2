@@ -75,12 +75,12 @@
 				to_chat(R, "<span class='boldwarning'>You have been desynced from your master AI.<br>\
 				In addition, your onboard camera is no longer active and you have gained additional equipment, including a limited clockwork slab.</span>")
 			else
-				to_chat(R, span_boldwarning("Your onboard camera is no longer active and you have gained additional equipment, including a limited clockwork slab."))
+				to_chat(R, span_boldwarning("My onboard camera is no longer active and you have gained additional equipment, including a limited clockwork slab."))
 		if(isAI(current))
-			to_chat(current, span_boldwarning("You are now able to use your cameras to listen in on conversations, but can no longer speak in anything but Ratvarian."))
-		to_chat(current, span_heavy_brass("You can communicate with other servants by using the Hierophant Network action button in the upper left."))
+			to_chat(current, span_boldwarning("I am now able to use your cameras to listen in on conversations, but can no longer speak in anything but Ratvarian."))
+		to_chat(current, span_heavy_brass("I can communicate with other servants by using the Hierophant Network action button in the upper left."))
 	else if(isbrain(current) || isclockmob(current))
-		to_chat(current, span_nezbere("You can communicate with other servants by using the Hierophant Network action button in the upper left."))
+		to_chat(current, span_nezbere("I can communicate with other servants by using the Hierophant Network action button in the upper left."))
 	..()
 	to_chat(current, "<b>This is Ratvar's will:</b> [CLOCKCULT_OBJECTIVE]")
 	antag_memory += "<b>Ratvar's will:</b> [CLOCKCULT_OBJECTIVE]<br>" //Memorize the objectives

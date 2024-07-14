@@ -48,17 +48,17 @@
 
 /datum/action/risingbassmove/Trigger()
 	if(owner.incapacitated())
-		to_chat(owner, span_warning("You can't use [name] while you're incapacitated."))
+		to_chat(owner, span_warning("I can't use [name] while you're incapacitated."))
 		return
 	var/mob/living/carbon/human/H = owner
 	if (H.mind.martial_art.streak == "[movestreak]")
 		H.mind.martial_art.streak = ""
-		to_chat(H,span_danger("You relax your muscles and return to a neutral position."))
+		to_chat(H,span_danger("I relax your muscles and return to a neutral position."))
 	else
 		if(HAS_TRAIT(H, TRAIT_PACIFISM))
-			to_chat(H, span_warning("You don't want to harm other people!"))
+			to_chat(H, span_warning("I don't want to harm other people!"))
 			return
-		to_chat(H,span_danger("You get ready to use the [name] maneuver!"))
+		to_chat(H,span_danger("I get ready to use the [name] maneuver!"))
 		H.mind.martial_art.streak = "[movestreak]"
 
 /datum/action/risingbassmove/sidekick
@@ -173,14 +173,14 @@
 	A.do_attack_animation(D, ATTACK_EFFECT_PUNCH)
 	if(CHECK_MOBILITY(D, MOBILITY_STAND) && damage >= stunthreshold)
 		D.visible_message(span_danger("[A] trips [D]!"), \
-					span_userdanger("You're tripped by [A]!"), span_hear("You hear something thump against the floor!"), COMBAT_MESSAGE_RANGE, A)
-		to_chat(A, span_danger("You trip [D]!"))
+					span_userdanger("You're tripped by [A]!"), span_hear("I hear something thump against the floor!"), COMBAT_MESSAGE_RANGE, A)
+		to_chat(A, span_danger("I trip [D]!"))
 		D.DefaultCombatKnockdown(10, override_hardstun = 0.01, override_stamdmg = damage)
 		D.Dizzy(damage)
 	else
 		D.visible_message(span_danger("[A] jabs [D] in the stomach!"), \
-					span_userdanger("You're jabbed in the stomach by [A]!"), span_hear("You hear a sickening sound of flesh hitting flesh!"), COMBAT_MESSAGE_RANGE, A)
-		to_chat(A, span_danger("You jab [D] in the stomach!"))
+					span_userdanger("You're jabbed in the stomach by [A]!"), span_hear("I hear a sickening sound of flesh hitting flesh!"), COMBAT_MESSAGE_RANGE, A)
+		to_chat(A, span_danger("I jab [D] in the stomach!"))
 		D.apply_damage(damage*2 + 10, STAMINA)
 		D.disgust = min(damage, 20)
 	playsound(D, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
@@ -213,7 +213,7 @@
 		return BULLET_ACT_HIT
 	if(!isturf(A.loc)) //NO MOTHERFLIPPIN MECHS!
 		return BULLET_ACT_HIT
-	A.visible_message(span_danger("[A] effortlessly swats the projectile aside! They can deflect projectiles with their bare hands!"), span_userdanger("You deflect the projectile!"))
+	A.visible_message(span_danger("[A] effortlessly swats the projectile aside! They can deflect projectiles with their bare hands!"), span_userdanger("I deflect the projectile!"))
 	playsound(get_turf(A), pick('sound/weapons/bulletflyby.ogg', 'sound/weapons/bulletflyby2.ogg', 'sound/weapons/bulletflyby3.ogg'), 75, TRUE )
 	P.firer = A
 	P.setAngle(rand(0, 360))//SHING

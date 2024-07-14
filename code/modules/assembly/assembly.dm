@@ -99,7 +99,7 @@
 		if((!A.secured) && (!secured))
 			holder = new/obj/item/assembly_holder(get_turf(src))
 			holder.assemble(src,A,user)
-			to_chat(user, span_notice("You attach and secure \the [A] to \the [src]!"))
+			to_chat(user, span_notice("I attach and secure \the [A] to \the [src]!"))
 		else
 			to_chat(user, span_warning("Both devices must be in attachable mode to be attached together."))
 		return

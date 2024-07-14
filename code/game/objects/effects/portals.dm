@@ -226,7 +226,7 @@
 
 /obj/effect/portal/permanent/one_way // doesn't have a return portal, can have multiple exits, /obj/effect/landmark/portal_exit to mark them
 	name = "one-way portal"
-	desc = "You get the feeling that this might not be the safest thing you've ever done."
+	desc = "I get the feeling that this might not be the safest thing you've ever done."
 
 /obj/effect/portal/permanent/one_way/set_linked()
 	if(!id)

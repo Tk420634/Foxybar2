@@ -61,11 +61,11 @@
 	if(icon_state == "kemblecoat_green")
 		icon_state = "kemblecoat_tan"
 		item_state = "kemblecoat_tan"
-		to_chat(user, "You reverse the coat to show the tan side.")
+		to_chat(user, "I reverse the coat to show the tan side.")
 	else
 		icon_state = "kemblecoat_green"
 		item_state = "kemblecoat_green"
-		to_chat(user, "You reverse the coat to show the green side.")
+		to_chat(user, "I reverse the coat to show the green side.")
 
 // Shimsusa's gear.
 /obj/item/electropack/shockcollar/shimsusa_shackles

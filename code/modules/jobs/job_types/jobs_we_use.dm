@@ -73,7 +73,7 @@
 	// faction = FACTION_OASIS
 	total_positions = 2
 	spawn_positions = 2
-	description = "You are the voice of the wasteland, broadcasting your thoughts and opinions to the world. You have the power to shape the wasteland's future, or simply entertain the masses. The choice is yours."
+	description = "I am the voice of the wasteland, broadcasting your thoughts and opinions to the world. You have the power to shape the wasteland's future, or simply entertain the masses. The choice is yours."
 	supervisors = "the (nonexistent) FCC"
 	selection_color = "#dddddd"
 	paycheck = COINS_TO_CREDITS(200) // 200 copper per hour
@@ -91,7 +91,7 @@
 	social_faction = FACTION_TRIBE
 	total_positions = -1
 	spawn_positions = -1
-	description = "You are a member of the of a tribe who has wandered to this area, but does not belong to the Mountain River tribe.  From where you came is up to you, why you are here is your own, and it is up to you to survive on your own and attempt to thrive."
+	description = "I am a member of the of a tribe who has wandered to this area, but does not belong to the Mountain River tribe.  From where you came is up to you, why you are here is your own, and it is up to you to survive on your own and attempt to thrive."
 	supervisors = "the Ways of your own tribe"
 	selection_color = "#dddddd"
 	outfit = /datum/outfit/job/wasteland/f13tribal
@@ -107,7 +107,7 @@
 	faction = FACTION_WASTELAND
 	total_positions = -1
 	spawn_positions = -1
-	description = "You are here for one thing and one thing alone: have a good time, either alone, or with others. This role is perfect for someone looking to have a nice private scene with someone, as it is completely safe from the chaos of the main game. Have fun!"
+	description = "I am here for one thing and one thing alone: have a good time, either alone, or with others. This role is perfect for someone looking to have a nice private scene with someone, as it is completely safe from the chaos of the main game. Have fun!"
 	supervisors = "<i>your throbbing biological urges</i>"
 	selection_color = "#dddddd"
 	paycheck = 0 // They're likely gonna get Cozy and not get paid anyway
@@ -142,7 +142,7 @@
 /datum/job/townfolk/citizen
 	title = "Citizen"
 	flag = F13SETTLER
-	description = "You are a citizen of New Boston. You have arrived or have been living in the region for purposes known only to you. Try to make a living for yourself - or simply survive - and craft your own unique story."
+	description = "I am a citizen of New Boston. You have arrived or have been living in the region for purposes known only to you. Try to make a living for yourself - or simply survive - and craft your own unique story."
 	supervisors = "the Adventurer's Guild"
 	paycheck = COINS_TO_CREDITS(150) // 150 copper per hour
 	access = list(ACCESS_BAR)
@@ -155,7 +155,7 @@
 /datum/job/townfolk/f13farmer
 	title = "Farmer"
 	flag = F13FARMER
-	description = "You are a farmer, responsible for the cultivation of crops and the care of livestock. You are the backbone of the settlement, providing food and resources for the community. Your work is essential to the survival of New Boston."
+	description = "I am a farmer, responsible for the cultivation of crops and the care of livestock. You are the backbone of the settlement, providing food and resources for the community. Your work is essential to the survival of New Boston."
 	supervisors = "the Adventurer's Guild"
 	outfit = /datum/outfit/job/den/f13farmer
 	paycheck = COINS_TO_CREDITS(75) // 75 copper per hour (they get paid in food) (they can also sell the food) (there's a lot of food)
@@ -168,7 +168,7 @@
 /datum/job/townfolk/f13prospector
 	title = "Prospector"
 	flag = F13PROSPECTOR
-	description = "You are a prospector, responsible for the extraction of valuable resources from the earth. You are the backbone of the settlement, providing raw materials for the community. Your work is essential to the survival of New Boston."
+	description = "I am a prospector, responsible for the extraction of valuable resources from the earth. You are the backbone of the settlement, providing raw materials for the community. Your work is essential to the survival of New Boston."
 	supervisors = "the Adventurer's Guild"
 	paycheck = COINS_TO_CREDITS(75) // 75 copper per hour (they get paid in ore) (they can also sell the ore) (there's a lot of ore)
 	outfit = /datum/outfit/job/den/f13prospector
@@ -209,7 +209,7 @@
 	social_faction = FACTION_CLUB
 	total_positions = 1
 	spawn_positions = 1
-	description = "You are the manager for the Heaven's Night club, responsible for the operation of the establishment. You are the backbone of the settlement, operating the club that provides such sweet relief to survivors of the wasteland. Your work is essential to the survival of New Boston."
+	description = "I am the manager for the Heaven's Night club, responsible for the operation of the establishment. You are the backbone of the settlement, operating the club that provides such sweet relief to survivors of the wasteland. Your work is essential to the survival of New Boston."
 	supervisors = "the Adventurers Guild, sort of"
 	selection_color = "#c94b8a"
 	outfit = /datum/outfit/job/heavensnight/f13manager
@@ -242,7 +242,7 @@
 	flag = F13PREACHER
 	total_positions = 3
 	spawn_positions = 3
-	description = "You are a preacher, responsible for the spiritual well-being of the settlement. You are the backbone of the community, providing guidance and comfort to the townsfolk. Your work is essential to the survival of New Boston."
+	description = "I am a preacher, responsible for the spiritual well-being of the settlement. You are the backbone of the community, providing guidance and comfort to the townsfolk. Your work is essential to the survival of New Boston."
 	supervisors = "your god, as well as the Adventurers Guild"
 	selection_color = "#dcba97"
 	paycheck = COINS_TO_CREDITS(250) // 250 copper per hour
@@ -257,7 +257,7 @@
 	title = "Librarian"
 	flag = LIBRARIAN
 	selection_color = "#dcba97"
-	description = "You are the curator of the New Boston Library, responsible for the collection and organization of knowledge. You are the backbone of the settlement, providing access to information and resources for the community. Your work is essential to the survival of New Boston."
+	description = "I am the curator of the New Boston Library, responsible for the collection and organization of knowledge. You are the backbone of the settlement, providing access to information and resources for the community. Your work is essential to the survival of New Boston."
 	supervisors = "the Adventurers Guild"
 	paycheck = COINS_TO_CREDITS(200) // 200 copper per hour
 	outfit = /datum/outfit/job/den/nashcurator
@@ -292,7 +292,7 @@
 	title = "Adventurer"
 	flag = DEP_OASIS
 	selection_color = "#df80af"
-	description = "You are an adventurer, a resident of New Boston who has taken up the call to explore the wasteland. You are the backbone of the settlement, exploring and risking your own (undying) life to bring back resources and knowledge for the community. Your work is essential to the survival of New Boston."
+	description = "I am an adventurer, a resident of New Boston who has taken up the call to explore the wasteland. You are the backbone of the settlement, exploring and risking your own (undying) life to bring back resources and knowledge for the community. Your work is essential to the survival of New Boston."
 	supervisors = "the Adventurers Guild"
 	paycheck = COINS_TO_CREDITS(50) // 50 copper per hour
 	outfit = /datum/outfit/job/wasteland/f13wastelander
@@ -312,7 +312,7 @@
 	spawn_positions = -1
 	selection_color = "#a94aa9"
 	supervisors = "Generally speaking your only actual supervisor is your own judgement, but it might not be amiss to listen to the Doctors. Assuming they're around."
-	description = "You are a Town Scientist. As a Scientist it is your job to teach the wastes- be it teaching them how to make medicine, grow crops or treat toxic water. You are a learned individual in your chosen field, you know how to do research and have all the basic tools to teach others how to handle the technology they will come across. You are free to expand upon what projects you wish to accomplish as long as they align with the principles of the doctors."
+	description = "I am a Town Scientist. As a Scientist it is your job to teach the wastes- be it teaching them how to make medicine, grow crops or treat toxic water. You are a learned individual in your chosen field, you know how to do research and have all the basic tools to teach others how to handle the technology they will come across. You are free to expand upon what projects you wish to accomplish as long as they align with the principles of the doctors."
 	enforces = "Assist and provide medical services to those in need. Provide education for all those who are willing to learn."
 	outfit = /datum/outfit/job/den/recresearcher
 	paycheck = COINS_TO_CREDITS(200) // 200 copper per hour
@@ -447,7 +447,7 @@
 	supervisors = "The Elders of the tribe and the chief."
 	enforces = "The ways of the Sulphur River spirits."
 	forbids = "Against abuse of pre-collapse technology, especially pre-collapse weapons of war. Your pipboy is pre-blessed."
-	description = "You are the village Hunt Master; you organize the hunters of the tribe and are the authority in matters of protecting the tribe and the land of the Mountain River. You lead the Great Hunts and War-Bands in time of conflict."
+	description = "I am the village Hunt Master; you organize the hunters of the tribe and are the authority in matters of protecting the tribe and the land of the Mountain River. You lead the Great Hunts and War-Bands in time of conflict."
 	outfit = /datum/outfit/job/tribal/f13Hhunter
 	paycheck = COINS_TO_CREDITS(100) // 100 copper per hour
 
@@ -462,7 +462,7 @@
 	supervisors = "The Chief"
 	enforces = "The ways of the Sulphur River spirits."
 	forbids = "Against abuse of pre-collapse technology, especially pre-collapse weapons of war. Your pipboy is pre-blessed."
-	description = "You are a Harvest Leader in the tribe; while you are the one who would be performing rituals for the tribe your usual job is helping the farmers get the most out of our fields."
+	description = "I am a Harvest Leader in the tribe; while you are the one who would be performing rituals for the tribe your usual job is helping the farmers get the most out of our fields."
 	outfit = /datum/outfit/job/tribal/f13druid
 	paycheck = COINS_TO_CREDITS(100) // 100 copper per hour
 
@@ -475,7 +475,7 @@
 	supervisors = "The chief and Hunt Master. Failing their appearance you fall back on the Spiritual Leader and Harvest Leader for task management."
 	enforces = "The ways of the Sulphur River spirits."
 	forbids = "Against abuse of pre-collapse technology, especially pre-collapse weapons of war. Your pipboy is pre-blessed."
-	description = "You are a Forager and lowest ranking villager of the tribe; you bring back food and relics, anything that may house a spirit infused from the Time of Crying that can be purified by the Spiritual Leader. While a protector you are also the arm of the tribe in the world, performing tasks from the Spiritual Leaders and Harvest Leaders."
+	description = "I am a Forager and lowest ranking villager of the tribe; you bring back food and relics, anything that may house a spirit infused from the Time of Crying that can be purified by the Spiritual Leader. While a protector you are also the arm of the tribe in the world, performing tasks from the Spiritual Leaders and Harvest Leaders."
 	outfit = /datum/outfit/job/tribal/f13hunter
 	paycheck = COINS_TO_CREDITS(75) // 75 copper per hour
 

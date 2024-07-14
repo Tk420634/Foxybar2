@@ -24,7 +24,7 @@
 			if(!user.transferItemToLoc(I, src))
 				return
 			grenades += I
-			to_chat(user, span_notice("You put the grenade in the grenade launcher."))
+			to_chat(user, span_notice("I put the grenade in the grenade launcher."))
 			to_chat(user, span_notice("[grenades.len] / [max_grenades] Grenades."))
 		else
 			to_chat(usr, span_danger("The grenade launcher cannot hold more grenades."))
@@ -34,7 +34,7 @@
 
 /obj/item/gun/grenadelauncher/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)
 	user.visible_message(span_danger("[user] fired a grenade!"), \
-						span_danger("You fire the grenade launcher!"))
+						span_danger("I fire the grenade launcher!"))
 	var/obj/item/grenade/F = grenades[1] //Now with less copypasta!
 	grenades -= F
 	F.forceMove(user.loc)

@@ -3,9 +3,9 @@
 	ranged_mousepointer = 'icons/effects/mouse_pointers/throw_target.dmi'
 	action_icon_state = "projectile"
 	/// Message showing to the spell owner upon deactivating pointed spell.
-	var/deactive_msg = "You dispel the magic..."
+	var/deactive_msg = "I dispel the magic..."
 	/// Message showing to the spell owner upon activating pointed spell.
-	var/active_msg = "You prepare to use the spell on a target..."
+	var/active_msg = "I prepare to use the spell on a target..."
 	/// Variable dictating if the user is allowed to cast a spell on himself.
 	var/self_castable = FALSE
 	/// Variable dictating if the spell will use turf based aim assist
@@ -16,7 +16,7 @@
 		return
 	var/msg
 	if(!can_cast(user))
-		msg = span_warning("You can no longer cast [name]!")
+		msg = span_warning("I can no longer cast [name]!")
 		remove_ranged_ability(msg)
 		return
 	if(active)
@@ -94,7 +94,7 @@
 /obj/effect/proc_holder/spell/pointed/proc/intercept_check(mob/user, atom/target, silent = FALSE)
 	if(!self_castable && target == user)
 		if(!silent)
-			to_chat(user, span_warning("You cannot cast the spell on yourself!"))
+			to_chat(user, span_warning("I cannot cast the spell on yourself!"))
 		return FALSE
 	if(!(target in view_or_range(range, user, selection_type)))
 		if(!silent)

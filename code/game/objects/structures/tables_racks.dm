@@ -73,7 +73,7 @@
 				return
 			if(user.a_intent == INTENT_GRAB)
 				if(user.grab_state < GRAB_AGGRESSIVE)
-					to_chat(user, span_warning("You need a better grip to do that!"))
+					to_chat(user, span_warning("I need a better grip to do that!"))
 					return
 				if(user.grab_state >= GRAB_NECK)
 					tablelimbsmash(user, pushed_mob)
@@ -91,7 +91,7 @@
 			user.Move_Pulled(src)
 			if (user.pulling.loc == loc)
 				user.visible_message(span_notice("[user] places [user.pulling] onto [src]."),
-					span_notice("You place [user.pulling] onto [src]."))
+					span_notice("I place [user.pulling] onto [src]."))
 				user.stop_pulling()
 	return ..()
 
@@ -163,7 +163,7 @@
 	if(CHECK_MOBILITY(target, MOBILITY_STAND))
 		target.DefaultCombatKnockdown(SHOVE_KNOCKDOWN_TABLE)
 	user.visible_message(span_danger("[user.name] shoves [target.name] onto \the [src]!"),
-		span_danger("You shove [target.name] onto \the [src]!"), null, COMBAT_MESSAGE_RANGE)
+		span_danger("I shove [target.name] onto \the [src]!"), null, COMBAT_MESSAGE_RANGE)
 	target.forceMove(loc)
 	log_combat(user, target, "shoved", "onto [src] (table)")
 	return TRUE
@@ -171,12 +171,12 @@
 /obj/structure/table/attackby(obj/item/I, mob/user, params)
 	if(!(flags_1 & NODECONSTRUCT_1))
 		if(istype(I, /obj/item/screwdriver) && deconstruction_ready)
-			to_chat(user, span_notice("You start disassembling [src]..."))
+			to_chat(user, span_notice("I start disassembling [src]..."))
 			if(I.use_tool(src, user, 20, volume=50))
 				deconstruct(TRUE)
 			return
 		if(istype(I, /obj/item/wrench) && deconstruction_ready)
-			to_chat(user, span_notice("You start deconstructing [src]..."))
+			to_chat(user, span_notice("I start deconstructing [src]..."))
 			if(I.use_tool(src, user, 40, volume=50))
 				playsound(src.loc, 'sound/items/deconstruct.ogg', 50, 1)
 				deconstruct(TRUE, 1)
@@ -221,10 +221,10 @@
 	user.DelayNextAction()
 	if(user && Adjacent(user) && !user.incapacitated())
 		if(istype(user) && user.a_intent == INTENT_HARM)
-			user.visible_message(span_warning("[user] slams [user.p_their()] palms down on [src]."), span_warning("You slam your palms down on [src]."))
+			user.visible_message(span_warning("[user] slams [user.p_their()] palms down on [src]."), span_warning("I slam your palms down on [src]."))
 			playsound(src, 'sound/weapons/sonic_jackhammer.ogg', 50, 1)
 		else
-			user.visible_message(span_notice("[user] slaps [user.p_their()] hands on [src]."), span_notice("You slap your hands on [src]."))
+			user.visible_message(span_notice("[user] slaps [user.p_their()] hands on [src]."), span_notice("I slap your hands on [src]."))
 			playsound(src, 'sound/weapons/tap.ogg', 50, 1)
 		user.do_attack_animation(src)
 		return TRUE
@@ -349,7 +349,7 @@
 
 /obj/structure/table/glass/proc/table_shatter(mob/living/L)
 	visible_message(span_warning("[src] breaks!"),
-		span_danger("You hear breaking glass."))
+		span_danger("I hear breaking glass."))
 	var/turf/T = get_turf(src)
 	playsound(T, "shatter", 50, 1)
 	for(var/I in debris)
@@ -596,14 +596,14 @@
 			return
 
 		if(deconstruction_ready)
-			to_chat(user, span_notice("You start strengthening the reinforced table..."))
+			to_chat(user, span_notice("I start strengthening the reinforced table..."))
 			if (W.use_tool(src, user, 50, volume=50))
-				to_chat(user, span_notice("You strengthen the table."))
+				to_chat(user, span_notice("I strengthen the table."))
 				deconstruction_ready = 0
 		else
-			to_chat(user, span_notice("You start weakening the reinforced table..."))
+			to_chat(user, span_notice("I start weakening the reinforced table..."))
 			if (W.use_tool(src, user, 50, volume=50))
-				to_chat(user, span_notice("You weaken the table."))
+				to_chat(user, span_notice("I weaken the table."))
 				deconstruction_ready = 1
 	else
 		. = ..()
@@ -876,13 +876,13 @@
 	if(building)
 		return
 	building = TRUE
-	to_chat(user, span_notice("You start constructing a rack..."))
+	to_chat(user, span_notice("I start constructing a rack..."))
 	if(do_after(user, 50, target = user, progress=TRUE))
 		if(!user.temporarilyRemoveItemFromInventory(src))
 			return
 		var/obj/structure/rack/R = new /obj/structure/rack/shelf_metal(user.loc)
 		user.visible_message("<span class='notice'>[user] assembles \a [R].\
-			</span>", span_notice("You assemble \a [R]."))
+			</span>", span_notice("I assemble \a [R]."))
 		R.add_fingerprint(user)
 		qdel(src)
 	building = FALSE

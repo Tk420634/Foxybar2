@@ -49,7 +49,7 @@
 			to_chat(usr, span_notice("[src] refuses to take on this colour!"))
 			return
 
-		to_chat(usr, span_notice("You colour [src] with [W]."))
+		to_chat(usr, span_notice("I colour [src] with [W]."))
 		icon_state = "egg-[clr]"
 	else
 		..()
@@ -121,11 +121,11 @@
 	if(istype(W, /obj/item/kitchen/fork))
 		var/obj/item/kitchen/fork/F = W
 		if(F.forkload)
-			to_chat(user, span_warning("You already have omelette on your fork!"))
+			to_chat(user, span_warning("I already have omelette on your fork!"))
 		else
 			F.icon_state = "forkloaded"
 			user.visible_message("[user] takes a piece of omelette with [user.p_their()] fork!", \
-				span_notice("You take a piece of omelette with your fork."))
+				span_notice("I take a piece of omelette with your fork."))
 
 			var/datum/reagent/R = pick(reagents.reagent_list)
 			reagents.remove_reagent(R.type, 1)

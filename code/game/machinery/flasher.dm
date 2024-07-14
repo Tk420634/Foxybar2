@@ -59,9 +59,9 @@
 	add_fingerprint(user)
 	if (istype(W, /obj/item/wirecutters))
 		if (bulb)
-			user.visible_message("[user] begins to disconnect [src]'s flashbulb.", span_notice("You begin to disconnect [src]'s flashbulb..."))
+			user.visible_message("[user] begins to disconnect [src]'s flashbulb.", span_notice("I begin to disconnect [src]'s flashbulb..."))
 			if(W.use_tool(src, user, 30, volume=50) && bulb)
-				user.visible_message("[user] has disconnected [src]'s flashbulb!", span_notice("You disconnect [src]'s flashbulb."))
+				user.visible_message("[user] has disconnected [src]'s flashbulb!", span_notice("I disconnect [src]'s flashbulb."))
 				bulb.forceMove(loc)
 				bulb = null
 				power_change()
@@ -70,7 +70,7 @@
 		if (!bulb)
 			if(!user.transferItemToLoc(W, src))
 				return
-			user.visible_message("[user] installs [W] into [src].", span_notice("You install [W] into [src]."))
+			user.visible_message("[user] installs [W] into [src].", span_notice("I install [W] into [src]."))
 			bulb = W
 			power_change()
 		else
@@ -78,9 +78,9 @@
 
 	else if (istype(W, /obj/item/wrench))
 		if(!bulb)
-			to_chat(user, span_notice("You start unsecuring the flasher frame..."))
+			to_chat(user, span_notice("I start unsecuring the flasher frame..."))
 			if(W.use_tool(src, user, 40, volume=50))
-				to_chat(user, span_notice("You unsecure the flasher frame."))
+				to_chat(user, span_notice("I unsecure the flasher frame."))
 				deconstruct(TRUE)
 		else
 			to_chat(user, span_warning("Remove a flashbulb from [src] first!"))

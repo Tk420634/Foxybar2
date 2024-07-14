@@ -62,7 +62,7 @@
 					SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "fav_food", /datum/mood_event/favorite_food)
 			else
 				if(foodtype & H.dna.species.toxic_food)
-					to_chat(H, span_warning("You don't feel so good..."))
+					to_chat(H, span_warning("I don't feel so good..."))
 					H.adjust_disgust(25 + 30 * fraction)
 			if((foodtype & BREAKFAST) && world.time - SSticker.round_start_time < STOP_SERVING_BREAKFAST)
 				SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "breakfast", /datum/mood_event/breakfast)

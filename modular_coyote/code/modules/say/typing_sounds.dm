@@ -50,6 +50,17 @@ SUBSYSTEM_DEF(typinginit)
 		return pick(soundFileList)
 	return soundFile
 
+/datum/typing_sound/femalenoise1
+	name = "Feminine 1"
+	soundFile = 'modular_coyote/sound/typing/arfs1sounds/femalenoise.ogg'
+	soundFileStatic = 'modular_coyote/sound/typing/arfs1sounds/femalenoise.ogg'
+
+/datum/typing_sound/femalenoise2
+	name = "Feminine 2"
+	soundFile = 'modular_coyote/sound/typing/arfs1sounds/femalenoise2.ogg'
+	soundFileStatic = 'modular_coyote/sound/typing/arfs1sounds/femalenoise2.ogg'
+		
+
 /datum/typing_sound/fbmessenger
 	name = "FB Messenger"
 	soundFile = 'modular_coyote/sound/typing/facebookMessenger.ogg'

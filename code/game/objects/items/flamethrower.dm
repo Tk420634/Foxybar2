@@ -1,6 +1,6 @@
 /obj/item/flamethrower
 	name = "flamethrower"
-	desc = "You are a firestarter!"
+	desc = "I am a firestarter!"
 	icon = 'icons/obj/flamethrower.dmi'
 	icon_state = "flamethrowerbase"
 	item_state = "flamethrower_0"
@@ -117,7 +117,7 @@
 			if(user.transferItemToLoc(W,src))
 				ptank.forceMove(get_turf(src))
 				ptank = W
-				to_chat(user, span_notice("You swap the plasma tank in [src]!"))
+				to_chat(user, span_notice("I swap the plasma tank in [src]!"))
 			return
 		if(!user.transferItemToLoc(W, src))
 			return
@@ -142,7 +142,7 @@
 	if(ptank && isliving(user) && user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		user.put_in_hands(ptank)
 		ptank = null
-		to_chat(user, span_notice("You remove the plasma tank from [src]!"))
+		to_chat(user, span_notice("I remove the plasma tank from [src]!"))
 		update_icon()
 		return TRUE
 
@@ -158,7 +158,7 @@
 	if(!status)
 		to_chat(user, span_notice("Secure the igniter first!"))
 		return
-	to_chat(user, span_notice("You [lit ? "extinguish" : "ignite"] [src]!"))
+	to_chat(user, span_notice("I [lit ? "extinguish" : "ignite"] [src]!"))
 	lit = !lit
 	if(lit)
 		START_PROCESSING(SSobj, src)

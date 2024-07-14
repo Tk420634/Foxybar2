@@ -232,11 +232,11 @@
 	if(istype(I, /obj/item/stack/sheet/mineral/plasma))
 		I.use(1)
 		cell.give(1000)
-		to_chat(user, span_notice("You insert [I] in [src], recharging it."))
+		to_chat(user, span_notice("I insert [I] in [src], recharging it."))
 	else if(istype(I, /obj/item/stack/ore/plasma))
 		I.use(1)
 		cell.give(500)
-		to_chat(user, span_notice("You insert [I] in [src], recharging it."))
+		to_chat(user, span_notice("I insert [I] in [src], recharging it."))
 	else
 		..()
 
@@ -245,7 +245,7 @@
 	if(!QDELETED(cell) && (cell.charge >= amount * 100))
 		return TRUE
 
-	to_chat(user, span_warning("You need more charge to complete this task!"))
+	to_chat(user, span_warning("I need more charge to complete this task!"))
 	return FALSE
 
 /obj/item/gun/energy/plasmacutter/use(amount)

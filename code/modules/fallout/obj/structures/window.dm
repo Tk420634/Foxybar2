@@ -62,10 +62,10 @@
 			to_chat(user, span_warning("The window must be firmly anchored to the ground!"))
 			return
 		if(Z.get_amount() < 3)
-			to_chat(user, span_warning("You need atleast 3 wooden planks to reinforce this window!"))
+			to_chat(user, span_warning("I need atleast 3 wooden planks to reinforce this window!"))
 			return
 		else
-			to_chat(user, span_notice("You start adding [Z] to [src]..."))
+			to_chat(user, span_notice("I start adding [Z] to [src]..."))
 			if(do_after(user, 50, target=src))
 				if(locate(/obj/structure/barricade/wooden/planks) in get_turf(src))
 					to_chat(user, span_warning("This window is already barricaded!"))
@@ -74,11 +74,11 @@
 					to_chat(user, span_warning("The window must be firmly anchored to the ground!"))
 					return
 				if(Z.get_amount() < 3)
-					to_chat(user, span_warning("You need atleast 3 wooden planks to reinforce this window!"))
+					to_chat(user, span_warning("I need atleast 3 wooden planks to reinforce this window!"))
 					return
 				Z.use(3)
 				new /obj/structure/barricade/wooden/planks(get_turf(src))
-				user.visible_message(span_notice("[user] reinforces the window with some planks"), span_notice("You reinforce the window with some planks."))
+				user.visible_message(span_notice("[user] reinforces the window with some planks"), span_notice("I reinforce the window with some planks."))
 				return
 	else if(!istype(W, /obj/item/stack/sheet/mineral/wood))
 		if(locate(/obj/structure/barricade/wooden/planks) in get_turf(src))

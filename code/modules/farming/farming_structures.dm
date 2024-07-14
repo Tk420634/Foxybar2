@@ -55,12 +55,12 @@
 	var/obj/item/reagent_containers/food/snacks/grown/fruit = I
 	if(istype(fruit))
 		if(!fruit.can_distill)
-			to_chat(user, span_warning("You can't ferment this into anything..."))
+			to_chat(user, span_warning("I can't ferment this into anything..."))
 			return TRUE
 		else if(!user.transferItemToLoc(I,src))
 			to_chat(user, span_warning("[I] is stuck to your hand!"))
 			return TRUE
-		to_chat(user, span_notice("You place [I] into [src] to start the fermentation process."))
+		to_chat(user, span_notice("I place [I] into [src] to start the fermentation process."))
 		addtimer(CALLBACK(src,PROC_REF(makeWine), list(fruit)), rand(8 SECONDS, 12 SECONDS) * speed_multiplier)
 		return TRUE
 	else if(SEND_SIGNAL(I, COMSIG_CONTAINS_STORAGE) && do_after(user, 2 SECONDS, target = src))
@@ -74,7 +74,7 @@
 			fruits += fruit
 		if (length(fruits))
 			addtimer(CALLBACK(src,PROC_REF(makeWine), fruits), rand(8 SECONDS, 12 SECONDS) * speed_multiplier)
-			to_chat(user, span_notice("You fill \the [src] from \the [I] and start the fermentation process."))
+			to_chat(user, span_notice("I fill \the [src] from \the [I] and start the fermentation process."))
 		else
 			to_chat(user, span_warning("There's nothing in \the [I] that you can ferment!"))
 		return TRUE
@@ -88,11 +88,11 @@
 	if(open)
 		DISABLE_BITFIELD(reagents.reagents_holder_flags, DRAINABLE)
 		ENABLE_BITFIELD(reagents.reagents_holder_flags, REFILLABLE)
-		to_chat(user, span_notice("You open [src], letting you fill it."))
+		to_chat(user, span_notice("I open [src], letting you fill it."))
 	else
 		DISABLE_BITFIELD(reagents.reagents_holder_flags, REFILLABLE)
 		ENABLE_BITFIELD(reagents.reagents_holder_flags, DRAINABLE)
-		to_chat(user, span_notice("You close [src], letting you draw from its tap."))
+		to_chat(user, span_notice("I close [src], letting you draw from its tap."))
 	update_icon()
 
 /obj/structure/fermenting_barrel/update_icon_state()
@@ -136,14 +136,14 @@
 		user.show_message(span_notice("The loom needs to be wrenched down."), MSG_VISUAL)
 		return FALSE
 	if(W.amount < FABRIC_PER_SHEET)
-		user.show_message(span_notice("You need at least [FABRIC_PER_SHEET] units of fabric before using this."), MSG_VISUAL)
+		user.show_message(span_notice("I need at least [FABRIC_PER_SHEET] units of fabric before using this."), MSG_VISUAL)
 		return FALSE
-	user.show_message(span_notice("You start weaving \the [W.name] through the loom.."), MSG_VISUAL)
+	user.show_message(span_notice("I start weaving \the [W.name] through the loom.."), MSG_VISUAL)
 	if(W.use_tool(src, user, W.pull_effort))
 		if(W.amount >= FABRIC_PER_SHEET)
 			new W.loom_result(drop_location(), round(W.amount / FABRIC_PER_SHEET))
 			W.use(W.amount - W.amount % FABRIC_PER_SHEET)
-			user.show_message(span_notice("You weave \the [W.name] into a workable fabric."), MSG_VISUAL)
+			user.show_message(span_notice("I weave \the [W.name] into a workable fabric."), MSG_VISUAL)
 	return TRUE
 
 
@@ -183,7 +183,7 @@
 		return
 	if(istype(W, /obj/item/seeds) || istype(W, /obj/item/reagent_containers/food/snacks/grown))
 		if(user.transferItemToLoc(W, src))
-			to_chat(user, span_notice("You load the [W] into the [src]."))
+			to_chat(user, span_notice("I load the [W] into the [src]."))
 			playsound(loc, 'sound/effects/blobattack.ogg', 25, 1, -1)
 			process_compost()
 		else
@@ -192,7 +192,7 @@
 		var/obj/item/storage/bag/plants/PB = W
 		for(var/obj/item/G in PB.contents)// This check can be less than thorough because the bag has already authenticated the contents, hopefully
 			if(SEND_SIGNAL(PB, COMSIG_TRY_STORAGE_TAKE, G, src))
-				to_chat(user, span_info("You empty the [PB] into the [src]."))
+				to_chat(user, span_info("I empty the [PB] into the [src]."))
 				playsound(loc, 'sound/effects/blobattack.ogg', 25, 1, -1)
 				process_compost()
 	else if(istype(W, /obj/item/reagent_containers/food))
@@ -200,7 +200,7 @@
 		// Check if the food is good for compost
 		if(CHECK_BITFIELD(F.foodtype, (GRAIN | FRUIT | VEGETABLES | PINEAPPLE)) && !CHECK_BITFIELD(F.foodtype, (MEAT | DAIRY | TOXIC)))
 			if(user.transferItemToLoc(W, src))
-				to_chat(user, span_notice("You load the [W] into the [src]."))
+				to_chat(user, span_notice("I load the [W] into the [src]."))
 				playsound(loc, 'sound/effects/blobattack.ogg', 25, 1, -1)
 				process_compost()
 			else
@@ -294,23 +294,23 @@
 		if(!PB.contents.len)
 			to_chat(user, span_warning("There's nothing in \the [PB]!"))
 			return
-		to_chat(user, span_info("You start to empty \the [PB] into \the [src]."))
+		to_chat(user, span_info("I start to empty \the [PB] into \the [src]."))
 		var/count = 0
 		if(!do_after(user, 2 SECONDS, target = src))
 			return
 		for(var/obj/item/G in PB.contents)
 			count += seedify(G, -1, user) // seedify handles removing applicable items from storage
 		if(count > 0)
-			to_chat(user, span_info("You empty \the [PB] into \the [src]."))
+			to_chat(user, span_info("I empty \the [PB] into \the [src]."))
 			playsound(loc, 'sound/effects/blobattack.ogg', 25, 1, -1)
 		else
-			to_chat(user, span_warning("You can't extract seeds from anything in \the [PB]!"))
+			to_chat(user, span_warning("I can't extract seeds from anything in \the [PB]!"))
 		return
 	else if(seedify(O, -1, user))
-		to_chat(user, span_notice("You extract some seeds."))
+		to_chat(user, span_notice("I extract some seeds."))
 		return
 	else if(user.a_intent != INTENT_HARM)
-		to_chat(user, span_warning("You can't extract any seeds from \the [O]!"))
+		to_chat(user, span_warning("I can't extract any seeds from \the [O]!"))
 	else
 		return ..()
 
@@ -337,19 +337,19 @@
 	if(!istype(R))
 		return ..()
 	if(!(R.reagents.reagents_holder_flags & DRAINABLE))
-		to_chat(user, span_warning("You need to be able to pour \the [I] into \the [src]."))
+		to_chat(user, span_warning("I need to be able to pour \the [I] into \the [src]."))
 		return TRUE
 	if(!R.reagents.has_reagent(/datum/reagent/consumable/milk, 15))
 		to_chat(user, span_warning("There's not enough milk in \the [I] to churn into butter."))
 		return TRUE
-	to_chat(user, span_notice("You start churning some butter out of \the [I]..."))
+	to_chat(user, span_notice("I start churning some butter out of \the [I]..."))
 	if(do_after(user, 4.5 SECONDS, target = src))
 		if(!R.reagents.has_reagent(/datum/reagent/consumable/milk, 15))
 			to_chat(user, span_warning("There's not enough milk in \the [I] to churn into butter."))
 			return TRUE
-		to_chat(user, span_notice("You churn some butter out of \the [I] using \the [src]."))
+		to_chat(user, span_notice("I churn some butter out of \the [I] using \the [src]."))
 		R.reagents.remove_reagent(/datum/reagent/consumable/milk, 15)
 		new /obj/item/reagent_containers/food/snacks/butter(src.loc)
 		return TRUE
-	to_chat(user, span_warning("You have to stand still to churn butter!"))
+	to_chat(user, span_warning("I have to stand still to churn butter!"))
 	return TRUE

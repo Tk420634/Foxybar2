@@ -149,7 +149,7 @@
 	if(..())
 		return TRUE
 	panel_open = !panel_open
-	to_chat(user, span_notice("You screw the camera's panel [panel_open ? "open" : "closed"]."))
+	to_chat(user, span_notice("I screw the camera's panel [panel_open ? "open" : "closed"]."))
 	I.play_tool_sound(src)
 	return TRUE
 
@@ -166,7 +166,7 @@
 		return FALSE
 
 	setViewRange((view_range == initial(view_range)) ? short_range : initial(view_range))
-	to_chat(user, span_notice("You [(view_range == initial(view_range)) ? "restore" : "mess up"] the camera's focus."))
+	to_chat(user, span_notice("I [(view_range == initial(view_range)) ? "restore" : "mess up"] the camera's focus."))
 	return
 
 /obj/machinery/camera/welder_act(mob/living/user, obj/item/I)
@@ -176,10 +176,10 @@
 	if(!I.tool_start_check(user, amount=0))
 		return TRUE
 
-	to_chat(user, span_notice("You start to weld [src]..."))
+	to_chat(user, span_notice("I start to weld [src]..."))
 	if(I.use_tool(src, user, 100, volume=50))
 		user.visible_message(span_warning("[user] unwelds [src], leaving it as just a frame bolted to the wall."),
-			span_warning("You unweld [src], leaving it as just a frame bolted to the wall"))
+			span_warning("I unweld [src], leaving it as just a frame bolted to the wall"))
 		deconstruct(TRUE)
 
 	return TRUE
@@ -193,7 +193,7 @@
 					return
 				qdel(I)
 				upgradeXRay()
-				to_chat(user, span_notice("You attach [I] into the assembly's inner circuits."))
+				to_chat(user, span_notice("I attach [I] into the assembly's inner circuits."))
 			else
 				to_chat(user, span_notice("[src] already has that upgrade!"))
 			return
@@ -202,7 +202,7 @@
 			if(!isEmpProof())
 				if(I.use_tool(src, user, 0, amount=1))
 					upgradeEmpProof()
-					to_chat(user, span_notice("You attach [I] into the assembly's inner circuits."))
+					to_chat(user, span_notice("I attach [I] into the assembly's inner circuits."))
 			else
 				to_chat(user, span_notice("[src] already has that upgrade!"))
 			return
@@ -212,7 +212,7 @@
 				if(!user.temporarilyRemoveItemFromInventory(I))
 					return
 				upgradeMotion()
-				to_chat(user, span_notice("You attach [I] into the assembly's inner circuits."))
+				to_chat(user, span_notice("I attach [I] into the assembly's inner circuits."))
 				qdel(I)
 			else
 				to_chat(user, span_notice("[src] already has that upgrade!"))
@@ -234,7 +234,7 @@
 			P = I
 			itemname = P.name
 			info = P.notehtml
-		to_chat(U, span_notice("You hold \the [itemname] up to the camera..."))
+		to_chat(U, span_notice("I hold \the [itemname] up to the camera..."))
 		U.DelayNextAction(CLICK_CD_MELEE)
 		for(var/mob/O in GLOB.player_list)
 			if(isAI(O))

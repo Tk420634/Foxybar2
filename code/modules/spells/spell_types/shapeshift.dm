@@ -41,12 +41,12 @@
 			if(do_after_advanced(user, SHAPESHIFT_CAST_TIME, M, DO_AFTER_DISALLOW_MOVING_ABSOLUTE_USER))
 				Restore(M)
 			else
-				to_chat(user,span_warning("Your concentration fails!"))
+				to_chat(user,span_warning("My concentration fails!"))
 		else
 			if(do_after_advanced(user, SHAPESHIFT_CAST_TIME, M, DO_AFTER_DISALLOW_MOVING_ABSOLUTE_USER))
 				Shapeshift(M)
 			else
-				to_chat(user,span_warning("Your concentration fails!"))
+				to_chat(user,span_warning("My concentration fails!"))
 
 /obj/effect/proc_holder/spell/targeted/shapeshift/proc/Shapeshift(mob/living/caster)
 	var/obj/shapeshift_holder/H = locate() in caster

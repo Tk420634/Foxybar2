@@ -52,7 +52,7 @@
 		var/mob/living/L = AM
 		if(!isvineimmune(L))
 			L.adjustBruteLoss(5)
-			to_chat(L, span_alert("You cut yourself on the thorny vines."))
+			to_chat(L, span_alert("I cut yourself on the thorny vines."))
 
 /**
  * Venus Human Trap
@@ -150,7 +150,7 @@
 
 /mob/living/simple_animal/hostile/venus_human_trap/Login()
 	. = ..()
-	to_chat(src, span_boldwarning("You a venus human trap!  Protect the kudzu at all costs, and feast on those who oppose you!"))
+	to_chat(src, span_boldwarning("I a venus human trap!  Protect the kudzu at all costs, and feast on those who oppose you!"))
 
 /mob/living/simple_animal/hostile/venus_human_trap/attack_ghost(mob/user)
 	. = ..()

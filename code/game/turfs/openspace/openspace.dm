@@ -137,9 +137,9 @@ Prevents players on higher Zs from seeing into buildings they arent meant to.
 				to_chat(user, span_warning("These scaffolding rods can't fit together tight enough to create a catwalk! Try some iron rods."))
 				return
 			if(!our_rods.use(2))
-				to_chat(user, span_warning("You need two iron rods to build a catwalk!"))
+				to_chat(user, span_warning("I need two iron rods to build a catwalk!"))
 				return
-			to_chat(user, span_notice("You construct a catwalk."))
+			to_chat(user, span_notice("I construct a catwalk."))
 			playsound(src, 'sound/weapons/genhit.ogg', 50, TRUE)
 			new/obj/structure/lattice/catwalk(src)
 			return
@@ -147,11 +147,11 @@ Prevents players on higher Zs from seeing into buildings they arent meant to.
 			to_chat(user, span_warning("These rods are too weak to support a whole upper floor! Try some aerial support girders."))
 			return
 		if(our_rods.use(1))
-			to_chat(user, span_notice("You construct a lattice."))
+			to_chat(user, span_notice("I construct a lattice."))
 			playsound(src, 'sound/weapons/genhit.ogg', 50, TRUE)
 			ReplaceWithLattice()
 			return
-		to_chat(user, span_warning("You can't find anywhere to install the supports!"))
+		to_chat(user, span_warning("I can't find anywhere to install the supports!"))
 		return
 	if(istype(C, /obj/item/stack/tile/plasteel))
 		if(!CanCoverUp())
@@ -162,10 +162,10 @@ Prevents players on higher Zs from seeing into buildings they arent meant to.
 			if(S.use(1))
 				qdel(L)
 				playsound(src, 'sound/weapons/genhit.ogg', 50, TRUE)
-				to_chat(user, span_notice("You build a floor."))
+				to_chat(user, span_notice("I build a floor."))
 				PlaceOnTop(/turf/open/floor/plating, flags = CHANGETURF_INHERIT_AIR)
 			else
-				to_chat(user, span_warning("You need one floor tile to build a floor!"))
+				to_chat(user, span_warning("I need one floor tile to build a floor!"))
 		else
 			to_chat(user, span_warning("The plating is going to need some support! Place metal rods first."))
 
@@ -185,7 +185,7 @@ Prevents players on higher Zs from seeing into buildings they arent meant to.
 /turf/open/transparent/openspace/rcd_act(mob/user, obj/item/construction/rcd/the_rcd, passed_mode)
 	switch(passed_mode)
 		if(RCD_FLOORWALL)
-			to_chat(user, span_notice("You build a floor."))
+			to_chat(user, span_notice("I build a floor."))
 			PlaceOnTop(/turf/open/floor/plating, flags = CHANGETURF_INHERIT_AIR)
 			return TRUE
 	return FALSE

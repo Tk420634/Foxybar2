@@ -124,14 +124,14 @@
 
 	if(broken > 0)
 		if(broken == 2 && O.tool_behaviour == TOOL_WIRECUTTER) // If it's broken and they're using a screwdriver
-			user.visible_message("[user] starts to fix part of \the [src].", span_notice("You start to fix part of \the [src]..."))
+			user.visible_message("[user] starts to fix part of \the [src].", span_notice("I start to fix part of \the [src]..."))
 			if(O.use_tool(src, user, 20))
-				user.visible_message("[user] fixes part of \the [src].", span_notice("You fix part of \the [src]."))
+				user.visible_message("[user] fixes part of \the [src].", span_notice("I fix part of \the [src]."))
 				broken = 1 // Fix it a bit
 		else if(broken == 1 && O.tool_behaviour == TOOL_WELDER) // If it's broken and they're doing the wrench
-			user.visible_message("[user] starts to fix part of \the [src].", span_notice("You start to fix part of \the [src]..."))
+			user.visible_message("[user] starts to fix part of \the [src].", span_notice("I start to fix part of \the [src]..."))
 			if(O.use_tool(src, user, 20))
-				user.visible_message("[user] fixes \the [src].", span_notice("You fix \the [src]."))
+				user.visible_message("[user] fixes \the [src].", span_notice("I fix \the [src]."))
 				broken = 0
 				update_icon()
 				return FALSE //to use some fuel
@@ -145,11 +145,11 @@
 		if(clean_spray.reagents.has_reagent(/datum/reagent/abraxo_cleaner, clean_spray.amount_per_transfer_from_this))
 			clean_spray.reagents.remove_reagent(/datum/reagent/abraxo_cleaner, clean_spray.amount_per_transfer_from_this,1)
 			playsound(loc, 'sound/effects/spray3.ogg', 50, 1, -6)
-			user.visible_message("[user] has cleaned \the [src].", span_notice("You clean \the [src]."))
+			user.visible_message("[user] has cleaned \the [src].", span_notice("I clean \the [src]."))
 			dirty = 0
 			update_icon()
 		else
-			to_chat(user, span_warning("You need more cleaning agent!"))
+			to_chat(user, span_warning("I need more cleaning agent!"))
 		return TRUE
 
 	if(istype(O, /obj/item/soap) || istype(O, /obj/item/reagent_containers/rag))
@@ -157,9 +157,9 @@
 		if(istype(O, /obj/item/soap))
 			var/obj/item/soap/used_soap = O
 			cleanspeed = used_soap.cleanspeed
-		user.visible_message("[user] starts to clean \the [src].", span_notice("You start to clean \the [src]..."))
+		user.visible_message("[user] starts to clean \the [src].", span_notice("I start to clean \the [src]..."))
 		if(do_after(user, cleanspeed, target = src))
-			user.visible_message("[user] has cleaned \the [src].", span_notice("You clean \the [src]."))
+			user.visible_message("[user] has cleaned \the [src].", span_notice("I clean \the [src]."))
 			dirty = 0
 			update_icon()
 		return TRUE
@@ -179,7 +179,7 @@
 				loaded++
 				ingredients += S
 		if(loaded)
-			to_chat(user, span_notice("You insert [loaded] items into \the [src]."))
+			to_chat(user, span_notice("I insert [loaded] items into \the [src]."))
 		return
 
 	if(O.w_class <= WEIGHT_CLASS_NORMAL && !istype(O, /obj/item/storage) && user.a_intent == INTENT_HELP)
@@ -191,7 +191,7 @@
 			return FALSE
 
 		ingredients += O
-		user.visible_message("[user] has added \a [O] to \the [src].", span_notice("You add [O] to \the [src]."))
+		user.visible_message("[user] has added \a [O] to \the [src].", span_notice("I add [O] to \the [src]."))
 		return
 
 	..()
@@ -264,7 +264,7 @@
 	start()
 
 /obj/machinery/microwave/proc/turn_on()
-	visible_message("\The [src] turns on.", span_italic("You hear a microwave humming."))
+	visible_message("\The [src] turns on.", span_italic("I hear a microwave humming."))
 	operating = TRUE
 
 	set_light(1.5)

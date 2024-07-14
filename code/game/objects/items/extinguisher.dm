@@ -155,7 +155,7 @@
 		return
 	// user.ExtinguishMob()
 	if(Extinguish(user, user))
-		to_chat(user, span_notice("You extinguish yourself with \the [src]. What a relief!"))
+		to_chat(user, span_notice("I extinguish yourself with \the [src]. What a relief!"))
 		return TRUE
 
 /obj/item/extinguisher/proc/Extinguish(mob/user, atom/target)
@@ -260,12 +260,12 @@
 			var/turf/open/theturf = T
 			theturf.MakeSlippery(TURF_WET_WATER, min_wet_time = 10 SECONDS, wet_time_to_add = 5 SECONDS)
 
-		user.visible_message("[user] empties out \the [src] onto the floor using the release valve.", span_info("You quietly empty out \the [src] by using its release valve."))
+		user.visible_message("[user] empties out \the [src] onto the floor using the release valve.", span_info("I quietly empty out \the [src] by using its release valve."))
 
 //firebot assembly
 /obj/item/extinguisher/attackby(obj/O, mob/user, params)
 	if(istype(O, /obj/item/bodypart/l_arm/robot) || istype(O, /obj/item/bodypart/r_arm/robot))
-		to_chat(user, span_notice("You add [O] to [src]."))
+		to_chat(user, span_notice("I add [O] to [src]."))
 		qdel(O)
 		qdel(src)
 		user.put_in_hands(new /obj/item/bot_assembly/firebot)

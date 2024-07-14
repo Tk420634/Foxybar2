@@ -68,7 +68,7 @@
 /obj/item/reagent_containers/food/snacks/grown/banana/banana_spider_spawnable
 	seed = /obj/item/seeds/banana/exotic_banana
 	name = "banana spider"
-	desc = "You do not know what it is, but you can bet the clown would love it."
+	desc = "I do not know what it is, but you can bet the clown would love it."
 	icon_state = "exoticbanana"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 2)
 	foodtype = GROSS | MEAT | RAW | FRUIT
@@ -78,7 +78,7 @@
 /obj/item/reagent_containers/food/snacks/grown/banana/banana_spider_spawnable/attack_self(mob/user)
 	if(awakening || isspaceturf(user.loc))
 		return
-	to_chat(user, span_notice("You decide to wake up the banana spider..."))
+	to_chat(user, span_notice("I decide to wake up the banana spider..."))
 	awakening = 1
 
 	spawn(30)

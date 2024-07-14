@@ -131,12 +131,12 @@
 			user.dropItemToGround(parent, force=TRUE)
 		else
 			if(!user.dropItemToGround(other_item, force=FALSE)) //If you cannot remove the item in your hand, don't try and wield.
-				to_chat(user, span_notice("You cannot seem to drop the item in your other hand!"))
+				to_chat(user, span_notice("I cannot seem to drop the item in your other hand!"))
 				return
 	if(user.get_num_arms() < 2)
 		if(require_twohands)
 			user.dropItemToGround(parent, force=TRUE)
-		to_chat(user, span_warning("You don't have enough intact hands."))
+		to_chat(user, span_warning("I don't have enough intact hands."))
 		return
 
 	// wield update status
@@ -157,9 +157,9 @@
 	parent_item.update_icon()
 
 	if(iscyborg(user))
-		to_chat(user, span_notice("You dedicate your module to [parent]."))
+		to_chat(user, span_notice("I dedicate your module to [parent]."))
 	else
-		to_chat(user, span_notice("You grab [parent] with both hands."))
+		to_chat(user, span_notice("I grab [parent] with both hands."))
 
 	// Play sound if one is set
 	if(wieldsound)
@@ -168,7 +168,7 @@
 	// Let's reserve the other hand
 	offhand_item = new(user)
 	offhand_item.name = "[parent_item.name] - offhand"
-	offhand_item.desc = "Your second grip on [parent_item]."
+	offhand_item.desc = "My second grip on [parent_item]."
 	offhand_item.wielded = TRUE
 	RegisterSignal(offhand_item, COMSIG_ITEM_DROPPED,PROC_REF(on_drop))
 	user.put_in_inactive_hand(offhand_item)
@@ -223,11 +223,11 @@
 	// Show message if requested
 	if(show_message)
 		if(iscyborg(user))
-			to_chat(user, span_notice("You free up your module."))
+			to_chat(user, span_notice("I free up your module."))
 		else if(require_twohands)
-			to_chat(user, span_notice("You drop [parent]."))
+			to_chat(user, span_notice("I drop [parent]."))
 		else
-			to_chat(user, span_notice("You are now carrying [parent] with one hand."))
+			to_chat(user, span_notice("I am now carrying [parent] with one hand."))
 
 	// Play sound if set
 	if(unwieldsound)

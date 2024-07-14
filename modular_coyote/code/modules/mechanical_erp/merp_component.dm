@@ -99,7 +99,7 @@
 	if(isanimal(master))
 		var/mob/living/simple_animal/merpimal = master
 		if(!merpimal.dextrous)
-			var/urnotdextrous = "You aren't dextrous enough to MERP!"
+			var/urnotdextrous = "I am not dextrous enough to MERP!"
 			switch(rand(1,6))
 				if(1)
 					urnotdextrous += " You might break something sensitive!"
@@ -113,15 +113,15 @@
 					urnotdextrous += " Maybe you can just be friends?"
 				if(6)
 					urnotdextrous += " You can watch, though!"
-			to_chat(master, span_warning("You aren't dextrous enough to MERP! You might break something sensitive!"))
+			to_chat(master, span_warning("I am not dextrous enough to MERP! You might break something sensitive!"))
 			return
 
 	if(master.get_active_held_item())
-		to_chat(master, span_warning("Your hands are too full to hold any MERPversations!"))
+		to_chat(master, span_warning("My hands are too full to hold any MERPversations!"))
 		return
 	var/obj/item/hand_item/merp_initiator/MERPINIT = new(master)
 	if(!master.put_in_active_hand(MERPINIT))
-		to_chat(master, span_warning("You couldn't get the MERPversationer out?"))
+		to_chat(master, span_warning("I couldn't get the MERPversationer out?"))
 		qdel(MERPINIT)
 
 /// SEE [modular_coyote\code\modules\mechanical_erp\merp_preferences.dm] for save/load code
@@ -179,18 +179,18 @@
 		return
 	MERP_MASTER
 	if(master.get_active_held_item() && master.get_inactive_held_item())
-		to_chat(master, span_alert("Your hands are full!"))
+		to_chat(master, span_alert("My hands are full!"))
 		return
 	var/obj/item/merpi_bit/bit = new(master)
 	if(!master.put_in_hands(bit, TRUE))
-		to_chat(master, span_alert("You couldn't get it in your hand!"))
+		to_chat(master, span_alert("I couldn't get it in your hand!"))
 		return
 	if(!merpify(bit, merpi_key))
 		to_chat(master, span_phobia("Merpification failed! Call a coder!"))
 		stack_trace("Merpification failed! [master] tried to merpify [bit] with key [merpi_key].")
 		qdel(bit)
 		return
-	to_chat(master, span_love("You ready your [bit]!"))
+	to_chat(master, span_love("I ready your [bit]!"))
 	return TRUE
 
 /datum/component/merp/proc/merpify(obj/item/merpi_bit/bit, merpi_key)

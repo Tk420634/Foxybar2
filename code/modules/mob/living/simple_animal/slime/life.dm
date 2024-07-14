@@ -138,7 +138,7 @@
 			set_stat(UNCONSCIOUS)
 			regenerate_icons()
 		else if(stat == UNCONSCIOUS && !stasis)
-			to_chat(src, span_notice("You wake up from the stasis."))
+			to_chat(src, span_notice("I wake up from the stasis."))
 			set_stat(CONSCIOUS)
 			regenerate_icons()
 
@@ -203,12 +203,12 @@
 		C.adjustToxLoss(rand(1,2))
 
 		if(prob(10) && C.client)
-			to_chat(C, "<span class='userdanger'>[pick("You can feel your body becoming weak!", \
-			"You feel like you're about to die!", \
-			"You feel every part of your body screaming in agony!", \
+			to_chat(C, "<span class='userdanger'>[pick("I can feel your body becoming weak!", \
+			"I feel like you're about to die!", \
+			"I feel every part of your body screaming in agony!", \
 			"A low, rolling pain passes through your body!", \
-			"Your body feels as if it's falling apart!", \
-			"You feel extremely weak!", \
+			"My body feels as if it's falling apart!", \
+			"I feel extremely weak!", \
 			"A sharp, deep pain bathes every inch of your body!")]</span>")
 
 	else if(isanimal(M))

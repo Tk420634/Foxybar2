@@ -32,7 +32,7 @@
 	channel_time = 80
 	power_cost = 300
 	object_path = /obj/structure/destructible/clockwork/powered/prolonging_prism
-	creator_message = span_brass("You form a prolonging prism, which will delay the arrival of an emergency shuttle at a massive power cost.")
+	creator_message = span_brass("I form a prolonging prism, which will delay the arrival of an emergency shuttle at a massive power cost.")
 	observer_message = span_warning("An onyx prism forms in midair and sprouts tendrils to support itself!")
 	invokers_required = 2
 	multiple_invokers_used = TRUE
@@ -51,7 +51,7 @@
 		return FALSE
 	var/turf/T = get_turf(invoker)
 	if(!T || !is_station_level(T.z))
-		to_chat(invoker, span_inathneq("\"You must be on the station to construct one of these, champion.\""))
+		to_chat(invoker, span_inathneq("\"I must be on the station to construct one of these, champion.\""))
 		return FALSE
 	return ..()
 
@@ -64,7 +64,7 @@
 	channel_time = 80
 	power_cost = 750
 	object_path = /obj/structure/destructible/clockwork/powered/mania_motor
-	creator_message = span_brass("You form a mania motor, which causes minor damage and negative mental effects in non-Servants.")
+	creator_message = span_brass("I form a mania motor, which causes minor damage and negative mental effects in non-Servants.")
 	observer_message = span_warning("A two-pronged machine rises from the ground!")
 	invokers_required = 2
 	multiple_invokers_used = TRUE
@@ -87,7 +87,7 @@
 	channel_time = 80
 	power_cost = 300
 	object_path = /obj/structure/destructible/clockwork/powered/clockwork_obelisk
-	creator_message = span_brass("You form a clockwork obelisk which can broadcast messages or produce Spatial Gateways.")
+	creator_message = span_brass("I form a clockwork obelisk which can broadcast messages or produce Spatial Gateways.")
 	observer_message = span_warning("A brass obelisk appears hanging in midair!")
 	invokers_required = 2
 	multiple_invokers_used = TRUE
@@ -117,7 +117,7 @@
 /datum/clockwork_scripture/memory_allocation/check_special_requirements()
 	for(var/mob/living/simple_animal/hostile/clockwork/marauder/guardian/M in GLOB.all_clockwork_mobs)
 		if(M.host == invoker)
-			to_chat(invoker, span_warning("You can only house one guardian at a time!"))
+			to_chat(invoker, span_warning("I can only house one guardian at a time!"))
 			return FALSE
 	return TRUE
 
@@ -166,7 +166,7 @@
 	invocations = list("Arise, avatar of Arbiter!", "Defend the Ark with vengeful zeal.")
 	channel_time = 80
 	power_cost = 8000
-	creator_message = span_brass("Your slab disgorges several chunks of replicant alloy that form into a suit of thrumming armor.")
+	creator_message = span_brass("My slab disgorges several chunks of replicant alloy that form into a suit of thrumming armor.")
 	usage_tip = "Reciting this scripture multiple times in a short period will cause it to take longer!"
 	tier = SCRIPTURE_APPLICATION
 	one_per_tile = TRUE

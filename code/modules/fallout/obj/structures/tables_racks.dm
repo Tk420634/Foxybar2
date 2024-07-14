@@ -32,7 +32,7 @@
 
 /obj/structure/table/booth/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/crowbar) && deconstruction_ready)
-		to_chat(user, span_notice("You start deconstructing [src]..."))
+		to_chat(user, span_notice("I start deconstructing [src]..."))
 		if(I.use_tool(src, user, 40, volume=50))
 			playsound(src.loc, 'sound/items/deconstruct.ogg', 50, 1)
 			deconstruct(TRUE)
@@ -53,15 +53,15 @@
 /obj/structure/table/snooker/attackby(obj/item/I, mob/user, params)
 	if(!(flags_1 & NODECONSTRUCT_1))
 		if(istype(I, /obj/item/screwdriver) && deconstruction_ready)
-			to_chat(user, span_notice("You start disassembling [src]..."))
+			to_chat(user, span_notice("I start disassembling [src]..."))
 			if(I.use_tool(src, user, 20, volume=50))
 				deconstruct(TRUE)
 			return
 		if(istype(I, /obj/item/wrench))
-			to_chat(user, span_notice("You [anchored ? "unwrench" : "wrench"] the [src]."))
+			to_chat(user, span_notice("I [anchored ? "unwrench" : "wrench"] the [src]."))
 			anchored = !anchored
 		if(istype(I, /obj/item/crowbar) && deconstruction_ready)
-			to_chat(user, span_notice("You start deconstructing [src]..."))
+			to_chat(user, span_notice("I start deconstructing [src]..."))
 			if(I.use_tool(src, user, 40, volume=50))
 				playsound(src.loc, 'sound/items/deconstruct.ogg', 50, 1)
 				deconstruct(TRUE, 1)

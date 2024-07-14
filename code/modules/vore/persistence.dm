@@ -78,7 +78,7 @@ in their list
 
 /proc/list_to_object(list/data, loc)
 	if(!islist(data))
-		stack_trace("You didn't give me a list, bucko")
+		stack_trace("I didn't give me a list, bucko")
 	if(!("type" in data))
 		stack_trace("No 'type' field in the data")
 	var/path = text2path(data["type"])

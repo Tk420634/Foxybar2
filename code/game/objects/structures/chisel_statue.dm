@@ -56,7 +56,7 @@ Moving interrupts
 		prepared_block.set_target(target,user)
 
 /obj/item/chisel/proc/start_sculpting(mob/living/user)
-	to_chat(user,span_notice("You start sculpting [prepared_block]."))
+	to_chat(user,span_notice("I start sculpting [prepared_block]."))
 	sculpting = TRUE
 	//How long whole process takes
 	var/sculpting_time = 30 SECONDS
@@ -82,7 +82,7 @@ Moving interrupts
 	prepared_block = B
 	tracked_user = user
 	RegisterSignal(tracked_user,COMSIG_MOVABLE_MOVED,.proc/break_sculpting)
-	to_chat(user,span_notice("You prepare to work on [B]."))
+	to_chat(user,span_notice("I prepare to work on [B]."))
 
 /obj/item/chisel/dropped(mob/user, silent)
 	. = ..()
@@ -127,7 +127,7 @@ Moving interrupts
 
 /obj/structure/carving_block/proc/set_target(atom/movable/target,mob/living/user)
 	if(!is_viable_target(target))
-		to_chat(user,"You won't be able to carve that.")
+		to_chat(user,"I won't be able to carve that.")
 		return
 	if(istype(target,/obj/structure/statue/custom))
 		var/obj/structure/statue/custom/original = target
@@ -135,7 +135,7 @@ Moving interrupts
 	else
 		current_target = target.appearance
 	var/mutable_appearance/ma = current_target
-	to_chat(user,span_notice("You decide to sculpt [src] into [ma.name]."))
+	to_chat(user,span_notice("I decide to sculpt [src] into [ma.name]."))
 
 /obj/structure/carving_block/proc/reset_target()
 	current_target = null

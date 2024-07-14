@@ -83,7 +83,7 @@ GLOBAL_LIST_INIT(meteorsC, list(/obj/effect/meteor/dust)) //for space dust event
 
 /obj/effect/meteor
 	name = "the concept of meteor"
-	desc = "You should probably run instead of gawking at this."
+	desc = "I should probably run instead of gawking at this."
 	icon = 'icons/obj/meteor.dmi'
 	icon_state = "small"
 	density = TRUE
@@ -324,7 +324,7 @@ GLOBAL_LIST_INIT(meteorsC, list(/obj/effect/meteor/dust)) //for space dust event
 /obj/effect/meteor/tunguska
 	name = "tunguska meteor"
 	icon_state = "flaming"
-	desc = "Your life briefly passes before your eyes the moment you lay them on this monstrosity."
+	desc = "My life briefly passes before your eyes the moment you lay them on this monstrosity."
 	hits = 30
 	hitpwr = 1
 	heavy = 1

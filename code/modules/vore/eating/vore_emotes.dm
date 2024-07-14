@@ -9,7 +9,7 @@
 	if(!..())
 		return
 	if(SEND_SIGNAL(user, COMSIG_VORE_CAN_EAT) == FALSE)
-		to_chat(user, span_alert("You can't eat anything right now!"))
+		to_chat(user, span_alert("I can't eat anything right now!"))
 		return
 	if(SEND_SIGNAL(user, COMSIG_VORE_DO_VORE, user, user.pulling))
 		return // probably eating someone right now
@@ -19,7 +19,7 @@
 			return // yay, we ate it
 	var/obj/item/hand_item/vorer/nummers = new(user)
 	if(user.put_in_hands(nummers)) // NOTE: put_in_hand is MUCH different from put_in_hands - NOTE THE S
-		to_chat(user, span_notice("You get ready to eat someone (or something)!"))
+		to_chat(user, span_notice("I get ready to eat someone (or something)!"))
 	else
 		qdel(nummers)
 
@@ -101,7 +101,7 @@
 	if(!user.put_in_hands(feedus))
 		qdel(feedus)
 		return
-	to_chat(user, span_notice("You get ready to feed something to someone!"))
+	to_chat(user, span_notice("I get ready to feed something to someone!"))
 
 
 /// VORE ITEM
@@ -230,11 +230,11 @@
 			return
 	var/atom/movable/movable_prey = RESOLVEWEAKREF(our_prey)
 	if(!movable_prey)
-		to_chat(user, span_alert("Your prey no longer exists, probably!"))
+		to_chat(user, span_alert("My prey no longer exists, probably!"))
 		our_prey = null
 	var/mob/living/living_pred = RESOLVEWEAKREF(our_pred)
 	if(!living_pred)
-		to_chat(user, span_alert("Your predator no longer exists, probably!"))
+		to_chat(user, span_alert("My predator no longer exists, probably!"))
 		our_pred = null
 	if(!movable_prey || !living_pred)
 		attack_self(user)

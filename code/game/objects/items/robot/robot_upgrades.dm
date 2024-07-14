@@ -66,7 +66,7 @@ as performing this in action() will cause the upgrade to end up in the borg inst
 
 /obj/item/borg/upgrade/restart/action(mob/living/silicon/robot/R, user = usr)
 	if(R.health < 0)
-		to_chat(user, span_warning("You have to repair the cyborg before using this module!"))
+		to_chat(user, span_warning("I have to repair the cyborg before using this module!"))
 		return FALSE
 
 	if(R.mind)
@@ -342,10 +342,10 @@ as performing this in action() will cause the upgrade to end up in the borg inst
 
 /obj/item/borg/upgrade/selfrepair/ui_action_click()
 	if(on)
-		to_chat(toggle_action.owner, span_notice("You deactivate the self-repair module."))
+		to_chat(toggle_action.owner, span_notice("I deactivate the self-repair module."))
 		deactivate_sr()
 	else
-		to_chat(toggle_action.owner, span_notice("You activate the self-repair module."))
+		to_chat(toggle_action.owner, span_notice("I activate the self-repair module."))
 		activate_sr()
 
 /obj/item/borg/upgrade/selfrepair/update_icon_state()

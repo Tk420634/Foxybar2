@@ -42,23 +42,23 @@
 	var/turf/trash_turf = get_turf(src)
 	var/ukey = ckey(user?.ckey)
 	if(!ukey)
-		to_chat(user, span_alert("You need a ckey to search the trash! Gratz on not having a ckey, tell Lagg (a coder) about it!"))
+		to_chat(user, span_alert("I need a ckey to search the trash! Gratz on not having a ckey, tell Lagg (a coder) about it!"))
 	if(ukey in loot_players)
-		to_chat(user, span_notice("You already have looted [src]."))
+		to_chat(user, span_notice("I already have looted [src]."))
 		return
 	if(!rifling)
 		playsound(get_turf(src), 'sound/f13effects/loot_trash.ogg', 100, TRUE, 1)
-	to_chat(user, span_smallnoticeital("You start picking through [src]...."))
+	to_chat(user, span_smallnoticeital("I start picking through [src]...."))
 	rifling = TRUE
 	if(!do_mob(user, src, 3 SECONDS))
 		rifling = FALSE
 		return
 	rifling = FALSE
 	if(ukey in loot_players)
-		to_chat(user, span_notice("You already have looted [src]."))
+		to_chat(user, span_notice("I already have looted [src]."))
 		return
 	loot_players += ukey
-	to_chat(user, span_notice("You scavenge through [src]."))
+	to_chat(user, span_notice("I scavenge through [src]."))
 	for(var/i in 1 to rand(1,4))
 		var/list/trash_passthru = list()
 		var/obj/effect/spawner/lootdrop/f13/trash/pile/my_trash = new(trash_turf)
@@ -109,12 +109,12 @@
 	var/turf/trash_turf = get_turf(src)
 	if(user?.a_intent != INTENT_HARM)
 		if(user in paid_players)
-			to_chat(user, span_notice("You have already taken your pay from the [src]."))
+			to_chat(user, span_notice("I have already taken your pay from the [src]."))
 			return
 		for(var/i=0, i<rand(1,2), i++)
 			var/itemtype = pick(pay)
 			if(itemtype)
-				to_chat(user, span_notice("You get your pay from the [src]."))
+				to_chat(user, span_notice("I get your pay from the [src]."))
 				new itemtype(trash_turf)
 		paid_players += user
 	else

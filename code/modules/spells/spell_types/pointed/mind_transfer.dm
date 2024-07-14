@@ -10,7 +10,7 @@
 	cooldown_min = 200 //100 deciseconds reduction per rank
 	ranged_mousepointer = 'icons/effects/mouse_pointers/mindswap_target.dmi'
 	action_icon_state = "mindswap"
-	active_msg = "You prepare to swap minds with a target..."
+	active_msg = "I prepare to swap minds with a target..."
 	/// For how long is the caster stunned for after the spell
 	var/unconscious_amount_caster = 40 SECONDS
 	/// For how long is the victim stunned for after the spell
@@ -67,11 +67,11 @@
 		return FALSE
 	if(!isliving(target))
 		if(!silent)
-			to_chat(user, span_warning("You can only swap minds with living beings!"))
+			to_chat(user, span_warning("I can only swap minds with living beings!"))
 		return FALSE
 	if(user == target)
 		if(!silent)
-			to_chat(user, span_warning("You can't swap minds with yourself!"))
+			to_chat(user, span_warning("I can't swap minds with yourself!"))
 		return FALSE
 
 	var/mob/living/victim = target
@@ -83,7 +83,7 @@
 		return FALSE
 	if(victim.stat == DEAD)
 		if(!silent)
-			to_chat(user, span_warning("You don't particularly want to be dead!"))
+			to_chat(user, span_warning("I don't particularly want to be dead!"))
 		return FALSE
 	if(!victim.key || !victim.mind)
 		if(!silent)

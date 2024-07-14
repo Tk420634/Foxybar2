@@ -13,7 +13,7 @@ Raider
 	social_faction = FACTION_RAIDERS
 	total_positions = 16
 	spawn_positions = 16
-	description = "You are an Outlaw - the choice of why is up to you. You are responsible for making the wasteland unsafe and today is another day to antagonize it. You may be varied in your approaches, but you must have motives that are realistic for your job."
+	description = "I am an Outlaw - the choice of why is up to you. You are responsible for making the wasteland unsafe and today is another day to antagonize it. You may be varied in your approaches, but you must have motives that are realistic for your job."
 	supervisors = "your conscious if you have one"
 	selection_color = "#df80af"
 	exp_requirements = 0
@@ -336,7 +336,7 @@ Raider
 	social_faction = FACTION_RAIDERS
 	total_positions = -1
 	spawn_positions = -1
-	description = "You are an Tunnel Rat Strongarm - the choice of why is up to you. You have taken up the responsibility to protect and supervise the underground remnants of the town of Nash."
+	description = "I am an Tunnel Rat Strongarm - the choice of why is up to you. You have taken up the responsibility to protect and supervise the underground remnants of the town of Nash."
 	supervisors = "Whoever you feel like following."
 	selection_color = "#df80af"
 	exp_requirements = 0
@@ -1669,7 +1669,7 @@ Raider
 	faction = FACTION_WASTELAND
 	total_positions = 0
 	spawn_positions = 0
-	description = "You have come a long way to reach this heaven forsaken place... it is now your job to protect its inhabitants from all sorts of injustice. Your moral codex requires you to help anyone in need and to never harm an innocent. Always try to capture and reeducate criminals instead of killing. Do not get involved in the conflicts between the major factions, that is not your fight."
+	description = "I have come a long way to reach this heaven forsaken place... it is now your job to protect its inhabitants from all sorts of injustice. Your moral codex requires you to help anyone in need and to never harm an innocent. Always try to capture and reeducate criminals instead of killing. Do not get involved in the conflicts between the major factions, that is not your fight."
 	supervisors = "your moral code"
 	selection_color = "#76885f"
 	exp_requirements = 0
@@ -2211,7 +2211,7 @@ Raider
 	total_positions = 0
 	spawn_positions = 0
 	description = "You're the big gun here, pardner. As the Overboss of Redwater, you have the unfortunate position of being a mayor to all these hooligans and miscreants. Use your supply of caps and bullets to keep people in order. "
-	supervisors = "Your conscience (HAH), wallet, and constituents."
+	supervisors = "My conscience (HAH), wallet, and constituents."
 	selection_color = "#df80af"
 	exp_requirements = 0
 	exp_type = EXP_TYPE_WASTELAND

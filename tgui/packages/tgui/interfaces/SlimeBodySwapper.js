@@ -9,7 +9,7 @@ const statusMap = {
 };
 
 const occupiedMap = {
-  owner: "You Are Here",
+  owner: "I Are Here",
   stranger: "Occupied",
   available: "Swap",
 };

@@ -82,7 +82,7 @@
 			return -1
 		I = tool.contents[1]
 		if(!isorgan(I))
-			to_chat(user, span_notice("You cannot put [I] into [target]'s [parse_zone(target_zone)]!"))
+			to_chat(user, span_notice("I cannot put [I] into [target]'s [parse_zone(target_zone)]!"))
 			return -1
 		tool = I
 	if(isorgan(tool))
@@ -95,7 +95,7 @@
 		if(!meatslab.useable)
 			to_chat(user, span_warning("[I] seems to have been chewed on, you can't use this!"))
 			return -1
-		display_results(user, target, span_notice("You begin to insert [tool] into [target]'s [parse_zone(target_zone)]..."),
+		display_results(user, target, span_notice("I begin to insert [tool] into [target]'s [parse_zone(target_zone)]..."),
 			"[user] begins to insert [tool] into [target]'s [parse_zone(target_zone)].",
 			"[user] begins to insert something into [target]'s [parse_zone(target_zone)].")
 
@@ -115,7 +115,7 @@
 				I = organs[I]
 				if(!I)
 					return -1
-				display_results(user, target, span_notice("You begin to extract [I] from [target]'s [parse_zone(target_zone)]..."),
+				display_results(user, target, span_notice("I begin to extract [I] from [target]'s [parse_zone(target_zone)]..."),
 					"[user] begins to extract [I] from [target]'s [parse_zone(target_zone)].",
 					"[user] begins to extract something from [target]'s [parse_zone(target_zone)].")
 			else
@@ -133,20 +133,20 @@
 			I = tool
 		user.temporarilyRemoveItemFromInventory(I, TRUE)
 		I.Insert(target)
-		display_results(user, target, span_notice("You insert [tool] into [target]'s [parse_zone(target_zone)]."),
+		display_results(user, target, span_notice("I insert [tool] into [target]'s [parse_zone(target_zone)]."),
 			"[user] inserts [tool] into [target]'s [parse_zone(target_zone)]!",
 			"[user] inserts something into [target]'s [parse_zone(target_zone)]!")
 
 	else if(current_type == "extract")
 		if(I && I.owner == target)
-			display_results(user, target, span_notice("You successfully extract [I] from [target]'s [parse_zone(target_zone)]."),
+			display_results(user, target, span_notice("I successfully extract [I] from [target]'s [parse_zone(target_zone)]."),
 				"[user] successfully extracts [I] from [target]'s [parse_zone(target_zone)]!",
 				"[user] successfully extracts something from [target]'s [parse_zone(target_zone)]!")
 			log_combat(user, target, "surgically removed [I.name] from", addition="INTENT: [uppertext(user.a_intent)]")
 			I.Remove()
 			I.forceMove(get_turf(target))
 		else
-			display_results(user, target, span_notice("You can't extract anything from [target]'s [parse_zone(target_zone)]!"),
+			display_results(user, target, span_notice("I can't extract anything from [target]'s [parse_zone(target_zone)]!"),
 				"[user] can't seem to extract anything from [target]'s [parse_zone(target_zone)]!",
 				"[user] can't seem to extract anything from [target]'s [parse_zone(target_zone)]!")
 	return 1

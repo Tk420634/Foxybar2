@@ -68,7 +68,7 @@
 		if(ishuman(src.loc))
 			var/mob/living/carbon/human/H = src.loc
 			if(H.wear_suit != src)
-				to_chat(H, span_warning("You must be wearing [src] to put up the hood!"))
+				to_chat(H, span_warning("I must be wearing [src] to put up the hood!"))
 				return
 			if(H.head)
 				to_chat(H, span_warning("You're already wearing something on your head!"))
@@ -122,7 +122,7 @@
 	if(!can_use(usr))
 		return 0
 
-	to_chat(usr, span_notice("You toggle [src]'s [togglename]."))
+	to_chat(usr, span_notice("I toggle [src]'s [togglename]."))
 	if(src.suittoggled)
 		src.icon_state = "[initial(icon_state)]"
 		src.body_parts_hidden = initial(src.body_parts_hidden)
@@ -216,7 +216,7 @@
 		if(ishuman(src.loc))
 			if(H.wear_suit != src)
 				if(message)
-					to_chat(H, span_warning("You must be wearing [src] to engage the helmet!"))
+					to_chat(H, span_warning("I must be wearing [src] to engage the helmet!"))
 				return
 			if(H.head)
 				if(message)
@@ -224,7 +224,7 @@
 				return
 			else if(H.equip_to_slot_if_possible(helmet,SLOT_HEAD,0,0,1))
 				if(message)
-					to_chat(H, span_notice("You engage the helmet on the hardsuit."))
+					to_chat(H, span_notice("I engage the helmet on the hardsuit."))
 				suittoggled = TRUE
 				H.update_inv_wear_suit()
 				playsound(src.loc, 'sound/mecha/mechmove03.ogg', 50, 1)

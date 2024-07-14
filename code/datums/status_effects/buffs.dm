@@ -74,8 +74,8 @@
 
 /datum/status_effect/vanguard_shield/on_apply()
 	owner.log_message("gained Vanguard stun immunity", LOG_ATTACK)
-	owner.add_stun_absorption("vanguard", INFINITY, 1, "'s yellow aura momentarily intensifies!", "Your ward absorbs the stun!", " radiating with a soft yellow light!")
-	owner.visible_message(span_warning("[owner] begins to faintly glow!"), span_brass("You will absorb all stuns aswell as quickly regenerate stamina for the next twenty seconds ."))
+	owner.add_stun_absorption("vanguard", INFINITY, 1, "'s yellow aura momentarily intensifies!", "My ward absorbs the stun!", " radiating with a soft yellow light!")
+	owner.visible_message(span_warning("[owner] begins to faintly glow!"), span_brass("I will absorb all stuns aswell as quickly regenerate stamina for the next twenty seconds ."))
 	owner.SetAllImmobility(0, FALSE)
 	my_bar = SSprogress_bars.add_bar(owner, list(), duration, TRUE, TRUE)
 	return ..()
@@ -93,7 +93,7 @@
 		stuns_blocked = FLOOR(min(vanguard["stuns_absorbed"] * 0.25, 400), 1)
 		vanguard["end_time"] = 0 //so it doesn't absorb the stuns we're about to apply
 	if(owner.stat != DEAD)
-		var/message_to_owner = span_warning("You feel your Vanguard quietly fade...")
+		var/message_to_owner = span_warning("I feel your Vanguard quietly fade...")
 		var/otheractiveabsorptions = FALSE
 		for(var/i in owner.stun_absorption)
 			if(owner.stun_absorption[i]["end_time"] > world.time && owner.stun_absorption[i]["priority"] > vanguard["priority"])
@@ -124,7 +124,7 @@
 
 /datum/status_effect/inathneqs_endowment/on_apply()
 	owner.log_message("gained Inath-neq's invulnerability", LOG_ATTACK)
-	owner.visible_message(span_warning("[owner] shines with azure light!"), span_notice("You feel Inath-neq's power flow through you! You're invincible!"))
+	owner.visible_message(span_warning("[owner] shines with azure light!"), span_notice("I feel Inath-neq's power flow through you! You're invincible!"))
 	var/oldcolor = owner.color
 	owner.color = "#1E8CE1"
 	owner.fully_heal()
@@ -138,7 +138,7 @@
 /datum/status_effect/inathneqs_endowment/on_remove()
 	. = ..()
 	owner.log_message("lost Inath-neq's invulnerability", LOG_ATTACK)
-	owner.visible_message(span_warning("The light around [owner] flickers and dissipates!"), span_boldwarning("You feel Inath-neq's power fade from your body!"))
+	owner.visible_message(span_warning("The light around [owner] flickers and dissipates!"), span_boldwarning("I feel Inath-neq's power fade from your body!"))
 	owner.status_flags &= ~GODMODE
 	playsound(owner, 'sound/magic/ethereal_exit.ogg', 50, 1)
 
@@ -155,7 +155,7 @@
 
 /atom/movable/screen/alert/status_effect/power_regen
 	name = "Power Regeneration"
-	desc = "You are quickly regenerating power!"
+	desc = "I am quickly regenerating power!"
 	icon_state = "power_regen"
 
 /datum/status_effect/cyborg_power_regen/tick()
@@ -230,11 +230,11 @@
 /datum/status_effect/wish_granters_gift/on_remove()
 	. = ..()
 	owner.revive(full_heal = TRUE, admin_revive = TRUE)
-	owner.visible_message(span_warning("[owner] appears to wake from the dead, having healed all wounds!"), span_notice("You have regenerated."))
+	owner.visible_message(span_warning("[owner] appears to wake from the dead, having healed all wounds!"), span_notice("I have regenerated."))
 
 /atom/movable/screen/alert/status_effect/wish_granters_gift
 	name = "Wish Granter's Immortality"
-	desc = "You are being resurrected!"
+	desc = "I am being resurrected!"
 	icon_state = "wish_granter"
 
 /datum/status_effect/cult_master
@@ -281,7 +281,7 @@
 
 /atom/movable/screen/alert/status_effect/blooddrunk
 	name = "Blood-Drunk"
-	desc = "You are drunk on blood! Your pulse thunders in your ears! Nothing can harm you!" //not true, and the item description mentions its actual effect
+	desc = "I am drunk on blood! Your pulse thunders in your ears! Nothing can harm you!" //not true, and the item description mentions its actual effect
 	icon_state = "blooddrunk"
 
 /datum/status_effect/blooddrunk/on_apply()
@@ -402,7 +402,7 @@
 	owner.visible_message(span_danger("[owner] begins swinging the sword with inhuman strength!"))
 	var/oldcolor = owner.color
 	owner.color = "#ff0000"
-	owner.add_stun_absorption("bloody bastard sword", duration, 2, "doesn't even flinch as the sword's power courses through them!", "You shrug off the stun!", " glowing with a blazing red aura!")
+	owner.add_stun_absorption("bloody bastard sword", duration, 2, "doesn't even flinch as the sword's power courses through them!", "I shrug off the stun!", " glowing with a blazing red aura!")
 	owner.spin(duration,1)
 	animate(owner, color = oldcolor, time = duration, easing = EASE_IN)
 	addtimer(CALLBACK(owner, /atom/proc/update_atom_colour), duration)
@@ -517,7 +517,7 @@
 						var/obj/item/bodypart/L = itemUser.newBodyPart(BODY_ZONE_L_ARM, FALSE, FALSE)
 						L.attach_limb(itemUser)
 						itemUser.put_in_hand(newRod, hand, forced = TRUE)
-					to_chat(itemUser, span_notice("Your arm suddenly grows back with the Rod of Asclepius still attached!"))
+					to_chat(itemUser, span_notice("My arm suddenly grows back with the Rod of Asclepius still attached!"))
 				else
 					//Otherwise get rid of whatever else is in their hand and return the rod to said hand
 					itemUser.put_in_hand(newRod, hand, forced = TRUE)
@@ -553,7 +553,7 @@
 
 /atom/movable/screen/alert/status_effect/regenerative_core
 	name = "Reinforcing Tendrils"
-	desc = "You can move faster than your broken body could normally handle!"
+	desc = "I can move faster than your broken body could normally handle!"
 	icon_state = "regenerative_core"
 	name = "Regenerative Core Tendrils"
 
@@ -649,5 +649,5 @@
 
 /atom/movable/screen/alert/status_effect/ghoulheal
 	name = "Radiation Healing"
-	desc = "You are regenerating from radiation. The more radiation you accumulate, the faster you will heal, and the slower you will move. Don't accumulate too much."
+	desc = "I am regenerating from radiation. The more radiation you accumulate, the faster you will heal, and the slower you will move. Don't accumulate too much."
 	icon_state = "fleshmend"

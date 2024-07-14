@@ -63,7 +63,7 @@
 	name = "blood"
 	icon = 'icons/effects/blood.dmi'
 	icon_state = "ltrails_1"
-	desc = "Your instincts say you shouldn't be following these."
+	desc = "My instincts say you shouldn't be following these."
 	random_icon_states = null
 	beauty = -50
 	var/list/existing_dirs = list()
@@ -166,7 +166,7 @@
 /obj/effect/decal/cleanable/blood/footprints/examine(mob/user)
 	. = ..()
 	if(shoe_types.len)
-		. += "You recognise the footprints as belonging to:"
+		. += "I recognise the footprints as belonging to:"
 		for(var/shoe in shoe_types)
 			var/obj/item/clothing/shoes/S = shoe
 			. += "some <B>[initial(S.name)]</B> [icon2html(initial(S.icon), user)]"

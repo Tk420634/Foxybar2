@@ -51,7 +51,7 @@
 		EK.on_lose(owner.current)
 
 	if(!silent)
-		to_chat(owner.current, span_userdanger("Your mind begins to flare as the otherwordly knowledge escapes your grasp!"))
+		to_chat(owner.current, span_userdanger("My mind begins to flare as the otherwordly knowledge escapes your grasp!"))
 		owner.current.log_message("has renounced the cult of the old ones!", LOG_ATTACK, color="#960000")
 	GLOB.reality_smash_track.RemoveMind(owner)
 	STOP_PROCESSING(SSprocessing,src)
@@ -80,7 +80,7 @@
 		to_chat(H, span_userdanger("Unfortunately, you weren't able to get a [item_name]. This is very bad and you should adminhelp immediately (press F1)."))
 		return FALSE
 	else
-		to_chat(H, span_danger("You have a [item_name] in your [where]."))
+		to_chat(H, span_danger("I have a [item_name] in your [where]."))
 		if(where == "backpack")
 			SEND_SIGNAL(H.back, COMSIG_TRY_STORAGE_SHOW, H)
 		return TRUE

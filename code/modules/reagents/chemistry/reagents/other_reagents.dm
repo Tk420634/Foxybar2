@@ -184,7 +184,7 @@
 /datum/reagent/blood/jellyblood/on_mob_life(mob/living/carbon/M)
 	if(prob(10))
 		if(M.dna?.species?.exotic_bloodtype != "GEL")
-			to_chat(M, span_danger("Your insides are burning!"))
+			to_chat(M, span_danger("My insides are burning!"))
 		M.adjustToxLoss(rand(20,60)*REM, 0)
 		. = 1
 	else if(prob(40) && isjellyperson(M))
@@ -195,7 +195,7 @@
 /datum/reagent/liquidgibs
 	name = "Liquid gibs"
 	color = BLOOD_COLOR_HUMAN
-	description = "You don't even want to think about what's in here."
+	description = "I don't even want to think about what's in here."
 	taste_description = "gross iron"
 	shot_glass_icon_state = "shotglassred"
 	data = list("donor"=null,"viruses"=null,"blood_DNA"=null, "bloodcolor" = BLOOD_COLOR_HUMAN, "blood_type"= "O+","resistances"=null,"trace_chem"=null,"mind"=null,"ckey"=null,"gender"=null,"real_name"=null,"cloneable"=null,"factions"=null)
@@ -420,7 +420,7 @@
 		for(var/datum/action/innate/cult/blood_magic/BM in M.actions)
 			if(!BM.holy_dispel)
 				BM.holy_dispel = TRUE
-				to_chat(M, span_cultlarge("Your blood rites falter as holy water scours your body!"))
+				to_chat(M, span_cultlarge("My blood rites falter as holy water scours your body!"))
 				for(var/datum/action/innate/cult/blood_spell/BS in BM.spells)
 					qdel(BS)
 	if(data["misc"] >= 25)		// 10 units, 45 seconds @ metabolism 0.4 units & tick rate 1.8 sec
@@ -431,9 +431,9 @@
 		if(iscultist(M) && prob(20))
 			M.say(pick("Av'te Nar'Sie","Pa'lid Mors","INO INO ORA ANA","SAT ANA!","Daim'niodeis Arc'iai Le'eones","R'ge Na'sie","Diabo us Vo'iscum","Eld' Mon Nobis"), forced = "holy water")
 			if(prob(10))
-				M.visible_message(span_danger("[M] starts having a seizure!"), span_userdanger("You have a seizure!"))
+				M.visible_message(span_danger("[M] starts having a seizure!"), span_userdanger("I have a seizure!"))
 				M.Unconscious(120)
-				to_chat(M, "<span class='cultlarge'>[pick("Your blood is your bond - you are nothing without it", "Do not forget your place", \
+				to_chat(M, "<span class='cultlarge'>[pick("My blood is your bond - you are nothing without it", "Do not forget your place", \
 				"All that power, and you still fail?", "If you cannot scour this poison, I shall scour your meager life!")].</span>")
 /*		else if(is_servant_of_ratvar(M) && prob(8))
 			switch(pick("speech", "message", "emote"))
@@ -441,7 +441,7 @@
 					clockwork_say(M, "...[text2ratvar(pick("Engine... your light grows dark...", "Where are you, master?", "He lies rusting in Error...", "Purge all untruths and... and... something..."))]")
 				if("message")
 					to_chat(M, "<span class='boldwarning'>[pick("Ratvar's illumination of your mind has begun to flicker", "He lies rusting in Reebe, derelict and forgotten. And there he shall stay", \
-					"You can't save him. Nothing can save him now", "It seems that Nar'Sie will triumph after all")].</span>")
+					"I can't save him. Nothing can save him now", "It seems that Nar'Sie will triumph after all")].</span>")
 				if("emote")
 					M.visible_message(span_warning("[M] [pick("whimpers quietly", "shivers as though cold", "glances around in paranoia")]."))
 	if(data["misc"] >= 60)	// 30 units, 135 seconds
@@ -684,7 +684,7 @@
 			else
 				H.visible_message("<b>[H]</b> flexes [H.p_their()] arms.")
 	if(prob(10))
-		M.say(pick("Shit was SO cash.", "You are everything bad in the world.", "What sports do you play, other than 'jack off to naked drawn Japanese people?'", "Don’t be a stranger. Just hit me with your best shot.", "My name is John and I hate every single one of you."), forced = "spraytan")
+		M.say(pick("Shit was SO cash.", "I am everything bad in the world.", "What sports do you play, other than 'jack off to naked drawn Japanese people?'", "Don’t be a stranger. Just hit me with your best shot.", "My name is John and I hate every single one of you."), forced = "spraytan")
 	return ..()
 
 #define MUT_MSG_IMMEDIATE 1
@@ -699,11 +699,11 @@
 	taste_description = "slime"
 	value = REAGENT_VALUE_RARE
 	var/datum/species/race = /datum/species/human
-	var/list/mutationtexts =   list("You don't feel very well." = MUT_MSG_IMMEDIATE,
-									"Your skin feels a bit abnormal." = MUT_MSG_IMMEDIATE,
-									"Your limbs begin to take on a different shape." = MUT_MSG_EXTENDED,
-									"Your appendages begin morphing." = MUT_MSG_EXTENDED,
-									"You feel as though you're about to change at any moment!" = MUT_MSG_ABOUT2TURN)
+	var/list/mutationtexts =   list("I don't feel very well." = MUT_MSG_IMMEDIATE,
+									"My skin feels a bit abnormal." = MUT_MSG_IMMEDIATE,
+									"My limbs begin to take on a different shape." = MUT_MSG_EXTENDED,
+									"My appendages begin morphing." = MUT_MSG_EXTENDED,
+									"I feel as though you're about to change at any moment!" = MUT_MSG_ABOUT2TURN)
 	var/mutationtext
 	var/cycles_to_turn = 20 //the current_cycle threshold / iterations needed before one can transform
 	ghoulfriendly = TRUE
@@ -802,7 +802,7 @@
 
 /datum/reagent/mutationtoxin/jelly/on_mob_life(mob/living/carbon/human/H)
 	if(isjellyperson(H))
-		to_chat(H, span_warning("Your jelly shifts and morphs, turning you into another subspecies!"))
+		to_chat(H, span_warning("My jelly shifts and morphs, turning you into another subspecies!"))
 		var/species_type = pick(subtypesof(/datum/species/jelly))
 		H.set_species(species_type)
 		holder.del_reagent(type)
@@ -912,7 +912,7 @@
 		return
 
 	if(isjellyperson(H))
-		to_chat(H, span_warning("Your jelly shifts and morphs, turning you into another subspecies!"))
+		to_chat(H, span_warning("My jelly shifts and morphs, turning you into another subspecies!"))
 		var/species_type = pick(subtypesof(/datum/species/jelly))
 		H.set_species(species_type)
 		H.reagents.del_reagent(type)
@@ -920,13 +920,13 @@
 	switch(current_cycle)
 		if(1 to 6)
 			if(prob(10))
-				to_chat(H, span_warning("[pick("You don't feel very well.", "Your skin feels a little slimy.")]"))
+				to_chat(H, span_warning("[pick("I don't feel very well.", "My skin feels a little slimy.")]"))
 		if(7 to 12)
 			if(prob(10))
-				to_chat(H, span_warning("[pick("Your appendages are melting away.", "Your limbs begin to lose their shape.")]"))
+				to_chat(H, span_warning("[pick("My appendages are melting away.", "My limbs begin to lose their shape.")]"))
 		if(13 to 19)
 			if(prob(10))
-				to_chat(H, span_warning("[pick("You feel your internal organs turning into slime.", "You feel very slimelike.")]"))
+				to_chat(H, span_warning("[pick("I feel your internal organs turning into slime.", "I feel very slimelike.")]"))
 		if(20 to INFINITY)
 			var/species_type = pick(subtypesof(/datum/species/jelly))
 			H.set_species(species_type)
@@ -1276,7 +1276,7 @@
 	..()
 
 /datum/reagent/iron/overdose_start(mob/living/M)
-	to_chat(M, span_userdanger("You start feeling your guts twisting painfully!"))
+	to_chat(M, span_userdanger("I start feeling your guts twisting painfully!"))
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "[type]_overdose", /datum/mood_event/overdose, name)
 
 /datum/reagent/iron/overdose_process(mob/living/M)
@@ -1359,7 +1359,7 @@
 
 /datum/reagent/bluespace/on_mob_life(mob/living/carbon/M)
 	if(current_cycle > 10 && prob(15))
-		to_chat(M, span_warning("You feel unstable..."))
+		to_chat(M, span_warning("I feel unstable..."))
 		current_cycle = 1
 		addtimer(CALLBACK(M, /mob/living/proc/bluespace_shuffle), 30)
 	..()
@@ -1945,11 +1945,11 @@
 /*
 /datum/reagent/oil/on_mob_metabolize_synth(mob/living/L)
 	..()
-	L.show_message(span_green("Your joints feel lubricated!"))
+	L.show_message(span_green("My joints feel lubricated!"))
 	L.add_movespeed_modifier(/datum/movespeed_modifier/reagent/synthoil)
 
 /datum/reagent/oil/on_mob_end_metabolize_synth(mob/living/L)
-	L.show_message(span_alert("Your joints run out of extra lubricant."))
+	L.show_message(span_alert("My joints run out of extra lubricant."))
 	L.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/synthoil)
 	..()
 */ //sugma
@@ -2121,7 +2121,7 @@
 	if(method == TOUCH || method == VAPOR)
 		if(M && ishuman(M))
 			var/mob/living/carbon/human/H = M
-			to_chat(H, span_danger("Your hair is falling out in clumps!"))
+			to_chat(H, span_danger("My hair is falling out in clumps!"))
 			H.hair_style = "Bald"
 			H.facial_hair_style = "Shaved"
 			H.update_hair()
@@ -2492,7 +2492,7 @@
 	if(M.dizziness < 6)
 		M.dizziness = clamp(M.dizziness + 3, 0, 5)
 	if(prob(20))
-		to_chat(M, "You feel confused and disorientated.")
+		to_chat(M, "I feel confused and disorientated.")
 	..()
 
 /datum/reagent/peaceborg_tire
@@ -2508,7 +2508,7 @@
 	if(M.getStaminaLoss() < (45 - healthcomp))	//At 50 health you would have 200 - 150 health meaning 50 compensation. 60 - 50 = 10, so would only do 10-19 stamina.)
 		M.adjustStaminaLoss(10)
 	if(prob(30))
-		to_chat(M, "You should sit down and take a rest...")
+		to_chat(M, "I should sit down and take a rest...")
 	..()
 
 /datum/reagent/moonsugar
@@ -2797,19 +2797,19 @@
 		if(prob(10))
 			M.losebreath += 1
 			M.emote("cough")
-			to_chat(M, span_notice("You clear your throat."))
+			to_chat(M, span_notice("I clear your throat."))
 	else
 		if(!knotted)
-			to_chat(M, span_notice("You feel a knot in your stomach."))
+			to_chat(M, span_notice("I feel a knot in your stomach."))
 			knotted = TRUE
 
 		if(prob(5 + amount * 0.5)) // don't want this to cause too much damage
 			M.losebreath += 2
-			to_chat(M, span_notice("You feel a knot in your throat."))
+			to_chat(M, span_notice("I feel a knot in your throat."))
 			M.emote("cough")
 
 		else if(prob(amount - 4))
-			to_chat(M, span_warning("Your stomach feels awfully bloated."))
+			to_chat(M, span_warning("My stomach feels awfully bloated."))
 			playsound(M,'sound/voice/catpeople/distressed.ogg', 50, FALSE)
 			M.visible_message(span_warning("[M] seems distressed!."), ignored_mobs=M)
 
@@ -2955,7 +2955,7 @@
 		B.size = "flat"
 		B.cached_size = 0
 		B.prev_size = 0
-		to_chat(H, span_warning("Your chest feels warm, tingling with newfound sensitivity.</b>"))
+		to_chat(H, span_warning("My chest feels warm, tingling with newfound sensitivity.</b>"))
 		H.reagents.remove_reagent(type, 5)
 		B.Insert(H)
 
@@ -3044,7 +3044,7 @@
 
 		P = new
 		P.length = 1
-		to_chat(H, span_warning("Your groin feels warm, as you feel a newly forming bulge down below.</b>"))
+		to_chat(H, span_warning("My groin feels warm, as you feel a newly forming bulge down below.</b>"))
 		P.prev_length = 1
 		H.reagents.remove_reagent(type, 5)
 		P.Insert(H)
@@ -3145,7 +3145,7 @@
 			else
 				nB.color = SKINTONE2HEX(H.skin_tone)
 			nB.size = 1
-			to_chat(M, span_alert("You feel your rear pad itself out into a more prominent form!"))
+			to_chat(M, span_alert("I feel your rear pad itself out into a more prominent form!"))
 			M.reagents.remove_reagent(type, 5)
 			B = nB
 	//If they have, increase size.
@@ -3229,7 +3229,7 @@
 			else
 				nB.color = SKINTONE2HEX(H.skin_tone)
 			nB.size = 1
-			to_chat(M, span_alert("You feel your belly swell itself out into a more prominent form!"))
+			to_chat(M, span_alert("I feel your belly swell itself out into a more prominent form!"))
 			M.reagents.remove_reagent(type, 5)
 			B = nB
 	//If they have, increase size.

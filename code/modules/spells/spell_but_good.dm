@@ -29,12 +29,12 @@
 			to_chat(simple_owner, span_alert("You're not dextrous enough to use this!"))
 			return
 	if(living_owner.get_active_held_item())
-		to_chat(user, span_warning("Your hands are too full to properly bite!  Don't ask!"))
+		to_chat(user, span_warning("My hands are too full to properly bite!  Don't ask!"))
 		return
 	var/obj/item/hand_item/caster/magic = new(living_owner)
 	if(living_owner.put_in_active_hand(magic))
 		magic.attune(spell_index)
-		to_chat(living_owner, span_notice("You ready [myspell.name]!"))
+		to_chat(living_owner, span_notice("I ready [myspell.name]!"))
 	else
 		qdel(magic)
 

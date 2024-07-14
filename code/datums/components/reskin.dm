@@ -114,23 +114,23 @@ GLOBAL_LIST_EMPTY(reskin_list)
 		return FALSE
 	var/obj/item/master = parent
 	if(CHECK_BITFIELD(reskin_flags, RESKIN_BE_ALIVE) && !isliving(user))
-		to_chat(user, span_alert("You must be alive to reskin [master], silly."))
+		to_chat(user, span_alert("I must be alive to reskin [master], silly."))
 		return FALSE
 	if(CHECK_BITFIELD(reskin_flags, RESKIN_MUST_HOLD))
 		var/list/haystack = get_nested_locs(master)
 		if(!(user in haystack))
-			to_chat(user, span_alert("You must be holding [master] to reskin it."))
+			to_chat(user, span_alert("I must be holding [master] to reskin it."))
 			return FALSE
 	if(CHECK_BITFIELD(reskin_flags, RESKIN_MUST_BE_NEAR))
 		if(!master.Adjacent(user))
-			to_chat(user, span_alert("You must be in reach of [master] to reskin it."))
+			to_chat(user, span_alert("I must be in reach of [master] to reskin it."))
 			return FALSE
 	if(CHECK_BITFIELD(reskin_flags, RESKIN_ONCE) && skindex != RESKIN_SKINDEX_ORIGINAL)
 		to_chat(user, span_alert("[master] can only be reskinned once."))
 		return FALSE
 	if(CHECK_BITFIELD(reskin_flags, RESKIN_COOLDOWN) && !COOLDOWN_FINISHED(src, reskin_when))
 		var/when_u_can = COOLDOWN_TIMELEFT(src, reskin_when)
-		to_chat(user, span_alert("You must wait [DisplayTimeText(when_u_can, 1)] before reskinning [master] again."))
+		to_chat(user, span_alert("I must wait [DisplayTimeText(when_u_can, 1)] before reskinning [master] again."))
 		return FALSE
 	return TRUE
 

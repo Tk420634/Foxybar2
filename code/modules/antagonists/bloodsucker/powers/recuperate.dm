@@ -15,7 +15,7 @@
 	return TRUE
 
 /datum/action/bloodsucker/vassal/recuperate/ActivatePower()
-	to_chat(owner, span_notice("Your muscles clench and your skin crawls as your master's immortal blood knits your wounds and gives you stamina."))
+	to_chat(owner, span_notice("My muscles clench and your skin crawls as your master's immortal blood knits your wounds and gives you stamina."))
 	var/mob/living/carbon/C = owner
 	var/mob/living/carbon/human/H
 	if(ishuman(owner))

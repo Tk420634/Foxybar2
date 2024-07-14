@@ -43,7 +43,7 @@
 		var/space_remaining = MAXIMUM_BURN_TIMER - burn_time_remaining()
 		var/space_for_logs = round(space_remaining / LOG_BURN_TIMER)
 		if(space_for_logs < 1)
-			to_chat(user, span_warning("You can't fit any more of [T] in [src]!"))
+			to_chat(user, span_warning("I can't fit any more of [T] in [src]!"))
 			return
 		var/logs_used = min(space_for_logs, wood.amount)
 		wood.use(logs_used)

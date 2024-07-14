@@ -1,7 +1,7 @@
 /obj/item/melee/proc/check_martial_counter(mob/living/carbon/human/target, mob/living/carbon/human/user)
 	if(target.check_martial_melee_block())
 		target.visible_message(span_danger("[target.name] blocks [src] and twists [user]'s arm behind [user.p_their()] back!"),
-					span_userdanger("You block the attack!"))
+					span_userdanger("I block the attack!"))
 		user.Stun(40)
 		return TRUE
 
@@ -292,17 +292,17 @@
 
 /obj/item/melee/supermatter_sword/ex_act(severity, target)
 	visible_message(span_danger("The blast wave smacks into [src] and rapidly flashes to ash."),\
-	span_italic("You hear a loud crack as you are washed with a wave of heat."))
+	span_italic("I hear a loud crack as you are washed with a wave of heat."))
 	consume_everything()
 
 /obj/item/melee/supermatter_sword/acid_act()
 	visible_message(span_danger("The acid smacks into [src] and rapidly flashes to ash."),\
-	span_italic("You hear a loud crack as you are washed with a wave of heat."))
+	span_italic("I hear a loud crack as you are washed with a wave of heat."))
 	consume_everything()
 
 /obj/item/melee/supermatter_sword/bullet_act(obj/item/projectile/P)
 	visible_message(span_danger("[P] smacks into [src] and rapidly flashes to ash."),\
-	span_italic("You hear a loud crack as you are washed with a wave of heat."))
+	span_italic("I hear a loud crack as you are washed with a wave of heat."))
 	consume_everything(P)
 	return BULLET_ACT_HIT
 
@@ -344,7 +344,7 @@
 		extend(user)
 	else
 		if (held_sausage)
-			to_chat(user, span_warning("You can't retract [src] while [held_sausage] is attached!"))
+			to_chat(user, span_warning("I can't retract [src] while [held_sausage] is attached!"))
 			return
 		retract(user)
 
@@ -355,7 +355,7 @@
 	..()
 	if (istype(target, /obj/item/reagent_containers/food/snacks/sausage))
 		if (!on)
-			to_chat(user, span_warning("You must extend [src] to attach anything to it!"))
+			to_chat(user, span_warning("I must extend [src] to attach anything to it!"))
 			return
 		if (held_sausage)
 			to_chat(user, span_warning("[held_sausage] is already attached to [src]!"))
@@ -401,14 +401,14 @@
 		return
 	if (is_type_in_typecache(target, ovens))
 		if (held_sausage && held_sausage.roasted)
-			to_chat(user, "Your [held_sausage] has already been cooked.")
+			to_chat(user, "My [held_sausage] has already been cooked.")
 			return
 		if (istype(target, /obj/singularity) && get_dist(user, target) < 10)
-			to_chat(user, "You send [held_sausage] towards [target].")
+			to_chat(user, "I send [held_sausage] towards [target].")
 			playsound(src, 'sound/items/rped.ogg', 50, 1)
 			beam = user.Beam(target,icon_state="rped_upgrade",time=100)
 		else if (user.Adjacent(target))
-			to_chat(user, "You extend [src] towards [target].")
+			to_chat(user, "I extend [src] towards [target].")
 			playsound(src.loc, 'sound/weapons/batonextend.ogg', 50, 1)
 		else
 			return
@@ -419,7 +419,7 @@
 			playsound(src, 'sound/weapons/batonextend.ogg', 50, 1)
 
 /obj/item/melee/roastingstick/proc/finish_roasting(user, atom/target)
-	to_chat(user, "You finish roasting [held_sausage]")
+	to_chat(user, "I finish roasting [held_sausage]")
 	playsound(src,'sound/items/welder2.ogg',50,1)
 	held_sausage.add_atom_colour(rgb(103,63,24), FIXED_COLOUR_PRIORITY)
 	held_sausage.name = "[target.name]-roasted [held_sausage.name]"

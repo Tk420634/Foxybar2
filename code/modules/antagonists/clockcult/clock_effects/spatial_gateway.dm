@@ -77,19 +77,19 @@
 		var/mob/living/L = user.pulling
 		if(L.buckled || L.anchored || L.has_buckled_mobs())
 			return FALSE
-		user.visible_message(span_warning("[user] shoves [L] into [src]!"), span_danger("You shove [L] into [src]!"))
+		user.visible_message(span_warning("[user] shoves [L] into [src]!"), span_danger("I shove [L] into [src]!"))
 		user.stop_pulling()
 		pass_through_gateway(L)
 		return TRUE
 	if(!user.canUseTopic(src))
 		return FALSE
-	user.visible_message(span_warning("[user] climbs through [src]!"), span_danger("You brace yourself and step through [src]..."))
+	user.visible_message(span_warning("[user] climbs through [src]!"), span_danger("I brace yourself and step through [src]..."))
 	pass_through_gateway(user)
 	return TRUE
 
 /obj/effect/clockwork/spatial_gateway/attackby(obj/item/I, mob/living/user, params)
 	if(istype(I, /obj/item/nullrod))
-		user.visible_message(span_warning("[user] dispels [src] with [I]!"), span_danger("You close [src] with [I]!"))
+		user.visible_message(span_warning("[user] dispels [src] with [I]!"), span_danger("I close [src] with [I]!"))
 		qdel(linked_gateway)
 		qdel(src)
 		return TRUE
@@ -97,7 +97,7 @@
 		to_chat(user, span_heavy_brass("\"I don't think you want to drop your slab into that.\"\n\"If you really want to, try throwing it.\""))
 		return TRUE
 	if(uses && user.dropItemToGround(I))
-		user.visible_message(span_warning("[user] drops [I] into [src]!"), span_danger("You drop [I] into [src]!"))
+		user.visible_message(span_warning("[user] drops [I] into [src]!"), span_danger("I drop [I] into [src]!"))
 		pass_through_gateway(I, TRUE)
 		return TRUE
 	return ..()
@@ -269,7 +269,7 @@
 	linked_gateway.visible_message("<span class='warning'[linked_gateway] begins to ripple, but nothing comes through...</span>")
 	var/datum/beam/B = user.Beam(src, icon_state = "nzcrentrs_power", maxdistance = 50, time = 80) 	//Not too fancy, but this'll do.. for now.
 	if(do_after(user, 80, target = src)) //Eight seconds to initiate the closing, then another two before is closes.
-		to_chat(user, span_brass("You successfully set the gateway to shutdown in another two seconds."))
+		to_chat(user, span_brass("I successfully set the gateway to shutdown in another two seconds."))
 		start_shutdown()
 	qdel(B)
 	busy = FALSE

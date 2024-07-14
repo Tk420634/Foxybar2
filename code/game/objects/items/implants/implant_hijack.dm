@@ -18,7 +18,7 @@
 	toggled = !toggled
 	imp_in.click_intercept = toggled ? src : null
 	imp_in.siliconaccesstoggle = toggled ? TRUE : FALSE
-	to_chat(imp_in,span_notice("You turn [toggled ? "on" : "off"] [src]'s silicon interactions."))
+	to_chat(imp_in,span_notice("I turn [toggled ? "on" : "off"] [src]'s silicon interactions."))
 	toggle_eyes()
 
 /obj/item/implant/hijack/proc/toggle_eyes()
@@ -106,7 +106,7 @@
 		hijacking = FALSE
 		return TRUE
 	if (LAZYLEN(imp_in.siliconaccessareas) >= HIJACK_APC_MAX_AMOUNT)
-		to_chat(src,span_warning("You are connected to too many APCs! Too many more will fry your brain."))
+		to_chat(src,span_warning("I am connected to too many APCs! Too many more will fry your brain."))
 		hijacking = FALSE
 		return TRUE
 	imp_in.set_light_power(2)

@@ -252,16 +252,16 @@
 	var/datum/species/S = H.dna.species
 	switch(upgrade_type)
 		if(VAULT_TOXIN)
-			to_chat(H, span_notice("You feel resistant to airborne toxins."))
+			to_chat(H, span_notice("I feel resistant to airborne toxins."))
 			if(locate(/obj/item/organ/lungs) in H.internal_organs)
 				var/obj/item/organ/lungs/L = H.internal_organs_slot[ORGAN_SLOT_LUNGS]
 				L.gas_max -= GAS_PLASMA
 			ADD_TRAIT(H, TRAIT_VIRUSIMMUNE, "dna_vault")
 		if(VAULT_NOBREATH)
-			to_chat(H, span_notice("Your lungs feel great."))
+			to_chat(H, span_notice("My lungs feel great."))
 			ADD_TRAIT(H, TRAIT_NOBREATH, "dna_vault")
 		if(VAULT_FIREPROOF)
-			to_chat(H, span_notice("You feel fireproof."))
+			to_chat(H, span_notice("I feel fireproof."))
 			S.burnmod = 0.5
 			ADD_TRAIT(H, TRAIT_RESISTHEAT, "dna_vault")
 			ADD_TRAIT(H, TRAIT_NOFIRE, "dna_vault")
@@ -269,13 +269,13 @@
 			to_chat(H, span_notice("Nothing can keep you down for long."))
 			S.stunmod = 0.5
 		if(VAULT_ARMOUR)
-			to_chat(H, span_notice("You feel tough."))
+			to_chat(H, span_notice("I feel tough."))
 			S.armor = 30
 			ADD_TRAIT(H, TRAIT_PIERCEIMMUNE, "dna_vault")
 		if(VAULT_SPEED)
-			to_chat(H, span_notice("Your legs feel faster."))
+			to_chat(H, span_notice("My legs feel faster."))
 			H.add_movespeed_modifier(/datum/movespeed_modifier/dna_vault_speedup)
 		if(VAULT_QUICK)
-			to_chat(H, span_notice("Your arms move as fast as lightning."))
+			to_chat(H, span_notice("My arms move as fast as lightning."))
 			H.action_cooldown_mod = 0.5
 	power_lottery[H] = list()

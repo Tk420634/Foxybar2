@@ -54,7 +54,7 @@
 		output += "<center><p><a href='byond://?src=[REF(src)];show_preferences=1'>Setup Character</a></p>"
 		if(SSquirks.initialized)
 			if(!(PMC_QUIRK_OVERHAUL_2K23 in client.prefs.current_version))
-				output += "<center><p>[span_alert("You have quirks from the old system that haven't been converted!")]</p>"
+				output += "<center><p>[span_alert("I have quirks from the old system that haven't been converted!")]</p>"
 				output += "<center><p><a href='byond://?src=[REF(src)];quirkconversion=1'>Click here to do something about that!</a></p>"
 			else
 				output += "<center><p><a href='byond://?src=[REF(src)];quirks=1'>Configure Quirks!</a></p>"
@@ -195,10 +195,10 @@
 		//no longer is required
 		if(SSticker.current_state <= GAME_STATE_PREGAME)
 			if((length_char(client.prefs.features["flavor_text"])) < MIN_FLAVOR_LEN)
-				to_chat(client.mob, span_danger("Your flavortext does not meet the minimum of [MIN_FLAVOR_LEN] characters."))
+				to_chat(client.mob, span_danger("My flavortext does not meet the minimum of [MIN_FLAVOR_LEN] characters."))
 				return
 			if((length_char(client.prefs.features["ooc_notes"])) < MIN_OOC_LEN || client.prefs.features["ooc_notes"] == OOC_NOTE_TEMPLATE)
-				to_chat(client.mob, span_danger("Your ooc notes is empty, please enter information about your roleplaying preferences."))
+				to_chat(client.mob, span_danger("My ooc notes is empty, please enter information about your roleplaying preferences."))
 				return
 			ready = tready
 		//if it's post initialisation and they're trying to observe we do the needful
@@ -223,11 +223,11 @@
 			return
 
 		if((length_char(client.prefs.features["flavor_text"])) < MIN_FLAVOR_LEN)
-			to_chat(client.mob, span_danger("Your flavortext does not meet the minimum of [MIN_FLAVOR_LEN] characters."))
+			to_chat(client.mob, span_danger("My flavortext does not meet the minimum of [MIN_FLAVOR_LEN] characters."))
 			return
 
 		if((length_char(client.prefs.features["ooc_notes"])) < MIN_OOC_LEN || client.prefs.features["ooc_notes"] == OOC_NOTE_TEMPLATE)
-			to_chat(client.mob, span_danger("Your ooc notes is empty, please enter information about your roleplaying preferences."))
+			to_chat(client.mob, span_danger("My ooc notes is empty, please enter information about your roleplaying preferences."))
 			return
 
 		if(href_list["late_join"] == "override")
@@ -239,12 +239,12 @@
 
 			var/queue_position = SSticker.queued_players.Find(usr)
 			if(queue_position == 1)
-				to_chat(usr, span_notice("You are next in line to join the game. You will be notified when a slot opens up."))
+				to_chat(usr, span_notice("I am next in line to join the game. You will be notified when a slot opens up."))
 			else if(queue_position)
 				to_chat(usr, span_notice("There are [queue_position-1] players in front of you in the queue to join the game."))
 			else
 				SSticker.queued_players += usr
-				to_chat(usr, span_notice("You have been added to the queue to join the game. Your position in queue is [SSticker.queued_players.len]."))
+				to_chat(usr, span_notice("I have been added to the queue to join the game. Your position in queue is [SSticker.queued_players.len]."))
 			return
 
 /* 		if(GLOB.data_core.get_record_by_name(client.prefs.real_name))
@@ -434,15 +434,15 @@
 		if(JOB_UNAVAILABLE_GENERIC)
 			return "[jobtitle] is unavailable."
 		if(JOB_UNAVAILABLE_BANNED)
-			return "You are currently banned from [jobtitle]."
+			return "I am currently banned from [jobtitle]."
 		if(JOB_UNAVAILABLE_PLAYTIME)
-			return "You do not have enough relevant playtime for [jobtitle]."
+			return "I do not have enough relevant playtime for [jobtitle]."
 		if(JOB_UNAVAILABLE_ACCOUNTAGE)
-			return "Your account is not old enough for [jobtitle]."
+			return "My account is not old enough for [jobtitle]."
 		if(JOB_UNAVAILABLE_SLOTFULL)
 			return "[jobtitle] is already filled to capacity."
 		if(JOB_UNAVAILABLE_SPECIESLOCK)
-			return "Your species cannot play as a [jobtitle]."
+			return "My species cannot play as a [jobtitle]."
 		if(JOB_UNAVAILABLE_WHITELIST)
 			return "[jobtitle] requires a whitelist."
 	return "Error: Unknown job availability."
@@ -495,11 +495,11 @@
 		return FALSE
 
 	if((length_char(client.prefs.features["flavor_text"])) < MIN_FLAVOR_LEN)
-		to_chat(client.mob, span_danger("Your flavortext does not meet the minimum of [MIN_FLAVOR_LEN] characters."))
+		to_chat(client.mob, span_danger("My flavortext does not meet the minimum of [MIN_FLAVOR_LEN] characters."))
 		return FALSE
 
 	if((length_char(client.prefs.features["ooc_notes"])) < MIN_OOC_LEN || client.prefs.features["ooc_notes"] == OOC_NOTE_TEMPLATE)
-		to_chat(client.mob, span_danger("Your ooc notes is empty, please enter information about your roleplaying preferences."))
+		to_chat(client.mob, span_danger("My ooc notes is empty, please enter information about your roleplaying preferences."))
 		return
 
 	var/arrivals_docked = TRUE
@@ -601,7 +601,7 @@
 				suit.armor.damage_threshold	> (ARMOR_AVERSION_THRESHOLD_THRES))
 
 				H.dropItemToGround(suit)
-				to_chat(H, span_danger("You can't wear this armour, it's too heavy!"))
+				to_chat(H, span_danger("I can't wear this armour, it's too heavy!"))
 		if(H.client && H.client.prefs.quester_uid) // Time to log the heck in!
 			SSeconomy.player_spawned(H)
 
@@ -609,10 +609,11 @@
 	spawn(5 MINUTES)
 		if(character?.client?.is_in_game)
 			character?.client?.is_in_game = 2
-
-			for(var/i in GLOB.player_list)
+			
+			for(var/mob/living/i in GLOB.player_list)
 				if(isliving(i))
 					to_chat(i, span_nicegreen("You overhear a mention that [humanc.name] may be poking around the bar."))
+					i.playsound_local(i, 'sound/doorbell.ogg', 75, TRUE)
 
 /mob/dead/new_player/proc/AddEmploymentContract(mob/living/carbon/human/employee)
 	//TODO:  figure out a way to exclude wizards/nukeops/demons from this.
@@ -628,7 +629,7 @@
 			return
 		var/datum/preferences/P = client.prefs
 		if(!P.creature_flavor_text || !P.creature_ooc)
-			to_chat(src, span_userdanger("You must set your Creature OOC Notes and Flavor Text before joining as a creature."))
+			to_chat(src, span_userdanger("I must set your Creature OOC Notes and Flavor Text before joining as a creature."))
 			return FALSE
 		var/spawn_selection = input(src, "Select a Creature Spawnpoint", "Spawnpoint Selection") as null|anything in GLOB.creature_spawnpoints
 		if(!spawn_selection || QDELETED(src) || !ckey)
@@ -861,7 +862,7 @@
 		has_antags = TRUE
 	if(client.prefs.job_preferences.len == 0)
 		if(!ineligible_for_roles)
-			to_chat(src, span_danger("You have no jobs enabled, along with return to lobby if job is unavailable. This makes you ineligible for any round start role, please update your job preferences."))
+			to_chat(src, span_danger("I have no jobs enabled, along with return to lobby if job is unavailable. This makes you ineligible for any round start role, please update your job preferences."))
 		ineligible_for_roles = TRUE
 		ready = PLAYER_NOT_READY
 		if(has_antags)

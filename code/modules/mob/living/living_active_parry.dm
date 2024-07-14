@@ -18,10 +18,10 @@
 	if(parrying)
 		return		// already parrying
 	if(!(mobility_flags & MOBILITY_USE))
-		to_chat(src, span_warning("You can't move your arms!"))
+		to_chat(src, span_warning("I can't move your arms!"))
 		return
 	if(!(combat_flags & COMBAT_FLAG_PARRY_CAPABLE))
-		to_chat(src, span_warning("You are not something that can parry attacks."))
+		to_chat(src, span_warning("I am not something that can parry attacks."))
 		return
 	// Prioritize item, then martial art, then unarmed.
 	// yanderedev else if time
@@ -58,19 +58,19 @@
 		method = ITEM_PARRY
 		data = using_item.block_parry_data
 	if(!method)
-		to_chat(src, span_warning("You have nothing to parry with!"))
+		to_chat(src, span_warning("I have nothing to parry with!"))
 		return FALSE
 	//QOL: Try to enable combat mode if it isn't already
 	SEND_SIGNAL(src, COMSIG_ENABLE_COMBAT_MODE)
 	if(SEND_SIGNAL(src, COMSIG_COMBAT_MODE_CHECK, COMBAT_MODE_INACTIVE))
-		to_chat(src, span_warning("You must be in combat mode to parry!"))
+		to_chat(src, span_warning("I must be in combat mode to parry!"))
 		return FALSE
 	data = return_block_parry_datum(data)
 	var/full_parry_duration = data.parry_time_windup + data.parry_time_active + data.parry_time_spindown
 	// no system in place to "fallback" if out of the 3 the top priority one can't parry due to constraints but something else can.
 	// can always implement it later, whatever.
 	if((data.parry_respect_clickdelay && !CheckActionCooldown()) || ((parry_end_time_last + data.parry_cooldown) > world.time))
-		to_chat(src, span_warning("You are not ready to parry (again)!"))
+		to_chat(src, span_warning("I am not ready to parry (again)!"))
 		return
 	// Point of no return, make sure everything is set.
 	parrying = method

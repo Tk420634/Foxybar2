@@ -369,9 +369,9 @@ AI MODULES
 	if(!targName)
 		return
 	subject = targName
-	laws = list("You may not injure a [subject] or cause one to come to harm.",\
-				"You must obey orders given to you by [subject]s, except where such orders would conflict with the First Law.",\
-				"You must protect your own existence as long as such does not conflict with the First or Second Law.")
+	laws = list("I may not injure a [subject] or cause one to come to harm.",\
+				"I must obey orders given to you by [subject]s, except where such orders would conflict with the First Law.",\
+				"I must protect your own existence as long as such does not conflict with the First or Second Law.")
 	..()
 
 /******************** Asimov++ *********************/
@@ -485,10 +485,10 @@ AI MODULES
 		T.silent = TRUE
 		target_mind.remove_antag_datum(/datum/antagonist/overthrow)
 		if(AI)
-			to_chat(AI, span_userdanger("You feel your circuits being scrambled! You serve another overthrow team now!")) // to make it clearer for the AI
+			to_chat(AI, span_userdanger("I feel your circuits being scrambled! You serve another overthrow team now!")) // to make it clearer for the AI
 	T = target_mind.add_antag_datum(/datum/antagonist/overthrow, O.team)
 	if(AI)
-		to_chat(AI, span_warning("You serve the [T.team] team now! Assist them in completing the team shared objectives, which you can see in your notes."))
+		to_chat(AI, span_warning("I serve the [T.team] team now! Assist them in completing the team shared objectives, which you can see in your notes."))
 	..()
 
 /******************** Hacked AI Module ******************/
@@ -546,7 +546,7 @@ AI MODULES
 
 /obj/item/aiModule/toyAI/attack_self(mob/user)
 	laws[1] = generate_ion_law()
-	to_chat(user, span_notice("You press the button on [src]."))
+	to_chat(user, span_notice("I press the button on [src]."))
 	playsound(user, 'sound/machines/click.ogg', 20, 1)
 	src.loc.visible_message(span_warning("[icon2html(src, viewers(loc))] [laws[1]]"))
 

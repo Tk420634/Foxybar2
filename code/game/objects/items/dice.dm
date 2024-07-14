@@ -135,7 +135,7 @@
 	desc = "A weird die with raised text printed on the faces. Everything's white on white so reading it is a struggle. What poor design!"
 	icon_state = "8bd20"
 	sides = 20
-	special_faces = list("It is certain","It is decidedly so","Without a doubt","Yes, definitely","You may rely on it","As I see it, yes","Most likely","Outlook good","Yes","Signs point to yes","Reply hazy try again","Ask again later","Better not tell you now","Cannot predict now","Concentrate and ask again","Don't count on it","My reply is no","My sources say no","Outlook not so good","Very doubtful")
+	special_faces = list("It is certain","It is decidedly so","Without a doubt","Yes, definitely","I may rely on it","As I see it, yes","Most likely","Outlook good","Yes","Signs point to yes","Reply hazy try again","Ask again later","Better not tell you now","Cannot predict now","Concentrate and ask again","Don't count on it","My reply is no","My sources say no","Outlook not so good","Very doubtful")
 
 /obj/item/dice/eightbd20/ComponentInitialize()
 	. = ..()
@@ -181,8 +181,8 @@
 /obj/item/dice/proc/say_result(mob/user, fake_result, comment)
 	if(!isnull(user)) //Dice was rolled in someone's hand
 		user.visible_message("[user] has thrown [src]. It lands on [result]. [comment]", \
-							span_notice("You throw [src]. It lands on [result]. [comment]"), \
-							span_italic("You hear [src] rolling, it sounds like a [fake_result]."))
+							span_notice("I throw [src]. It lands on [result]. [comment]"), \
+							span_italic("I hear [src] rolling, it sounds like a [fake_result]."))
 	else if(!src.throwing) //Dice was thrown and is coming to rest
 		visible_message(span_notice("[src] rolls to a stop, landing on [result]. [comment]"))
 
@@ -214,11 +214,11 @@
 	if(!LAZYLEN(contents))
 		M.visible_message(
 			span_notice("[M] rattles [M.p_their()] empty dice cup! Pass the dice, please!"),
-			span_italic("You rattle your empty dice cup!"))
+			span_italic("I rattle your empty dice cup!"))
 		return
 	M.visible_message(
 		span_notice("[M] rattles [M.p_their()] dice cup! The dice inside clatter!"),
-		span_italic("You rattle your dice cup! The dice inside clatter!"))
+		span_italic("I rattle your dice cup! The dice inside clatter!"))
 	
 /// actually rolls the dice and chunks them out on the table
 /// must be a table, but ya know
@@ -236,7 +236,7 @@
 	if(haz_dice)
 		user.visible_message(
 			span_notice("[user] gathers up the dice on the table and puts them in [src]."),
-			span_italic("You gather up the dice on the table and put them in [src]."))
+			span_italic("I gather up the dice on the table and put them in [src]."))
 		return TABLE_NO_PLACE // I love this anime, Table No Place
 	/// if there are no dice on the table, dump the dice cup's contents
 	if(!LAZYLEN(contents))

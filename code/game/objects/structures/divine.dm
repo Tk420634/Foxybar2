@@ -30,7 +30,7 @@ GLOBAL_LIST_INIT(gunparts_rates, list(
 	if(.)
 		return
 	if(istype(I, /obj/item/gun))
-		to_chat(user, span_notice("You attempt to sacrifice [I] by invoking the sacrificial ritual, it melts and breaks into pieces."))
+		to_chat(user, span_notice("I attempt to sacrifice [I] by invoking the sacrificial ritual, it melts and breaks into pieces."))
 		qdel(I)
 		log_combat(user, I, "has sacrificed")
 		switch(divine)
@@ -48,10 +48,10 @@ GLOBAL_LIST_INIT(gunparts_rates, list(
 	if(!L)
 		return
 	if(L.stat != DEAD)
-		to_chat(user, span_notice("You should kill it first!."))
+		to_chat(user, span_notice("I should kill it first!."))
 		return
 	if(istype(I, /obj/item/clothing/accessory/talisman))
-		to_chat(user, span_notice("You attempt to sacrifice [L] by invoking the sacrificial ritual, during the sacrifice, you removed something from the stomach of the victim."))
+		to_chat(user, span_notice("I attempt to sacrifice [L] by invoking the sacrificial ritual, during the sacrifice, you removed something from the stomach of the victim."))
 		L.gib()
 		log_combat(user, L, "has sacrificed")
 		switch(divine)

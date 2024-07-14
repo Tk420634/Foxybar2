@@ -1,6 +1,6 @@
 /mob/camera/blob/proc/can_buy(cost = 15)
 	if(blob_points < cost)
-		to_chat(src, span_warning("You cannot afford this, you need at least [cost] resources!"))
+		to_chat(src, span_warning("I cannot afford this, you need at least [cost] resources!"))
 		return 0
 	add_points(-cost)
 	return 1
@@ -89,7 +89,7 @@
 		return
 	if(needsNode && nodes_required)
 		if(!(locate(/obj/structure/blob/node) in orange(3, T)) && !(locate(/obj/structure/blob/core) in orange(4, T)))
-			to_chat(src, span_warning("You need to place this blob closer to a node or core!"))
+			to_chat(src, span_warning("I need to place this blob closer to a node or core!"))
 			return //handholdotron 2000
 	if(nearEquals)
 		for(var/obj/structure/blob/L in orange(nearEquals, T))
@@ -107,9 +107,9 @@
 	set desc = "Toggle requiring nodes to place resource and factory blobs."
 	nodes_required = !nodes_required
 	if(nodes_required)
-		to_chat(src, span_warning("You now require a nearby node or core to place factory and resource blobs."))
+		to_chat(src, span_warning("I now require a nearby node or core to place factory and resource blobs."))
 	else
-		to_chat(src, span_warning("You no longer require a nearby node or core to place factory and resource blobs."))
+		to_chat(src, span_warning("I no longer require a nearby node or core to place factory and resource blobs."))
 
 /mob/camera/blob/verb/create_shield_power()
 	set category = "Blob"
@@ -126,7 +126,7 @@
 			add_points(BLOB_REFLECTOR_COST)
 			to_chat(src, span_warning("This shield blob is too damaged to be modified properly!"))
 			return
-		to_chat(src, span_warning("You secrete a reflective ooze over the shield blob, allowing it to reflect projectiles at the cost of reduced integrity."))
+		to_chat(src, span_warning("I secrete a reflective ooze over the shield blob, allowing it to reflect projectiles at the cost of reduced integrity."))
 		S.change_to(/obj/structure/blob/shield/reflective, src)
 	else
 		createSpecial(15, /obj/structure/blob/shield, 0, 0, T)
@@ -156,7 +156,7 @@
 	var/turf/T = get_turf(src)
 	var/obj/structure/blob/factory/B = locate(/obj/structure/blob/factory) in T
 	if(!B)
-		to_chat(src, span_warning("You must be on a factory blob!"))
+		to_chat(src, span_warning("I must be on a factory blob!"))
 		return
 	if(B.naut) //if it already made a blobbernaut, it can't do it again
 		to_chat(src, span_warning("This factory blob is already sustaining a blobbernaut."))
@@ -168,7 +168,7 @@
 		return
 
 	B.naut = TRUE	//temporary placeholder to prevent creation of more than one per factory.
-	to_chat(src, span_notice("You attempt to produce a blobbernaut."))
+	to_chat(src, span_notice("I attempt to produce a blobbernaut."))
 	var/list/mob/candidates = pollGhostCandidates("Do you want to play as a [blobstrain.name] blobbernaut?", ROLE_BLOB, null, ROLE_BLOB, 50) //players must answer rapidly
 	if(LAZYLEN(candidates)) //if we got at least one candidate, they're a blobbernaut now.
 		B.max_integrity = initial(B.max_integrity) * 0.25 //factories that produced a blobbernaut have much lower health
@@ -189,12 +189,12 @@
 		SEND_SOUND(blobber, sound('sound/effects/blobattack.ogg'))
 		SEND_SOUND(blobber, sound('sound/effects/attackblob.ogg'))
 		to_chat(blobber, "<b>You are a blobbernaut!</b>")
-		to_chat(blobber, "You are powerful, hard to kill, and slowly regenerate near nodes and cores, <span class='cultlarge'>but will slowly die if not near the blob</span> or if the factory that made you is killed.")
-		to_chat(blobber, "You can communicate with other blobbernauts and overminds via <b>:b</b>")
-		to_chat(blobber, "Your overmind's blob reagent is: <b><font color=\"[blobstrain.color]\">[blobstrain.name]</b></font>!")
+		to_chat(blobber, "I am powerful, hard to kill, and slowly regenerate near nodes and cores, <span class='cultlarge'>but will slowly die if not near the blob</span> or if the factory that made you is killed.")
+		to_chat(blobber, "I can communicate with other blobbernauts and overminds via <b>:b</b>")
+		to_chat(blobber, "My overmind's blob reagent is: <b><font color=\"[blobstrain.color]\">[blobstrain.name]</b></font>!")
 		to_chat(blobber, "The <b><font color=\"[blobstrain.color]\">[blobstrain.name]</b></font> reagent [blobstrain.shortdesc ? "[blobstrain.shortdesc]" : "[blobstrain.description]"]")
 	else
-		to_chat(src, span_warning("You could not conjure a sentience for your blobbernaut. Your points have been refunded. Try again later."))
+		to_chat(src, span_warning("I could not conjure a sentience for your blobbernaut. Your points have been refunded. Try again later."))
 		add_points(40)
 
 /mob/camera/blob/verb/relocate_core()
@@ -204,14 +204,14 @@
 	var/turf/T = get_turf(src)
 	var/obj/structure/blob/node/B = locate(/obj/structure/blob/node) in T
 	if(!B)
-		to_chat(src, span_warning("You must be on a blob node!"))
+		to_chat(src, span_warning("I must be on a blob node!"))
 		return
 	if(!blob_core)
-		to_chat(src, span_userdanger("You have no core and are about to die! May you rest in peace."))
+		to_chat(src, span_userdanger("I have no core and are about to die! May you rest in peace."))
 		return
 	var/area/A = get_area(T)
 	if(isspaceturf(T) || A && !A.blob_allowed)
-		to_chat(src, span_warning("You cannot relocate your core here!"))
+		to_chat(src, span_warning("I cannot relocate your core here!"))
 		return
 	if(!can_buy(80))
 		return
@@ -238,7 +238,7 @@
 		to_chat(src, span_warning("Unable to remove this blob."))
 		return
 	if(max_blob_points < B.point_return + blob_points)
-		to_chat(src, span_warning("You have too many resources to remove this blob!"))
+		to_chat(src, span_warning("I have too many resources to remove this blob!"))
 		return
 	if(B.point_return)
 		add_points(B.point_return)
@@ -310,7 +310,7 @@
 	rally_spores(T)
 
 /mob/camera/blob/proc/rally_spores(turf/T)
-	to_chat(src, "You rally your spores.")
+	to_chat(src, "I rally your spores.")
 	var/list/surrounding_turfs = block(locate(T.x - 1, T.y - 1, T.z), locate(T.x + 1, T.y + 1, T.z))
 	if(!surrounding_turfs.len)
 		return
@@ -327,7 +327,7 @@
 	if(!speak_text)
 		return
 	else
-		to_chat(src, "You broadcast with your minions, <B>[speak_text]</B>")
+		to_chat(src, "I broadcast with your minions, <B>[speak_text]</B>")
 	for(var/BLO in blob_mobs)
 		var/mob/living/simple_animal/hostile/blob/BM = BLO
 		if(BM.stat == CONSCIOUS)
@@ -361,7 +361,7 @@
 	set name = "*Blob Help*"
 	set desc = "Help on how to blob."
 	to_chat(src, "<b>As the overmind, you can control the blob!</b>")
-	to_chat(src, "Your blob reagent is: <b><font color=\"[blobstrain.color]\">[blobstrain.name]</b></font>!")
+	to_chat(src, "My blob reagent is: <b><font color=\"[blobstrain.color]\">[blobstrain.name]</b></font>!")
 	to_chat(src, "The <b><font color=\"[blobstrain.color]\">[blobstrain.name]</b></font> reagent [blobstrain.description]")
 	if(blobstrain.effectdesc)
 		to_chat(src, "The <b><font color=\"[blobstrain.color]\">[blobstrain.name]</b></font> reagent [blobstrain.effectdesc]")

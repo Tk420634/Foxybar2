@@ -66,7 +66,7 @@
 			internal_storage = I
 			update_inv_internal_storage()
 		else
-			to_chat(src, span_danger("You are trying to equip this item to an unsupported inventory slot. Report this to a coder!"))
+			to_chat(src, span_danger("I am trying to equip this item to an unsupported inventory slot. Report this to a coder!"))
 
 /mob/living/simple_animal/hostile/guardian/dextrous/getBackSlot()
 	return SLOT_GENERIC_DEXTROUS_STORAGE

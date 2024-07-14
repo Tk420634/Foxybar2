@@ -375,10 +375,10 @@
 		clicky = clamp(text2num(click_params["icon-y"]) - 16, -(world.icon_size/2), world.icon_size/2)
 
 	if(!instant)
-		to_chat(user, span_notice("You start drawing a [temp] on the [target.name]..."))
+		to_chat(user, span_notice("I start drawing a [temp] on the [target.name]..."))
 
 	if(pre_noise)
-		audible_message(span_notice("You hear spraying."))
+		audible_message(span_notice("I hear spraying."))
 		playsound(user.loc, 'sound/effects/spray.ogg', 5, 1, 5)
 
 	var/wait_time = 50
@@ -422,16 +422,16 @@
 					return
 
 	if(!instant)
-		to_chat(user, span_notice("You finish drawing \the [temp]."))
+		to_chat(user, span_notice("I finish drawing \the [temp]."))
 	else
-		to_chat(user, span_notice("You spray a [temp] on \the [target.name]"))
+		to_chat(user, span_notice("I spray a [temp] on \the [target.name]"))
 
 	if(length(text_buffer) > 1)
 		text_buffer = copytext(text_buffer, length(text_buffer[1]) + 1)
 		SStgui.update_uis(src)
 
 	if(post_noise)
-		audible_message(span_notice("You hear spraying."))
+		audible_message(span_notice("I hear spraying."))
 		playsound(user.loc, 'sound/effects/spray.ogg', 5, 1, 5)
 
 	var/fraction = min(1, . / reagents.maximum_volume)
@@ -444,7 +444,7 @@
 
 /obj/item/toy/crayon/attack(mob/M, mob/user)
 	if(edible && (M == user))
-		to_chat(user, "You take a bite of the [src.name]. Delicious!")
+		to_chat(user, "I take a bite of the [src.name]. Delicious!")
 		var/eaten = use_charges(user, 5, FALSE)
 		if(check_empty(user)) //Prevents divsion by zero
 			return
@@ -672,7 +672,7 @@
 
 		if(pre_noise || post_noise)
 			playsound(user.loc, 'sound/effects/spray.ogg', 5, 1, 5)
-		user.visible_message("[user] coats [target] with spray paint!", span_notice("You coat [target] with spray paint."))
+		user.visible_message("[user] coats [target] with spray paint!", span_notice("I coat [target] with spray paint."))
 		return
 
 	. = ..()
@@ -727,7 +727,7 @@
 
 /obj/item/toy/crayon/spraycan/lubecan
 	name = "slippery spraycan"
-	desc = "You can barely keep hold of this thing."
+	desc = "I can barely keep hold of this thing."
 	icon_state = "clowncan2_cap"
 	icon_capped = "clowncan2_cap"
 	icon_uncapped = "clowncan2"

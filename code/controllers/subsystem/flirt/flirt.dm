@@ -8,14 +8,14 @@
 	var/flirticon = 'icons/mob/actions.dmi'
 	var/flirticon_state = "velvet_chords"
 	/// What it says when its put in ur hand
-	var/give_message = "You get ready to flirt!"
+	var/give_message = "I get ready to flirt!"
 	var/give_message_span = "love"
 	/// displayed to the flirted self
-	var/self_message = "You flirt with %TARGET%! How sweet."
+	var/self_message = "I flirt with %TARGET%! How sweet."
 	var/self_message_span = "love" // check them out in spans.dm!
 	var/self_message_advice = "Remember to honor their OOC preferences and <span class='love'>maybe</span> give them a response?"
 	/// displayed to the flirted target
-	var/target_message = "You notice %FLIRTER% flirting with you! How sweet."
+	var/target_message = "I notice %FLIRTER% flirting with you! How sweet."
 	var/target_message_span = "love"
 	var/target_message_advice = "Maybe give them a little emote back?"
 	/// displayed when you use the emote item in hand to broadcast a general flirt
@@ -58,11 +58,11 @@
 	flirtdesc = LAZYACCESS(json_flirt, "desc") || "Send them a cute little letter asking if they'd like to file a bug report with you!"
 	flirticon = LAZYACCESS(json_flirt, "icon") || "icons/mob/actions.dmi"
 	flirticon_state = LAZYACCESS(json_flirt, "icon_state") || "velvet_chords"
-	give_message = LAZYACCESS(json_flirt, "give_message") || "You get out your GitHub issues!"
+	give_message = LAZYACCESS(json_flirt, "give_message") || "I get out your GitHub issues!"
 	give_message_span = LAZYACCESS(json_flirt, "give_message_span") || "love"
-	self_message = LAZYACCESS(json_flirt, "self_message") || "You ask %TARGET% if they'd like to file a bug report with you!"
+	self_message = LAZYACCESS(json_flirt, "self_message") || "I ask %TARGET% if they'd like to file a bug report with you!"
 	self_message_span = LAZYACCESS(json_flirt, "self_message_span") || "love"
-	target_message = LAZYACCESS(json_flirt, "target_message") || "You notice %FLIRTER% asking if they'd like to file a bug report with you!"
+	target_message = LAZYACCESS(json_flirt, "target_message") || "I notice %FLIRTER% asking if they'd like to file a bug report with you!"
 	target_message_span = LAZYACCESS(json_flirt, "target_message_span") || "love"
 	aoe_message = LAZYACCESS(json_flirt, "aoe_message") || "" // this one can be null and a-okay
 	aoe_message_span = LAZYACCESS(json_flirt, "aoe_message_span") || "love"
@@ -123,7 +123,7 @@
 
 /datum/flirt/proc/give_flirter(mob/living/flirter)
 	if(flirter.get_active_held_item() && flirter.get_inactive_held_item())
-		to_chat(flirter, span_warning("Your hands are too full to flirt! Yes, you need your hands to flirt."))
+		to_chat(flirter, span_warning("My hands are too full to flirt! Yes, you need your hands to flirt."))
 		return
 
 	var/obj/item/hand_item/flirter/hiya = new(flirter)

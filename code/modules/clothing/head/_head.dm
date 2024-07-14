@@ -132,7 +132,7 @@
 				return
 
 			if(user && notifyAttach)
-				to_chat(user, span_notice("You attach [I] to [src]."))
+				to_chat(user, span_notice("I attach [I] to [src]."))
 
 			if((flags_inv & HIDEACCESSORY) || (A.flags_inv & HIDEACCESSORY))
 				return TRUE
@@ -158,9 +158,9 @@
 		var/obj/item/clothing/armoraccessory/A = attached_accessory
 		attached_accessory.detach(src, user)
 		if(user.put_in_hands(A))
-			to_chat(user, span_notice("You detach [A] from [src]."))
+			to_chat(user, span_notice("I detach [A] from [src]."))
 		else
-			to_chat(user, span_notice("You detach [A] from [src] and it falls on the floor."))
+			to_chat(user, span_notice("I detach [A] from [src] and it falls on the floor."))
 
 		if(ishuman(loc))
 			var/mob/living/carbon/human/H = loc

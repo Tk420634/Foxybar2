@@ -32,12 +32,12 @@
 			locked = SEND_SIGNAL(src, COMSIG_IS_STORAGE_LOCKED)
 			if(locked)
 				icon_state = icon_locked
-				to_chat(user, span_danger("You lock the [src.name]!"))
+				to_chat(user, span_danger("I lock the [src.name]!"))
 				SEND_SIGNAL(src, COMSIG_TRY_STORAGE_HIDE_ALL)
 				return
 			else
 				icon_state = icon_closed
-				to_chat(user, span_danger("You unlock the [src.name]!"))
+				to_chat(user, span_danger("I unlock the [src.name]!"))
 				return
 		else
 			to_chat(user, span_danger("Access Denied."))
@@ -80,7 +80,7 @@
 
 /obj/item/storage/lockbox/clusterbang
 	name = "lockbox of clusterbangs"
-	desc = "You have a bad feeling about opening this."
+	desc = "I have a bad feeling about opening this."
 	req_access = list(ACCESS_SECURITY)
 
 /obj/item/storage/lockbox/clusterbang/PopulateContents()
@@ -236,4 +236,4 @@
 	SEND_SIGNAL(src, COMSIG_TRY_STORAGE_SET_LOCKSTATE, !privacy_lock)
 	privacy_lock = SEND_SIGNAL(src, COMSIG_IS_STORAGE_LOCKED)
 	user.visible_message(span_notice("[user] [privacy_lock ? "" : "un"]locks [src]'s privacy lock."),
-					span_notice("You [privacy_lock ? "" : "un"]lock [src]'s privacy lock."))
+					span_notice("I [privacy_lock ? "" : "un"]lock [src]'s privacy lock."))

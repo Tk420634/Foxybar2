@@ -51,7 +51,7 @@
 	if (causes_damage && !iszombie(owner) && owner.stat != DEAD)
 		owner.adjustToxLoss(1)
 		if (prob(10))
-			to_chat(owner, span_danger("You feel sick..."))
+			to_chat(owner, span_danger("I feel sick..."))
 	if(timer_id)
 		return
 	if(owner.stat != DEAD && !converts_living)
@@ -87,12 +87,12 @@
 		return
 
 	owner.grab_ghost()
-	owner.visible_message(span_danger("[owner] suddenly convulses, as [owner.p_they()][stand_up ? " stagger to [owner.p_their()] feet and" : ""] gain a ravenous hunger in [owner.p_their()] eyes!"), span_alien("You HUNGER!"))
+	owner.visible_message(span_danger("[owner] suddenly convulses, as [owner.p_they()][stand_up ? " stagger to [owner.p_their()] feet and" : ""] gain a ravenous hunger in [owner.p_their()] eyes!"), span_alien("I HUNGER!"))
 	playsound(owner.loc, 'sound/hallucinations/far_noise.ogg', 50, 1)
 	owner.do_jitter_animation(living_transformation_time)
 	owner.Stun(living_transformation_time)
-	to_chat(owner, span_alertalien("You are now a zombie! You claw and bite, turning your fellow crewmembers into friends that help spread the plague."))
-	to_chat(owner, span_alertwarning("You are a zombie. Please act like one. Letting the crew remove the tumor inside your brain is a dick move to whoever infected you. Please do not do it."))
+	to_chat(owner, span_alertalien("I am now a zombie! You claw and bite, turning your fellow crewmembers into friends that help spread the plague."))
+	to_chat(owner, span_alertwarning("I am a zombie. Please act like one. Letting the crew remove the tumor inside your brain is a dick move to whoever infected you. Please do not do it."))
 
 /obj/item/organ/zombie_infection/nodamage
 	causes_damage = FALSE
@@ -127,10 +127,10 @@
 		return
 
 	owner.grab_ghost()
-	owner.visible_message(span_danger("[owner] suddenly convulses, as [owner.p_they()][stand_up ? " staggers to [owner.p_their()] feet and" : ""] gains a ravenous hunger in [owner.p_their()] eyes!"), span_alien("You HUNGER!"))
+	owner.visible_message(span_danger("[owner] suddenly convulses, as [owner.p_they()][stand_up ? " staggers to [owner.p_their()] feet and" : ""] gains a ravenous hunger in [owner.p_their()] eyes!"), span_alien("I HUNGER!"))
 	playsound(owner.loc, 'sound/hallucinations/far_noise.ogg', 50, 1)
 	owner.do_jitter_animation(living_transformation_time)
 	owner.Stun(living_transformation_time)
-	to_chat(owner, span_alertalien("You are now a ravenous ghoul! You claw and bite, turning unsuspecting wasters into monstrosities that help spread the infection."))
-	to_chat(owner, span_alertwarning("You are now effectively a (zombie) feral ghoul. Do not try to help your former allies in any way, all you must do is consume!"))
+	to_chat(owner, span_alertalien("I am now a ravenous ghoul! You claw and bite, turning unsuspecting wasters into monstrosities that help spread the infection."))
+	to_chat(owner, span_alertwarning("I am now effectively a (zombie) feral ghoul. Do not try to help your former allies in any way, all you must do is consume!"))
 

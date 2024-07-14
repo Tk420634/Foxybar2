@@ -170,8 +170,8 @@
 		playsound(src, 'sound/effects/bang.ogg', 50, TRUE)
 		add_dent(WALL_DENT_HIT)
 		user.visible_message(span_danger("[user] smashes \the [src]!"), \
-					span_danger("You smash \the [src]!"), \
-					span_hear("You hear a booming smash!"))
+					span_danger("I smash \the [src]!"), \
+					span_hear("I hear a booming smash!"))
 	return TRUE
 
 /**
@@ -193,7 +193,7 @@
 	smasher.break_an_arm(arm)
 
 /turf/closed/wall/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
-	to_chat(user, span_notice("You push the wall but nothing happens!"))
+	to_chat(user, span_notice("I push the wall but nothing happens!"))
 	playsound(src, 'sound/weapons/genhit.ogg', 25, 1)
 	add_fingerprint(user)
 
@@ -201,7 +201,7 @@
 	if(!user.CheckActionCooldown(CLICK_CD_MELEE))
 		return
 	if (!user.IsAdvancedToolUser())
-		to_chat(user, span_warning("You don't have the dexterity to do this!"))
+		to_chat(user, span_warning("I don't have the dexterity to do this!"))
 		return
 
 	//get the user's location
@@ -228,10 +228,10 @@
 		if(!W.tool_start_check(user, amount=0))
 			return FALSE
 
-		to_chat(user, span_notice("You begin fixing dents on the wall..."))
+		to_chat(user, span_notice("I begin fixing dents on the wall..."))
 		if(W.use_tool(src, user, 0, volume=100))
 			if(iswallturf(src) && LAZYLEN(dent_decals))
-				to_chat(user, span_notice("You fix some dents on the wall."))
+				to_chat(user, span_notice("I fix some dents on the wall."))
 				cut_overlay(dent_decals)
 				dent_decals.Cut()
 			return TRUE
@@ -266,10 +266,10 @@
 		if(!I.tool_start_check(user, amount=0))
 			return FALSE
 
-		to_chat(user, span_notice("You begin slicing through the outer plating..."))
+		to_chat(user, span_notice("I begin slicing through the outer plating..."))
 		if(I.use_tool(src, user, slicing_duration, volume=100))
 			if(iswallturf(src))
-				to_chat(user, span_notice("You remove the outer plating."))
+				to_chat(user, span_notice("I remove the outer plating."))
 				dismantle_wall()
 			return TRUE
 
@@ -278,12 +278,12 @@
 
 /turf/closed/wall/proc/try_destroy(obj/item/I, mob/user, turf/T)
 	if(istype(I, /obj/item/pickaxe/drill/jackhammer))
-		to_chat(user, span_notice("You begin to smash though [src]..."))
+		to_chat(user, span_notice("I begin to smash though [src]..."))
 		if(do_after(user, 70, target = src))
 			if(!istype(src, /turf/closed/wall))
 				return TRUE
 			I.play_tool_sound(src)
-			visible_message(span_warning("[user] smashes through [src] with [I]!"), span_italic("You hear the grinding of metal."))
+			visible_message(span_warning("[user] smashes through [src] with [I]!"), span_italic("I hear the grinding of metal."))
 			dismantle_wall()
 			return TRUE
 	return FALSE
@@ -328,7 +328,7 @@
 /turf/closed/wall/rcd_act(mob/user, obj/item/construction/rcd/the_rcd, passed_mode)
 	switch(passed_mode)
 		if(RCD_DECONSTRUCT)
-			to_chat(user, span_notice("You deconstruct the wall."))
+			to_chat(user, span_notice("I deconstruct the wall."))
 			ScrapeAway()
 			return TRUE
 	return FALSE
@@ -385,7 +385,7 @@
 	if(user.restrained())
 		return
 	if(!is_climbable(user))
-		to_chat(user, span_alert("You briefly consider climbing the wall, but it is just too perilous to climb! You'd probably fall and break your neck!"))
+		to_chat(user, span_alert("I briefly consider climbing the wall, but it is just too perilous to climb! You'd probably fall and break your neck!"))
 		return
 	return TRUE
 
@@ -395,7 +395,7 @@
 	if(!can_climb(user))
 		return
 	if(HAS_TRAIT(user, TRAIT_FAT))
-		to_chat(user, span_warning("You try to climb up [src], but your big fat gut gets in the way!"))
+		to_chat(user, span_warning("I try to climb up [src], but your big fat gut gets in the way!"))
 		return
 	var/turf/AboveT = get_step_multiz(get_turf(user), UP)
 	var/turf/targetDest = get_step_multiz(get_turf(src), UP)
@@ -408,7 +408,7 @@
 		time_to_climb *= 0.25 // Free runners climb 75% faster.
 	visible_message(
 		span_warning("[user] starts climbing up [name]!"),
-		span_notice("You start climbing up [name]!")
+		span_notice("I start climbing up [name]!")
 	)
 	SSweather.add_sound_rock(user, /datum/looping_sound/rockpile)
 	var/failed = FALSE
@@ -422,17 +422,17 @@
 		if(HAS_TRAIT(user, TRAIT_FREERUNNING))
 			visible_message(
 				span_alert("[user] slips and falls! Shoot!"),
-				span_alert("You slip and fall! But, you land on your feet (or whatever it is you use)!"))
+				span_alert("I slip and fall! But, you land on your feet (or whatever it is you use)!"))
 		else
 			visible_message(
 				span_alert("[user] slips and falls flat on their behind! Shoot!"),
-				span_alert("You slip and fall! Shoot!"))
+				span_alert("I slip and fall! Shoot!"))
 			user.DefaultCombatKnockdown(1) // just a lil one
 		return
 	if(user.zMove(UP, targetDest, z_move_flags = ZMOVE_FLIGHT_FLAGS|ZMOVE_FEEDBACK))
 		visible_message(
 			span_notice("[user] climbs up [src]!"),
-			span_notice("You climb up [src]!"))
+			span_notice("I climb up [src]!"))
 		if(!HAS_TRAIT(user, TRAIT_FREERUNNING))
 			user.DefaultCombatKnockdown(1, override_stamdmg = 5) // just a lil one
 
@@ -443,7 +443,7 @@
 		return
 	visible_message(
 		span_warning("[user] starts piling up rocks against [name]!"),
-		span_notice("You begin piling up rocks against [name], trying to build a way up!")
+		span_notice("I begin piling up rocks against [name], trying to build a way up!")
 	)
 	var/turf/AboveT = get_step_multiz(get_turf(user), UP)
 	var/turf/targetDest = get_step_multiz(get_turf(src), UP)
@@ -463,7 +463,7 @@
 		return
 	SSweather.remove_sound_rock(user, /datum/looping_sound/rockpile)
 	if(failed)
-		visible_message(span_alert("[user]'s pile of stuff falls apart! Shoot!"), span_alert("Your pile of stuff falls apart! Shoot!"))
+		visible_message(span_alert("[user]'s pile of stuff falls apart! Shoot!"), span_alert("My pile of stuff falls apart! Shoot!"))
 		return
 	var/angle = get_dir(user, src)
 	switch(angle)
@@ -487,7 +487,7 @@
 				new /obj/structure/stairs/rockpile/brickpile/west(get_turf(user))
 			else
 				new /obj/structure/stairs/rockpile/west(get_turf(user))
-	visible_message(span_notice("[user] stacks a bunch of rocks against [src] as a makeshift staircase!"), span_notice("You stack a bunch of rocks against [src] as a makeshift staircase!"))
+	visible_message(span_notice("[user] stacks a bunch of rocks against [src] as a makeshift staircase!"), span_notice("I stack a bunch of rocks against [src] as a makeshift staircase!"))
 	if(istype(W))
 		qdel(W)
 	return TRUE
@@ -502,7 +502,7 @@
 		ceilingeleephant = "elephant"
 		thingelephant = "an elephant"
 	if(!istype(AboveT, /turf/open/transparent/openspace))
-		to_chat(user, "You can't get here, there is \a [ceilingeleephant] in the way!") // (0)
+		to_chat(user, "I can't get here, there is \a [ceilingeleephant] in the way!") // (0)
 		return
 	if(istype(targetDest, /turf/open/transparent/openspace))
 		to_chat(user, span_warning("There's nothing to stand on up there!"))

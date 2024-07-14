@@ -280,7 +280,7 @@
 				if(5 to 20)
 					//At somewhat higher pp, warning becomes more obvious
 					if(prob(15))
-						to_chat(src, span_warning("You smell something horribly decayed inside this room."))
+						to_chat(src, span_warning("I smell something horribly decayed inside this room."))
 						SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "smell", /datum/mood_event/disgust/bad_smell)
 				if(15 to 30)
 					//Small chance to vomit. By now, people have internals on anyway
@@ -707,7 +707,7 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 		return
 	adjustToxLoss(4, TRUE,  TRUE)
 	if(prob(15))
-		to_chat(src, span_danger("You feel a stabbing pain in your abdomen!"))
+		to_chat(src, span_danger("I feel a stabbing pain in your abdomen!"))
 
 
 ////////////////

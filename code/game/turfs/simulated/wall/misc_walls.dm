@@ -92,11 +92,11 @@
 		return ..()
 	if(!istype(I, /obj/item/pickaxe/drill/jackhammer))
 		return FALSE
-	to_chat(user, span_notice("You begin to smash though [src]..."))
+	to_chat(user, span_notice("I begin to smash though [src]..."))
 	if(!do_after(user, 70, TRUE, src))
 		return FALSE
 	I.play_tool_sound(src)
-	visible_message(span_warning("[user] smashes through [src] with [I]!"), span_italic("You hear the grinding of metal."))
+	visible_message(span_warning("[user] smashes through [src] with [I]!"), span_italic("I hear the grinding of metal."))
 	dismantle_wall()
 	return TRUE
 

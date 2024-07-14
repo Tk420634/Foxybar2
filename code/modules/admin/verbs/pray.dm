@@ -12,7 +12,7 @@
 	log_prayer("[src.key]/([src.name]): [msg]")
 	if(usr.client)
 		if(usr.client.prefs.muted & MUTE_PRAY)
-			to_chat(usr, span_danger("You cannot pray (muted)."))
+			to_chat(usr, span_danger("I cannot pray (muted)."))
 			return
 		if(src.client.handle_spam_prevention(msg,MUTE_PRAY))
 			return
@@ -58,7 +58,7 @@
 					SEND_SOUND(C, sound('sound/effects/pray.ogg'))
 				else
 					SEND_SOUND(C, sound('sound/effects/ding.ogg'))
-	to_chat(usr, span_info("You pray to the gods: \"[msg_tmp]\""))
+	to_chat(usr, span_info("I pray to the gods: \"[msg_tmp]\""))
 
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Prayer") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	//log_admin("HELP: [key_name(src)]: [msg]")

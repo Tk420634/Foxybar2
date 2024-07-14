@@ -36,7 +36,7 @@
 		for(var/obj/structure/destructible/clockwork/ocular_warden/W in orange(OCULAR_WARDEN_EXCLUSION_RANGE, src))
 			if(W.anchored)
 				if(!silent)
-					to_chat(user, span_neovgre("You sense another ocular warden too near this location. Activating this one this close would cause them to fight."))
+					to_chat(user, span_neovgre("I sense another ocular warden too near this location. Activating this one this close would cause them to fight."))
 				return FAILED_UNFASTEN
 	return SUCCESSFUL_UNFASTEN
 
@@ -105,7 +105,7 @@
 		var/obj/item/storage/book/bible/B = L.bible_check()
 		if(B)
 			if(!(B.resistance_flags & ON_FIRE))
-				to_chat(L, span_warning("Your [B.name] bursts into flames!"))
+				to_chat(L, span_warning("My [B.name] bursts into flames!"))
 			for(var/obj/item/storage/book/bible/BI in L.GetAllContents())
 				if(!(BI.resistance_flags & ON_FIRE))
 					BI.fire_act()

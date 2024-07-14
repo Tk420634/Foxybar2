@@ -64,7 +64,7 @@
 
 	if(!user.transferItemToLoc(I, src))
 		return
-	to_chat(user, span_notice("You put [I] in [src]."))
+	to_chat(user, span_notice("I put [I] in [src]."))
 	update_icon()
 
 /obj/structure/tank_dispenser/ui_state(mob/user)

@@ -76,7 +76,7 @@
 	var/mob/living/L = owner
 	if(L.blood_volume < bloodcost)
 		if(display_error)
-			to_chat(owner, span_warning("You need at least [bloodcost] blood to activate [name]"))
+			to_chat(owner, span_warning("I need at least [bloodcost] blood to activate [name]"))
 		return FALSE
 	return TRUE
 
@@ -91,7 +91,7 @@
 	// Stake?
 	if(!can_be_staked && owner.AmStaked())
 		if(display_error)
-			to_chat(owner, span_warning("You have a stake in your chest! Your powers are useless."))
+			to_chat(owner, span_warning("I have a stake in your chest! Your powers are useless."))
 		return FALSE
 	if(istype(owner.get_item_by_slot(SLOT_NECK), /obj/item/clothing/neck/garlic_necklace))
 		if(display_error)
@@ -113,7 +113,7 @@
 		var/mob/living/L = owner
 		if(L.blood_volume <= 0)
 			if(display_error)
-				to_chat(owner, span_warning("You don't have the blood to upkeep [src]."))
+				to_chat(owner, span_warning("I don't have the blood to upkeep [src]."))
 			return FALSE
 	return TRUE
 
@@ -250,7 +250,7 @@
 	// Out of Range
 	if(!(A in view(target_range, owner)))
 		if(display_error && target_range > 1) // Only warn for range if it's greater than 1. Brawn doesn't need to announce itself.
-			to_chat(owner, span_warning("Your target is out of range."))
+			to_chat(owner, span_warning("My target is out of range."))
 		return FALSE
 	return istype(A)
 

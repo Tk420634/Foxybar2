@@ -13,7 +13,7 @@ GLOBAL_LIST_INIT(obj_vars_allowed_to_modify, list(
 	if(	istype(A, /obj/structure/flora) || \
 		istype(A, /obj/machinery/door/poddoor))
 
-		to_chat(src, span_danger("You can't move that!"))
+		to_chat(src, span_danger("I can't move that!"))
 		return
 
 	var/do_after_delay 			= 1 SECONDS

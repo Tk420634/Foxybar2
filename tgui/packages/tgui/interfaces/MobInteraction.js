@@ -143,7 +143,7 @@ const Nads = (props, context) => {
           <hr />
         </Flex.Item>
         <Flex.Item basis="50%" textAlign="center" bold>
-          {ShowTheirSide ? TheirName : "Yourself"}
+          {ShowTheirSide ? TheirName : "Myself"}
           {ShowTheirSide ? <hr /> : <Box />}
         </Flex.Item>
         {ShowTheirSide && (
@@ -522,7 +522,7 @@ const AutoPlapControl = (props, context) => {
   const APRecordingIcon = APRecording ? "ban" : "circle";
   const APRecordingColor = APRecording ? "red" : "red"; // red and also red
 
-  const MyPartner = APPlapper === APPartner ? "Yourself" : APPartner;
+  const MyPartner = APPlapper === APPartner ? "Myself" : APPartner;
 
   return (
     <Box

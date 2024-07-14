@@ -109,21 +109,21 @@
 			return
 
 		if(!panel_open) //is the panel open ?
-			to_chat(user, span_warning("You must open the maintenance panel first!"))
+			to_chat(user, span_warning("I must open the maintenance panel first!"))
 			return
 
 		var/turf/T = get_turf(user)
 		if (T.intact) //is the floor plating removed ?
-			to_chat(user, span_warning("You must first remove the floor plating!"))
+			to_chat(user, span_warning("I must first remove the floor plating!"))
 			return
 
 
 		var/obj/item/stack/cable_coil/C = I
 		if(C.get_amount() < 10)
-			to_chat(user, span_warning("You need more wires!"))
+			to_chat(user, span_warning("I need more wires!"))
 			return
 
-		to_chat(user, span_notice("You start building the power terminal..."))
+		to_chat(user, span_notice("I start building the power terminal..."))
 		playsound(src.loc, 'sound/items/deconstruct.ogg', 50, TRUE)
 
 		if(C.use_tool(src, user, 20, 10))
@@ -134,7 +134,7 @@
 			if(!terminal)
 				C.use(10)
 				user.visible_message(span_notice("[user.name] builds a power terminal."),\
-					span_notice("You build the power terminal."))
+					span_notice("I build the power terminal."))
 
 				//build the terminal and link it to the network
 				make_terminal(T)
@@ -164,7 +164,7 @@
 
 /obj/machinery/power/smes/default_deconstruction_crowbar(obj/item/crowbar/C)
 	if(istype(C) && terminal)
-		to_chat(usr, span_warning("You must first remove the power terminal!"))
+		to_chat(usr, span_warning("I must first remove the power terminal!"))
 		return FALSE
 
 	return ..()

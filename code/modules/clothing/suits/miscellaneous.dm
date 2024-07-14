@@ -41,7 +41,7 @@
 
 /obj/item/clothing/head/hooded/flashsuit
 	name = "flash button"
-	desc = "You will learn to fear the flash."
+	desc = "I will learn to fear the flash."
 	icon_state = "flashsuit"
 	body_parts_covered = HEAD
 	flags_inv = HIDEHAIR|HIDEEARS|HIDEFACIALHAIR|HIDEFACE|HIDEMASK
@@ -858,7 +858,7 @@
 	else
 		user.dropItemToGround(src)
 		to_chat(user,span_large_brass("\"Amusing that you think you are fit to wear this.\""))
-		to_chat(user,span_userdanger("Your skin burns where the coat touched your skin!"))
+		to_chat(user,span_userdanger("My skin burns where the coat touched your skin!"))
 		user.adjustFireLoss(rand(10,16))*/
 
 /obj/item/clothing/suit/hooded/wintercoat/narsie
@@ -877,7 +877,7 @@
 		return
 	else
 		user.dropItemToGround(src)
-		to_chat(user,span_cultlarge("\"You are not fit to wear my follower's coat!\""))
+		to_chat(user,span_cultlarge("\"I am not fit to wear my follower's coat!\""))
 		to_chat(user,span_userdanger("Sharp spines jab you from within the coat!"))
 		user.adjustBruteLoss(rand(10,16))
 

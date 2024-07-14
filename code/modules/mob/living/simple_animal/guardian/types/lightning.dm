@@ -115,8 +115,8 @@
 								C.jitteriness = max(C.jitteriness - 990, 10)
 					L.visible_message(
 						span_danger("[L] was shocked by the lightning chain!"), \
-						span_userdanger("You are shocked by the lightning chain!"), \
-						span_italic("You hear a heavy electrical crack.") \
+						span_userdanger("I am shocked by the lightning chain!"), \
+						span_italic("I hear a heavy electrical crack.") \
 					)
 				L.adjustFireLoss(1.2) //adds up very rapidly
 				. = 1

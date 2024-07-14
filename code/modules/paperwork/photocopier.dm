@@ -128,7 +128,7 @@
 				remove_photocopy(document_copy, usr)
 				document_copy = null
 			else if(check_ass())
-				to_chat(ass, span_notice("You feel a slight pressure on your ass."))
+				to_chat(ass, span_notice("I feel a slight pressure on your ass."))
 			return TRUE
 
 		// AI printing photos from their saved images.
@@ -290,7 +290,7 @@
 	if(ishuman(ass)) //(ass.get_item_by_slot(INV_SLOTBIT_ICLOTHING) || ass.get_item_by_slot(INV_SLOTBIT_OCLOTHING)))
 		var/mob/living/carbon/C = ass //have to typecast to this, is_groin_exposed is carbon level
 		if(C.is_groin_exposed())
-			to_chat(usr, span_notice("You feel kind of silly, copying [ass == usr ? "your" : ass][ass == usr ? "" : "\'s"] ass with [ass == usr ? "your" : "[ass.p_their()]"] clothes on.") )
+			to_chat(usr, span_notice("I feel kind of silly, copying [ass == usr ? "your" : ass][ass == usr ? "" : "\'s"] ass with [ass == usr ? "your" : "[ass.p_their()]"] clothes on.") )
 			return
 
 	var/icon/temp_img
@@ -302,7 +302,7 @@
 		temp_img = icon('icons/ass/assdrone.png')
 
 	var/obj/item/photo/copied_ass = new /obj/item/photo(loc)
-	var/datum/picture/toEmbed = new(name = "[ass]'s Ass", desc = "You see [ass]'s ass on the photo.", image = temp_img)
+	var/datum/picture/toEmbed = new(name = "[ass]'s Ass", desc = "I see [ass]'s ass on the photo.", image = temp_img)
 	give_pixel_offset(copied_ass)
 	toEmbed.psize_x = 128
 	toEmbed.psize_y = 128
@@ -318,7 +318,7 @@
  */
 /obj/machinery/photocopier/proc/do_insertion(obj/item/object, mob/user)
 	object.forceMove(src)
-	to_chat(user, span_notice("You insert [object] into [src]."))
+	to_chat(user, span_notice("I insert [object] into [src]."))
 	flick("photocopier1", src)
 
 /**
@@ -337,7 +337,7 @@
 		user.put_in_hands(object)
 	else
 		object.forceMove(drop_location())
-	to_chat(user, span_notice("You take [object] out of [src]. [busy ? "The [src] comes to a halt." : ""]"))
+	to_chat(user, span_notice("I take [object] out of [src]. [busy ? "The [src] comes to a halt." : ""]"))
 
 /obj/machinery/photocopier/attackby(obj/item/O, mob/user, params)
 	if(default_unfasten_wrench(user, O))
@@ -381,7 +381,7 @@
 			return
 		O.forceMove(src)
 		toner_cartridge = O
-		to_chat(user, span_notice("You insert [O] into [src]."))
+		to_chat(user, span_notice("I insert [O] into [src]."))
 
 	else if(istype(O, /obj/item/areaeditor/blueprints))
 		to_chat(user, span_warning("The Blueprint is too large to put into the copier. You need to find something else to record the document."))
@@ -400,18 +400,18 @@
 		return
 	add_fingerprint(user)
 	if(target == user)
-		user.visible_message(span_notice("[user] starts climbing onto the photocopier!"), span_notice("You start climbing onto the photocopier..."))
+		user.visible_message(span_notice("[user] starts climbing onto the photocopier!"), span_notice("I start climbing onto the photocopier..."))
 	else
-		user.visible_message(span_warning("[user] starts putting [target] onto the photocopier!"), span_notice("You start putting [target] onto the photocopier..."))
+		user.visible_message(span_warning("[user] starts putting [target] onto the photocopier!"), span_notice("I start putting [target] onto the photocopier..."))
 
 	if(do_after(user, 20, target = src))
 		if(!target || QDELETED(target) || QDELETED(src) || !Adjacent(target)) //check if the photocopier/target still exists.
 			return
 
 		if(target == user)
-			user.visible_message(span_notice("[user] climbs onto the photocopier!"), span_notice("You climb onto the photocopier."))
+			user.visible_message(span_notice("[user] climbs onto the photocopier!"), span_notice("I climb onto the photocopier."))
 		else
-			user.visible_message(span_warning("[user] puts [target] onto the photocopier!"), span_notice("You put [target] onto the photocopier."))
+			user.visible_message(span_warning("[user] puts [target] onto the photocopier!"), span_notice("I put [target] onto the photocopier."))
 
 		target.forceMove(drop_location())
 		ass = target

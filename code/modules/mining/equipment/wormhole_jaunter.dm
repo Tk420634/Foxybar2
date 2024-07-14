@@ -75,7 +75,7 @@
 				activate(M)
 
 /obj/item/wormhole_jaunter/proc/chasm_react(mob/source, datum/component/chasm/C)
-	to_chat(source, "Your [name] activates, saving you from the chasm!</span>")
+	to_chat(source, "My [name] activates, saving you from the chasm!</span>")
 	SSblackbox.record_feedback("tally", "jaunter", 1, "Chasm") // chasm automatic activation
 	activate(source, FALSE, TRUE)
 	if(C)

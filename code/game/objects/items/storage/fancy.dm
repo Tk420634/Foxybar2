@@ -171,7 +171,7 @@
 
 /obj/item/storage/fancy/cigarettes/attack_self(mob/user)
 	if(contents.len == 0 && spawn_coupon)
-		to_chat(user, span_notice("You rip the back off \the [src] and get a coupon!"))
+		to_chat(user, span_notice("I rip the back off \the [src] and get a coupon!"))
 		var/obj/item/coupon/attached_coupon = new
 		user.put_in_hands(attached_coupon)
 		attached_coupon.generate()
@@ -198,14 +198,14 @@
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		return FALSE
 	if(!length(user.get_empty_held_indexes()))
-		to_chat(user, span_warning("Your hands are full!"))
+		to_chat(user, span_warning("My hands are full!"))
 		return FALSE
 	var/obj/item/lighter/L = locate() in contents
 	if(!L)
 		return FALSE
 	SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, L, user, FALSE)
 	user.put_in_hands(L)
-	to_chat(user, span_notice("You take \a [L] out of the pack."))
+	to_chat(user, span_notice("I take \a [L] out of the pack."))
 	return TRUE
 
 /obj/item/storage/fancy/cigarettes/update_icon_state()
@@ -244,7 +244,7 @@
 			SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, W, M, FALSE)
 			M.equip_to_slot_if_possible(W, SLOT_MASK)
 			contents -= W
-			to_chat(user, span_notice("You take \a [W] out of the pack."))
+			to_chat(user, span_notice("I take \a [W] out of the pack."))
 		else
 			return ..()
 	else
@@ -258,7 +258,7 @@
 
 /obj/item/storage/fancy/cigarettes/cigpack_uplift
 	name = "\improper Uplift Smooth packet"
-	desc = "Your favorite brand, now menthol flavored."
+	desc = "My favorite brand, now menthol flavored."
 	icon_state = "uplift"
 	spawn_type = /obj/item/clothing/mask/cigarette/uplift
 
@@ -288,7 +288,7 @@
 
 /obj/item/storage/fancy/cigarettes/cigpack_midori
 	name = "\improper Midori Tabako packet"
-	desc = "You can't understand the runes, but the packet smells funny."
+	desc = "I can't understand the runes, but the packet smells funny."
 	icon_state = "midori"
 	spawn_type = /obj/item/clothing/mask/cigarette/rollie/nicotine
 

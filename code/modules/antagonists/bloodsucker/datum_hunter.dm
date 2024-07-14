@@ -84,13 +84,13 @@
 	. = ..()
 
 /datum/antagonist/vamphunter/greet()
-	var/vamp_hunter_greet = span_userdanger("You are a fearless Monster Hunter!")
+	var/vamp_hunter_greet = span_userdanger("I am a fearless Monster Hunter!")
 	vamp_hunter_greet += "<span class='boldannounce'>You know there's one or more filthy creature onboard the station, though their identities elude you.<span>"
 	vamp_hunter_greet += "<span class='boldannounce'>It's your job to root them out, destroy their nests, and save the crew.<span>"
 	vamp_hunter_greet += "<span class='boldannounce'>Use <b>WHATEVER MEANS NECESSARY</b> to find these creatures...no matter who gets hurt or what you have to destroy to do it.</span>"
 	vamp_hunter_greet += "There are greater stakes at hand than the safety of the station!<span>"
 	vamp_hunter_greet += "<span class='boldannounce'>However, security may detain you if they discover your mission...<span>"
-	antag_memory += "You remember your training:<br>"
+	antag_memory += "I remember your training:<br>"
 	antag_memory += " -Bloodsuckers are weak to fire, or a stake to the heart. Removing their head or heart will also destroy them permanently.<br>"
 	antag_memory += " -Wooden stakes can be made from planks, and hardened by a welding tool. Your recipes list has ways of making them even stronger.<br>"
 	antag_memory += " -Changelings return to life unless their body is destroyed. Not even decapitation can stop them for long.<br>"
@@ -98,11 +98,11 @@
 	antag_memory += " -Wizards are notoriously hard to outmatch. Rob or steal whatever weapons you need to destroy them, and shoot before asking questions.<br><br>"
 	if (my_kungfu != null)
 		vamp_hunter_greet += "<span class='announce'>Hunter Tip: Use your [my_kungfu.name] techniques to give you an advantage over the enemy.</span><br>"
-		antag_memory += "You remember your training: You are skilled in the [my_kungfu.name] style of combat.<br>"
+		antag_memory += "I remember your training: You are skilled in the [my_kungfu.name] style of combat.<br>"
 	to_chat(owner, vamp_hunter_greet)
 
 /datum/antagonist/vamphunter/farewell()
-	to_chat(owner, span_userdanger("Your hunt has ended: you are no longer a monster hunter!"))
+	to_chat(owner, span_userdanger("My hunt has ended: you are no longer a monster hunter!"))
 
 
 // TAKEN FROM:  /datum/action/changeling/pheromone_receptors    // pheromone_receptors.dm      for a version of tracking that Changelings have!
@@ -117,7 +117,7 @@
 
 /atom/movable/screen/alert/status_effect/agent_pinpointer/hunter_edition
 	name = "Monster Tracking"
-	desc = "You always know where the hellspawn are."
+	desc = "I always know where the hellspawn are."
 
 
 /datum/status_effect/agent_pinpointer/hunter_edition/on_creation(mob/living/new_owner, ...)
@@ -140,7 +140,7 @@
 	// Found one!
 	if(vamps.len)
 		scan_target = pickweight(vamps) //Point at a 'random' vamp, biasing heavily towards closer ones.
-		to_chat(owner, span_warning("You detect signs of monsters to the <b>[dir2text(get_dir(my_loc,get_turf(scan_target)))]!</b>"))
+		to_chat(owner, span_warning("I detect signs of monsters to the <b>[dir2text(get_dir(my_loc,get_turf(scan_target)))]!</b>"))
 	// Will yield a "?"
 	else
 		to_chat(owner, span_notice("There are no monsters nearby."))
@@ -180,7 +180,7 @@
 /datum/action/bloodsucker/trackvamp/ActivatePower()
 
 	var/mob/living/user = owner
-	to_chat(user, span_notice("You look around, scanning your environment and discerning signs of any filthy, wretched affronts to the natural order."))
+	to_chat(user, span_notice("I look around, scanning your environment and discerning signs of any filthy, wretched affronts to the natural order."))
 
 	if (!do_mob(user,owner,80))
 		return
@@ -227,8 +227,8 @@
 	// Found one!
 	if(best_vamp)
 		var/distString = best_dist <= HUNTER_SCAN_MAX_DISTANCE / 2 ? "<b>somewhere closeby!</b>" : "somewhere in the distance."
-		//to_chat(owner, span_warning("You detect signs of Bloodsuckers to the <b>[dir2text(get_dir(my_loc,get_turf(targetVamp)))]!</b>"))
-		to_chat(owner, span_warning("You detect signs of monsters [distString]"))
+		//to_chat(owner, span_warning("I detect signs of Bloodsuckers to the <b>[dir2text(get_dir(my_loc,get_turf(targetVamp)))]!</b>"))
+		to_chat(owner, span_warning("I detect signs of monsters [distString]"))
 
 	// Will yield a "?"
 	else

@@ -157,7 +157,7 @@
 			if(D)
 				msg += "The [D.account_holder] reports a balance of [D.account_balance] cr."
 		msg += span_info("Alt-Click the ID to pull money from the linked account in the form of holochips.")
-		msg += span_info("You can insert credits into the linked account by pressing holochips, cash, or coins against the ID.")
+		msg += span_info("I can insert credits into the linked account by pressing holochips, cash, or coins against the ID.")
 		if(registered_account.account_holder == user.real_name)
 			msg += span_boldnotice("If you lose this ID card, you can reclaim your account by Alt-Clicking a blank ID card while holding it and entering your account ID number.")
 	else
@@ -170,7 +170,7 @@
 		var/obj/item/emagrecharge/ER = W
 		if(ER.uses)
 			uses += ER.uses
-			to_chat(user, span_notice("You have added [ER.uses] charges to [src]. It now has [uses] charges."))
+			to_chat(user, span_notice("I have added [ER.uses] charges to [src]. It now has [uses] charges."))
 			playsound(src, "sparks", 100, 1)
 			ER.uses = 0
 		else
@@ -264,7 +264,7 @@
 /obj/item/card/id/attack_self(mob/user)
 	if(Adjacent(user))
 		user.visible_message(span_notice("[user] shows you: [icon2html(src, viewers(user))] [src.name]."), \
-					span_notice("You show \the [src.name]."))
+					span_notice("I show \the [src.name]."))
 		add_fingerprint(user)
 
 /obj/item/card/id/attackby(obj/item/W, mob/user, params)
@@ -280,7 +280,7 @@
 		var/list/money_contained = money_bag.contents
 		var/money_added = mass_insert_money(money_contained, user)
 		if (money_added)
-			to_chat(user, span_notice("You stuff the contents into the card! They disappear in a puff of bluespace smoke, adding [money_added] worth of credits to the linked account."))
+			to_chat(user, span_notice("I stuff the contents into the card! They disappear in a puff of bluespace smoke, adding [money_added] worth of credits to the linked account."))
 	*/
 	else
 		return ..()
@@ -295,9 +295,9 @@
 		return
 	registered_account.adjust_money(cash_money)
 	if(physical_currency)
-		to_chat(user, span_notice("You stuff [I] into [src]. It disappears in a small puff of bluespace smoke, adding [cash_money] credits to the linked account."))
+		to_chat(user, span_notice("I stuff [I] into [src]. It disappears in a small puff of bluespace smoke, adding [cash_money] credits to the linked account."))
 	else
-		to_chat(user, span_notice("You insert [I] into [src], adding [cash_money] credits to the linked account."))
+		to_chat(user, span_notice("I insert [I] into [src], adding [cash_money] credits to the linked account."))
 
 	to_chat(user, span_notice("The linked account now reports a balance of [registered_account.account_balance] cr."))
 	qdel(I)
@@ -391,7 +391,7 @@
 	if(amount_to_remove && registered_account.adjust_money(-amount_to_remove))
 		var/obj/item/holochip/holochip = new (user.drop_location(), amount_to_remove)
 		user.put_in_hands(holochip)
-		to_chat(user, span_notice("You withdraw [amount_to_remove] credits into a holochip."))
+		to_chat(user, span_notice("I withdraw [amount_to_remove] credits into a holochip."))
 		return
 	registered_account.bank_card_talk(span_warning("ERROR: The linked account has no sufficient credits to perform that withdrawal."), TRUE)
 	*/
@@ -525,7 +525,7 @@
 			assignment = target_occupation
 			update_label()
 			forged = TRUE
-			to_chat(user, span_notice("You successfully forge the ID card."))
+			to_chat(user, span_notice("I successfully forge the ID card."))
 			log_game("[key_name(user)] has forged \the [initial(name)] with name \"[registered_name]\" and occupation \"[assignment]\".")
 
 			// First time use automatically sets the account id to the user.
@@ -538,7 +538,7 @@
 						if(account.account_id == accountowner.account_id)
 							account.bank_cards += src
 							registered_account = account
-							to_chat(user, span_notice("Your account number has been automatically assigned."))
+							to_chat(user, span_notice("My account number has been automatically assigned."))
 			return
 		else if (popup_input == "Forge/Reset" && forged)
 			registered_name = initial(registered_name)
@@ -546,7 +546,7 @@
 			log_game("[key_name(user)] has reset \the [initial(name)] named \"[src]\" to default.")
 			update_label()
 			forged = FALSE
-			to_chat(user, span_notice("You successfully reset the ID card."))
+			to_chat(user, span_notice("I successfully reset the ID card."))
 			return
 		else if (popup_input == "Change Account ID")
 			set_new_account(user)
@@ -647,7 +647,7 @@
 
 /obj/item/card/id/prisoner
 	name = "prisoner ID card"
-	desc = "You are a number, you are not a free man."
+	desc = "I am a number, you are not a free man."
 	icon_state = "orange"
 	item_state = "orange-id"
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
@@ -683,11 +683,11 @@
 	if(sentence && world.time < sentence)
 		. += span_notice("You're currently serving a sentence for [crime]. <b>[DisplayTimeText(sentence - world.time)]</b> left.")
 	else if(goal)
-		. += span_notice("You have accumulated [points] out of the [goal] points you need for freedom.")
+		. += span_notice("I have accumulated [points] out of the [goal] points you need for freedom.")
 	else if(!sentence)
-		. += span_warning("You are currently serving a permanent sentence for [crime].")
+		. += span_warning("I am currently serving a permanent sentence for [crime].")
 	else
-		. += span_notice("Your sentence is up! You're free!")
+		. += span_notice("My sentence is up! You're free!")
 
 /obj/item/card/id/prisoner/one
 	icon_state = "prisoner_001"
@@ -833,14 +833,14 @@
 	if(!in_range(src, user))	//Basic checks to prevent abuse
 		return
 	if(user.incapacitated(allow_crit = TRUE) || !istype(user))
-		to_chat(user, span_warning("You can't do that right now!"))
+		to_chat(user, span_warning("I can't do that right now!"))
 		return TRUE
 	if(alert("Are you sure you want to recolor your id?", "Confirm Repaint", "Yes", "No") == "Yes")
 		var/energy_color_input = input(usr,"","Choose Energy Color",id_color) as color|null
 		if(!in_range(src, user) || !energy_color_input)
 			return TRUE
 		if(user.incapacitated(allow_crit = TRUE) || !istype(user))
-			to_chat(user, span_warning("You can't do that right now!"))
+			to_chat(user, span_warning("I can't do that right now!"))
 			return TRUE
 		id_color = sanitize_hexcolor(energy_color_input, desired_format=6, include_crunch=1)
 		update_icon()
@@ -892,7 +892,7 @@
 			registered_name = living_user.real_name
 			assignment = "Enclave Recruit"
 			update_label()
-			to_chat(user, span_notice("You successfully update your holotag."))
+			to_chat(user, span_notice("I successfully update your holotag."))
 			return
 	..()
 
@@ -913,7 +913,7 @@
 			registered_name = input_name
 			assignment = target_occupation
 			update_label()
-			to_chat(user, span_notice("You successfully forge the ID card."))
+			to_chat(user, span_notice("I successfully forge the ID card."))
 			return
 		else
 	..()
@@ -939,12 +939,12 @@
 				input_name = living_user.real_name
 			target_occupation = stripped_input(user, "What occupation would you like to put on this card?", "Reprogrammable ID", assignment ? assignment : "Wastelander", 60)
 			if(!target_occupation)
-				target_occupation = "Wastelander"
+				target_occupation = "Somebody"
 				return
 			registered_name = input_name
 			assignment = target_occupation
 			update_label()
-			to_chat(user, span_notice("You successfully forge the ID card."))
+			to_chat(user, span_notice("I successfully forge the ID card."))
 			return
 		else
 	..()
@@ -969,7 +969,7 @@
 	if(istype(W, /obj/item/card/id/dogtag/sheriff))
 		var/newname = stripped_input(user, "Who do you want to designate as your deputy?", , "", MAX_NAME_LEN)
 		if(newname)
-			to_chat(user, "You scribble the [registered_name] for the name on the badge.")
+			to_chat(user, "I scribble the [registered_name] for the name on the badge.")
 			registered_name = newname
 			update_label()
 	return ..()
@@ -1041,7 +1041,7 @@
 	if(istype(W, /obj/item/card/id/silver/mayor))
 		var/newname = stripped_input(user, "Who do you want to grant citizenship to?", , "", MAX_NAME_LEN)
 		if(newname)
-			to_chat(user, "You scribble the [registered_name] for the name on the permit.")
+			to_chat(user, "I scribble the [registered_name] for the name on the permit.")
 			registered_name = newname
 			update_label()
 	return ..()
@@ -1403,7 +1403,7 @@ GLOBAL_LIST_INIT(fuzzy_license, list(
 	if(Adjacent(user))
 		user.visible_message(
 			span_notice("[user] shows you: [icon2html(src, viewers(user))] [src.name]."),
-			span_notice("You show \the [src.name]."))
+			span_notice("I show \the [src.name]."))
 		add_fingerprint(user)
 
 /obj/item/card/fuzzy_license/attackby(obj/item/used, mob/living/user, params)

@@ -35,7 +35,7 @@
 	return
 
 /obj/item/button/proc/use_message(mob/user)
-	to_chat(user, span_notice("You press [src]."))
+	to_chat(user, span_notice("I press [src]."))
 
 /obj/item/button/battery_toggle
 	name = "power flow switch"
@@ -46,7 +46,7 @@
 /obj/item/button/battery_toggle/reaction(datum/source, mob/user, parameters)
 	icon_state = "switch-dbl-[parameters ? "up" : "down"]"
 	if(parameters)
-		to_chat(user, span_notice("You set the portable charger to charge itself from batteries."))
+		to_chat(user, span_notice("I set the portable charger to charge itself from batteries."))
 	else
-		to_chat(user, span_notice("You set the portable charger to charge batteries."))
+		to_chat(user, span_notice("I set the portable charger to charge batteries."))
 

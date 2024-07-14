@@ -176,7 +176,7 @@
 		return
 	locked = !locked
 	user.visible_message(span_notice("[user] [locked ? null : "un"]locks [src]."),
-	span_notice("You [locked ? null : "un"]lock [src]."))
+	span_notice("I [locked ? null : "un"]lock [src]."))
 	update_icon()
 
 /obj/structure/closet/proc/dump_contents(override = TRUE) //Override is for not revealing the locker electronics when you open the locker, for example
@@ -295,14 +295,14 @@
 		return
 	if(!istype(E))
 		return
-	user.visible_message(span_notice("[user] begins installing a lock on [src]..."),span_notice("You begin installing a lock on [src]..."))
+	user.visible_message(span_notice("[user] begins installing a lock on [src]..."),span_notice("I begin installing a lock on [src]..."))
 	lock_in_use = TRUE
 	playsound(loc, 'sound/items/screwdriver.ogg', 50, 1)
 	if(!do_after(user, 60, target = src))
 		lock_in_use = FALSE
 		return
 	lock_in_use = FALSE
-	to_chat(user, span_notice("You finish the lock on [src]!"))
+	to_chat(user, span_notice("I finish the lock on [src]!"))
 	E.forceMove(src)
 	lockerelectronics = E
 	req_access = E.accesses
@@ -323,13 +323,13 @@
 	if(!istype(S))
 		return
 	var/brokenword = broken ? "broken " : null
-	user.visible_message(span_notice("[user] begins removing the [brokenword]lock on [src]..."),span_notice("You begin removing the [brokenword]lock on [src]..."))
+	user.visible_message(span_notice("[user] begins removing the [brokenword]lock on [src]..."),span_notice("I begin removing the [brokenword]lock on [src]..."))
 	playsound(loc, S.usesound, 50, 1)
 	lock_in_use = TRUE
 	if(!do_after(user, 100 * S.toolspeed, target = src))
 		lock_in_use = FALSE
 		return
-	to_chat(user, span_notice("You remove the [brokenword]lock from [src]!"))
+	to_chat(user, span_notice("I remove the [brokenword]lock from [src]!"))
 	if(!QDELETED(lockerelectronics))
 		lockerelectronics.add_fingerprint(user)
 		lockerelectronics.forceMove(user.loc)
@@ -367,13 +367,13 @@
 			return
 		if((contents.len > base_storage_capacity) && anchored) //Prevents filling a locker, closing it, and then unanchoring it to move large stacks of objects. Can't just make the locker dump its contents as this could be used to empty locked/welded lockers
 			user.visible_message(span_notice("[user] attempts to unanchor \the [src], however it is too weighed down by its contents."), \
-						span_notice("You attempt to unanchor \the [src], however it is too weighed down by its contents."))
+						span_notice("I attempt to unanchor \the [src], however it is too weighed down by its contents."))
 			return
 		setAnchored(!anchored)
 		W.play_tool_sound(src, 75)
 		user.visible_message(span_notice("[user] [anchored ? "anchored" : "unanchored"] \the [src] [anchored ? "to" : "from"] the ground."), \
-						span_notice("You [anchored ? "anchored" : "unanchored"] \the [src] [anchored ? "to" : "from"] the ground."), \
-						span_italic("You hear a ratchet."))
+						span_notice("I [anchored ? "anchored" : "unanchored"] \the [src] [anchored ? "to" : "from"] the ground."), \
+						span_italic("I hear a ratchet."))
 		if(anchored)
 			storage_capacity = anchored_storage_capacity
 		else
@@ -385,7 +385,7 @@
 			if(istype(W, /obj/item/weldingtool))
 				if(!W.tool_start_check(user, amount=0))
 					return
-				to_chat(user, span_notice("You begin [welder ? "slicing" : "deconstructing"] \the [src] apart..."))
+				to_chat(user, span_notice("I begin [welder ? "slicing" : "deconstructing"] \the [src] apart..."))
 				welder = TRUE
 			if(W.use_tool(src, user, 40, volume=50))
 				if(eigen_teleport)
@@ -394,8 +394,8 @@
 				if(!opened)
 					return
 				user.visible_message(span_notice("[user] [welder ? "slice" : "deconstruct"]s apart \the [src]."),
-								span_notice("You [welder ? "slice" : "deconstruct"] \the [src] apart with \the [W]."),
-								span_italic("You hear [welder ? "welding" : "rustling of screws and metal"]."))
+								span_notice("I [welder ? "slice" : "deconstruct"] \the [src] apart with \the [W]."),
+								span_italic("I hear [welder ? "welding" : "rustling of screws and metal"]."))
 				deconstruct(TRUE)
 				return
 		if(user.a_intent != INTENT_HARM && user.transferItemToLoc(W, drop_location())) // so we put in unlit welder too
@@ -408,7 +408,7 @@
 		if(!W.tool_start_check(user, amount=0))
 			return
 
-		to_chat(user, span_notice("You begin [welded ? "unwelding":"welding"] \the [src]..."))
+		to_chat(user, span_notice("I begin [welded ? "unwelding":"welding"] \the [src]..."))
 		if(W.use_tool(src, user, 40, volume=50))
 			if(eigen_teleport)
 				to_chat(user, span_notice("The unusual construction of \the [src] makes it impossible to weld!"))
@@ -418,8 +418,8 @@
 			welded = !welded
 			after_weld(welded)
 			user.visible_message(span_notice("[user] [welded ? "welds shut" : "unwelds"] \the [src]."),
-							span_notice("You [welded ? "weld" : "unwelded"] \the [src] with \the [W]."),
-							span_italic("You hear welding."))
+							span_notice("I [welded ? "weld" : "unwelded"] \the [src] with \the [W]."),
+							span_italic("I hear welding."))
 			update_icon()
 
 	else if(user.a_intent != INTENT_HARM && !(W.item_flags & NOBLUDGEON))
@@ -454,13 +454,13 @@
 	var/list/targets = list(O, src)
 	add_fingerprint(user)
 	user.visible_message(span_warning("[user] [actuallyismob ? "tries to ":""]stuff [O] into [src]."), \
-						span_warning("You [actuallyismob ? "try to ":""]stuff [O] into [src]."), \
-						span_italic("You hear clanging."))
+						span_warning("I [actuallyismob ? "try to ":""]stuff [O] into [src]."), \
+						span_italic("I hear clanging."))
 	if(actuallyismob)
 		if(do_after_mob(user, targets, 40))
 			user.visible_message(span_notice("[user] stuffs [O] into [src]."), \
-								span_notice("You stuff [O] into [src]."), \
-								span_italic("You hear a loud metal bang."))
+								span_notice("I stuff [O] into [src]."), \
+								span_italic("I hear a loud metal bang."))
 			var/mob/living/L = O
 			if(!issilicon(L))
 				L.DefaultCombatKnockdown(40)
@@ -534,23 +534,23 @@
 
 	//okay, so the closet is either welded or locked... resist!!!
 	user.visible_message(span_warning("[src] begins to shake violently!"), \
-		span_notice("You lean on the back of [src] and start pushing the door open... (this will take about [DisplayTimeText(breakout_time)].)"), \
-		span_italic("You hear banging from [src]."))
+		span_notice("I lean on the back of [src] and start pushing the door open... (this will take about [DisplayTimeText(breakout_time)].)"), \
+		span_italic("I hear banging from [src]."))
 	if(do_after(user,(breakout_time), target = src, required_mobility_flags = MOBILITY_RESIST))
 		if(!user || user.stat != CONSCIOUS || user.loc != src || opened || (!locked && !welded) )
 			return
 		//we check after a while whether there is a point of resisting anymore and whether the user is capable of resisting
 		user.visible_message(span_danger("[user] successfully broke out of [src]!"),
-							span_notice("You successfully break out of [src]!"))
+							span_notice("I successfully break out of [src]!"))
 		bust_open()
 	else
 		if(user.loc == src) //so we don't get the message if we resisted multiple times and succeeded.
-			to_chat(user, span_warning("You fail to break out of [src]!"))
+			to_chat(user, span_warning("I fail to break out of [src]!"))
 
 /obj/structure/closet/AltClick(mob/user)
 	. = ..()
 	if(!user.canUseTopic(src, be_close=TRUE) || !isturf(loc))
-		to_chat(user, span_warning("You can't do that right now!"))
+		to_chat(user, span_warning("I can't do that right now!"))
 		return TRUE
 	togglelock(user)
 	return TRUE
@@ -567,8 +567,8 @@
 	if(!secure || broken)
 		return
 	user.visible_message(span_warning("Sparks fly from [src]!"),
-					span_warning("You scramble [src]'s lock, breaking it open!"),
-					span_italic("You hear a faint electrical spark."))
+					span_warning("I scramble [src]'s lock, breaking it open!"),
+					span_italic("I hear a faint electrical spark."))
 	playsound(src, "sparks", 50, 1)
 	broken = TRUE
 	locked = FALSE
@@ -631,7 +631,7 @@
 	if(T1 == T2)
 		user.set_resting(TRUE, TRUE)
 		if(!close(user))
-			to_chat(user, span_warning("You can't get [src] to close!"))
+			to_chat(user, span_warning("I can't get [src] to close!"))
 			user.set_resting(FALSE, TRUE)
 			return
 		user.set_resting(FALSE, TRUE)

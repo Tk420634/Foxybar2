@@ -93,22 +93,22 @@
 			return
 		cell = I
 		visible_message(span_notice("[user] inserts a cell into [src]."),
-						span_notice("You insert the new cell into [src]."))
+						span_notice("I insert the new cell into [src]."))
 	else if(I.tool_behaviour == TOOL_CROWBAR && open && cell)
 		cell.add_fingerprint(usr)
 		cell.forceMove(loc)
 		cell = null
 		visible_message(span_notice("[user] crowbars out the power cell from [src]."),
-						span_notice("You pry the powercell out of [src]."))
+						span_notice("I pry the powercell out of [src]."))
 	else if(is_wire_tool(I) && open)
 		return attack_hand(user)
 	else if(load && ismob(load))  // chance to knock off rider
 		if(prob(1 + I.force * 2))
 			unload(0)
 			user.visible_message(span_danger("[user] knocks [load] off [src] with \the [I]!"),
-									span_danger("You knock [load] off [src] with \the [I]!"))
+									span_danger("I knock [load] off [src] with \the [I]!"))
 		else
-			to_chat(user, span_warning("You hit [src] with \the [I] but to no effect!"))
+			to_chat(user, span_warning("I hit [src] with \the [I] but to no effect!"))
 			..()
 	else
 		..()
@@ -121,7 +121,7 @@
 	if(!open)
 		locked = !locked
 		if(user)
-			to_chat(user, span_notice("You [locked ? "lock" : "unlock"] [src]'s controls!"))
+			to_chat(user, span_notice("I [locked ? "lock" : "unlock"] [src]'s controls!"))
 	flick("mulebot-emagged", src)
 	playsound(src, "sparks", 100, FALSE)
 
@@ -216,7 +216,7 @@
 				return
 			else if(cell)
 				if(!turn_on())
-					to_chat(usr, span_warning("You can't switch on [src]!"))
+					to_chat(usr, span_warning("I can't switch on [src]!"))
 					return
 			. = TRUE
 		else

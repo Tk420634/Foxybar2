@@ -24,6 +24,6 @@
 #define TENDRIL_CLEAR_SCORE	 "Tendrils Killed"
 
 //Misc medals
-#define MEDAL_METEOR 	"Your Life Before Your Eyes"
+#define MEDAL_METEOR 	"My Life Before Your Eyes"
 #define MEDAL_PULSE 	"Jackpot"
 #define MEDAL_TIMEWASTE "Overextended The Joke"

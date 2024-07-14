@@ -18,7 +18,7 @@
 		if(remarks.len)
 			to_chat(user, span_notice("[pick(remarks)]"))
 		else
-			to_chat(user, span_notice("You keep reading..."))
+			to_chat(user, span_notice("I keep reading..."))
 		return TRUE
 	return FALSE
 
@@ -28,13 +28,13 @@
 	return FALSE
 
 /obj/item/book/granter/proc/on_reading_start(mob/user)
-	to_chat(user, span_notice("You start reading [name]..."))
+	to_chat(user, span_notice("I start reading [name]..."))
 
 /obj/item/book/granter/proc/on_reading_stopped(mob/user)
-	to_chat(user, span_notice("You stop reading..."))
+	to_chat(user, span_notice("I stop reading..."))
 
 /obj/item/book/granter/proc/on_reading_finished(mob/user)
-	to_chat(user, span_notice("You finish reading [name]!"))
+	to_chat(user, span_notice("I finish reading [name]!"))
 
 /obj/item/book/granter/proc/onlearned(mob/user)
 	used = TRUE
@@ -42,7 +42,7 @@
 
 /obj/item/book/granter/attack_self(mob/user)
 	//if(user.special_i<5&&!istype(src,/obj/item/book/granter/trait/selection))//SPECIAL Integration
-	//	to_chat(user, span_warning("You feel like you are too stupid to understand this."))
+	//	to_chat(user, span_warning("I feel like you are too stupid to understand this."))
 	//	return
 	if(reading)
 		to_chat(user, span_warning("You're already reading this!"))
@@ -79,18 +79,18 @@
 	return FALSE
 
 /obj/item/book/granter/trait/on_reading_start(mob/user)
-	to_chat(user, span_notice("You start reading about [traitname]..."))
+	to_chat(user, span_notice("I start reading about [traitname]..."))
 
 /obj/item/book/granter/trait/on_reading_finished(mob/user)
 	. = ..()
-	to_chat(user, span_notice("You feel like you've got a good handle on [traitname]!"))
+	to_chat(user, span_notice("I feel like you've got a good handle on [traitname]!"))
 	ADD_TRAIT(user, granted_trait, BOOK_TRAIT)
 	if(!user.mind)
 		return
 	for(var/crafting_recipe_type in crafting_recipe_types)
 		var/datum/crafting_recipe/R = crafting_recipe_type
 		user.mind.teach_crafting_recipe(crafting_recipe_type)
-		to_chat(user,span_notice("You learned how to make [initial(R.name)]."))
+		to_chat(user,span_notice("I learned how to make [initial(R.name)]."))
 	onlearned(user)
 
 /obj/item/book/granter/trait/rifleman
@@ -113,15 +113,15 @@
 		return TRUE
 	for(var/datum/action/A in user.actions)
 		if(A.type == granted_action)
-			to_chat(user, span_notice("You already know all about [actionname]."))
+			to_chat(user, span_notice("I already know all about [actionname]."))
 			return TRUE
 	return FALSE
 
 /obj/item/book/granter/action/on_reading_start(mob/user)
-	to_chat(user, span_notice("You start reading about [actionname]..."))
+	to_chat(user, span_notice("I start reading about [actionname]..."))
 
 /obj/item/book/granter/action/on_reading_finished(mob/user)
-	to_chat(user, span_notice("You feel like you've got a good handle on [actionname]!"))
+	to_chat(user, span_notice("I feel like you've got a good handle on [actionname]!"))
 	var/datum/action/G = new granted_action
 	G.Grant(user)
 	onlearned(user)
@@ -132,7 +132,7 @@
 		user.visible_message(
 		message = span_notice("Just as [user] finishes reading [p_their(user)] copy of [src], the ancient book crumbles to dust!"),
 		self_message = span_caution("The ancient copy of [src] crumbles to dust as you finish reading it."),
-		blind_message = span_notice("You hear something crumble."))
+		blind_message = span_notice("I hear something crumble."))
 		ADD_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)
 		qdel(src)
 
@@ -177,13 +177,13 @@
 	check_flags = NONE
 
 /datum/action/innate/origami/Activate()
-	to_chat(owner, span_notice("You will now fold origami planes."))
+	to_chat(owner, span_notice("I will now fold origami planes."))
 	button_icon_state = "origami_on"
 	active = TRUE
 	UpdateButtonIcon()
 
 /datum/action/innate/origami/Deactivate()
-	to_chat(owner, span_notice("You will no longer fold origami planes."))
+	to_chat(owner, span_notice("I will no longer fold origami planes."))
 	button_icon_state = "origami_off"
 	active = FALSE
 	UpdateButtonIcon()
@@ -208,10 +208,10 @@
 	return FALSE
 
 /obj/item/book/granter/spell/on_reading_start(mob/user)
-	to_chat(user, span_notice("You start reading about casting [spellname]..."))
+	to_chat(user, span_notice("I start reading about casting [spellname]..."))
 
 /obj/item/book/granter/spell/on_reading_finished(mob/user)
-	to_chat(user, span_notice("You feel like you've experienced enough to cast [spellname]!"))
+	to_chat(user, span_notice("I feel like you've experienced enough to cast [spellname]!"))
 	var/obj/effect/proc_holder/spell/S = new spell
 	user.mind.AddSpell(S)
 	user.log_message("learned the spell [spellname] ([S])", LOG_ATTACK, color="orange")
@@ -246,7 +246,7 @@
 
 /obj/item/book/granter/spell/nuclearfist/recoil(mob/living/carbon/user)
 	..()
-	to_chat(user, span_danger("Your arm spontaneously detonates!"))
+	to_chat(user, span_danger("My arm spontaneously detonates!"))
 	explosion(user.loc, -1, 0, 2, -1, FALSE, FALSE, 2)
 	var/obj/item/bodypart/part = user.get_holding_bodypart_of_item(src)
 	if(part)
@@ -273,7 +273,7 @@
 
 /obj/item/book/granter/spell/smoke/recoil(mob/user)
 	..()
-	to_chat(user,span_caution("Your stomach rumbles..."))
+	to_chat(user,span_caution("My stomach rumbles..."))
 	if(user.nutrition > NUTRITION_LEVEL_STARVING + 50)
 		user.set_nutrition(NUTRITION_LEVEL_STARVING + 50)
 
@@ -286,7 +286,7 @@
 
 /obj/item/book/granter/spell/blind/recoil(mob/user)
 	..()
-	to_chat(user,span_warning("You go blind!"))
+	to_chat(user,span_warning("I go blind!"))
 	user.blind_eyes(10)
 
 /obj/item/book/granter/spell/mindswap
@@ -312,7 +312,7 @@
 		to_chat(user,span_warning("For a moment you feel like you don't even know who you are anymore."))
 		return
 	if(stored_swap == user)
-		to_chat(user,span_notice("You stare at the book some more, but there doesn't seem to be anything else to learn..."))
+		to_chat(user,span_notice("I stare at the book some more, but there doesn't seem to be anything else to learn..."))
 		return
 	var/obj/effect/proc_holder/spell/pointed/mind_transfer/swapper = new
 	if(swapper.cast(list(stored_swap), user, TRUE, TRUE))
@@ -332,7 +332,7 @@
 
 /obj/item/book/granter/spell/forcewall/recoil(mob/living/user)
 	..()
-	to_chat(user,span_warning("You suddenly feel very solid!"))
+	to_chat(user,span_warning("I suddenly feel very solid!"))
 	user.Stun(40, ignore_canstun = TRUE)
 	user.petrify(30)
 
@@ -398,19 +398,19 @@
 /obj/item/book/granter/martial
 	var/martial
 	var/martialname = "bug jitsu"
-	var/greet = "You feel like you have mastered the art in breaking code. Nice work, jackass."
+	var/greet = "I feel like you have mastered the art in breaking code. Nice work, jackass."
 
 /obj/item/book/granter/martial/already_known(mob/user)
 	if(!martial)
 		return TRUE
 	var/datum/martial_art/MA = martial
 	if(user.mind.has_martialart(initial(MA.id)))
-		to_chat(user,span_warning("You already know [martialname]!"))
+		to_chat(user,span_warning("I already know [martialname]!"))
 		return TRUE
 	return FALSE
 
 /obj/item/book/granter/martial/on_reading_start(mob/user)
-	to_chat(user, span_notice("You start reading about [martialname]..."))
+	to_chat(user, span_notice("I start reading about [martialname]..."))
 
 /obj/item/book/granter/martial/on_reading_finished(mob/user)
 	to_chat(user, "[greet]")
@@ -513,10 +513,10 @@
 	name = "berserker's rites"
 	martialname = "berserkers rites"
 	desc = "A paper scroll detailing the sacred rites of a tribal berserker, the words are awash with primal, barely contained fury."
-	greet = span_sciradio("You have mastered the rites of the berserker. Use the help verb to see your combos.")
+	greet = span_sciradio("I have mastered the rites of the berserker. Use the help verb to see your combos.")
 	icon = 'icons/obj/wizard.dmi'
 	icon_state = "scroll2"
-	remarks = list("Rip and tear...", "Overwhelming force, immovable object...", "Focus... And you'll be able to incapacitate any foe in seconds...", "I must pierce armor for maximum damage...", "You are huge, that means you have huge guts...")
+	remarks = list("Rip and tear...", "Overwhelming force, immovable object...", "Focus... And you'll be able to incapacitate any foe in seconds...", "I must pierce armor for maximum damage...", "I am huge, that means you have huge guts...")
 
 /obj/item/book/granter/martial/berserker/onlearned(mob/living/carbon/user)
 	..()
@@ -548,7 +548,7 @@
 	name = "parchment scroll"
 	martialname = "krav maga"
 	desc = "A worn parchment scrap written in an ancient language. Somehow you can still understand the lessons!"
-	greet = span_sciradio("You have learned the ancient martial art of Krav Maga. You have special attacks with which to take down your foes.")
+	greet = span_sciradio("I have learned the ancient martial art of Krav Maga. You have special attacks with which to take down your foes.")
 	icon = 'icons/obj/wizard.dmi'
 	icon_state ="scroll2"
 	remarks = list("Sweep the legs...", "Chop the throat...", "Punch the lungs...", "Get the gold...", "Where are my sick gloves..?")
@@ -575,7 +575,7 @@
 	for(var/crafting_recipe_type in crafting_recipe_types)
 		var/datum/crafting_recipe/R = crafting_recipe_type
 		user.mind.teach_crafting_recipe(crafting_recipe_type)
-		to_chat(user,span_notice("You learned how to make [initial(R.name)]."))
+		to_chat(user,span_notice("I learned how to make [initial(R.name)]."))
 	onlearned(user)
 
 /obj/item/book/granter/crafting_recipe/onlearned(mob/living/user)
@@ -584,7 +584,7 @@
 		user.visible_message(
 		message = span_notice("Just as [user] finishes reading [p_their(user)] copy of [src], the ancient document crumbles to dust!"),
 		self_message = span_caution("The ancient copy of [src] crumbles to dust as you finish reading it."),
-		blind_message = span_notice("You hear something crumble."))
+		blind_message = span_notice("I hear something crumble."))
 		qdel(src)
 
 
@@ -933,7 +933,7 @@
 	oneuse = TRUE
 	granted_trait = TRAIT_TAGGER
 	traitname = "tagger"
-	remarks = list("Just two tins of paint is enough for your whole house!", "Move your sofa to the left three paces, and you've discovered Feng Shui! Please report to the nearest police station.", "Your neighbours got a new BBQ and is hosting one at the weekend! Here's what you do...")
+	remarks = list("Just two tins of paint is enough for your whole house!", "Move your sofa to the left three paces, and you've discovered Feng Shui! Please report to the nearest police station.", "My neighbours got a new BBQ and is hosting one at the weekend! Here's what you do...")
 
 /obj/item/book/granter/trait/chemistry
 	name = "Big Book of Science"
@@ -1018,7 +1018,7 @@
 	oneuse = TRUE
 	granted_trait = TRAIT_PA_WEAR
 	traitname = "Power Armor"
-	remarks = list("Daily maintenance is essential, clean and repair your suit often.", "Don't let overconfidence kill you, you are not invincible.", "Mechanized infantry should always be supported by regular infantry.", "You move slowly, pay attention to your position relative to the enemy.", "You are always vulnerable to ambush, do not rest in the field.", "AP rounds will shred your suit, you are not invincible.")
+	remarks = list("Daily maintenance is essential, clean and repair your suit often.", "Don't let overconfidence kill you, you are not invincible.", "Mechanized infantry should always be supported by regular infantry.", "I move slowly, pay attention to your position relative to the enemy.", "I am always vulnerable to ambush, do not rest in the field.", "AP rounds will shred your suit, you are not invincible.")
 
 /obj/item/book/granter/trait/trekking
 	name = "Wasteland Survival Guide"

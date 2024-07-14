@@ -28,7 +28,7 @@
 				force_fee = force_fee_input
 				return
 			locked = !locked
-			to_chat(user, span_notice("You [src.locked ? "lock" : "unlock"] the paystand, protecting the bolts from [anchored ? "loosening" : "tightening"]."))
+			to_chat(user, span_notice("I [src.locked ? "lock" : "unlock"] the paystand, protecting the bolts from [anchored ? "loosening" : "tightening"]."))
 			return
 		if(!my_card)
 			var/obj/item/card/id/assistant_mains_need_to_die = W
@@ -40,7 +40,7 @@
 			name = msg
 			desc = "Owned by [assistant_mains_need_to_die.registered_account.account_holder], pays directly into [user.p_their()] account."
 			my_card = assistant_mains_need_to_die
-			to_chat(user, "You link the stand to your account.")
+			to_chat(user, "I link the stand to your account.")
 			return
 		var/obj/item/card/id/vbucks = W
 		if(vbucks.registered_account)
@@ -97,7 +97,7 @@
 				S.forceMove(src)
 				signaler = S
 				signaler_threshold = cash_limit
-				to_chat(user, "You attach the signaler to the paystand.")
+				to_chat(user, "I attach the signaler to the paystand.")
 				desc += " A signaler appears to be attached to the scanner."
 		else
 			to_chat(user, span_warning("A signaler is already attached to this unit!"))

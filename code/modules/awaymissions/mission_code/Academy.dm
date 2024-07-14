@@ -178,7 +178,7 @@
 	..()
 	if(!used)
 		if(!ishuman(user) || !user.mind || (user.mind in SSticker.mode.wizards))
-			to_chat(user, span_warning("You feel the magic of the dice is restricted to ordinary humans!"))
+			to_chat(user, span_warning("I feel the magic of the dice is restricted to ordinary humans!"))
 			return
 		if(rigged)
 			effect(user,rigged)
@@ -187,7 +187,7 @@
 
 /obj/item/dice/d20/fate/equipped(mob/user, slot)
 	if(!ishuman(user) || !user.mind || (user.mind in SSticker.mode.wizards))
-		to_chat(user, span_warning("You feel the magic of the dice is restricted to ordinary humans! You should leave it alone."))
+		to_chat(user, span_warning("I feel the magic of the dice is restricted to ordinary humans! You should leave it alone."))
 		user.dropItemToGround(src)
 		return
 	return ..()
@@ -289,7 +289,7 @@
 			new /obj/item/card/id/captains_spare(drop_location())
 		if(19)
 			//Instrinct Resistance
-			to_chat(user, span_notice("You feel robust."))
+			to_chat(user, span_notice("I feel robust."))
 			var/datum/species/S = user.dna.species
 			S.brutemod *= 0.5
 			S.burnmod *= 0.5
@@ -344,7 +344,7 @@
 	AddElement(/datum/element/update_icon_blocker)
 
 /obj/structure/ladder/unbreakable/rune/show_fluff_message(up,mob/user)
-	user.visible_message("[user] activates \the [src].",span_notice("You activate \the [src]."))
+	user.visible_message("[user] activates \the [src].",span_notice("I activate \the [src]."))
 
 /obj/structure/ladder/unbreakable/rune/use(mob/user, is_ghost=FALSE)
 	if(is_ghost || !(user.mind in SSticker.mode.wizards))

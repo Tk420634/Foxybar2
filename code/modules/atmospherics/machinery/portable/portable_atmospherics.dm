@@ -84,7 +84,7 @@
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, !ismonkey(user)))
 		return
 	if(holding)
-		to_chat(user, span_notice("You remove [holding] from [src]."))
+		to_chat(user, span_notice("I remove [holding] from [src]."))
 		replace_tank(user, TRUE)
 		return TRUE
 
@@ -112,7 +112,7 @@
 			var/obj/item/tank/T = W
 			if(!user.transferItemToLoc(T, src))
 				return
-			to_chat(user, span_notice("[holding ? "In one smooth motion you pop [holding] out of [src]'s connector and replace it with [T]" : "You insert [T] into [src]"]."))
+			to_chat(user, span_notice("[holding ? "In one smooth motion you pop [holding] out of [src]'s connector and replace it with [T]" : "I insert [T] into [src]"]."))
 			replace_tank(user, FALSE, T)
 			update_icon()
 	else if(istype(W, /obj/item/wrench))
@@ -122,8 +122,8 @@
 				W.play_tool_sound(src)
 				user.visible_message( \
 					"[user] disconnects [src].", \
-					span_notice("You unfasten [src] from the port."), \
-					span_italic("You hear a ratchet."))
+					span_notice("I unfasten [src] from the port."), \
+					span_italic("I hear a ratchet."))
 				update_icon()
 				return
 			else
@@ -137,8 +137,8 @@
 				W.play_tool_sound(src)
 				user.visible_message( \
 					"[user] connects [src].", \
-					span_notice("You fasten [src] to the port."), \
-					span_italic("You hear a ratchet."))
+					span_notice("I fasten [src] to the port."), \
+					span_italic("I hear a ratchet."))
 				update_icon()
 	else
 		return ..()

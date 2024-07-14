@@ -35,11 +35,11 @@
 	switch(uses_left)
 		if(1)
 			if(user)
-				user.show_message("Your lockpick almost snaps!")
+				user.show_message("My lockpick almost snaps!")
 			playsound(get_turf(src),'sound/items/Wirecutter.ogg',75, 1, ignore_walls = FALSE)
 		if(-INFINITY to 0)
 			if(user)
-				user.show_message("Your lockpick broke!!!")
+				user.show_message("My lockpick broke!!!")
 			playsound(get_turf(src),'sound/items/Wirecutter.ogg',100, 1, ignore_walls = FALSE)
 			qdel(src)
 			return
@@ -145,13 +145,13 @@
 		var/success_after_tier = max(100 - (lock_tier * 20), 0) / 2 //the higher the lock tier, the harder it is, down to a max of 0, divided by 2
 		if(!prob(success_after_tier))
 			if(fragile)
-				to_chat(user, span_warning("You fail to open [src]. It crumbles apart, all the contents being destroyed."))
+				to_chat(user, span_warning("I fail to open [src]. It crumbles apart, all the contents being destroyed."))
 				qdel(src)
 				return
-			to_chat(user, span_warning("You fail to unlock [src]. It looks like it took some damage from the attempt."))
+			to_chat(user, span_warning("I fail to unlock [src]. It looks like it took some damage from the attempt."))
 			fragile = TRUE
 			return
-		to_chat(user, span_green("You successfully unlock [src]."))
+		to_chat(user, span_green("I successfully unlock [src]."))
 		locked = FALSE
 		return
 
@@ -165,15 +165,15 @@
 			return
 
 		if(lock_tier > 3 && tool.lockpick_tier < 2)
-			to_chat(user, span_warning("You need a better set of tools to get past security measures like this!"))
+			to_chat(user, span_warning("I need a better set of tools to get past security measures like this!"))
 			return
 
 		var/success_after_tier = max(100 - (lock_tier * 20), 0) //the higher the lock tier, the harder it is, down to a max of 0
 		var/success_after_skill = min((user.client.prefs.special_p * 5) + success_after_tier, 100) //the higher the persons perception, the better, up to a max of 100, with 50 added
 		if(!prob(success_after_skill))
-			to_chat(user, span_warning("You fail to pick [src]."))
+			to_chat(user, span_warning("I fail to pick [src]."))
 			return
-		to_chat(user, span_green("You successfully unlock [src]."))
+		to_chat(user, span_green("I successfully unlock [src]."))
 		locked = FALSE
 		return
 	else

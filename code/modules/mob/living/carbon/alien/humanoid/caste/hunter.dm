@@ -20,7 +20,7 @@
 	leap_icon.icon_state = "leap_[leap_on_click ? "on":"off"]"
 	update_icons()
 	if(message)
-		to_chat(src, span_noticealien("You will now [leap_on_click ? "leap at":"slash at"] enemies!"))
+		to_chat(src, span_noticealien("I will now [leap_on_click ? "leap at":"slash at"] enemies!"))
 	else
 		return
 
@@ -38,7 +38,7 @@
 		return
 
 	if(pounce_cooldown > world.time)
-		to_chat(src, span_alertalien("You are too fatigued to pounce right now!"))
+		to_chat(src, span_alertalien("I am too fatigued to pounce right now!"))
 		return
 
 	if(!has_gravity() || !A.has_gravity())

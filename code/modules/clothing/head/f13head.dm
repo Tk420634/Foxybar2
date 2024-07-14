@@ -190,8 +190,8 @@
 	desc = "A crudely formed metal hockey mask."
 	icon_state = "metal_mask"
 	item_state = "metal_mask"
-	toggle_message = "You lower"
-	alt_toggle_message = "You raise"
+	toggle_message = "I lower"
+	alt_toggle_message = "I raise"
 	can_toggle = 1
 	armor_tokens = list(ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_UP_MELEE_T2)
 	flags_inv = HIDEMASK|HIDEEYES|HIDEFACE
@@ -299,7 +299,7 @@
 	if(src == H.head) //Suit is already equipped
 		return ..()
 	if (!HAS_TRAIT(H, TRAIT_PA_WEAR) && slot == SLOT_HEAD && requires_training)
-		to_chat(user, span_warning("You don't have the proper training to operate the power armor!"))
+		to_chat(user, span_warning("I don't have the proper training to operate the power armor!"))
 		return 0
 	if(slot == SLOT_HEAD)
 		return ..()
@@ -319,43 +319,43 @@
 				// Salvage
 				if(istype(I, /obj/item/screwdriver))
 					if(ishuman(user) && user.wear_suit == src)
-						to_chat(user, span_warning("You have to take off the helmet before salvaging it."))
+						to_chat(user, span_warning("I have to take off the helmet before salvaging it."))
 						return
-					to_chat(user, span_notice("You begin unsecuring the cover..."))
+					to_chat(user, span_notice("I begin unsecuring the cover..."))
 					if(I.use_tool(src, user, 60, volume=50))
 						salvage_step = 1
-						to_chat(user, span_notice("You unsecure the cover."))
+						to_chat(user, span_notice("I unsecure the cover."))
 					return
 			if(1)
 				// Salvage
 				if(istype(I, /obj/item/wrench))
 					if(ishuman(user) && user.wear_suit == src)
-						to_chat(user, span_warning("You have to take off the helmet before salvaging it."))
+						to_chat(user, span_warning("I have to take off the helmet before salvaging it."))
 						return
-					to_chat(user, span_notice("You begin disconnecting the connection ports..."))
+					to_chat(user, span_notice("I begin disconnecting the connection ports..."))
 					if(I.use_tool(src, user, 80, volume=50))
 						salvage_step = 2
-						to_chat(user, span_notice("You disconnect the connection ports."))
+						to_chat(user, span_notice("I disconnect the connection ports."))
 					return
 				// Fix
 				if(istype(I, /obj/item/screwdriver))
 					if(ishuman(user) && user.wear_suit == src)
-						to_chat(user, span_warning("You have to take off the helmet before fixing it."))
+						to_chat(user, span_warning("I have to take off the helmet before fixing it."))
 						return
-					to_chat(user, span_notice("You begin securing the cover..."))
+					to_chat(user, span_notice("I begin securing the cover..."))
 					if(I.use_tool(src, user, 60, volume=50))
 						salvage_step = 0
-						to_chat(user, span_notice("You secure the cover."))
+						to_chat(user, span_notice("I secure the cover."))
 					return
 			if(2)
 				// Salvage
 				if(istype(I, /obj/item/wirecutters))
 					if(ishuman(user) && user.wear_suit == src)
-						to_chat(user, span_warning("You have to take off the helmet before salvaging it."))
+						to_chat(user, span_warning("I have to take off the helmet before salvaging it."))
 						return
-					to_chat(user, span_notice("You begin disconnecting wires..."))
+					to_chat(user, span_notice("I begin disconnecting wires..."))
 					if(I.use_tool(src, user, 60, volume=70))
-						to_chat(user, span_notice("You finish salvaging the helmet."))
+						to_chat(user, span_notice("I finish salvaging the helmet."))
 						var/obj/item/ST = new salvaged_type(src)
 						user.put_in_hands(ST)
 						qdel(src)
@@ -363,12 +363,12 @@
 				// Fix
 				if(istype(I, /obj/item/wrench))
 					if(ishuman(user) && user.wear_suit == src)
-						to_chat(user, span_warning("You have to take off the helmet before fixing it."))
+						to_chat(user, span_warning("I have to take off the helmet before fixing it."))
 						return
-					to_chat(user, span_notice("You try to anchor connection ports to the frame..."))
+					to_chat(user, span_notice("I try to anchor connection ports to the frame..."))
 					if(I.use_tool(src, user, 80, volume=60))
 						salvage_step = 1
-						to_chat(user, span_notice("You re-connect connection ports."))
+						to_chat(user, span_notice("I re-connect connection ports."))
 					return
 	return ..()
 
@@ -582,7 +582,7 @@
 
 /obj/item/clothing/head/f13/purple
 	name = "purple top hat"
-	desc = "You may not own the best jail in the observed Universe, or the best chocolate factory in the entire world, but at least you can try to have that purple top hat."
+	desc = "I may not own the best jail in the observed Universe, or the best chocolate factory in the entire world, but at least you can try to have that purple top hat."
 	icon_state = "ptophat"
 	item_state = "that"
 
@@ -829,8 +829,8 @@
 	icon_state = "foxranger"
 	item_state = "foxranger"
 	actions_types = list(/datum/action/item_action/toggle)
-	toggle_message = "You put the sniper's veil on"
-	alt_toggle_message = "You take the sniper's veil off"
+	toggle_message = "I put the sniper's veil on"
+	alt_toggle_message = "I take the sniper's veil off"
 	can_toggle = 1
 	toggle_cooldown = 0
 
@@ -840,8 +840,8 @@
 	icon_state = "elite_riot"
 	item_state = "elite_riot"
 	actions_types = list(/datum/action/item_action/toggle)
-	toggle_message = "You put the sniper's veil on"
-	alt_toggle_message = "You take the sniper's veil off"
+	toggle_message = "I put the sniper's veil on"
+	alt_toggle_message = "I take the sniper's veil off"
 	can_toggle = 1
 	toggle_cooldown = 0
 

@@ -32,7 +32,7 @@
 	mood_event_on_equip = /datum/mood_event/equipped_ring/diamond
 
 /obj/item/clothing/gloves/ring/diamond/attack_self(mob/user)
-	user.visible_message(span_warning("\The [user] gets down on one knee, presenting \the [src]."),span_warning("You get down on one knee, presenting \the [src]."))
+	user.visible_message(span_warning("\The [user] gets down on one knee, presenting \the [src]."),span_warning("I get down on one knee, presenting \the [src]."))
 
 /obj/item/clothing/gloves/ring/silver
 	name = "silver ring"

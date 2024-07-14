@@ -51,7 +51,7 @@
 				"<span class='cult'>You repair <b>[src]</b>, leaving [p_they()] at <b>[round(obj_integrity * 100 / max_integrity)]%</b> stability.</span>")
 			return TRUE
 		else
-			to_chat(M, span_cult("You cannot repair [src], as [p_theyre()] undamaged!"))
+			to_chat(M, span_cult("I cannot repair [src], as [p_theyre()] undamaged!"))
 	else
 		return ..()
 
@@ -59,7 +59,7 @@
 	if(istype(I, /obj/item/melee/cultblade/dagger) && iscultist(user))
 		anchored = !anchored
 		density = !density
-		to_chat(user, span_notice("You [anchored ? "":"un"]secure \the [src] [anchored ? "to":"from"] the floor."))
+		to_chat(user, span_notice("I [anchored ? "":"un"]secure \the [src] [anchored ? "to":"from"] the floor."))
 		if(!anchored)
 			icon_state = "[initial(icon_state)]_off"
 		else
@@ -102,13 +102,13 @@
 		to_chat(user, span_warning("You're pretty sure you know exactly what this is used for and you can't seem to touch it."))
 		return
 	if(!anchored)
-		to_chat(user, span_cultitalic("You need to anchor [src] to the floor with your dagger first."))
+		to_chat(user, span_cultitalic("I need to anchor [src] to the floor with your dagger first."))
 		return
 	if(cooldowntime > world.time)
 		to_chat(user, span_cultitalic("The magic in [src] is weak, it will be ready to use again in [DisplayTimeText(cooldowntime - world.time)]."))
 		return
 
-	to_chat(user, span_cultitalic("You study the schematics etched into the altar..."))
+	to_chat(user, span_cultitalic("I study the schematics etched into the altar..."))
 
 	var/list/options = list("Eldritch Whetstone" = radial_whetstone, "Construct Shell" = radial_shell, "Flask of Unholy Water" = radial_unholy_water)
 	var/choice = show_radial_menu(user, src, options, custom_check = CALLBACK(src,PROC_REF(check_menu), user), require_near = TRUE, tooltips = TRUE)
@@ -125,7 +125,7 @@
 	if(!QDELETED(src) && reward && check_menu(user))
 		cooldowntime = world.time + 2400
 		new reward(get_turf(src))
-		to_chat(user, span_cultitalic("You kneel before the altar and your faith is rewarded with the [choice]!"))
+		to_chat(user, span_cultitalic("I kneel before the altar and your faith is rewarded with the [choice]!"))
 
 /obj/structure/destructible/cult/forge
 	name = "daemon forge"
@@ -148,13 +148,13 @@
 		to_chat(user, span_warning("The heat radiating from [src] pushes you back."))
 		return
 	if(!anchored)
-		to_chat(user, span_cultitalic("You need to anchor [src] to the floor with your dagger first."))
+		to_chat(user, span_cultitalic("I need to anchor [src] to the floor with your dagger first."))
 		return
 	if(cooldowntime > world.time)
 		to_chat(user, "<span class='cult italic'>The magic in [src] is weak, it will be ready to use again in [DisplayTimeText(cooldowntime - world.time)].</span>")
 		return
 
-	to_chat(user, span_cultitalic("You study the schematics etched into the forge..."))
+	to_chat(user, span_cultitalic("I study the schematics etched into the forge..."))
 
 
 	var/list/options = list("Shielded Robe" = radial_shielded, "Flagellant's Robe" = radial_flagellant, "Mirror Shield" = radial_mirror)
@@ -172,7 +172,7 @@
 	if(!QDELETED(src) && reward && check_menu(user))
 		cooldowntime = world.time + 2400
 		new reward(get_turf(src))
-		to_chat(user, span_cultitalic("You work the forge as dark knowledge guides your hands, creating the [choice]!"))
+		to_chat(user, span_cultitalic("I work the forge as dark knowledge guides your hands, creating the [choice]!"))
 
 /obj/structure/destructible/cult/forge/attackby(obj/item/I, mob/user)
 	if(!iscultist(user))
@@ -180,7 +180,7 @@
 		return
 	if(istype(I, /obj/item/ingot))
 		var/obj/item/ingot/notsword = I
-		to_chat(user, "You heat the [notsword] in the [src].")
+		to_chat(user, "I heat the [notsword] in the [src].")
 		notsword.workability = "shapeable"
 
 /obj/structure/destructible/cult/pylon
@@ -280,13 +280,13 @@
 		to_chat(user, span_warning("These books won't open and it hurts to even try and read the covers."))
 		return
 	if(!anchored)
-		to_chat(user, span_cultitalic("You need to anchor [src] to the floor with your dagger first."))
+		to_chat(user, span_cultitalic("I need to anchor [src] to the floor with your dagger first."))
 		return
 	if(cooldowntime > world.time)
 		to_chat(user, "<span class='cult italic'>The magic in [src] is weak, it will be ready to use again in [DisplayTimeText(cooldowntime - world.time)].</span>")
 		return
 
-	to_chat(user, span_cultitalic("You flip through the black pages of the archives..."))
+	to_chat(user, span_cultitalic("I flip through the black pages of the archives..."))
 
 	var/list/options = list("Zealot's Blindfold" = radial_blindfold, "Shuttle Curse" = radial_curse, "Veil Walker Set" = radial_veilwalker)
 	var/choice = show_radial_menu(user, src, options, custom_check = CALLBACK(src,PROC_REF(check_menu), user), require_near = TRUE, tooltips = TRUE)
@@ -302,7 +302,7 @@
 	if(!QDELETED(src) && reward && check_menu(user))
 		cooldowntime = world.time + 2400
 		new reward(get_turf(src))
-		to_chat(user, span_cultitalic("You summon the [choice] from the archives!"))
+		to_chat(user, span_cultitalic("I summon the [choice] from the archives!"))
 
 /obj/effect/spawner/bundle/veil_walker
 	items = list(/obj/item/cult_shift, /obj/item/flashlight/flare/culttorch)

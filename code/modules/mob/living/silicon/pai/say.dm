@@ -10,6 +10,6 @@
 /mob/living/silicon/pai/radio(message, message_mode, list/spans, language)
 	if((message_mode == "robot") || (message_mode in GLOB.radiochannels))
 		if(radio_short)
-			to_chat(src, span_warning("Your radio is shorted out!"))
+			to_chat(src, span_warning("My radio is shorted out!"))
 			return ITALICS | REDUCE_RANGE
 	return ..()

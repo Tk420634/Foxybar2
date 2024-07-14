@@ -73,7 +73,7 @@
 	mode_flags &= ~COMBAT_MODE_INACTIVE
 	SEND_SIGNAL(source, COMSIG_LIVING_COMBAT_ENABLED, forced)
 	if(!silent)
-		var/self_message = forced? span_warning("Your muscles reflexively tighten!") : span_warning("You drop into a combative stance!")
+		var/self_message = forced? span_warning("My muscles reflexively tighten!") : span_warning("I drop into a combative stance!")
 		if(visible && (forced || world.time >= combatmessagecooldown))
 			combatmessagecooldown = world.time + 10 SECONDS
 			if(!forced)
@@ -109,7 +109,7 @@
 	mode_flags |= COMBAT_MODE_INACTIVE
 	SEND_SIGNAL(source, COMSIG_LIVING_COMBAT_DISABLED, forced)
 	if(!silent)
-		var/self_message = forced? span_warning("Your muscles are forcibly relaxed!") : span_warning("You relax your stance.")
+		var/self_message = forced? span_warning("My muscles are forcibly relaxed!") : span_warning("I relax your stance.")
 		if(visible)
 			source.visible_message(span_warning("[source] relaxes [source.p_their()] stance."), self_message)
 		else

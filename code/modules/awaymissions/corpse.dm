@@ -41,7 +41,7 @@
 		to_chat(user, span_warning("This spawner is out of charges!"))
 		return
 	if(jobban_isbanned(user, banType))
-		to_chat(user, span_warning("You are jobanned!"))
+		to_chat(user, span_warning("I am jobanned!"))
 		return
 	if(QDELETED(src) || QDELETED(user))
 		return
@@ -351,7 +351,7 @@ random
 	name = "sleeper"
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper"
-	short_desc = "You are a space doctor!"
+	short_desc = "I am a space doctor!"
 	assignedrole = "Space Doctor"
 	job_description = "Off-station Doctor"
 
@@ -404,7 +404,7 @@ random
 	name = "bartender sleeper"
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper"
-	short_desc = "You are a space bartender!"
+	short_desc = "I am a space bartender!"
 	flavour_text = "Time to mix drinks and change lives. Smoking space drugs makes it easier to understand your patrons' odd dialect."
 	assignedrole = "Space Bartender"
 	id_job = "Bartender"
@@ -520,7 +520,7 @@ random
 	name = "sleeper"
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper"
-	short_desc = "You are a US Government Commander!"
+	short_desc = "I am a US Government Commander!"
 
 /obj/effect/mob_spawn/human/nanotrasensoldier/alive
 	death = FALSE
@@ -531,7 +531,7 @@ random
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper"
 	faction = "nanotrasenprivate"
-	short_desc = "You are a US Government Private Security Officer!"
+	short_desc = "I am a US Government Private Security Officer!"
 
 
 /////////////////Spooky Undead//////////////////////

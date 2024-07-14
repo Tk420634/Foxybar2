@@ -2,8 +2,8 @@
 /obj/effect/proc_holder/spell/aimed
 	name = "aimed projectile spell"
 	var/projectile_type = /obj/item/projectile/magic/teleport
-	var/deactive_msg = "You discharge your projectile..."
-	var/active_msg = "You charge your projectile!"
+	var/deactive_msg = "I discharge your projectile..."
+	var/active_msg = "I charge your projectile!"
 	base_icon_state = "projectile"
 	var/active_icon_state = "projectile"
 	var/list/projectile_var_overrides = list()
@@ -16,7 +16,7 @@
 		return
 	var/msg
 	if(!skip_can_cast && !can_cast(user, FALSE, TRUE))
-		msg = span_warning("You can no longer cast [name]!")
+		msg = span_warning("I can no longer cast [name]!")
 		remove_ranged_ability(msg)
 		return
 	if(active)
@@ -102,8 +102,8 @@
 	sound = 'sound/magic/lightningbolt.ogg'
 	active = FALSE
 	projectile_var_overrides = list("zap_range" = 15, "zap_power" = 20000, "zap_flags" = ZAP_MOB_DAMAGE)
-	active_msg = "You energize your hand with arcane lightning!"
-	deactive_msg = "You let the energy flow out of your hands back into yourself..."
+	active_msg = "I energize your hand with arcane lightning!"
+	deactive_msg = "I let the energy flow out of your hands back into yourself..."
 	projectile_type = /obj/item/projectile/magic/aoe/lightning
 
 /obj/effect/proc_holder/spell/aimed/fireball
@@ -120,6 +120,6 @@
 	base_icon_state = "fireball"
 	action_icon_state = "fireball0"
 	sound = 'sound/magic/fireball.ogg'
-	active_msg = "You prepare to cast your fireball spell!"
-	deactive_msg = "You extinguish your fireball... for now."
+	active_msg = "I prepare to cast your fireball spell!"
+	deactive_msg = "I extinguish your fireball... for now."
 	active = FALSE

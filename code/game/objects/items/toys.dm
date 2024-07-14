@@ -68,7 +68,7 @@
 			to_chat(user, span_warning("[src] is full."))
 		else
 			A.reagents.trans_to(src, 10)
-			to_chat(user, span_notice("You fill the balloon with the contents of [A]."))
+			to_chat(user, span_notice("I fill the balloon with the contents of [A]."))
 			desc = "A translucent balloon with some form of liquid sloshing around in it."
 			update_icon()
 
@@ -81,7 +81,7 @@
 				to_chat(user, span_warning("[src] is full."))
 			else
 				desc = "A translucent balloon with some form of liquid sloshing around in it."
-				to_chat(user, span_notice("You fill the balloon with the contents of [I]."))
+				to_chat(user, span_notice("I fill the balloon with the contents of [I]."))
 				I.reagents.trans_to(src, 10)
 				update_icon()
 	else if(I.get_sharpness())
@@ -100,7 +100,7 @@
 			T = get_turf(AT)
 		else
 			T = get_turf(src)
-		T.visible_message(span_danger("[src] bursts!"),span_italic("You hear a pop and a splash."))
+		T.visible_message(span_danger("[src] bursts!"),span_italic("I hear a pop and a splash."))
 		reagents.reaction(T)
 		for(var/atom/A in T)
 			reagents.reaction(A)
@@ -167,10 +167,10 @@
 			return 1
 		if (A.amount_left < (7 - src.bullets))
 			src.bullets += A.amount_left
-			to_chat(user, span_notice("You reload [A.amount_left] cap\s."))
+			to_chat(user, span_notice("I reload [A.amount_left] cap\s."))
 			A.amount_left = 0
 		else
-			to_chat(user, span_notice("You reload [7-A.amount_left] cap\s."))
+			to_chat(user, span_notice("I reload [7-A.amount_left] cap\s."))
 			src.bullets = 7
 		A.update_icon()
 		return 1
@@ -182,7 +182,7 @@
 	if (flag)
 		return
 	if (!user.IsAdvancedToolUser())
-		to_chat(user, span_warning("You don't have the dexterity to do this!"))
+		to_chat(user, span_warning("I don't have the dexterity to do this!"))
 		return
 	src.add_fingerprint(user)
 	if (src.bullets < 1)
@@ -192,8 +192,8 @@
 	playsound(user, 'sound/weapons/gunshot.ogg', 100, 1)
 	src.bullets--
 	user.visible_message(span_danger("[user] fires [src] at [target]!"), \
-						span_danger("You fire [src] at [target]!"), \
-						span_italic("You hear a gunshot!"))
+						span_danger("I fire [src] at [target]!"), \
+						span_italic("I hear a gunshot!"))
 
 /obj/item/toy/ammo/gun
 	name = "capgun ammo"
@@ -230,8 +230,8 @@
 	var/total_mass_on = TOTAL_MASS_TOY_SWORD
 	var/activation_sound = 'sound/weapons/saberon.ogg'
 	var/deactivation_sound = 'sound/weapons/saberoff.ogg'
-	var/activation_message = "You extend the plastic blade with a quick flick of your wrist."
-	var/deactivation_message = "You push the plastic blade back down into the handle."
+	var/activation_message = "I extend the plastic blade with a quick flick of your wrist."
+	var/deactivation_message = "I push the plastic blade back down into the handle."
 	var/transform_volume = 20
 
 /obj/item/toy/sword/attack_self(mob/user)
@@ -271,7 +271,7 @@
 			to_chat(user, span_warning("\the [HAS_TRAIT(src, TRAIT_NODROP)  ? src : W] is stuck to your hand, you can't attach it to \the [HAS_TRAIT(src, TRAIT_NODROP) ? W : src]!"))
 			return
 		else
-			to_chat(user, span_notice("You attach the ends of the two plastic swords, making a single double-bladed toy! You're fake-cool."))
+			to_chat(user, span_notice("I attach the ends of the two plastic swords, making a single double-bladed toy! You're fake-cool."))
 			var/obj/item/dualsaber/toy/newSaber = new /obj/item/dualsaber/toy(user.loc)
 			if(hacked) // That's right, we'll only check the "original" "sword".
 				newSaber.hacked = TRUE
@@ -302,8 +302,8 @@
 	activation_sound = 'sound/weapons/nebon.ogg'
 	deactivation_sound = 'sound/weapons/neboff.ogg'
 	transform_volume = 50
-	activation_message = "You activate the holographic blade with a press of a button."
-	deactivation_message = "You deactivate the holographic blade with a press of a button."
+	activation_message = "I activate the holographic blade with a press of a button."
+	deactivation_message = "I deactivate the holographic blade with a press of a button."
 	var/light_brightness = 3
 	actions_types = list()
 
@@ -337,7 +337,7 @@
 	if(!in_range(src, user))	//Basic checks to prevent abuse
 		return
 	if(user.incapacitated() || !istype(user))
-		to_chat(user, span_warning("You can't do that right now!"))
+		to_chat(user, span_warning("I can't do that right now!"))
 		return TRUE
 
 	if(alert("Are you sure you want to recolor your blade?", "Confirm Repaint", "Yes", "No") == "Yes")
@@ -362,7 +362,7 @@
 			to_chat(user, span_warning("\the [HAS_TRAIT(src, TRAIT_NODROP) ? src : W] is stuck to your hand, you can't attach it to \the [HAS_TRAIT(src, TRAIT_NODROP) ? W : src]!"))
 			return
 		else
-			to_chat(user, span_notice("You combine the two plastic swords, making a single supermassive toy! You're fake-cool."))
+			to_chat(user, span_notice("I combine the two plastic swords, making a single supermassive toy! You're fake-cool."))
 			new /obj/item/dualsaber/hypereutactic/toy(user.loc)
 			qdel(W)
 			qdel(src)
@@ -404,7 +404,7 @@
 /obj/item/toy/windupToolbox/attack_self(mob/user)
 	if(!active)
 		icon_state = "his_grace_awakened"
-		to_chat(user, span_warning("You wind up [src], it begins to rumble."))
+		to_chat(user, span_warning("I wind up [src], it begins to rumble."))
 		active = TRUE
 		playsound(src, 'sound/effects/pope_entry.ogg', 100)
 		Rumble()
@@ -522,7 +522,7 @@
 	s.start()
 	new ash_type(loc)
 	visible_message(span_warning("[src] explodes!"),
-		span_italic("You hear a snap!"))
+		span_italic("I hear a snap!"))
 	playsound(src, 'sound/effects/snap.ogg', 50, 1)
 	qdel(src)
 
@@ -538,7 +538,7 @@
 	if(ishuman(H) || issilicon(H)) //i guess carp and shit shouldn't set them off
 		var/mob/living/carbon/M = H
 		if(issilicon(H) || M.m_intent == MOVE_INTENT_RUN)
-			to_chat(M, span_danger("You step on the snap pop!"))
+			to_chat(M, span_danger("I step on the snap pop!"))
 			pop_burst(2, 0)
 
 /obj/item/toy/snappop/phoenix
@@ -571,7 +571,7 @@
 //all credit to skasi for toy mech fun ideas
 /obj/item/toy/prize/attack_self(mob/user)
 	if(timer < world.time)
-		to_chat(user, span_notice("You play with [src]."))
+		to_chat(user, span_notice("I play with [src]."))
 		timer = world.time + cooldown
 		if(!quiet)
 			playsound(user, 'sound/mecha/mechstep.ogg', 20, 1)
@@ -670,8 +670,8 @@
 /obj/item/toy/talking/proc/activation_message(mob/user)
 	user.visible_message(
 		span_notice("[user] pulls the string on \the [src]."),
-		span_notice("You pull the string on \the [src]."),
-		span_notice("You hear a string being pulled."))
+		span_notice("I pull the string on \the [src]."),
+		span_notice("I hear a string being pulled."))
 
 /obj/item/toy/talking/proc/generate_messages()
 	return list(pick(messages))
@@ -705,8 +705,8 @@
 /obj/item/toy/talking/codex_gigas/activation_message(mob/user)
 	user.visible_message(
 		span_notice("[user] presses the button on \the [src]."),
-		span_notice("You press the button on \the [src]."),
-		span_notice("You hear a soft click."))
+		span_notice("I press the button on \the [src]."),
+		span_notice("I hear a soft click."))
 
 /obj/item/toy/talking/codex_gigas/generate_messages()
 	var/datum/fakeDevil/devil = new
@@ -722,7 +722,7 @@
 	name = "owl action figure"
 	desc = "An action figure modeled after 'The Owl', defender of justice."
 	icon_state = "owlprize"
-	messages = list("You won't get away this time, Griffin!", "Stop right there, criminal!", "Hoot! Hoot!", "I am the night!")
+	messages = list("I won't get away this time, Griffin!", "Stop right there, criminal!", "Hoot! Hoot!", "I am the night!")
 	chattering = TRUE
 	phomeme = "owl"
 
@@ -730,7 +730,7 @@
 	name = "griffin action figure"
 	desc = "An action figure modeled after 'The Griffin', criminal mastermind."
 	icon_state = "griffinprize"
-	messages = list("You can't stop me, Owl!", "My plan is flawless! The vault is mine!", "Caaaawwww!", "You will never catch me!")
+	messages = list("I can't stop me, Owl!", "My plan is flawless! The vault is mine!", "Caaaawwww!", "I will never catch me!")
 	chattering = TRUE
 	phomeme = "griffin"
 
@@ -817,7 +817,7 @@
 	H.apply_card_vars(H,O)
 	H.pickup(user)
 	user.put_in_hands(H)
-	user.visible_message("[user] draws a card from the deck.", span_notice("You draw a card from the deck."))
+	user.visible_message("[user] draws a card from the deck.", span_notice("I draw a card from the deck."))
 	update_icon()
 
 /obj/item/toy/cards/deck/update_icon_state()
@@ -835,7 +835,7 @@
 	if(cooldown < world.time - 50)
 		cards = shuffle(cards)
 		playsound(src, 'sound/items/cardshuffle.ogg', 50, 1)
-		user.visible_message("[user] shuffles the deck.", span_notice("You shuffle the deck."))
+		user.visible_message("[user] shuffles the deck.", span_notice("I shuffle the deck."))
 		cooldown = world.time
 
 /obj/item/toy/cards/deck/attackby(obj/item/I, mob/living/user, params)
@@ -846,10 +846,10 @@
 				to_chat(user, span_warning("The card is stuck to your hand, you can't add it to the deck!"))
 				return
 			cards += SC.cardname
-			user.visible_message("[user] adds a card to the bottom of the deck.",span_notice("You add the card to the bottom of the deck."))
+			user.visible_message("[user] adds a card to the bottom of the deck.",span_notice("I add the card to the bottom of the deck."))
 			qdel(SC)
 		else
-			to_chat(user, span_warning("You can't mix cards from other decks!"))
+			to_chat(user, span_warning("I can't mix cards from other decks!"))
 		update_icon()
 	else if(istype(I, /obj/item/toy/cards/cardhand))
 		var/obj/item/toy/cards/cardhand/CH = I
@@ -858,10 +858,10 @@
 				to_chat(user, span_warning("The hand of cards is stuck to your hand, you can't add it to the deck!"))
 				return
 			cards += CH.currenthand
-			user.visible_message("[user] puts [user.p_their()] hand of cards in the deck.", span_notice("You put the hand of cards in the deck."))
+			user.visible_message("[user] puts [user.p_their()] hand of cards in the deck.", span_notice("I put the hand of cards in the deck."))
 			qdel(CH)
 		else
-			to_chat(user, span_warning("You can't mix cards from other decks!"))
+			to_chat(user, span_warning("I can't mix cards from other decks!"))
 		update_icon()
 	else
 		return ..()
@@ -874,15 +874,15 @@
 	if(Adjacent(usr))
 		if(over_object == M && loc != M)
 			M.put_in_hands(src)
-			to_chat(usr, span_notice("You pick up the deck."))
+			to_chat(usr, span_notice("I pick up the deck."))
 
 		else if(istype(over_object, /atom/movable/screen/inventory/hand))
 			var/atom/movable/screen/inventory/hand/H = over_object
 			if(M.putItemFromInventoryInHandIfPossible(src, H.held_index))
-				to_chat(usr, span_notice("You pick up the deck."))
+				to_chat(usr, span_notice("I pick up the deck."))
 
 	else
-		to_chat(usr, span_warning("You can't reach it from here!"))
+		to_chat(usr, span_warning("I can't reach it from here!"))
 
 
 
@@ -919,7 +919,7 @@
 	C.apply_card_vars(C,O)
 	C.pickup(cardUser)
 	cardUser.put_in_hands(C)
-	cardUser.visible_message(span_notice("[cardUser] draws a card from [cardUser.p_their()] hand."), span_notice("You take the [C.cardname] from your hand."))
+	cardUser.visible_message(span_notice("[cardUser] draws a card from [cardUser.p_their()] hand."), span_notice("I take the [C.cardname] from your hand."))
 
 	interact(cardUser)
 	update_sprite()
@@ -931,18 +931,18 @@
 		qdel(src)
 		N.pickup(cardUser)
 		cardUser.put_in_hands(N)
-		to_chat(cardUser, span_notice("You also take [currenthand[1]] and hold it."))
+		to_chat(cardUser, span_notice("I also take [currenthand[1]] and hold it."))
 
 /obj/item/toy/cards/cardhand/attackby(obj/item/toy/cards/singlecard/C, mob/living/user, params)
 	if(istype(C))
 		if(C.parentdeck == src.parentdeck)
 			src.currenthand += C.cardname
-			user.visible_message(span_notice("[user] adds a card to [user.p_their()] hand."), span_notice("You add the [C.cardname] to your hand."))
+			user.visible_message(span_notice("[user] adds a card to [user.p_their()] hand."), span_notice("I add the [C.cardname] to your hand."))
 			qdel(C)
 			interact(user)
 			update_sprite(src)
 		else
-			to_chat(user, span_warning("You can't mix cards from other decks!"))
+			to_chat(user, span_warning("I can't mix cards from other decks!"))
 	else
 		return ..()
 
@@ -1001,7 +1001,7 @@
 		if(cardUser.is_holding(src))
 			cardUser.visible_message("[cardUser] checks [cardUser.p_their()] card.", span_notice("The card reads: [cardname]."))
 		else
-			. += span_warning("You need to have the card in your hand to check it!")
+			. += span_warning("I need to have the card in your hand to check it!")
 
 /obj/item/toy/cards/singlecard/verb/Flip()
 	set name = "Flip Card"
@@ -1033,19 +1033,19 @@
 			H.currenthand += src.cardname
 			H.parentdeck = C.parentdeck
 			H.apply_card_vars(H,C)
-			to_chat(user, span_notice("You combine the [C.cardname] and the [src.cardname] into a hand."))
+			to_chat(user, span_notice("I combine the [C.cardname] and the [src.cardname] into a hand."))
 			qdel(C)
 			qdel(src)
 			H.pickup(user)
 			user.put_in_active_hand(H)
 		else
-			to_chat(user, span_warning("You can't mix cards from other decks!"))
+			to_chat(user, span_warning("I can't mix cards from other decks!"))
 
 	if(istype(I, /obj/item/toy/cards/cardhand/))
 		var/obj/item/toy/cards/cardhand/H = I
 		if(H.parentdeck == parentdeck)
 			H.currenthand += cardname
-			user.visible_message("[user] adds a card to [user.p_their()] hand.", span_notice("You add the [cardname] to your hand."))
+			user.visible_message("[user] adds a card to [user.p_their()] hand.", span_notice("I add the [cardname] to your hand."))
 			qdel(src)
 			H.interact(user)
 			if(H.currenthand.len > 4)
@@ -1055,7 +1055,7 @@
 			else if(H.currenthand.len > 2)
 				H.icon_state = "[deckstyle]_hand3"
 		else
-			to_chat(user, span_warning("You can't mix cards from other decks!"))
+			to_chat(user, span_warning("I can't mix cards from other decks!"))
 	else
 		return ..()
 
@@ -1118,7 +1118,7 @@
 /obj/item/toy/nuke/attack_self(mob/user)
 	if (cooldown < world.time)
 		cooldown = world.time + 1800 //3 minutes
-		user.visible_message(span_warning("[user] presses a button on [src]."), span_notice("You activate [src], it plays a loud noise!"), span_italic("You hear the click of a button."))
+		user.visible_message(span_warning("[user] presses a button on [src]."), span_notice("I activate [src], it plays a loud noise!"), span_italic("I hear the click of a button."))
 		sleep(5)
 		icon_state = "nuketoy"
 		playsound(src, 'sound/machines/alarm.ogg', 100, 0)
@@ -1163,7 +1163,7 @@
 /obj/item/toy/redbutton/attack_self(mob/user)
 	if (cooldown < world.time)
 		cooldown = (world.time + 300) // Sets cooldown at 30 seconds
-		user.visible_message(span_warning("[user] presses the big red button."), span_notice("You press the button, it plays a loud noise!"), span_italic("The button clicks loudly."))
+		user.visible_message(span_warning("[user] presses the big red button."), span_notice("I press the button, it plays a loud noise!"), span_italic("The button clicks loudly."))
 		playsound(src, 'sound/effects/explosionfar.ogg', 50, 0)
 		for(var/mob/M in urange(10, src)) // Checks range
 			if(!M.stat && !isAI(M)) // Checks to make sure whoever's getting shaken is alive/not the AI
@@ -1228,7 +1228,7 @@
 /obj/item/toy/clockwork_watch/attack_self(mob/user)
 	if (cooldown < world.time)
 		cooldown = world.time + 1800 //3 minutes
-		user.visible_message(span_warning("[user] rotates a cogwheel on [src]."), span_notice("You rotate a cogwheel on [src], it plays a loud noise!"), span_italic("You hear cogwheels turning."))
+		user.visible_message(span_warning("[user] rotates a cogwheel on [src]."), span_notice("I rotate a cogwheel on [src], it plays a loud noise!"), span_italic("I hear cogwheels turning."))
 		playsound(src, 'sound/magic/clockwork/ark_activation.ogg', 50, 0)
 	else
 		to_chat(user, span_alert("The cogwheels are already turning!"))
@@ -1504,7 +1504,7 @@
 	if(!new_name)
 		return
 	doll_name = new_name
-	to_chat(user, "You name the dummy as \"[doll_name]\"")
+	to_chat(user, "I name the dummy as \"[doll_name]\"")
 	name = "[initial(name)] - [doll_name]"
 
 /obj/item/toy/dummy/talk_into(atom/movable/A, message, channel, list/spans, datum/language/language)
@@ -1544,6 +1544,6 @@
 /obj/item/toy/tragicthegarnering/attack_self(mob/user)
 	if(Adjacent(user))
 		user.visible_message("<span class='notice'>[user] resists the urge to play with his deck of Tragic", \
-					span_notice("Your hand is moving on its own! But you cannot allow yourself to get hooked to the game."))
+					span_notice("My hand is moving on its own! But you cannot allow yourself to get hooked to the game."))
 		add_fingerprint(user)
 

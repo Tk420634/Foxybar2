@@ -227,7 +227,7 @@ Difficulty: Medium
 			else
 
 	if(passed == 1)
-		visible_message(span_danger("[src] dodged the projectile!"), span_userdanger("You dodge the projectile!"))
+		visible_message(span_danger("[src] dodged the projectile!"), span_userdanger("I dodge the projectile!"))
 		playsound(src, pick('sound/weapons/bulletflyby.ogg', 'sound/weapons/bulletflyby2.ogg', 'sound/weapons/bulletflyby3.ogg'), 300, 1)
 		return 0
 

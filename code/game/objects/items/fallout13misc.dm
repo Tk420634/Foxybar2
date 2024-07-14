@@ -132,7 +132,7 @@
 				var/mob/living/carbon/human/H = user
 				var/datum/martial_art/patraining/F = new/datum/martial_art/patraining(null)
 				F.teach(H)
-				H << span_boldannounce("You have received the specialized training needed to move in any form of Power Armor.")
+				H << span_boldannounce("I have received the specialized training needed to move in any form of Power Armor.")
 			src.icon_state = initial(src.icon_state)
 			src.busy = 0
 			visible_message(span_warning("[src] self-destructs!"))
@@ -197,17 +197,17 @@ GLOBAL_LIST_EMPTY(all_flags)
 		to_chat(user, span_alert("Never mind!"))
 		return
 	ENABLE_BITFIELD(obj_flags, IN_USE)
-	to_chat(user, span_notice("You start putting up a [new_flag]..."))
+	to_chat(user, span_notice("I start putting up a [new_flag]..."))
 	if(!do_after(user, 10 SECONDS, target = src, allow_movement = TRUE, stay_close = TRUE, public_progbar = TRUE))
 		DISABLE_BITFIELD(obj_flags, IN_USE)
-		to_chat(user, span_alert("You were interrupted!"))
+		to_chat(user, span_alert("I were interrupted!"))
 		return
 	if(!changeup.use(used=flagcost,transfer=FALSE,check=TRUE))
-		to_chat(user, span_alert("You don't have the required materials to make a flag. [flagcost] sheets of leather should do the trick!"))
+		to_chat(user, span_alert("I don't have the required materials to make a flag. [flagcost] sheets of leather should do the trick!"))
 		return FALSE
 	DISABLE_BITFIELD(obj_flags, IN_USE)
 	re_flag(GLOB.all_flags[new_flag])
-	to_chat(user, span_notice("You tear down the old flag and put up a [new_flag]!"))
+	to_chat(user, span_notice("I tear down the old flag and put up a [new_flag]!"))
 
 /obj/item/flag/proc/re_flag(new_flag)
 	if(!ispath(new_flag, /obj/item/flag))
@@ -228,14 +228,14 @@ GLOBAL_LIST_EMPTY(all_flags)
 	if(!LAZYLEN(GLOB.all_flags))
 		init_flags()
 	ENABLE_BITFIELD(obj_flags, IN_USE)
-	to_chat(user, span_notice("You begin to remove the flag."))
+	to_chat(user, span_notice("I begin to remove the flag."))
 	if(!do_after(user, 10 SECONDS, target = src, allow_movement = TRUE, stay_close = TRUE, public_progbar = TRUE))
 		DISABLE_BITFIELD(obj_flags, IN_USE)
-		to_chat(user, span_alert("You were interrupted!"))
+		to_chat(user, span_alert("I were interrupted!"))
 		return
 	DISABLE_BITFIELD(obj_flags, IN_USE)
 	re_flag(/obj/item/flag)
-	to_chat(user, span_notice("You tear down the flag!"))
+	to_chat(user, span_notice("I tear down the flag!"))
 
 
 /obj/item/flag/ncr
@@ -423,7 +423,7 @@ GLOBAL_LIST_EMPTY(all_flags)
 
 /obj/item/warpaint_bowl/attack(mob/living/M, mob/living/user, attackchain_flags, damage_multiplier)
 	if(!paint_type || !paint_color)
-		to_chat(user, span_warning("You need to select a style first!"))
+		to_chat(user, span_warning("I need to select a style first!"))
 		return
 	if(!user.Adjacent(M) || !ishuman(M))
 		return ..()
@@ -432,10 +432,10 @@ GLOBAL_LIST_EMPTY(all_flags)
 		to_chat(user, span_warning("[H] is already painted with this style!"))
 		return
 
-	user.visible_message(span_notice("[user] starts painting [H] with [src]."), span_notice("You start painting [H] with [src]."))
+	user.visible_message(span_notice("[user] starts painting [H] with [src]."), span_notice("I start painting [H] with [src]."))
 	if(!do_mob(user, H, 10 SECONDS))
 		return
-	user.visible_message(span_notice("[user] applies warpaint onto [H]."), span_notice("You apply warpaint onto [H]."))
+	user.visible_message(span_notice("[user] applies warpaint onto [H]."), span_notice("I apply warpaint onto [H]."))
 
 	H.warpaint = paint_type
 	H.warpaint_color = paint_color

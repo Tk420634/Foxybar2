@@ -67,8 +67,8 @@
 	update_icon()
 
 /mob/living/simple_animal/bot/floorbot/set_custom_texts()
-	text_hack = "You corrupt [name]'s construction protocols."
-	text_dehack = "You detect errors in [name] and reset his programming."
+	text_hack = "I corrupt [name]'s construction protocols."
+	text_dehack = "I detect errors in [name] and reset his programming."
 	text_dehack_fail = "[name] is not responding to reset commands!"
 
 /mob/living/simple_animal/bot/floorbot/get_controls(mob/user)
@@ -119,13 +119,13 @@
 		tiles.use(loaded)
 		specialtiles += loaded
 		if(loaded > 0)
-			to_chat(user, span_notice("You load [loaded] tiles into the floorbot. It now contains [specialtiles] tiles."))
+			to_chat(user, span_notice("I load [loaded] tiles into the floorbot. It now contains [specialtiles] tiles."))
 		else
-			to_chat(user, span_warning("You need at least one floor tile to put into [src]!"))
+			to_chat(user, span_warning("I need at least one floor tile to put into [src]!"))
 
 	else if(istype(W, /obj/item/storage/toolbox/artistic))
 		if(bot_core.allowed(user) && open && !CHECK_BITFIELD(upgrades,UPGRADE_FLOOR_ARTBOX))
-			to_chat(user, span_notice("You upgrade \the [src] case to hold more!"))
+			to_chat(user, span_notice("I upgrade \the [src] case to hold more!"))
 			upgrades |= UPGRADE_FLOOR_ARTBOX
 			maxtiles += 100 //Double the storage!
 			qdel(W)
@@ -140,7 +140,7 @@
 
 	else if(istype(W, /obj/item/storage/toolbox/syndicate))
 		if(bot_core.allowed(user) && open && !CHECK_BITFIELD(upgrades,UPGRADE_FLOOR_SYNDIBOX))
-			to_chat(user, span_notice("You upgrade \the [src] case to hold more!"))
+			to_chat(user, span_notice("I upgrade \the [src] case to hold more!"))
 			upgrades |= UPGRADE_FLOOR_SYNDIBOX
 			maxtiles += 200 //Double bse storage
 			base_speed = 1 //2x faster!

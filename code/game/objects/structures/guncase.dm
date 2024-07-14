@@ -41,7 +41,7 @@
 		if(LAZYLEN(contents) < capacity)
 			if(!user.transferItemToLoc(I, src))
 				return
-			to_chat(user, span_notice("You place [I] in [src]."))
+			to_chat(user, span_notice("I place [I] in [src]."))
 			update_icon()
 		else
 			to_chat(user, span_warning("[src] is full."))

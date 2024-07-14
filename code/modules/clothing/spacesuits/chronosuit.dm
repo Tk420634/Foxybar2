@@ -116,7 +116,7 @@
 		for(var/exposed_item in exposed)
 			var/obj/item/exposed_I = exposed_item
 			if(exposed_I && !(exposed_I.type in chronosafe_items) && user.dropItemToGround(exposed_I))
-				to_chat(user, span_notice("Your [exposed_I.name] got left behind."))
+				to_chat(user, span_notice("My [exposed_I.name] got left behind."))
 
 		user.ExtinguishMob()
 

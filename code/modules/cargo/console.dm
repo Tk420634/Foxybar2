@@ -53,7 +53,7 @@
 		return
 	if(user)
 		user.visible_message(span_warning("[user] swipes a suspicious card through [src]!"),
-		span_notice("You adjust [src]'s routing and receiver spectrum, unlocking special supplies and contraband."))
+		span_notice("I adjust [src]'s routing and receiver spectrum, unlocking special supplies and contraband."))
 
 	obj_flags |= EMAGGED
 	contraband = TRUE

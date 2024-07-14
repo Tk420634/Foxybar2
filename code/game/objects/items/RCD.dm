@@ -88,7 +88,7 @@ RLD
 	if(loaded)
 		to_chat(user, span_notice("[src] now holds [matter]/[max_matter] matter-units."))
 	else if(istype(W, /obj/item/rcd_upgrade))
-		to_chat(user, span_notice("You upgrade the RCD with the [W]!"))
+		to_chat(user, span_notice("I upgrade the RCD with the [W]!"))
 		var/obj/item/rcd_upgrade/rcd_up = W
 		if(!(upgrade & rcd_up.upgrade))
 			upgrade |= rcd_up.upgrade
@@ -105,9 +105,9 @@ RLD
 		S.use(amount_to_use)
 		matter += value*amount_to_use
 		playsound(src.loc, 'sound/machines/click.ogg', 50, 1)
-		to_chat(user, span_notice("You insert [amount_to_use] [S.name] sheets into [src]. "))
+		to_chat(user, span_notice("I insert [amount_to_use] [S.name] sheets into [src]. "))
 		return 1
-	to_chat(user, span_warning("You can't insert any more [S.name] sheets into [src]!"))
+	to_chat(user, span_warning("I can't insert any more [S.name] sheets into [src]!"))
 	return 0
 
 /obj/item/construction/proc/activate()
@@ -152,7 +152,7 @@ RLD
 	//jarring, but it should stop people from targetting atoms they can't see...
 	//excluding darkness, to allow RLD to be used to light pitch black dark areas.
 	if(!((user in view(view_range, A)) || (user in fov_viewers(view_range, A))))
-		to_chat(user, span_warning("You focus, pointing \the [src] at whatever outside your field of vision in that direction... to no avail."))
+		to_chat(user, span_warning("I focus, pointing \the [src] at whatever outside your field of vision in that direction... to no avail."))
 		return FALSE
 	return TRUE
 
@@ -198,7 +198,7 @@ RLD
 		window_type = /obj/structure/window/fulltile
 		window_type_name = "glass"
 
-	to_chat(user, span_notice("You change \the [src]'s window mode to [window_type_name]."))
+	to_chat(user, span_notice("I change \the [src]'s window mode to [window_type_name]."))
 
 /obj/item/construction/rcd/verb/change_airlock_access(mob/user)
 
@@ -520,7 +520,7 @@ RLD
 		else
 			return
 	playsound(src, 'sound/effects/pop.ogg', 50, 0)
-	to_chat(user, span_notice("You change RCD's mode to '[choice]'."))
+	to_chat(user, span_notice("I change RCD's mode to '[choice]'."))
 
 /obj/item/construction/rcd/proc/target_check(atom/A, mob/user) // only returns true for stuff the device can actually work with
 	if((isturf(A) && A.density && mode==RCD_DECONSTRUCT) || (isturf(A) && !A.density) || (istype(A, /obj/machinery/door/airlock) && mode==RCD_DECONSTRUCT) || istype(A, /obj/structure/grille) || (istype(A, /obj/structure/window) && mode==RCD_DECONSTRUCT) || istype(A, /obj/structure/girder))
@@ -715,13 +715,13 @@ RLD
 	switch(mode)
 		if(REMOVE_MODE)
 			mode = LIGHT_MODE
-			to_chat(user, span_notice("You change RLD's mode to 'Permanent Light Construction'."))
+			to_chat(user, span_notice("I change RLD's mode to 'Permanent Light Construction'."))
 		if(LIGHT_MODE)
 			mode = GLOW_MODE
-			to_chat(user, span_notice("You change RLD's mode to 'Light Launcher'."))
+			to_chat(user, span_notice("I change RLD's mode to 'Light Launcher'."))
 		if(GLOW_MODE)
 			mode = REMOVE_MODE
-			to_chat(user, span_notice("You change RLD's mode to 'Deconstruct'."))
+			to_chat(user, span_notice("I change RLD's mode to 'Deconstruct'."))
 
 
 /obj/item/construction/rld/proc/checkdupes(target)
@@ -741,7 +741,7 @@ RLD
 		if(REMOVE_MODE)
 			if(istype(A, /obj/machinery/light/))
 				if(checkResource(deconcost, user))
-					to_chat(user, span_notice("You start deconstructing [A]..."))
+					to_chat(user, span_notice("I start deconstructing [A]..."))
 					user.Beam(A,icon_state="light_beam",time=15)
 					playsound(src.loc, 'sound/machines/click.ogg', 50, 1)
 					if(do_after(user, decondelay, target = A))
@@ -755,7 +755,7 @@ RLD
 			if(iswallturf(A))
 				var/turf/closed/wall/W = A
 				if(checkResource(floorcost, user))
-					to_chat(user, span_notice("You start building a wall light..."))
+					to_chat(user, span_notice("I start building a wall light..."))
 					user.Beam(A,icon_state="light_beam",time=15)
 					playsound(src.loc, 'sound/machines/click.ogg', 50, 1)
 					playsound(src.loc, 'sound/effects/light_flicker.ogg', 50, 0)
@@ -801,7 +801,7 @@ RLD
 			if(isfloorturf(A))
 				var/turf/open/floor/F = A
 				if(checkResource(floorcost, user))
-					to_chat(user, span_notice("You start building a floor light..."))
+					to_chat(user, span_notice("I start building a floor light..."))
 					user.Beam(A,icon_state="light_beam",time=15)
 					playsound(src.loc, 'sound/machines/click.ogg', 50, 1)
 					playsound(src.loc, 'sound/effects/light_flicker.ogg', 50, 1)
@@ -821,7 +821,7 @@ RLD
 		if(GLOW_MODE)
 			if(useResource(launchcost, user))
 				activate()
-				to_chat(user, span_notice("You fire a glowstick!"))
+				to_chat(user, span_notice("I fire a glowstick!"))
 				var/obj/item/flashlight/glowstick/G  = new /obj/item/flashlight/glowstick(start)
 				G.color = color_choice
 				G.light_color = G.color
@@ -895,7 +895,7 @@ RLD
 
 	blueprint = name_to_type[choice]
 	playsound(src, 'sound/effects/pop.ogg', 50, FALSE)
-	to_chat(user, span_notice("You change [name]s blueprint to '[choice]'."))
+	to_chat(user, span_notice("I change [name]s blueprint to '[choice]'."))
 
 ///pretty much rcd_create, but named differently to make myself feel less bad for copypasting from a sibling-type
 /obj/item/construction/plumbing/proc/create_machine(atom/A, mob/user)

@@ -41,14 +41,14 @@
 		to_chat(user, span_warning("[src]'s door won't budge!"))
 
 /obj/machinery/abductor/experiment/container_resist(mob/living/user)
-	user.visible_message(span_notice("You see [user] kicking against the door of [src]!"), \
-		span_notice("You lean on the back of [src] and start pushing the door open... (this will take about [DisplayTimeText(breakout_time)].)"), \
-		span_hear("You hear a metallic creaking from [src]."))
+	user.visible_message(span_notice("I see [user] kicking against the door of [src]!"), \
+		span_notice("I lean on the back of [src] and start pushing the door open... (this will take about [DisplayTimeText(breakout_time)].)"), \
+		span_hear("I hear a metallic creaking from [src]."))
 	if(do_after(user,(breakout_time), target = src))
 		if(!user || user.stat != CONSCIOUS || user.loc != src || state_open)
 			return
 		user.visible_message(span_warning("[user] successfully broke out of [src]!"), \
-			span_notice("You successfully break out of [src]!"))
+			span_notice("I successfully break out of [src]!"))
 		open_machine()
 
 /obj/machinery/abductor/experiment/ui_status(mob/user)
@@ -136,11 +136,11 @@
 		sleep(5)
 		switch(text2num(type))
 			if(1)
-				to_chat(H, span_warning("You feel violated."))
+				to_chat(H, span_warning("I feel violated."))
 			if(2)
-				to_chat(H, span_warning("You feel yourself being sliced apart and put back together."))
+				to_chat(H, span_warning("I feel yourself being sliced apart and put back together."))
 			if(3)
-				to_chat(H, span_warning("You feel intensely watched."))
+				to_chat(H, span_warning("I feel intensely watched."))
 		sleep(5)
 		user_abductor.team.abductees += H.mind
 		H.mind.add_antag_datum(/datum/antagonist/abductee)

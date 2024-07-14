@@ -65,10 +65,10 @@
 	update_icon()
 	if (num_unloaded)
 		if(just_empties)
-			to_chat(user, span_notice("You unload [num_unloaded] empty shell\s from [src]."))
+			to_chat(user, span_notice("I unload [num_unloaded] empty shell\s from [src]."))
 			return TRUE
 		else
-			to_chat(user, span_notice("You unload [num_unloaded] live round\s from [src]."))
+			to_chat(user, span_notice("I unload [num_unloaded] live round\s from [src]."))
 			return TRUE
 	else if(just_empties)
 		return eject_shells(user, FALSE) // try again!
@@ -84,7 +84,7 @@
 		return
 
 	if(do_spin())
-		usr.visible_message("[usr] spins [src]'s chamber.", span_notice("You spin [src]'s chamber."))
+		usr.visible_message("[usr] spins [src]'s chamber.", span_notice("I spin [src]'s chamber."))
 		playsound(src, 'sound/f13weapons/revolverspin.ogg', 30, 1)
 	else
 		verbs -= /obj/item/gun/ballistic/revolver/verb/spin
@@ -165,7 +165,7 @@
 	if(..())
 		return TRUE
 	if(!(CALIBER_357 in magazine.caliber))
-		to_chat(user, span_notice("You begin to reinforce the barrel of [src]..."))
+		to_chat(user, span_notice("I begin to reinforce the barrel of [src]..."))
 		if(magazine.ammo_count())
 			afterattack(user, user)	//you know the drill
 			user.visible_message(span_danger("[src] goes off!"), span_userdanger("[src] goes off in your face!"))
@@ -173,7 +173,7 @@
 		if(I.use_tool(src, user, 30))
 			magazine.caliber |= CALIBER_357
 			desc = "The barrel and chamber assembly seems to have been modified."
-			to_chat(user, span_notice("You reinforce the barrel of [src]. Now it will fire .357 rounds."))
+			to_chat(user, span_notice("I reinforce the barrel of [src]. Now it will fire .357 rounds."))
 	return TRUE */
 
 /* * * * * * * * * * *
@@ -962,7 +962,7 @@
 
 /obj/item/gun/ballistic/revolver/needler
 	name = "Needler pistol"
-	desc = "You suspect this Bringham needler pistol was once used in scientific field studies. It uses small hard-plastic hypodermic darts as ammo. "
+	desc = "I suspect this Bringham needler pistol was once used in scientific field studies. It uses small hard-plastic hypodermic darts as ammo. "
 	icon_state = "needler"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/revneedler
 	weapon_class = WEAPON_CLASS_SMALL
@@ -1047,7 +1047,7 @@
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		if(!spun)
-			to_chat(user, span_warning("You need to spin \the [src]'s chamber first!"))
+			to_chat(user, span_warning("I need to spin \the [src]'s chamber first!"))
 			return
 
 		spun = FALSE
@@ -1061,7 +1061,7 @@
 				if(zone == BODY_ZONE_HEAD || zone == BODY_ZONE_PRECISE_EYES || zone == BODY_ZONE_PRECISE_MOUTH)
 					shoot_self(user, affecting)
 				else
-					user.visible_message(span_danger("[user.name] cowardly fires [src] at [user.p_their()] [affecting.name]!"), span_userdanger("You cowardly fire [src] at your [affecting.name]!"), span_italic("You hear a gunshot!"))
+					user.visible_message(span_danger("[user.name] cowardly fires [src] at [user.p_their()] [affecting.name]!"), span_userdanger("I cowardly fire [src] at your [affecting.name]!"), span_italic("I hear a gunshot!"))
 				chambered = null
 				return
 
@@ -1075,7 +1075,7 @@
 
 /obj/item/gun/ballistic/revolver/russian/proc/shoot_self(mob/living/carbon/human/user, affecting = BODY_ZONE_HEAD)
 	user.apply_damage(300, BRUTE, affecting)
-	user.visible_message(span_danger("[user.name] fires [src] at [user.p_their()] head!"), span_userdanger("You fire [src] at your head!"), span_italic("You hear a gunshot!"))
+	user.visible_message(span_danger("[user.name] fires [src] at [user.p_their()] head!"), span_userdanger("I fire [src] at your head!"), span_italic("I hear a gunshot!"))
 
 /obj/item/gun/ballistic/revolver/russian/soul
 	name = "cursed Russian revolver"
@@ -1100,11 +1100,11 @@
 	if(istype(A, /obj/item/stack/cable_coil) && !sawn_off)
 		if(A.use_tool(src, user, 0, 10, skill_gain_mult = EASY_USE_TOOL_MULT))
 			slot_flags = INV_SLOTBIT_BACK
-			to_chat(user, span_notice("You tie the lengths of cable to the shotgun, making a sling."))
+			to_chat(user, span_notice("I tie the lengths of cable to the shotgun, making a sling."))
 			slung = TRUE
 			update_icon()
 		else
-			to_chat(user, span_warning("You need at least ten lengths of cable if you want to make a sling!"))
+			to_chat(user, span_warning("I need at least ten lengths of cable if you want to make a sling!"))
 
 /obj/item/gun/ballistic/revolver/doublebarrel/improvised/update_overlays()
 	. = ..()
@@ -1129,7 +1129,7 @@
 		CB.update_icon()
 		num_unloaded++
 	if (num_unloaded)
-		to_chat(user, span_notice("You break open \the [src] and unload [num_unloaded] shell\s."))
+		to_chat(user, span_notice("I break open \the [src] and unload [num_unloaded] shell\s."))
 	else
 		to_chat(user, span_warning("[src] is empty!"))
 
@@ -1224,7 +1224,7 @@
 		else
 			playsound(src, "gun_remove_empty_magazine", 70, 1)
 		magazine = null
-		to_chat(user, span_notice("You pull the magazine out of [src]."))
+		to_chat(user, span_notice("I pull the magazine out of [src]."))
 		if(chambered)
 			chambered = null
 		update_icon()
@@ -1260,7 +1260,7 @@
 	if((HAS_TRAIT(user, TRAIT_CLUMSY)) || (user.mind && HAS_TRAIT(user.mind, TRAIT_CLOWN_MENTALITY)))
 		return ..()
 	if(process_fire(user, user, FALSE, null, BODY_ZONE_HEAD))
-		user.visible_message(span_warning("[user] somehow manages to shoot [user.p_them()]self in the face!"), span_userdanger("You somehow shoot yourself in the face! How the hell?!"))
+		user.visible_message(span_warning("[user] somehow manages to shoot [user.p_them()]self in the face!"), span_userdanger("I somehow shoot yourself in the face! How the hell?!"))
 		user.emote("scream")
 		user.drop_all_held_items()
 		user.DefaultCombatKnockdown(80)

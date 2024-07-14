@@ -41,18 +41,18 @@
 	if(isanimal(user))
 		var/mob/living/simple_animal/S = user
 		if(!S.dextrous)
-			to_chat(user, span_warning("You aren't dextrous enough to do that!"))
+			to_chat(user, span_warning("I am not dextrous enough to do that!"))
 			return FALSE
 	else if(!ishuman(user))
 		return FALSE
 	if(user.get_active_held_item())
-		to_chat(user, span_warning("Your hands are full!"))
+		to_chat(user, span_warning("My hands are full!"))
 		return FALSE
 	if(source.buckled)
 		to_chat(user, span_warning("[source] is buckled to something!"))
 		return FALSE
 	if(source == user)
-		to_chat(user, span_warning("You can't pick yourself up."))
+		to_chat(user, span_warning("I can't pick yourself up."))
 		return FALSE
 	source.visible_message(span_warning("[user] starts picking up [source]."), \
 					span_userdanger("[user] starts picking you up!"))
@@ -61,7 +61,7 @@
 
 	source.visible_message(span_warning("[user] picks up [source]!"), \
 					span_userdanger("[user] picks you up!"))
-	to_chat(user, span_notice("You pick [source] up."))
+	to_chat(user, span_notice("I pick [source] up."))
 	// source.drop_all_held_items()
 	var/obj/item/clothing/head/mob_holder/holder = new(get_turf(source), source, worn_state, alt_worn, right_hand, left_hand, inv_slots)
 	holder.escape_on_find = escape_on_find
@@ -275,7 +275,7 @@
 	to_chat(held_mob, span_userdanger("The injury to [source] hurts you as well!"))
 	someone_hurt = TRUE
 	if(someone_hurt)
-		to_chat(source, span_userdanger("You feel a flinch inside your [loc]!"))
+		to_chat(source, span_userdanger("I feel a flinch inside your [loc]!"))
 
 /obj/item/clothing/head/mob_holder/assume_air(datum/gas_mixture/env)
 	var/atom/location = loc
@@ -360,7 +360,7 @@
 	var/numode = input(user, "Select a mode", "Yes its a dildo", mode) as null|anything in modes
 	if(numode in modes)
 		mode = numode
-		to_chat(user, span_notice("You set the mode to [mode]!"))
+		to_chat(user, span_notice("I set the mode to [mode]!"))
 		return
 	to_chat(user, span_warning("Never mind!!"))
 
@@ -397,5 +397,5 @@
 			target.mode()
 		if("Change Hands")
 			target.swap_hand()
-	to_chat(user, span_notice("You made [target] [mode] (you)!"))
+	to_chat(user, span_notice("I made [target] [mode] (you)!"))
 	return STOP_ATTACK_PROC_CHAIN

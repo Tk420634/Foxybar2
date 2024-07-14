@@ -55,7 +55,7 @@
 	rightcolumn += "Glass door: " + linkpretty("glass",null,glassdoor) + "<br><br>"
 	var/length = max(leftcolumn.len,rightcolumn.len)
 
-	var/dat = "You may move the model airlock around.  A new airlock will be built in its space when you click done, below.<hr><br>"
+	var/dat = "I may move the model airlock around.  A new airlock will be built in its space when you click done, below.<hr><br>"
 	dat += "<a href='?src=[REF(src)];rename'>Door name</a>: \"[doorname]\""
 	dat += "<table>"
 	for(var/i=1; i<=length; i++)

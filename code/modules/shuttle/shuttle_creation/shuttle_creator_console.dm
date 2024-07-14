@@ -1,7 +1,7 @@
 //============The internal camera console used for designating the area=============
 /obj/machinery/computer/camera_advanced/shuttle_creator
 	name = "internal shuttle creator console"
-	desc = "You should not have access to this, please report this as a bug"
+	desc = "I should not have access to this, please report this as a bug"
 	networks = list()
 	var/obj/item/shuttle_creator/owner_rsd
 	var/datum/action/innate/shuttle_creator/designate_area/area_action = new

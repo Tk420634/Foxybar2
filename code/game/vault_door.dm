@@ -103,10 +103,10 @@ GLOBAL_LIST_EMPTY(vault_doors)
 			if(!I.tool_start_check(user, amount=0))
 				return
 
-			to_chat(user, span_notice("You begin repairing [src]..."))
+			to_chat(user, span_notice("I begin repairing [src]..."))
 			if(I.use_tool(src, user, 40, volume=50))
 				obj_integrity += 50 //Only heal it slightly
-				to_chat(user, span_notice("You repair [src]."))
+				to_chat(user, span_notice("I repair [src]."))
 		else
 			to_chat(user, span_warning("[src] is already in good condition!"))
 		return

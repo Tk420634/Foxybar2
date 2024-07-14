@@ -29,7 +29,7 @@
 		return
 
 	if(istype(I, /obj/item/evidencebag))
-		to_chat(user, span_notice("You find putting an evidence bag in another evidence bag to be slightly absurd."))
+		to_chat(user, span_notice("I find putting an evidence bag in another evidence bag to be slightly absurd."))
 		return TRUE //now this is podracing
 
 	if(I.w_class > WEIGHT_CLASS_NORMAL)
@@ -46,8 +46,8 @@
 		if(!user.dropItemToGround(I))
 			return
 
-	user.visible_message("[user] puts [I] into [src].", span_notice("You put [I] inside [src]."),\
-	span_italic("You hear a rustle as someone puts something into a plastic bag."))
+	user.visible_message("[user] puts [I] into [src].", span_notice("I put [I] inside [src]."),\
+	span_italic("I hear a rustle as someone puts something into a plastic bag."))
 
 	icon_state = "evidence"
 
@@ -67,8 +67,8 @@
 /obj/item/evidencebag/attack_self(mob/user)
 	if(contents.len)
 		var/obj/item/I = contents[1]
-		user.visible_message("[user] takes [I] out of [src].", span_notice("You take [I] out of [src]."),\
-		span_italic("You hear someone rustle around in a plastic bag, and remove something."))
+		user.visible_message("[user] takes [I] out of [src].", span_notice("I take [I] out of [src]."),\
+		span_italic("I hear someone rustle around in a plastic bag, and remove something."))
 		cut_overlays()	//remove the overlays
 		user.put_in_hands(I)
 		w_class = WEIGHT_CLASS_TINY

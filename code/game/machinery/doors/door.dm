@@ -199,15 +199,15 @@
 			"[user] begins to try and open a lock!"
 		),
 		"mepicking" = list(
-			"You slide your tools into the lock...",
-			"You begin trying to jimmy the lock...",
-			"You begin raking the tumblers...",
+			"I slide your tools into the lock...",
+			"I begin trying to jimmy the lock...",
+			"I begin raking the tumblers...",
 			"This lock shouldn't take much longer..."
 		),
 		"blindpicking" = list(
 			"Is that metal clicking?",
 			"Is someone tapping metal together?",
-			"You hear an odd mechanical picking and scraping sound.",
+			"I hear an odd mechanical picking and scraping sound.",
 			"That's an odd metal noise..."
 		),
 		"failmessages" = list(

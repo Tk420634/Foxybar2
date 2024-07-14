@@ -31,10 +31,10 @@
 		to_chat(user, span_notice("[src] currently has no implant stored."))
 		return
 	if(!do_after(user, 20 SECONDS, TRUE, src))  // Surgery takes at least SOME time.
-		to_chat(user, span_warning("You need to hold still while the autosurgeon operates!"))
+		to_chat(user, span_warning("I need to hold still while the autosurgeon operates!"))
 		return
 	storedorgan.Insert(user)//insert stored organ into the user
-	user.visible_message(span_notice("[user] presses a button on [src], and you hear a short mechanical noise."), span_notice("You feel a sharp sting as [src] plunges into your body."))
+	user.visible_message(span_notice("[user] presses a button on [src], and you hear a short mechanical noise."), span_notice("I feel a sharp sting as [src] plunges into your body."))
 	playsound(get_turf(user), 'sound/weapons/circsawhit.ogg', 50, 1)
 	storedorgan = null
 	name = initial(name)
@@ -57,7 +57,7 @@
 		if(!user.transferItemToLoc(I, src))
 			return
 		storedorgan = I
-		to_chat(user, span_notice("You insert the [I] into [src]."))
+		to_chat(user, span_notice("I insert the [I] into [src]."))
 	else
 		return ..()
 
@@ -72,7 +72,7 @@
 			var/atom/movable/AM = J
 			AM.forceMove(drop_loc)
 
-		to_chat(user, span_notice("You remove the [storedorgan] from [src]."))
+		to_chat(user, span_notice("I remove the [storedorgan] from [src]."))
 		I.play_tool_sound(src)
 		storedorgan = null
 		if(uses != INFINITE)

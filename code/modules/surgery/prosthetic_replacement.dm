@@ -51,7 +51,7 @@
 			to_chat(user, span_warning("[tool] isn't the right type for [parse_zone(target_zone)]."))
 			return -1
 	else if(target_zone == BODY_ZONE_L_ARM || target_zone == BODY_ZONE_R_ARM)
-		display_results(user, target, span_notice("You begin to attach [tool] onto [target]..."),
+		display_results(user, target, span_notice("I begin to attach [tool] onto [target]..."),
 			"[user] begins to attach [tool] onto [target]'s [parse_zone(target_zone)].",
 			"[user] begins to attach something onto [target]'s [parse_zone(target_zone)].")
 	else
@@ -68,7 +68,7 @@
 		L.attach_limb(target)
 		if(organ_rejection_dam)
 			target.adjustToxLoss(organ_rejection_dam)
-		display_results(user, target, span_notice("You succeed in replacing [target]'s [parse_zone(target_zone)]."),
+		display_results(user, target, span_notice("I succeed in replacing [target]'s [parse_zone(target_zone)]."),
 			"[user] successfully replaces [target]'s [parse_zone(target_zone)] with [tool]!",
 			"[user] successfully replaces [target]'s [parse_zone(target_zone)]!")
 		return 1
@@ -76,7 +76,7 @@
 		var/obj/item/bodypart/L = target.newBodyPart(target_zone, FALSE, FALSE)
 		L.is_pseudopart = TRUE
 		L.attach_limb(target)
-		display_results(user, target, span_notice("You attach [tool]."),
+		display_results(user, target, span_notice("I attach [tool]."),
 			"[user] finishes attaching [tool]!",
 			"[user] finishes the attachment procedure!")
 		qdel(tool)

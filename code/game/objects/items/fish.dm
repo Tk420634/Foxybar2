@@ -24,10 +24,10 @@
 //butchering and other attack stuff goes here
 /obj/item/fishy/attackby(obj/item/W, mob/user, params)
 	if(W.get_sharpness())
-		to_chat(user, span_notice("You begin to butcher [src]..."))
+		to_chat(user, span_notice("I begin to butcher [src]..."))
 		playsound(user.loc, 'sound/effects/butcher.ogg', 50, TRUE, -1)
 		if(!do_after(user, 3 SECONDS, target = src))
-			to_chat(user, span_notice("You stop trying to butcher [src]..."))
+			to_chat(user, span_notice("I stop trying to butcher [src]..."))
 			return
 		if(meat_type)
 			var/turf/meat_turf = get_turf(src)
@@ -38,7 +38,7 @@
 			for(var/i in 1 to rand(1, max_secondary))
 				if(prob(secondary_chance))
 					new secondary_drop(second_turf)
-		to_chat(user, span_notice("You successfully butchered [src]."))
+		to_chat(user, span_notice("I successfully butchered [src]."))
 		qdel(src)
 		return
 	else

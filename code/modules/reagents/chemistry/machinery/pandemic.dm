@@ -245,7 +245,7 @@
 			return
 
 		beaker = I
-		to_chat(user, span_notice("You insert [I] into [src]."))
+		to_chat(user, span_notice("I insert [I] into [src]."))
 		update_icon()
 	else
 		return ..()

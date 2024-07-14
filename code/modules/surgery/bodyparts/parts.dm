@@ -91,9 +91,9 @@
 		switch(disabled)
 			if(BODYPART_DISABLED_DAMAGE)
 				owner.emote("scream")
-				to_chat(owner, span_userdanger("Your [name] is too damaged to function!"))
+				to_chat(owner, span_userdanger("My [name] is too damaged to function!"))
 			if(BODYPART_DISABLED_PARALYSIS)
-				to_chat(owner, span_userdanger("You can't feel your [name]!"))
+				to_chat(owner, span_userdanger("I can't feel your [name]!"))
 	if(held_index)
 		owner.dropItemToGround(owner.get_item_for_held_index(held_index))
 	if(owner.hud_used)
@@ -159,9 +159,9 @@
 		switch(disabled)
 			if(BODYPART_DISABLED_DAMAGE)
 				owner.emote("scream")
-				to_chat(owner, span_userdanger("Your [name] is too damaged to function!"))
+				to_chat(owner, span_userdanger("My [name] is too damaged to function!"))
 			if(BODYPART_DISABLED_PARALYSIS)
-				to_chat(owner, span_userdanger("You can't feel your [name]!"))
+				to_chat(owner, span_userdanger("I can't feel your [name]!"))
 	if(held_index)
 		owner.dropItemToGround(owner.get_item_for_held_index(held_index))
 	if(owner.hud_used)
@@ -223,9 +223,9 @@
 	switch(disabled)
 		if(BODYPART_DISABLED_DAMAGE)
 			owner.emote("scream")
-			to_chat(owner, span_userdanger("Your [name] is too damaged to function!"))
+			to_chat(owner, span_userdanger("My [name] is too damaged to function!"))
 		if(BODYPART_DISABLED_PARALYSIS)
-			to_chat(owner, span_userdanger("You can't feel your [name]!"))
+			to_chat(owner, span_userdanger("I can't feel your [name]!"))
 
 /obj/item/bodypart/l_leg/digitigrade
 	name = "left digitigrade leg"
@@ -258,7 +258,7 @@
 
 /obj/item/bodypart/r_leg
 	name = "right leg"
-	desc = "You put your right leg in, your right leg out. In, out, in, out, \
+	desc = "I put your right leg in, your right leg out. In, out, in, out, \
 		shake it all about. And apparently then it detaches.\n\
 		The hokey pokey has certainly changed a lot since space colonisation."
 	// alternative spellings of 'pokey' are availible
@@ -285,9 +285,9 @@
 	switch(disabled)
 		if(BODYPART_DISABLED_DAMAGE)
 			owner.emote("scream")
-			to_chat(owner, span_userdanger("Your [name] is too damaged to function!"))
+			to_chat(owner, span_userdanger("My [name] is too damaged to function!"))
 		if(BODYPART_DISABLED_PARALYSIS)
-			to_chat(owner, span_userdanger("You can't feel your [name]!"))
+			to_chat(owner, span_userdanger("I can't feel your [name]!"))
 
 /obj/item/bodypart/r_leg/digitigrade
 	name = "right digitigrade leg"
@@ -325,9 +325,9 @@ Cannibal Butchering
 /obj/item/bodypart/l_arm/attackby(obj/item/W, mob/user, params)
 	if(W.get_sharpness())
 		playsound(loc, 'sound/weapons/slice.ogg', 50, 1, -1)
-		user.visible_message("[user] starts cutting meat from \the [src].", span_notice("You start cutting meat from \the [src]..."), span_italic("You hear the sound of a knife rubbing against flesh."))
+		user.visible_message("[user] starts cutting meat from \the [src].", span_notice("I start cutting meat from \the [src]..."), span_italic("I hear the sound of a knife rubbing against flesh."))
 		if(do_after(user, 50, target = src))
-			to_chat(user, span_notice("You cut the meat from this limb."))
+			to_chat(user, span_notice("I cut the meat from this limb."))
 			new /obj/item/reagent_containers/food/snacks/meat/slab/human(user.drop_location(), 1)
 			new /obj/item/stack/sheet/bone(user.drop_location(), 2)
 			new /obj/item/stack/sheet/sinew(user.drop_location(), 1)
@@ -340,9 +340,9 @@ Cannibal Butchering
 /obj/item/bodypart/r_arm/attackby(obj/item/W, mob/user, params)
 	if(W.get_sharpness())
 		playsound(loc, 'sound/weapons/slice.ogg', 50, 1, -1)
-		user.visible_message("[user] starts cutting meat from \the [src].", span_notice("You start cutting meat from \the [src]..."), span_italic("You hear the sound of a knife rubbing against flesh."))
+		user.visible_message("[user] starts cutting meat from \the [src].", span_notice("I start cutting meat from \the [src]..."), span_italic("I hear the sound of a knife rubbing against flesh."))
 		if(do_after(user, 50, target = src))
-			to_chat(user, span_notice("You cut the meat from this limb."))
+			to_chat(user, span_notice("I cut the meat from this limb."))
 			new /obj/item/reagent_containers/food/snacks/meat/slab/human(user.drop_location(), 1)
 			new /obj/item/stack/sheet/bone(user.drop_location(), 2)
 			new /obj/item/stack/sheet/sinew(user.drop_location(), 1)
@@ -355,9 +355,9 @@ Cannibal Butchering
 /obj/item/bodypart/r_leg/attackby(obj/item/W, mob/user, params)
 	if(W.get_sharpness())
 		playsound(loc, 'sound/weapons/slice.ogg', 50, 1, -1)
-		user.visible_message("[user] starts cutting meat from \the [src].", span_notice("You start cutting meat from \the [src]..."), span_italic("You hear the sound of a knife rubbing against flesh."))
+		user.visible_message("[user] starts cutting meat from \the [src].", span_notice("I start cutting meat from \the [src]..."), span_italic("I hear the sound of a knife rubbing against flesh."))
 		if(do_after(user, 50, target = src))
-			to_chat(user, span_notice("You cut the meat from this limb."))
+			to_chat(user, span_notice("I cut the meat from this limb."))
 			new /obj/item/reagent_containers/food/snacks/meat/slab/human(user.drop_location(), 1)
 			new /obj/item/stack/sheet/bone(user.drop_location(), 2)
 			new /obj/item/stack/sheet/sinew(user.drop_location(), 1)
@@ -370,9 +370,9 @@ Cannibal Butchering
 /obj/item/bodypart/l_leg/attackby(obj/item/W, mob/user, params)
 	if(W.get_sharpness())
 		playsound(loc, 'sound/weapons/slice.ogg', 50, 1, -1)
-		user.visible_message("[user] starts cutting meat from \the [src].", span_notice("You start cutting meat from \the [src]..."), span_italic("You hear the sound of a knife rubbing against flesh."))
+		user.visible_message("[user] starts cutting meat from \the [src].", span_notice("I start cutting meat from \the [src]..."), span_italic("I hear the sound of a knife rubbing against flesh."))
 		if(do_after(user, 50, target = src))
-			to_chat(user, span_notice("You cut the meat from this limb."))
+			to_chat(user, span_notice("I cut the meat from this limb."))
 			new /obj/item/reagent_containers/food/snacks/meat/slab/human(user.drop_location(), 1)
 			new /obj/item/stack/sheet/bone(user.drop_location(), 2)
 			new /obj/item/stack/sheet/sinew(user.drop_location(), 1)

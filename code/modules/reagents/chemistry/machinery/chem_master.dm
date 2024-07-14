@@ -98,24 +98,24 @@
 	if(istype(I, /obj/item/reagent_containers) && !(I.item_flags & ABSTRACT) && I.is_open_container())
 		. = TRUE // no afterattack
 		if(panel_open)
-			to_chat(user, span_warning("You can't use the [src.name] while its panel is opened!"))
+			to_chat(user, span_warning("I can't use the [src.name] while its panel is opened!"))
 			return
 		var/obj/item/reagent_containers/B = I
 		if(!user.transferItemToLoc(B, src))
 			return
 		replace_beaker(user, B)
-		to_chat(user, span_notice("You add [B] to [src]."))
+		to_chat(user, span_notice("I add [B] to [src]."))
 		updateUsrDialog()
 		update_icon()
 	else if(!condi && istype(I, /obj/item/storage/pill_bottle))
 		. = TRUE // no afterattack
 		if(panel_open)
-			to_chat(user, span_warning("You can't use the [src.name] while its panel is opened!"))
+			to_chat(user, span_warning("I can't use the [src.name] while its panel is opened!"))
 			return
 		if(!user.transferItemToLoc(I, src))
 			return
 		replace_pillbottle(user, I)
-		to_chat(user, span_notice("You add [I] into the dispenser slot."))
+		to_chat(user, span_notice("I add [I] into the dispenser slot."))
 		updateUsrDialog()
 	else
 		return ..()
@@ -170,7 +170,7 @@
 			ui.open()
 	else
 		if(!user.IsAdvancedToolUser() && !istype(src, /obj/machinery/chem_master/condimaster))
-			to_chat(user, span_warning("You stare at a machine you'll never understand."))
+			to_chat(user, span_warning("I stare at a machine you'll never understand."))
 			return
 		if(!HAS_TRAIT(user, TRAIT_CHEMWHIZ) && !istype(src, /obj/machinery/chem_master/condimaster))
 			to_chat(user, span_warning("Try as you might, you have no clue how to work this thing."))
@@ -549,7 +549,7 @@
 		if(!user.transferItemToLoc(B, src))
 			return
 		replace_beaker(user, B)
-		to_chat(user, span_notice("You add [B] to [src]."))
+		to_chat(user, span_notice("I add [B] to [src]."))
 		updateUsrDialog()
 		update_icon()
 	else if(!condi && istype(I, /obj/item/storage/pill_bottle))
@@ -557,7 +557,7 @@
 		if(!user.transferItemToLoc(I, src))
 			return
 		replace_pillbottle(user, I)
-		to_chat(user, span_notice("You add [I] into the dispenser slot."))
+		to_chat(user, span_notice("I add [I] into the dispenser slot."))
 		updateUsrDialog()
 	else
 		return ..()
@@ -605,7 +605,7 @@
 	if(istype(I, /obj/item/reagent_containers) && !(I.item_flags & ABSTRACT) && I.is_open_container())
 		. = 1 // no afterattack
 		if(panel_open)
-			to_chat(user, span_warning("You can't use the [src.name] while its panel is opened!"))
+			to_chat(user, span_warning("I can't use the [src.name] while its panel is opened!"))
 			return
 		if(beaker)
 			to_chat(user, span_warning("A container is already loaded into [src]!"))
@@ -614,7 +614,7 @@
 			return
 
 		beaker = I
-		to_chat(user, span_notice("You add [I] to [src]."))
+		to_chat(user, span_notice("I add [I] to [src]."))
 		src.updateUsrDialog()
 		update_icon()
 
@@ -626,7 +626,7 @@
 			return
 
 		bottle = I
-		to_chat(user, span_notice("You add [I] into the dispenser slot."))
+		to_chat(user, span_notice("I add [I] into the dispenser slot."))
 		src.updateUsrDialog()
 	else
 		return ..()

@@ -167,8 +167,8 @@
 	action_icon_state = "rust_wave"
 	action_background_icon_state = "bg_ecult"
 	sound = 'sound/effects/curse5.ogg'
-	active_msg = "You extend your hand out, preparing to send out a wave of rust."
-	deactive_msg = "You extinguish that energy, for now..."
+	active_msg = "I extend your hand out, preparing to send out a wave of rust."
+	deactive_msg = "I extinguish that energy, for now..."
 	invocation = "RUD'ZI VAR'ZTAS"
 	invocation_type = "whisper"
 
@@ -238,11 +238,11 @@
 		if(target.anti_magic_check())
 			to_chat(user, span_warning("The spell had no effect!"))
 			target.visible_message(span_danger("[target]'s veins flash with fire, but their magic protection repulses the blaze!"), \
-							span_danger("Your veins flash with fire, but your magic protection repels the blaze!"))
+							span_danger("My veins flash with fire, but your magic protection repels the blaze!"))
 			continue
 
 		target.visible_message(span_danger("[target]'s veins are shredded from within as an unholy blaze erupts from their blood!"), \
-							span_danger("Your veins burst from within and unholy flame erupts from your blood!"))
+							span_danger("My veins burst from within and unholy flame erupts from your blood!"))
 		var/obj/item/bodypart/bodypart = pick(target.bodyparts)
 		var/datum/wound/bleed/slash/critical/crit_wound = new
 		crit_wound.apply_wound(bodypart)
@@ -255,7 +255,7 @@
 		return FALSE
 	if(!istype(target,/mob/living/carbon/human))
 		if(!silent)
-			to_chat(user, span_warning("You are unable to cleave [target]!"))
+			to_chat(user, span_warning("I am unable to cleave [target]!"))
 		return FALSE
 	return TRUE
 
@@ -517,7 +517,7 @@
 /obj/effect/proc_holder/spell/targeted/worm_contract/cast(list/targets, mob/user)
 	. = ..()
 	if(!istype(user,/mob/living/simple_animal/hostile/eldritch/armsy))
-		to_chat(user, span_userdanger("You try to contract your muscles but nothing happens..."))
+		to_chat(user, span_userdanger("I try to contract your muscles but nothing happens..."))
 	var/mob/living/simple_animal/hostile/eldritch/armsy/armsy = user
 	armsy.contract_next_chain_into_single_tile()
 
@@ -586,15 +586,15 @@
 
 	var/mob/living/target = targets[1]
 
-	to_chat(originator, span_notice("You begin linking [target]'s mind to yours..."))
-	to_chat(target, span_warning("You feel your mind being pulled... connected... intertwined with the very fabric of reality..."))
+	to_chat(originator, span_notice("I begin linking [target]'s mind to yours..."))
+	to_chat(target, span_warning("I feel your mind being pulled... connected... intertwined with the very fabric of reality..."))
 	if(!do_after(originator, 6 SECONDS, target))
 		return
 	if(!originator.link_mob(target))
-		to_chat(originator, span_warning("You can't seem to link [target]'s mind..."))
+		to_chat(originator, span_warning("I can't seem to link [target]'s mind..."))
 		to_chat(target, span_warning("The foreign presence leaves your mind."))
 		return
-	to_chat(originator, span_notice("You connect [target]'s mind to your mansus link!"))
+	to_chat(originator, span_notice("I connect [target]'s mind to your mansus link!"))
 
 
 /datum/action/innate/mansus_speech
@@ -651,7 +651,7 @@
 	action_background_icon_state = "bg_ecult"
 	action_icon = 'icons/mob/actions/actions_ecult.dmi'
 	action_icon_state = "mute"
-	active_msg = "You prepare to silence a target..."
+	active_msg = "I prepare to silence a target..."
 
 /obj/effect/proc_holder/spell/targeted/genetic/mute
 	mutations = list(MUT_MUTE)
@@ -665,7 +665,7 @@
 		return FALSE
 	if(!isliving(target))
 		if(!silent)
-			to_chat(user, span_warning("You can only silence living beings!"))
+			to_chat(user, span_warning("I can only silence living beings!"))
 		return FALSE
 	return TRUE
 */

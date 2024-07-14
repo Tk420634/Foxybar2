@@ -70,7 +70,7 @@
 			if (LAZYLEN(buckled_mobs))
 				if (user.a_intent == INTENT_HARM)
 					user.visible_message(span_warning("[user] begins to pull the lever!"),
-										span_warning("You begin to the pull the lever."))
+										span_warning("I begin to the pull the lever."))
 					current_action = GUILLOTINE_ACTION_INUSE
 
 					if (do_after(user, GUILLOTINE_ACTIVATE_DELAY, target = src) && blade_status == GUILLOTINE_BLADE_RAISED)
@@ -158,7 +158,7 @@
 				if(do_after(user, 7, target = src))
 					blade_status = GUILLOTINE_BLADE_RAISED
 					user.visible_message(span_notice("[user] sharpens the large blade of the guillotine."),
-										span_notice("You sharpen the large blade of the guillotine."))
+										span_notice("I sharpen the large blade of the guillotine."))
 					blade_sharpness += 1
 					playsound(src, 'sound/items/unsheath.ogg', 100, 1)
 					return
@@ -169,7 +169,7 @@
 				to_chat(user, span_warning("The blade is sharp enough!"))
 				return
 		else
-			to_chat(user, span_warning("You need to raise the blade in order to sharpen it!"))
+			to_chat(user, span_warning("I need to raise the blade in order to sharpen it!"))
 			return
 	else
 		return ..()
@@ -184,7 +184,7 @@
 		return FALSE // Can't decapitate non-humans
 
 	if (blade_status != GUILLOTINE_BLADE_RAISED)
-		to_chat(usr, span_warning("You need to raise the blade before buckling someone in!"))
+		to_chat(usr, span_warning("I need to raise the blade before buckling someone in!"))
 		return FALSE
 
 	return ..(M, force, FALSE)

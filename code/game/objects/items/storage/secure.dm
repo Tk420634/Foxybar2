@@ -39,7 +39,7 @@
 		if (istype(W, /obj/item/screwdriver))
 			if (W.use_tool(src, user, 20))
 				open =! open
-				to_chat(user, span_notice("You [open ? "open" : "close"] the service panel."))
+				to_chat(user, span_notice("I [open ? "open" : "close"] the service panel."))
 			return
 		if (istype(W, /obj/item/wirecutters))
 			to_chat(user, span_danger("[src] is protected from this sort of tampering, yet it appears the internal memory wires can still be <b>pulsed</b>."))
@@ -54,7 +54,7 @@
 				else
 					l_hacking = 0
 			else
-				to_chat(user, span_notice("You must <b>unscrew</b> the service panel before you can pulse the wiring."))
+				to_chat(user, span_notice("I must <b>unscrew</b> the service panel before you can pulse the wiring."))
 			return
 		//At this point you have exhausted all the special things to do when locked
 		// ... but it's still locked.

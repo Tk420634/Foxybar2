@@ -56,7 +56,7 @@
 		return
 	if(!patient_insertion_check(target))
 		return
-	occupant_message(span_notice("You start putting [target] into [src]..."))
+	occupant_message(span_notice("I start putting [target] into [src]..."))
 	chassis.visible_message(span_warning("[chassis] starts putting [target] into \the [src]."))
 	if(do_after_cooldown(target))
 		if(!patient_insertion_check(target))

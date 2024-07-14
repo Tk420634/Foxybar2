@@ -117,14 +117,14 @@
 			if(!isturf(loc) || isspaceturf(loc))
 				to_chat(user, span_notice("The bomb must be placed on solid ground to attach it."))
 			else
-				to_chat(user, span_notice("You firmly wrench the bomb to the floor."))
+				to_chat(user, span_notice("I firmly wrench the bomb to the floor."))
 				I.play_tool_sound(src)
 				setAnchored(TRUE)
 				if(active)
 					to_chat(user, span_notice("The bolts lock in place."))
 		else
 			if(!active)
-				to_chat(user, span_notice("You wrench the bomb from the floor."))
+				to_chat(user, span_notice("I wrench the bomb from the floor."))
 				I.play_tool_sound(src)
 				setAnchored(FALSE)
 			else
@@ -133,7 +133,7 @@
 	else if(istype(I, /obj/item/screwdriver))
 		open_panel = !open_panel
 		update_icon()
-		to_chat(user, span_notice("You [open_panel ? "open" : "close"] the wire panel."))
+		to_chat(user, span_notice("I [open_panel ? "open" : "close"] the wire panel."))
 
 	else if(is_wire_tool(I) && open_panel)
 		wires.interact(user)
@@ -141,7 +141,7 @@
 	else if(istype(I, /obj/item/crowbar))
 		if(open_panel && wires.is_all_cut())
 			if(payload)
-				to_chat(user, span_notice("You carefully pry out [payload]."))
+				to_chat(user, span_notice("I carefully pry out [payload]."))
 				payload.forceMove(drop_location())
 				payload = null
 			else
@@ -155,7 +155,7 @@
 			if(!user.transferItemToLoc(I, src))
 				return
 			payload = I
-			to_chat(user, span_notice("You place [payload] into [src]."))
+			to_chat(user, span_notice("I place [payload] into [src]."))
 		else
 			to_chat(user, span_warning("[payload] is already loaded into [src]! You'll have to remove it first."))
 	else if(istype(I, /obj/item/weldingtool))
@@ -165,9 +165,9 @@
 		if(!I.tool_start_check(user, amount=5))  //uses up 5 fuel
 			return
 
-		to_chat(user, span_notice("You start to cut [src] apart..."))
+		to_chat(user, span_notice("I start to cut [src] apart..."))
 		if(I.use_tool(src, user, 20, volume=50, amount=5)) //uses up 5 fuel
-			to_chat(user, span_notice("You cut [src] apart."))
+			to_chat(user, span_notice("I cut [src] apart."))
 			new /obj/item/stack/sheet/plasteel( loc, 5)
 			qdel(src)
 	else
@@ -432,7 +432,7 @@
 			if(!user.transferItemToLoc(I, src))
 				return
 			beakers += I
-			to_chat(user, span_notice("You load [src] with [I]."))
+			to_chat(user, span_notice("I load [src] with [I]."))
 		else
 			to_chat(user, span_warning("[I] won't fit! \The [src] can only hold up to [max_beakers] containers."))
 			return
@@ -485,7 +485,7 @@
 
 /obj/item/syndicatedetonator
 	name = "big red button"
-	desc = "Your standard issue bomb synchronizing button. Two second safety delay to prevent 'accidents'."
+	desc = "My standard issue bomb synchronizing button. Two second safety delay to prevent 'accidents'."
 	icon = 'icons/obj/assemblies.dmi'
 	icon_state = "bigred"
 	item_state = "electronic"

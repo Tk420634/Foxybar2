@@ -121,5 +121,5 @@
 		!peeker.is_eyes_covered(FALSE) && !(eye_blocker && eye_blocker.tint > 0) && \
 		!(peeker.invisibility > peeked.invisibility) && !(peeker.alpha <= 30)))
 		return
-	to_chat(peeked, span_warning("You notice [peeker] looking under your [worn_uniform.name]!"))
+	to_chat(peeked, span_warning("I notice [peeker] looking under your [worn_uniform.name]!"))
 	to_chat(peeker, span_warning("[peeked] notices you peeking under [peeked.p_their()] [worn_uniform.name]!"))

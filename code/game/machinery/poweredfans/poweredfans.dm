@@ -28,7 +28,7 @@
 
 /obj/machinery/poweredfans/wirecutter_act(mob/living/user, obj/item/I)
 	user.visible_message(span_warning("[user] removes the wires from the [src]."),
-		span_notice("You start to remove the wires from the [src]..."), "You hear clanking and banging noises.")
+		span_notice("I start to remove the wires from the [src]..."), "I hear clanking and banging noises.")
 	if(I.use_tool(src, user, 30, volume=50))
 		deconstruct()
 	return TRUE

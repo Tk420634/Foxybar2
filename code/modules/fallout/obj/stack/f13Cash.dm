@@ -142,8 +142,8 @@
 			sleep(15)
 			if(loc == oldloc && user && !user.incapacitated(allow_crit = TRUE))
 				user.visible_message("[user] has flipped [src]. It lands on [coinflip].", \
-									span_notice("You flip [src]. It lands on [coinflip]."), \
-									span_italic("You hear the clattering of loose change."))
+									span_notice("I flip [src]. It lands on [coinflip]."), \
+									span_italic("I hear the clattering of loose change."))
 		return TRUE//did the coin flip? Not really useful anymore!
 
 

@@ -57,7 +57,7 @@
 
 /obj/item/grown/log/attackby(obj/item/W, mob/user, params)
 	if(W.sharpness)
-		user.show_message(span_notice("You make [plank_name] out of \the [src]!"), MSG_VISUAL)
+		user.show_message(span_notice("I make [plank_name] out of \the [src]!"), MSG_VISUAL)
 		var/seed_modifier = 3
 		if(seed)
 			seed_modifier = round(seed.potency / 25)
@@ -68,14 +68,14 @@
 			if(ST != plank && istype(ST, plank_type) && ST.amount < ST.max_amount)
 				ST.attackby(plank, user) //we try to transfer all old unfinished stacks to the new stack we created.
 		if(plank.amount > old_plank_amount)
-			to_chat(user, span_notice("You add the newly-formed [plank_name] to the stack. It now contains [plank.amount] [plank_name]."))
+			to_chat(user, span_notice("I add the newly-formed [plank_name] to the stack. It now contains [plank.amount] [plank_name]."))
 		*/
 		qdel(src)
 
 	if(CheckAccepted(W))
 		var/obj/item/reagent_containers/food/snacks/grown/leaf = W
 		if(leaf.dry)
-			user.show_message(span_notice("You wrap \the [W] around the log, turning it into a torch!"))
+			user.show_message(span_notice("I wrap \the [W] around the log, turning it into a torch!"))
 			var/obj/item/flashlight/flare/torch/T = new /obj/item/flashlight/flare/torch(user.loc)
 			usr.dropItemToGround(W)
 			usr.put_in_active_hand(T)
@@ -242,13 +242,13 @@
 	if(istype(W, /obj/item/stack/sheet/mineral/sandstone) && !stones)
 		var/obj/item/stack/sheet/mineral/sandstone/stone = W
 		if(stone.use(3))
-			to_chat(user, span_warning("You surround \the [src] with stones to make it safer."))
+			to_chat(user, span_warning("I surround \the [src] with stones to make it safer."))
 			density = TRUE
 			stones = TRUE
 			add_overlay("bonfire_stones")
 			return
 		else
-			to_chat(user, span_warning("You do not have enough [W] to surround \the [src] with stones."))
+			to_chat(user, span_warning("I do not have enough [W] to surround \the [src] with stones."))
 			return
 	//STAKE AND GRILL. Use metal rods to add either a stake to burn your enemies on, or a grill to cook food like a microwave.
 	if(istype(W, /obj/item/stack/rods) && !can_buckle && !grill)
@@ -300,7 +300,7 @@
 
 /obj/structure/bonfire/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
 	if(burning)
-		to_chat(user, span_warning("You need to extinguish [src] before removing the logs!"))
+		to_chat(user, span_warning("I need to extinguish [src] before removing the logs!"))
 		return
 	if(!has_buckled_mobs() && do_after(user, 50, target = src))
 		for(var/I in 1 to 5)
@@ -390,26 +390,26 @@
 
 /obj/structure/bonfire/proc/attempt_smoke_signal(obj/item/stack/sheet/cloth/sheet, mob/living/user, )
 	if(!is_type_in_list(get_area(src), GLOB.outdoor_areas))
-		to_chat(user, span_warning("You must be outside to send a smoke signal."))
+		to_chat(user, span_warning("I must be outside to send a smoke signal."))
 		return
 	var/signalmessage = stripped_input(user, "What would you like to send via smoke signal?", "Smoke Signal")
 	if(!signalmessage)
 		return
 	var/send_time = length(signalmessage) * 2 //Deciseconds. A 10 character message would take 20 deciseconds, or two seconds, to send.
 	if(!user.canUseTopic(src, BE_CLOSE))
-		to_chat(user, span_warning("You have to stand still to send a smoke signal."))
-		to_chat(user, span_warning("You attempted to send: [signalmessage]"))
+		to_chat(user, span_warning("I have to stand still to send a smoke signal."))
+		to_chat(user, span_warning("I attempted to send: [signalmessage]"))
 		return
 	if(do_after(user, send_time, target = src))
 		if(!sheet.use(1))
-			to_chat(user, span_warning("You don't have enough cloth to send a smoke signal."))
-			to_chat(user, span_warning("You attempted to send: [signalmessage]"))
+			to_chat(user, span_warning("I don't have enough cloth to send a smoke signal."))
+			to_chat(user, span_warning("I attempted to send: [signalmessage]"))
 			return
 		smoke_signal(user, signalmessage, src)
 		user.visible_message("[user] burns \the [sheet] in short, controlled bursts.")
 	else
-		to_chat(user, span_warning("You have to stand still to send a smoke signal."))
-		to_chat(user, span_warning("You attempted to send: [signalmessage]"))
+		to_chat(user, span_warning("I have to stand still to send a smoke signal."))
+		to_chat(user, span_warning("I attempted to send: [signalmessage]"))
 		return
 	
 
@@ -419,7 +419,7 @@
 
 	for(var/mob/player in GLOB.player_list)
 		if(player == M)
-			var/msg = span_engradio("You send a message by smoke signal: "+span_papyrus("\"[message]\""))
+			var/msg = span_engradio("I send a message by smoke signal: "+span_papyrus("\"[message]\""))
 			to_chat(player, msg)
 			continue
 		if(istype(player, /mob/dead))

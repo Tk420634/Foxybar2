@@ -10,7 +10,7 @@
 /obj/item/modkit/pre_attack(obj/item/I, mob/user)
 	if(is_type_in_list(I, target_items))
 		var/obj/item/R = new result_item(get_turf(user))
-		to_chat(user, span_notice("You apply the [src] to [I], using the custom parts to turn it into [R]."))
+		to_chat(user, span_notice("I apply the [src] to [I], using the custom parts to turn it into [R]."))
 		remove_item_from_storage(I)
 		qdel(I)
 		user.put_in_hands(R)

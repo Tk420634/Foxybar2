@@ -30,7 +30,7 @@
 			if (!user.transferItemToLoc(W,src))
 				return
 			id = W
-			to_chat(user, span_notice("You insert [W]."))
+			to_chat(user, span_notice("I insert [W]."))
 			return
 		else
 			to_chat(user, span_notice("There's an ID inserted already."))

@@ -288,7 +288,7 @@
       power to prevent death, but will turn you into dust if removed.'
 2018-05-22:
   Cyberboss:
-  - rscadd: You can now view your last round end report window with the "Your last
+  - rscadd: You can now view your last round end report window with the "My last
       round" verb in the OOC tab
   Dax Dupont:
   - tweak: The BoH dialog now has Abort instead of Proceed as an default option.
@@ -327,7 +327,7 @@
       else updates.
   - bugfix: Opening and closing airlocks repeatedly no longer stacks queued autocloses.
   - bugfix: Admin AI interaction now works properly on firelocks.
-  - spellcheck: Fix "Your the wormhole jaunter" when a wormhole jaunter saves you
+  - spellcheck: Fix "My the wormhole jaunter" when a wormhole jaunter saves you
       from a chasm.
   Wilchen:
   - rscdel: Removed box of firing pins from rd's locker
@@ -420,7 +420,7 @@
   SpaceManiac:
   - bugfix: Non-harmfully placing someone who is resting on a table no longer makes
       them get up.
-  - bugfix: The disco machine no longer lags the chat by spamming "You are now resting!"
+  - bugfix: The disco machine no longer lags the chat by spamming "I am now resting!"
       messages.
   - bugfix: The green overlay indicating where a map template will be placed is no
       longer invisible on space turfs.

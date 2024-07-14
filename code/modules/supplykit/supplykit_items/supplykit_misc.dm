@@ -76,7 +76,7 @@
 
 /datum/supplykit_item/misc/music
 	name = "Musical Instrument"
-	desc = "Your choice of a musical instrument, for bolstering the mood and wellbeing of those around you."
+	desc = "My choice of a musical instrument, for bolstering the mood and wellbeing of those around you."
 	item = /obj/item/choice_beacon/music
 	cost = 5
 

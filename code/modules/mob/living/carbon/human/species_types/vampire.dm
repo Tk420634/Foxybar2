@@ -13,7 +13,7 @@
 	blacklisted = TRUE
 	limbs_id = "human"
 	skinned_type = /obj/item/stack/sheet/animalhide/human
-	var/info_text = "You are a <span class='danger'>Vampire</span>. You will slowly but constantly lose blood if outside of a coffin. If inside a coffin, you will slowly heal. You may gain more blood by grabbing a live victim and using your drain ability."
+	var/info_text = "I am a <span class='danger'>Vampire</span>. You will slowly but constantly lose blood if outside of a coffin. If inside a coffin, you will slowly heal. You may gain more blood by grabbing a live victim and using your drain ability."
 	species_type = "undead"
 
 /datum/species/vampire/check_roundstart_eligible()
@@ -49,11 +49,11 @@
 		return
 	C.blood_volume -= 0.75 //Will take roughly 19.5 minutes to die from standard blood volume, roughly 83 minutes to die from max blood volume.
 	if(C.get_blood(FALSE) <= (BLOOD_VOLUME_SURVIVE*C.blood_ratio))
-		to_chat(C, span_danger("You ran out of blood!"))
+		to_chat(C, span_danger("I ran out of blood!"))
 		C.dust()
 	var/area/A = get_area(C)
 	if(istype(A, /area/chapel))
-		to_chat(C, span_danger("You don't belong here!"))
+		to_chat(C, span_danger("I don't belong here!"))
 		C.adjustFireLoss(5)
 		C.adjust_fire_stacks(6)
 		C.IgniteMob()
@@ -76,7 +76,7 @@
 		var/mob/living/carbon/H = owner
 		var/obj/item/organ/tongue/vampire/V = target
 		if(V.drain_cooldown >= world.time)
-			to_chat(H, span_notice("You just drained blood, wait a few seconds."))
+			to_chat(H, span_notice("I just drained blood, wait a few seconds."))
 			return
 		if(H.pulling && iscarbon(H.pulling))
 			var/mob/living/carbon/victim = H.pulling
@@ -87,7 +87,7 @@
 			if(!blood_sucking_checks(victim, TRUE, FALSE))
 				return
 			if(victim.stat == DEAD)
-				to_chat(H, span_notice("You need a living victim!"))
+				to_chat(H, span_notice("I need a living victim!"))
 				return
 			if(!victim.blood_volume || (victim.dna && ((NOBLOOD in victim.dna.species.species_traits) || victim.dna.species.exotic_blood)))
 				to_chat(H, span_notice("[victim] doesn't have blood!"))
@@ -105,12 +105,12 @@
 			var/blood_volume_difference = BLOOD_VOLUME_MAXIMUM - H.blood_volume //How much capacity we have left to absorb blood
 			var/drained_blood = min(victim.blood_volume, VAMP_DRAIN_AMOUNT, blood_volume_difference)
 			to_chat(victim, span_danger("[H] is draining your blood!"))
-			to_chat(H, span_notice("You drain some blood!"))
+			to_chat(H, span_notice("I drain some blood!"))
 			playsound(H, 'sound/items/drink.ogg', 30, 1, -2)
 			victim.blood_volume = clamp(victim.blood_volume - drained_blood, 0, BLOOD_VOLUME_MAXIMUM)
 			H.blood_volume = clamp(H.blood_volume + drained_blood, 0, BLOOD_VOLUME_MAXIMUM)
 			if(!victim.blood_volume)
-				to_chat(H, span_warning("You finish off [victim]'s blood supply!"))
+				to_chat(H, span_warning("I finish off [victim]'s blood supply!"))
 
 #undef VAMP_DRAIN_AMOUNT
 

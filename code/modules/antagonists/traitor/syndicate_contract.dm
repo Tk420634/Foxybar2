@@ -148,21 +148,21 @@
 		M.flash_act()
 		M.confused += 10
 		M.blur_eyes(5)
-		to_chat(M, span_warning("You feel strange..."))
+		to_chat(M, span_warning("I feel strange..."))
 		sleep(60)
 		to_chat(M, span_warning("That pod did something to you..."))
 		M.Dizzy(35)
 		sleep(65)
-		to_chat(M, span_warning("Your head pounds... It feels like it's going to burst out your skull!"))
+		to_chat(M, span_warning("My head pounds... It feels like it's going to burst out your skull!"))
 		M.flash_act()
 		M.confused += 20
 		M.blur_eyes(3)
 		sleep(30)
-		to_chat(M, span_warning("Your head pounds..."))
+		to_chat(M, span_warning("My head pounds..."))
 		sleep(100)
 		M.flash_act()
 		M.Unconscious(200)
-		to_chat(M, "<span class='reallybig hypnophrase'>A million voices echo in your head... <i>\"Your mind held many valuable secrets - \
+		to_chat(M, "<span class='reallybig hypnophrase'>A million voices echo in your head... <i>\"My mind held many valuable secrets - \
 					we thank you for providing them. Your value is expended, and you will be ransomed back to your station. We always get paid, \
 					so it's only a matter of time before we ship you back...\"</i></span>")
 		M.blur_eyes(10)

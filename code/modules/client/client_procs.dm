@@ -55,7 +55,7 @@ GLOBAL_LIST_INIT(warning_ckeys, list())
 			topiclimiter[MINUTE_COUNT] = 0
 		topiclimiter[MINUTE_COUNT] += 1
 		if (topiclimiter[MINUTE_COUNT] > mtl)
-			var/msg = "Your previous action was ignored because you've done too many in a minute."
+			var/msg = "My previous action was ignored because you've done too many in a minute."
 			if (minute != topiclimiter[ADMINSWARNED_AT]) //only one admin message per-minute. (if they spam the admins can just boot/ban them)
 				topiclimiter[ADMINSWARNED_AT] = minute
 				msg += " Administrators have been informed."
@@ -74,7 +74,7 @@ GLOBAL_LIST_INIT(warning_ckeys, list())
 			topiclimiter[SECOND_COUNT] = 0
 		topiclimiter[SECOND_COUNT] += 1
 		if (topiclimiter[SECOND_COUNT] > stl)
-			to_chat(src, span_danger("Your previous action was ignored because you've done too many in a second"))
+			to_chat(src, span_danger("My previous action was ignored because you've done too many in a second"))
 			return
 
 	// Tgui Topic middleware
@@ -188,11 +188,11 @@ GLOBAL_LIST_INIT(warning_ckeys, list())
 	if(CONFIG_GET(flag/automute_on) && !holder && last_message == message)
 		src.last_message_count++
 		if(src.last_message_count >= SPAM_TRIGGER_AUTOMUTE)
-			to_chat(src, span_danger("You have exceeded the spam filter limit for identical messages. An auto-mute was applied."))
+			to_chat(src, span_danger("I have exceeded the spam filter limit for identical messages. An auto-mute was applied."))
 			cmd_admin_mute(src, mute_type, 1)
 			return 1
 		if(src.last_message_count >= SPAM_TRIGGER_WARNING)
-			to_chat(src, span_danger("You are nearing the spam filter limit for identical messages."))
+			to_chat(src, span_danger("I am nearing the spam filter limit for identical messages."))
 			return 0
 	else
 		last_message = message
@@ -339,7 +339,7 @@ GLOBAL_LIST_INIT(warning_ckeys, list())
 
 		if (num2text(byond_build) in GLOB.blacklisted_builds)
 			log_access("Failed login: [key] - blacklisted byond version")
-			to_chat(src, span_userdanger("Your version of byond is blacklisted."))
+			to_chat(src, span_userdanger("My version of byond is blacklisted."))
 			to_chat(src, span_danger("Byond build [byond_build] ([byond_version].[byond_build]) has been blacklisted for the following reason: [GLOB.blacklisted_builds[num2text(byond_build)]]."))
 			to_chat(src, span_danger("Please download a new version of byond. If [byond_build] is the latest, you can go to <a href=\"https://secure.byond.com/download/build\">BYOND's website</a> to download other versions."))
 			if(connecting_admin)
@@ -359,7 +359,7 @@ GLOBAL_LIST_INIT(warning_ckeys, list())
 
 
 	if(alert_mob_dupe_login && !holder)
-		alert_async(mob, "You have logged in already with another key this round, please log out of this one NOW or risk being banned!")
+		alert_async(mob, "I have logged in already with another key this round, please log out of this one NOW or risk being banned!")
 
 	connection_time = world.time
 	connection_realtime = world.realtime
@@ -373,7 +373,7 @@ GLOBAL_LIST_INIT(warning_ckeys, list())
 		var/error_message = CONFIG_GET(string/client_error_message)
 		if(error_message)
 			to_chat(src, error_message)
-		to_chat(src, "Your version: [byond_version].[byond_build]")
+		to_chat(src, "My version: [byond_version].[byond_build]")
 		to_chat(src, "Required version: [cev].[ceb] or later")
 		to_chat(src, "Visit <a href=\"https://secure.byond.com/download\">BYOND's website</a> to get the latest version of BYOND.")
 		if (connecting_admin)
@@ -385,7 +385,7 @@ GLOBAL_LIST_INIT(warning_ckeys, list())
 		if(CONFIG_GET(flag/client_warn_popup))
 			var/msg = "<b>Your version of byond may be getting out of date:</b><br>"
 			msg += CONFIG_GET(string/client_warn_message) + "<br><br>"
-			msg += "Your version: [byond_version]<br>"
+			msg += "My version: [byond_version]<br>"
 			msg += "Required version to remove this message: [cwv] or later<br>"
 			msg += "Visit <a href=\"https://secure.byond.com/download\">BYOND's website</a> to get the latest version of BYOND.<br>"
 			src << browse(msg, "window=warning_popup")
@@ -394,7 +394,7 @@ GLOBAL_LIST_INIT(warning_ckeys, list())
 			var/warn_message = CONFIG_GET(string/client_warn_message)
 			if(warn_message)
 				to_chat(src, warn_message)
-			to_chat(src, "Your version: [byond_version]")
+			to_chat(src, "My version: [byond_version]")
 			to_chat(src, "Required version to remove this message: [cwv] or later")
 			to_chat(src, "Visit <a href=\"https://secure.byond.com/download\">BYOND's website</a> to get the latest version of BYOND.")
 
@@ -463,7 +463,7 @@ GLOBAL_LIST_INIT(warning_ckeys, list())
 	apply_clickcatcher()
 
 	if(prefs.lastchangelog != GLOB.changelog_hash) //bolds the changelog button on the interface so we know there are updates.
-		to_chat(src, span_info("You have unread updates in the changelog."))
+		to_chat(src, span_info("I have unread updates in the changelog."))
 		if(CONFIG_GET(flag/aggressive_changelog))
 			changelog()
 		else
@@ -888,7 +888,7 @@ GLOBAL_LIST_INIT(warning_ckeys, list())
 			clicklimiter[MINUTE_COUNT] = 0
 		clicklimiter[MINUTE_COUNT] += 1+(ab)
 		if (clicklimiter[MINUTE_COUNT] > mcl)
-			var/msg = "Your previous click was ignored because you've done too many in a minute."
+			var/msg = "My previous click was ignored because you've done too many in a minute."
 			if (minute != clicklimiter[ADMINSWARNED_AT]) //only one admin message per-minute. (if they spam the admins can just boot/ban them)
 				clicklimiter[ADMINSWARNED_AT] = minute
 
@@ -915,7 +915,7 @@ GLOBAL_LIST_INIT(warning_ckeys, list())
 			clicklimiter[SECOND_COUNT] = 0
 		clicklimiter[SECOND_COUNT] += 1+(!!ab)
 		if (clicklimiter[SECOND_COUNT] > scl)
-			to_chat(src, span_danger("Your previous click was ignored because you've done too many in a second"))
+			to_chat(src, span_danger("My previous click was ignored because you've done too many in a second"))
 			return
 
 	if(ab) //Citadel edit, things with stuff.

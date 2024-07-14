@@ -42,10 +42,10 @@
 		return
 
 	if(user.has_language(/datum/language/codespeak))
-		to_chat(user, span_boldannounce("You start skimming through [src], but you already know Codespeak."))
+		to_chat(user, span_boldannounce("I start skimming through [src], but you already know Codespeak."))
 		return
 
-	to_chat(user, span_boldannounce("You start skimming through [src], and suddenly your mind is filled with codewords and responses."))
+	to_chat(user, span_boldannounce("I start skimming through [src], and suddenly your mind is filled with codewords and responses."))
 	user.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
 
 	use_charge(user)
@@ -60,11 +60,11 @@
 	playsound(loc, "punch", 25, 1, -1)
 
 	if(M.stat == DEAD)
-		M.visible_message(span_danger("[user] smacks [M]'s lifeless corpse with [src]."), span_userdanger("[user] smacks your lifeless corpse with [src]."), span_italic("You hear smacking."))
+		M.visible_message(span_danger("[user] smacks [M]'s lifeless corpse with [src]."), span_userdanger("[user] smacks your lifeless corpse with [src]."), span_italic("I hear smacking."))
 	else if(M.has_language(/datum/language/codespeak))
-		M.visible_message(span_danger("[user] beats [M] over the head with [src]!"), span_userdanger("[user] beats you over the head with [src]!"), span_italic("You hear smacking."))
+		M.visible_message(span_danger("[user] beats [M] over the head with [src]!"), span_userdanger("[user] beats you over the head with [src]!"), span_italic("I hear smacking."))
 	else
-		M.visible_message(span_notice("[user] teaches [M] by beating [M.p_them()] over the head with [src]!"), span_boldnotice("As [user] hits you with [src], codewords and responses flow through your mind."), span_italic("You hear smacking."))
+		M.visible_message(span_notice("[user] teaches [M] by beating [M.p_them()] over the head with [src]!"), span_boldnotice("As [user] hits you with [src], codewords and responses flow through your mind."), span_italic("I hear smacking."))
 		M.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
 		use_charge(user)
 

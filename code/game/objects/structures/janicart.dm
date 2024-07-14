@@ -25,14 +25,14 @@
 		return 0
 	else
 		reagents.trans_to(mop, 5)
-		to_chat(user, span_notice("You wet [mop] in [src]."))
+		to_chat(user, span_notice("I wet [mop] in [src]."))
 		playsound(loc, 'sound/effects/slosh.ogg', 25, 1)
 		return 1
 
 /obj/structure/janitorialcart/proc/put_in_cart(obj/item/I, mob/user)
 	if(!user.transferItemToLoc(I, src))
 		return
-	to_chat(user, span_notice("You put [I] into [src]."))
+	to_chat(user, span_notice("I put [I] into [src]."))
 	return
 
 
@@ -83,9 +83,9 @@
 	else if(mybag)
 		mybag.attackby(I, user)
 	else if(istype(I, /obj/item/crowbar))
-		user.visible_message("[user] begins to empty the contents of [src].", span_notice("You begin to empty the contents of [src]..."))
+		user.visible_message("[user] begins to empty the contents of [src].", span_notice("I begin to empty the contents of [src]..."))
 		if(I.use_tool(src, user, 30))
-			to_chat(usr, span_notice("You empty the contents of [src]'s bucket onto the floor."))
+			to_chat(usr, span_notice("I empty the contents of [src]'s bucket onto the floor."))
 			reagents.reaction(src.loc)
 			src.reagents.clear_reagents()
 	else
@@ -119,37 +119,37 @@
 			if(!mybag)
 				return
 			user.put_in_hands(mybag)
-			to_chat(user, span_notice("You take [mybag] from [src]."))
+			to_chat(user, span_notice("I take [mybag] from [src]."))
 			mybag = null
 		if("Mop")
 			if(!mymop)
 				return
 			user.put_in_hands(mymop)
-			to_chat(user, span_notice("You take [mymop] from [src]."))
+			to_chat(user, span_notice("I take [mymop] from [src]."))
 			mymop = null
 		if("Broom")
 			if(!mybroom)
 				return
 			user.put_in_hands(mybroom)
-			to_chat(user, span_notice("You take [mybroom] from [src]."))
+			to_chat(user, span_notice("I take [mybroom] from [src]."))
 			mybroom = null
 		if("Spray bottle")
 			if(!myspray)
 				return
 			user.put_in_hands(myspray)
-			to_chat(user, span_notice("You take [myspray] from [src]."))
+			to_chat(user, span_notice("I take [myspray] from [src]."))
 			myspray = null
 		if("Light replacer")
 			if(!myreplacer)
 				return
 			user.put_in_hands(myreplacer)
-			to_chat(user, span_notice("You take [myreplacer] from [src]."))
+			to_chat(user, span_notice("I take [myreplacer] from [src]."))
 			myreplacer = null
 		if("Sign")
 			if(signs <= 0)
 				return
 			user.put_in_hands(sign)
-			to_chat(user, span_notice("You take \a [sign] from [src]."))
+			to_chat(user, span_notice("I take \a [sign] from [src]."))
 			signs--
 		else
 			return

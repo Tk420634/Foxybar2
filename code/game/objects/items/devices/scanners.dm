@@ -91,11 +91,11 @@ GENETICS SCANNER
 	scanmode = (scanmode + 1) % 3
 	switch(scanmode)
 		if(SCANMODE_HEALTH)
-			to_chat(user, span_notice("You switch the health analyzer to check physical health."))
+			to_chat(user, span_notice("I switch the health analyzer to check physical health."))
 		if(SCANMODE_CHEMICAL)
-			to_chat(user, span_notice("You switch the health analyzer to scan chemical contents."))
+			to_chat(user, span_notice("I switch the health analyzer to scan chemical contents."))
 		if(SCANMODE_WOUND)
-			to_chat(user, span_notice("You switch the health analyzer to report extra info on wounds."))
+			to_chat(user, span_notice("I switch the health analyzer to report extra info on wounds."))
 
 /obj/item/healthanalyzer/attack(mob/living/M, mob/living/carbon/human/user)
 	flick("[icon_state]-scan", src)	//makes it so that it plays the scan animation upon scanning, including clumsy scanning
@@ -103,7 +103,7 @@ GENETICS SCANNER
 	// Clumsiness/brain damage check
 	if ((HAS_TRAIT(user, TRAIT_CLUMSY) || HAS_TRAIT(user, TRAIT_DUMB)) && prob(50))
 		user.visible_message(span_warning("[user] analyzes the floor's vitals!"), \
-							span_notice("You stupidly try to analyze the floor's vitals!"))
+							span_notice("I stupidly try to analyze the floor's vitals!"))
 		to_chat(user, "<span class='info'>Analyzing results for The floor:\n\tOverall status: <b>Healthy</b></span>\
 					\n<span class='info'>Key: <font color='blue'>Suffocation</font>/<font color='green'>Toxin</font>/<font color='#FF8000'>Burn</font>/<font color='red'>Brute</font></span>\
 					\n<span class='info'>\tDamage specifics: <font color='blue'>0</font>-<font color='green'>0</font>-<font color='#FF8000'>0</font>-<font color='red'>0</font></span>\
@@ -111,7 +111,7 @@ GENETICS SCANNER
 		return
 
 	user.visible_message(span_notice("[user] analyzes [M]'s vitals."), \
-						span_notice("You analyze [M]'s vitals."))
+						span_notice("I analyze [M]'s vitals."))
 
 	if(scanmode == SCANMODE_HEALTH)
 		healthscan(user, M, mode, advanced)
@@ -132,22 +132,22 @@ GENETICS SCANNER
 
 /obj/item/healthanalyzer/tribal/attack_self(mob/user)
 	playsound(user, pick('sound/effects/pageturn1.ogg','sound/effects/pageturn2.ogg','sound/effects/pageturn3.ogg'), 30, 1)
-	to_chat(user, span_notice("You rapidly skim through the pages, trying to find the section you need."))
+	to_chat(user, span_notice("I rapidly skim through the pages, trying to find the section you need."))
 
 	if(do_after(user, 3 SECONDS, target = src))
 		playsound(user, pick('sound/effects/pageturn1.ogg','sound/effects/pageturn2.ogg','sound/effects/pageturn3.ogg'), 30, 1)
 		scanmode = (scanmode + 1) % 3
 		switch(scanmode)
 			if(SCANMODE_HEALTH)
-				to_chat(user, span_notice("You have found the physical health references."))
+				to_chat(user, span_notice("I have found the physical health references."))
 			if(SCANMODE_CHEMICAL)
-				to_chat(user, span_notice("You have found the chemical contents references."))
+				to_chat(user, span_notice("I have found the chemical contents references."))
 			if(SCANMODE_WOUND)
-				to_chat(user, span_notice("You have found the extra info on wounds."))
+				to_chat(user, span_notice("I have found the extra info on wounds."))
 
 /obj/item/healthanalyzer/tribal/attack(mob/living/M, mob/living/carbon/human/user)
 	playsound(user, pick('sound/effects/pageturn1.ogg','sound/effects/pageturn2.ogg','sound/effects/pageturn3.ogg'), 30, 1)
-	to_chat(user, span_notice("You begin to compare the malaise in front of you with the references on the book."))
+	to_chat(user, span_notice("I begin to compare the malaise in front of you with the references on the book."))
 
 	if(do_after(user, 5 SECONDS, target = src))
 		playsound(user, pick('sound/effects/pageturn1.ogg','sound/effects/pageturn2.ogg','sound/effects/pageturn3.ogg'), 30, 1)
@@ -155,7 +155,7 @@ GENETICS SCANNER
 		// Clumsiness/brain damage check
 		if ((HAS_TRAIT(user, TRAIT_CLUMSY) || HAS_TRAIT(user, TRAIT_DUMB)) && prob(50))
 			user.visible_message(span_warning("[user] analyzes the floor's vitals!"), \
-								span_notice("You stupidly try to analyze the floor's vitals!"))
+								span_notice("I stupidly try to analyze the floor's vitals!"))
 			to_chat(user, "<span class='info'>Analyzing results for The floor:\n\tOverall status: <b>Healthy</b></span>\
 						\n<span class='info'>Key: <font color='blue'>Suffocation</font>/<font color='green'>Toxin</font>/<font color='#FF8000'>Burn</font>/<font color='red'>Brute</font></span>\
 						\n<span class='info'>\tDamage specifics: <font color='blue'>0</font>-<font color='green'>0</font>-<font color='#FF8000'>0</font>-<font color='red'>0</font></span>\
@@ -163,7 +163,7 @@ GENETICS SCANNER
 			return
 
 		user.visible_message(span_notice("[user] analyzes [M]'s vitals."), \
-							span_notice("You analyze [M]'s vitals."))
+							span_notice("I analyze [M]'s vitals."))
 
 		if(scanmode == SCANMODE_HEALTH)
 			healthscan(user, M, mode, advanced)
@@ -677,7 +677,7 @@ GENETICS SCANNER
 
 /obj/item/healthanalyzer/wound/attack(mob/living/carbon/patient, mob/living/carbon/human/user)
 	add_fingerprint(user)
-	user.visible_message(span_notice("[user] scans [patient] for serious injuries."), span_notice("You scan [patient] for serious injuries."))
+	user.visible_message(span_notice("[user] scans [patient] for serious injuries."), span_notice("I scan [patient] for serious injuries."))
 
 	if(!istype(patient))
 		playsound(src, 'sound/machines/buzz-sigh.ogg', 30, TRUE)
@@ -792,7 +792,7 @@ GENETICS SCANNER
 	to_chat(user, span_alert("ERROR: critical atmospheric failure detected, please send device back for repairs."))
 	// var/icon = target
 	// if(visible)
-	// 	user.visible_message("[user] has used the analyzer on [icon2html(icon, viewers(user))] [target].", span_notice("You use the analyzer on [icon2html(icon, user)] [target]."))
+	// 	user.visible_message("[user] has used the analyzer on [icon2html(icon, viewers(user))] [target].", span_notice("I use the analyzer on [icon2html(icon, user)] [target]."))
 	// to_chat(user, span_boldnotice("Results of analysis of [icon2html(icon, user)] [target]."))
 
 	// var/list/airs = islist(mixture) ? mixture : list(mixture)
@@ -1008,7 +1008,7 @@ GENETICS SCANNER
 	add_fingerprint(user)
 	if (!HAS_TRAIT_NOT_FROM(M, TRAIT_RADIMMUNE,BLOODSUCKER_TRAIT)) //no scanning if its a husk or DNA-less Species
 		user.visible_message(span_notice("[user] analyzes [M]'s genetic sequence."), \
-							span_notice("You analyze [M]'s genetic sequence."))
+							span_notice("I analyze [M]'s genetic sequence."))
 		gene_scan(M, user)
 
 	else

@@ -194,7 +194,7 @@
 	M.move_to_delay -= round(seed.production / 50)
 	M.health = M.maxHealth
 	qdel(src)
-	to_chat(user, span_notice("You plant the walking mushroom."))
+	to_chat(user, span_notice("I plant the walking mushroom."))
 
 
 // Chanterelle
@@ -299,7 +299,7 @@
 	if(isspaceturf(user.loc))
 		return FALSE
 	if(!isturf(user.loc))
-		to_chat(user, span_warning("You need more space to plant [src]."))
+		to_chat(user, span_warning("I need more space to plant [src]."))
 		return FALSE
 	var/count = 0
 	var/maxcount = 1
@@ -313,7 +313,7 @@
 		to_chat(user, span_warning("There are too many shrooms here to plant [src]."))
 		return FALSE
 	new effect_path(user.loc, seed)
-	to_chat(user, span_notice("You plant [src]."))
+	to_chat(user, span_notice("I plant [src]."))
 	qdel(src)
 	return TRUE
 
@@ -381,7 +381,7 @@
 
 /obj/item/seeds/lavaland
 	name = "lavaland seeds"
-	desc = "You should never see this."
+	desc = "I should never see this."
 	lifespan = 50
 	endurance = 25
 	maturation = 7

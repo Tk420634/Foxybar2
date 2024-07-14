@@ -40,7 +40,7 @@
 
 /obj/item/clothing/underwear/briefs/boxers/uk
 	name = "uk boxers"
-	desc = "You got a loicense for that dong?"
+	desc = "I got a loicense for that dong?"
 	icon_state = "boxers_uk"
 
 /obj/item/clothing/underwear/briefs/boxers/usa

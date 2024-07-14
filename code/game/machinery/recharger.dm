@@ -96,7 +96,7 @@
 			if (istype(G, /obj/item/gun/energy))
 				var/obj/item/gun/energy/E = G
 				if(!E.can_charge)
-					to_chat(user, span_notice("Your gun has no external power connector."))
+					to_chat(user, span_notice("My gun has no external power connector."))
 					return 1
 
 			if(!user.transferItemToLoc(G, src))

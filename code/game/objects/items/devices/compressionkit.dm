@@ -20,12 +20,12 @@
 	if(mode == 0)
 		mode = 1
 		icon_state = "compression_e"
-		to_chat(user, span_notice("You switch the compressor to expand mode. This isn't implemented yet, so right now it wont do anything different!"))
+		to_chat(user, span_notice("I switch the compressor to expand mode. This isn't implemented yet, so right now it wont do anything different!"))
 		return
 	if(mode == 1)
 		mode = 0
 		icon_state = "compression_c"
-		to_chat(user, span_notice("You switch the compressor to compress mode. Usage will now reduce the size of objects."))
+		to_chat(user, span_notice("I switch the compressor to compress mode. Usage will now reduce the size of objects."))
 		return
 	else
 		mode = 0
@@ -53,7 +53,7 @@
 			to_chat(user, span_notice("[target] cannot be compressed smaller!."))
 			return
 		if(O.GetComponent(/datum/component/storage))
-			to_chat(user, span_notice("You feel like compressing an item that stores other items would be counterproductive."))
+			to_chat(user, span_notice("I feel like compressing an item that stores other items would be counterproductive."))
 			return
 		if(O.w_class > 1)
 			playsound(get_turf(src), 'sound/weapons/flash.ogg', 50, 1)
@@ -65,7 +65,7 @@
 				O.w_class -= 1
 				// O.force_mult -= damage_multiplier
 				charges -= 1
-				to_chat(user, span_notice("You successfully compress [target]! The compressor now has [charges] charges."))
+				to_chat(user, span_notice("I successfully compress [target]! The compressor now has [charges] charges."))
 		else
 			to_chat(user, span_notice("Anomalous error. Summon a coder."))
 
@@ -74,7 +74,7 @@
 	if(istype(I, /obj/item/stack/ore/bluespace_crystal))
 		var/obj/item/stack/ore/bluespace_crystal/B = I
 		charges += 2
-		to_chat(user, span_notice("You insert [I] into [src]. It now has [charges] charges."))
+		to_chat(user, span_notice("I insert [I] into [src]. It now has [charges] charges."))
 		if(B.amount > 1)
 			B.amount -= 1
 		else

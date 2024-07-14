@@ -36,7 +36,7 @@
 		return
 	
 	to_chat(src, span_yellowteamradio("You're down, but not out! Get yourself to safety and heal yourself up!"))
-	to_chat(src, span_yellowteamradio("You can heal yourself while in crit now!"))
-	to_chat(src, span_tinynoticeital("You can also regenerate health slowly by sleeping anywhere (you generate health faster while in a bed), you'll only see this message appear once!"))
+	to_chat(src, span_yellowteamradio("I can heal yourself while in crit now!"))
+	to_chat(src, span_tinynoticeital("I can also regenerate health slowly by sleeping anywhere (you generate health faster while in a bed), you'll only see this message appear once!"))
 
 	notifiedHint = TRUE

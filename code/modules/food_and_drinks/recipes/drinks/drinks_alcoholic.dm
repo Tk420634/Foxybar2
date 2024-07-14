@@ -503,7 +503,7 @@
 	id = /datum/reagent/consumable/ethanol/cogchamp
 	results = list(/datum/reagent/consumable/ethanol/cogchamp = 3)
 	required_reagents = list(/datum/reagent/consumable/ethanol/cognac = 1, /datum/reagent/fuel = 1, /datum/reagent/consumable/ethanol/screwdrivercocktail = 1)
-	mix_message = "You hear faint sounds of gears turning as it mixes."
+	mix_message = "I hear faint sounds of gears turning as it mixes."
 	mix_sound = 'sound/machines/clockcult/steam_whoosh.ogg'
 
 /datum/chemical_reaction/quadruplesec
@@ -532,7 +532,7 @@
 	id = /datum/reagent/consumable/ethanol/bastion_bourbon
 	results = list(/datum/reagent/consumable/ethanol/bastion_bourbon = 2)
 	required_reagents = list(/datum/reagent/consumable/tea = 1, /datum/reagent/consumable/ethanol/creme_de_menthe = 1, /datum/reagent/consumable/triple_citrus = 1, /datum/reagent/consumable/berryjuice = 1) //herbal and minty, with a hint of citrus and berry
-	mix_message = "You catch an aroma of hot tea and fruits as the mix blends into a blue-green color."
+	mix_message = "I catch an aroma of hot tea and fruits as the mix blends into a blue-green color."
 
 /datum/chemical_reaction/squirt_cider
 	name = "Squirt Cider"

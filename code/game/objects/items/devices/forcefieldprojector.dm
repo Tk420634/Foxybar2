@@ -23,7 +23,7 @@
 	if(istype(target, /obj/structure/projected_forcefield))
 		var/obj/structure/projected_forcefield/F = target
 		if(F.generator == src)
-			to_chat(user, span_notice("You deactivate [F]."))
+			to_chat(user, span_notice("I deactivate [F]."))
 			qdel(F)
 			return
 	var/turf/T = get_turf(target)
@@ -40,14 +40,14 @@
 		return
 
 	playsound(src,'sound/weapons/resonator_fire.ogg',50,1)
-	user.visible_message(span_warning("[user] projects a forcefield!"),span_notice("You project a forcefield."))
+	user.visible_message(span_warning("[user] projects a forcefield!"),span_notice("I project a forcefield."))
 	var/obj/structure/projected_forcefield/F = new(T, src)
 	current_fields += F
 	user.DelayNextAction(CLICK_CD_MELEE)
 
 /obj/item/forcefield_projector/attack_self(mob/user)
 	if(LAZYLEN(current_fields))
-		to_chat(user, span_notice("You deactivate [src], disabling all active forcefields."))
+		to_chat(user, span_notice("I deactivate [src], disabling all active forcefields."))
 		for(var/obj/structure/projected_forcefield/F in current_fields)
 			qdel(F)
 

@@ -133,14 +133,14 @@
 		return
 
 	if(jb)
-		to_chat(src, span_danger("You have been banned from deadchat."))
+		to_chat(src, span_danger("I have been banned from deadchat."))
 		return
 
 
 
 	if (src.client)
 		if(src.client.prefs.muted & MUTE_DEADCHAT)
-			to_chat(src, span_danger("You cannot talk in deadchat (muted)."))
+			to_chat(src, span_danger("I cannot talk in deadchat (muted)."))
 			return
 
 		if(src.client.handle_spam_prevention(message,MUTE_DEADCHAT))

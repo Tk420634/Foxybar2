@@ -125,7 +125,7 @@
 /obj/item/reagent_containers/food/snacks/grown/tomato/killer/attack_self(mob/user)
 	if(awakening || isspaceturf(user.loc))
 		return
-	to_chat(user, span_notice("You begin to awaken the Killer Tomato..."))
+	to_chat(user, span_notice("I begin to awaken the Killer Tomato..."))
 	awakening = 1
 
 	spawn(30)

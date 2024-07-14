@@ -124,6 +124,6 @@
 
 /obj/item/dildo/flared/gigantic
 	name 				= "bitch breaker"
-	desc 				= "You can barely carry this thing! Meant for... \"advanced\" interrogation techniques."
+	desc 				= "I can barely carry this thing! Meant for... \"advanced\" interrogation techniques."
 	dildo_size 			= 5
 	attack_verb 		= list("penetrated", "slapped", "gaped", "prolapsed", "inseminated", "destroyed", "broke", "demolished", "whacked")

@@ -18,7 +18,7 @@
 	if(charges < max_charges)
 		charges++
 		recharge_newshot()
-		to_chat(user, "You add a new page to [src].</span>")
+		to_chat(user, "I add a new page to [src].</span>")
 		qdel(S)
 		update_icon()
 		process()

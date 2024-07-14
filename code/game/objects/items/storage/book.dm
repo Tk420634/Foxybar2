@@ -114,7 +114,7 @@ GLOBAL_LIST_INIT(bibleitemstates, list("bible", "koran", "scrapbook", "bible",  
 /obj/item/storage/book/bible/attack(mob/living/M, mob/living/user, attackchain_flags = NONE, damage_multiplier = 1, heal_mode = TRUE)
 
 	if (!user.IsAdvancedToolUser())
-		to_chat(user, span_warning("You don't have the dexterity to do this!"))
+		to_chat(user, span_warning("I don't have the dexterity to do this!"))
 		return
 
 	if (HAS_TRAIT(user, TRAIT_CLUMSY) && prob(50))
@@ -139,7 +139,7 @@ GLOBAL_LIST_INIT(bibleitemstates, list("bible", "koran", "scrapbook", "bible",  
 
 	if (M.stat != DEAD)
 		if(chaplain && user == M)
-			to_chat(user, span_warning("You can't heal yourself!"))
+			to_chat(user, span_warning("I can't heal yourself!"))
 			return
 
 		if(ishuman(M) && prob(60) && bless(M, user))
@@ -148,7 +148,7 @@ GLOBAL_LIST_INIT(bibleitemstates, list("bible", "koran", "scrapbook", "bible",  
 			var/mob/living/carbon/C = M
 			if(!istype(C.head, /obj/item/clothing/head))
 				C.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10, 80)
-				to_chat(C, span_danger("You feel dumber."))
+				to_chat(C, span_danger("I feel dumber."))
 
 		if(smack)
 			M.visible_message(span_danger("[user] beats [M] over the head with [src]!"), \
@@ -165,23 +165,23 @@ GLOBAL_LIST_INIT(bibleitemstates, list("bible", "koran", "scrapbook", "bible",  
 	if(!proximity)
 		return
 	if(isfloorturf(A))
-		to_chat(user, span_notice("You hit the floor with the bible."))
+		to_chat(user, span_notice("I hit the floor with the bible."))
 		if(user.mind && (user.mind.isholy))
 			for(var/obj/effect/rune/R in orange(2,user))
 				R.invisibility = 0
 	if(user.mind && (user.mind.isholy))
 		if(A.reagents && A.reagents.has_reagent(/datum/reagent/water)) // blesses all the water in the holder
-			to_chat(user, span_notice("You bless [A]."))
+			to_chat(user, span_notice("I bless [A]."))
 			var/water2holy = A.reagents.get_reagent_amount(/datum/reagent/water)
 			A.reagents.del_reagent(/datum/reagent/water)
 			A.reagents.add_reagent(/datum/reagent/water/holywater,water2holy)
 		if(A.reagents && A.reagents.has_reagent(/datum/reagent/fuel/unholywater)) // yeah yeah, copy pasted code - sue me
-			to_chat(user, span_notice("You purify [A]."))
+			to_chat(user, span_notice("I purify [A]."))
 			var/unholy2clean = A.reagents.get_reagent_amount(/datum/reagent/fuel/unholywater)
 			A.reagents.del_reagent(/datum/reagent/fuel/unholywater)
 			A.reagents.add_reagent(/datum/reagent/water/holywater,unholy2clean)
 	if(istype(A, /obj/item/cult_bastard) || istype(A, /obj/item/melee/cultblade) && !iscultist(user))
-		to_chat(user, span_notice("You begin to exorcise [A]."))
+		to_chat(user, span_notice("I begin to exorcise [A]."))
 		playsound(src,'sound/hallucinations/veryfar_noise.ogg',40,1)
 		if(do_after(user, 40, target = A))
 			playsound(src,'sound/effects/pray_chaplain.ogg',60,1)
@@ -202,7 +202,7 @@ GLOBAL_LIST_INIT(bibleitemstates, list("bible", "koran", "scrapbook", "bible",  
 
 	else if(istype(A, /obj/item/soulstone) && !iscultist(user))
 		var/obj/item/soulstone/SS = A
-		to_chat(user, span_notice("You begin to exorcise [SS]."))
+		to_chat(user, span_notice("I begin to exorcise [SS]."))
 		playsound(src,'sound/hallucinations/veryfar_noise.ogg',40,1)
 		if(do_after(user, 40, target = SS))
 			playsound(src,'sound/effects/pray_chaplain.ogg',60,1)
@@ -238,10 +238,10 @@ GLOBAL_LIST_INIT(bibleitemstates, list("bible", "koran", "scrapbook", "bible",  
 	if (uses)
 		H.mind.isholy = TRUE
 		uses -= 1
-		to_chat(H, span_userdanger("You try to open the book AND IT BITES YOU!"))
+		to_chat(H, span_userdanger("I try to open the book AND IT BITES YOU!"))
 		playsound(src.loc, 'sound/effects/snap.ogg', 50, 1)
 		H.apply_damage(5, BRUTE, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
-		to_chat(H, span_notice("Your name appears on the inside cover, in blood."))
+		to_chat(H, span_notice("My name appears on the inside cover, in blood."))
 		var/ownername = H.real_name
 		desc += span_warning("The name [ownername] is written in blood inside the cover.")
 

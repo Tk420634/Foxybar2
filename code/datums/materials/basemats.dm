@@ -240,7 +240,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 //I don't like sand. It's coarse, and rough, and irritating, and it gets everywhere.
 /datum/material/sand
 	name = "sand"
-	desc = "You know, it's amazing just how structurally sound sand can be."
+	desc = "I know, it's amazing just how structurally sound sand can be."
 	color = "#EDC9AF"
 	categories = list(MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/sandblock

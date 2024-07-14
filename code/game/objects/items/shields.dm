@@ -114,7 +114,7 @@
 	var/knockdown = !target_downed && ((shield_flags & SHIELD_BASH_ALWAYS_KNOCKDOWN) || (wallhit && (shield_flags & SHIELD_BASH_WALL_KNOCKDOWN)))
 	if(shieldbash_stagger_duration || knockdown)
 		target.visible_message(span_warning("[target] is knocked [knockdown? "to the floor" : "off balance"]!"),
-		span_userdanger("You are knocked [knockdown? "to the floor" : "off balance"]!"))
+		span_userdanger("I am knocked [knockdown? "to the floor" : "off balance"]!"))
 	if(knockdown)
 		target.KnockToFloor(disarming)
 	else if(disarming)
@@ -133,15 +133,15 @@
 		to_chat(user, span_warning("[src] can't be used to shield bash!"))
 		return FALSE
 	if(!CHECK_MOBILITY(user, MOBILITY_STAND))
-		to_chat(user, span_warning("You can't bash with [src] while on the ground!"))
+		to_chat(user, span_warning("I can't bash with [src] while on the ground!"))
 		return FALSE
 	if(world.time < last_shieldbash + shieldbash_cooldown)
-		to_chat(user, span_warning("You can't bash with [src] again so soon!"))
+		to_chat(user, span_warning("I can't bash with [src] again so soon!"))
 		return FALSE
 	var/mob/living/livingtarget = target		//only access after an isliving check!
 	if(isliving(target) && !CHECK_MOBILITY(livingtarget, MOBILITY_STAND))		//GROUND SLAAAM
 		if(!(shield_flags & SHIELD_BASH_GROUND_SLAM))
-			to_chat(user, span_warning("You can't ground slam with [src]!"))
+			to_chat(user, span_warning("I can't ground slam with [src]!"))
 			return FALSE
 		bash_target(user, target, NONE, harmful)
 		user.do_attack_animation(target, used_item = src)
@@ -227,7 +227,7 @@
 			var/obj/item/stack/S = W
 			S.use(1)
 			obj_integrity = max_integrity
-			to_chat(user, span_notice("You repair [src] with [S]."))
+			to_chat(user, span_notice("I repair [src] with [S]."))
 	else if(istype(W, /obj/item/melee))
 		if(cooldown < world.time - 25)
 			user.visible_message(span_warning("[user] bashes [src] with [W]!"))
@@ -394,7 +394,7 @@
 
 /obj/item/shield/energy/attack_self(mob/living/carbon/human/user)
 	if(clumsy_check && HAS_TRAIT(user, TRAIT_CLUMSY) && prob(50))
-		to_chat(user, span_userdanger("You beat yourself in the head with [src]!"))
+		to_chat(user, span_userdanger("I beat yourself in the head with [src]!"))
 		user.take_bodypart_damage(5)
 	active = !active
 	icon_state = "[base_icon_state][active]"
@@ -494,7 +494,7 @@
 		throw_speed = 2
 		w_class = WEIGHT_CLASS_BULKY
 		slot_flags = INV_SLOTBIT_BACK
-		to_chat(user, span_notice("You extend \the [src]."))
+		to_chat(user, span_notice("I extend \the [src]."))
 	else
 		force = 3
 		throwforce = 3

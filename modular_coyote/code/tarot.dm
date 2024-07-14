@@ -57,7 +57,7 @@
 		for(var/datum/tarotcard/P in H.cards)
 			cards += P
 		qdel(O)
-		to_chat(user, span_notice("You place your cards at the bottom of \the [src]."))
+		to_chat(user, span_notice("I place your cards at the bottom of \the [src]."))
 		return
 	..()
 
@@ -70,10 +70,10 @@
 
 /obj/item/tarotdeck/proc/select_card(var/mob/user)
 	if(issilicon(user))
-		to_chat(user, span_warning("You cannot hold \the [src]."))
+		to_chat(user, span_warning("I cannot hold \the [src]."))
 		return
 	if(!iscarbon(user))
-		to_chat(user, span_warning("Your simple form can't operate \the [src]."))
+		to_chat(user, span_warning("My simple form can't operate \the [src]."))
 		return
 	if(!cards.len)
 		to_chat(usr, span_warning("There are no cards in \the [src]."))
@@ -102,7 +102,7 @@
 	H.cards += P
 	cards -= P
 	H.update_icon()
-	user.visible_message("<b>\The [user]</b> draws a card.", span_notice("You draw the [P.name]."))
+	user.visible_message("<b>\The [user]</b> draws a card.", span_notice("I draw the [P.name]."))
 
 /obj/item/tarotdeck/verb/deal_card()
 	set category = "Object"
@@ -339,7 +339,7 @@
 		user.visible_message("<b>\The [user]</b> plays \the [discarding].")
 		H.forceMove(get_step(usr, usr.dir))
 	else
-		to_chat(user, span_notice("You draw \the [discarding]."))
+		to_chat(user, span_notice("I draw \the [discarding]."))
 		user.put_in_hands(H)
 
 	if(!cards.len)
@@ -432,7 +432,7 @@
 /obj/item/hand/attackby(obj/O as obj, mob/user as mob)
 	if(istype(O,/obj/item/hand))
 		var/obj/item/hand/H = O
-		user.visible_message("<b>\The [user]</b> adds \the [H] to their hand.", span_notice("You add \the [H] to your hand."))
+		user.visible_message("<b>\The [user]</b> adds \the [H] to their hand.", span_notice("I add \the [H] to your hand."))
 		for(var/datum/tarotcard/P in cards)
 			H.cards += P
 		H.concealed = src.concealed

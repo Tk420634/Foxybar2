@@ -113,14 +113,14 @@
 				radiation_pulse(src, 50)
 				var/mob/M = (ismob(loc) && loc) || (ismob(loc.loc) && loc.loc)		//thank you short circuiting. if you powergame and nest these guns deeply you get to suffer no-warning radiation death.
 				if(M)
-					to_chat(M, span_userdanger("Your [name] feels warmer."))
+					to_chat(M, span_userdanger("My [name] feels warmer."))
 			if(201 to INFINITY)
 				SSobj.processing.Remove(src)
 				radiation_pulse(src, 200)
 				crit_fail = TRUE
 				var/mob/M = (ismob(loc) && loc) || (ismob(loc.loc) && loc.loc)
 				if(M)
-					to_chat(M, span_userdanger("Your [name]'s reactor overloads!"))
+					to_chat(M, span_userdanger("My [name]'s reactor overloads!"))
 
 /obj/item/gun/energy/e_gun/nuclear/emp_act(severity)
 	. = ..()

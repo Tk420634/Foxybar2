@@ -24,7 +24,7 @@
 		user.DefaultCombatKnockdown(60)
 		return
 	if(istype(loccheck.loc, /area/fabric_of_reality))
-		to_chat(user, span_danger("You can't do that here!"))
+		to_chat(user, span_danger("I can't do that here!"))
 	to_chat(user, span_danger("The Bluespace interfaces of the two devices catastrophically malfunction!"))
 	qdel(W)
 	playsound(loccheck,'sound/effects/supermatter.ogg', 200, 1)

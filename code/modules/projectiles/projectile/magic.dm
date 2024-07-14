@@ -41,9 +41,9 @@
 			C.regenerate_organs()
 		if(target.revive(full_heal = 1))
 			target.grab_ghost(force = TRUE)
-			to_chat(target, span_notice("You rise with a start, you're alive!!!"))
+			to_chat(target, span_notice("I rise with a start, you're alive!!!"))
 		else if(target.stat != DEAD)
-			to_chat(target, span_notice("You feel great!"))
+			to_chat(target, span_notice("I feel great!"))
 
 /obj/item/projectile/magic/teleport
 	name = "bolt of teleportation"
@@ -240,7 +240,7 @@
 
 	M.wabbajack_act(new_mob)
 
-	to_chat(new_mob, span_warning("Your form morphs into that of a [randomize]."))
+	to_chat(new_mob, span_warning("My form morphs into that of a [randomize]."))
 
 	var/poly_msg = CONFIG_GET(keyed_list/policy)["polymorph"]
 	if(poly_msg)
@@ -280,7 +280,7 @@
 				if(L.mind)
 					L.mind.transfer_to(S)
 					if(owner)
-						to_chat(S, span_userdanger("You are an animated statue. You cannot move when monitored, but are nearly invincible and deadly when unobserved! Do not harm [owner], your creator."))
+						to_chat(S, span_userdanger("I am an animated statue. You cannot move when monitored, but are nearly invincible and deadly when unobserved! Do not harm [owner], your creator."))
 				P.forceMove(S)
 				return
 		else

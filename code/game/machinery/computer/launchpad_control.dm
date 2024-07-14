@@ -16,7 +16,7 @@
 	. = ..()
 
 /obj/machinery/computer/launchpad/attack_paw(mob/user)
-	to_chat(user, span_warning("You are too primitive to use this computer!"))
+	to_chat(user, span_warning("I am too primitive to use this computer!"))
 	return
 
 /obj/machinery/computer/launchpad/attackby(obj/item/W, mob/user, params)
@@ -28,7 +28,7 @@
 			if(LAZYLEN(launchpads) < maximum_pads)
 				launchpads |= M.buffer
 				M.buffer = null
-				to_chat(user, span_notice("You upload the data from the [W.name]'s buffer."))
+				to_chat(user, span_notice("I upload the data from the [W.name]'s buffer."))
 			else
 				to_chat(user, span_warning("[src] cannot handle any more connections!"))
 	else

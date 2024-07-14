@@ -62,7 +62,7 @@
 	set category = "Object"
 	set src in view(1)
 	fuel_holder.inside = !fuel_holder.inside
-	to_chat(usr, span_notice("You changed transfer type."))
+	to_chat(usr, span_notice("I changed transfer type."))
 
 /obj/vehicle/ridden/fuel/examine(mob/user)
 	. = ..()
@@ -106,7 +106,7 @@
 
 
 			var/trans = W.reagents.trans_to(src, amount_per_transfer_from_this)
-			to_chat(user, span_notice("You transfer [trans] units of the solution to [src]."))
+			to_chat(user, span_notice("I transfer [trans] units of the solution to [src]."))
 		else
 			if(!src.reagents.total_volume)
 				to_chat(user, span_warning("[src] is empty!"))
@@ -118,4 +118,4 @@
 
 
 			var/trans = src.reagents.trans_to(W, amount_per_transfer_from_this)
-			to_chat(user, span_notice("You transfer [trans] units of the solution to [W]."))
+			to_chat(user, span_notice("I transfer [trans] units of the solution to [W]."))

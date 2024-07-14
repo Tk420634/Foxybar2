@@ -56,7 +56,7 @@
 /obj/machinery/deepfryer/examine(mob/user)
 	. = ..()
 	if(frying)
-		. += "You can make out \a [frying] in the oil."
+		. += "I can make out \a [frying] in the oil."
 	if(in_range(user, src) || isobserver(user))
 		. += span_notice("The status display reads: Frying at <b>[fry_speed*100]%</b> speed.<br>Using <b>[oil_use*10]</b> units of oil per second.")
 
@@ -65,7 +65,7 @@
 		if(!reagents.total_volume)
 			to_chat(user, span_warning("There's nothing to dissolve [I] in!"))
 			return
-		user.visible_message(span_notice("[user] drops [I] into [src]."), span_notice("You dissolve [I] in [src]."))
+		user.visible_message(span_notice("[user] drops [I] into [src]."), span_notice("I dissolve [I] in [src]."))
 		I.reagents.trans_to(src, I.reagents.total_volume, log = TRUE)
 		qdel(I)
 		return
@@ -76,10 +76,10 @@
 		to_chat(user, span_warning("[src] has no cooking oil to fry with!"))
 		return
 	if(I.resistance_flags & INDESTRUCTIBLE)
-		to_chat(user, span_warning("You don't feel it would be wise to fry [I]..."))
+		to_chat(user, span_warning("I don't feel it would be wise to fry [I]..."))
 		return
 	if(I.GetComponent(/datum/component/fried))
-		to_chat(user, span_userdanger("Your cooking skills are not up to the legendary Doublefry technique."))
+		to_chat(user, span_userdanger("My cooking skills are not up to the legendary Doublefry technique."))
 		return
 	if(default_unfasten_wrench(user, I))
 		return
@@ -95,7 +95,7 @@
 			if(!isfood(I))
 				message_admins("[ADMIN_LOOKUPFLW(user)] has placed non-food item [I] into a deep fryer. [ADMIN_LOOKUPFLW(src)]")
 				log_game("[user] has placed non-food item [I] into a deep fryer at [AREACOORD(src)].")
-			to_chat(user, span_notice("You put [I] into [src]."))
+			to_chat(user, span_notice("I put [I] into [src]."))
 			icon_state = "fryer_on"
 			fry_loop.start()
 
@@ -123,7 +123,7 @@
 /obj/machinery/deepfryer/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
 	if(frying)
 		if(frying.loc == src)
-			to_chat(user, span_notice("You eject [frying] from [src]."))
+			to_chat(user, span_notice("I eject [frying] from [src]."))
 			frying.fry(cook_time)
 			icon_state = "fryer_off"
 			frying.forceMove(drop_location())
@@ -139,7 +139,7 @@
 		if(!user.CheckActionCooldown(CLICK_CD_MELEE))
 			return
 		if(user.grab_state < GRAB_AGGRESSIVE)
-			to_chat(user, span_warning("You need a better grip to do that!"))
+			to_chat(user, span_warning("I need a better grip to do that!"))
 			return
 		var/mob/living/carbon/C = user.pulling
 		user.visible_message("<span class = 'danger'>[user] dunks [C]'s face in [src]!</span>")

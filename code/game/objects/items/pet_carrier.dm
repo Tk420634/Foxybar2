@@ -66,14 +66,14 @@
 
 /obj/item/pet_carrier/attack_self(mob/living/user)
 	if(open)
-		to_chat(user, span_notice("You close [src]'s [entrance_name]."))
+		to_chat(user, span_notice("I close [src]'s [entrance_name]."))
 		playsound(user, 'sound/effects/bin_close.ogg', 50, TRUE)
 		open = FALSE
 	else
 		if(locked)
 			to_chat(user, span_warning("[src] is locked!"))
 			return
-		to_chat(user, span_notice("You open [src]'s [entrance_name]."))
+		to_chat(user, span_notice("I open [src]'s [entrance_name]."))
 		playsound(user, 'sound/effects/bin_open.ogg', 50, TRUE)
 		open = TRUE
 	update_icon()
@@ -83,7 +83,7 @@
 	if(open || !user.canUseTopic(src, BE_CLOSE))
 		return
 	locked = !locked
-	to_chat(user, span_notice("You flip the lock switch [locked ? "down" : "up"]."))
+	to_chat(user, span_notice("I flip the lock switch [locked ? "down" : "up"]."))
 	if(locked)
 		playsound(user, 'sound/machines/boltsdown.ogg', 30, TRUE)
 	else
@@ -95,7 +95,7 @@
 	if(user.a_intent == INTENT_HARM)
 		return ..()
 	if(!open)
-		to_chat(user, span_warning("You need to open [src]'s [entrance_name]!"))
+		to_chat(user, span_warning("I need to open [src]'s [entrance_name]!"))
 		return
 	if(target.mob_size > max_occupant_weight)
 		if(ishuman(target))
@@ -105,13 +105,13 @@
 			else
 				to_chat(user, span_warning("Humans, generally, do not fit into [name]s."))
 		else
-			to_chat(user, span_warning("You get the feeling [target] isn't meant for a [name]."))
+			to_chat(user, span_warning("I get the feeling [target] isn't meant for a [name]."))
 		return
 	if(user == target)
 		to_chat(user, span_warning("Why would you ever do that?"))
 		return
 	if((ishostile(target) && (!allows_hostiles || !istype(target, /mob/living/simple_animal/hostile/carp/cayenne))) || target.move_resist >= MOVE_FORCE_VERY_STRONG) //don't allow goliaths into pet carriers, but let cayenne in!
-		to_chat(user, span_warning("You have a feeling you shouldn't keep this as a pet."))
+		to_chat(user, span_warning("I have a feeling you shouldn't keep this as a pet."))
 		return
 	load_occupant(user, target)
 
@@ -146,8 +146,8 @@
 			return
 
 	if(user.mob_size <= MOB_SIZE_SMALL)
-		to_chat(user, span_notice("You begin to try escaping the [src] and start fumbling for the lock switch... (This will take some time.)"))
-		to_chat(loc, span_warning("You see [user] attempting to unlock the [src]!"))
+		to_chat(user, span_notice("I begin to try escaping the [src] and start fumbling for the lock switch... (This will take some time.)"))
+		to_chat(loc, span_warning("I see [user] attempting to unlock the [src]!"))
 		if(!do_after(user, rand(escape_time * 1.5, escape_time * 2), target = user) || open || !locked || !(user in occupants))
 			return
 		loc.visible_message(span_warning("[user] flips the lock switch on [src] by reaching through!"), null, null, null, user)
@@ -157,11 +157,11 @@
 		update_icon()
 	else
 		loc.visible_message(span_warning("[src] starts rattling as something pushes against the [entrance_name]!"), null, null, null, user)
-		to_chat(user, span_notice("You start pushing out of [src]... (This will take about [escape_time/10] seconds.)"))
+		to_chat(user, span_notice("I start pushing out of [src]... (This will take about [escape_time/10] seconds.)"))
 		if(!do_after(user, escape_time, target = user) || open || !locked || !(user in occupants))
 			return
 		loc.visible_message(span_warning("[user] shoves out of	[src]!"), null, null, null, user)
-		to_chat(user, span_notice("You shove open [src]'s [entrance_name] against the lock's resistance and fall out!"))
+		to_chat(user, span_notice("I shove open [src]'s [entrance_name] against the lock's resistance and fall out!"))
 		locked = FALSE
 		open = TRUE
 		update_icon()
@@ -181,7 +181,7 @@
 /obj/item/pet_carrier/MouseDrop(atom/over_atom)
 	if(isopenturf(over_atom) && usr.canUseTopic(src, BE_CLOSE, ismonkey(usr)) && usr.Adjacent(over_atom) && open && occupants.len)
 		usr.visible_message(span_notice("[usr] unloads [src]."), \
-		span_notice("You unload [src] onto [over_atom]."))
+		span_notice("I unload [src] onto [over_atom]."))
 		for(var/V in occupants)
 			remove_occupant(V, over_atom)
 	else
@@ -192,7 +192,7 @@
 		to_chat(user, span_warning("[src] is already carrying too much!"))
 		return FALSE
 	user.visible_message(span_notice("[user] starts loading [target] into [src]."), \
-	span_notice("You start loading [target] into [src]..."), null, null, target)
+	span_notice("I start loading [target] into [src]..."), null, null, target)
 	to_chat(target, span_userdanger("[user] starts loading you into [user.p_their()] [name]!"))
 	if(!do_mob(user, target, load_time))
 		return FALSE
@@ -202,7 +202,7 @@
 		to_chat(user, span_warning("[src] is already carrying too much!"))
 		return FALSE
 	user.visible_message(span_notice("[user] loads [target] into [src]!"), \
-	span_notice("You load [target] into [src]."), null, null, target)
+	span_notice("I load [target] into [src]."), null, null, target)
 	to_chat(target, span_userdanger("[user] loads you into [user.p_their()] [name]!"))
 	add_occupant(target)
 	return TRUE

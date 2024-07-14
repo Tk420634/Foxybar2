@@ -228,7 +228,7 @@ SUBSYSTEM_DEF(secondwind)
 	else
 		switch(graces)
 			if(0)
-				to_chat(played, span_green("You died again? That sucks."))
+				to_chat(played, span_green("I died again? That sucks."))
 			if(1)
 				to_chat(played, span_green("Hi again! So, when you head back in, try to get away from whatever killed you."))
 			if(2)
@@ -289,7 +289,7 @@ SUBSYSTEM_DEF(secondwind)
 	if(silent)
 		return
 	BODY_PLAYED
-	to_chat(played, span_greentext("You feel a renewed warmth inside! Seems like you've gotten yourself a second wind!"))
+	to_chat(played, span_greentext("I feel a renewed warmth inside! Seems like you've gotten yourself a second wind!"))
 	played.playsound_local(played, "sound/effects/get_new_life.ogg", 75, respect_deafness = FALSE) // YEAH FUCK THE DEAF
 
 /datum/second_wind/proc/attempt_revival(freebie)
@@ -297,10 +297,10 @@ SUBSYSTEM_DEF(secondwind)
 	var/revive_error = can_revive(freebie)
 	switch(revive_error)
 		if(SW_ERROR_NO_BODY)
-			to_chat(played, span_danger("You don't have a body to revive!"))
+			to_chat(played, span_danger("I don't have a body to revive!"))
 			return
 		if(SW_ERROR_QDELLED_BODY)
-			to_chat(played, span_danger("Your body is in the trash where it belongs! Its been deleted! D:"))
+			to_chat(played, span_danger("My body is in the trash where it belongs! Its been deleted! D:"))
 			return
 		if(SW_ERROR_NOT_DEAD)
 			to_chat(played, span_danger("You're not dead!"))
@@ -309,13 +309,13 @@ SUBSYSTEM_DEF(secondwind)
 			to_chat(played, span_danger("You've spent your Third Wind! You can't revive!"))
 			return
 		if(SW_ERROR_NO_GHOST)
-			to_chat(played, span_phobia("Your body doesn't see you as its ghost! This might be a bug!"))
+			to_chat(played, span_phobia("My body doesn't see you as its ghost! This might be a bug!"))
 			return
 		if(SW_ERROR_CANNOT_REENTER)
 			to_chat(played, span_danger("You've made it clear you don't want to be alive!"))
 			return
 		if(SW_ERROR_CUFFED)
-			to_chat(played, span_danger("Your body is cuffed! You can't revive!"))
+			to_chat(played, span_danger("My body is cuffed! You can't revive!"))
 			return
 		if(SW_ERROR_DISABLED)
 			to_chat(played, span_danger("Second Wind is disabled!"))
@@ -340,7 +340,7 @@ SUBSYSTEM_DEF(secondwind)
 	var/is_robot = isrobotic(master)
 	var/mob/ghost = master.get_ghost()
 	if(ghost)
-		to_chat(played, span_greentext("You feel drawn back into your body!"))
+		to_chat(played, span_greentext("I feel drawn back into your body!"))
 		ghost.client?.change_view(CONFIG_GET(string/default_view))
 		ghost.transfer_ckey(ghost.mind.current, FALSE)
 		SStgui.on_transfer(src, ghost.mind.current) // Transfer NanoUIs.
@@ -456,15 +456,15 @@ SUBSYSTEM_DEF(secondwind)
 		death_meter = 0
 	if(lives_left < 0)
 		third_winded = TRUE
-		to_chat(played, span_alert("You feel a dull warmth seep its way through your body, clamping wounds closed and purging foreign agents with its presence. \
+		to_chat(played, span_alert("I feel a dull warmth seep its way through your body, clamping wounds closed and purging foreign agents with its presence. \
 			As you lie there feeling your body knit itself back together, you notice that the warmth is struggling to maintain itself, flickering and fading. \
 			Whatever it is that's brought you back, it's not going to be able to do it again."))
 	else if(lives_left == 0)
-		to_chat(played, span_alert("You feel a deep warmth burn its way through every inch of your form, clamping wounds closed and purging foreign agents with its presence. \
+		to_chat(played, span_alert("I feel a deep warmth burn its way through every inch of your form, clamping wounds closed and purging foreign agents with its presence. \
 			As you lie there feeling your body knit itself back together, a deep sense of exhaustion wells up, as though your soul had run a marathon. \
 			You feel like you'll need to rest for at least [DisplayTimeText(SSsecondwind.life_cooldown, 1)] before you can do this again."))
 	else
-		to_chat(played, span_alert("You feel a deep warmth burn its way through every inch of your form, clamping wounds closed and purging foreign agents with its presence. \
+		to_chat(played, span_alert("I feel a deep warmth burn its way through every inch of your form, clamping wounds closed and purging foreign agents with its presence. \
 			As you lie there feeling your body knit itself back together, a vague sense of stamina tickles at the back of your mind, along with the thought that you can do <i>this</i> \
 			[lives_left] more time[lives_left > 1 ? "s" : ""]!"))
 
@@ -583,7 +583,7 @@ SUBSYSTEM_DEF(secondwind)
 			return
 		if(SW_ERROR_NO_BODY)
 			.["BodyHead"] = "NO BODY"
-			.["BodyFill"] = "You don't have a body to revive!"
+			.["BodyFill"] = "I don't have a body to revive!"
 			.["BodyHeadIconColor"] = "bad"
 			.["BodyHeadIconImg"] = "times"
 			.["ShowButtons"] = "None"
@@ -617,35 +617,35 @@ SUBSYSTEM_DEF(secondwind)
 			return
 		if(SW_ERROR_QDELLED_BODY)
 			.["BodyHead"] = "NO BODY"
-			.["BodyFill"] = "Your body is in the trash where it belongs (its been deleted, sorry!) You can't revive yourself!"
+			.["BodyFill"] = "My body is in the trash where it belongs (its been deleted, sorry!) You can't revive yourself!"
 			.["BodyHeadIconColor"] = "bad"
 			.["BodyHeadIconImg"] = "times"
 			.["ShowButtons"] = "None"
 			return
 		if(SW_ERROR_NO_GHOST)
 			.["BodyHead"] = "NO GHOST"
-			.["BodyFill"] = "You somehow lack a ghost! This is probably a bug."
+			.["BodyFill"] = "I somehow lack a ghost! This is probably a bug."
 			.["BodyHeadIconColor"] = "bad"
 			.["BodyHeadIconImg"] = "times"
 			.["ShowButtons"] = "None"
 			return
 		if(SW_ERROR_BODY_OCCUPIED)
 			.["BodyHead"] = "BODY FULL"
-			.["BodyFill"] = "Your body is occupied by someone else! You can't revive yourself!"
+			.["BodyFill"] = "My body is occupied by someone else! You can't revive yourself!"
 			.["BodyHeadIconColor"] = "bad"
 			.["BodyHeadIconImg"] = "times"
 			.["ShowButtons"] = "None"
 			return
 		if(SW_ERROR_CANNOT_REENTER)
 			.["BodyHead"] = "CANNOT REENTER"
-			.["BodyFill"] = "You have elected to stay dead, or something along those lines."
+			.["BodyFill"] = "I have elected to stay dead, or something along those lines."
 			.["BodyHeadIconColor"] = "bad"
 			.["BodyHeadIconImg"] = "times"
 			.["ShowButtons"] = "None"
 			return
 		if(SW_ERROR_CUFFED)
 			.["BodyHead"] = "CUFFED"
-			.["BodyFill"] = "Your body is handcuffed! You can't revive yourself!"
+			.["BodyFill"] = "My body is handcuffed! You can't revive yourself!"
 			.["BodyHeadIconColor"] = "bad"
 			.["BodyHeadIconImg"] = "times"
 			.["ShowButtons"] = "None"
@@ -665,21 +665,21 @@ SUBSYSTEM_DEF(secondwind)
 	if(CHECK_BITFIELD(revive_error, SW_ERROR_NO_LIVES))
 		.["BodyHead"] = "OUT OF LIVES"
 		if(am_alive)
-			.["BodyFill"] = "You have revived yourself recently, and you'll need to wait a while before you can do it again safely! \
+			.["BodyFill"] = "I have revived yourself recently, and you'll need to wait a while before you can do it again safely! \
 				If you die, you will still be able to revive yourself, but it'll be your last! Try to stay alive!"
 			if(prob(1))
 				.["BodyFill"] += " YOLO~"
 			.["ShowButtons"] = "None"
 		else
 			if(CHECK_BITFIELD(revive_error, SW_ERROR_DEAD_DELAYED))
-				.["BodyFill"] = "You have revived yourself recently, and while you can still revive yourself right now, it will be your last! \
+				.["BodyFill"] = "I have revived yourself recently, and while you can still revive yourself right now, it will be your last! \
 					If you die again after reviving, you'll need to be rescued, or hop on a different character if you want to keep playing! <br><br> \
 					Furthermore, you also died recently, and won't be able to revive yourself anyway for another [DisplayTimeText(SSsecondwind.death_delay - death_meter, 1)] or so!"
 				.["ShowButtons"] = "None"
 				.["BodyHeadIconColor"] = "bad"
 				.["BodyHeadIconImg"] = "exclamation-triangle"
 			else
-				.["BodyFill"] = "You have revived yourself recently, and while you can still revive yourself right now, it will be your last! \
+				.["BodyFill"] = "I have revived yourself recently, and while you can still revive yourself right now, it will be your last! \
 					If you die again after reviving, you'll need to be rescued, or hop on a different character if you want to keep playing!"
 				.["ShowButtons"] = "OnlyRevive"
 				.["BodyHeadIconColor"] = "average"
@@ -704,7 +704,7 @@ SUBSYSTEM_DEF(secondwind)
 				.["ShowButtons"] = "None"
 			else
 				.["BodyHead"] = "READY TO REVIVE"
-				.["BodyFill"] = "You can revive yourself! Just click the button below, and you'll be back on your feet in no time! \
+				.["BodyFill"] = "I can revive yourself! Just click the button below, and you'll be back on your feet in no time! \
 					Do note that you should wait at least [DisplayTimeText(SSsecondwind.life_cooldown, 1)] before you do it again, \
 					otherwise your next time will be your last!"
 				.["BodyHeadIconColor"] = "good"
@@ -740,13 +740,13 @@ SUBSYSTEM_DEF(secondwind)
 		return
 	if(master?.stat != DEAD)
 		.["BodyHead"] = "You're not dead!"
-		.["BodyFill"] = "You need to be dead to revive yourself, silly!"
+		.["BodyFill"] = "I need to be dead to revive yourself, silly!"
 		.["BodyHeadIconColor"] = "good"
 		.["BodyHeadIconImg"] = "times"
 		.["ShowButtons"] = "OnlyBack"
 		return
 	if(third_winded)
-		.["BodyHead"] = "You cannot revive yourself!"
+		.["BodyHead"] = "I cannot revive yourself!"
 		.["BodyFill"] = "You've already spent your last life! You'll need to be rescued, or hop on a different character if you want to keep playing!"
 		.["BodyHeadIconColor"] = "bad"
 		.["BodyHeadIconImg"] = "times"
@@ -761,7 +761,7 @@ SUBSYSTEM_DEF(secondwind)
 		return
 	if(lives_left >= 1)
 		.["BodyHead"] = "Revive yourself?"
-		.["BodyFill"] = "You have [lives_left] lives left. Reviving yourself will cost one of them, \
+		.["BodyFill"] = "I have [lives_left] lives left. Reviving yourself will cost one of them, \
 							and it will take [DisplayTimeText(SSsecondwind.life_cooldown, 1)] to get one back."
 		.["BodyHeadIconColor"] = "good"
 		.["BodyHeadIconImg"] = "heartbeat"

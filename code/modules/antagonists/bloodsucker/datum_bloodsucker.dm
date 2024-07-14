@@ -289,7 +289,7 @@
 	options["\[ Not Now \]"] = null
 	// Abort?
 	if(options.len > 1)
-		var/choice = input(owner.current, "You have the opportunity to grow more ancient at the cost of [level_bloodcost] units of blood. Select a power to advance your Rank.", "Your Blood Thickens...") in options
+		var/choice = input(owner.current, "I have the opportunity to grow more ancient at the cost of [level_bloodcost] units of blood. Select a power to advance your Rank.", "My Blood Thickens...") in options
 		// Cheat-Safety: Can't keep opening/closing coffin to spam levels
 		if(bloodsucker_level_unspent <= 0) // Already spent all your points, and tried opening/closing your coffin, pal.
 			return
@@ -297,18 +297,18 @@
 			to_chat(owner.current, span_warning("Return to your coffin to advance your Rank."))
 			return
 		if(!choice || !options[choice] || (locate(options[choice]) in powers)) // ADDED: Check to see if you already have this power, due to window stacking.
-			to_chat(owner.current, span_notice("You prevent your blood from thickening just yet, but you may try again later."))
+			to_chat(owner.current, span_notice("I prevent your blood from thickening just yet, but you may try again later."))
 			return
 		if(L.blood_volume < level_bloodcost)
-			to_chat(owner.current, span_warning("You dont have enough blood to thicken your blood, you need [level_bloodcost - L.blood_volume] units more!"))
+			to_chat(owner.current, span_warning("I dont have enough blood to thicken your blood, you need [level_bloodcost - L.blood_volume] units more!"))
 			return
 		// Buy New Powers
 		var/datum/action/bloodsucker/P = options[choice]
 		AddBloodVolume(-level_bloodcost)
 		BuyPower(new P)
-		to_chat(owner.current, span_notice("You have used [level_bloodcost] units of blood and learned [initial(P.name)]!"))
+		to_chat(owner.current, span_notice("I have used [level_bloodcost] units of blood and learned [initial(P.name)]!"))
 	else
-		to_chat(owner.current, span_notice("You grow more ancient by the night!"))
+		to_chat(owner.current, span_notice("I grow more ancient by the night!"))
 	/////////
 	// Advance Powers (including new)
 	LevelUpPowers()
@@ -332,8 +332,8 @@
 	// Assign True Reputation
 	if(bloodsucker_level == 4)
 		SelectReputation(am_fledgling = FALSE, forced = TRUE)
-	to_chat(owner.current, span_notice("You are now a rank [bloodsucker_level] Bloodsucker. Your strength, health, feed rate, regen rate, can have up to [bloodsucker_level - count_vassals(owner.current.mind)] vassals, and maximum blood have all increased!"))
-	to_chat(owner.current, span_notice("Your existing powers have all ranked up as well!"))
+	to_chat(owner.current, span_notice("I am now a rank [bloodsucker_level] Bloodsucker. Your strength, health, feed rate, regen rate, can have up to [bloodsucker_level - count_vassals(owner.current.mind)] vassals, and maximum blood have all increased!"))
+	to_chat(owner.current, span_notice("My existing powers have all ranked up as well!"))
 	update_hud(TRUE)
 	owner.current.playsound_local(null, 'sound/effects/pope_entry.ogg', 25, TRUE, pressure_affected = FALSE)
 

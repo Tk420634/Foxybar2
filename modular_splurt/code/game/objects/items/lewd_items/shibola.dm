@@ -46,7 +46,7 @@
 
 /obj/item/shibola/attack_self(mob/user)
 	if(payload)
-		to_chat(user, span_warning("You untangle the shibari bola, causing the [payload.name] to fall out!"))
+		to_chat(user, span_warning("I untangle the shibari bola, causing the [payload.name] to fall out!"))
 		payload.forceMove(get_turf(src))
 		payload = null
 	else

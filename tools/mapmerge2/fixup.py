@@ -42,7 +42,7 @@ def insert_into_tree(repo, tree_builder, path, blob_oid):
 
 def main(repo):
     if repo.index.conflicts:
-        print("You need to resolve merge conflicts first.")
+        print("I need to resolve merge conflicts first.")
         return 1
 
     # Ensure the index is clean.
@@ -50,11 +50,11 @@ def main(repo):
         if status & pygit2.GIT_STATUS_IGNORED:
             continue
         if status & STATUS_INDEX:
-            print("You have changes staged for commit. Commit them or unstage them first.")
+            print("I have changes staged for commit. Commit them or unstage them first.")
             print("If you are about to commit maps for the first time, run `Run Before Committing.bat`.")
             return 1
         if path.endswith(".dmm") and (status & STATUS_WT):
-            print("You have modified maps. Commit them first.")
+            print("I have modified maps. Commit them first.")
             print("If you are about to commit maps for the first time, run `Run Before Committing.bat`.")
             return 1
 

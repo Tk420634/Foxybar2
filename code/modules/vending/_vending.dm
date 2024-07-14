@@ -394,7 +394,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 			add_overlay("[initial(icon_state)]-panel")
 		updateUsrDialog()
 	else
-		to_chat(user, span_warning("You must first secure [src]."))
+		to_chat(user, span_warning("I must first secure [src]."))
 	return TRUE
 
 /obj/machinery/vending/attackby(obj/item/I, mob/user, params)
@@ -403,7 +403,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 		return
 	if(refill_canister && istype(I, refill_canister))
 		if (!panel_open)
-			to_chat(user, span_warning("You should probably unscrew the service panel first!"))
+			to_chat(user, span_warning("I should probably unscrew the service panel first!"))
 		else if (stat & (BROKEN|NOPOWER))
 			to_chat(user, span_notice("[src] does not respond."))
 		else
@@ -415,7 +415,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 				// instantiate canister if needed
 				var/transferred = restock(canister)
 				if(transferred)
-					to_chat(user, span_notice("You loaded [transferred] items in [src]."))
+					to_chat(user, span_notice("I loaded [transferred] items in [src]."))
 				else
 					to_chat(user, span_warning("There's nothing to restock!"))
 			return
@@ -445,7 +445,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 			if(denied_items)
 				to_chat(user, span_warning("[src] refuses some items!"))
 			if(loaded)
-				to_chat(user, span_notice("You insert [loaded] dishes into [src]'s compartment."))
+				to_chat(user, span_notice("I insert [loaded] dishes into [src]'s compartment."))
 				updateUsrDialog()
 	else
 		. = ..()
@@ -501,7 +501,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 
 				if(crit_case < 5) // the head asplode case has its own description
 					C.visible_message(span_danger("[C] is crushed by [src]!"), \
-						span_userdanger("You are crushed by [src]!"))
+						span_userdanger("I am crushed by [src]!"))
 
 				switch(crit_case) // only carbons can have the fun crits
 					if(1) // shatter their legs and bleed 'em
@@ -515,12 +515,12 @@ GLOBAL_LIST_EMPTY(vending_products)
 							r.receive_damage(brute=200, updating_health=TRUE)
 						if(l || r)
 							C.visible_message(span_danger("[C]'s legs shatter with a sickening crunch!"), \
-								span_userdanger("Your legs shatter with a sickening crunch!"))
+								span_userdanger("My legs shatter with a sickening crunch!"))
 					if(2) // pin them beneath the machine until someone untilts it
 						forceMove(get_turf(C))
 						buckle_mob(C, force=TRUE)
 						C.visible_message(span_danger("[C] is pinned underneath [src]!"), \
-							span_userdanger("You are pinned down by [src]!"))
+							span_userdanger("I am pinned down by [src]!"))
 					if(3) // glass candy
 						crit_rebate = 50
 						for(var/i = 0, i < num_shards, i++)
@@ -543,7 +543,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 							else
 								squish_part.receive_damage(brute=30)
 						C.visible_message(span_danger("[C]'s body is maimed underneath the mass of [src]!"), \
-							span_userdanger("Your body is maimed underneath the mass of [src]!"))
+							span_userdanger("My body is maimed underneath the mass of [src]!"))
 					if(0) // skull squish!
 						var/obj/item/bodypart/head/O = C.get_bodypart(BODY_ZONE_HEAD)
 						if(O)
@@ -562,7 +562,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 				C.AddElement(/datum/element/squish, 18 SECONDS)
 			else
 				L.visible_message(span_danger("[L] is crushed by [src]!"), \
-				span_userdanger("You are crushed by [src]!"))
+				span_userdanger("I am crushed by [src]!"))
 				L.apply_damage(squish_damage, forced=TRUE)
 				if(crit_case)
 					L.apply_damage(squish_damage, forced=TRUE)
@@ -600,7 +600,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 		vending_machine_input[format_text(I.name)]++
 	else
 		vending_machine_input[format_text(I.name)] = 1
-	to_chat(user, span_notice("You insert [I] into [src]'s input compartment."))
+	to_chat(user, span_notice("I insert [I] into [src]'s input compartment."))
 	loaded_items++
 
 
@@ -666,7 +666,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 	if(obj_flags & EMAGGED)
 		return
 	obj_flags |= EMAGGED
-	to_chat(user, span_notice("You short out the product lock on [src]."))
+	to_chat(user, span_notice("I short out the product lock on [src]."))
 	return TRUE
 
 /obj/machinery/vending/_try_interact(mob/user)
@@ -827,7 +827,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 			var/obj/item/vended = new R.product_path(get_turf(src))
 			R.amount--
 			if(usr.can_reach(src) && usr.put_in_hands(vended))
-				to_chat(usr, span_notice("You take [R.name] out of the slot."))
+				to_chat(usr, span_notice("I take [R.name] out of the slot."))
 			else
 				to_chat(usr, span_warning("[capitalize(R.name)] falls onto the floor!"))
 			SSblackbox.record_feedback("nested tally", "vending_machine_usage", 1, list("[type]", "[R.product_path]"))
@@ -974,7 +974,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 		stored_caps += inserted_value
 		I.use(currency.amount)
 		playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
-		to_chat(usr, "You put [inserted_value] coins value to a vending machine.")
+		to_chat(usr, "I put [inserted_value] coins value to a vending machine.")
 		src.ui_interact(usr)
 	else if(istype(I, /obj/item/stack/f13Cash/ncr))
 		var/obj/item/stack/f13Cash/ncr/currency = I
@@ -982,7 +982,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 		stored_caps += inserted_value
 		I.use(currency.amount)
 		playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
-		to_chat(usr, "You put [inserted_value] coins value to a vending machine.")
+		to_chat(usr, "I put [inserted_value] coins value to a vending machine.")
 		src.ui_interact(usr)
 	else if(istype(I, /obj/item/stack/f13Cash/denarius))
 		var/obj/item/stack/f13Cash/denarius/currency = I
@@ -990,7 +990,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 		stored_caps += inserted_value
 		I.use(currency.amount)
 		playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
-		to_chat(usr, "You put [inserted_value] coins value to a vending machine.")
+		to_chat(usr, "I put [inserted_value] coins value to a vending machine.")
 		src.ui_interact(usr)
 	else if(istype(I, /obj/item/stack/f13Cash/aureus))
 		var/obj/item/stack/f13Cash/aureus/currency = I
@@ -998,7 +998,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 		stored_caps += inserted_value
 		I.use(currency.amount)
 		playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
-		to_chat(usr, "You put [inserted_value] coins value to a vending machine.")
+		to_chat(usr, "I put [inserted_value] coins value to a vending machine.")
 		src.ui_interact(usr)
 	else
 		to_chat(usr, "Invalid currency!")
@@ -1138,7 +1138,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 						updateUsrDialog()
 						return
 					else
-						say("You do not possess the funds to purchase this.")
+						say("I do not possess the funds to purchase this.")
 			vend_ready = TRUE
 
 /obj/machinery/vending/custom/attackby(obj/item/I, mob/user, params)
@@ -1212,4 +1212,4 @@ GLOBAL_LIST_EMPTY(vending_products)
 	if(isitem(target))
 		var/obj/item/I = target
 		I.custom_price = price
-		to_chat(user, span_notice("You set the price of [I] to [price] cr."))
+		to_chat(user, span_notice("I set the price of [I] to [price] cr."))

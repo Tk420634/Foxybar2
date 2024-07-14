@@ -16,17 +16,17 @@
 		return
 
 	else if(!ishuman(user))
-		to_chat(user, "You feel a dark stirring inside of the Wish Granter, something you want nothing of. Your instincts are better than any man's.")
+		to_chat(user, "I feel a dark stirring inside of the Wish Granter, something you want nothing of. Your instincts are better than any man's.")
 		return
 
 	else if (!insisting)
-		to_chat(user, "Your first touch makes the Wish Granter stir, listening to you.  Are you really sure you want to do this?")
+		to_chat(user, "My first touch makes the Wish Granter stir, listening to you.  Are you really sure you want to do this?")
 		insisting++
 
 	else
 		if(is_special_character(user))
-			to_chat(user, "You speak.  [pick("I want power","Humanity is corrupt, mankind must be destroyed", "I want to rule the world","I want immortality")].  The Wish Granter answers.")
-			to_chat(user, "Your head pounds for a moment, before your vision clears. The Wish Granter, sensing the darkness in your heart, has given you limitless power, and it's all yours!")
+			to_chat(user, "I speak.  [pick("I want power","Humanity is corrupt, mankind must be destroyed", "I want to rule the world","I want immortality")].  The Wish Granter answers.")
+			to_chat(user, "My head pounds for a moment, before your vision clears. The Wish Granter, sensing the darkness in your heart, has given you limitless power, and it's all yours!")
 			user.dna.add_mutation(HULK)
 			user.dna.add_mutation(XRAY)
 			user.dna.add_mutation(SPACEMUT)
@@ -35,10 +35,10 @@
 			to_chat(user, "Things around you feel slower!")
 			charges--
 			insisting = FALSE
-			to_chat(user, "You have a very great feeling about this!")
+			to_chat(user, "I have a very great feeling about this!")
 		else
 			to_chat(user, "The Wish Granter awaits your wish.")
-			var/wish = input("You want...","Wish") as null|anything in list("Power","Wealth","The Station To Disappear","To Kill","Nothing")
+			var/wish = input("I want...","Wish") as null|anything in list("Power","Wealth","The Station To Disappear","To Kill","Nothing")
 			switch(wish)
 				if("Power")	//Gives infinite power in exchange for infinite power going off in your face!
 					if(charges <= 0)
@@ -117,7 +117,7 @@
 					if(charges <= 0)
 						return
 					to_chat(user, "<B>The Wish Granter vanishes from sight!</B>")
-					to_chat(user, "You feel as if you just narrowly avoided a terrible fate...")
+					to_chat(user, "I feel as if you just narrowly avoided a terrible fate...")
 					charges--
 					insisting = FALSE
 					qdel(src)

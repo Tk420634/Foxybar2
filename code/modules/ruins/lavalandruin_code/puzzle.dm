@@ -316,7 +316,7 @@
 		if(!puzzle_imprison(target))
 			to_chat(user,span_warning("[src] does nothing."))
 			return
-		to_chat(user,span_warning("You trap [victim] in the prison cube!"))
+		to_chat(user,span_warning("I trap [victim] in the prison cube!"))
 		qdel(src)
 	else
 		to_chat(user,span_notice("[src] only accepts restrained or unconcious prisoners."))

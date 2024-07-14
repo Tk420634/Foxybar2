@@ -28,7 +28,7 @@
 
 /obj/item/energy_katana/attack_self(mob/user)
 	dash_toggled = !dash_toggled
-	to_chat(user, span_notice("You [dash_toggled ? "enable" : "disable"] the dash function on [src]."))
+	to_chat(user, span_notice("I [dash_toggled ? "enable" : "disable"] the dash function on [src]."))
 
 /obj/item/energy_katana/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
 	. = ..()
@@ -77,17 +77,17 @@
 	var/msg = ""
 
 	if(user.put_in_hands(src))
-		msg = "Your Energy Katana teleports into your hand!"
+		msg = "My Energy Katana teleports into your hand!"
 	else if(user.equip_to_slot_if_possible(src, SLOT_BELT, 0, 1, 1))
-		msg = "Your Energy Katana teleports back to you, sheathing itself as it does so!</span>"
+		msg = "My Energy Katana teleports back to you, sheathing itself as it does so!</span>"
 	else
-		msg = "Your Energy Katana teleports to your location!"
+		msg = "My Energy Katana teleports to your location!"
 
 	if(caught)
 		if(loc == user)
-			msg = "You catch your Energy Katana!"
+			msg = "I catch your Energy Katana!"
 		else
-			msg = "Your Energy Katana lands at your feet!"
+			msg = "My Energy Katana lands at your feet!"
 
 	if(msg)
 		to_chat(user, span_notice("[msg]"))

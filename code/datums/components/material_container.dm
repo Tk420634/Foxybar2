@@ -119,9 +119,9 @@
 	if(inserted)
 		. = TRUE
 		if(silent) // okay maybe not silent, but less spammy
-			to_chat(user, span_notice("You insert something into [parent]."))
+			to_chat(user, span_notice("I insert something into [parent]."))
 		else
-			to_chat(user, span_notice("You insert a material total of [inserted] into [parent]."))
+			to_chat(user, span_notice("I insert a material total of [inserted] into [parent]."))
 		if(after_insert)
 			after_insert.Invoke(I, last_inserted_id, inserted)
 		if(remote && remote.after_insert)

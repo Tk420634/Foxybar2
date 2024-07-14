@@ -86,7 +86,7 @@
 		pen.add_fingerprint(user)
 		pen.forceMove(user.loc)
 		user.put_in_hands(pen)
-		to_chat(user, span_notice("You take [pen] out of [src]."))
+		to_chat(user, span_notice("I take [pen] out of [src]."))
 		bin_pen = null
 		update_icon()
 	else if(LAZYLEN(papers))
@@ -95,7 +95,7 @@
 		top_paper.add_fingerprint(user)
 		top_paper.forceMove(user.loc)
 		user.put_in_hands(top_paper)
-		to_chat(user, span_notice("You take [top_paper] out of [src]."))
+		to_chat(user, span_notice("I take [top_paper] out of [src]."))
 		update_icon()
 	else
 		to_chat(user, span_warning("[src] is empty!"))
@@ -110,14 +110,14 @@
 		var/obj/item/paper/paper = I
 		if(!user.transferItemToLoc(paper, src))
 			return
-		to_chat(user, span_notice("You put [paper] in [src]."))
+		to_chat(user, span_notice("I put [paper] in [src]."))
 		LAZYADD(papers, paper)
 		update_icon()
 	else if(istype(I, /obj/item/pen) && !bin_pen)
 		var/obj/item/pen/pen = I
 		if(!user.transferItemToLoc(pen, src))
 			return
-		to_chat(user, span_notice("You put [pen] in [src]."))
+		to_chat(user, span_notice("I put [pen] in [src]."))
 		bin_pen = pen
 		update_icon()
 	else
@@ -219,7 +219,7 @@
 		return
 	if(W.get_sharpness())
 		if(W.use_tool(src, user, 1 SECONDS))
-			to_chat(user, span_notice("You slice the cable from [src]."))
+			to_chat(user, span_notice("I slice the cable from [src]."))
 			deconstruct(TRUE)
 	else
 		..()

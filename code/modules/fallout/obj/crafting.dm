@@ -164,10 +164,10 @@
 		return
 
 	if(I.use_tool(src, user, volume=50))
-		to_chat(user, span_notice("You drill some holes in \the [src]'s base! Looks like it could be attached to a machine frame."))
+		to_chat(user, span_notice("I drill some holes in \the [src]'s base! Looks like it could be attached to a machine frame."))
 		make_it_a_board(user)
 	else
-		to_chat(user, span_alert("You can't seem to drill any holes in \the [src]'s base! Might need to stand still, or the drill might need some juice..."))
+		to_chat(user, span_alert("I can't seem to drill any holes in \the [src]'s base! Might need to stand still, or the drill might need some juice..."))
 
 /obj/item/circuitboard/machine/autolathe/ammo/improvised/proc/make_it_a_board(mob/living/user)
 	if(!user)

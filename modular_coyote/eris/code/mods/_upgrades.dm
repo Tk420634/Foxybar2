@@ -94,11 +94,11 @@
 
 /datum/component/item_upgrade/proc/apply(obj/item/A, mob/living/user)
 	if(user)
-		user.visible_message(span_notice("[user] starts applying [parent] to [A]"), span_notice("You start applying \the [parent] to \the [A]"))
+		user.visible_message(span_notice("[user] starts applying [parent] to [A]"), span_notice("I start applying \the [parent] to \the [A]"))
 		var/obj/item/I = parent
 		if(!I.use_tool(user = user, target =  A, delay = WORKTIME_FAST))
 			return FALSE
-		to_chat(user, span_notice("You have successfully installed \the [parent] in \the [A]"))
+		to_chat(user, span_notice("I have successfully installed \the [parent] in \the [A]"))
 		user.dropItemToGround(parent)
 	//If we get here, we succeeded in the applying
 	var/obj/item/I = parent
@@ -480,7 +480,7 @@
 			if(C.use_tool(user = user, target =  upgrade_loc, delay = IU.removal_time))
 				//If you pass the check, then you manage to remove the upgrade intact
 				if(!IU.destroy_on_removal && user)
-					to_chat(user, span_notice("You successfully remove \the [toremove] while leaving it intact."))
+					to_chat(user, span_notice("I successfully remove \the [toremove] while leaving it intact."))
 				SEND_SIGNAL(toremove, COMSIG_UPGRADE_REMOVE, upgrade_loc, user, params)
 				upgrade_loc.refresh_upgrades()
 				return 1

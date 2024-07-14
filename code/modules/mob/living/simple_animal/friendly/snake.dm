@@ -71,7 +71,7 @@
 	var/atom/my_target = get_target()
 	if(!istype(my_target, /mob/living/simple_animal/mouse))
 		return ..()
-	visible_message(span_notice("[name] consumes [my_target] in a single gulp!"), span_notice("You consume [my_target] in a single gulp!"))
+	visible_message(span_notice("[name] consumes [my_target] in a single gulp!"), span_notice("I consume [my_target] in a single gulp!"))
 	qdel(my_target)
 	unset_target()
 	adjustBruteLoss(-2)

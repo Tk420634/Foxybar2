@@ -58,7 +58,7 @@
 		return
 	var/stored_dir = user.dir
 	if (!user.IsAdvancedToolUser())
-		to_chat(usr, span_warning("You don't have the dexterity to do this!"))
+		to_chat(usr, span_warning("I don't have the dexterity to do this!"))
 		return
 
 	if(I.tool_behaviour == TOOL_MINING)
@@ -69,7 +69,7 @@
 		if(last_act + (40 * I.toolspeed) > world.time)//prevents message spam
 			return
 		last_act = world.time
-		to_chat(user, span_notice("You start picking..."))
+		to_chat(user, span_notice("I start picking..."))
 
 		if(I.use_tool(src, user, 40, volume=50))
 			var/range = I.digrange //Store the current digrange so people don't cheese digspeed swapping for faster mining
@@ -80,7 +80,7 @@
 						if(get_dir(user,M)&stored_dir)
 							M.gets_drilled(user)
 							dug_tiles += M
-				to_chat(user, span_notice("You finish cutting into the rock."))
+				to_chat(user, span_notice("I finish cutting into the rock."))
 				if(!(src in dug_tiles))
 					gets_drilled(user)
 				SSblackbox.record_feedback("tally", "pick_used_mining", 1, I.type)
@@ -108,10 +108,10 @@
 	..()
 
 /turf/closed/mineral/attack_alien(mob/living/carbon/alien/M)
-	to_chat(M, span_notice("You start digging into the rock..."))
+	to_chat(M, span_notice("I start digging into the rock..."))
 	playsound(src, 'sound/effects/break_stone.ogg', 50, 1)
 	if(do_after(M, 40, target = src))
-		to_chat(M, span_notice("You tunnel into the rock."))
+		to_chat(M, span_notice("I tunnel into the rock."))
 		gets_drilled(M)
 
 /turf/closed/mineral/Bumped(atom/movable/AM)
@@ -755,7 +755,7 @@
 
 /turf/closed/mineral/gibtonite/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/mining_scanner) || istype(I, /obj/item/t_scanner/adv_mining_scanner) && stage == 1)
-		user.visible_message(span_notice("[user] holds [I] to [src]..."), span_notice("You use [I] to locate where to cut off the chain reaction and attempt to stop it..."))
+		user.visible_message(span_notice("[user] holds [I] to [src]..."), span_notice("I use [I] to locate where to cut off the chain reaction and attempt to stop it..."))
 		defuse()
 	..()
 

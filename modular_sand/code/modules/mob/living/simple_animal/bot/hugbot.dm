@@ -80,8 +80,8 @@
 	update_icon()
 
 /mob/living/simple_animal/bot/hugbot/set_custom_texts()
-	text_hack = "You bypass [name]'s manipulator pressure sensors."
-	text_dehack = "You rewire [name]'s manipulator pressure sensors."
+	text_hack = "I bypass [name]'s manipulator pressure sensors."
+	text_dehack = "I rewire [name]'s manipulator pressure sensors."
 	text_dehack_fail = "[name] seems damaged and does not respond to reprogramming!"
 
 // Variables sent to TGUI
@@ -145,7 +145,7 @@
 
 /mob/living/simple_animal/bot/hugbot/attack_hand(mob/living/carbon/human/H)
 	if(H.a_intent == INTENT_DISARM && mode != BOT_TIPPED)
-		H.visible_message(span_danger("[H] begins tipping over [src]."), span_warning("You begin tipping over [src]..."))
+		H.visible_message(span_danger("[H] begins tipping over [src]."), span_warning("I begin tipping over [src]..."))
 		//balloon_alert(H, "tipping over")
 
 		if(world.time > last_tipping_action_voice + 15 SECONDS)
@@ -159,7 +159,7 @@
 			tip_over(H)
 
 	else if(H.a_intent == INTENT_HELP && mode == BOT_TIPPED)
-		H.visible_message(span_notice("[H] begins righting [src]."), span_notice("You begin righting [src]..."))
+		H.visible_message(span_notice("[H] begins righting [src]."), span_notice("I begin righting [src]..."))
 		//balloon_alert(H, "righting")
 		if(do_after(H, 3 SECONDS, src))
 			set_right(H)
@@ -170,7 +170,7 @@
 	..()
 	if(emagged == 2)
 		if(user)
-			to_chat(user, span_notice("You short out [src]'s manipulator pressure sensors."))
+			to_chat(user, span_notice("I short out [src]'s manipulator pressure sensors."))
 		visible_message(span_danger("[src]'s arm twitches violently!"))
 		flick("medibot_spark", src)
 		playsound(src, "sparks", 75, 1)
@@ -257,23 +257,23 @@
 						"Go look at a mirror and cry.",
 						"I hate you.",
 						"You'll never be good at your job.",
-						"You are a horrible person.",
+						"I am a horrible person.",
 						"Give up.",
 						"We all hate you.",
-						"You are doing a horrible job.",
-						"You are a burden to the station.",
+						"I am doing a horrible job.",
+						"I am a burden to the station.",
 						"Fuck off."
 					)
 				else
 					peptalk = list("Thank you!",
-						"You are a good person.",
+						"I am a good person.",
 						"I love you.",
 						"Keep doing what you are good at.",
-						"You are a brilliant person.",
+						"I am a brilliant person.",
 						"Keep doing what you love.",
 						"We all love you.",
-						"You are doing a great job.",
-						"You are important to us all.",
+						"I am doing a great job.",
+						"I am important to us all.",
 						"Keep it up."
 					)
 
@@ -348,7 +348,7 @@
 	if(zone_selected == BODY_ZONE_PRECISE_MOUTH)
 		visible_message( \
 			span_notice("[src] boops [H]'s nose."), \
-			span_notice("You boop [H] on the nose."), target = H,
+			span_notice("I boop [H] on the nose."), target = H,
 		target_message = span_notice("[src] boops your nose."))
 		playsound(H, 'sound/items/Nose_boop.ogg', 50, 0)
 		SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "headpat", /datum/mood_event/headpat)
@@ -358,7 +358,7 @@
 			S = H.dna.species
 
 			visible_message(span_notice("[src] gives [H] a pat on the head to make [H.p_them()] feel better!"), \
-						span_notice("You give [src] a pat on the head to make [H.p_them()] feel better!"), target = H,
+						span_notice("I give [src] a pat on the head to make [H.p_them()] feel better!"), target = H,
 						target_message = span_notice("[src] gives you a pat on the head to make you feel better!"))
 			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "headpat", /datum/mood_event/headpat)
 			if(S?.can_wag_tail(src) && !H.dna.species.is_wagging_tail())
@@ -369,7 +369,7 @@
 						break
 	else
 		visible_message(span_notice("[src] hugs [H] to make [H.p_them()] feel better!"), \
-					span_notice("You hug [H] to make [H.p_them()] feel better!"), target = H,\
+					span_notice("I hug [H] to make [H.p_them()] feel better!"), target = H,\
 					target_message = span_notice("[src] hugs you to make you feel better!"))
 		SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "hug", /datum/mood_event/hug)
 
@@ -416,19 +416,19 @@
 		var/mob/living/simple_animal/bot/hugbot/A = new(drop_location())
 		A.name = created_name
 		A.robot_arm = W.type
-		to_chat(user, span_notice("You add [W] to [src]. Beep boop!"))
+		to_chat(user, span_notice("I add [W] to [src]. Beep boop!"))
 		qdel(W)
 		qdel(src)
 
 /obj/item/storage/box/hug/attackby(obj/item/I, mob/user, params)
 	if((istype(I, /obj/item/bodypart/l_arm/robot)) || (istype(I, /obj/item/bodypart/r_arm/robot)))
 		if(contents.len) //prevent accidently deleting contents
-			to_chat(user, span_warning("You need to empty [src] out first!"))
+			to_chat(user, span_warning("I need to empty [src] out first!"))
 			return
 		if(!user.temporarilyRemoveItemFromInventory(I))
 			return
 		qdel(I)
-		to_chat(user, span_notice("You add [I] to the [src]! You've got a hugbot assembly now!"))
+		to_chat(user, span_notice("I add [I] to the [src]! You've got a hugbot assembly now!"))
 		var/obj/item/bot_assembly/hugbot/A = new
 		qdel(src)
 		user.put_in_hands(A)
@@ -438,7 +438,7 @@
 // Skyrat exclusive: Tipping over hugbots. Because fuck medbots.
 /mob/living/simple_animal/bot/hugbot/proc/tip_over(mob/user)
 	mobility_flags &= ~MOBILITY_MOVE
-	user.visible_message(span_danger("[user] tips over [src]!"), span_danger("You tip [src] over!"))
+	user.visible_message(span_danger("[user] tips over [src]!"), span_danger("I tip [src] over!"))
 	//balloon_alert(user, "tipped over")
 	mode = BOT_TIPPED
 	tipper_name = user.name // Skyrat fix
@@ -449,15 +449,15 @@
 	mobility_flags &= MOBILITY_MOVE
 	var/list/messagevoice
 	if(user)
-		user.visible_message(span_notice("[user] sets [src] right-side up!"), span_green("You set [src] right-side up!"))
+		user.visible_message(span_notice("[user] sets [src] right-side up!"), span_green("I set [src] right-side up!"))
 		//balloon_alert(user, "set right")
 		if(user.name == tipper_name)
 			messagevoice = list("I forgive you." = 'sound/voice/medbot/forgive.ogg')
 		else
-			messagevoice = list("Thank you!" = 'sound/voice/medbot/thank_you.ogg', "You are a good person." = 'sound/voice/medbot/youre_good.ogg')
+			messagevoice = list("Thank you!" = 'sound/voice/medbot/thank_you.ogg', "I am a good person." = 'sound/voice/medbot/youre_good.ogg')
 	else
 		visible_message(span_notice("[src] manages to writhe wiggle enough to right itself."))
-		messagevoice = list("Fuck you." = 'sound/voice/medbot/fuck_you.ogg', "Your behavior has been reported, have a nice day." = 'sound/voice/medbot/reported.ogg')
+		messagevoice = list("Fuck you." = 'sound/voice/medbot/fuck_you.ogg', "My behavior has been reported, have a nice day." = 'sound/voice/medbot/reported.ogg')
 
 	tipper_name = null
 	if(world.time > last_tipping_action_voice + 15 SECONDS)

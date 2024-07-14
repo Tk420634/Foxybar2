@@ -108,7 +108,7 @@
 	if(user.pulling && user.a_intent == INTENT_GRAB && isliving(user.pulling))
 		var/mob/living/L = user.pulling
 		if(user.grab_state < GRAB_AGGRESSIVE)
-			to_chat(user, span_warning("You need a better grip to do that!"))
+			to_chat(user, span_warning("I need a better grip to do that!"))
 			return
 		L.forceMove(loc)
 		L.DefaultCombatKnockdown(100)
@@ -154,7 +154,7 @@
 	return
 
 /obj/machinery/readybutton/attack_paw(mob/user as mob)
-	to_chat(user, span_warning("You are too primitive to use this device!"))
+	to_chat(user, span_warning("I am too primitive to use this device!"))
 	return
 
 /obj/machinery/readybutton/attackby(obj/item/W as obj, mob/user as mob, params)

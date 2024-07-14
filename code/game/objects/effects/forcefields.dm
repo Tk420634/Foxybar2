@@ -29,7 +29,7 @@
 /obj/effect/forcefield/mime
 	icon_state = "nothing"
 	name = "invisible wall"
-	desc = "You have a bad feeling about this."
+	desc = "I have a bad feeling about this."
 
 /obj/effect/forcefield/mime/advanced
 	name = "invisible blockade"

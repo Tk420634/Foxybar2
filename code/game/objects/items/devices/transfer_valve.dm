@@ -37,12 +37,12 @@
 			if(!user.transferItemToLoc(item, src))
 				return
 			tank_one = item
-			to_chat(user, span_notice("You attach the tank to the transfer valve."))
+			to_chat(user, span_notice("I attach the tank to the transfer valve."))
 		else if(!tank_two)
 			if(!user.transferItemToLoc(item, src))
 				return
 			tank_two = item
-			to_chat(user, span_notice("You attach the tank to the transfer valve."))
+			to_chat(user, span_notice("I attach the tank to the transfer valve."))
 
 		update_icon()
 //TODO: Have this take an assemblyholder
@@ -57,7 +57,7 @@
 		if(!user.transferItemToLoc(item, src))
 			return
 		attached_device = A
-		to_chat(user, span_notice("You attach the [item] to the valve controls and secure it."))
+		to_chat(user, span_notice("I attach the [item] to the valve controls and secure it."))
 		A.holder = src
 		A.toggle_secure()	//this calls update_icon(), which calls update_icon() on the holder (i.e. the bomb).
 

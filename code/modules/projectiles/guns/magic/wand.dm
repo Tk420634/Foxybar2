@@ -39,7 +39,7 @@
 		if(no_den_usage)
 			var/area/A = get_area(user)
 			if(istype(A, /area/wizard_station))
-				to_chat(user, span_warning("You know better than to violate the security of The Den, best wait until you leave to use [src]."))
+				to_chat(user, span_warning("I know better than to violate the security of The Den, best wait until you leave to use [src]."))
 				return
 			else
 				no_den_usage = 0
@@ -70,7 +70,7 @@
 /obj/item/gun/magic/wand/death/zap_self(mob/living/user)
 	..()
 	to_chat(user, "<span class='warning'>You irradiate yourself with pure energy! \
-	[pick("Do not pass go. Do not collect 200 zorkmids.","You feel more confident in your spell casting skills.","You Die...","Do you want your possessions identified?")]\
+	[pick("Do not pass go. Do not collect 200 zorkmids.","I feel more confident in your spell casting skills.","I Die...","Do you want your possessions identified?")]\
 	</span>")
 	user.adjustOxyLoss(500)
 	charges--
@@ -106,7 +106,7 @@
 		var/mob/living/carbon/C = user
 		C.regenerate_limbs()
 		C.regenerate_organs()
-	to_chat(user, span_notice("You feel great!"))
+	to_chat(user, span_notice("I feel great!"))
 
 /obj/item/gun/magic/wand/resurrection/debug //for testing
 	name = "debug wand of healing"
@@ -164,7 +164,7 @@
 	no_den_usage = 1
 
 /obj/item/gun/magic/wand/door/zap_self(mob/living/user)
-	to_chat(user, span_notice("You feel vaguely more open with your feelings."))
+	to_chat(user, span_notice("I feel vaguely more open with your feelings."))
 	charges--
 	..()
 
@@ -201,7 +201,7 @@
 	..()
 	charges--
 	user.take_overall_damage(0,30)
-	to_chat(user, span_warning("You zap yourself. Why?"))
+	to_chat(user, span_warning("I zap yourself. Why?"))
 
 /////////////////////////////////////
 //KELPRUNNER'S MAGIC WEAPONS

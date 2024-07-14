@@ -73,7 +73,7 @@
 /obj/item/his_grace/relaymove(mob/living/user) //Allows changelings, etc. to climb out of Him after they revive, provided He isn't active
 	if(!awakened)
 		user.forceMove(get_turf(src))
-		user.visible_message(span_warning("[user] scrambles out of [src]!"), span_notice("You climb out of [src]!"))
+		user.visible_message(span_warning("[user] scrambles out of [src]!"), span_notice("I climb out of [src]!"))
 
 /obj/item/his_grace/process()
 	if(!bloodthirst)
@@ -126,7 +126,7 @@
 	if(awakened)
 		return
 	awakened = TRUE
-	user.visible_message(span_boldwarning("[src] begins to rattle. He thirsts."), span_his_grace("You flick [src]'s latch up. You hope this is a good idea."))
+	user.visible_message(span_boldwarning("[src] begins to rattle. He thirsts."), span_his_grace("I flick [src]'s latch up. You hope this is a good idea."))
 	name = "His Grace"
 	desc = "A bloodthirsty artifact created by a profane rite."
 	gender = MALE

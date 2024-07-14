@@ -153,7 +153,7 @@
 	if(ishuman(usr))
 		var/mob/living/carbon/human/H = usr
 		if(HAS_TRAIT(H, TRAIT_CLUMSY) && prob(25))
-			to_chat(H, span_warning("You cut yourself on the paper! Ahhhh! Ahhhhh!"))
+			to_chat(H, span_warning("I cut yourself on the paper! Ahhhh! Ahhhhh!"))
 			H.damageoverlaytemp = 9001
 			H.update_damage_hud()
 			return
@@ -177,7 +177,7 @@
 	if(user.can_read(src))
 		ui_interact(user)
 		return
-	. += span_warning("You cannot read it!")
+	. += span_warning("I cannot read it!")
 
 /obj/item/paper/ui_status(mob/user,/datum/ui_state/state)
 		// Are we on fire?  Hard ot read if so
@@ -210,7 +210,7 @@
 	. = TRUE
 	if(!bypass_clumsy && HAS_TRAIT(user, TRAIT_CLUMSY) && prob(10) && Adjacent(user))
 		user.visible_message(span_warning("[user] accidentally ignites [user.p_them()]self!"), \
-							span_userdanger("You miss [src] and accidentally light yourself on fire!"))
+							span_userdanger("I miss [src] and accidentally light yourself on fire!"))
 		if(user.is_holding(I)) //checking if they're holding it in case TK is involved
 			user.dropItemToGround(I)
 		user.adjust_fire_stacks(1)
@@ -235,7 +235,7 @@
 		ui_interact(user)
 		return
 	else if(istype(P, /obj/item/stamp))
-		to_chat(user, span_notice("You ready your stamp over the paper! "))
+		to_chat(user, span_notice("I ready your stamp over the paper! "))
 		ui_interact(user)
 		return /// Normaly you just stamp, you don't need to read the thing
 	else
@@ -339,9 +339,9 @@
 					LAZYADD(stamped, stamp_icon_state)
 
 				update_static_data(usr,ui)
-				ui.user.visible_message(span_notice("[ui.user] stamps [src] with [stamp_class]!"), span_notice("You stamp [src] with [stamp_class]!"))
+				ui.user.visible_message(span_notice("[ui.user] stamps [src] with [stamp_class]!"), span_notice("I stamp [src] with [stamp_class]!"))
 			else
-				to_chat(usr, pick("You try to stamp but you miss!", "There is no where else you can stamp!"))
+				to_chat(usr, pick("I try to stamp but you miss!", "There is no where else you can stamp!"))
 			. = TRUE
 
 		if("save")
@@ -356,11 +356,11 @@
 				// the generated html might get beyond this limit
 				log_paper("[key_name(ui.user)] writing to paper [name], and overwrote it by [paper_len-MAX_PAPER_LENGTH]")
 			if(paper_len == 0)
-				to_chat(ui.user, pick("Writing block strikes again!", "You forgot to write anthing!"))
+				to_chat(ui.user, pick("Writing block strikes again!", "I forgot to write anthing!"))
 			else
 				log_paper("[key_name(ui.user)] writing to paper [name]")
 				if(info != in_paper)
-					to_chat(ui.user, "You have added to your paper masterpiece!");
+					to_chat(ui.user, "I have added to your paper masterpiece!");
 					info = in_paper
 					update_static_data(usr,ui)
 

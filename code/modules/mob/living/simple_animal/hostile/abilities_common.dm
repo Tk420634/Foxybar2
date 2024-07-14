@@ -235,10 +235,10 @@
 		return
 	var/message
 	if(active)
-		user.show_message(span_notice("You decide not to direct any mobs."))
+		user.show_message(span_notice("I decide not to direct any mobs."))
 		remove_ranged_ability(message)
 	else
-		user.show_message(span_notice("You get ready to direct nearby mobs somewhere. <b>Click on a tile to send them!</b>"))
+		user.show_message(span_notice("I get ready to direct nearby mobs somewhere. <b>Click on a tile to send them!</b>"))
 		add_ranged_ability(user, message, TRUE)
 		return 1
 
@@ -323,7 +323,7 @@
 		user.show_message(span_alert("You're already doing that!"))
 		return FALSE
 	if(COOLDOWN_TIMELEFT(src, nest_cooldown))
-		user.show_message(span_alert("You can't do this for another <u>[(nest_cooldown-world.time)*0.1] seconds</u>."))
+		user.show_message(span_alert("I can't do this for another <u>[(nest_cooldown-world.time)*0.1] seconds</u>."))
 		return FALSE
 	if(!can_they_nest(user))
 		return FALSE
@@ -357,7 +357,7 @@
 	owner.visible_message(span_alert("[owner] starts to dig a hole..."))
 	if(!do_after(owner, 10 SECONDS, FALSE, owner))
 		doing_the_thing = FALSE
-		owner.show_message(span_alert("You were interrupted!"))
+		owner.show_message(span_alert("I were interrupted!"))
 		return
 	doing_the_thing = FALSE
 
@@ -378,7 +378,7 @@
 	if(!islist(GLOB.player_made_nests[user.ckey][nest_to_spawn]))
 		GLOB.player_made_nests[user.ckey][nest_to_spawn] = list()
 	if(LAZYLEN(GLOB.player_made_nests[user.ckey][nest_to_spawn]) >= 2)
-		user.show_message(span_alert("You already have 2 active nests! Go remove some of them if you want more."))
+		user.show_message(span_alert("I already have 2 active nests! Go remove some of them if you want more."))
 		return FALSE
 	return TRUE
 
@@ -415,7 +415,7 @@
 		return
 
 	if(!LAZYLEN(GLOB.player_made_nests[owner.ckey]))
-		user.show_message(span_alert("You don't have any nests!"))
+		user.show_message(span_alert("I don't have any nests!"))
 		return FALSE
 	
 	var/list/nest_types = list()
@@ -426,7 +426,7 @@
 			var/obj/structure/nest/thenest = nestype
 			nest_types[initial(thenest.name)] = nestype
 	if(!LAZYLEN(nest_types))
-		user.show_message(span_alert("You don't have any nests!"))
+		user.show_message(span_alert("I don't have any nests!"))
 		return FALSE
 	var/nests_to_smash = input(owner, "Which type of nest do you want to destroy?", "Smash the nests!", null) as null|anything in nest_types
 	if(!nests_to_smash)
@@ -469,7 +469,7 @@
 	if(!..())
 		return FALSE
 	if(COOLDOWN_TIMELEFT(src, taming_cooldown))
-		user.show_message(span_alert("You can't do this for another <u>[(taming_cooldown-world.time)*0.1] seconds</u>."))
+		user.show_message(span_alert("I can't do this for another <u>[(taming_cooldown-world.time)*0.1] seconds</u>."))
 		return FALSE
 	return TRUE
 

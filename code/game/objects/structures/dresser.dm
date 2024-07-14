@@ -8,9 +8,9 @@
 
 /obj/structure/dresser/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/wrench))
-		to_chat(user, span_notice("You begin to [anchored ? "unwrench" : "wrench"] [src]."))
+		to_chat(user, span_notice("I begin to [anchored ? "unwrench" : "wrench"] [src]."))
 		if(I.use_tool(src, user, 20, volume=50))
-			to_chat(user, span_notice("You successfully [anchored ? "unwrench" : "wrench"] [src]."))
+			to_chat(user, span_notice("I successfully [anchored ? "unwrench" : "wrench"] [src]."))
 			setAnchored(!anchored)
 	else
 		return ..()
@@ -26,7 +26,7 @@
 	var/mob/living/carbon/human/H = user
 
 	if(H.dna && H.dna.species && (NO_UNDERWEAR in H.dna.species.species_traits))
-		to_chat(H, span_warning("You are not capable of wearing underwear."))
+		to_chat(H, span_warning("I am not capable of wearing underwear."))
 		return
 
 	var/list/undergarment_choices = list("Underwear", "Underwear Color", "Undershirt", "Undershirt Color", "Socks", "Socks Color")

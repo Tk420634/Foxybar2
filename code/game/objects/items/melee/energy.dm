@@ -449,7 +449,7 @@
 	if(!in_range(src, user))	//Basic checks to prevent abuse
 		return
 	if(user.incapacitated(allow_crit = TRUE) || !istype(user))
-		to_chat(user, span_warning("You can't do that right now!"))
+		to_chat(user, span_warning("I can't do that right now!"))
 		return TRUE
 
 	if(alert("Are you sure you want to recolor your blade?", "Confirm Repaint", "Yes", "No") == "Yes")
@@ -483,7 +483,7 @@
 			to_chat(user, span_warning("\the [HAS_TRAIT(src, TRAIT_NODROP) ? src : W] is stuck to your hand, you can't attach it to \the [HAS_TRAIT(src, TRAIT_NODROP) ? W : src]!"))
 			return
 		else
-			to_chat(user, span_notice("You combine the two light swords, making a single supermassive blade! You're cool."))
+			to_chat(user, span_notice("I combine the two light swords, making a single supermassive blade! You're cool."))
 			new /obj/item/dualsaber/hypereutactic(user.drop_location())
 			qdel(W)
 			qdel(src)

@@ -195,7 +195,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 	merge_type = /obj/item/stack/ore/plasma
 
 /obj/item/stack/ore/plasma/welder_act(mob/living/user, obj/item/I)
-	to_chat(user, span_warning("You can't hit a high enough temperature to smelt [src] properly!"))
+	to_chat(user, span_warning("I can't hit a high enough temperature to smelt [src] properly!"))
 	return TRUE
 
 /obj/item/stack/ore/silver
@@ -271,7 +271,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 
 /obj/item/gibtonite/attackby(obj/item/I, mob/user, params)
 	if(!wires && istype(I, /obj/item/assembly/igniter))
-		user.visible_message("[user] attaches [I] to [src].", span_notice("You attach [I] to [src]."))
+		user.visible_message("[user] attaches [I] to [src].", span_notice("I attach [I] to [src]."))
 		wires = new /datum/wires/explosive/gibtonite(src)
 		attacher = key_name(user)
 		qdel(I)
@@ -291,7 +291,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 			primed = FALSE
 			if(det_timer)
 				deltimer(det_timer)
-			user.visible_message("The chain reaction was stopped! ...The ore's quality looks diminished.", span_notice("You stopped the chain reaction. ...The ore's quality looks diminished."))
+			user.visible_message("The chain reaction was stopped! ...The ore's quality looks diminished.", span_notice("I stopped the chain reaction. ...The ore's quality looks diminished."))
 			icon_state = "Gibtonite ore"
 			quality = GIBTONITE_QUALITY_LOW
 			return
@@ -334,7 +334,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 		else if(triggered_by == 2)
 			log_game("A signal has primed a [name] at [AREACOORD(bombturf)]. Igniter attacher: [key_name(attacher)].")
 		else
-			user.visible_message(span_warning("[user] strikes \the [src], causing a chain reaction!"), span_danger("You strike \the [src], causing a chain reaction."))
+			user.visible_message(span_warning("[user] strikes \the [src], causing a chain reaction!"), span_danger("I strike \the [src], causing a chain reaction."))
 			log_game("[key_name(user)] has primed a [name] for detonation at [AREACOORD(bombturf)]")
 		det_timer = addtimer(CALLBACK(src,PROC_REF(detonate), notify_admins), det_time, TIMER_STOPPABLE)
 
@@ -412,9 +412,9 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 		if (W.use_tool(src, user, 0, 1, skill_gain_mult = BARE_USE_TOOL_MULT))
 			add_overlay("coin_string_overlay")
 			string_attached = 1
-			to_chat(user, span_notice("You attach a string to the coin."))
+			to_chat(user, span_notice("I attach a string to the coin."))
 		else
-			to_chat(user, span_warning("You need one length of cable to attach a string to the coin!"))
+			to_chat(user, span_warning("I need one length of cable to attach a string to the coin!"))
 			return
 	else
 		..()
@@ -426,7 +426,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 	new /obj/item/stack/cable_coil(drop_location(), 1)
 	overlays = list()
 	string_attached = null
-	to_chat(user, span_notice("You detach the string from the coin."))
+	to_chat(user, span_notice("I detach the string from the coin."))
 	return TRUE
 
 /obj/item/coin/attack_self(mob/user)
@@ -443,8 +443,8 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 		sleep(15)
 		if(loc == oldloc && user && !user.incapacitated(allow_crit = TRUE))
 			user.visible_message("[user] has flipped [src]. It lands on [coinflip].", \
-								span_notice("You flip [src]. It lands on [coinflip]."), \
-								span_italic("You hear the clattering of loose change."))
+								span_notice("I flip [src]. It lands on [coinflip]."), \
+								span_italic("I hear the clattering of loose change."))
 	return TRUE//did the coin flip? Not useful in the slightest anymore!
 
 /obj/item/coin/gold

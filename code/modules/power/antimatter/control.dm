@@ -155,15 +155,15 @@
 		if(!anchored)
 			W.play_tool_sound(src, 75)
 			user.visible_message("[user.name] secures the [src.name] to the floor.", \
-				span_notice("You secure the anchor bolts to the floor."), \
-				span_italic("You hear a ratchet."))
+				span_notice("I secure the anchor bolts to the floor."), \
+				span_italic("I hear a ratchet."))
 			src.anchored = TRUE
 			connect_to_network()
 		else if(!linked_shielding.len > 0)
 			W.play_tool_sound(src, 75)
 			user.visible_message("[user.name] unsecures the [src.name].", \
-				span_notice("You remove the anchor bolts."), \
-				span_italic("You hear a ratchet."))
+				span_notice("I remove the anchor bolts."), \
+				span_italic("I hear a ratchet."))
 			src.anchored = FALSE
 			disconnect_from_network()
 		else
@@ -178,8 +178,8 @@
 			return
 		fueljar = W
 		user.visible_message("[user.name] loads an [W.name] into the [src.name].", \
-				span_notice("You load an [W.name]."), \
-				span_italic("You hear a thunk."))
+				span_notice("I load an [W.name]."), \
+				span_italic("I hear a thunk."))
 	else
 		return ..()
 

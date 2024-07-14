@@ -76,7 +76,7 @@
 			qdel(C)
 			state = 0 //fixing it by bashing it with a light bulb, fun eh?
 			update_icon()
-			to_chat(user, span_notice("You replace the light bulb."))
+			to_chat(user, span_notice("I replace the light bulb."))
 		else
 			to_chat(user, span_notice("The light bulb seems fine, no need to replace it."))
 

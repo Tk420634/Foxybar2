@@ -47,7 +47,7 @@
 		return
 
 	if(reagents.total_volume < 1)
-		to_chat(user, span_warning("Your mop is dry!"))
+		to_chat(user, span_warning("My mop is dry!"))
 		return
 
 	var/turf/T = get_turf(A)
@@ -56,7 +56,7 @@
 		return
 
 	if(T)
-		user.visible_message("[user] cleans \the [T] with [src].", span_notice("You clean \the [T] with [src]."))
+		user.visible_message("[user] cleans \the [T] with [src].", span_notice("I clean \the [T] with [src]."))
 		clean(T)
 		user.DelayNextAction(CLICK_CD_MELEE)
 		user.do_attack_animation(T, used_item = src)
@@ -78,7 +78,7 @@
 		J.mymop=src
 		J.update_icon()
 	else
-		to_chat(user, span_warning("You are unable to fit your [name] into the [J.name]."))
+		to_chat(user, span_warning("I am unable to fit your [name] into the [J.name]."))
 		return
 
 /obj/item/mop/cyborg
@@ -110,7 +110,7 @@
 		START_PROCESSING(SSobj, src)
 	else
 		STOP_PROCESSING(SSobj,src)
-	to_chat(user, span_notice("You set the condenser switch to the '[refill_enabled ? "ON" : "OFF"]' position."))
+	to_chat(user, span_notice("I set the condenser switch to the '[refill_enabled ? "ON" : "OFF"]' position."))
 	playsound(user, 'sound/machines/click.ogg', 30, 1)
 
 /obj/item/mop/advanced/process()

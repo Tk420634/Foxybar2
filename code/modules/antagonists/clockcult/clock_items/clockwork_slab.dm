@@ -49,7 +49,7 @@
 
 /obj/item/clockwork/slab/traitor/attack_self(mob/living/user)
 	if(!is_servant_of_ratvar(user) && !spent)
-		to_chat(user, span_userdanger("You press your hand onto [src], golden tendrils of light latching onto you. Was this the best of ideas?"))
+		to_chat(user, span_userdanger("I press your hand onto [src], golden tendrils of light latching onto you. Was this the best of ideas?"))
 		if(add_servant_of_ratvar(user, FALSE, FALSE, /datum/antagonist/clockcult/neutered/traitor))
 			spent = TRUE
 			// Add some (5 KW) power so they don't suffer for 100 ticks
@@ -161,7 +161,7 @@
 //Scripture Recital
 /obj/item/clockwork/slab/attack_self(mob/living/user)
 	if(iscultist(user))
-		to_chat(user, span_heavy_brass("\"You reek of blood. You've got a lot of nerve to even look at that slab.\""))
+		to_chat(user, span_heavy_brass("\"I reek of blood. You've got a lot of nerve to even look at that slab.\""))
 		user.visible_message(span_warning("A sizzling sound comes from [user]'s hands!"), span_userdanger("[src] suddenly grows extremely hot in your hands!"))
 		playsound(get_turf(user), 'sound/weapons/sear.ogg', 50, 1)
 		user.dropItemToGround(src)
@@ -200,7 +200,7 @@
 	if(!scripture || !user || !user.canUseTopic(src) || (!no_cost && !can_recite_scripture(user)))
 		return FALSE
 	if(user.get_active_held_item() != src)
-		to_chat(user, span_warning("You need to hold the slab in your active hand to recite scripture!"))
+		to_chat(user, span_warning("I need to hold the slab in your active hand to recite scripture!"))
 		return FALSE
 	var/initial_tier = initial(scripture.tier)
 	if(initial_tier == SCRIPTURE_PERIPHERAL)

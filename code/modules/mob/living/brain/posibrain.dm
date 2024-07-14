@@ -14,7 +14,7 @@ GLOBAL_VAR(posibrain_notify_cooldown)
 	mecha = null//This does not appear to be used outside of reference in mecha.dm.
 	braintype = "Android"
 	var/autoping = TRUE //if it pings on creation immediately
-	var/begin_activation_message = span_notice("You carefully locate the manual activation switch and start the positronic brain's boot process.")
+	var/begin_activation_message = span_notice("I carefully locate the manual activation switch and start the positronic brain's boot process.")
 	var/success_message = span_notice("The positronic brain pings, and its lights start flashing. Success!")
 	var/fail_message = span_notice("The positronic brain buzzes quietly, and the golden lights fade away. Perhaps you could try again?")
 	var/new_role = "Positronic Brain"

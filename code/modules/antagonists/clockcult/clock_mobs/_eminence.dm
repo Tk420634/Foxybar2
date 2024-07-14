@@ -80,7 +80,7 @@
 /mob/camera/eminence/say(message, bubble_type, list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null)
 	if(client)
 		if(client.prefs.muted & MUTE_IC)
-			to_chat(src, "You cannot send IC messages (muted).")
+			to_chat(src, "I cannot send IC messages (muted).")
 			return
 		if(client.handle_spam_prevention(message,MUTE_IC))
 			return
@@ -123,7 +123,7 @@
 	else if(istype(A, /obj/structure/destructible/clockwork/trap/trigger))
 		var/obj/structure/destructible/clockwork/trap/trigger/T = A
 		T.visible_message(span_danger("[T] clunks as it's activated remotely."))
-		to_chat(src, span_brass("You activate [T]."))
+		to_chat(src, span_brass("I activate [T]."))
 		T.activate()
 
 /mob/camera/eminence/proc/attempt_recall(obj/structure/destructible/clockwork/massive/celestial_gateway/G)
@@ -231,7 +231,7 @@
 //Eminence actions below this point
 /datum/action/innate/eminence
 	name = "Eminence Action"
-	desc = "You shouldn't see this. File a bug report!"
+	desc = "I shouldn't see this. File a bug report!"
 	icon_icon = 'icons/mob/actions/actions_clockcult.dmi'
 	background_icon_state = "bg_clock"
 	buttontooltipstyle = "clockcult"

@@ -19,7 +19,7 @@
 		G.forceMove(usr.loc)
 		H.forceMove(usr.loc)
 		qdel(src)
-		to_chat(usr,"You dissasemble the [src].")
+		to_chat(usr,"I dissasemble the [src].")
 	. = ..()
 */
 /obj/item/gun/ballistic/automatic/smg/greasegun/mid
@@ -45,7 +45,7 @@
 		G.forceMove(usr.loc)
 		H.forceMove(usr.loc)
 		qdel(src)
-		to_chat(usr,"You dissasemble the [src].")
+		to_chat(usr,"I dissasemble the [src].")
 	. = ..()
 */
 /obj/item/gun/ballistic/automatic/smg/greasegun/high
@@ -76,7 +76,7 @@
 		G.forceMove(usr.loc)
 		H.forceMove(usr.loc)
 		qdel(src)
-		to_chat(usr,"You dissasemble the [src].")
+		to_chat(usr,"I dissasemble the [src].")
 	. = ..()
 
 //10mm smg//
@@ -99,7 +99,7 @@
 		G.forceMove(usr.loc)
 		H.forceMove(usr.loc)
 		qdel(src)
-		to_chat(usr,"You dissasemble the [src].")
+		to_chat(usr,"I dissasemble the [src].")
 	. = ..()
 */
 /obj/item/gun/ballistic/automatic/smg/smg10mm/mid
@@ -127,7 +127,7 @@
 		G.forceMove(usr.loc)
 		H.forceMove(usr.loc)
 		qdel(src)
-		to_chat(usr,"You dissasemble the [src].")
+		to_chat(usr,"I dissasemble the [src].")
 	. = ..()
 */
 /obj/item/gun/ballistic/automatic/smg/smg10mm/high
@@ -158,7 +158,7 @@
 		G.forceMove(usr.loc)
 		H.forceMove(usr.loc)
 		qdel(src)
-		to_chat(usr,"You dissasemble the [src].")
+		to_chat(usr,"I dissasemble the [src].")
 	. = ..()
 
 // PPSH-41 //
@@ -181,7 +181,7 @@
 		G.forceMove(usr.loc)
 		H.forceMove(usr.loc)
 		qdel(src)
-		to_chat(usr,"You dissasemble the [src].")
+		to_chat(usr,"I dissasemble the [src].")
 	. = ..()
 */
 /obj/item/gun/ballistic/automatic/smg/ppsh/mid
@@ -211,7 +211,7 @@
 		G.forceMove(usr.loc)
 		H.forceMove(usr.loc)
 		qdel(src)
-		to_chat(usr,"You dissasemble the [src].")
+		to_chat(usr,"I dissasemble the [src].")
 	. = ..()
 */
 /obj/item/gun/ballistic/automatic/smg/ppsh/high
@@ -240,7 +240,7 @@
 		G.forceMove(usr.loc)
 		H.forceMove(usr.loc)
 		qdel(src)
-		to_chat(usr,"You dissasemble the [src].")
+		to_chat(usr,"I dissasemble the [src].")
 	. = ..()
 */
 
@@ -264,7 +264,7 @@
 		G.forceMove(usr.loc)
 		H.forceMove(usr.loc)
 		qdel(src)
-		to_chat(usr,"You dissasemble the [src].")
+		to_chat(usr,"I dissasemble the [src].")
 	. = ..()
 */
 // UZI //
@@ -294,7 +294,7 @@
 		G.forceMove(usr.loc)
 		H.forceMove(usr.loc)
 		qdel(src)
-		to_chat(usr,"You dissasemble the [src].")
+		to_chat(usr,"I dissasemble the [src].")
 	. = ..()
 */
 /obj/item/gun/ballistic/automatic/smg/mini_uzi/high
@@ -323,7 +323,7 @@
 		G.forceMove(usr.loc)
 		H.forceMove(usr.loc)
 		qdel(src)
-		to_chat(usr,"You dissasemble the [src].")
+		to_chat(usr,"I dissasemble the [src].")
 	. = ..()
 */
 
@@ -350,7 +350,7 @@
 		H.forceMove(usr.loc)
 		Z.forceMove(usr.loc)
 		qdel(src)
-		to_chat(usr,"You dissasemble the [src].")
+		to_chat(usr,"I dissasemble the [src].")
 	. = ..()
 */
 /obj/item/gun/ballistic/automatic/assault_rifle/mid
@@ -382,7 +382,7 @@
 		H.forceMove(usr.loc)
 		Z.forceMove(usr.loc)
 		qdel(src)
-		to_chat(usr,"You dissasemble the [src].")
+		to_chat(usr,"I dissasemble the [src].")
 	. = ..()
 */
 /obj/item/gun/ballistic/automatic/assault_rifle/high
@@ -415,7 +415,7 @@
 		H.forceMove(usr.loc)
 		Z.forceMove(usr.loc)
 		qdel(src)
-		to_chat(usr,"You dissasemble the [src].")
+		to_chat(usr,"I dissasemble the [src].")
 	. = ..()
 */
 /obj/item/gun/ballistic/automatic/service/mid
@@ -441,7 +441,7 @@
 		F.forceMove(usr.loc)
 		G.forceMove(usr.loc)
 		qdel(src)
-		to_chat(usr,"You dissasemble the [src].")
+		to_chat(usr,"I dissasemble the [src].")
 	. = ..()
 */
 /obj/item/gun/ballistic/automatic/service/high
@@ -468,7 +468,7 @@
 		F.forceMove(usr.loc)
 		G.forceMove(usr.loc)
 		qdel(src)
-		to_chat(usr,"You dissasemble the [src].")
+		to_chat(usr,"I dissasemble the [src].")
 	. = ..()
 
 // Rangemaster //
@@ -493,7 +493,7 @@
 		H.forceMove(usr.loc)
 		Z.forceMove(usr.loc)
 		qdel(src)
-		to_chat(usr,"You dissasemble the [src].")
+		to_chat(usr,"I dissasemble the [src].")
 	. = ..()
 */
 /obj/item/gun/ballistic/automatic/rangemaster/scoped/mid
@@ -522,7 +522,7 @@
 		H.forceMove(usr.loc)
 		Z.forceMove(usr.loc)
 		qdel(src)
-		to_chat(usr,"You dissasemble the [src].")
+		to_chat(usr,"I dissasemble the [src].")
 	. = ..()
 */
 /obj/item/gun/ballistic/automatic/rangemaster/scoped/high
@@ -552,6 +552,6 @@
 		H.forceMove(usr.loc)
 		Z.forceMove(usr.loc)
 		qdel(src)
-		to_chat(usr,"You dissasemble the [src].")
+		to_chat(usr,"I dissasemble the [src].")
 	. = ..()
 */

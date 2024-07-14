@@ -81,14 +81,14 @@
 		"%pred's %belly lets out a wet squelch.")
 
 	var/list/struggle_messages_inside = list(
-		"Your useless squirming only causes %pred's slimy %belly to squelch over your body.",
-		"Your struggles only cause %pred's %belly to gush softly around you.",
-		"Your movement only causes %pred's %belly to slosh around you.",
-		"Your motion causes %pred's %belly to jiggle.",
-		"You fidget around inside of %pred's %belly.",
-		"You shove against the walls of %pred's %belly, making it briefly swell outward.",
-		"You jostle %pred's %belly with movement.",
-		"You squirm inside of %pred's %belly, making it wobble around.")
+		"My useless squirming only causes %pred's slimy %belly to squelch over your body.",
+		"My struggles only cause %pred's %belly to gush softly around you.",
+		"My movement only causes %pred's %belly to slosh around you.",
+		"My motion causes %pred's %belly to jiggle.",
+		"I fidget around inside of %pred's %belly.",
+		"I shove against the walls of %pred's %belly, making it briefly swell outward.",
+		"I jostle %pred's %belly with movement.",
+		"I squirm inside of %pred's %belly, making it wobble around.")
 
 	var/list/absorbed_struggle_messages_outside = list(
 		"%pred's %belly wobbles, seemingly on its own.",
@@ -96,24 +96,24 @@
 		"%pred's %belly seems to shake for a second without an obvious reason.")
 
 	var/list/absorbed_struggle_messages_inside = list(
-		"You try and resist %pred's %belly, but only cause it to jiggle slightly.",
-		"Your fruitless mental struggles only shift %pred's %belly a tiny bit.",
-		"You can't make any progress freeing yourself from %pred's %belly.")
+		"I try and resist %pred's %belly, but only cause it to jiggle slightly.",
+		"My fruitless mental struggles only shift %pred's %belly a tiny bit.",
+		"I can't make any progress freeing yourself from %pred's %belly.")
 
 	var/list/digest_messages_owner = list(
-		"You feel %prey's body succumb to your digestive system, which breaks it apart into soft slurry.",
-		"You hear a lewd glorp as your %belly muscles grind %prey into a warm pulp.",
-		"Your %belly lets out a rumble as it melts %prey into sludge.",
-		"You feel a soft gurgle as %prey's body loses form in your %belly. They're nothing but a soft mass of churning slop now.",
-		"Your %belly begins gushing %prey's remains through your system, adding some extra weight to your thighs.",
-		"Your %belly begins gushing %prey's remains through your system, adding some extra weight to your rump.",
-		"Your %belly begins gushing %prey's remains through your system, adding some extra weight to your belly.",
-		"Your %belly groans as %prey falls apart into a thick soup. You can feel their remains soon flowing deeper into your body to be absorbed.",
-		"Your %belly kneads on every fiber of %prey, softening them down into mush to fuel your next hunt.",
-		"Your %belly churns %prey down into a hot slush. You can feel the nutrients coursing through your digestive track with a series of long, wet glorps.")
+		"I feel %prey's body succumb to your digestive system, which breaks it apart into soft slurry.",
+		"I hear a lewd glorp as your %belly muscles grind %prey into a warm pulp.",
+		"My %belly lets out a rumble as it melts %prey into sludge.",
+		"I feel a soft gurgle as %prey's body loses form in your %belly. They're nothing but a soft mass of churning slop now.",
+		"My %belly begins gushing %prey's remains through your system, adding some extra weight to your thighs.",
+		"My %belly begins gushing %prey's remains through your system, adding some extra weight to your rump.",
+		"My %belly begins gushing %prey's remains through your system, adding some extra weight to your belly.",
+		"My %belly groans as %prey falls apart into a thick soup. You can feel their remains soon flowing deeper into your body to be absorbed.",
+		"My %belly kneads on every fiber of %prey, softening them down into mush to fuel your next hunt.",
+		"My %belly churns %prey down into a hot slush. You can feel the nutrients coursing through your digestive track with a series of long, wet glorps.")
 
 	var/list/digest_messages_prey = list(
-		"Your body succumbs to %pred's digestive system, which breaks you apart into soft slurry.",
+		"My body succumbs to %pred's digestive system, which breaks you apart into soft slurry.",
 		"%pred's %belly lets out a lewd glorp as their muscles grind you into a warm pulp.",
 		"%pred's %belly lets out a rumble as it melts you into sludge.",
 		"%pred feels a soft gurgle as your body loses form in their %belly. You're nothing but a soft mass of churning slop now.",
@@ -125,16 +125,16 @@
 		"%pred's %belly churns you down into a hot slush. Your nutrient-rich remains course through their digestive track with a series of long, wet glorps.")
 
 	var/list/absorb_messages_owner = list(
-		"You feel %prey becoming part of you.")
+		"I feel %prey becoming part of you.")
 
 	var/list/absorb_messages_prey = list(
-		"You feel yourself becoming part of %pred's %belly!")
+		"I feel yourself becoming part of %pred's %belly!")
 
 	var/list/unabsorb_messages_owner = list(
-		"You feel %prey reform into a recognizable state again.")
+		"I feel %prey reform into a recognizable state again.")
 
 	var/list/unabsorb_messages_prey = list(
-		"You are released from being part of %pred's %belly.")
+		"I am released from being part of %pred's %belly.")
 
 	var/list/examine_messages = list(
 		"They have something solid in their %belly!",
@@ -780,7 +780,7 @@
 		return
 	SEND_SIGNAL(living_prey, COMSIG_VORE_ABSORBED_STATE, TRUE)
 	to_chat(living_prey, span_notice("[owner]'s [lowertext(name)] absorbs your body, making you part of them."), pref_check = VOREPREF_VORE_MESSAGES)
-	to_chat(owner, span_notice("Your [lowertext(name)] absorbs [living_prey]'s body, making them part of you."))
+	to_chat(owner, span_notice("My [lowertext(name)] absorbs [living_prey]'s body, making them part of you."))
 
 	living_prey.forceMove(src)
 
@@ -869,7 +869,7 @@
 			return
 		to_chat(
 			living_prey,
-			span_warning("Your attempt to escape [lowertext(name)] has failed and your struggles only results in you sliding into [owner]'s [transferlocation]!"),
+			span_warning("My attempt to escape [lowertext(name)] has failed and your struggles only results in you sliding into [owner]'s [transferlocation]!"),
 			pref_check = VOREPREF_VORE_MESSAGES
 		)
 		to_chat(
@@ -887,7 +887,7 @@
 		)
 		to_chat(
 			owner,
-			span_warning("You feel your [lowertext(name)] start to cling onto its contents...")
+			span_warning("I feel your [lowertext(name)] start to cling onto its contents...")
 		)
 		digest_mode = DM_ABSORB
 		return
@@ -900,19 +900,19 @@
 		)
 		to_chat(
 			owner,
-			span_warning("You feel your [lowertext(name)] beginning to become active!")
+			span_warning("I feel your [lowertext(name)] beginning to become active!")
 		)
 		digest_mode = DM_DIGEST
 		return
 
 	to_chat(
 		living_prey,
-		span_warning("You make no progress in escaping [owner]'s [lowertext(name)]."),
+		span_warning("I make no progress in escaping [owner]'s [lowertext(name)]."),
 		pref_check = VOREPREF_VORE_MESSAGES
 	)
 	to_chat(
 		owner,
-		span_warning("Your prey appears to be unable to make any progress in escaping your [lowertext(name)].")
+		span_warning("My prey appears to be unable to make any progress in escaping your [lowertext(name)].")
 	)
 
 /obj/vore_belly/proc/attempt_escape(mob/living/living_prey)
@@ -928,7 +928,7 @@
 	var/time_to_leave = get_escape_time()
 	to_chat(
 		living_prey,
-		span_warning("You attempt to climb out of \the [lowertext(name)]. (This will take around [time_to_leave*0.1] seconds.)"),
+		span_warning("I attempt to climb out of \the [lowertext(name)]. (This will take around [time_to_leave*0.1] seconds.)"),
 		pref_check = VOREPREF_VORE_MESSAGES
 	)
 	to_chat(
@@ -950,7 +950,7 @@
 	else //Belly became inescapable or mob revived
 		to_chat(
 			living_prey,
-			span_warning("Your attempt to escape [owner]'s [lowertext(name)] has failed!"),
+			span_warning("My attempt to escape [owner]'s [lowertext(name)] has failed!"),
 			pref_check = VOREPREF_VORE_MESSAGES
 		)
 		to_chat(
@@ -1075,8 +1075,8 @@
 
 /obj/vore_belly/proc/unabsorb_living(mob/living/living_prey)
 	SEND_SIGNAL(living_prey, COMSIG_VORE_ABSORBED_STATE, FALSE)
-	to_chat(living_prey,span_notice("You suddenly feel solid again "))
-	to_chat(owner,span_notice("You feel like a part of you is missing."))
+	to_chat(living_prey,span_notice("I suddenly feel solid again "))
+	to_chat(owner,span_notice("I feel like a part of you is missing."))
 	owner.adjust_nutrition(-NUTRITION_LEVEL_FED)
 
 /obj/vore_belly/proc/auto_emote()
@@ -1130,7 +1130,7 @@
 		to_chat(living_prey, span_userdanger("The injury to [owner] hurts you as well!"), pref_check = VOREPREF_VORE_MESSAGES)
 		someone_hurt = TRUE
 	if(someone_hurt)
-		to_chat(owner, span_userdanger("You feel a flinch inside your [name]!"), pref_check = VOREPREF_VORE_MESSAGES)
+		to_chat(owner, span_userdanger("I feel a flinch inside your [name]!"), pref_check = VOREPREF_VORE_MESSAGES)
 
 // Belly copies and then returns the copy
 // Needs to be updated for any var changes AND KEPT IN ORDER OF THE VARS ABOVE AS WELL!

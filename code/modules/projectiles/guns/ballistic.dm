@@ -165,11 +165,11 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 		if(user.transferItemToLoc(new_mag, src))
 			magazine = new_mag
 			if(oldmag && user.put_in_hands(oldmag))
-				to_chat(user, span_notice("You load a new magazine into \the [src], keeping hold of the old one."))
+				to_chat(user, span_notice("I load a new magazine into \the [src], keeping hold of the old one."))
 			else
-				to_chat(user, span_notice("You load a new magazine into \the [src]."))
+				to_chat(user, span_notice("I load a new magazine into \the [src]."))
 		else
-			to_chat(user, span_warning("You cannot seem to get \the [new_mag] out of your hands!"))
+			to_chat(user, span_warning("I cannot seem to get \the [new_mag] out of your hands!"))
 			return FALSE
 		if(magazine.ammo_count())
 			playsound(src, "gun_insert_full_magazine", 70, 1)
@@ -218,25 +218,25 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 	if(mag_to_check.type in allowed_mags)
 		return TRUE
 	if(user)
-		to_chat(user, span_alert("You can't seem to fit \the [mag_to_check] into \the [src]."))
+		to_chat(user, span_alert("I can't seem to fit \the [mag_to_check] into \the [src]."))
 
 /obj/item/gun/ballistic/proc/load_fixed_magazine(obj/item/casing_or_magazine, user, params)
 	if(istype(casing_or_magazine, /obj/item/ammo_casing) || istype(casing_or_magazine, /obj/item/ammo_box))
 		var/num_loaded = magazine.attackby(casing_or_magazine, user, params, 1)
 		if(num_loaded)
-			to_chat(user, span_notice("You load [num_loaded] shell\s into \the [src]!"))
+			to_chat(user, span_notice("I load [num_loaded] shell\s into \the [src]!"))
 			playsound(user, 'sound/weapons/shotguninsert.ogg', 60, 1)
 			casing_or_magazine.update_icon()
 			update_icon()
 			chamber_round(0)
 			return TRUE
 		else
-			to_chat(user, span_alert("You can't fit \the [casing_or_magazine] into \the [src]!"))
+			to_chat(user, span_alert("I can't fit \the [casing_or_magazine] into \the [src]!"))
 			return FALSE
 
 /obj/item/gun/ballistic/proc/pump(mob/living/M, visible = TRUE)
 	if(visible)
-		M.visible_message(span_warning("[M] [cock_wording]\s \the [src]."), span_warning("You [cock_wording] \the [src]."))
+		M.visible_message(span_warning("[M] [cock_wording]\s \the [src]."), span_warning("I [cock_wording] \the [src]."))
 		playsound(M, cock_sound, 60, 1)
 	pump_unload(M)
 	pump_reload(M)
@@ -298,7 +298,7 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 			playsound(src, 'sound/weapons/gun_magazine_remove_full.ogg', 70, 1)
 		else
 			playsound(src, "gun_remove_empty_magazine", 70, 1)
-		to_chat(user, span_notice("You eject \the [magazine] from \the [src]."))
+		to_chat(user, span_notice("I eject \the [magazine] from \the [src]."))
 	magazine.update_icon()
 	magazine = null
 	update_icon()
@@ -314,7 +314,7 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 
 /obj/item/gun/ballistic/proc/eject_chambered_round(mob/living/user, sounds_and_words)
 	if(sounds_and_words)
-		to_chat(user, span_notice("You eject \a [chambered] from \the [src]'s chamber."))
+		to_chat(user, span_notice("I eject \a [chambered] from \the [src]'s chamber."))
 		playsound(src, "gun_slide_lock", 70, 1)
 	process_chamber(user, FALSE)
 
@@ -347,7 +347,7 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 		to_chat(user, span_warning("\The [src] is already shortened!"))
 		return
 	user.DelayNextAction(CLICK_CD_MELEE)
-	user.visible_message("[user] begins to shorten \the [src].", span_notice("You begin to shorten \the [src]..."))
+	user.visible_message("[user] begins to shorten \the [src].", span_notice("I begin to shorten \the [src]..."))
 
 	//if there's any live ammo inside the gun, makes it go off
 	if(blow_up(user))
@@ -357,7 +357,7 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 	if(do_after(user, 30, target = src))
 		if(sawn_off)
 			return
-		user.visible_message("[user] shortens \the [src]!", span_notice("You shorten \the [src]."))
+		user.visible_message("[user] shortens \the [src]!", span_notice("I shorten \the [src]."))
 		name = "sawn-off [src.name]"
 		desc = sawn_desc
 		w_class = WEIGHT_CLASS_SMALL
@@ -442,7 +442,7 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 	if(!ishuman(user))
 		return FALSE
 	if(on_cooldown(user) || !user.has_direct_access_to(src, STORAGE_VIEW_DEPTH))
-		to_chat(user, span_notice("You can't reload \the [src] right now!"))
+		to_chat(user, span_notice("I can't reload \the [src] right now!"))
 		return FALSE
 	//Shotguns, bolt action rifles, etc.
 	if(magazine?.fixed_mag)
@@ -461,7 +461,7 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 	//Wait a second or two so we can't spam reload too quickly. Also if this runtimes then the gun will never be reloadable again with this proc so rip
 	busy_action = TRUE
 	playsound(get_turf(H), "rustle", rand(50,100), 1, SOUND_DISTANCE(7))
-	H.visible_message(span_notice("[H] starts reloading \the [src]..."), span_notice("You start looking for a magazine to reload \the [src] with..."), span_notice("You hear the clinking of metal..."))
+	H.visible_message(span_notice("[H] starts reloading \the [src]..."), span_notice("I start looking for a magazine to reload \the [src] with..."), span_notice("I hear the clinking of metal..."))
 	if(!do_after(H, reloading_time, TRUE, src, TRUE, allow_movement = TRUE, stay_close = TRUE, public_progbar = TRUE))
 		busy_action = FALSE
 		return FALSE
@@ -537,7 +537,7 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 				else
 					break
 	else
-		to_chat(H, span_alert("You couldn't find any ammunition that fits into \the [src]!"))
+		to_chat(H, span_alert("I couldn't find any ammunition that fits into \the [src]!"))
 
 	busy_action = FALSE
 	return TRUE
@@ -552,7 +552,7 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 	//Wait a second or two so we can't spam reload too quickly. Also if this runtimes then the gun will never be reloadable again with this proc so rip
 	busy_action = TRUE
 	playsound(get_turf(H), "rustle", rand(50,100), 1, SOUND_DISTANCE(7))
-	H.visible_message(span_notice("[H] starts reloading \the [src]..."), span_notice("You start looking for some ammunition to reload \the [src] with..."), span_notice("You hear the clinking of metal..."))
+	H.visible_message(span_notice("[H] starts reloading \the [src]..."), span_notice("I start looking for some ammunition to reload \the [src] with..."), span_notice("I hear the clinking of metal..."))
 	if(!do_after(H, reloading_time, TRUE, src, TRUE, allow_movement = TRUE, stay_close = TRUE, public_progbar = TRUE))
 		busy_action = FALSE
 		return FALSE
@@ -580,7 +580,7 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 						H.quick_equip(oldmag)// If that fails, quick equip it.
 				break//If we loaded a new mag successfully, stop
 	else
-		to_chat(H, span_alert("You couldn't find any filled magazines that fit \the [src]!"))
+		to_chat(H, span_alert("I couldn't find any filled magazines that fit \the [src]!"))
 		busy_action = FALSE
 		return FALSE
 

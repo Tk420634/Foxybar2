@@ -181,11 +181,11 @@
 /mob/living/simple_animal/hostile/amusing_duck/proc/toggle_awful_mode(mob/user)
 	TOGGLE_VAR(awful_mode)
 	if(awful_mode == TRUE)
-		to_chat(user, "You turn on awful mode.")
+		to_chat(user, "I turn on awful mode.")
 		amusing_song_volume = 100
 		amusing_song_chance = 100
 	else
-		to_chat(user, "You thankfully turn off awful mode.")
+		to_chat(user, "I thankfully turn off awful mode.")
 		amusing_song_volume = 65
 		amusing_song_chance = 20
 	playsound(src, 'sound/machines/switch_on.ogg', 75)
@@ -193,43 +193,43 @@
 /mob/living/simple_animal/hostile/amusing_duck/proc/toggle_lay_egg(mob/user)
 	TOGGLE_VAR(lay_egg_is)
 	if(lay_egg_is == TRUE)
-		to_chat(user, "You flip the switch on the duck's back to TRUE.")
+		to_chat(user, "I flip the switch on the duck's back to TRUE.")
 	else
-		to_chat(user, "You flip the switch on the duck's back to FALSE.")
+		to_chat(user, "I flip the switch on the duck's back to FALSE.")
 	playsound(src, 'sound/machines/switch_on.ogg', 75)
 
 /mob/living/simple_animal/hostile/amusing_duck/proc/toggle_peaceful(mob/user)
 	TOGGLE_VAR(peaceful)
 	if(peaceful == TRUE)
-		to_chat(user, "You flip the switch on the duck's back to WANDERING.")
+		to_chat(user, "I flip the switch on the duck's back to WANDERING.")
 	else
-		to_chat(user, "You flip the switch on the duck's back to ADVANCING.")
+		to_chat(user, "I flip the switch on the duck's back to ADVANCING.")
 	playsound(src, 'sound/machines/switch_on.ogg', 75)
 
 /mob/living/simple_animal/hostile/amusing_duck/proc/toggle_loud_mode(mob/user)
 	TOGGLE_VAR(loud_mode)
 	if(loud_mode == TRUE)
-		to_chat(user, "You flip the switch on the duck's back to MUSIC.")
+		to_chat(user, "I flip the switch on the duck's back to MUSIC.")
 	else
-		to_chat(user, "You flip the switch on the duck's back to SILENCE.")
+		to_chat(user, "I flip the switch on the duck's back to SILENCE.")
 	playsound(src, 'sound/machines/switch_on.ogg', 75)
 
 /mob/living/simple_animal/hostile/amusing_duck/proc/toggle_lights(mob/user)
 	TOGGLE_VAR(lights)
 	set_light_on(lights)
 	if(lights == TRUE)
-		to_chat(user, "You flip the switch on the duck's back to LIGHT.")
+		to_chat(user, "I flip the switch on the duck's back to LIGHT.")
 	else
-		to_chat(user, "You flip the switch on the duck's back to DARKNESS.")
+		to_chat(user, "I flip the switch on the duck's back to DARKNESS.")
 	playsound(src, 'sound/machines/switch_on.ogg', 75)
 
 /mob/living/simple_animal/hostile/amusing_duck/proc/toggle_duck(mob/user)
 	if(AIStatus == AI_OFF)
 		toggle_ai(AI_ON)
-		to_chat(user, "You switch the duck on.")
+		to_chat(user, "I switch the duck on.")
 	else
 		toggle_ai(AI_OFF)
-		to_chat(user, "You switch the duck off.")
+		to_chat(user, "I switch the duck off.")
 	playsound(src, 'sound/machines/switch_on.ogg', 75)
 
 /mob/living/simple_animal/hostile/amusing_duck/proc/pop()

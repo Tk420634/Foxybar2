@@ -42,15 +42,15 @@
 		return FALSE
 
 	if(user.heal_reservoir < 1) //You have no healing charges remaining.
-		to_chat(user, span_notice("You just can't find anything to fix on [M] right now. Check again later and maybe have a drink of water."))
+		to_chat(user, span_notice("I just can't find anything to fix on [M] right now. Check again later and maybe have a drink of water."))
 		return FALSE
 
 	if(praying)
-		to_chat(user, span_notice("You are already using [src]."))
+		to_chat(user, span_notice("I am already using [src]."))
 		return
 
 	user.visible_message(span_info("[user] kneels[M == user ? null : "next to [M]"] and begins to tighten their bits."), \
-		span_info("You kneel[M == user ? null : " next to [M]"] and begin tightening their bits."))
+		span_info("I kneel[M == user ? null : " next to [M]"] and begin tightening their bits."))
 
 	praying = TRUE
 	if(!target || !isrobotic(target))
@@ -67,10 +67,10 @@
 			if(target.health < target.maxHealth)
 				attack(target, user)
 		else
-			to_chat(user, span_notice("You can't find anything to fix on [target] right now. Check again later and maybe have a drink of water."))
+			to_chat(user, span_notice("I can't find anything to fix on [target] right now. Check again later and maybe have a drink of water."))
 			praying = FALSE
 	else
-		to_chat(user, span_notice("You were interrupted."))
+		to_chat(user, span_notice("I were interrupted."))
 		praying = FALSE
 
 
@@ -166,7 +166,7 @@
 /obj/item/screwdriver/power/attack_self(mob/user)
 	playsound(get_turf(user),'sound/items/change_drill.ogg',50,1)
 	var/obj/item/wrench/power/b_drill = new /obj/item/wrench/power(drop_location())
-	to_chat(user, span_notice("You attach the bolt driver bit to [src]."))
+	to_chat(user, span_notice("I attach the bolt driver bit to [src]."))
 	qdel(src)
 	user.put_in_active_hand(b_drill)
 

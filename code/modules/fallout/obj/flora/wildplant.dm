@@ -32,7 +32,7 @@
 
 /obj/structure/flora/wild_plant/attackby(obj/item/O, mob/user, params)
 	if(istype(O, /obj/item/shovel))
-		user << span_notice("You clear up [src]!")
+		user << span_notice("I clear up [src]!")
 		qdel(src)
 		return
 	return ..()
@@ -46,11 +46,11 @@
 			update_icon()
 	else if(dead)
 		dead = 0
-		to_chat(user, span_notice("You remove the dead plant."))
+		to_chat(user, span_notice("I remove the dead plant."))
 		qdel(myseed)
 		qdel(src)
 	else
-		to_chat(user, span_notice("You touched the plant... Are you happy now?")) // Does this make you happy, Stanley?
+		to_chat(user, span_notice("I touched the plant... Are you happy now?")) // Does this make you happy, Stanley?
 
 /obj/structure/flora/wild_plant/examine(user)
 	if(myseed)

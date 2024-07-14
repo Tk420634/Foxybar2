@@ -93,7 +93,7 @@
 				head.flash2.forceMove(T)
 				head.flash2 = null
 				head = null
-			to_chat(user, span_notice("You disassemble the cyborg shell."))
+			to_chat(user, span_notice("I disassemble the cyborg shell."))
 	else
 		to_chat(user, span_notice("There is nothing to remove from the endoskeleton."))
 	update_icon()
@@ -126,13 +126,13 @@
 
 	if(swap_failed) //we didn't transfer any new items.
 		if(chest.cell) //old cell ejected, nothing inserted.
-			to_chat(user, span_notice("You remove [chest.cell] from [src]."))
+			to_chat(user, span_notice("I remove [chest.cell] from [src]."))
 			chest.cell = null
 		else
 			to_chat(user, span_notice("The power cell slot in [src]'s torso is empty."))
 		return
 
-	to_chat(user, span_notice("You [chest.cell ? "replace [src]'s [chest.cell.name] with [temp_cell]" : "insert [temp_cell] into [src]"]."))
+	to_chat(user, span_notice("I [chest.cell ? "replace [src]'s [chest.cell.name] with [temp_cell]" : "insert [temp_cell] into [src]"]."))
 	chest.cell = temp_cell
 	return TRUE
 
@@ -144,13 +144,13 @@
 			if (M.use(1))
 				var/obj/item/bot_assembly/ed209/B = new
 				B.forceMove(drop_location())
-				to_chat(user, span_notice("You arm the robot frame."))
+				to_chat(user, span_notice("I arm the robot frame."))
 				var/holding_this = user.get_inactive_held_item()==src
 				qdel(src)
 				if (holding_this)
 					user.put_in_inactive_hand(B)
 			else
-				to_chat(user, span_warning("You need one sheet of metal to start building ED-209!"))
+				to_chat(user, span_warning("I need one sheet of metal to start building ED-209!"))
 				return
 	else if(istype(W, /obj/item/bodypart/l_leg/robot))
 		if(src.l_leg)
@@ -204,9 +204,9 @@
 			src.chest = CH
 			update_icon()
 		else if(!CH.wired)
-			to_chat(user, span_warning("You need to attach wires to it first!"))
+			to_chat(user, span_warning("I need to attach wires to it first!"))
 		else
-			to_chat(user, span_warning("You need to attach a cell to it first!"))
+			to_chat(user, span_warning("I need to attach a cell to it first!"))
 
 	else if(istype(W, /obj/item/bodypart/head/robot))
 		var/obj/item/bodypart/head/robot/HD = W
@@ -224,7 +224,7 @@
 			src.head = HD
 			update_icon()
 		else
-			to_chat(user, span_warning("You need to attach a flash to it first!"))
+			to_chat(user, span_warning("I need to attach a flash to it first!"))
 
 	else if (istype(W, /obj/item/multitool))
 		if(check_completion())
@@ -239,7 +239,7 @@
 				to_chat(user, span_warning("The endoskeleton still needs a power cell!"))
 				return
 			if(!isturf(loc))
-				to_chat(user, span_warning("You can't put [M] in, the frame has to be standing on the ground to be perfectly precise!"))
+				to_chat(user, span_warning("I can't put [M] in, the frame has to be standing on the ground to be perfectly precise!"))
 				return
 			if(!M.brainmob)
 				to_chat(user, span_warning("Sticking an empty [M.name] into the frame would sort of defeat the purpose!"))
@@ -299,8 +299,8 @@
 
 			if(O.mind && O.mind.special_role)
 				O.mind.store_memory("As a cyborg, you must obey your silicon laws and master AI above all else. Your objectives will consider you to be dead.")
-				to_chat(O, span_userdanger("You have been robotized!"))
-				to_chat(O, span_danger("You must obey your silicon laws and master AI above all else. Your objectives will consider you to be dead."))
+				to_chat(O, span_userdanger("I have been robotized!"))
+				to_chat(O, span_danger("I must obey your silicon laws and master AI above all else. Your objectives will consider you to be dead."))
 
 			O.job = "Cyborg"
 
@@ -327,7 +327,7 @@
 		var/obj/item/borg/upgrade/ai/M = W
 		if(check_completion())
 			if(!isturf(loc))
-				to_chat(user, span_warning("You cannot install[M], the frame has to be standing on the ground to be perfectly precise!"))
+				to_chat(user, span_warning("I cannot install[M], the frame has to be standing on the ground to be perfectly precise!"))
 				return
 			if(!user.temporarilyRemoveItemFromInventory(M))
 				to_chat(user, span_warning("[M] is stuck to your hand!"))
@@ -358,7 +358,7 @@
 				O.SetLockdown(TRUE)
 
 	else if(istype(W, /obj/item/pen))
-		to_chat(user, span_warning("You need to use a multitool to name [src]!"))
+		to_chat(user, span_warning("I need to use a multitool to name [src]!"))
 	else
 		return ..()
 
@@ -381,7 +381,7 @@
 	var/mob/living/living_user = usr
 	var/obj/item/item_in_hand = living_user.get_active_held_item()
 	if(!istype(item_in_hand, /obj/item/multitool))
-		to_chat(living_user, span_warning("You need a multitool!"))
+		to_chat(living_user, span_warning("I need a multitool!"))
 		return
 
 	if(href_list["Name"])

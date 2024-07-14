@@ -925,12 +925,12 @@
 		else
 			playsound(src, "gun_remove_empty_magazine", 70, 1)
 		magazine = null
-		to_chat(user, span_notice("You pull the magazine out of \the [src]."))
+		to_chat(user, span_notice("I pull the magazine out of \the [src]."))
 	else if(chambered)
 		AC.forceMove(drop_location())
 		AC.bounce_away()
 		chambered = null
-		to_chat(user, span_notice("You unload the round from \the [src]'s chamber."))
+		to_chat(user, span_notice("I unload the round from \the [src]'s chamber."))
 		playsound(src, "gun_slide_lock", 70, 1)
 	else
 		to_chat(user, span_notice("There's no magazine in \the [src]."))

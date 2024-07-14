@@ -105,7 +105,7 @@
 			new /obj/effect/gibspawner/robot(owner.loc)
 		slayer.heal_overall_damage(health_given, health_given)
 	else
-		to_chat(slayer, span_danger("You fail to glory kill [owner]!"))
+		to_chat(slayer, span_danger("I fail to glory kill [owner]!"))
 
 /datum/component/glory_kill/proc/examined(mob/living/owner, mob/living/user, list/examine_list)
 	if(ready)

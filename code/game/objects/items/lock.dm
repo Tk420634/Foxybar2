@@ -24,7 +24,7 @@ GLOBAL_LIST_EMPTY(global_locks)
 	if(iskey(I))
 		var/obj/item/key/K = I
 		if(!K.lock_data)
-			to_chat(user, span_notice("You fashion \the [I] to unlock \the [src]"))
+			to_chat(user, span_notice("I fashion \the [I] to unlock \the [src]"))
 			K.lock_data = lock_data
 			K.desc = "A simple key for locks. It has [K.lock_data] engraved on it."
 			playsound(get_turf(src), "sound/f13items/flashlight_off.ogg", 25, FALSE, -4)
@@ -34,7 +34,7 @@ GLOBAL_LIST_EMPTY(global_locks)
 	if(islock(I))
 		var/obj/item/lock_construct/L = I
 		L.lock_data = src.lock_data
-		to_chat(user, span_notice("You copy the lock from \the [src] to \the [L], making them identical."))
+		to_chat(user, span_notice("I copy the lock from \the [src] to \the [L], making them identical."))
 		L.desc = "A heavy-duty lock for doors. It has [L.lock_data] engraved on it."
 		return
 	..()
@@ -60,7 +60,7 @@ GLOBAL_LIST_EMPTY(global_locks)
 /obj/item/lock_construct/proc/pry_off(mob/living/user, atom/A)
 	if(!prying)
 		user.visible_message(span_notice("[user] starts prying [src] off [A]."), \
-							span_notice("You start prying [src] off [A]."))
+							span_notice("I start prying [src] off [A]."))
 		var/time_to_open = 50
 		if(locked)
 			time_to_open = 500
@@ -87,14 +87,14 @@ GLOBAL_LIST_EMPTY(global_locks)
 /obj/item/key/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/stack/rods))
 		var/obj/item/stack/rods/M = I
-		to_chat(user, span_notice("You begin to shape a rod into [src]..."))
+		to_chat(user, span_notice("I begin to shape a rod into [src]..."))
 		if(do_after(user, 35, target = src))
 			if(M.get_amount() < 1 || !M)
 				return
 			var/obj/item/key/S = new /obj/item/key
 			M.use(1)
 			user.put_in_hands(S)
-			to_chat(user, span_notice("You make a [S] identical to the old [src]."))
+			to_chat(user, span_notice("I make a [S] identical to the old [src]."))
 			S.lock_data = src.lock_data
 	else
 		return ..()
@@ -136,7 +136,7 @@ GLOBAL_LIST_EMPTY(global_locks)
 /obj/item/lock_bolt/proc/pry_off(mob/living/user, atom/A)
 	if(!prying)
 		user.visible_message(span_notice("[user] starts prying [src] off [A]."), \
-							span_notice("You start prying [src] off [A]."))
+							span_notice("I start prying [src] off [A]."))
 		var/time_to_open = 50
 		if(locked)
 			time_to_open = 500

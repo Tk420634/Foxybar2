@@ -38,11 +38,11 @@
 /obj/machinery/computer/cargo/express/attackby(obj/item/W, mob/living/user, params)
 	if((istype(W, /obj/item/card/id) || istype(W, /obj/item/pda)) && allowed(user))
 		locked = !locked
-		to_chat(user, span_notice("You [locked ? "lock" : "unlock"] the interface."))
+		to_chat(user, span_notice("I [locked ? "lock" : "unlock"] the interface."))
 		return
 	else if(istype(W, /obj/item/disk/cargo/bluespace_pod))
 		podType = /obj/structure/closet/supplypod/bluespacepod //doesnt effect circuit board, making reversal possible
-		to_chat(user, span_notice("You insert the disk into [src], allowing for advanced supply delivery vehicles."))
+		to_chat(user, span_notice("I insert the disk into [src], allowing for advanced supply delivery vehicles."))
 		qdel(W)
 		return TRUE
 	else if(istype(W, /obj/item/supplypod_beacon))
@@ -59,7 +59,7 @@
 		return
 	if(user)
 		user.visible_message(span_warning("[user] swipes a suspicious card through [src]!"),
-		span_notice("You change the routing protocols, allowing the Supply Pod to land anywhere on the station."))
+		span_notice("I change the routing protocols, allowing the Supply Pod to land anywhere on the station."))
 	obj_flags |= EMAGGED
 	// This also sets this on the circuit board
 	var/obj/item/circuitboard/computer/cargo/board = circuit
@@ -121,7 +121,7 @@
 	data["message"] = message
 	if(!meme_pack_data)
 		packin_up()
-		stack_trace("You didn't give the cargo tech good advice, and he ripped the manifest. As a result, there was no pack data for [src]")
+		stack_trace("I didn't give the cargo tech good advice, and he ripped the manifest. As a result, there was no pack data for [src]")
 	data["supplies"] = meme_pack_data
 	if (cooldown > 0)//cooldown used for printing beacons
 		cooldown--

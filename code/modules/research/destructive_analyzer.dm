@@ -41,7 +41,7 @@ Note: Must be placed within 3 tiles of the R&D Console
 			return
 		busy = TRUE
 		loaded_item = O
-		to_chat(user, span_notice("You add the [O.name] to the [src.name]!"))
+		to_chat(user, span_notice("I add the [O.name] to the [src.name]!"))
 		flick("d_analyzer_la", src)
 		addtimer(CALLBACK(src,PROC_REF(finish_loading)), 10)
 		if (linked_console)

@@ -41,7 +41,7 @@
 		var/obj/item/reagent_containers/RC = I
 		var/units = RC.reagents.trans_to(src, RC.amount_per_transfer_from_this)
 		if(units)
-			to_chat(user, span_notice("You transfer [units] units of the solution to the [name]."))
+			to_chat(user, span_notice("I transfer [units] units of the solution to the [name]."))
 			return
 		else
 			to_chat(user, span_danger("The [name] is full."))
@@ -65,9 +65,9 @@
 	..()
 
 /obj/machinery/medipen_refiller/plunger_act(obj/item/plunger/P, mob/living/user, reinforced)
-	to_chat(user, span_notice("You start furiously plunging [name]."))
+	to_chat(user, span_notice("I start furiously plunging [name]."))
 	if(do_after(user, 30, target = src))
-		to_chat(user, span_notice("You finish plunging the [name]."))
+		to_chat(user, span_notice("I finish plunging the [name]."))
 		reagents.clear_reagents()
 
 /obj/machinery/medipen_refiller/wrench_act(mob/living/user, obj/item/I)

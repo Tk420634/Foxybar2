@@ -80,7 +80,7 @@ GLOBAL_LIST_INIT(bondage_rope_slowdowns, list(
 			else
 				var/obj/item/restraints/bondage_rope/rope = C.handcuffed
 				if(LAZYLEN(rope.rope_stack) >= ROPE_MAX_STACK)
-					to_chat(user, span_warning("You cannot strengthen this rope anymore..."))
+					to_chat(user, span_warning("I cannot strengthen this rope anymore..."))
 					return
 				C.visible_message(span_danger("[user] is trying to strengthen the rope on [C]!"), \
 								span_userdanger("[user] is trying to strengthen the rope on [C]!"))
@@ -99,7 +99,7 @@ GLOBAL_LIST_INIT(bondage_rope_slowdowns, list(
 			else
 				var/obj/item/restraints/bondage_rope/rope = C.legcuffed
 				if(LAZYLEN(rope.rope_stack) >= ROPE_MAX_STACK)
-					to_chat(user, span_warning("You cannot strengthen this rope anymore..."))
+					to_chat(user, span_warning("I cannot strengthen this rope anymore..."))
 					return
 				C.visible_message(span_danger("[user] is trying to strengthen the rope on [C]!"), \
 								span_userdanger("[user] is trying to strengthen the rope on [C]!"))
@@ -107,7 +107,7 @@ GLOBAL_LIST_INIT(bondage_rope_slowdowns, list(
 
 /obj/item/restraints/bondage_rope/attack_obj(obj/O, mob/user)
 	if(rope_state != ROPE_STATE_DECIDING_OBJECT)
-		to_chat(user, span_notice("You need to attach the rope to somebody first."))
+		to_chat(user, span_notice("I need to attach the rope to somebody first."))
 		return
 	process_object(O, user)
 
@@ -137,26 +137,26 @@ GLOBAL_LIST_INIT(bondage_rope_slowdowns, list(
 				SSblackbox.record_feedback("tally", "handcuffs", 1, type)
 				log_combat(user, C, "handcuffed")
 				if(C.handcuffed == null)
-					to_chat(user, span_notice("You tie [C]'s hands [rope_target_text()]."))
+					to_chat(user, span_notice("I tie [C]'s hands [rope_target_text()]."))
 					after_process_knot(C, user)
 				else
-					to_chat(user, span_notice("You strengthen the rope on [C]."))
+					to_chat(user, span_notice("I strengthen the rope on [C]."))
 					strengthen_rope(C, user)
 			else
-				to_chat(user, span_warning("You fail to tie [C]'s hands!"))
+				to_chat(user, span_warning("I fail to tie [C]'s hands!"))
 		if(ROPE_TARGET_LEGS, ROPE_TARGET_LEGS_OBJECT)
 			if(do_mob(user, C, 30) && (C.get_num_legs(FALSE) >= 2 || C.get_leg_ignore()))
 				playsound(loc, cuffsound, 30, 1, -2)
 				SSblackbox.record_feedback("tally", "handcuffs", 1, type)
 				log_combat(user, C, "handcuffed")
 				if(C.legcuffed == null)
-					to_chat(user, span_notice("You tie [C]'s legs."))
+					to_chat(user, span_notice("I tie [C]'s legs."))
 					after_process_knot(C, user)
 				else
-					to_chat(user, span_notice("You strengthen the rope on [C]."))
+					to_chat(user, span_notice("I strengthen the rope on [C]."))
 					strengthen_rope(C, user)
 			else
-				to_chat(user, span_warning("You fail to tie [C]'s legs!"))
+				to_chat(user, span_warning("I fail to tie [C]'s legs!"))
 
 // > Using normal rope, calls finish_knot_normal
 // > Using object rope, handles the handcuffed effect (unless instant self apply is disabled) and sets state to ROPE_STATE_DECIDING_OBJECT
@@ -229,8 +229,8 @@ GLOBAL_LIST_INIT(bondage_rope_slowdowns, list(
 
 	set_roped_master(null)
 	set_roped_object(O, O_type)
-	to_chat(roped_mob, span_warning("You are tied to [O]."))
-	to_chat(roped_master, span_notice("You tie the rope to [O]."))
+	to_chat(roped_mob, span_warning("I am tied to [O]."))
+	to_chat(roped_master, span_notice("I tie the rope to [O]."))
 	tugged_flag = TRUE
 	apply_tug_mob_to_object(roped_mob, roped_object, ROPE_MAX_DISTANCE_OBJECT)
 
@@ -308,7 +308,7 @@ GLOBAL_LIST_INIT(bondage_rope_slowdowns, list(
 				var/distance = get_dist(roped_mob.loc, roped_master.loc)
 				if(distance > ROPE_MAX_DISTANCE_MASTER)
 					if (prob(10))
-						to_chat(roped_mob, span_warning("You tug the rope away from [roped_master]."))
+						to_chat(roped_mob, span_warning("I tug the rope away from [roped_master]."))
 						to_chat(roped_master, span_warning("[roped_mob] tugs the rope away from you."))
 						forceMove(roped_mob.loc)
 					else
@@ -416,7 +416,7 @@ GLOBAL_LIST_INIT(bondage_rope_slowdowns, list(
 
 /obj/item/restraints/bondage_rope/proc/customize_rope(mob/living/user)
 	if(rope_state != ROPE_STATE_UNTIED)
-		to_chat(user, span_warning("You can only customize an untied rope."))
+		to_chat(user, span_warning("I can only customize an untied rope."))
 		return
 
 	if(src && !user.incapacitated() && in_range(user, src))

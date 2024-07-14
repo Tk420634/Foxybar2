@@ -24,13 +24,13 @@
 		return
 	if(!owner.getorganslot(ORGAN_SLOT_EYES))
 		if (display_error)
-			to_chat(owner, span_warning("You have no eyes with which to mesmerize."))
+			to_chat(owner, span_warning("I have no eyes with which to mesmerize."))
 		return FALSE
 	// Check: Eyes covered?
 	var/mob/living/L = owner
 	if(istype(L) && L.is_eyes_covered() || !isturf(owner.loc))
 		if(display_error)
-			to_chat(owner, span_warning("Your eyes are concealed from sight."))
+			to_chat(owner, span_warning("My eyes are concealed from sight."))
 		return FALSE
 	return TRUE
 
@@ -51,7 +51,7 @@
 	// Dead/Unconscious
 	if(target.stat > CONSCIOUS)
 		if (display_error)
-			to_chat(owner, span_warning("Your victim is not [(target.stat == DEAD || HAS_TRAIT(target, TRAIT_FAKEDEATH))?"alive":"conscious"]."))
+			to_chat(owner, span_warning("My victim is not [(target.stat == DEAD || HAS_TRAIT(target, TRAIT_FAKEDEATH))?"alive":"conscious"]."))
 		return FALSE
 	// Check: Target has eyes?
 	if(!target.getorganslot(ORGAN_SLOT_EYES))
@@ -61,7 +61,7 @@
 	// Check: Target blind?
 	if(target.eye_blind > 0)
 		if (display_error)
-			to_chat(owner, span_warning("Your victim's eyes are glazed over. They cannot perceive you."))
+			to_chat(owner, span_warning("My victim's eyes are glazed over. They cannot perceive you."))
 		return FALSE
 	// Check: Target See Me? (behind wall)
 	if(!(owner in target.fov_view()))
@@ -79,12 +79,12 @@
 	// Check: Facing target?
 	if(!is_A_facing_B(owner,target))	// in unsorted.dm
 		if (display_error)
-			to_chat(owner, span_warning("You must be facing your victim."))
+			to_chat(owner, span_warning("I must be facing your victim."))
 		return FALSE
 	// Check: Target facing me?
 	if (CHECK_MOBILITY(target, MOBILITY_STAND) && !is_A_facing_B(target,owner))
 		if(display_error)
-			to_chat(owner, span_warning("Your victim must be facing you to see into your eyes."))
+			to_chat(owner, span_warning("My victim must be facing you to see into your eyes."))
 		return FALSE
 	return TRUE
 

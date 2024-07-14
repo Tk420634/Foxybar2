@@ -88,7 +88,7 @@
 	var/amount_temp = get_amount()
 	var/no_delete = FALSE
 	if(amount_temp < 2)
-		to_chat(user, span_warning("You need at least <b>2</b> floor tiles to convert into power."))
+		to_chat(user, span_warning("I need at least <b>2</b> floor tiles to convert into power."))
 		return TRUE
 	if(ISODD(amount_temp))
 		amount_temp--
@@ -233,7 +233,7 @@
 	if(!fabricator.fabricator_repair_checks(repair_values, src, user))
 		return
 	user.visible_message(span_notice("[user]'s [fabricator.name] starts covering [src] in glowing orange energy..."), \
-	span_alloy("You start repairing [src]..."))
+	span_alloy("I start repairing [src]..."))
 	fabricator.repairing = src
 	while(fabricator && user && src)
 		if(!do_after(user, repair_values["healing_for_cycle"] * fabricator.speed_multiplier, target = src, \
@@ -255,7 +255,7 @@
 	if(!fabricator.fabricator_repair_checks(repair_values, src, user))
 		return
 	user.visible_message(span_notice("[user]'s [fabricator.name] starts covering [src == user ? "[user.p_them()]" : "[src]"] in glowing orange energy..."), \
-	span_alloy("You start repairing [src == user ? "yourself" : "[src]"]..."))
+	span_alloy("I start repairing [src == user ? "yourself" : "[src]"]..."))
 	fabricator.repairing = src
 	while(fabricator && user && src)
 		if(!do_after(user, repair_values["healing_for_cycle"] * fabricator.speed_multiplier, target = src, \
@@ -305,12 +305,12 @@
 		return FALSE
 	else if(!(flags_1 & GODMODE))
 		user.visible_message(span_notice("[user]'s [fabricator.name] starts covering [src == user ? "[user.p_them()]" : "[src]"] in glowing orange energy..."), \
-		span_alloy("You start repairing [src == user ? "yourself" : "[src]"]..."))
+		span_alloy("I start repairing [src == user ? "yourself" : "[src]"]..."))
 		fabricator.repairing = src
 		if(do_after(user, (maxHealth - health)*2, target=src))
 			adjustHealth(-maxHealth)
 			user.visible_message(span_notice("[user]'s [fabricator.name] stops covering [src == user ? "[user.p_them()]" : "[src]"] with glowing orange energy."), \
-			span_alloy("You finish repairing [src == user ? "yourself" : "[src]"]."))
+			span_alloy("I finish repairing [src == user ? "yourself" : "[src]"]."))
 		if(fabricator)
 			fabricator.repairing = null
 

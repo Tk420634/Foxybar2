@@ -195,7 +195,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	return ..()
 
 /datum/reagent/consumable/ethanol/thirteenloko/overdose_start(mob/living/M)
-	to_chat(M, span_userdanger("Your entire body violently jitters as you start to feel queasy. You really shouldn't have drank all of that [name]!"))
+	to_chat(M, span_userdanger("My entire body violently jitters as you start to feel queasy. You really shouldn't have drank all of that [name]!"))
 	M.Jitter(20)
 	M.Stun(15)
 
@@ -208,7 +208,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 			M.Jitter(10)
 
 	if(prob(7))
-		to_chat(M, span_notice("[pick("You have a really bad headache.", "Your eyes hurt.", "You find it hard to stay still.", "You feel your heart practically beating out of your chest.")]"))
+		to_chat(M, span_notice("[pick("I have a really bad headache.", "My eyes hurt.", "I find it hard to stay still.", "I feel your heart practically beating out of your chest.")]"))
 
 	if(prob(5) && iscarbon(M))
 		var/obj/item/organ/eyes/eyes = M.getorganslot(ORGAN_SLOT_EYES)
@@ -216,16 +216,16 @@ All effects don't start immediately, but rather get worse over time; the rate is
 			if(eyes)
 				eyes.Remove()
 				eyes.forceMove(get_turf(M))
-				to_chat(M, span_userdanger("You double over in pain as you feel your eyeballs liquify in your head!"))
+				to_chat(M, span_userdanger("I double over in pain as you feel your eyeballs liquify in your head!"))
 				M.emote("scream")
 				M.adjustBruteLoss(15)
 		else
-			to_chat(M, span_userdanger("You scream in terror as you go blind!"))
+			to_chat(M, span_userdanger("I scream in terror as you go blind!"))
 			eyes?.applyOrganDamage(eyes.maxHealth)
 			M.emote("scream")
 
 	if(prob(3) && iscarbon(M))
-		M.visible_message(span_danger("[M] starts having a seizure!"), span_userdanger("You have a seizure!"))
+		M.visible_message(span_danger("[M] starts having a seizure!"), span_userdanger("I have a seizure!"))
 		M.Unconscious(100)
 		M.Jitter(350)
 
@@ -343,13 +343,13 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 /datum/reagent/consumable/ethanol/vermouth
 	name = "Vermouth"
-	description = "You suddenly feel a craving for a martini..."
+	description = "I suddenly feel a craving for a martini..."
 	color = "#91FF91" // rgb: 145, 255, 145
 	boozepwr = 45
 	taste_description = "dry alcohol"
 	glass_icon_state = "vermouthglass"
 	glass_name = "glass of vermouth"
-	glass_desc = "You wonder why you're even drinking this straight."
+	glass_desc = "I wonder why you're even drinking this straight."
 	shot_glass_icon_state = "shotglassclear"
 	pH = 3.25
 
@@ -653,12 +653,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 /datum/reagent/consumable/ethanol/brave_bull/on_mob_metabolize(mob/living/M)
 	tough_text = pick("brawny", "tenacious", "tough", "hardy", "sturdy") //Tuff stuff
-	to_chat(M, span_notice("You feel [tough_text]!"))
+	to_chat(M, span_notice("I feel [tough_text]!"))
 	M.maxHealth += 10 //Brave Bull makes you sturdier, and thus capable of withstanding a tiny bit more punishment.
 	M.health += 10
 
 /datum/reagent/consumable/ethanol/brave_bull/on_mob_end_metabolize(mob/living/M)
-	to_chat(M, span_notice("You no longer feel [tough_text]."))
+	to_chat(M, span_notice("I no longer feel [tough_text]."))
 	M.maxHealth -= 10
 	M.health = min(M.health - 10, M.maxHealth) //This can indeed crit you if you're alive solely based on alchol ingestion
 
@@ -686,7 +686,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	return ..()
 
 /datum/reagent/consumable/ethanol/tequila_sunrise/on_mob_metabolize(mob/living/M)
-	to_chat(M, span_notice("You feel gentle warmth spread through your body!"))
+	to_chat(M, span_notice("I feel gentle warmth spread through your body!"))
 	tequila_light = M.mob_light(3, 0.7, "#FFCC00") //Tequila Sunrise makes you radiate dim light, like a sunrise!
 
 /datum/reagent/consumable/ethanol/tequila_sunrise/on_mob_end_metabolize(mob/living/M)
@@ -1184,7 +1184,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 /datum/reagent/consumable/ethanol/changelingsting
 	name = "Changeling Sting"
-	description = "You take a tiny sip and feel a burning sensation..."
+	description = "I take a tiny sip and feel a burning sensation..."
 	color = "#2E6671" // rgb: 46, 102, 113
 	boozepwr = 95
 	quality = DRINK_GOOD
@@ -1395,7 +1395,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	taste_description = "a wall of bricks"
 	glass_icon_state = "glass_brown2"
 	glass_name = "Bacchus' Blessing"
-	glass_desc = "You didn't think it was possible for a liquid to be so utterly revolting. Are you sure about this...?"
+	glass_desc = "I didn't think it was possible for a liquid to be so utterly revolting. Are you sure about this...?"
 	value = REAGENT_VALUE_RARE
 	sodie_tier = SODIE_TIER_5 // Theres probably some sodie in there, but you deserve something for this horrible thing
 	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_5, SODIE_HEALRANK_HIGHEST)
@@ -1487,7 +1487,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	if(prob(20) && !holder.has_reagent(/datum/reagent/consumable/ethanol/neuroweak))
 		M.adjustStaminaLoss(10)
 		M.drop_all_held_items()
-		to_chat(M, span_notice("You cant feel your hands!"))
+		to_chat(M, span_notice("I cant feel your hands!"))
 	if(current_cycle > 5)
 		if(prob(20) && !holder.has_reagent(/datum/reagent/consumable/ethanol/neuroweak))
 			var/t = pickt()
@@ -1531,7 +1531,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 /datum/reagent/consumable/ethanol/hippies_delight
 	name = "Hippie's Delight"
-	description = "You just don't get it maaaan."
+	description = "I just don't get it maaaan."
 	color = "#664300" // rgb: 102, 67, 0
 	nutriment_factor = 0
 	boozepwr = 0 //custom drunk effect
@@ -1641,7 +1641,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	taste_description = "a minty, cool, and invigorating splash of cold streamwater"
 	glass_icon_state = "glass_green"
 	glass_name = "Creme de Menthe"
-	glass_desc = "You can almost feel the first breath of spring just looking at it."
+	glass_desc = "I can almost feel the first breath of spring just looking at it."
 
 /datum/reagent/consumable/ethanol/creme_de_cacao
 	name = "Creme de Cacao"
@@ -1746,7 +1746,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	taste_description = "chocolate and mint dancing around your mouth"
 	glass_icon_state = "grasshopper"
 	glass_name = "Grasshopper"
-	glass_desc = "You weren't aware edible beverages could be that green."
+	glass_desc = "I weren't aware edible beverages could be that green."
 
 /datum/reagent/consumable/ethanol/stinger
 	name = "Stinger"
@@ -1757,7 +1757,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	taste_description = "a slap on the face in the best possible way"
 	glass_icon_state = "stinger"
 	glass_name = "Stinger"
-	glass_desc = "You wonder what would happen if you pointed this at a heat source..."
+	glass_desc = "I wonder what would happen if you pointed this at a heat source..."
 
 /datum/reagent/consumable/ethanol/bastion_bourbon
 	name = "Bastion Bourbon"
@@ -1919,7 +1919,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 /datum/reagent/consumable/ethanol/alexander/on_mob_end_metabolize(mob/living/L)
 	if(mighty_shield)
 		mighty_shield.block_chance -= 10
-		to_chat(L,span_notice("You notice [mighty_shield] looks worn again. Weird."))
+		to_chat(L,span_notice("I notice [mighty_shield] looks worn again. Weird."))
 	..()
 
 /datum/reagent/consumable/ethanol/sidecar
@@ -2137,7 +2137,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	taste_description = "the pain of ten thousand slain mosquitos"
 	glass_icon_state = "bug_spray"
 	glass_name = "Bug Spray"
-	glass_desc = "Your eyes begin to water as the sting of alcohol reaches them."
+	glass_desc = "My eyes begin to water as the sting of alcohol reaches them."
 	sodie_tier = SODIE_TIER_2 // magically delicious
 	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_2, SODIE_HEALRANK_MED)
 	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_2, SODIE_HEALRANK_MED)
@@ -2164,7 +2164,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	taste_description = "an honest day's work at the orchard"
 	glass_icon_state = "applejack_glass"
 	glass_name = "Applejack"
-	glass_desc = "You feel like you could drink this all neight."
+	glass_desc = "I feel like you could drink this all neight."
 	sodie_tier = SODIE_TIER_1 // i like it
 	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_1, SODIE_HEALRANK_MED)
 	sodie_heal_burn =  SODIE_BURN( SODIE_TIER_1, SODIE_HEALRANK_MED)
@@ -2209,7 +2209,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 /datum/reagent/consumable/ethanol/turbo/on_mob_life(mob/living/carbon/M)
 	if(prob(4))
-		to_chat(M, span_notice("[pick("You feel disregard for the rule of law.", "You feel pumped!", "Your head is pounding.", "Your thoughts are racing..")]"))
+		to_chat(M, span_notice("[pick("I feel disregard for the rule of law.", "I feel pumped!", "My head is pounding.", "My thoughts are racing..")]"))
 	M.adjustStaminaLoss(-M.drunkenness * 0.25)
 	return ..()
 
@@ -2396,7 +2396,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 /datum/reagent/consumable/ethanol/gunfire/on_mob_life(mob/living/carbon/M)
 	if (prob(3))
-		to_chat(M,span_notice("You feel the gunfire pop in your mouth."))
+		to_chat(M,span_notice("I feel the gunfire pop in your mouth."))
 	return ..()
 
 /datum/reagent/consumable/ethanol/hellfire
@@ -2424,7 +2424,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	taste_description = "sin"
 	glass_icon_state = "sins_delight"
 	glass_name = "Sin's Delight"
-	glass_desc = "You can smell the seven sins rolling off the top of the glass."
+	glass_desc = "I can smell the seven sins rolling off the top of the glass."
 	value = REAGENT_VALUE_RARE
 	sodie_tier = SODIE_TIER_4 // its got sodie in it
 	sodie_heal_brute = SODIE_BRUTE(SODIE_TIER_4, SODIE_HEALRANK_MED)

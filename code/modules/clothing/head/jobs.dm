@@ -101,10 +101,10 @@
 		if(candy_cooldown < world.time)
 			var/obj/item/reagent_containers/food/snacks/candy_corn/CC = new /obj/item/reagent_containers/food/snacks/candy_corn(src)
 			user.put_in_hands(CC)
-			to_chat(user, "You slip a candy corn from your hat.")
+			to_chat(user, "I slip a candy corn from your hat.")
 			candy_cooldown = world.time+1200
 		else
-			to_chat(user, "You just took a candy corn! You should wait a couple minutes, lest you burn through your stash.")
+			to_chat(user, "I just took a candy corn! You should wait a couple minutes, lest you burn through your stash.")
 		return TRUE
 
 
@@ -195,21 +195,21 @@
 		return TRUE
 	switch(mode)
 		if(DRILL_DEFAULT)
-			to_chat(user, span_notice("You set the voice circuit to the middle position."))
+			to_chat(user, span_notice("I set the voice circuit to the middle position."))
 			mode = DRILL_SHOUTING
 		if(DRILL_SHOUTING)
-			to_chat(user, span_notice("You set the voice circuit to the last position."))
+			to_chat(user, span_notice("I set the voice circuit to the last position."))
 			mode = DRILL_YELLING
 		if(DRILL_YELLING)
-			to_chat(user, span_notice("You set the voice circuit to the first position."))
+			to_chat(user, span_notice("I set the voice circuit to the first position."))
 			mode = DRILL_DEFAULT
 		if(DRILL_CANADIAN)
-			to_chat(user, span_danger("You adjust voice circuit but nothing happens, probably because it's broken."))
+			to_chat(user, span_danger("I adjust voice circuit but nothing happens, probably because it's broken."))
 	return TRUE
 
 /obj/item/clothing/head/warden/drill/wirecutter_act(mob/living/user, obj/item/I)
 	if(mode != DRILL_CANADIAN)
-		to_chat(user, span_danger("You broke the voice circuit!"))
+		to_chat(user, span_danger("I broke the voice circuit!"))
 		mode = DRILL_CANADIAN
 	return TRUE
 
@@ -278,7 +278,7 @@
 //Curator
 /obj/item/clothing/head/fedora/curator
 	name = "treasure hunter's fedora"
-	desc = "You got red text today kid, but it doesn't mean you have to like it."
+	desc = "I got red text today kid, but it doesn't mean you have to like it."
 	icon_state = "curator"
 
 //Chief Medical Officer

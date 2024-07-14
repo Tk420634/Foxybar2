@@ -185,7 +185,7 @@
 		if(!anchored && !active)
 			to_chat(user, span_warning("[src] needs to be secured to the floor before it can be activated!"))
 			return FALSE
-		visible_message(span_notice("[user] [active ? "dis" : "en"]ables [src]."), span_brass("You [active ? "dis" : "en"]able [src]."))
+		visible_message(span_notice("[user] [active ? "dis" : "en"]ables [src]."), span_brass("I [active ? "dis" : "en"]able [src]."))
 	active = !active
 	if(active)
 		icon_state = active_icon

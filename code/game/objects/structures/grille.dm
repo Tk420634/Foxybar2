@@ -59,13 +59,13 @@
 /obj/structure/grille/rcd_act(mob/user, obj/item/construction/rcd/the_rcd, passed_mode)
 	switch(passed_mode)
 		if(RCD_DECONSTRUCT)
-			to_chat(user, span_notice("You deconstruct the grille."))
+			to_chat(user, span_notice("I deconstruct the grille."))
 			qdel(src)
 			return TRUE
 		if(RCD_WINDOWGRILLE)
 			if(locate(/obj/structure/window) in loc)
 				return FALSE
-			to_chat(user, span_notice("You construct the window."))
+			to_chat(user, span_notice("I construct the window."))
 			var/obj/structure/window/WD = new the_rcd.window_type(drop_location())
 			WD.setAnchored(TRUE)
 			return TRUE
@@ -151,13 +151,13 @@
 			W.play_tool_sound(src, 100)
 			setAnchored(!anchored)
 			user.visible_message(span_notice("[user] [anchored ? "fastens" : "unfastens"] [src]."), \
-								span_notice("You [anchored ? "fasten [src] to" : "unfasten [src] from"] the floor."))
+								span_notice("I [anchored ? "fasten [src] to" : "unfasten [src] from"] the floor."))
 			return
 	else if(istype(W, /obj/item/stack/rods) && broken)
 		var/obj/item/stack/rods/R = W
 		if(!shock(user, 90))
 			user.visible_message(span_notice("[user] rebuilds the broken grille."), \
-								span_notice("You rebuild the broken grille."))
+								span_notice("I rebuild the broken grille."))
 			new grille_type(src.loc)
 			R.use(1)
 			qdel(src)
@@ -168,7 +168,7 @@
 		if (!broken)
 			var/obj/item/stack/ST = W
 			if (ST.get_amount() < 2)
-				to_chat(user, span_warning("You need at least two sheets of glass for that!"))
+				to_chat(user, span_warning("I need at least two sheets of glass for that!"))
 				return
 			var/dir_to_set = SOUTHWEST
 			if(!anchored)
@@ -177,7 +177,7 @@
 			for(var/obj/structure/window/WINDOW in loc)
 				to_chat(user, span_warning("There is already a window there!"))
 				return
-			to_chat(user, span_notice("You start placing the window..."))
+			to_chat(user, span_notice("I start placing the window..."))
 			if(do_after(user,20, target = src))
 				if(!src.loc || !anchored) //Grille broken or unanchored while waiting
 					return
@@ -201,7 +201,7 @@
 				WD.setAnchored(FALSE)
 				WD.state = 0
 				ST.use(2)
-				to_chat(user, span_notice("You place [WD] on [src]."))
+				to_chat(user, span_notice("I place [WD] on [src]."))
 			return
 //window placing end
 

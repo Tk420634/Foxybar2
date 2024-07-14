@@ -19,7 +19,7 @@
 	var/turf/turf = locs[1]
 
 	if(!isarea(turf.loc))
-		src.visible_message("Your location isn't visible on GPS!")
+		src.visible_message("My location isn't visible on GPS!")
 		return
 
 	if(!istype(turf.loc, /area/f13/wasteland))

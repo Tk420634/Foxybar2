@@ -75,7 +75,7 @@
 		. += span_notice("The maintenance panel [opened ? "can be" : "is"] <b>screwed</b> in place.")
 
 	if((isobserver(user) && ckeys_allowed_to_scan[user.ckey]) || IsAdminGhost(user))
-		. += "You can <a href='?src=[REF(src)];ghostscan=1'>scan</a> this circuit."
+		. += "I can <a href='?src=[REF(src)];ghostscan=1'>scan</a> this circuit."
 
 	for(var/I in assembly_components)
 		var/obj/item/integrated_circuit/IC = I
@@ -227,7 +227,7 @@
 		else
 			battery.forceMove(drop_location())
 			playsound(src, 'sound/items/Crowbar.ogg', 50, 1)
-			to_chat(usr, span_notice("You pull \the [battery] out of \the [src]'s power supplier."))
+			to_chat(usr, span_notice("I pull \the [battery] out of \the [src]'s power supplier."))
 			battery = null
 			diag_hud_set_circuitstat() //update diagnostic hud
 
@@ -349,19 +349,19 @@
 	var/total_complexity = return_total_complexity()
 
 	if((total_part_size + IC.size) > max_components)
-		to_chat(user, span_warning("You can't seem to add the '[IC]', as there's insufficient space."))
+		to_chat(user, span_warning("I can't seem to add the '[IC]', as there's insufficient space."))
 		return FALSE
 	if((total_complexity + IC.complexity) > max_complexity)
-		to_chat(user, span_warning("You can't seem to add the '[IC]', since this setup's too complicated for the case."))
+		to_chat(user, span_warning("I can't seem to add the '[IC]', since this setup's too complicated for the case."))
 		return FALSE
 	if((allowed_circuit_action_flags & IC.action_flags) != IC.action_flags)
-		to_chat(user, span_warning("You can't seem to add the '[IC]', since the case doesn't support the circuit type."))
+		to_chat(user, span_warning("I can't seem to add the '[IC]', since the case doesn't support the circuit type."))
 		return FALSE
 
 	if(!user.transferItemToLoc(IC, src))
 		return FALSE
 
-	to_chat(user, span_notice("You slide [IC] inside [src]."))
+	to_chat(user, span_notice("I slide [IC] inside [src]."))
 	playsound(src, 'sound/items/Deconstruct.ogg', 50, 1)
 	add_allowed_scanner(user.ckey)
 	investigate_log("had [IC]([IC.type]) inserted by [key_name(user)].", INVESTIGATE_CIRCUIT)
@@ -400,7 +400,7 @@
 
 	remove_component(IC)
 	if(!silent)
-		to_chat(user, span_notice("You pop \the [IC] out of the case, and slide it out."))
+		to_chat(user, span_notice("I pop \the [IC] out of the case, and slide it out."))
 		playsound(src, 'sound/items/crowbar.ogg', 50, 1)
 		user.put_in_hands(IC)
 	add_allowed_scanner(user.ckey)
@@ -438,7 +438,7 @@
 		return TRUE
 	I.play_tool_sound(src)
 	opened = !opened
-	to_chat(user, span_notice("You [opened ? "open" : "close"] the maintenance hatch of [src]."))
+	to_chat(user, span_notice("I [opened ? "open" : "close"] the maintenance hatch of [src]."))
 	update_icon()
 	return TRUE
 
@@ -478,7 +478,7 @@
 		battery = I
 		diag_hud_set_circuitstat() //update diagnostic hud
 		playsound(get_turf(src), 'sound/items/Deconstruct.ogg', 50, 1)
-		to_chat(user, span_notice("You slot the [I] inside \the [src]'s power supplier."))
+		to_chat(user, span_notice("I slot the [I] inside \the [src]'s power supplier."))
 		return TRUE
 	else if(istype(I, /obj/item/integrated_electronics/detailer))
 		var/obj/item/integrated_electronics/detailer/D = I
@@ -842,15 +842,15 @@
 		return
 	var/turf/T = get_turf(user)
 	if(!isfloorturf(T))
-		to_chat(user, span_warning("You cannot place [src] on this spot!"))
+		to_chat(user, span_warning("I cannot place [src] on this spot!"))
 		return
 	if(gotwallitem(T, ndir))
 		to_chat(user, span_warning("There's already an item on this wall!"))
 		return
 	playsound(src.loc, 'sound/machines/click.ogg', 75, 1)
 	user.visible_message("[user.name] attaches [src] to the wall.",
-		span_notice("You attach [src] to the wall."),
-		span_italic("You hear clicking."))
+		span_notice("I attach [src] to the wall."),
+		span_italic("I hear clicking."))
 	user.dropItemToGround(src)
 	switch(ndir)
 		if(NORTH)

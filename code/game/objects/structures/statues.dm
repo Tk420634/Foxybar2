@@ -36,10 +36,10 @@
 				return FALSE
 
 			user.visible_message("[user] is slicing apart the [name].", \
-								span_notice("You are slicing apart the [name]..."))
+								span_notice("I am slicing apart the [name]..."))
 			if(W.use_tool(src, user, 40, volume=50))
 				user.visible_message("[user] slices apart the [name].", \
-									span_notice("You slice apart the [name]!"))
+									span_notice("I slice apart the [name]!"))
 				deconstruct(TRUE)
 			return
 	return ..()
@@ -307,7 +307,7 @@
 		W.forceMove(src)
 		Helmet = W
 		update_icon()
-		user.visible_message("[user] puts the [Helmet] on the grave marker.", "You put the [Helmet] on the grave marker.")
+		user.visible_message("[user] puts the [Helmet] on the grave marker.", "I put the [Helmet] on the grave marker.")
 		return
 	if(istype(W, /obj/item/card/id/dogtag))
 		if(Dogtags)
@@ -316,20 +316,20 @@
 		W.forceMove(src)
 		Dogtags = W
 		update_icon()
-		user.visible_message("[user] puts the [Dogtags] on the grave marker.", "You put the [Dogtags] on the grave marker.")
+		user.visible_message("[user] puts the [Dogtags] on the grave marker.", "I put the [Dogtags] on the grave marker.")
 		return
 	..()
 
 /obj/structure/statue/wood/headstonewood/attack_hand(mob/user)
 	if(Helmet)
 		user.put_in_hands(Helmet)
-		user.visible_message("[user] removes the [Helmet] from the grave marker.", "You remove the [Helmet] from the grave marker.")
+		user.visible_message("[user] removes the [Helmet] from the grave marker.", "I remove the [Helmet] from the grave marker.")
 		Helmet = null
 		update_icon()
 		return
 	if(Dogtags)
 		user.put_in_hands(Dogtags)
-		user.visible_message("[user] removes the [Dogtags] from the grave marker.", "You remove the [Dogtags] from the grave marker.")
+		user.visible_message("[user] removes the [Dogtags] from the grave marker.", "I remove the [Dogtags] from the grave marker.")
 		Dogtags = null
 		update_icon()
 		return

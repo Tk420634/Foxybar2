@@ -45,7 +45,7 @@
 
 	if(M == user || vorebite)
 		if(!silent)
-			user.visible_message(span_notice("[user] swallows a gulp of [src]."), span_notice("You swallow a gulp of [src]."))
+			user.visible_message(span_notice("[user] swallows a gulp of [src]."), span_notice("I swallow a gulp of [src]."))
 	else
 		if(!silent)
 			M.visible_message(span_danger("[user] attempts to feed the contents of [src] to [M]."), span_userdanger("[user] attempts to feed the contents of [src] to [M]."))
@@ -86,7 +86,7 @@
 
 		var/refill = reagents.get_master_reagent_id()
 		var/trans = src.reagents.trans_to(target, amount_per_transfer_from_this, log = TRUE)
-		to_chat(user, span_notice("You transfer [trans] units of the solution to [target]."))
+		to_chat(user, span_notice("I transfer [trans] units of the solution to [target]."))
 
 		if(iscyborg(user)) //Cyborg modules that include drinks automatically refill themselves, but drain the borg's cell
 			var/mob/living/silicon/robot/bro = user
@@ -107,13 +107,13 @@
 			return
 
 		var/trans = target.reagents.trans_to(src, amount_per_transfer_from_this, log = TRUE)
-		to_chat(user, span_notice("You fill [src] with [trans] units of the contents of [target]."))
+		to_chat(user, span_notice("I fill [src] with [trans] units of the contents of [target]."))
 
 /obj/item/reagent_containers/food/drinks/attackby(obj/item/I, mob/user, params)
 	var/hotness = I.get_temperature()
 	if(hotness && reagents)
 		reagents.expose_temperature(hotness)
-		to_chat(user, span_notice("You heat [name] with [I]!"))
+		to_chat(user, span_notice("I heat [name] with [I]!"))
 	..()
 
 /obj/item/reagent_containers/food/drinks/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
@@ -168,10 +168,10 @@
 		if (!src_location.Adjacent(over_location)) // Regular users can only do short slides.
 			return
 		if (prob(10))
-			user.visible_message(span_warning("\The [user] tries to slide \the [src] down the table, but fails miserably."), span_warning("You <b>fail</b> to slide \the [src] down the table!"))
+			user.visible_message(span_warning("\The [user] tries to slide \the [src] down the table, but fails miserably."), span_warning("I <b>fail</b> to slide \the [src] down the table!"))
 			smash(over_location, user, FALSE)
 			return
-		user.visible_message(span_notice("\The [user] slides \the [src] down the table."), span_notice("You slide \the [src] down the table!"))
+		user.visible_message(span_notice("\The [user] slides \the [src] down the table."), span_notice("I slide \the [src] down the table!"))
 		forceMove(over_location)
 		return
 	var/distance = MANHATTAN_DISTANCE(over_location, src)
@@ -194,13 +194,13 @@
 		if (!locate(/obj/structure/table) in temp_turf)
 			var/datum/vector/V2 = atoms2vector(src, temp_turf)
 			vector_translate(V2, 0.1 SECONDS)
-			user.visible_message(span_warning("\The [user] slides \the [src] down the table... and straight into the ground!"), span_warning("You slide \the [src] down the table, and straight into the ground!"))
+			user.visible_message(span_warning("\The [user] slides \the [src] down the table... and straight into the ground!"), span_warning("I slide \the [src] down the table, and straight into the ground!"))
 			smash(over_location, user, FALSE)
 			return
 	while (temp_turf != dest)
 
 	vector_translate(V, 0.1 SECONDS)
-	user.visible_message(span_notice("\The [user] expertly slides \the [src] down the table."), span_notice("You slide \the [src] down the table. What a pro."))
+	user.visible_message(span_notice("\The [user] expertly slides \the [src] down the table."), span_notice("I slide \the [src] down the table. What a pro."))
 	return
 
 
@@ -387,7 +387,7 @@
 
 /obj/item/reagent_containers/food/drinks/sillycup/handcup
 	name = "a cupped hand"
-	desc = "Your hand, cupped to hold liquids."
+	desc = "My hand, cupped to hold liquids."
 	icon_state = "water_cup_e"
 	possible_transfer_amounts = list()
 	volume = 5
@@ -518,7 +518,7 @@
 
 /obj/item/reagent_containers/food/drinks/soda_cans/proc/crush_can(mob/user, silent, vorebite)
 	if(!silent)
-		user.visible_message(span_warning("[user] crushes the can of [src] on [user.p_their()] forehead!"), span_notice("You crush the can of [src] on your forehead."))
+		user.visible_message(span_warning("[user] crushes the can of [src] on [user.p_their()] forehead!"), span_notice("I crush the can of [src] on your forehead."))
 	playsound(user.loc,'sound/weapons/pierce.ogg', rand(10,50), 1)
 	var/obj/item/trash/can/crushed_can = new /obj/item/trash/can(vorebite ? loc : get_turf(src))
 	crushed_can.icon_state = icon_state
@@ -532,7 +532,7 @@
 
 /obj/item/reagent_containers/food/drinks/soda_cans/proc/pop_top(mob/user, silent)
 	if(!silent)
-		to_chat(user, "You pull back the tab of \the [src] with a satisfying pop.") //Ahhhhhhhh
+		to_chat(user, "I pull back the tab of \the [src] with a satisfying pop.") //Ahhhhhhhh
 	playsound(src, "can_open", 50, 1)
 	ENABLE_BITFIELD(reagents.reagents_holder_flags, OPENCONTAINER)
 	spillable = TRUE
@@ -568,7 +568,7 @@
 
 /obj/item/reagent_containers/food/drinks/soda_cans/lemon_lime
 	name = "orange soda"
-	desc = "You wanted ORANGE. It gave you Lemon Lime."
+	desc = "I wanted ORANGE. It gave you Lemon Lime."
 	icon_state = "lemon-lime"
 	list_reagents = list(/datum/reagent/consumable/lemon_lime = 30)
 	foodtype = FRUIT

@@ -50,7 +50,7 @@
 
 /atom/movable/screen/alert/status_effect/in_love
 	name = "In Love"
-	desc = "You feel so wonderfully in love!"
+	desc = "I feel so wonderfully in love!"
 	icon_state = "in_love"
 
 /datum/status_effect/in_love

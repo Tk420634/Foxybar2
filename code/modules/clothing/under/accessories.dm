@@ -146,17 +146,17 @@
 				delay = 0
 			else
 				user.visible_message("[user] is trying to pin [src] on [M]'s chest.", \
-									span_notice("You try to pin [src] on [M]'s chest."))
+									span_notice("I try to pin [src] on [M]'s chest."))
 			var/input
 			if(!commended && user != M)
 				input = stripped_input(user,"Please input a reason for this commendation, it will be recorded by Nanotrasen.", ,"", 140)
 			if(do_after(user, delay, target = M))
 				if(U.attach_accessory(src, user, 0)) //Attach it, do not notify the user of the attachment
 					if(user == M)
-						to_chat(user, span_notice("You attach [src] to [U]."))
+						to_chat(user, span_notice("I attach [src] to [U]."))
 					else
 						user.visible_message("[user] pins \the [src] on [M]'s chest.", \
-											span_notice("You pin \the [src] on [M]'s chest."))
+											span_notice("I pin \the [src] on [M]'s chest."))
 						if(input)
 							SSblackbox.record_feedback("associative", "commendation", 1, list("commender" = "[user.real_name]", "commendee" = "[M.real_name]", "medal" = "[src]", "reason" = input))
 							GLOB.commendations += "[user.real_name] awarded <b>[M.real_name]</b> the <span class='medaltext'>[name]</span>! \n- [input]"
@@ -249,7 +249,7 @@
 /obj/item/clothing/accessory/medal/plasma/temperature_expose(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	if(exposed_temperature > 300)
 		atmos_spawn_air("plasma=20;TEMP=[exposed_temperature]")
-		visible_message(span_danger(" \The [src] bursts into flame!"),span_userdanger("Your [src] bursts into flame!"))
+		visible_message(span_danger(" \The [src] bursts into flame!"),span_userdanger("My [src] bursts into flame!"))
 		qdel(src)
 
 /obj/item/clothing/accessory/medal/plasma/nobel_science
@@ -311,7 +311,7 @@
 /obj/item/clothing/accessory/lawyers_badge/attack_self(mob/user)
 	if(prob(1))
 		user.say("The testimony contradicts the evidence!", forced = "attorney's badge")
-	user.visible_message("[user] shows [user.p_their()] attorney's badge.", span_notice("You show your attorney's badge."))
+	user.visible_message("[user] shows [user.p_their()] attorney's badge.", span_notice("I show your attorney's badge."))
 
 /obj/item/clothing/accessory/lawyers_badge/on_uniform_equip(obj/item/clothing/under/U, user)
 	var/mob/living/L = user
@@ -732,7 +732,7 @@
 
 /obj/item/clothing/accessory/maidskirt
 	name = "\improper Maid Skirt - Accessory"
-	desc = "You feel like cleaning something by just holding this."
+	desc = "I feel like cleaning something by just holding this."
 	item_state = "maid"
 	icon_state = "maid"
 	minimize_when_attached = FALSE
@@ -816,7 +816,7 @@
 
 /obj/item/clothing/accessory/draculass
 	name = "\improper Goth Skirt w/ Stockings"
-	desc = "You probably are a bloodsucker, or at least you tell people you are."
+	desc = "I probably are a bloodsucker, or at least you tell people you are."
 	item_state = "draculass"
 	icon_state = "draculass"
 	minimize_when_attached = FALSE
@@ -911,7 +911,7 @@
 
 /obj/item/clothing/accessory/heart
 	name = "frisky attitude"
-	desc = "You really do wear your heart on your sleeve, don't you?"
+	desc = "I really do wear your heart on your sleeve, don't you?"
 	item_state = "heart"
 	icon_state = "heart"
 	minimize_when_attached = FALSE
@@ -929,7 +929,7 @@
 
 /obj/item/clothing/accessory/melee
 	name = "melee specialist"
-	desc = "You like beating people with a club dont you?"
+	desc = "I like beating people with a club dont you?"
 	item_state = "melee"
 	icon_state = "melee"
 	minimize_when_attached = FALSE
@@ -938,7 +938,7 @@
 
 /obj/item/clothing/accessory/ranged
 	name = "ranged specialist"
-	desc = "You like shooting people dont you?"
+	desc = "I like shooting people dont you?"
 	item_state = "ranged"
 	icon_state = "ranged"
 	minimize_when_attached = FALSE
@@ -947,7 +947,7 @@
 
 /obj/item/clothing/accessory/newbsprout
 	name = "new sprout"
-	desc = "You arent sure what your doing, but you want people to help"
+	desc = "I amnt sure what your doing, but you want people to help"
 	item_state = "sprout"
 	icon_state = "sprout"
 	minimize_when_attached = FALSE
@@ -956,7 +956,7 @@
 
 /obj/item/clothing/accessory/mentorcrown
 	name = "mentor crown"
-	desc = "You are sure of what your doing, and are willing to help"
+	desc = "I am sure of what your doing, and are willing to help"
 	item_state = "crown"
 	icon_state = "crown"
 	minimize_when_attached = FALSE
@@ -974,7 +974,7 @@
 
 /obj/item/clothing/accessory/pvpindicator
 	name = "PVP Intent"
-	desc = "You just want to kill someone, well, if two characters have this floating next to eachother, they should just go to town on one another!"
+	desc = "I just want to kill someone, well, if two characters have this floating next to eachother, they should just go to town on one another!"
 	item_state = "antag"
 	icon_state = "antag"
 	minimize_when_attached = FALSE

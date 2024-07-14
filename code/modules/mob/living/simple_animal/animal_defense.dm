@@ -16,13 +16,13 @@
 				if(!resting)
 					visible_message(span_notice("[M] [response_help_continuous] [src]."), \
 									span_notice("[M] [response_help_continuous] you."), null, null, null,
-									M, span_notice("You [response_help_simple] [src]."))
+									M, span_notice("I [response_help_simple] [src]."))
 					playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 				
 				else
 					M.visible_message(span_warning("[M] helps over [src]."),
-						span_notice("You help to get [src] back on its feet."))
-					to_chat(src, span_userdanger("You are being helped to get back up by [M]!"))
+						span_notice("I help to get [src] back on its feet."))
+					to_chat(src, span_userdanger("I am being helped to get back up by [M]!"))
 					playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 
 					icon = initial(icon)
@@ -49,13 +49,13 @@
 			M.do_attack_animation(src, ATTACK_EFFECT_DISARM)
 			visible_message(span_danger("[M] [response_disarm_continuous] [src]!"),\
 							span_danger("[M] [response_disarm_continuous] you!"), null, COMBAT_MESSAGE_RANGE, null, \
-							M, span_danger("You [response_disarm_simple] [src]!"))
+							M, span_danger("I [response_disarm_simple] [src]!"))
 			playsound(src, 'sound/weapons/thudswoosh.ogg', 25, 1)
 			log_combat(M, src, "disarmed")
 
 		if(INTENT_HARM)
 			if(HAS_TRAIT(M, TRAIT_PACIFISM))
-				to_chat(M, span_notice("You don't want to hurt [src]!"))
+				to_chat(M, span_notice("I don't want to hurt [src]!"))
 				return
 			if(!client && M.incapacitated())
 				to_chat(M, span_notice("You're too messed up to fight!"))
@@ -65,7 +65,7 @@
 			M.do_attack_animation(src, ATTACK_EFFECT_PUNCH)
 			visible_message(span_danger("[M] [response_harm_continuous] [src]!"),\
 							span_userdanger("[M] [response_harm_continuous] you!"), null, COMBAT_MESSAGE_RANGE, null, \
-							M, span_danger("You [response_harm_simple] [src]!"))
+							M, span_danger("I [response_harm_simple] [src]!"))
 			playsound(loc, attacked_sound, 25, 1, -1)
 			attack_threshold_check(M.dna?.species.punchdamagehigh, M.dna?.species.attack_type, "melee")
 			log_combat(M, src, "attacked")
@@ -80,7 +80,7 @@
 		playsound(loc, "punch", 25, 1, -1)
 		visible_message(span_danger("[user] punches [src]!"), \
 			span_userdanger("[user] punches you!"), null, COMBAT_MESSAGE_RANGE, null, \
-			user, span_danger("You punch [src]!"))
+			user, span_danger("I punch [src]!"))
 		adjustBruteLoss(15)
 		return TRUE
 
@@ -94,7 +94,7 @@
 		if (health > 0)
 			visible_message(span_notice("[M.name] [response_help_continuous] [src]."), \
 							span_notice("[M.name] [response_help_continuous] you."), \
-							target = M, target_message = span_notice("You [response_help_simple] [src]."))
+							target = M, target_message = span_notice("I [response_help_simple] [src]."))
 			playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 
 /mob/living/simple_animal/attack_alien(mob/living/carbon/alien/humanoid/M)
@@ -105,7 +105,7 @@
 		playsound(loc, 'sound/weapons/pierce.ogg', 25, 1, -1)
 		visible_message(span_danger("[M] [response_disarm_continuous] [name]!"), \
 				span_userdanger("[M] [response_disarm_continuous] [name]!"), null, COMBAT_MESSAGE_RANGE, null, \
-				M, span_danger("You [response_disarm_simple] [name]!"))
+				M, span_danger("I [response_disarm_simple] [name]!"))
 		log_combat(M, src, "disarmed")
 	else
 		visible_message(span_danger("[M] has slashed at [src]!"), \

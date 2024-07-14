@@ -253,7 +253,7 @@
 		var/obj/item/mecha_parts/mecha_equipment/equip = locate(href_list["select_equip"]) in src
 		if(equip && equip.selectable)
 			selected = equip
-			occupant_message("You switch to [equip]")
+			occupant_message("I switch to [equip]")
 			visible_message("[src] raises [equip]")
 			send_byjax(usr, "exosuit.browser","eq_list", get_equipment_list())
 
@@ -304,7 +304,7 @@
 			return
 		if(can_be_locked)
 			dna_lock = C.dna.unique_enzymes
-			occupant_message("You feel a prick as the needle takes your DNA sample.")
+			occupant_message("I feel a prick as the needle takes your DNA sample.")
 		else
 			to_chat(C, "<span class='danger'> This exosuit lacks a DNA storage bank!")
 			return

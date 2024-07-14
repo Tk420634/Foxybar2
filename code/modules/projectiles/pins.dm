@@ -48,7 +48,7 @@
 	if(obj_flags & EMAGGED)
 		return
 	obj_flags |= EMAGGED
-	to_chat(user, span_notice("You override the authentication mechanism."))
+	to_chat(user, span_notice("I override the authentication mechanism."))
 	return TRUE
 
 /obj/item/firing_pin/proc/gun_insert(mob/living/user, obj/item/gun/G)
@@ -177,7 +177,7 @@
 		var/mob/living/carbon/human/M = user
 		if(istype(M.wear_suit, suit_requirement))
 			return TRUE
-	to_chat(user, span_warning("You need to be wearing [tagcolor] laser tag armor!"))
+	to_chat(user, span_warning("I need to be wearing [tagcolor] laser tag armor!"))
 	return FALSE
 
 /obj/item/firing_pin/tag/red
@@ -216,7 +216,7 @@
 	else
 		. += span_notice("It's currently set to disallow [lethal]operation when the security level isn't <b>[NUM2SECLEVEL(min_sec_level)]</b>.")
 	if(can_toggle)
-		. += span_notice("You can use a <b>multitool</b> to modify its settings.")
+		. += span_notice("I can use a <b>multitool</b> to modify its settings.")
 
 /obj/item/firing_pin/security_level/multitool_act(mob/living/user, obj/item/I)
 	. = TRUE
@@ -287,6 +287,6 @@
 /obj/item/firing_pin/explorer/pin_auth(mob/living/user)
 	var/turf/station_check = get_turf(user)
 	if(!station_check||is_station_level(station_check.z))
-		to_chat(user, span_warning("You cannot use your weapon while on the station!"))
+		to_chat(user, span_warning("I cannot use your weapon while on the station!"))
 		return FALSE
 	return TRUE

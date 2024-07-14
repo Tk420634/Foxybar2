@@ -29,8 +29,8 @@
 	if(user in src.stomach_contents)
 		if(prob(40))
 			if(prob(25))
-				audible_message(span_warning("You hear something rumbling inside [src]'s stomach..."), \
-							span_warning("You hear something rumbling."), 4,\
+				audible_message(span_warning("I hear something rumbling inside [src]'s stomach..."), \
+							span_warning("I hear something rumbling."), 4,\
 							  span_userdanger("Something is rumbling inside your stomach!"))
 			var/obj/item/I = user.get_active_held_item()
 			if(I && I.force)
@@ -53,7 +53,7 @@
 	. = ..()
 	var/obj/item/held_item = get_active_held_item()
 	if(!.)
-		to_chat(usr, span_warning("Your other hand is too busy holding [held_item]."))
+		to_chat(usr, span_warning("My other hand is too busy holding [held_item]."))
 		return
 	if(!held_index)
 		held_index = (active_hand_index % held_items.len)+1
@@ -132,7 +132,7 @@
 			victim.DefaultCombatKnockdown(20)
 			DefaultCombatKnockdown(20)
 			visible_message(span_danger("[src] crashes into [victim] [extra_speed ? "really hard" : ""], knocking them both over!"),\
-				span_userdanger("You violently crash into [victim] [extra_speed ? "extra hard" : ""]!"))
+				span_userdanger("I violently crash into [victim] [extra_speed ? "extra hard" : ""]!"))
 		playsound(src,'sound/weapons/punch1.ogg',50,1)
 
 
@@ -197,7 +197,7 @@
 			if(pulling)
 				stop_pulling()
 			if(HAS_TRAIT(src, TRAIT_PACIFISM))
-				to_chat(src, span_notice("You gently let go of [throwable_mob]."))
+				to_chat(src, span_notice("I gently let go of [throwable_mob]."))
 				return
 
 			adjustStaminaLossBuffered(STAM_COST_THROW_MOB * ((throwable_mob.mob_size+1)**2))// throwing an entire person shall be very tiring
@@ -211,7 +211,7 @@
 		dropItemToGround(I)
 
 		if(HAS_TRAIT(src, TRAIT_PACIFISM) && I.throwforce)
-			to_chat(src, span_notice("You set [I] down gently on the ground."))
+			to_chat(src, span_notice("I set [I] down gently on the ground."))
 			return
 
 		adjustStaminaLossBuffered(I.getweight(src, STAM_COST_THROW_MULT, SKILL_THROW_STAM_COST))
@@ -223,7 +223,7 @@
 		if(pulling && grab_state >= GRAB_NECK)
 			power_throw++
 		visible_message(span_danger("[src] throws [thrown_thing][power_throw ? " really hard!" : "."]"), \
-						span_danger("You throw [thrown_thing][power_throw ? " really hard!" : "."]"))
+						span_danger("I throw [thrown_thing][power_throw ? " really hard!" : "."]"))
 		log_message("has thrown [thrown_thing] [power_throw ? "really hard" : ""]", LOG_ATTACK)
 		do_attack_animation(target, no_effect = 1)
 		playsound(loc, 'sound/weapons/punchmiss.ogg', 50, 1, -1)
@@ -278,7 +278,7 @@
 			if(ITEM && istype(ITEM, /obj/item/tank) && wear_mask && (wear_mask.clothing_flags & ALLOWINTERNALS))
 				visible_message(span_danger("[usr] tries to [internal ? "close" : "open"] the valve on [src]'s [ITEM.name]."), \
 								span_userdanger("[usr] tries to [internal ? "close" : "open"] the valve on your [ITEM.name]."), \
-								target = usr, target_message = span_danger("You try to [internal ? "close" : "open"] the valve on [src]'s [ITEM.name]."))
+								target = usr, target_message = span_danger("I try to [internal ? "close" : "open"] the valve on [src]'s [ITEM.name]."))
 				if(do_mob(usr, src, POCKET_STRIP_DELAY))
 					if(internal)
 						internal = null
@@ -290,7 +290,7 @@
 
 					visible_message(span_danger("[usr] [internal ? "opens" : "closes"] the valve on [src]'s [ITEM.name]."), \
 									span_userdanger("[usr] [internal ? "opens" : "closes"] the valve on your [ITEM.name]."), \
-									target = usr, target_message = span_danger("You [internal ? "opens" : "closes"] the valve on [src]'s [ITEM.name]."))
+									target = usr, target_message = span_danger("I [internal ? "opens" : "closes"] the valve on [src]'s [ITEM.name]."))
 		if(href_list["embedded_object"] && usr.canUseTopic(src, BE_CLOSE))
 			var/obj/item/bodypart/L = locate(href_list["embedded_limb"]) in bodyparts
 			if(!L)
@@ -309,10 +309,10 @@
 				bandage_breaker = null
 			if(href_list["bandage"])
 				if(!L.destroy_coverings("bandage", TRUE, bandage_breaker))
-					show_message(span_alert("You couldn't remove anything!"))
+					show_message(span_alert("I couldn't remove anything!"))
 			if(href_list["suture"])
 				if(!L.destroy_coverings("suture", TRUE, bandage_breaker))
-					show_message(span_alert("You couldn't remove anything!"))
+					show_message(span_alert("I couldn't remove anything!"))
 		switch(href_list["action"])
 			if("change_chat_color")
 				change_chat_color()
@@ -395,7 +395,7 @@
 		for(var/i in 1 to LAZYLEN(genitals_we_have))
 			dat += add_genital_layer_piece(genitals_we_have[i], i, LAZYLEN(genitals_we_have))
 	else
-		dat += "You dont seem to have any movable genitals!"
+		dat += "I dont seem to have any movable genitals!"
 	dat += "<tr>"
 	dat += "<td colspan='3' class='genital_name'>When visible, layer them...</td>"
 	/* var/genital_shirtlayer
@@ -584,14 +584,14 @@
 			buckle_cd = O.breakouttime
 		MarkResistTime()
 		visible_message(span_warning("[src] attempts to unbuckle [p_them()]self!"), \
-					span_notice("You attempt to unbuckle yourself... (This will take around [round(buckle_cd/600,1)] minute\s, and you need to stay still.)"))
+					span_notice("I attempt to unbuckle yourself... (This will take around [round(buckle_cd/600,1)] minute\s, and you need to stay still.)"))
 		if(do_after(src, buckle_cd, 0, target = src, required_mobility_flags = MOBILITY_RESIST))
 			if(!buckled)
 				return
 			buckled.user_unbuckle_mob(src, src)
 		else
 			if(src && buckled)
-				to_chat(src, span_warning("You fail to unbuckle yourself!"))
+				to_chat(src, span_warning("I fail to unbuckle yourself!"))
 	else
 		buckled.user_unbuckle_mob(src,src)
 
@@ -603,12 +603,12 @@
 	DefaultCombatKnockdown(60, TRUE, TRUE)
 	spin(32,2)
 	visible_message(span_danger("[src] rolls on the floor, trying to put [p_them()]self out!"), \
-		span_notice("You stop, drop, and roll!"))
+		span_notice("I stop, drop, and roll!"))
 	MarkResistTime(30)
 	sleep(30)
 	if(fire_stacks <= 0)
 		visible_message(span_danger("[src] has successfully extinguished [p_them()]self!"), \
-			span_notice("You extinguish yourself."))
+			span_notice("I extinguish yourself."))
 		ExtinguishMob()
 
 /mob/living/carbon/resist_restraints()
@@ -629,20 +629,20 @@
 	breakouttime = I.breakouttime
 	if(!cuff_break)
 		visible_message(span_warning("[src] attempts to remove [I]!"))
-		to_chat(src, span_notice("You attempt to remove [I]... (This will take around [DisplayTimeText(breakouttime)] and you need to stand still.)"))
+		to_chat(src, span_notice("I attempt to remove [I]... (This will take around [DisplayTimeText(breakouttime)] and you need to stand still.)"))
 		if(do_after(src, breakouttime, 0, target = src, required_mobility_flags = MOBILITY_RESIST))
 			clear_cuffs(I, cuff_break)
 		else
-			to_chat(src, span_warning("You fail to remove [I]!"))
+			to_chat(src, span_warning("I fail to remove [I]!"))
 
 	else if(cuff_break == FAST_CUFFBREAK)
 		breakouttime = 50
 		visible_message(span_warning("[src] is trying to break [I]!"))
-		to_chat(src, span_notice("You attempt to break [I]... (This will take around 5 seconds and you need to stand still.)"))
+		to_chat(src, span_notice("I attempt to break [I]... (This will take around 5 seconds and you need to stand still.)"))
 		if(do_after(src, breakouttime, 0, target = src))
 			clear_cuffs(I, cuff_break)
 		else
-			to_chat(src, span_warning("You fail to break [I]!"))
+			to_chat(src, span_warning("I fail to break [I]!"))
 
 	else if(cuff_break == INSTANT_CUFFBREAK)
 		clear_cuffs(I, cuff_break)
@@ -683,7 +683,7 @@
 	if(!I.loc || buckled)
 		return
 	visible_message(span_danger("[src] manages to [cuff_break ? "break" : "remove"] [I]!"))
-	to_chat(src, span_notice("You successfully [cuff_break ? "break" : "remove"] [I]."))
+	to_chat(src, span_notice("I successfully [cuff_break ? "break" : "remove"] [I]."))
 
 	if(cuff_break)
 		. = !((I == handcuffed) || (I == legcuffed))
@@ -786,7 +786,7 @@
 	if(nutrition < 100 && !blood)
 		if(message)
 			visible_message(span_warning("[src] dry heaves!"), \
-							span_userdanger("You try to throw up, but there's nothing in your stomach!"))
+							span_userdanger("I try to throw up, but there's nothing in your stomach!"))
 		if(stun)
 			DefaultCombatKnockdown(200)
 		return 1
@@ -794,12 +794,12 @@
 	if(is_mouth_covered()) //make this add a blood/vomit overlay later it'll be hilarious
 		if(message)
 			visible_message(span_danger("[src] throws up all over [p_them()]self!"), \
-							span_userdanger("You throw up all over yourself!"))
+							span_userdanger("I throw up all over yourself!"))
 			SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "vomit", /datum/mood_event/vomitself)
 		distance = 0
 	else
 		if(message)
-			visible_message(span_danger("[src] throws up!"), span_userdanger("You throw up!"))
+			visible_message(span_danger("[src] throws up!"), span_userdanger("I throw up!"))
 			if(!isflyperson(src))
 				SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "vomit", /datum/mood_event/vomit)
 	if(stun)
@@ -1228,7 +1228,7 @@
 			O.Remove()
 			O.forceMove(drop_location())
 	if(organs_amt)
-		to_chat(user, span_notice("You retrieve some of [src]\'s internal organs!"))
+		to_chat(user, span_notice("I retrieve some of [src]\'s internal organs!"))
 
 /mob/living/carbon/ExtinguishMob()
 	for(var/X in get_equipped_items())
@@ -1466,7 +1466,7 @@
 			dna.features["body_model"] = ngender
 			if(!silent)
 				var/adj = ngender == MALE ? "masculine" : "feminine"
-				visible_message(span_boldnotice("[src] suddenly looks more [adj]!"), span_boldwarning("You suddenly feel more [adj]!"))
+				visible_message(span_boldnotice("[src] suddenly looks more [adj]!"), span_boldwarning("I suddenly feel more [adj]!"))
 		else if(ngender == NEUTER)
 			dna.features["body_model"] = MALE
 	if(update_icon)

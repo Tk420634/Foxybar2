@@ -38,7 +38,7 @@
 	// 			if(environment.get_moles(GAS_O2) >= 1) //Same threshhold that extinguishes fire
 	// 				H.adjust_fire_stacks(0.5)
 	// 				if(!H.on_fire && H.fire_stacks > 0)
-	// 					H.visible_message(span_danger("[H]'s body reacts with the atmosphere and bursts into flames!"),span_userdanger("Your body reacts with the atmosphere and bursts into flame!"))
+	// 					H.visible_message(span_danger("[H]'s body reacts with the atmosphere and bursts into flames!"),span_userdanger("My body reacts with the atmosphere and bursts into flame!"))
 	// 				H.IgniteMob()
 	// 				internal_fire = TRUE
 	// else

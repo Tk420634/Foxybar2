@@ -359,7 +359,7 @@
 	update_total()
 
 /datum/reagents/proc/remove_addiction(datum/reagent/R)
-	to_chat(my_atom, span_notice("You feel like you've gotten over your need for [R.name]."))
+	to_chat(my_atom, span_notice("I feel like you've gotten over your need for [R.name]."))
 	SEND_SIGNAL(my_atom, COMSIG_CLEAR_MOOD_EVENT, "[R.type]_overdose")
 	if(ismob(my_atom))
 		var/turf/T = get_turf(my_atom)

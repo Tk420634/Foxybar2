@@ -86,7 +86,7 @@
 		covered = "mask"
 	if(covered)
 		var/who = (isnull(user) || eater == user) ? "your" : "[eater.p_their()]"
-		to_chat(user, span_warning("You have to remove [who] [covered] first!"))
+		to_chat(user, span_warning("I have to remove [who] [covered] first!"))
 		return 0
 	return 1
 

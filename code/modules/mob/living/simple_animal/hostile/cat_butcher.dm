@@ -36,7 +36,7 @@
 	var/obj/item/organ/tail/cat/tail = L.getorgan(/obj/item/organ/tail/cat)
 	if(!tail || QDELETED(tail))
 		return
-	visible_message("[src] severs [L]'s tail in one swift swipe!", span_notice("You sever [L]'s tail in one swift swipe."))
+	visible_message("[src] severs [L]'s tail in one swift swipe!", span_notice("I sever [L]'s tail in one swift swipe."))
 	tail.Remove()
 	var/obj/item/organ/tail/cat/dropped_tail = new(my_target.drop_location())
 	dropped_tail.color = L.hair_color

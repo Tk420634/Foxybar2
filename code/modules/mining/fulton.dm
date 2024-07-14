@@ -36,7 +36,7 @@ GLOBAL_LIST_EMPTY(total_extraction_beacons)
 		if(!A)
 			return
 		beacon = A
-		to_chat(user, "You link the extraction pack to the beacon system.")
+		to_chat(user, "I link the extraction pack to the beacon system.")
 
 /obj/item/extraction_pack/afterattack(atom/movable/A, mob/living/carbon/human/user, flag, params)
 	. = ..()
@@ -60,9 +60,9 @@ GLOBAL_LIST_EMPTY(total_extraction_beacons)
 			return
 		if(A.anchored || (A.move_resist > max_force_fulton))
 			return
-		to_chat(user, span_notice("You start attaching the pack to [A]..."))
+		to_chat(user, span_notice("I start attaching the pack to [A]..."))
 		if(do_after(user,50,target=A))
-			to_chat(user, span_notice("You attach the pack to [A] and activate it."))
+			to_chat(user, span_notice("I attach the pack to [A] and activate it."))
 			if(loc == user && istype(user.back, /obj/item/storage/backpack))
 				var/obj/item/storage/backpack/B = user.back
 				SEND_SIGNAL(B, COMSIG_TRY_STORAGE_INSERT, src, user, FALSE, FALSE)

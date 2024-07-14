@@ -75,8 +75,8 @@
 		"Rigel Prime, the center of the Rigel system, burns hot, basking its planetary bodies in warmth and radiation.",
 		"Tau Ceti Beta has recently become a waypoint for colonists headed towards Orion. There are many ships and makeshift stations in the vicinity.",
 		"Sensors indicate that a black hole's gravitational field is affecting the region of space we were headed through. We could stay of course, but risk of being overcome by its gravity, or we could change course to go around, which will take longer.",
-		"You have come into range of the first man-made structure in this region of space. It has been constructed not by travellers from Sol, but by colonists from Orion. It stands as a monument to the colonists' success.",
-		"You have made it to Orion! Congratulations! Your crew is one of the few to start a new foothold for mankind!"
+		"I have come into range of the first man-made structure in this region of space. It has been constructed not by travellers from Sol, but by colonists from Orion. It stands as a monument to the colonists' success.",
+		"I have made it to Orion! Congratulations! Your crew is one of the few to start a new foothold for mankind!"
 		)
 
 /obj/machinery/computer/arcade/orion_trail/proc/newgame()
@@ -118,14 +118,14 @@
 				dat += "<br>You ran out of food and starved."
 				if(obj_flags & EMAGGED)
 					user.set_nutrition(0) //yeah you pretty hongry
-					to_chat(user, span_userdanger("Your body instantly contracts to that of one who has not eaten in months. Agonizing cramps seize you as you fall to the floor."))
+					to_chat(user, span_userdanger("My body instantly contracts to that of one who has not eaten in months. Agonizing cramps seize you as you fall to the floor."))
 			if(fuel <= 0)
 				dat += "<br>You ran out of fuel, and drift, slowly, into a star."
 				if(obj_flags & EMAGGED)
 					var/mob/living/M = user
 					M.adjust_fire_stacks(5)
 					M.IgniteMob() //flew into a star, so you're on fire
-					to_chat(user, span_userdanger("You feel an immense wave of heat emanate from the arcade machine. Your skin bursts into flames."))
+					to_chat(user, span_userdanger("I feel an immense wave of heat emanate from the arcade machine. Your skin bursts into flames."))
 
 		if(obj_flags & EMAGGED)
 			to_chat(user, span_userdanger("You're never going to make it to Orion..."))
@@ -196,7 +196,7 @@
 				switch(event)
 					if(ORION_TRAIL_RAIDERS)
 						if(prob(50))
-							to_chat(usr, span_userdanger("You hear battle shouts. The tramping of boots on cold metal. Screams of agony. The rush of venting air. Are you going insane?"))
+							to_chat(usr, span_userdanger("I hear battle shouts. The tramping of boots on cold metal. Screams of agony. The rush of venting air. Are you going insane?"))
 							M.hallucination += 30
 						else
 							to_chat(usr, span_userdanger("Something strikes you from behind! It hurts like hell and feel like a blunt weapon, but nothing is there..."))
@@ -205,9 +205,9 @@
 					if(ORION_TRAIL_ILLNESS)
 						var/severity = rand(1,3) //pray to RNGesus. PRAY, PIGS
 						if(severity == 1)
-							to_chat(M, span_userdanger("You suddenly feel slightly nauseated.") )
+							to_chat(M, span_userdanger("I suddenly feel slightly nauseated.") )
 						if(severity == 2)
-							to_chat(usr, span_userdanger("You suddenly feel extremely nauseated and hunch over until it passes."))
+							to_chat(usr, span_userdanger("I suddenly feel extremely nauseated and hunch over until it passes."))
 							M.Stun(60)
 						if(severity >= 3) //you didn't pray hard enough
 							to_chat(M, span_warning("An overpowering wave of nausea consumes over you. You hunch over, your stomach's contents preparing for a spectacular exit."))
@@ -352,7 +352,7 @@
 		if(gameStatus == ORION_STATUS_MARKET)
 			if(!spaceport_raided && food >= 10 && fuel >= 10)
 				var/bought = add_crewmember()
-				last_spaceport_action = "You hired [bought] as a new crewmember."
+				last_spaceport_action = "I hired [bought] as a new crewmember."
 				fuel -= 10
 				food -= 10
 				event()
@@ -361,7 +361,7 @@
 		if(gameStatus == ORION_STATUS_MARKET)
 			if(!spaceport_raided && settlers.len > 1)
 				var/sold = remove_crewmember()
-				last_spaceport_action = "You sold your crewmember, [sold]!"
+				last_spaceport_action = "I sold your crewmember, [sold]!"
 				fuel += 7
 				food += 7
 				event()
@@ -385,17 +385,17 @@
 				if(prob(success))
 					FU = rand(5,15)
 					FO = rand(5,15)
-					last_spaceport_action = "You successfully raided the spaceport! You gained [FU] Fuel and [FO] Food! (+[FU]FU,+[FO]FO)"
+					last_spaceport_action = "I successfully raided the spaceport! You gained [FU] Fuel and [FO] Food! (+[FU]FU,+[FO]FO)"
 				else
 					FU = rand(-5,-15)
 					FO = rand(-5,-15)
-					last_spaceport_action = "You failed to raid the spaceport! You lost [FU*-1] Fuel and [FO*-1] Food in your scramble to escape! ([FU]FU,[FO]FO)"
+					last_spaceport_action = "I failed to raid the spaceport! You lost [FU*-1] Fuel and [FO*-1] Food in your scramble to escape! ([FU]FU,[FO]FO)"
 
 					//your chance of lose a crewmember is 1/2 your chance of success
 					//this makes higher % failures hurt more, don't get cocky space cowboy!
 					if(prob(success*5))
 						var/lost_crew = remove_crewmember()
-						last_spaceport_action = "You failed to raid the spaceport! You lost [FU*-1] Fuel and [FO*-1] Food, AND [lost_crew] in your scramble to escape! ([FU]FI,[FO]FO,-Crew)"
+						last_spaceport_action = "I failed to raid the spaceport! You lost [FU*-1] Fuel and [FO*-1] Food, AND [lost_crew] in your scramble to escape! ([FU]FI,[FO]FO,-Crew)"
 						if(obj_flags & EMAGGED)
 							say("WEEWOO! WEEWOO! Spaceport security en route!")
 							playsound(src, 'sound/items/weeoo1.ogg', 10, FALSE)
@@ -519,7 +519,7 @@
 			eventdat += "<P ALIGN=Right><a href='byond://?src=[REF(src)];close=1'>Close</a></P>"
 
 		if(ORION_TRAIL_BLACKHOLE)
-			eventdat += "You were swept away into the black hole."
+			eventdat += "I were swept away into the black hole."
 			eventdat += "<P ALIGN=Right><a href='byond://?src=[REF(src)];holedeath=1'>Oh...</a></P>"
 			eventdat += "<P ALIGN=Right><a href='byond://?src=[REF(src)];close=1'>Close</a></P>"
 			settlers = list()
@@ -601,7 +601,7 @@
 				eventdat += "<P ALIGN=Right><a href='byond://?src=[REF(src)];leave_spaceport=1'>Depart Spaceport</a></P>"
 				eventdat += "<P ALIGN=Right><a href='byond://?src=[REF(src)];close=1'>Close</a></P>"
 			else
-				eventdat += "Your jump into the sector yields a spaceport - a lucky find!"
+				eventdat += "My jump into the sector yields a spaceport - a lucky find!"
 				eventdat += "<br>This spaceport is home to travellers who failed to reach Orion, but managed to find a different home..."
 				eventdat += "<br>Trading terms: FU = Fuel, FO = Food"
 				if(last_spaceport_action)
@@ -738,7 +738,7 @@
 	. = ..()
 	if(obj_flags & EMAGGED)
 		return
-	to_chat(user, span_notice("You override the cheat code menu and skip to Cheat #[rand(1, 50)]: Realism Mode."))
+	to_chat(user, span_notice("I override the cheat code menu and skip to Cheat #[rand(1, 50)]: Realism Mode."))
 	name = "The Orion Trail: Realism Edition"
 	desc = "Learn how our ancestors got to Orion, and try not to die in the process!"
 	newgame()
@@ -776,7 +776,7 @@
 	message_admins("[ADMIN_LOOKUPFLW(usr)] primed an explosive Orion ship for detonation at [AREACOORD(usr)].")
 	log_game("[key_name(usr)] primed an explosive Orion ship for detonation at [AREACOORD(usr)].")
 
-	to_chat(user, span_warning("You flip the switch on the underside of [src]."))
+	to_chat(user, span_warning("I flip the switch on the underside of [src]."))
 	active = 1
 	visible_message(span_notice("[src] softly beeps and whirs to life!"))
 	playsound(loc, 'sound/machines/defib_SaftyOn.ogg', 10, 1)

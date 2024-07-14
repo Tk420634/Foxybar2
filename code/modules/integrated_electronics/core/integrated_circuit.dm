@@ -271,7 +271,7 @@ a creative player the means to solve many problems.  Circuits are held inside an
 			if(istype(held_item, /obj/item/integrated_electronics) || istype(held_item, /obj/item/multitool))
 				pin.handle_wire(linked, held_item, href_list["act"], usr)
 			else
-				to_chat(usr, span_warning("You can't do a whole lot without the proper tools."))
+				to_chat(usr, span_warning("I can't do a whole lot without the proper tools."))
 				success = FALSE
 			if(success && assembly)
 				assembly.add_allowed_scanner(usr.ckey)
@@ -284,7 +284,7 @@ a creative player the means to solve many problems.  Circuits are held inside an
 			else
 				to_chat(usr, span_warning("The debugger's 'ref scanner' needs to be on."))
 		else
-			to_chat(usr, span_warning("You need a debugger set to 'ref' mode to do that."))
+			to_chat(usr, span_warning("I need a debugger set to 'ref' mode to do that."))
 
 	if(href_list["return"])
 		update_to_assembly = TRUE

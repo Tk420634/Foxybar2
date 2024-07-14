@@ -75,19 +75,19 @@
 			if(pai.master_dna)
 				return
 			if(!iscarbon(usr))
-				to_chat(usr, span_warning("You don't have any DNA, or your DNA is incompatible with this device!"))
+				to_chat(usr, span_warning("I don't have any DNA, or your DNA is incompatible with this device!"))
 			else
 				var/mob/living/carbon/M = usr
 				pai.master = M.real_name
 				pai.master_dna = M.dna.unique_enzymes
-				to_chat(pai, span_notice("You have been bound to a new master."))
+				to_chat(pai, span_notice("I have been bound to a new master."))
 		if(href_list["wipe"])
 			var/confirm = input("Are you CERTAIN you wish to delete the current personality? This action cannot be undone.", "Personality Wipe") in list("Yes", "No")
 			if(confirm == "Yes")
 				if(pai)
-					to_chat(pai, span_warning("You feel yourself slipping away from reality."))
+					to_chat(pai, span_warning("I feel yourself slipping away from reality."))
 					to_chat(pai, span_danger("Byte by byte you lose your sense of self."))
-					to_chat(pai, span_userdanger("Your mental faculties leave you."))
+					to_chat(pai, span_userdanger("My mental faculties leave you."))
 					to_chat(pai, span_rose("oblivion... "))
 					qdel(pai)
 		if(href_list["wires"] && pai.radio)
@@ -100,13 +100,13 @@
 				pai.add_supplied_law(0,newlaws)
 		if(href_list["toggle_holo"])
 			if(pai.canholo)
-				to_chat(pai, span_userdanger("Your owner has disabled your holomatrix projectors!"))
+				to_chat(pai, span_userdanger("My owner has disabled your holomatrix projectors!"))
 				pai.canholo = FALSE
-				to_chat(usr, span_warning("You disable your pAI's holomatrix!"))
+				to_chat(usr, span_warning("I disable your pAI's holomatrix!"))
 			else
-				to_chat(pai, span_boldnotice("Your owner has enabled your holomatrix projectors!"))
+				to_chat(pai, span_boldnotice("My owner has enabled your holomatrix projectors!"))
 				pai.canholo = TRUE
-				to_chat(usr, span_notice("You enable your pAI's holomatrix!"))
+				to_chat(usr, span_notice("I enable your pAI's holomatrix!"))
 
 	attack_self(usr)
 

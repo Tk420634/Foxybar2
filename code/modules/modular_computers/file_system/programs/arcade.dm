@@ -26,7 +26,7 @@
 	sleep(5)
 	// user?.mind?.adjust_experience(/datum/skill/gaming, 1)
 	if(boss_hp <= 0)
-		heads_up = "You have crushed [boss_name]! Rejoice!"
+		heads_up = "I have crushed [boss_name]! Rejoice!"
 		playsound(computer.loc, 'sound/arcade/win.ogg', 50, TRUE, extrarange = -3, falloff_distance = 10)
 		game_active = FALSE
 		program_icon_state = "arcade_off"
@@ -36,7 +36,7 @@
 		// user?.mind?.adjust_experience(/datum/skill/gaming, 50)
 		sleep(10)
 	else if(player_hp <= 0 || player_mp <= 0)
-		heads_up = "You have been defeated... how will the station survive?"
+		heads_up = "I have been defeated... how will the station survive?"
 		playsound(computer.loc, 'sound/arcade/lose.ogg', 50, TRUE, extrarange = -3, falloff_distance = 10)
 		game_active = FALSE
 		program_icon_state = "arcade_off"
@@ -105,7 +105,7 @@
 			if(pause_state == FALSE)
 				attackamt = rand(2,6)// + rand(0, gamerSkill)
 			pause_state = TRUE
-			heads_up = "You attack for [attackamt] damage."
+			heads_up = "I attack for [attackamt] damage."
 			playsound(computer.loc, 'sound/arcade/hit.ogg', 50, TRUE, extrarange = -3, falloff_distance = 10)
 			boss_hp -= attackamt
 			sleep(10)
@@ -122,7 +122,7 @@
 				// 	maxPointCost = 2
 				healcost = rand(1, maxPointCost)
 			pause_state = TRUE
-			heads_up = "You heal for [healamt] damage."
+			heads_up = "I heal for [healamt] damage."
 			playsound(computer.loc, 'sound/arcade/heal.ogg', 50, TRUE, extrarange = -3, falloff_distance = 10)
 			player_hp += healamt
 			player_mp -= healcost
@@ -135,7 +135,7 @@
 			if(pause_state == FALSE)
 				rechargeamt = rand(4,7)// + rand(0, gamerSkill)
 			pause_state = TRUE
-			heads_up = "You regain [rechargeamt] magic power."
+			heads_up = "I regain [rechargeamt] magic power."
 			playsound(computer.loc, 'sound/arcade/mana.ogg', 50, TRUE, extrarange = -3, falloff_distance = 10)
 			player_mp += rechargeamt
 			sleep(10)
@@ -157,14 +157,14 @@
 					ticket_count -= 1
 					printer.stored_paper -= 1
 				else
-					to_chat(usr, span_notice("You don't have any stored tickets!"))
+					to_chat(usr, span_notice("I don't have any stored tickets!"))
 				return TRUE
 		if("Start_Game")
 			game_active = TRUE
 			boss_hp = 45
 			player_hp = 30
 			player_mp = 10
-			heads_up = "You stand before [boss_name]! Prepare for battle!"
+			heads_up = "I stand before [boss_name]! Prepare for battle!"
 			program_icon_state = "arcade"
 			boss_id = rand(1,6)
 			pause_state = FALSE

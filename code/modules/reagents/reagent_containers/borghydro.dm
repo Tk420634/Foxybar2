@@ -103,8 +103,8 @@ Borg Hypospray
 	if(!istype(M))
 		return
 	if(R.total_volume && M.can_inject(user, 1, user.zone_selected,bypass_protection))
-		to_chat(M, span_warning("You feel a tiny prick!"))
-		to_chat(user, span_notice("You inject [M] with the injector."))
+		to_chat(M, span_warning("I feel a tiny prick!"))
+		to_chat(user, span_notice("I inject [M] with the injector."))
 		var/fraction = min(amount_per_transfer_from_this/R.total_volume, 1)
 		R.reaction(M, INJECT, fraction)
 		if(M.reagents)
@@ -220,7 +220,7 @@ Borg Shaker
 			return
 
 		var/trans = R.trans_to(target, amount_per_transfer_from_this)
-		to_chat(user, span_notice("You transfer [trans] unit\s of the solution to [target]."))
+		to_chat(user, span_notice("I transfer [trans] unit\s of the solution to [target]."))
 
 /obj/item/reagent_containers/borghypo/borgshaker/DescribeContents()
 	var/empty = 1

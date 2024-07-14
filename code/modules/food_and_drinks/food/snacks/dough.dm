@@ -18,10 +18,10 @@
 	if(istype(I, /obj/item/kitchen/rollingpin))
 		if(isturf(loc))
 			new /obj/item/reagent_containers/food/snacks/flatdough(loc)
-			to_chat(user, span_notice("You flatten [src]."))
+			to_chat(user, span_notice("I flatten [src]."))
 			qdel(src)
 		else
-			to_chat(user, span_warning("You need to put [src] on a surface to roll it out!"))
+			to_chat(user, span_warning("I need to put [src] on a surface to roll it out!"))
 	else
 		..()
 
@@ -92,10 +92,10 @@
 	if(istype(I, /obj/item/kitchen/rollingpin))
 		if(isturf(loc))
 			new /obj/item/reagent_containers/food/snacks/piedough(loc)
-			to_chat(user, span_notice("You flatten [src]."))
+			to_chat(user, span_notice("I flatten [src]."))
 			qdel(src)
 		else
-			to_chat(user, span_warning("You need to put [src] on a surface to roll it out!"))
+			to_chat(user, span_warning("I need to put [src] on a surface to roll it out!"))
 	else
 		..()
 

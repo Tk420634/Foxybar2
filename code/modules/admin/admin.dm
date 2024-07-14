@@ -40,7 +40,7 @@
 	log_admin("[key_name(usr)] checked the individual player panel for [key_name(M)][isobserver(usr)?"":" while in game"].")
 
 	if(QDELETED(M))
-		to_chat(usr, span_warning("You seem to be selecting a mob that doesn't exist anymore."), confidential = TRUE)
+		to_chat(usr, span_warning("I seem to be selecting a mob that doesn't exist anymore."), confidential = TRUE)
 		return
 
 	var/ref = "[REF(usr.client.holder)];[HrefToken()]"
@@ -969,7 +969,7 @@
 	var/count = 0
 
 	if(!SSjob.initialized)
-		alert(usr, "You cannot manage jobs before the job subsystem is initialized!")
+		alert(usr, "I cannot manage jobs before the job subsystem is initialized!")
 		return
 
 	dat += "<table>"

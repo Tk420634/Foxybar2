@@ -21,17 +21,17 @@
 	if(!castcheck(0))
 		return
 	if(draining)
-		to_chat(src, span_revenwarning("You are already siphoning the essence of a soul!"))
+		to_chat(src, span_revenwarning("I am already siphoning the essence of a soul!"))
 		return
 	if(!target.stat)
 		to_chat(src, span_revennotice("[target.p_their(TRUE)] soul is too strong to harvest."))
 		if(prob(10))
-			to_chat(target, "You feel as if you are being watched.")
+			to_chat(target, "I feel as if you are being watched.")
 		return
 	face_atom(target)
 	draining = TRUE
 	essence_drained += rand(15, 20)
-	to_chat(src, span_revennotice("You search for the soul of [target]."))
+	to_chat(src, span_revennotice("I search for the soul of [target]."))
 	if(do_after(src, rand(10, 20), 0, target)) //did they get deleted in that second?
 		if(target.ckey)
 			to_chat(src, span_revennotice("[target.p_their(TRUE)] soul burns with intelligence."))
@@ -54,13 +54,13 @@
 			if(do_after(src, rand(15, 25), 0, target)) //how about now
 				if(!target.stat)
 					to_chat(src, span_revenwarning("[target.p_theyre(TRUE)] now powerful enough to fight off your draining."))
-					to_chat(target, span_boldannounce("You feel something tugging across your body before subsiding."))
+					to_chat(target, span_boldannounce("I feel something tugging across your body before subsiding."))
 					draining = 0
 					essence_drained = 0
 					return //hey, wait a minute...
-				to_chat(src, span_revenminor("You begin siphoning essence from [target]'s soul."))
+				to_chat(src, span_revenminor("I begin siphoning essence from [target]'s soul."))
 				if(target.stat != DEAD)
-					to_chat(target, span_warning("You feel a horribly unpleasant draining sensation as your grip on life weakens..."))
+					to_chat(target, span_warning("I feel a horribly unpleasant draining sensation as your grip on life weakens..."))
 				reveal(46)
 				stun(46)
 				target.visible_message(span_warning("[target] suddenly rises slightly into the air, [target.p_their()] skin turning an ashy gray."))
@@ -92,7 +92,7 @@
 											   span_revenwarning("Violets lights, dancing in your vision, receding--"))
 				qdel(B)
 			else
-				to_chat(src, span_revenwarning("You are not close enough to siphon [target ? "[target]'s":"[target.p_their()]"] soul. The link has been broken."))
+				to_chat(src, span_revenwarning("I am not close enough to siphon [target ? "[target]'s":"[target.p_their()]"] soul. The link has been broken."))
 	draining = FALSE
 	essence_drained = 0
 
@@ -100,7 +100,7 @@
 /obj/effect/proc_holder/spell/targeted/night_vision/revenant
 	charge_max = 0
 	panel = "Revenant Abilities"
-	message = span_revennotice("You toggle your night vision.")
+	message = span_revennotice("I toggle your night vision.")
 	action_icon = 'icons/mob/actions/actions_revenant.dmi'
 	action_icon_state = "r_nightvision"
 	action_background_icon_state = "bg_revenant"
@@ -162,7 +162,7 @@
 			charge_counter = charge_max
 			return FALSE
 		name = "[initial(name)] ([cast_amount]E)"
-		to_chat(user, span_revennotice("You have unlocked [initial(name)]!"))
+		to_chat(user, span_revennotice("I have unlocked [initial(name)]!"))
 		panel = "Revenant Abilities"
 		locked = FALSE
 		charge_counter = charge_max
@@ -298,7 +298,7 @@
 			continue
 		if(human.anti_magic_check(FALSE, TRUE))
 			continue
-		to_chat(human, span_revenwarning("You feel [pick("your sense of direction flicker out", "a stabbing pain in your head", "your mind fill with static")]."))
+		to_chat(human, span_revenwarning("I feel [pick("your sense of direction flicker out", "a stabbing pain in your head", "your mind fill with static")]."))
 		new /obj/effect/temp_visual/revenant(human.loc)
 		human.emp_act(80)
 	for(var/obj/thing in T)

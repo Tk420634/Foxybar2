@@ -37,9 +37,9 @@ Judgement 5 converts
 	var/static/list/neovgre_penalty = list("Go to the station.", "Useless.", "Don't waste time.", "Pathetic.", "Wasteful.")
 	var/static/list/inathneq_penalty = list("Child, this is too far out!", "The barrier isn't thin enough for for me to help!", "Please, go to the station so I can assist you.", \
 	"Don't waste my Cogs on this...", "There isn't enough time to linger out here!")
-	var/static/list/sevtug_penalty = list("Fool! Get to the station and don't waste capacitors.", "You go this far out and expect help?", "The veil is too strong, idiot.", \
+	var/static/list/sevtug_penalty = list("Fool! Get to the station and don't waste capacitors.", "I go this far out and expect help?", "The veil is too strong, idiot.", \
 	"How does the Justicar get anything done with servants like you?", "Oh, you love wasting time, don't you?")
-	var/static/list/nezbere_penalty = list("You disgrace our master's name with this endeavour.", "This is too far from the station to be a good base.", "This will take too long, friend.", \
+	var/static/list/nezbere_penalty = list("I disgrace our master's name with this endeavour.", "This is too far from the station to be a good base.", "This will take too long, friend.", \
 	"The barrier isn't weakened enough to make this practical.", "Don't waste alloy.")
 	var/static/list/nzcrentr_penalty = list("You'd be easy to hunt in that little hunk of metal.", "Boss says you need to get back to the beacon.", "Boss says I can kill you if you do this again.", \
 	"Sending you power is too difficult here.", "Boss says stop wasting time.")
@@ -80,10 +80,10 @@ Judgement 5 converts
 	if(!invoker || !slab || invoker.get_active_held_item() != slab)
 		return FALSE
 	if(!is_servant_of_ratvar(invoker, requires_full_power))
-		to_chat(invoker, span_warning("You aren't strongly connected enough to Ratvar to invoke this!"))
+		to_chat(invoker, span_warning("I am not strongly connected enough to Ratvar to invoke this!"))
 		return FALSE
 	if(!invoker.can_speak_vocal())
-		to_chat(invoker, span_warning("You are unable to speak the words of the scripture!"))
+		to_chat(invoker, span_warning("I am unable to speak the words of the scripture!"))
 		return FALSE
 	return TRUE
 
@@ -217,14 +217,14 @@ Judgement 5 converts
 /datum/clockwork_scripture/channeled/proc/chant_effects(chant_number) //The chant's periodic effects
 
 /datum/clockwork_scripture/channeled/proc/chant_end_effects() //The chant's effect upon ending
-	to_chat(invoker, span_brass("You cease your chant."))
+	to_chat(invoker, span_brass("I cease your chant."))
 
 
 //Creates an object at the invoker's feet
 /datum/clockwork_scripture/create_object
 	var/object_path = /obj/item/clockwork //The path of the object created
 	var/put_object_in_hands = TRUE
-	var/creator_message = span_brass("You create a meme.") //Shown to the invoker
+	var/creator_message = span_brass("I create a meme.") //Shown to the invoker
 	var/observer_message
 	var/one_per_tile = FALSE
 	var/atom/movable/prevent_path
@@ -238,10 +238,10 @@ Judgement 5 converts
 /datum/clockwork_scripture/create_object/check_special_requirements()
 	var/turf/T = get_turf(invoker)
 	if(!space_allowed && isspaceturf(T))
-		to_chat(invoker, span_warning("You need solid ground to place this object!"))
+		to_chat(invoker, span_warning("I need solid ground to place this object!"))
 		return FALSE
 	if(one_per_tile && (locate(prevent_path) in T))
-		to_chat(invoker, span_warning("You can only place one of this object on each tile!"))
+		to_chat(invoker, span_warning("I can only place one of this object on each tile!"))
 		return FALSE
 	return TRUE
 

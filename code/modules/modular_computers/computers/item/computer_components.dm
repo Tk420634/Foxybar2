@@ -32,7 +32,7 @@
 		LAZYSET(expansion_bays, H.device_type, H)
 	all_components[H.device_type] = H
 
-	to_chat(user, span_notice("You install \the [H] into \the [src]."))
+	to_chat(user, span_notice("I install \the [H] into \the [src]."))
 	H.holder = src
 	H.forceMove(src)
 	H.on_install(src, user)
@@ -47,7 +47,7 @@
 		LAZYREMOVE(expansion_bays, H.device_type)
 	all_components.Remove(H.device_type)
 
-	to_chat(user, span_notice("You remove \the [H] from \the [src]."))
+	to_chat(user, span_notice("I remove \the [H] from \the [src]."))
 
 	H.forceMove(get_turf(src))
 	H.holder = null

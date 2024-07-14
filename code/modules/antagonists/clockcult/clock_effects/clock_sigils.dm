@@ -27,7 +27,7 @@
 	if(I.force)
 		if(is_servant_of_ratvar(user) && user.a_intent != INTENT_HARM)
 			return ..()
-		user.visible_message(span_warning("[user] scatters [src] with [I]!"), span_danger("You scatter [src] with [I]!"))
+		user.visible_message(span_warning("[user] scatters [src] with [I]!"), span_danger("I scatter [src] with [I]!"))
 		qdel(src)
 		return 1
 	return ..()
@@ -39,7 +39,7 @@
 	if(iscarbon(user) && !user.stat)
 		if(is_servant_of_ratvar(user) && user.a_intent != INTENT_HARM)
 			return ..()
-		user.visible_message(span_warning("[user] stamps out [src]!"), span_danger("You stomp on [src], scattering it into thousands of particles."))
+		user.visible_message(span_warning("[user] stamps out [src]!"), span_danger("I stomp on [src], scattering it into thousands of particles."))
 		qdel(src)
 		return TRUE
 	. = ..()
@@ -58,7 +58,7 @@
 				if(I)
 					if(isitem(I))
 						L.visible_message(span_warning("[L]'s [I.name] [resist_string], protecting [L.p_them()] from [src]'s effects!"), \
-						span_userdanger("Your [I.name] [resist_string], protecting you!"))
+						span_userdanger("My [I.name] [resist_string], protecting you!"))
 					return
 				INVOKE_ASYNC(src,PROC_REF(sigil_effects), L)
 
@@ -131,7 +131,7 @@
 	if(!has_sigil && !has_servant)
 		visible_message(span_danger("[src] strains into a gentle violet color, but quietly fades..."))
 		return
-	L.visible_message(span_warning("[src] begins to glow a piercing magenta!"), span_sevtug("You feel something start to invade your mind..."))
+	L.visible_message(span_warning("[src] begins to glow a piercing magenta!"), span_sevtug("I feel something start to invade your mind..."))
 	var/oldcolor = color
 	animate(src, color = "#AF0AAF", time = convert_time, flags = ANIMATION_END_NOW)
 	var/obj/effect/temp_visual/ratvar/sigil/glow
@@ -149,7 +149,7 @@
 		visible_message(span_warning("[src] slowly stops glowing!"))
 		return
 	if(is_eligible_servant(L))
-		to_chat(L, span_heavy_brass("\"You belong to me now.\""))
+		to_chat(L, span_heavy_brass("\"I belong to me now.\""))
 		if(!GLOB.application_scripture_unlocked)
 			GLOB.application_scripture_unlocked = TRUE
 			hierophant_message("<span class='large_brass bold'>With the conversion of a new servant the Ark's power grows. Application scriptures are now available.</span>")
@@ -215,14 +215,14 @@
 		. += "<span class='[get_clockwork_power() ? "brass":"alloy"]'>It is storing <b>[DisplayPower(get_clockwork_power())]</b> of shared power, \
 		and <b>[structure_number]</b> clockwork structure[structure_number == 1 ? " is":"s are"] in range.</span>"
 		if(iscyborg(user))
-			. += span_brass("You can recharge from the [sigil_name] by crossing it.")
+			. += span_brass("I can recharge from the [sigil_name] by crossing it.")
 
 /obj/effect/clockwork/sigil/transmission/sigil_effects(mob/living/L)
 	if(is_servant_of_ratvar(L))
 		if(iscyborg(L))
 			charge_cyborg(L)
 	else if(get_clockwork_power())
-		to_chat(L, span_brass("You feel a slight, static shock."))
+		to_chat(L, span_brass("I feel a slight, static shock."))
 
 /obj/effect/clockwork/sigil/transmission/process()
 	var/power_drained = 0
@@ -241,7 +241,7 @@
 /obj/effect/clockwork/sigil/transmission/proc/charge_cyborg(mob/living/silicon/robot/cyborg)
 	if(!cyborg_checks(cyborg))
 		return
-	to_chat(cyborg, span_brass("You start to charge from the [sigil_name]..."))
+	to_chat(cyborg, span_brass("I start to charge from the [sigil_name]..."))
 	if(!do_after(cyborg, 50, target = src, extra_checks = CALLBACK(src,PROC_REF(cyborg_checks), cyborg, TRUE)))
 		return
 	var/giving_power = min(FLOOR(cyborg.cell.maxcharge - cyborg.cell.charge, MIN_CLOCKCULT_POWER), get_clockwork_power()) //give the borg either all our power or their missing power floored to MIN_CLOCKCULT_POWER
@@ -256,7 +256,7 @@
 /obj/effect/clockwork/sigil/transmission/proc/cyborg_checks(mob/living/silicon/robot/cyborg, silent)
 	if(!cyborg.cell)
 		if(!silent)
-			to_chat(cyborg, span_warning("You have no cell!"))
+			to_chat(cyborg, span_warning("I have no cell!"))
 		return FALSE
 	if(!get_clockwork_power())
 		if(!silent)
@@ -264,11 +264,11 @@
 		return FALSE
 	if(cyborg.cell.charge > cyborg.cell.maxcharge - MIN_CLOCKCULT_POWER)
 		if(!silent)
-			to_chat(cyborg, span_warning("You are already at maximum charge!"))
+			to_chat(cyborg, span_warning("I am already at maximum charge!"))
 		return FALSE
 	if(cyborg.has_status_effect(STATUS_EFFECT_POWERREGEN))
 		if(!silent)
-			to_chat(cyborg, span_warning("You are already regenerating power!"))
+			to_chat(cyborg, span_warning("I am already regenerating power!"))
 		return FALSE
 	return TRUE
 
@@ -341,7 +341,7 @@
 				animate(V, alpha = 0, transform = matrix()*2, time = 8)
 				playsound(L, 'sound/magic/wandodeath.ogg', 50, 1)
 				L.visible_message(span_warning("[L] collapses in on [L.p_them()]self as [src] flares bright blue!"))
-				to_chat(L, span_inathneq_large("\"[text2ratvar("Your life will not be wasted.")]\""))
+				to_chat(L, span_inathneq_large("\"[text2ratvar("My life will not be wasted.")]\""))
 				for(var/obj/item/W in L)
 					if(!L.dropItemToGround(W))
 						qdel(W)
@@ -372,7 +372,7 @@
 						var/obj/effect/temp_visual/ratvar/sigil/vitality/V = new /obj/effect/temp_visual/ratvar/sigil/vitality(get_turf(src))
 						animate(V, alpha = 0, transform = matrix()*2, time = 8)
 						playsound(L, 'sound/magic/staff_healing.ogg', 50, 1)
-						to_chat(L, span_inathneq("\"[text2ratvar("You will be okay, child.")]\""))
+						to_chat(L, span_inathneq("\"[text2ratvar("I will be okay, child.")]\""))
 						L.apply_status_effect(STATUS_EFFECT_ICHORIAL_STAIN)
 						GLOB.clockwork_vitality -= revival_cost
 				break
@@ -381,7 +381,7 @@
 				var/list/mob/candidates = pollCandidatesForMob("Do you want to play as a [L.name], an inactive clock cultist?", ROLE_SERVANT_OF_RATVAR, null, ROLE_SERVANT_OF_RATVAR, 50, L)
 				if(LAZYLEN(candidates))
 					var/mob/C = pick(candidates)
-					to_chat(L, span_userdanger("Your physical form has been taken over by another soul due to your inactivity! Ahelp if you wish to regain your form!"))
+					to_chat(L, span_userdanger("My physical form has been taken over by another soul due to your inactivity! Ahelp if you wish to regain your form!"))
 					message_admins("[key_name_admin(C)] has taken control of ([key_name_admin(L)]) to replace an inactive clock cultist.")
 					L.ghostize(0)
 					C.transfer_ckey(L, FALSE)

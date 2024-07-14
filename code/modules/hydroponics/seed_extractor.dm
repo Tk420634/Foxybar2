@@ -102,21 +102,21 @@
 			++loaded
 			add_seed(G)
 		if (loaded)
-			to_chat(user, span_notice("You put as many seeds from \the [O.name] into [src] as you can."))
+			to_chat(user, span_notice("I put as many seeds from \the [O.name] into [src] as you can."))
 		else
 			to_chat(user, span_notice("There are no seeds in \the [O.name]."))
 		return
 
 	else if(seedify(O,-1, src, user))
-		to_chat(user, span_notice("You extract some seeds."))
+		to_chat(user, span_notice("I extract some seeds."))
 		return
 	else if (istype(O, /obj/item/seeds))
 		if(add_seed(O))
-			to_chat(user, span_notice("You add [O] to [src.name]."))
+			to_chat(user, span_notice("I add [O] to [src.name]."))
 			updateUsrDialog()
 		return
 	else if(user.a_intent != INTENT_HARM)
-		to_chat(user, span_warning("You can't extract any seeds from \the [O.name]!"))
+		to_chat(user, span_warning("I can't extract any seeds from \the [O.name]!"))
 	else
 		return ..()
 

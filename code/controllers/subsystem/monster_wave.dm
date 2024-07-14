@@ -321,7 +321,7 @@ SUBSYSTEM_DEF(monster_wave)
 	. = ..()
 	if(!user || !istype(user) || !user.client)
 		return
-	to_chat(user, "You start to take down the field generator...")
+	to_chat(user, "I start to take down the field generator...")
 	if(!do_after(user, 3 SECONDS, FALSE, src, TRUE, public_progbar = TRUE))
 		to_chat(user, "But you're interrupted!")
 		return
@@ -394,7 +394,7 @@ SUBSYSTEM_DEF(monster_wave)
 
 /obj/structure/respawner_blocker/alt_attack_hand(mob/user)
 	. = ..()
-	to_chat(user, "You start to take down the field generator...")
+	to_chat(user, "I start to take down the field generator...")
 	if(!do_after(user, 3 SECONDS))
 		to_chat(user, "But you're interrupted!")
 		return
@@ -417,9 +417,9 @@ SUBSYSTEM_DEF(monster_wave)
 	var/turf/here = get_turf(src)
 	if(!here)
 		return
-	to_chat(user, "You start to deploy the field generator...")
+	to_chat(user, "I start to deploy the field generator...")
 	if(!do_after(user, 3 SECONDS, FALSE, src, TRUE, public_progbar = TRUE))
-		to_chat(user, "You start to deploy the field generator, but you're interrupted!")
+		to_chat(user, "I start to deploy the field generator, but you're interrupted!")
 		return
 	to_chat(user, "You've deployed the field generator!")
 	var/obj/structure/respawner_blocker/RB = new(here)

@@ -59,7 +59,7 @@
 /datum/eldritch_knowledge/ash_mark
 	name = "Mark of Ash"
 	gain_text = "Spread the famine."
-	desc = "Your sickly blade now applies ash mark on hit. Use your mansus grasp to proc the mark. Mark of Ash causes stamina damage, and fire loss, and spreads to a nearby carbon. Damage decreases with how many times the mark has spread."
+	desc = "My sickly blade now applies ash mark on hit. Use your mansus grasp to proc the mark. Mark of Ash causes stamina damage, and fire loss, and spreads to a nearby carbon. Damage decreases with how many times the mark has spread."
 	cost = 2
 	next_knowledge = list(/datum/eldritch_knowledge/curse/blindness)
 	banned_knowledge = list(/datum/eldritch_knowledge/rust_mark,/datum/eldritch_knowledge/flesh_mark)
@@ -124,7 +124,7 @@
 /datum/eldritch_knowledge/ash_blade_upgrade
 	name = "Blazing Steel"
 	gain_text = "May the sun burn the heretics."
-	desc = "Your blade of choice will now add firestacks."
+	desc = "My blade of choice will now add firestacks."
 	cost = 2
 	next_knowledge = list(/datum/eldritch_knowledge/spell/flame_birth)
 	banned_knowledge = list(/datum/eldritch_knowledge/rust_blade_upgrade,/datum/eldritch_knowledge/flesh_blade_upgrade)

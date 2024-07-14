@@ -117,7 +117,7 @@
 			if(!user.transferItemToLoc(W, src))
 				return
 			cell = W
-			to_chat(user, span_notice("You install a cell in [src]."))
+			to_chat(user, span_notice("I install a cell in [src]."))
 			update_power()
 
 	else if(istype(W, /obj/item/screwdriver))
@@ -125,7 +125,7 @@
 			cell.update_icon()
 			cell.forceMove(get_turf(src))
 			cell = null
-			to_chat(user, span_notice("You remove the cell from [src]."))
+			to_chat(user, span_notice("I remove the cell from [src]."))
 			update_power()
 	else
 		return ..()
@@ -134,7 +134,7 @@
 	. = ..()
 	always_emagged = TRUE
 	safety = !safety
-	to_chat(user, span_warning("You silently [safety ? "enable" : "disable"] [src]'s safety protocols with the cryptographic sequencer."))
+	to_chat(user, span_warning("I silently [safety ? "enable" : "disable"] [src]'s safety protocols with the cryptographic sequencer."))
 	return TRUE
 
 /obj/item/defibrillator/emp_act(severity)
@@ -163,7 +163,7 @@
 		//Detach the paddles into the user's hands
 		if(!usr.put_in_hands(paddles))
 			on = FALSE
-			to_chat(user, span_warning("You need a free hand to hold the paddles!"))
+			to_chat(user, span_warning("I need a free hand to hold the paddles!"))
 			update_power()
 			return
 	else
@@ -389,9 +389,9 @@
 		return
 	if(!wielded)
 		if(iscyborg(user))
-			to_chat(user, span_warning("You must activate the paddles in your active module before you can use them on someone!"))
+			to_chat(user, span_warning("I must activate the paddles in your active module before you can use them on someone!"))
 		else
-			to_chat(user, span_warning("You need to wield the paddles in both hands before you can use them on someone!"))
+			to_chat(user, span_warning("I need to wield the paddles in both hands before you can use them on someone!"))
 		return
 	if(cooldown)
 		if(req_defib)
@@ -408,13 +408,13 @@
 		if(req_defib)
 			to_chat(user, span_warning("The instructions on [defib] don't mention how to revive that..."))
 		else
-			to_chat(user, span_warning("You aren't sure how to revive that..."))
+			to_chat(user, span_warning("I am not sure how to revive that..."))
 		return
 	var/mob/living/carbon/H = M
 
 
 	if(user.zone_selected != BODY_ZONE_CHEST)
-		to_chat(user, span_warning("You need to target your patient's chest with [src]!"))
+		to_chat(user, span_warning("I need to target your patient's chest with [src]!"))
 		return
 
 	if(user.a_intent == INTENT_HARM)
@@ -422,10 +422,10 @@
 		return
 
 	if((!req_defib && grab_ghost) || (req_defib && defib.grab_ghost))
-		H.notify_ghost_cloning("Your heart is being defibrillated!")
+		H.notify_ghost_cloning("My heart is being defibrillated!")
 		H.grab_ghost() // Shove them back in their body.
 	else if(H.can_revive())
-		H.notify_ghost_cloning("Your heart is being defibrillated. Re-enter your corpse if you want to be revived!", source = src)
+		H.notify_ghost_cloning("My heart is being defibrillated. Re-enter your corpse if you want to be revived!", source = src)
 
 	do_help(H, user)
 
@@ -473,12 +473,12 @@
 	if(!req_defib && !combat)
 		return
 	user.visible_message(span_warning("[user] begins to place [src] on [H]'s chest."),
-		span_warning("You overcharge the paddles and begin to place them onto [H]'s chest..."))
+		span_warning("I overcharge the paddles and begin to place them onto [H]'s chest..."))
 	busy = TRUE
 	update_icon()
 	if(do_after(user, 30, target = H))
 		user.visible_message(span_notice("[user] places [src] on [H]'s chest."),
-			span_warning("You place [src] on [H]'s chest and begin to charge them."))
+			span_warning("I place [src] on [H]'s chest and begin to charge them."))
 		var/turf/T = get_turf(defib)
 		playsound(src, 'sound/machines/defib_charge.ogg', 50, 0)
 		if(req_defib)
@@ -496,7 +496,7 @@
 				busy = FALSE
 				update_icon()
 				return
-			user.visible_message(span_boldannounce("<i>[user] shocks [H] with \the [src]!"), span_warning("You shock [H] with \the [src]!"))
+			user.visible_message(span_boldannounce("<i>[user] shocks [H] with \the [src]!"), span_warning("I shock [H] with \the [src]!"))
 			playsound(src, 'sound/machines/defib_zap.ogg', 100, 1, -1)
 			playsound(src, 'sound/weapons/egloves.ogg', 100, 1, -1)
 			H.emote("scream")
@@ -504,7 +504,7 @@
 			if(H.can_heartattack() && !H.undergoing_cardiac_arrest())
 				if(!H.stat)
 					H.visible_message(span_warning("[H] thrashes wildly, clutching at [H.p_their()] chest!"),
-						span_userdanger("You feel a horrible agony in your chest!"))
+						span_userdanger("I feel a horrible agony in your chest!"))
 				H.set_heartattack(TRUE)
 			H.apply_damage(50, BURN, BODY_ZONE_CHEST)
 			log_combat(user, H, "overloaded the heart of", defib)
@@ -523,7 +523,7 @@
 	update_icon()
 
 /obj/item/shockpaddles/proc/do_help(mob/living/carbon/H, mob/living/user)
-	user.visible_message(span_warning("[user] begins to place [src] on [H]'s chest."), span_warning("You begin to place [src] on [H]'s chest..."))
+	user.visible_message(span_warning("[user] begins to place [src] on [H]'s chest."), span_warning("I begin to place [src] on [H]'s chest..."))
 	busy = TRUE
 	update_icon()
 
@@ -540,7 +540,7 @@
 		//deathtimer = DEFIB_TIME_LOSS * 10
 
 	if(do_after(user, primetimer, target = H)) //beginning to place the paddles on patient's chest to allow some time for people to move away to stop the process
-		user.visible_message(span_notice("[user] places [src] on [H]'s chest."), span_warning("You place [src] on [H]'s chest."))
+		user.visible_message(span_notice("[user] places [src] on [H]'s chest."), span_warning("I place [src] on [H]'s chest."))
 		playsound(src, 'sound/machines/defib_charge.ogg', 75, 0)
 		// patients rot when they are killed, and die when they are dead // no they dont lol
 		var/tplus = world.time - H.timeofdeath	//length of time spent dead
@@ -662,28 +662,28 @@
 		if(healdisk)
 			to_chat(user, span_notice("This unit is already upgraded with this disk!"))
 			return TRUE
-		to_chat(user, span_notice("You upgrade the unit with Heal upgrade disk!"))
+		to_chat(user, span_notice("I upgrade the unit with Heal upgrade disk!"))
 		healdisk = TRUE
 		return TRUE
 	if(istype(I, /obj/item/disk/medical/defib_shock))
 		if(pullshocksafely)
 			to_chat(user, span_notice("This unit is already upgraded with this disk!"))
 			return TRUE
-		to_chat(user, span_notice("You upgrade the unit with Shock Safety upgrade disk!"))
+		to_chat(user, span_notice("I upgrade the unit with Shock Safety upgrade disk!"))
 		pullshocksafely = TRUE
 		return TRUE
 	if(istype(I, /obj/item/disk/medical/defib_speed))
 		if(!primetime == initial(primetime))
 			to_chat(user, span_notice("This unit is already upgraded with this disk!"))
 			return TRUE
-		to_chat(user, span_notice("You upgrade the unit with Speed upgrade disk!"))
+		to_chat(user, span_notice("I upgrade the unit with Speed upgrade disk!"))
 		primetime = 10
 		return TRUE
 	if(istype(I, /obj/item/disk/medical/defib_decay))
 		if(!timedeath == initial(timedeath))
 			to_chat(user, span_notice("This unit is already upgraded with this disk!"))
 			return TRUE
-		to_chat(user, span_notice("You upgrade the unit with Longer Decay upgrade disk!"))
+		to_chat(user, span_notice("I upgrade the unit with Longer Decay upgrade disk!"))
 		timedeath = 20
 		return TRUE
 	return ..()
@@ -704,7 +704,7 @@
 	if(user)
 		UnregisterSignal(user, COMSIG_MOVABLE_MOVED)
 		if(user != loc)
-			to_chat(user, span_notice("You put the clamps back on the car battery."))
+			to_chat(user, span_notice("I put the clamps back on the car battery."))
 			snap_back()
 
 /obj/item/shockpaddles/cyborg

@@ -97,9 +97,9 @@
 	if(!I.tool_start_check(user, amount=0))
 		return TRUE
 
-	to_chat(user, span_notice("You begin repairing [src]..."))
+	to_chat(user, span_notice("I begin repairing [src]..."))
 	if(I.use_tool(src, user, 10, volume=50))
-		to_chat(user, span_notice("You repair [src]."))
+		to_chat(user, span_notice("I repair [src]."))
 		broken = 0
 		icon_state = initial(icon_state)
 		desc = initial(desc)

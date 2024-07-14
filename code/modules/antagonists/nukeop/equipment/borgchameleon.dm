@@ -53,14 +53,14 @@
 		if (isturf(user.loc))
 			toggle(user)
 		else
-			to_chat(user, span_warning("You can't use [src] while inside something!"))
+			to_chat(user, span_warning("I can't use [src] while inside something!"))
 	else
-		to_chat(user, span_warning("You need at least [activationCost] charge in your cell to use [src]!"))
+		to_chat(user, span_warning("I need at least [activationCost] charge in your cell to use [src]!"))
 
 /obj/item/borg_chameleon/proc/toggle(mob/living/silicon/robot/user)
 	if(active)
 		playsound(src, 'sound/effects/pop.ogg', 100, TRUE, -6)
-		to_chat(user, span_notice("You deactivate \the [src]."))
+		to_chat(user, span_notice("I deactivate \the [src]."))
 		deactivate(user)
 	else
 		if(animation_playing)
@@ -106,7 +106,7 @@
 				disguise_icon_override = 'modular_citadel/icons/mob/widerobot.dmi'
 				disguise_pixel_offset = -16
 		animation_playing = TRUE
-		to_chat(user, span_notice("You activate \the [src]."))
+		to_chat(user, span_notice("I activate \the [src]."))
 		playsound(src, 'sound/effects/seedling_chargeup.ogg', 100, TRUE, -6)
 		var/start = user.filters.len
 		var/X,Y,rsq,i,f
@@ -123,7 +123,7 @@
 			animate(offset=f:offset-1, time=rand()*20+10)
 		if (do_after(user, 50, target=user) && user.cell.use(activationCost))
 			playsound(src, 'sound/effects/bamf.ogg', 100, TRUE, -6)
-			to_chat(user, span_notice("You are now disguised as the US Government engineering borg \"[friendlyName]\"."))
+			to_chat(user, span_notice("I am now disguised as the US Government engineering borg \"[friendlyName]\"."))
 			activate(user)
 		else
 			to_chat(user, span_warning("The chameleon field fizzles."))
@@ -175,5 +175,5 @@
 
 /obj/item/borg_chameleon/proc/disrupt(mob/living/silicon/robot/user)
 	if(active)
-		to_chat(user, span_danger("Your chameleon field deactivates."))
+		to_chat(user, span_danger("My chameleon field deactivates."))
 		deactivate(user)

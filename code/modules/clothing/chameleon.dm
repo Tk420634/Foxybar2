@@ -57,7 +57,7 @@
 	else if(istype(old_headgear, /obj/item/clothing/mask/chameleon/drone))
 		new_headgear = new /obj/item/clothing/head/chameleon/drone()
 	else
-		to_chat(owner, span_warning("You shouldn't be able to toggle a camogear helmetmask if you're not wearing it"))
+		to_chat(owner, span_warning("I shouldn't be able to toggle a camogear helmetmask if you're not wearing it"))
 	if(new_headgear)
 		// Force drop the item in the headslot, even though
 		// it's TRAIT_NODROP

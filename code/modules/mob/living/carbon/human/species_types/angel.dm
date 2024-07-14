@@ -55,7 +55,7 @@
 	if(!CHECK_MOBILITY(H, MOBILITY_MOVE))
 		return FALSE
 	if(H.wear_suit && ((H.wear_suit.flags_inv & HIDEJUMPSUIT) && (!H.wear_suit.species_exception || !is_type_in_list(src, H.wear_suit.species_exception))))	//Jumpsuits have tail holes, so it makes sense they have wing holes too
-		to_chat(H, "Your suit blocks your wings from extending!")
+		to_chat(H, "My suit blocks your wings from extending!")
 		return FALSE
 	var/turf/T = get_turf(H)
 	if(!T)
@@ -78,11 +78,11 @@
 	var/datum/species/angel/A = H.dna.species
 	if(A.CanFly(H))
 		if(H.movement_type & FLYING)
-			to_chat(H, span_notice("You settle gently back onto the ground..."))
+			to_chat(H, span_notice("I settle gently back onto the ground..."))
 			A.ToggleFlight(H,0)
 			H.update_mobility()
 		else
-			to_chat(H, span_notice("You beat your wings and begin to hover gently above the ground..."))
+			to_chat(H, span_notice("I beat your wings and begin to hover gently above the ground..."))
 			H.set_resting(FALSE, TRUE)
 			A.ToggleFlight(H,1)
 			H.update_mobility()
@@ -92,7 +92,7 @@
 	if(H.buckled)
 		buckled_obj = H.buckled
 
-	to_chat(H, span_notice("Your wings spazz out and launch you!"))
+	to_chat(H, span_notice("My wings spazz out and launch you!"))
 
 	playsound(H.loc, 'sound/misc/slip.ogg', 50, 1, -3)
 

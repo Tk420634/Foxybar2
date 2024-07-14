@@ -175,9 +175,9 @@
 				if(!user.temporarilyRemoveItemFromInventory(W))
 					return
 				E.attach(src)
-				user.visible_message("[user] attaches [W] to [src].", span_notice("You attach [W] to [src]."))
+				user.visible_message("[user] attaches [W] to [src].", span_notice("I attach [W] to [src]."))
 			else
-				to_chat(user, span_warning("You were unable to attach [W] to [src]!"))
+				to_chat(user, span_warning("I were unable to attach [W] to [src]!"))
 		return
 	if(W.GetID())
 		if(add_req_access || maint_access)
@@ -197,40 +197,40 @@
 	else if(istype(W, /obj/item/wrench))
 		if(state==1)
 			state = 2
-			to_chat(user, span_notice("You undo the securing bolts."))
+			to_chat(user, span_notice("I undo the securing bolts."))
 		else if(state==2)
 			state = 1
-			to_chat(user, span_notice("You tighten the securing bolts."))
+			to_chat(user, span_notice("I tighten the securing bolts."))
 		return
 	else if(istype(W, /obj/item/crowbar))
 		if(state==2)
 			state = 3
-			to_chat(user, span_notice("You open the hatch to the power unit."))
+			to_chat(user, span_notice("I open the hatch to the power unit."))
 		else if(state==3)
 			state=2
-			to_chat(user, span_notice("You close the hatch to the power unit."))
+			to_chat(user, span_notice("I close the hatch to the power unit."))
 		return
 	else if(istype(W, /obj/item/stack/cable_coil))
 		if(state == 3 && (internal_damage & MECHA_INT_SHORT_CIRCUIT))
 			if(W.use_tool(src, user, 0, 2))
 				clearInternalDamage(MECHA_INT_SHORT_CIRCUIT)
-				to_chat(user, span_notice("You replace the fused wires."))
+				to_chat(user, span_notice("I replace the fused wires."))
 			else
-				to_chat(user, span_warning("You need two lengths of cable to fix this mech!"))
+				to_chat(user, span_warning("I need two lengths of cable to fix this mech!"))
 		return
 	else if(istype(W, /obj/item/screwdriver) && user.a_intent != INTENT_HARM)
 		if(internal_damage & MECHA_INT_TEMP_CONTROL)
 			clearInternalDamage(MECHA_INT_TEMP_CONTROL)
-			to_chat(user, span_notice("You repair the damaged temperature controller."))
+			to_chat(user, span_notice("I repair the damaged temperature controller."))
 		else if(state==3 && cell)
 			cell.forceMove(loc)
 			cell = null
 			state = 4
-			to_chat(user, span_notice("You unscrew and pry out the powercell."))
+			to_chat(user, span_notice("I unscrew and pry out the powercell."))
 			mecha_log_message("Powercell removed")
 		else if(state==4 && cell)
 			state=3
-			to_chat(user, span_notice("You screw the cell in place."))
+			to_chat(user, span_notice("I screw the cell in place."))
 		return
 
 	else if(istype(W, /obj/item/stock_parts/cell))
@@ -239,7 +239,7 @@
 				if(!user.transferItemToLoc(W, src))
 					return
 				var/obj/item/stock_parts/cell/C = W
-				to_chat(user, span_notice("You install the powercell."))
+				to_chat(user, span_notice("I install the powercell."))
 				cell = C
 				mecha_log_message("Powercell installed")
 			else
@@ -252,9 +252,9 @@
 			if(W.use_tool(src, user, 0, volume=50, amount=1))
 				if (internal_damage & MECHA_INT_TANK_BREACH)
 					clearInternalDamage(MECHA_INT_TANK_BREACH)
-					to_chat(user, span_notice("You repair the damaged gas tank."))
+					to_chat(user, span_notice("I repair the damaged gas tank."))
 				else
-					user.visible_message(span_notice("[user] repairs some damage to [name]."), span_notice("You repair some damage to [src]."))
+					user.visible_message(span_notice("[user] repairs some damage to [name]."), span_notice("I repair some damage to [src]."))
 					obj_integrity += min(10, max_integrity-obj_integrity)
 					if(obj_integrity == max_integrity)
 						to_chat(user, span_notice("It looks to be fully repaired now."))

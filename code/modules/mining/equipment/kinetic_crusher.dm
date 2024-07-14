@@ -71,7 +71,7 @@
 /obj/item/kinetic_crusher/attackby(obj/item/I, mob/living/user)
 	if(istype(I, /obj/item/crowbar))
 		if(LAZYLEN(trophies))
-			to_chat(user, span_notice("You remove [src]'s trophies."))
+			to_chat(user, span_notice("I remove [src]'s trophies."))
 			I.play_tool_sound(src)
 			for(var/t in trophies)
 				var/obj/item/crusher_trophy/T = t
@@ -287,12 +287,12 @@
 	for(var/t in H.trophies)
 		var/obj/item/crusher_trophy/T = t
 		if(istype(T, denied_type) || istype(src, T.denied_type))
-			to_chat(user, span_warning("You can't seem to attach [src] to [H]. Maybe remove a few trophies?"))
+			to_chat(user, span_warning("I can't seem to attach [src] to [H]. Maybe remove a few trophies?"))
 			return FALSE
 	if(!user.transferItemToLoc(src, H))
 		return
 	H.trophies += src
-	to_chat(user, span_notice("You attach [src] to [H]."))
+	to_chat(user, span_notice("I attach [src] to [H]."))
 	return TRUE
 
 /obj/item/crusher_trophy/proc/remove_from(obj/item/kinetic_crusher/H, mob/living/user)

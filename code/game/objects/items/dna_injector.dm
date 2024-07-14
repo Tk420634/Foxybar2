@@ -48,7 +48,7 @@
 
 /obj/item/dnainjector/attack(mob/target, mob/user)
 	if(!user.IsAdvancedToolUser())
-		to_chat(user, span_warning("You don't have the dexterity to do this!"))
+		to_chat(user, span_warning("I don't have the dexterity to do this!"))
 		return
 	if(used)
 		to_chat(user, span_warning("This injector is used up!"))
@@ -67,7 +67,7 @@
 						span_userdanger("[user] injects [target] with the syringe with [src]!"))
 
 	else
-		to_chat(user, span_notice("You inject yourself with [src]."))
+		to_chat(user, span_notice("I inject yourself with [src]."))
 
 	log_combat(user, target, "injected", src)
 
@@ -460,7 +460,7 @@
 
 /obj/item/dnainjector/timed/inject(mob/living/carbon/M, mob/user)
 	if(M.stat == DEAD)	//prevents dead people from having their DNA changed
-		to_chat(user, span_notice("You can't modify [M]'s DNA while [M.p_theyre()] dead."))
+		to_chat(user, span_notice("I can't modify [M]'s DNA while [M.p_theyre()] dead."))
 		return FALSE
 
 	if(M.has_dna() && !(HAS_TRAIT(M, TRAIT_NOCLONE)) && M.mob_biotypes & MOB_ORGANIC)

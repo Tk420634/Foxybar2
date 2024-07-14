@@ -152,7 +152,7 @@
 			if(!H.get_bodypart(body_zone) && !animal_origin)
 				if(H == user)
 					H.visible_message(span_warning("[H] jams [src] into [H.p_their()] empty socket!"),\
-					span_notice("You force [src] into your empty socket, and it locks into place!"))
+					span_notice("I force [src] into your empty socket, and it locks into place!"))
 				else
 					H.visible_message(span_warning("[user] jams [src] into [H]'s empty socket!"),\
 					span_notice("[user] forces [src] into your empty socket, and it locks into place!"))
@@ -169,7 +169,7 @@
 			return
 		playsound(loc, 'sound/weapons/slice.ogg', 50, 1, -1)
 		user.visible_message(span_warning("[user] begins to cut open [src]."),\
-			span_notice("You begin to cut open [src]..."))
+			span_notice("I begin to cut open [src]..."))
 		if(do_after(user, 54, target = src))
 			drop_organs(user)
 	else
@@ -1051,11 +1051,11 @@
 			if(by_who && by_who == owner)
 				owner.visible_message(
 					span_notice("[by_who] removes the [current_gauze.name] on [owner]'s [name]."),
-					span_notice("You remove the [current_gauze.name] on [owner]'s [name]."))
+					span_notice("I remove the [current_gauze.name] on [owner]'s [name]."))
 			else
 				owner.visible_message(
 					span_notice("[owner] removes the [current_gauze.name] on [owner.p_their()] [name]."),
-					span_notice("You remove the [current_gauze.name] on your [name]."))
+					span_notice("I remove the [current_gauze.name] on your [name]."))
 		else
 			owner.visible_message(
 				span_notice("\The [current_gauze] on [owner]'s [name] fall away, no longer needed."),
@@ -1067,11 +1067,11 @@
 			if(by_who && by_who == owner)
 				owner.visible_message(
 					span_notice("[by_who] removes the [current_suture.name] on [owner]'s [name]."),
-					span_notice("You remove the [current_suture.name] on [owner]'s [name]."))
+					span_notice("I remove the [current_suture.name] on [owner]'s [name]."))
 			else
 				owner.visible_message(
 					span_notice("[owner] pops the [current_suture.name] on [owner.p_their()] [name]."),
-					span_notice("You pop the [current_suture.name] on your [name]."))
+					span_notice("I pop the [current_suture.name] on your [name]."))
 		else
 			owner.visible_message(
 				span_notice("\The [current_suture] on [owner]'s [name] absorb into [owner.p_their()] skin as [owner.p_their()] wounds close."),
@@ -1190,7 +1190,7 @@
 	covering_heal_nutrition_mod(bleed_healing, heal_amt)
 
 	/* else if(!current_gauze.told_owner_its_out_of_juice)
-		to_chat(owner, span_warning("You feel the [current_gauze.name] on your [src.name] become stale and no longer heal you."))
+		to_chat(owner, span_warning("I feel the [current_gauze.name] on your [src.name] become stale and no longer heal you."))
 		current_gauze.told_owner_its_out_of_juice = TRUE */
 
 	/* if(bleed_dam > current_gauze.max_bandage_healing && !current_suture) // Always help the suture if one's there
@@ -1200,7 +1200,7 @@
 		owner.visible_message(
 			span_warning("Blood soaks through the [current_gauze] on [owner]'s [src.name]!"),
 			span_danger("Blood is soaking through the [current_gauze] on your [src.name]! You need either better bandages, or someone to sew up that gruesome wound!"),
-			span_notice("You hear a faint drip.")
+			span_notice("I hear a faint drip.")
 		)
 		return */ // to be reworked
 

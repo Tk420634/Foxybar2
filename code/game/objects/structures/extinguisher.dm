@@ -43,11 +43,11 @@
 
 /obj/structure/extinguisher_cabinet/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/wrench) && !stored_extinguisher)
-		to_chat(user, span_notice("You start unsecuring [name]..."))
+		to_chat(user, span_notice("I start unsecuring [name]..."))
 		I.play_tool_sound(src)
 		if(I.use_tool(src, user, 60))
 			playsound(loc, 'sound/items/deconstruct.ogg', 50, 1)
-			to_chat(user, span_notice("You unsecure [name]."))
+			to_chat(user, span_notice("I unsecure [name]."))
 			deconstruct(TRUE)
 		return
 
@@ -58,7 +58,7 @@
 			if(!user.transferItemToLoc(I, src))
 				return
 			stored_extinguisher = I
-			to_chat(user, span_notice("You place [I] in [src]."))
+			to_chat(user, span_notice("I place [I] in [src]."))
 			update_icon()
 			return TRUE
 		else
@@ -74,7 +74,7 @@
 		return
 	if(stored_extinguisher)
 		user.put_in_hands(stored_extinguisher)
-		to_chat(user, span_notice("You take [stored_extinguisher] from [src]."))
+		to_chat(user, span_notice("I take [stored_extinguisher] from [src]."))
 		stored_extinguisher = null
 		if(!opened)
 			opened = 1
@@ -87,7 +87,7 @@
 /obj/structure/extinguisher_cabinet/attack_tk(mob/user)
 	if(stored_extinguisher)
 		stored_extinguisher.forceMove(loc)
-		to_chat(user, span_notice("You telekinetically remove [stored_extinguisher] from [src]."))
+		to_chat(user, span_notice("I telekinetically remove [stored_extinguisher] from [src]."))
 		stored_extinguisher = null
 		opened = 1
 		playsound(loc, 'sound/machines/click.ogg', 15, 1, -3)

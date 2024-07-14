@@ -279,7 +279,7 @@
 
 /obj/item/circuitboard/machine/vendor
 	name = "Custom Vendor (Machine Board)"
-	desc = "You can turn the \"brand selection\" dial using a screwdriver."
+	desc = "I can turn the \"brand selection\" dial using a screwdriver."
 	custom_premium_price = 100
 	build_path = /obj/machinery/vending/custom
 	req_components = list(/obj/item/vending_refill/custom = 1)
@@ -328,7 +328,7 @@
 		position = (position == vending_names_paths.len) ? 1 : (position + 1)
 		var/typepath = vending_names_paths[position]
 		set_type(typepath)
-		to_chat(user, span_notice("You set the board to \"[vending_names_paths[typepath]]\"."))
+		to_chat(user, span_notice("I set the board to \"[vending_names_paths[typepath]]\"."))
 	else
 		return ..()
 
@@ -377,7 +377,7 @@
 
 /obj/item/circuitboard/machine/thermomachine
 	name = "Thermomachine (Machine Board)"
-	desc = "You can use a screwdriver to switch between heater and freezer."
+	desc = "I can use a screwdriver to switch between heater and freezer."
 	var/pipe_layer = PIPING_LAYER_DEFAULT
 	req_components = list(
 		/obj/item/stock_parts/matter_bin = 2,
@@ -412,12 +412,12 @@
 		name = initial(new_type.name)
 		build_path = initial(new_type.build_path)
 		I.play_tool_sound(src)
-		to_chat(user, span_notice("You change the circuitboard setting to \"[new_setting]\"."))
+		to_chat(user, span_notice("I change the circuitboard setting to \"[new_setting]\"."))
 		return
 
 	if(I.tool_behaviour == TOOL_MULTITOOL)
 		pipe_layer = (pipe_layer >= PIPING_LAYER_MAX) ? PIPING_LAYER_MIN : (pipe_layer + 1)
-		to_chat(user, span_notice("You change the circuitboard to layer [pipe_layer]."))
+		to_chat(user, span_notice("I change the circuitboard to layer [pipe_layer]."))
 		return
 
 	. = ..()
@@ -507,7 +507,7 @@
 		var/position = fridges_name_paths.Find(build_path, fridges_name_paths)
 		position = (position == fridges_name_paths.len) ? 1 : (position + 1)
 		build_path = fridges_name_paths[position]
-		to_chat(user, span_notice("You set the board to [fridges_name_paths[build_path]]."))
+		to_chat(user, span_notice("I set the board to [fridges_name_paths[build_path]]."))
 	else
 		return ..()
 
@@ -670,7 +670,7 @@
 
 /obj/item/circuitboard/machine/tesla_coil
 	name = "Tesla Controller (Machine Board)"
-	desc = "You can use a screwdriver to switch between Research and Power Generation."
+	desc = "I can use a screwdriver to switch between Research and Power Generation."
 	build_path = /obj/machinery/power/tesla_coil
 	req_components = list(/obj/item/stock_parts/capacitor = 1)
 	needs_anchored = FALSE
@@ -697,7 +697,7 @@
 		name = initial(new_type.name)
 		build_path = initial(new_type.build_path)
 		I.play_tool_sound(src)
-		to_chat(user, span_notice("You change the circuitboard setting to \"[new_setting]\"."))
+		to_chat(user, span_notice("I change the circuitboard setting to \"[new_setting]\"."))
 	else
 		return ..()
 
@@ -796,7 +796,7 @@
 /obj/item/circuitboard/machine/chem_master
 	name = "ChemMaster 3000 (Machine Board)"
 	build_path = /obj/machinery/chem_master
-	desc = "You can turn the \"mode selection\" dial using a screwdriver."
+	desc = "I can turn the \"mode selection\" dial using a screwdriver."
 	req_components = list(
 		/obj/item/reagent_containers/glass/beaker = 2,
 		/obj/item/stock_parts/manipulator = 1,
@@ -814,7 +814,7 @@
 
 		build_path = new_path
 		name = "[new_name] 3000 (Machine Board)"
-		to_chat(user, span_notice("You change the circuit board setting to \"[new_name]\"."))
+		to_chat(user, span_notice("I change the circuit board setting to \"[new_name]\"."))
 	else
 		return ..()
 
@@ -1086,14 +1086,14 @@
 
 /obj/item/circuitboard/machine/dish_drive/attack_self(mob/living/user)
 	suction = !suction
-	to_chat(user, span_notice("You [suction ? "enable" : "disable"] the board's suction function."))
+	to_chat(user, span_notice("I [suction ? "enable" : "disable"] the board's suction function."))
 
 /obj/item/circuitboard/machine/dish_drive/AltClick(mob/living/user)
 	. = ..()
 	if(!user.Adjacent(src))
 		return
 	transmit = !transmit
-	to_chat(user, span_notice("You [transmit ? "enable" : "disable"] the board's automatic disposal transmission."))
+	to_chat(user, span_notice("I [transmit ? "enable" : "disable"] the board's automatic disposal transmission."))
 	return TRUE
 
 /obj/item/circuitboard/machine/stacking_unit_console
@@ -1221,19 +1221,19 @@
 
 /obj/item/circuitboard/machine/autolathe/ammo/improvised/examine(mob/user)
 	. = ..()
-	. += "You can put this thing together by:"
+	. += "I can put this thing together by:"
 	. += "\t[span_notice("hitting it")] with 3 wood, or [span_notice("using it on a table")]. Any table should do."
-	. += "You [span_italic("could")] use it as normal on a machine frame, if you really wanted to."
+	. += "I [span_italic("could")] use it as normal on a machine frame, if you really wanted to."
 
 /obj/item/circuitboard/machine/autolathe/ammo/improvised/attackby(obj/item/W, mob/user, params)
 	. = ..()
 	if(istype(W, /obj/item/stack/sheet/mineral/wood))
 		var/obj/item/stack/sheet/mineral/wood/wud = W
 		if(!wud.use(3))
-			to_chat(user, span_alert("You need 3 wood to set up a handloader!"))
+			to_chat(user, span_alert("I need 3 wood to set up a handloader!"))
 			return
 		if(!do_after(user, 3 SECONDS, TRUE, src, TRUE, allow_movement = TRUE))
-			to_chat(user, span_alert("You were interrupted!"))
+			to_chat(user, span_alert("I were interrupted!"))
 			return
 		var/turf/put_here
 		denseloop:
@@ -1262,11 +1262,11 @@
 	if(!user || !T)
 		return
 	if(!do_after(user, 3 SECONDS, TRUE, T, TRUE, allow_movement = TRUE, stay_close = TRUE))
-		to_chat(user, span_alert("You were interrupted!"))
+		to_chat(user, span_alert("I were interrupted!"))
 		return
 	var/obj/machinery/autolathe/ammo/improvised/thebench = new(get_turf(T))
 	thebench.tableize()
-	to_chat(user, span_notice("You set up a reloading bench on [T]!"))
+	to_chat(user, span_notice("I set up a reloading bench on [T]!"))
 	qdel(src)
 	return TABLE_NO_PLACE
 

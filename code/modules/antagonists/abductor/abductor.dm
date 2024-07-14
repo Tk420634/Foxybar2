@@ -53,17 +53,17 @@
 
 /datum/antagonist/abductor/on_removal()
 	if(owner.current)
-		to_chat(owner.current,span_userdanger("You are no longer the [owner.special_role]!"))
+		to_chat(owner.current,span_userdanger("I am no longer the [owner.special_role]!"))
 	owner.special_role = null
 	REMOVE_TRAIT(owner, TRAIT_ABDUCTOR_TRAINING, ABDUCTOR_ANTAGONIST)
 	return ..()
 
 /datum/antagonist/abductor/greet()
-	to_chat(owner.current, span_notice("You are the [owner.special_role]!"))
-	to_chat(owner.current, span_notice("You are an operative for your home planet's government. Your mission is to detain, experiment, and observe."))
+	to_chat(owner.current, span_notice("I am the [owner.special_role]!"))
+	to_chat(owner.current, span_notice("I am an operative for your home planet's government. Your mission is to detain, experiment, and observe."))
 	to_chat(owner.current, span_notice("Work together with your teammate to bring live subjects from the space station nearby onto your ship for experimentation."))
 	to_chat(owner.current, span_notice("For the sake of the mission, do not damage the integrity of the station, do not kill anyone unless in self defense, always capture specimens first if you can, and do not steal equipment or belongings from abducted specimens."))
-	to_chat(owner.current, span_notice("Your task is to observe and take notes of the effects of your experiments."))
+	to_chat(owner.current, span_notice("My task is to observe and take notes of the effects of your experiments."))
 	to_chat(owner.current, span_notice("[greet_text]"))
 	owner.announce_objectives()
 

@@ -103,13 +103,13 @@
 		var/species = golem_shell_species_types[O.merge_type]
 		if(species)
 			if(O.use(10))
-				to_chat(user, "You finish up the golem shell with ten sheets of [O].")
+				to_chat(user, "I finish up the golem shell with ten sheets of [O].")
 				new shell_type(get_turf(src), species, user)
 				qdel(src)
 			else
-				to_chat(user, "You need at least ten sheets to finish a golem.")
+				to_chat(user, "I need at least ten sheets to finish a golem.")
 		else
-			to_chat(user, "You can't build a golem out of this kind of material.")
+			to_chat(user, "I can't build a golem out of this kind of material.")
 
 //made with xenobiology, the golem obeys its creator
 /obj/item/golem_shell/servant
@@ -125,7 +125,7 @@
 	job_description = "Off-station Syndicate Scientist"
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper_s"
-	short_desc = "You are a syndicate science technician, employed in a top secret research facility developing biological weapons."
+	short_desc = "I am a syndicate science technician, employed in a top secret research facility developing biological weapons."
 	flavour_text = "Unfortunately, your hated enemy, Nanotrasen, has begun mining in this sector. Continue your research as best you can, and try to keep a low profile."
 	important_info = "The base is rigged with explosives, DO NOT abandon it or let it fall into enemy hands!"
 	outfit = /datum/outfit/lavaland_syndicate
@@ -154,7 +154,7 @@
 	name = "Radio Operator"
 	job_description = "Radio Station Radio Operator"
 	short_desc = "You're an aspiring radio station operator! Keep the frequencies alive, and have fun doing it. Or dont."
-	flavour_text = "Your motives are your own, but one thing is for sure: Your life is your radio station. You've been stuck down here for ages, plenty of food and drink, and the radio station's defense keep vagabonds out. Play music, host remote interviews, spread news- Or propaganda! Just remember: The security systems keeping you safe are keeping you prisoner, as well."
+	flavour_text = "My motives are your own, but one thing is for sure: Your life is your radio station. You've been stuck down here for ages, plenty of food and drink, and the radio station's defense keep vagabonds out. Play music, host remote interviews, spread news- Or propaganda! Just remember: The security systems keeping you safe are keeping you prisoner, as well."
 	important_info = "Dont provoke the security systems of your radio station, and you'll be fine."
 	outfit = /datum/outfit/lavaland_syndicate/comms
 

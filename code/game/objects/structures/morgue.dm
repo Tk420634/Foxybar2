@@ -83,7 +83,7 @@ GLOBAL_LIST_EMPTY(bodycontainers) //Let them act as spawnpoints for revenants an
 	add_fingerprint(user)
 	if(istype(P, /obj/item/pen))
 		if(!user.is_literate())
-			to_chat(user, span_notice("You scribble illegibly on the side of [src]!"))
+			to_chat(user, span_notice("I scribble illegibly on the side of [src]!"))
 			return
 		var/t = stripped_input(user, "What would you like the label to be?", text("[]", name), null)
 		if (user.get_active_held_item() != P)
@@ -107,13 +107,13 @@ GLOBAL_LIST_EMPTY(bodycontainers) //Let them act as spawnpoints for revenants an
 		open()
 		return
 	user.visible_message(null, \
-		span_notice("You lean on the back of [src] and start pushing the tray open... (this will take about [DisplayTimeText(breakout_time)].)"), \
-		span_italic("You hear a metallic creaking from [src]."))
+		span_notice("I lean on the back of [src] and start pushing the tray open... (this will take about [DisplayTimeText(breakout_time)].)"), \
+		span_italic("I hear a metallic creaking from [src]."))
 	if(do_after(user,(breakout_time), target = src))
 		if(!user || user.stat != CONSCIOUS || user.loc != src )
 			return
 		user.visible_message(span_warning("[user] successfully broke out of [src]!"), \
-			span_notice("You successfully break out of [src]!"))
+			span_notice("I successfully break out of [src]!"))
 		open()
 
 /obj/structure/bodycontainer/proc/open()
@@ -162,7 +162,7 @@ GLOBAL_LIST_EMPTY(bodycontainers) //Let them act as spawnpoints for revenants an
 	if(!user.canUseTopic(src, !hasSiliconAccessInArea(user)))
 		return
 	beeper = !beeper
-	to_chat(user, span_notice("You turn the speaker function [beeper ? "on" : "off"]."))
+	to_chat(user, span_notice("I turn the speaker function [beeper ? "on" : "off"]."))
 	return TRUE
 
 /obj/structure/bodycontainer/morgue/update_icon_state()
@@ -239,11 +239,11 @@ GLOBAL_LIST_EMPTY(crematoriums)
 	var/list/conts = GetAllContents() - src - connected
 
 	if(!conts.len)
-		audible_message(span_italic("You hear a hollow crackle."))
+		audible_message(span_italic("I hear a hollow crackle."))
 		return
 
 	else
-		audible_message(span_italic("You hear a roar as the crematorium activates."))
+		audible_message(span_italic("I hear a roar as the crematorium activates."))
 
 		locked = TRUE
 		update_icon()

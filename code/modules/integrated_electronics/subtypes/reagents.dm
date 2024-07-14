@@ -749,7 +749,7 @@
 	current_beaker = I
 	user.transferItemToLoc(I,src)
 
-	to_chat(user,span_warning("You put the [I.name] inside the beaker connector."))
+	to_chat(user,span_warning("I put the [I.name] inside the beaker connector."))
 
 	//Set the pin to a weak reference of the current beaker
 	push_vol()
@@ -770,7 +770,7 @@
 		return
 
 	//Remove beaker and put in user's hands/location
-	to_chat(user, span_notice("You take [current_beaker] out of the beaker connector."))
+	to_chat(user, span_notice("I take [current_beaker] out of the beaker connector."))
 	user.put_in_hands(current_beaker)
 	current_beaker = null
 	//Remove beaker reference

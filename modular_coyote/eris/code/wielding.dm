@@ -59,7 +59,7 @@
 	var/obj/item/other_item = user.get_inactive_held_item()
 
 	if(!user.dropItemToGround(other_item, force=FALSE)) //If you cannot remove the item in your hand, don't try and wield.
-		to_chat(user, span_notice("You cannot seem to drop the item in your other hand!"))
+		to_chat(user, span_notice("I cannot seem to drop the item in your other hand!"))
 		return
 	SEND_SIGNAL(src, SIG_ITEM_WIELD, user)	//added by CASEYGUNGEON 1/14/2024. fuck the twohanded component
 	wielded = TRUE
@@ -80,7 +80,7 @@
 		playsound(loc, wieldsound, 50, 1)
 	var/obj/item/twohanded/offhand/O = new(user) ////Let's reserve his other hand~
 	O.name = "[name] - offhand"
-	O.desc = "Your second grip on \the [name]"
+	O.desc = "My second grip on \the [name]"
 	user.put_in_inactive_hand(O)
 	return
 

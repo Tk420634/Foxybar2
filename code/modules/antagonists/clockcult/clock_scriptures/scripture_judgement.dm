@@ -35,7 +35,7 @@
 		var/area/A = get_area(invoker)
 		var/turf/T = get_turf(invoker)
 		if(!T || !is_station_level(T.z) || istype(A, /area/shuttle) || !A.blob_allowed)
-			to_chat(invoker, span_warning("You must be on the station to activate the Ark!"))
+			to_chat(invoker, span_warning("I must be on the station to activate the Ark!"))
 			return FALSE
 		if(GLOB.clockwork_gateway_activated)
 			to_chat(invoker, span_warning("Ratvar's recent banishment renders him too weak to be wrung forth from Reebe!"))

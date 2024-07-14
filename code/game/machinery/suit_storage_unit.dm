@@ -205,7 +205,7 @@
 		return
 
 	if(target == user)
-		user.visible_message(span_warning("[user] starts squeezing into [src]!"), span_notice("You start working your way into [src]..."))
+		user.visible_message(span_warning("[user] starts squeezing into [src]!"), span_notice("I start working your way into [src]..."))
 	else
 		target.visible_message(span_warning("[user] starts shoving [target] into [src]!"), span_userdanger("[user] starts shoving you into [src]!"))
 
@@ -306,21 +306,21 @@
 		open_machine()
 		dump_contents()
 		return
-	user.visible_message(span_notice("You see [user] kicking against the doors of [src]!"), \
-		span_notice("You start kicking against the doors... (this will take about [DisplayTimeText(breakout_time)].)"), \
-		span_italic("You hear a thump from [src]."))
+	user.visible_message(span_notice("I see [user] kicking against the doors of [src]!"), \
+		span_notice("I start kicking against the doors... (this will take about [DisplayTimeText(breakout_time)].)"), \
+		span_italic("I hear a thump from [src]."))
 	if(do_after(user,(breakout_time), target = src))
 		if(!user || user.stat != CONSCIOUS || user.loc != src )
 			return
 		user.visible_message(span_warning("[user] successfully broke out of [src]!"), \
-			span_notice("You successfully break out of [src]!"))
+			span_notice("I successfully break out of [src]!"))
 		open_machine()
 		dump_contents()
 
 	add_fingerprint(user)
 	if(locked)
-		visible_message(span_notice("You see [user] kicking against the doors of [src]!"), \
-			span_notice("You start kicking against the doors..."))
+		visible_message(span_notice("I see [user] kicking against the doors of [src]!"), \
+			span_notice("I start kicking against the doors..."))
 		addtimer(CALLBACK(src,PROC_REF(resist_open), user), 300)
 	else
 		open_machine()
@@ -328,14 +328,14 @@
 
 /obj/machinery/suit_storage_unit/proc/resist_open(mob/user)
 	if(!state_open && occupant && (user in src) && user.stat == 0) // Check they're still here.
-		visible_message(span_notice("You see [user] burst out of [src]!"), \
-			span_notice("You escape the cramped confines of [src]!"))
+		visible_message(span_notice("I see [user] burst out of [src]!"), \
+			span_notice("I escape the cramped confines of [src]!"))
 		open_machine()
 
 /obj/machinery/suit_storage_unit/attackby(obj/item/I, mob/user, params)
 	if(state_open && is_operational())
 		if(istype(I, /obj/item/clothing/head/mob_holder))
-			to_chat(user, span_warning("You can't quite fit that in while you hold it!"))
+			to_chat(user, span_warning("I can't quite fit that in while you hold it!"))
 			return
 		if(istype(I, /obj/item/clothing/suit))
 			if(suit)
@@ -366,7 +366,7 @@
 				return
 			storage = I
 
-		visible_message(span_notice("[user] inserts [I] into [src]"), span_notice("You load [I] into [src]."))
+		visible_message(span_notice("[user] inserts [I] into [src]"), span_notice("I load [I] into [src]."))
 		update_icon()
 		return
 

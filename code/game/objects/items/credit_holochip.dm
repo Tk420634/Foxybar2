@@ -77,7 +77,7 @@
 	if(istype(I, /obj/item/holochip))
 		var/obj/item/holochip/H = I
 		credits += H.credits
-		to_chat(user, span_notice("You insert the credits into [src]."))
+		to_chat(user, span_notice("I insert the credits into [src]."))
 		update_icon()
 		qdel(H)
 
@@ -95,7 +95,7 @@
 				H.forceMove(user.drop_location())
 			add_fingerprint(user)
 		H.add_fingerprint(user)
-		to_chat(user, span_notice("You extract [split_amount] credits into a new holochip."))
+		to_chat(user, span_notice("I extract [split_amount] credits into a new holochip."))
 
 /obj/item/holochip/emp_act(severity)
 	. = ..()

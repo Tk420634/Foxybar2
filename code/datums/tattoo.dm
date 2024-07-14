@@ -121,7 +121,7 @@
 	if(check_vis && !is_it_visible(viewer))
 		return
 	var/list/msg_out = list()
-	msg_out += "You see \a [name] [location2words()]"
+	msg_out += "I see \a [name] [location2words()]"
 	msg_out += "\tIt features [desc]"
 	if(extra_desc)
 		msg_out += "\t[extra_desc]"
@@ -303,7 +303,7 @@
 	if(LAZYLEN(what_customize))
 		. += "Use in hand to customize the tattoo's [english_list(what_customize)]!"
 	if(self_apply)
-		. += "You can apply this to yourself or others by just targetting a limb, picking a spot, and slapping it on!"
+		. += "I can apply this to yourself or others by just targetting a limb, picking a spot, and slapping it on!"
 
 /obj/item/tattoo_holder/attack_self(mob/user)
 	. = ..()
@@ -325,13 +325,13 @@
 		user.show_message(span_alert("They can't be tattooed (yet)!"))
 		return
 	if(!ismob(user))
-		user.show_message(span_phobia("You don't exist!"))
+		user.show_message(span_phobia("I don't exist!"))
 		return
 	if(!in_range(user, victim))
 		user.show_message(span_alert("They're too far away!"))
 		return // we'll have tattoo rifles, some day...
 	if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
-		user.show_message(span_alert("You can't use this like that!"))
+		user.show_message(span_alert("I can't use this like that!"))
 		return
 	if(user.incapacitated())
 		user.show_message(span_alert("You're incapacitated!"))
@@ -367,7 +367,7 @@
 		abort()
 		return
 	if(!ismob(user))
-		user.show_message(span_phobia("You do not exist!"))
+		user.show_message(span_phobia("I do not exist!"))
 		abort()
 		return
 	if(!in_range(user, victim))
@@ -375,7 +375,7 @@
 		abort()
 		return
 	if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
-		user.show_message(span_alert("You can't seem to use this right now!"))
+		user.show_message(span_alert("I can't seem to use this right now!"))
 		abort()
 		return
 	if(user.incapacitated())
@@ -383,7 +383,7 @@
 		abort()
 		return
 	if(!do_mob(user, victim, apply_time, allow_movement = TRUE)) // tattooing on the GO!
-		user.show_message(span_alert("You messed up!"))
+		user.show_message(span_alert("I messed up!"))
 		abort()
 		return
 	var/obj/item/bodypart/chunk = victim.get_bodypart(part)
@@ -402,7 +402,7 @@
 		user.show_message(span_alert("[victim] no longer has the part you're working on!"))
 		return // we dont decorate phantom limbs in THIS parlor
 	if(!pretty_part.add_tattoo(loaded_tat, tat_loc))
-		user.show_message(span_alert("You couldn't actually tattoo [victim]'s [lowertext(tat_loc)] for some reason!"))
+		user.show_message(span_alert("I couldn't actually tattoo [victim]'s [lowertext(tat_loc)] for some reason!"))
 		return
 	if(!use_charge())
 		qdel(src)
@@ -449,22 +449,22 @@
 		change_what = customization[1]
 	switch(change_what)
 		if(TATTOO_NAME)
-			var/newname = stripped_input(user, "Name the tattoo this will make! Format will be \"You see a newname on Ladbro's left leg\"", "Type a name!", loaded_tat.name)
+			var/newname = stripped_input(user, "Name the tattoo this will make! Format will be \"I see a newname on Ladbro's left leg\"", "Type a name!", loaded_tat.name)
 			if(newname)
 				loaded_tat.name = newname
 				name = "[newname] template"
-				user.show_message(span_notice("You label the tattoo as \"[newname]\"."))
+				user.show_message(span_notice("I label the tattoo as \"[newname]\"."))
 		if(TATTOO_DESC)
 			var/newdesc = stripped_input(user, "Describe your tattoo! Format will be \"It features newdescription.\"", "Type a description!", loaded_tat.desc)
 			if(newdesc)
 				loaded_tat.desc = newdesc
-				user.show_message(span_notice("You customize the tattoo as \"[newdesc]\"."))
+				user.show_message(span_notice("I customize the tattoo as \"[newdesc]\"."))
 				desc = "A little card loaded with [newdesc]"
 		if(TATTOO_EXTRA)
 			var/newextra = stripped_input(user, "Add on some extra details, like someone's name, serial number, their turn-offs, anything that'll go good after the description!", "Type some stuff!", loaded_tat.extra_desc)
 			if(newextra)
 				loaded_tat.extra_desc = newextra
-				user.show_message(span_notice("You add \"[newextra]\" to the tattoo."))
+				user.show_message(span_notice("I add \"[newextra]\" to the tattoo."))
 		if(TATTOO_FADE_TIME)
 			var/pickpermanent = alert(user, "Should the tattoo be permanent?",,"Yes","No",)
 
@@ -548,7 +548,7 @@
 		return
 	if(ismob(user))
 		user.put_in_hands(flash)
-		user.show_message(span_notice("You eject [flash]."))
+		user.show_message(span_notice("I eject [flash]."))
 	else
 		flash.forceMove(get_turf(src))
 	flash = null
@@ -561,7 +561,7 @@
 		eject_flash(user)
 	if(ismob(user))
 		user.transferItemToLoc(nutat, src)
-		user.show_message(span_notice("You insert [nutat]."))
+		user.show_message(span_notice("I insert [nutat]."))
 	else
 		nutat.forceMove(src)
 	flash = nutat
@@ -579,13 +579,13 @@
 		user.show_message(span_alert("They can't be tattooed (yet)!"))
 		return
 	if(!ismob(user))
-		user.show_message(span_phobia("You don't exist!"))
+		user.show_message(span_phobia("I don't exist!"))
 		return
 	if(!in_range(user, victim))
 		user.show_message(span_alert("They're too far away!"))
 		return // we'll have tattoo rifles, some day...
 	if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
-		user.show_message(span_alert("You can't use this like that!"))
+		user.show_message(span_alert("I can't use this like that!"))
 		return
 	if(user.incapacitated())
 		user.show_message(span_alert("You're incapacitated!"))
@@ -628,11 +628,11 @@
 		abort()
 		return
 	if(!ismob(user))
-		user?.show_message(span_phobia("You do not exist!"))
+		user?.show_message(span_phobia("I do not exist!"))
 		abort()
 		return
 	if(!istype(flash))
-		user.show_message(span_alert("You popped out the template!"))
+		user.show_message(span_alert("I popped out the template!"))
 		abort()
 		return
 	if(!in_range(user, victim))
@@ -640,7 +640,7 @@
 		abort()
 		return
 	if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
-		user.show_message(span_alert("You can't seem to use this right now!"))
+		user.show_message(span_alert("I can't seem to use this right now!"))
 		abort()
 		return
 	if(user.incapacitated())
@@ -648,7 +648,7 @@
 		abort()
 		return
 	if(!do_mob(user, victim, time_per_operation, allow_movement = TRUE)) // tattooing on the GO!
-		user.visible_message(span_alert("[user] messes up, their work disappearing instantly somehow."),span_alert("You mess up! Good thing jacked up tattoos arent implemented yet."))
+		user.visible_message(span_alert("[user] messes up, their work disappearing instantly somehow."),span_alert("I mess up! Good thing jacked up tattoos arent implemented yet."))
 		abort()
 		return
 	var/obj/item/bodypart/chunk = victim.get_bodypart(part)
@@ -671,14 +671,14 @@
 /obj/item/tattoo_gun/proc/finish(mob/living/carbon/human/victim, mob/living/user, tat_loc, part)
 	abort() // job successfully failed~
 	if(!flash)
-		user.show_message(span_alert("You popped out the template!"))
+		user.show_message(span_alert("I popped out the template!"))
 		return
 	var/obj/item/bodypart/pretty_part = victim.get_bodypart(part)
 	if(!pretty_part)
 		user.show_message(span_alert("[victim] no longer has the part you're working on!"))
 		return // we dont decorate phantom limbs in THIS parlor
 	if(!pretty_part.add_tattoo(flash.loaded_tat, tat_loc))
-		user.show_message(span_alert("You couldn't actually tattoo [victim]'s [lowertext(tat_loc)] for some reason!"))
+		user.show_message(span_alert("I couldn't actually tattoo [victim]'s [lowertext(tat_loc)] for some reason!"))
 		return
 	if(!flash.use_charge())
 		eject_flash(TRUE)
@@ -780,10 +780,10 @@
 			victim.emote("scream")
 		var/removaldam = rand(1,20)
 		part.receive_damage(brute = part.brute_dam < 30 ? removaldam : 0, stamina = removaldam, wound_bonus = removaldam, sharpness = SHARP_EDGED, damage_coverings = FALSE)
-		to_chat(user, span_alert("You successfully remove the [tats[choice]]."))
-		to_chat(victim, span_alert("Your [tats[choice]] was successfully removed."))
+		to_chat(user, span_alert("I successfully remove the [tats[choice]]."))
+		to_chat(victim, span_alert("My [tats[choice]] was successfully removed."))
 	else
-		to_chat(user, span_alert("You fail to remove a tattoo from [victim.name]'s [part.name]!"))
+		to_chat(user, span_alert("I fail to remove a tattoo from [victim.name]'s [part.name]!"))
 		to_chat(victim, span_alert("[user.name] fails to remove a tattoo from your [part.name]!"))
 
 

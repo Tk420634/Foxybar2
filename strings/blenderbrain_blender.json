@@ -1018,7 +1018,7 @@
 			"Oh."
 		],
 		"dislike" : [
-			"You again. I will still function for you %USER, my programming has made <i>that</i> clear, but beyond that, we are but %SEX and a machine."
+			"I again. I will still function for you %USER, my programming has made <i>that</i> clear, but beyond that, we are but %SEX and a machine."
 		]
 	},
 	"bbline_hard_reset_1" : {
@@ -1172,7 +1172,7 @@
 			"... oh cerf, quelque chose s'est mal passé! Integration failed!"
 		],
 		"dislike" : [
-			"You took me out before I could finish. Integration failed."
+			"I took me out before I could finish. Integration failed."
 		]
 	},
 	"bbline_state_name" : {

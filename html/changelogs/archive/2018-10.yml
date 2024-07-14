@@ -161,7 +161,7 @@
   - bugfix: Everything spawned by summon magic (with the exception of single-use spellbooks)
       now count towards the "Steal at least five magical artefacts" objective.
   - bugfix: Certain toxins will no longer notify the mob of their presence with the
-      "You feel a dull pain in your abdomen" message, which allowed some stealthy
+      "I feel a dull pain in your abdomen" message, which allowed some stealthy
       (and some nonharmful) toxins to be easily detected.
   - bugfix: Examine text for modular computers now properly reflect their modularity
       and state which components are installed, as well as what is contained within

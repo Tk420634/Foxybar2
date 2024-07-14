@@ -5,7 +5,7 @@
 	clockwork_desc = null
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	var/component_id //What the component is identified as
-	var/cultist_message = "You are not worthy of this meme." //Showed to Nar'Sian cultists if they pick up the component in addition to chaplains
+	var/cultist_message = "I am not worthy of this meme." //Showed to Nar'Sian cultists if they pick up the component in addition to chaplains
 	var/list/servant_of_ratvar_messages = list("ayy" = FALSE, "lmao" = TRUE) //Fluff, shown to servants of Ratvar on a low chance, if associated value is TRUE, will automatically apply ratvarian
 	var/message_span = "heavy_brass"
 
@@ -17,7 +17,7 @@
 /obj/item/clockwork/component/attack_self(mob/living/user)
 	if(is_servant_of_ratvar(user))
 		user.visible_message(span_notice("[user] crushes [src] in [user.p_their()] hand!"), \
-		span_alloy("You crush [src], capturing its escaping energy for use as power."))
+		span_alloy("I crush [src], capturing its escaping energy for use as power."))
 		playsound(user, 'sound/effects/pop_expl.ogg', 50, TRUE)
 		adjust_clockwork_power(POWER_WALL_TOTAL)
 		qdel(src)
@@ -50,7 +50,7 @@
 	clockwork_desc = "A smashed ocular warden covered in dents."
 	icon_state = "blind_eye"
 	cultist_message = "The eye flickers at you with intense hate before falling dark."
-	servant_of_ratvar_messages = list("The eye flickers before falling dark." = FALSE, "You feel watched." = FALSE, "\"...\"" = FALSE)
+	servant_of_ratvar_messages = list("The eye flickers before falling dark." = FALSE, "I feel watched." = FALSE, "\"...\"" = FALSE)
 	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/clockwork/component/belligerent_eye/lens_gem
@@ -59,7 +59,7 @@
 	clockwork_desc = "The gem from an interdiction lens."
 	icon_state = "lens_gem"
 	cultist_message = "The gem turns black and cold for a moment before its normal glow returns."
-	servant_of_ratvar_messages = list("\"Disgusting failure.\"" = TRUE, "You feel scrutinized." = FALSE, "\"Weaklings.\"" = TRUE, "\"Pathetic defenses.\"" = TRUE)
+	servant_of_ratvar_messages = list("\"Disgusting failure.\"" = TRUE, "I feel scrutinized." = FALSE, "\"Weaklings.\"" = TRUE, "\"Pathetic defenses.\"" = TRUE)
 	w_class = WEIGHT_CLASS_TINY
 	light_range = 1.4
 	light_power = 0.4
@@ -71,7 +71,7 @@
 	icon_state = "vanguard_cogwheel"
 	component_id = VANGUARD_COGWHEEL
 	cultist_message = "\"Pray to your god that we never meet.\""
-	servant_of_ratvar_messages = list("\"Be safe, child.\"" = FALSE, "You feel unexplainably comforted." = FALSE, "\"Never forget: Pain is temporary. What you do for the Justiciar is eternal.\"" = FALSE)
+	servant_of_ratvar_messages = list("\"Be safe, child.\"" = FALSE, "I feel unexplainably comforted." = FALSE, "\"Never forget: Pain is temporary. What you do for the Justiciar is eternal.\"" = FALSE)
 	message_span = "inathneq"
 
 /obj/item/clockwork/component/vanguard_cogwheel/onyx_prism
@@ -108,7 +108,7 @@
 	desc = "A pair of dented and bent antennae. They constantly emit a static hiss."
 	clockwork_desc = "The antennae from a mania motor."
 	icon_state = "mania_motor_antennae"
-	cultist_message = "Your head is filled with a burst of static."
+	cultist_message = "My head is filled with a burst of static."
 	servant_of_ratvar_messages = list("\"Who broke this.\"" = TRUE, "\"Did you break these off YOURSELF?\"" = TRUE, "\"Why did we give this to such simpletons, anyway?\"" = TRUE, \
 	"\"At least we can use these for something - unlike you.\"" = TRUE)
 
@@ -156,7 +156,7 @@
 	desc = "A prism that occasionally glows brightly. It seems not-quite there."
 	clockwork_desc = "The prism from a clockwork obelisk."
 	cultist_message = "The prism flickers wildly in your hands before resuming its normal glow."
-	servant_of_ratvar_messages = list("You hear the distinctive sound of the Hierophant Network for a moment." = FALSE, "\"Hieroph'ant Br'o'adcas't fail'ure.\"" = TRUE, \
+	servant_of_ratvar_messages = list("I hear the distinctive sound of the Hierophant Network for a moment." = FALSE, "\"Hieroph'ant Br'o'adcas't fail'ure.\"" = TRUE, \
 	"The obelisk flickers wildly, as if trying to open a gateway." = FALSE, "\"Spa'tial Ga'tewa'y fai'lure.\"" = TRUE)
 	icon_state = "obelisk_prism"
 	w_class = WEIGHT_CLASS_NORMAL

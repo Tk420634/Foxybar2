@@ -90,7 +90,7 @@
 			qdel(S)
 			var/obj/item/bot_assembly/secbot/A = new
 			user.put_in_hands(A)
-			to_chat(user, span_notice("You add the signaler to the helmet."))
+			to_chat(user, span_notice("I add the signaler to the helmet."))
 			qdel(src)
 			return
 	return ..()
@@ -605,8 +605,8 @@
 	desc = "It's a helmet specifically designed to protect against close range attacks."
 	icon_state = "riot"
 	item_state = "helmet"
-	toggle_message = "You pull the visor down on"
-	alt_toggle_message = "You push the visor up on"
+	toggle_message = "I pull the visor down on"
+	alt_toggle_message = "I push the visor up on"
 	can_toggle = 1
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2)
 	flags_inv = HIDEEARS|HIDEFACE
@@ -644,8 +644,8 @@
 	name = "helmet of justice"
 	desc = "WEEEEOOO. WEEEEEOOO. WEEEEOOOO."
 	icon_state = "justice"
-	toggle_message = "You turn off the lights on"
-	alt_toggle_message = "You turn on the lights on"
+	toggle_message = "I turn off the lights on"
+	alt_toggle_message = "I turn on the lights on"
 	actions_types = list(/datum/action/item_action/toggle_helmet_light)
 	can_toggle = 1
 	toggle_cooldown = 20
@@ -656,8 +656,8 @@
 	name = "alarm helmet"
 	desc = "WEEEEOOO. WEEEEEOOO. STOP THAT MONKEY. WEEEOOOO."
 	icon_state = "justice2"
-	toggle_message = "You turn off the light on"
-	alt_toggle_message = "You turn on the light on"
+	toggle_message = "I turn off the light on"
+	alt_toggle_message = "I turn on the light on"
 
 /obj/item/clothing/head/helmet/swat
 	name = "\improper SWAT helmet"
@@ -971,7 +971,7 @@
 			var/obj/item/flashlight/seclite/S = I
 			if(!user.transferItemToLoc(S, src))
 				return
-			to_chat(user, span_notice("You click [S] into place on [src]."))
+			to_chat(user, span_notice("I click [S] into place on [src]."))
 			set_attached_light(S)
 			update_helmlight()
 			update_icon()
@@ -986,7 +986,7 @@
 	. = ..()
 	if(can_flashlight && attached_light) //if it has a light but can_flashlight is false, the light is permanently attached.
 		I.play_tool_sound(src)
-		to_chat(user, span_notice("You unscrew [attached_light] from [src]."))
+		to_chat(user, span_notice("I unscrew [attached_light] from [src]."))
 		attached_light.forceMove(drop_location())
 		if(Adjacent(user) && !issilicon(user))
 			user.put_in_hands(attached_light)
@@ -1013,7 +1013,7 @@
 		return
 	attached_light.on = !attached_light.on
 	attached_light.update_brightness()
-	to_chat(user, span_notice("You toggle the helmet light [attached_light.on ? "on":"off"]."))
+	to_chat(user, span_notice("I toggle the helmet light [attached_light.on ? "on":"off"]."))
 
 	playsound(user, 'sound/weapons/empty.ogg', 100, TRUE)
 	update_helmlight()

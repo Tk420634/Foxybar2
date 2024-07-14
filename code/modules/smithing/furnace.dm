@@ -46,7 +46,7 @@
 	if(istype(I, /obj/item/ingot))
 		var/obj/item/ingot/notsword = I
 		if(working)
-			to_chat(user, "You heat the [notsword] in the [src].")
+			to_chat(user, "I heat the [notsword] in the [src].")
 			notsword.workability = "shapeable"
 			notsword.icon_state = "hot_ingot"
 			notsword.set_light_on(TRUE)

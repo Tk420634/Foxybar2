@@ -164,7 +164,7 @@
 			if(!is_blocked_turf(T, TRUE))
 				destinations += T
 		if(!LAZYLEN(destinations))
-			to_chat(owner, span_warning("You need more space to summon your cult!"))
+			to_chat(owner, span_warning("I need more space to summon your cult!"))
 			return
 		if(do_after(owner, 30, target = owner))
 			for(var/datum/mind/B in antag.cult_team.members)
@@ -252,9 +252,9 @@
 
 /obj/effect/proc_holder/cultmark/proc/toggle(mob/user)
 	if(active)
-		remove_ranged_ability(span_cult("You cease the marking ritual."))
+		remove_ranged_ability(span_cult("I cease the marking ritual."))
 	else
-		add_ranged_ability(user, span_cult("You prepare to mark a target for your cult..."))
+		add_ranged_ability(user, span_cult("I prepare to mark a target for your cult..."))
 
 /obj/effect/proc_holder/cultmark/InterceptClickOn(mob/living/caller, params, atom/target)
 	if(..())
@@ -335,24 +335,24 @@
 		button_icon_state = "cult_mark"
 		owner.update_action_buttons_icon()
 		SEND_SOUND(owner, 'sound/magic/enter_blood.ogg')
-		to_chat(owner,span_cultbold("Your previous mark is gone - you are now ready to create a new blood mark."))
+		to_chat(owner,span_cultbold("My previous mark is gone - you are now ready to create a new blood mark."))
 
 /datum/action/innate/cult/ghostmark/Activate()
 	var/datum/antagonist/cult/C = owner.mind.has_antag_datum(/datum/antagonist/cult,TRUE)
 	if(!C.cult_team)
-		to_chat(owner, span_cultbold("You are alone. You do not have a team."))
+		to_chat(owner, span_cultbold("I am alone. You do not have a team."))
 		return
 	if(C.cult_team.blood_target)
 		if(cooldown > world.time)
 			reset_blood_target(C.cult_team)
-			to_chat(owner, span_cultbold("You have cleared the cult's blood target!"))
+			to_chat(owner, span_cultbold("I have cleared the cult's blood target!"))
 			deltimer(C.cult_team.blood_target_reset_timer)
 			return
 		else
 			to_chat(owner, span_cultbold("The cult has already designated a target!"))
 			return
 	if(cooldown > world.time)
-		to_chat(owner, span_cultbold("You aren't ready to place another blood mark yet!"))
+		to_chat(owner, span_cultbold("I am not ready to place another blood mark yet!"))
 		return
 	target = owner.orbiting?.parent || get_turf(owner)
 	if(!target)
@@ -372,7 +372,7 @@
 			to_chat(B.current, "<span class='cultlarge'><b>[owner] has marked [C.cult_team.blood_target] in the [A.name] as the cult's top priority, get there immediately!</b></span>")
 			SEND_SOUND(B.current, sound(pick('sound/hallucinations/over_here2.ogg','sound/hallucinations/over_here3.ogg'),0,1,75))
 			B.current.client.images += C.cult_team.blood_target_image
-	to_chat(owner,span_cultbold("You have marked the [target] for the cult! It will last for [DisplayTimeText(base_cooldown)]."))
+	to_chat(owner,span_cultbold("I have marked the [target] for the cult! It will last for [DisplayTimeText(base_cooldown)]."))
 	name = "Clear the Blood Mark"
 	desc = "Remove the Blood Mark you previously set."
 	button_icon_state = "emp"
@@ -432,10 +432,10 @@
 
 /obj/effect/proc_holder/pulse/proc/toggle(mob/user)
 	if(active)
-		remove_ranged_ability(span_cult("You cease your preparations..."))
+		remove_ranged_ability(span_cult("I cease your preparations..."))
 		attached_action.throwing = FALSE
 	else
-		add_ranged_ability(user, span_cult("You prepare to tear through the fabric of reality..."))
+		add_ranged_ability(user, span_cult("I prepare to tear through the fabric of reality..."))
 
 /obj/effect/proc_holder/pulse/InterceptClickOn(mob/living/caller, params, atom/target)
 	if(..())

@@ -30,8 +30,8 @@
 
 	var/dat
 	dat += "Gang Name: <B>[gang.name]</B><br>"
-	dat += "Your Influence: <B>[gang.influence]</B><br>"
-	dat += "You can gain influence by doing various tasks, or by bribing underground suppliers by using valid currency on the Gangtool device.<br>"
+	dat += "My Influence: <B>[gang.influence]</B><br>"
+	dat += "I can gain influence by doing various tasks, or by bribing underground suppliers by using valid currency on the Gangtool device.<br>"
 	dat += "<hr>"
 
 	dat += "<br>"
@@ -116,5 +116,5 @@
 		to_chat(usr, "Invalid currency! Do not try our patience!")
 		return
 	playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
-	to_chat(usr, "You gain [inserted_value] gang influence by bribing underground suppliers.")
+	to_chat(usr, "I gain [inserted_value] gang influence by bribing underground suppliers.")
 	attack_self(usr)

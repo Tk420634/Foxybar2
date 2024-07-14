@@ -6,8 +6,8 @@
 	zone = BODY_ZONE_PRECISE_GROIN
 	slot = ORGAN_SLOT_PENIS
 	masturbation_verb = "stroke"
-	arousal_verb = "You pop a boner"
-	unarousal_verb = "Your boner goes down"
+	arousal_verb = "I pop a boner"
+	unarousal_verb = "My boner goes down"
 	genital_flags = CAN_MASTURBATE_WITH|GENITAL_CAN_AROUSE|UPDATE_OWNER_APPEARANCE|GENITAL_CAN_TAUR|GENITAL_CAN_RECOLOR|GENITAL_CAN_RESIZE|GENITAL_CAN_RESHAPE
 	linked_organ_slot = ORGAN_SLOT_TESTICLES
 	fluid_transfer_factor = 0.5
@@ -55,7 +55,7 @@
 /obj/item/organ/genital/penis/update_size(modified = FALSE)
 	if(length <= 0)//I don't actually know what round() does to negative numbers, so to be safe!!
 		if(owner)
-			to_chat(owner, span_warning("You feel your tallywacker shrinking away from your body as your groin flattens out!</b>"))
+			to_chat(owner, span_warning("I feel your tallywacker shrinking away from your body as your groin flattens out!</b>"))
 		QDEL_IN(src, 1)
 		if(linked_organ)
 			QDEL_IN(linked_organ, 1)
@@ -79,9 +79,9 @@
 
 	if(owner)
 		if (round(length) > round(prev_length))
-			to_chat(owner, span_warning("Your [pick(GLOB.dick_nouns)] [pick("swells up to", "flourishes into", "expands into", "bursts forth into", "grows eagerly into", "amplifys into")] a [uppertext(round(length))] inch penis.</b>"))
+			to_chat(owner, span_warning("My [pick(GLOB.dick_nouns)] [pick("swells up to", "flourishes into", "expands into", "bursts forth into", "grows eagerly into", "amplifys into")] a [uppertext(round(length))] inch penis.</b>"))
 		else if ((round(length) < round(prev_length)) && (length > 0.5))
-			to_chat(owner, span_warning("Your [pick(GLOB.dick_nouns)] [pick("shrinks down to", "decreases into", "diminishes into", "deflates into", "shrivels regretfully into", "contracts into")] a [uppertext(round(length))] inch penis.</b>"))
+			to_chat(owner, span_warning("My [pick(GLOB.dick_nouns)] [pick("shrinks down to", "decreases into", "diminishes into", "deflates into", "shrivels regretfully into", "contracts into")] a [uppertext(round(length))] inch penis.</b>"))
 	icon_state = sanitize_text("penis_[shape]_[size]")
 	diameter = (length * diameter_ratio)//Is it just me or is this ludicous, why not make it exponentially decay?
 
@@ -106,7 +106,7 @@
 			if(T.taur_mode & S.accepted_taurs) //looks out of place on those.
 				lowershape = "taur, [lowershape]"
 
-	desc = "You see [aroused_state ? "an erect" : "a flaccid"] [lowershape] [name]. You estimate it's about [round(length, 0.25)] inch[round(length, 0.25) != 1 ? "es" : ""] long and [round(diameter, 0.25)] inch[round(diameter, 0.25) != 1 ? "es" : ""] in diameter."
+	desc = "I see [aroused_state ? "an erect" : "a flaccid"] [lowershape] [name]. You estimate it's about [round(length, 0.25)] inch[round(length, 0.25) != 1 ? "es" : ""] long and [round(diameter, 0.25)] inch[round(diameter, 0.25) != 1 ? "es" : ""] in diameter."
 
 /obj/item/organ/genital/penis/get_features(mob/living/carbon/human/H)
 	var/datum/dna/D = H.dna
@@ -143,11 +143,11 @@
 	return "Limp and just fine"
 
 /obj/item/organ/genital/penis/on_arouse()
-	owner?.show_message(span_userlove("You feel your penis become erect."))
+	owner?.show_message(span_userlove("I feel your penis become erect."))
 	. = ..()
 
 /obj/item/organ/genital/penis/on_unarouse()
-	owner?.show_message(span_userlove("You feel your erection fade."))
+	owner?.show_message(span_userlove("I feel your erection fade."))
 	. = ..()
 
 /// Returns its respective sprite accessory from the global list (full of init'd types, hopefully)

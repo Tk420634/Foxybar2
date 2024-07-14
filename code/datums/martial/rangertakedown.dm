@@ -10,7 +10,7 @@
 
 /datum/action/ranger_takedown/Trigger()
 	if(owner.incapacitated())
-		to_chat(owner, span_warning("You can't use [name] while you're incapacitated."))
+		to_chat(owner, span_warning("I can't use [name] while you're incapacitated."))
 		return
 	var/mob/living/carbon/human/H = owner
 	if (H.mind.martial_art.streak == "ranger_takedown")
@@ -18,7 +18,7 @@
 		H.mind.martial_art.streak = ""
 	else
 		if(HAS_TRAIT(H, TRAIT_PACIFISM))
-			to_chat(H, span_warning("You don't want to harm other people!"))
+			to_chat(H, span_warning("I don't want to harm other people!"))
 			return
 		owner.visible_message(span_danger("[owner] assumes the Ranger Takedown stance!"), "<b><i>Your next attack will be a Ranger Takedown.</i></b>")
 		H.mind.martial_art.streak = "ranger_takedown"

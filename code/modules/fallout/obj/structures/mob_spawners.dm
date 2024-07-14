@@ -120,7 +120,7 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 	// 	..()
 	// else
 	// 	if(user.a_intent == INTENT_HARM)
-	// 		to_chat(user, span_warning("You feel it is impossible to destroy this without covering it with something."))
+	// 		to_chat(user, span_warning("I feel it is impossible to destroy this without covering it with something."))
 	// 		return
 
 /obj/structure/nest/proc/remove_nest()
@@ -135,16 +135,16 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 		to_chat(user, span_warning("\The [src] is already covered!"))
 		return
 	if(!istype(S))
-		to_chat(user, span_warning("You cant cover \the [src] with that!"))
+		to_chat(user, span_warning("I cant cover \the [src] with that!"))
 		return
 	if(LAZYLEN(targeted_by)) // Don't let multiple people cover at the same time.
 		to_chat(user, span_warning("Someone's already covering \the [src]!"))
 		return
 	if(S.amount < 4)
-		to_chat(user, span_warning("You need four of [S.name] in order to cover \The [src]!"))
+		to_chat(user, span_warning("I need four of [S.name] in order to cover \The [src]!"))
 		return
 	if(!do_after(user, 5 SECONDS, FALSE, src))
-		to_chat(user, span_warning("You must stand still to build the cover!"))
+		to_chat(user, span_warning("I must stand still to build the cover!"))
 		return
 	S.use(4)
 	if(!made_loot)
@@ -153,7 +153,7 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 		if(junk && !QDELETED(junk))
 			qdel(junk)
 		if(istype(user))
-			to_chat(user, span_warning("You find something while covering the hole!"))
+			to_chat(user, span_warning("I find something while covering the hole!"))
 	do_seal(itempath, cover_state, timer)
 
 /obj/structure/nest/proc/do_seal(itempath, cover_state, timer)
@@ -172,7 +172,7 @@ GLOBAL_LIST_EMPTY(player_made_nests)
 		return
 	I.play_tool_sound(src, 50)
 	if(!do_after(user, 5 SECONDS, FALSE, src))
-		to_chat(user, span_warning("You must stand still to unseal the cover!"))
+		to_chat(user, span_warning("I must stand still to unseal the cover!"))
 		return
 	do_unseal()
 

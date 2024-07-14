@@ -1,6 +1,6 @@
 /obj/structure/life_candle
 	name = "life candle"
-	desc = "You are dead. Insert quarter to continue."
+	desc = "I am dead. Insert quarter to continue."
 	icon = 'icons/obj/candle.dmi'
 	icon_state = "candle1"
 	light_color = LIGHT_COLOR_FIRE
@@ -28,10 +28,10 @@
 	if(!user.mind)
 		return
 	if(user.mind in linked_minds)
-		user.visible_message(span_notice("[user] reaches out and pinches the flame of [src]."), span_warning("You sever the connection between yourself and [src]."))
+		user.visible_message(span_notice("[user] reaches out and pinches the flame of [src]."), span_warning("I sever the connection between yourself and [src]."))
 		linked_minds -= user.mind
 	else
-		user.visible_message(span_notice("[user] touches [src]. It seems to respond to [user.p_their()] presence!"), span_warning("You create a connection between you and [src]."))
+		user.visible_message(span_notice("[user] touches [src]. It seems to respond to [user.p_their()] presence!"), span_warning("I create a connection between you and [src]."))
 		linked_minds |= user.mind
 
 	update_icon()

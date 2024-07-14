@@ -114,7 +114,7 @@
 /// Specific hulk checks due to reflection chance for balance issues and switches hitsounds.
 /obj/item/dualsaber/proc/on_wield(obj/item/source, mob/living/carbon/user)
 	if(user.has_dna() && user.dna.check_mutation(HULK))
-		to_chat(user, span_warning("You lack the grace to wield this!"))
+		to_chat(user, span_warning("I lack the grace to wield this!"))
 		return COMPONENT_TWOHANDED_BLOCK_WIELD
 	wielded = TRUE
 	sharpness = SHARP_EDGED
@@ -154,7 +154,7 @@
 
 /obj/item/dualsaber/attack(mob/target, mob/living/carbon/human/user)
 	if(user.has_dna() && user.dna.check_mutation(HULK))
-		to_chat(user, span_warning("You grip the blade too hard and accidentally drop it!"))
+		to_chat(user, span_warning("I grip the blade too hard and accidentally drop it!"))
 		user.dropItemToGround(src)
 		return
 	..()
@@ -174,7 +174,7 @@
 		sleep(1)
 
 /obj/item/dualsaber/proc/impale(mob/living/user)
-	to_chat(user, span_warning("You twirl around a bit before losing your balance and impaling yourself on [src]."))
+	to_chat(user, span_warning("I twirl around a bit before losing your balance and impaling yourself on [src]."))
 	if (force)
 		user.take_bodypart_damage(20,25)
 	else
@@ -190,7 +190,7 @@
 
 /obj/item/dualsaber/attack_hulk(mob/living/carbon/human/user, does_attack_animation = 0)  //In case thats just so happens that it is still activated on the groud, prevents hulk from picking it up
 	if(wielded)
-		to_chat(user, span_warning("You can't pick up such dangerous item with your meaty hands without losing fingers, better not to!"))
+		to_chat(user, span_warning("I can't pick up such dangerous item with your meaty hands without losing fingers, better not to!"))
 		return 1
 
 /obj/item/dualsaber/process()
@@ -297,7 +297,7 @@
 	if(!user.canUseTopic(src, BE_CLOSE, FALSE) || hacked)
 		return
 	if(user.incapacitated(allow_crit = TRUE) || !istype(user))
-		to_chat(user, span_warning("You can't do that right now!"))
+		to_chat(user, span_warning("I can't do that right now!"))
 		return
 	if(alert("Are you sure you want to recolor your blade?", "Confirm Repaint", "Yes", "No") == "Yes")
 		var/energy_color_input = input(usr,"","Choose Energy Color",light_color) as color|null

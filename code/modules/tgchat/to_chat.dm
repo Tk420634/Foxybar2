@@ -60,7 +60,7 @@
  * ```
  * to_chat(client,
  *     type = MESSAGE_TYPE_INFO,
- *     html = "You have found <strong>[object]</strong>")
+ *     html = "I have found <strong>[object]</strong>")
  * ```
  */
 /proc/to_chat(

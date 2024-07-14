@@ -56,5 +56,5 @@
 
 	if(isliving(AM))
 		var/mob/living/L = AM
-		to_chat(L, span_warning("You feel something click beneath you!"))
+		to_chat(L, span_warning("I feel something click beneath you!"))
 	addtimer(CALLBACK(src,PROC_REF(drive)), drive_delay)

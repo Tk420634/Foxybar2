@@ -38,7 +38,7 @@
 			new /obj/item/stack/sheet/mineral/wood(src)
 		else
 			new floor_tile(src)
-		to_chat(user, span_danger("You unscrew the planks."))
+		to_chat(user, span_danger("I unscrew the planks."))
 		make_plating()
 		playsound(src, C.usesound, 80, 1)
 		return

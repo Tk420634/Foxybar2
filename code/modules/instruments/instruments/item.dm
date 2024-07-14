@@ -68,7 +68,7 @@
 
 /obj/item/instrument/attack_self(mob/user)
 	//if(!user.IsAdvancedToolUser())
-	//	to_chat(user, span_warning("You don't have the dexterity to do this!"))
+	//	to_chat(user, span_warning("I don't have the dexterity to do this!"))
 	//	return TRUE
 	interact(user)
 
@@ -77,13 +77,13 @@
 		var/mob/living/carbon/human/H = user
 		if (HAS_TRAIT(H, TRAIT_MUSICIAN))
 			if (!is_tuned())
-				H.visible_message("[H] tunes the [src] to perfection!", span_notice("You tune the [src] to perfection!"))
+				H.visible_message("[H] tunes the [src] to perfection!", span_notice("I tune the [src] to perfection!"))
 				tune_time_left = 30 MINUTES
 				START_PROCESSING(SSprocessing, src)
 			else
 				to_chat(H, span_notice("[src] is already well tuned!"))
 		else
-			to_chat(H, span_warning("You have no idea how to use this."))
+			to_chat(H, span_warning("I have no idea how to use this."))
 
 /obj/item/instrument/proc/is_tuned()
 	return tune_time_left > 0
@@ -352,7 +352,7 @@
 
 /obj/item/instrument/harmonica/proc/handle_speech(datum/source, list/speech_args)
 	if(song.playing && ismob(loc))
-		to_chat(loc, span_warning("You stop playing the harmonica to talk..."))
+		to_chat(loc, span_warning("I stop playing the harmonica to talk..."))
 		song.playing = FALSE
 
 /obj/item/instrument/harmonica/equipped(mob/M, slot)

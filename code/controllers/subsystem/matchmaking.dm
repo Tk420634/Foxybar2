@@ -201,7 +201,7 @@ SUBSYSTEM_DEF(matchmaking)
 /datum/matchmaking_pref/friend
 	pref_text = "Friends"
 	target_type = /datum/matchmaking_pref/friend
-	acquire_memory = "You remember a friendly face you haven't seen in a while"
+	acquire_memory = "I remember a friendly face you haven't seen in a while"
 	span_class = "nicegreen"
 	max_matches = 3
 	log_verb = "revisited fond moments with"
@@ -210,7 +210,7 @@ SUBSYSTEM_DEF(matchmaking)
 /datum/matchmaking_pref/rival
 	pref_text = "Rivals"
 	target_type = /datum/matchmaking_pref/rival
-	acquire_memory = "You remember a good-for-nothing piece of bad memory"
+	acquire_memory = "I remember a good-for-nothing piece of bad memory"
 	span_class = "red"
 	max_matches = 3
 	log_verb = "held mutual contempt for"
@@ -219,7 +219,7 @@ SUBSYSTEM_DEF(matchmaking)
 /datum/matchmaking_pref/mentor
 	pref_text = "Be someone's mentor"
 	target_type = /datum/matchmaking_pref/disciple
-	acquire_memory = "You remember an old disciple you once taught"
+	acquire_memory = "I remember an old disciple you once taught"
 	span_class = "blue"
 	log_verb = "taught"
 
@@ -227,7 +227,7 @@ SUBSYSTEM_DEF(matchmaking)
 /datum/matchmaking_pref/disciple
 	pref_text = "Have a mentor"
 	target_type = /datum/matchmaking_pref/mentor
-	acquire_memory = "You remember an old mentor you've lost contact with"
+	acquire_memory = "I remember an old mentor you've lost contact with"
 	span_class = "blue"
 	log_verb = "was mentored by"
 
@@ -235,7 +235,7 @@ SUBSYSTEM_DEF(matchmaking)
 /datum/matchmaking_pref/patron
 	pref_text = "Be someone's patron"
 	target_type = /datum/matchmaking_pref/protegee
-	acquire_memory = "You remember an old protegee you once took care of. They owe you, and should remember it"
+	acquire_memory = "I remember an old protegee you once took care of. They owe you, and should remember it"
 	span_class = "green"
 	log_verb = "extended their protection to"
 
@@ -243,7 +243,7 @@ SUBSYSTEM_DEF(matchmaking)
 /datum/matchmaking_pref/protegee
 	pref_text = "Have a patron"
 	target_type = /datum/matchmaking_pref/patron
-	acquire_memory = "You remember an old patron who once helped you set youreself up in life. You owe them one, you'd be in a bad position if not for them"
+	acquire_memory = "I remember an old patron who once helped you set youreself up in life. You owe them one, you'd be in a bad position if not for them"
 	span_class = "green"
 	log_verb = "owed favors to"
 
@@ -252,7 +252,7 @@ SUBSYSTEM_DEF(matchmaking)
 	pref_text = "Hunters after you"
 	target_type = /datum/matchmaking_pref/bounty_hunter
 	spawn_time = 5 MINUTES
-	acquire_memory = "You remember the foul deeds you've done. You hope they don't come back to haunt you"
+	acquire_memory = "I remember the foul deeds you've done. You hope they don't come back to haunt you"
 	span_class = "danger"
 	we_know_target = FALSE
 	remind_only_first_time = TRUE
@@ -264,7 +264,7 @@ SUBSYSTEM_DEF(matchmaking)
 	pref_text = "Hunt outlaw bounties"
 	target_type = /datum/matchmaking_pref/outlaw
 	spawn_time = 5 MINUTES
-	acquire_memory = "You remember the face in the wanted poster of a criminal, rumored to be wandering this area, for whose head you've been promised a reward"
+	acquire_memory = "I remember the face in the wanted poster of a criminal, rumored to be wandering this area, for whose head you've been promised a reward"
 	span_class = "danger"
 	max_matches = 3
 	log_verb = "hunted"

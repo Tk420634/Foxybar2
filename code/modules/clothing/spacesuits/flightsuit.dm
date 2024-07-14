@@ -830,7 +830,7 @@
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		if(src == H.wear_suit && locked)
-			usermessage("You can not take a locked hardsuit off! Unlock it first!", "boldwarning")
+			usermessage("I can not take a locked hardsuit off! Unlock it first!", "boldwarning")
 			return FALSE
 	return ..()
 
@@ -848,7 +848,7 @@
 /obj/item/clothing/suit/space/hardsuit/flightsuit/ToggleHelmet()
 	if(!suittoggled)
 		if(!locked)
-			usermessage("You must lock your suit before engaging the helmet!", "boldwarning")
+			usermessage("I must lock your suit before engaging the helmet!", "boldwarning")
 			return FALSE
 	..()
 
@@ -864,16 +864,16 @@
 /obj/item/clothing/suit/space/hardsuit/flightsuit/proc/unlock_suit(mob/wearer)
 	if(user)
 		if(suittoggled)
-			usermessage("You must retract the helmet before unlocking your suit!", "boldwarning")
+			usermessage("I must retract the helmet before unlocking your suit!", "boldwarning")
 			return FALSE
 		if(pack && pack.flight)
-			usermessage("You must shut off the flight-pack before unlocking your suit!", "boldwarning")
+			usermessage("I must shut off the flight-pack before unlocking your suit!", "boldwarning")
 			return FALSE
 		if(deployedpack)
-			usermessage("Your flightpack must be fully retracted first!", "boldwarning")
+			usermessage("My flightpack must be fully retracted first!", "boldwarning")
 			return FALSE
 		if(deployedshoes)
-			usermessage("Your flight shoes must be fully retracted first!", "boldwarning")
+			usermessage("My flight shoes must be fully retracted first!", "boldwarning")
 			return FALSE
 		if(wearer)
 			user.visible_message(span_notice("[wearer]'s flight suit detaches from [wearer.p_their()] body, becoming nothing more then a bulky metal skeleton."))
@@ -890,7 +890,7 @@
 	if(deployedpack)
 		retract_flightpack()
 	if(!locked)
-		usermessage("You must lock your flight suit first before deploying anything!", "boldwarning")
+		usermessage("I must lock your flight suit first before deploying anything!", "boldwarning")
 		return FALSE
 	if(ishuman(user))
 		if(user.back)
@@ -907,7 +907,7 @@
 /obj/item/clothing/suit/space/hardsuit/flightsuit/proc/retract_flightpack(forced = FALSE)
 	if(ishuman(user))
 		if(pack.flight && !forced)
-			usermessage("You must disable the engines before retracting the flightpack!", "boldwarning")
+			usermessage("I must disable the engines before retracting the flightpack!", "boldwarning")
 			return FALSE
 		if(pack.flight && forced)
 			pack.disable_flight(1)
@@ -928,7 +928,7 @@
 	if(deployedshoes)
 		retract_flightshoes()
 	if(!locked)
-		usermessage("You must lock your flight suit first before deploying anything!", "boldwarning")
+		usermessage("I must lock your flight suit first before deploying anything!", "boldwarning")
 		return FALSE
 	if(ishuman(user))
 		if(user.shoes)
@@ -978,40 +978,40 @@
 	pack.delink_suit()
 	pack.forceMove(get_turf(src))
 	pack = null
-	usermessage("You detach the flightpack.")
+	usermessage("I detach the flightpack.")
 
 /obj/item/clothing/suit/space/hardsuit/flightsuit/proc/attach_pack(obj/item/flightpack/F)
 	F.forceMove(src)
 	pack = F
 	pack.relink_suit(src)
-	usermessage("You attach and fasten the flightpack.")
+	usermessage("I attach and fasten the flightpack.")
 
 /obj/item/clothing/suit/space/hardsuit/flightsuit/proc/detach_shoes()
 	shoes.delink_suit()
 	shoes.forceMove(get_turf(src))
 	shoes = null
-	usermessage("You detach the flight shoes.")
+	usermessage("I detach the flight shoes.")
 
 /obj/item/clothing/suit/space/hardsuit/flightsuit/proc/attach_shoes(obj/item/clothing/shoes/flightshoes/S)
 	S.forceMove(src)
 	shoes = S
 	shoes.relink_suit(src)
-	usermessage("You attach and fasten a pair of flight shoes.")
+	usermessage("I attach and fasten a pair of flight shoes.")
 
 /obj/item/clothing/suit/space/hardsuit/flightsuit/attackby(obj/item/I, mob/wearer, params)
 	user = wearer
 	if(src == user.get_item_by_slot(SLOT_WEAR_SUIT))
-		usermessage("You can not perform any service without taking the suit off!", "boldwarning")
+		usermessage("I can not perform any service without taking the suit off!", "boldwarning")
 		return FALSE
 	else if(locked)
-		usermessage("You can not perform any service while the suit is locked!", "boldwarning")
+		usermessage("I can not perform any service while the suit is locked!", "boldwarning")
 		return FALSE
 	else if(istype(I, /obj/item/screwdriver))
 		if(!maint_panel)
 			maint_panel = TRUE
 		else
 			maint_panel = FALSE
-		usermessage("You [maint_panel? "open" : "close"] the maintenance panel.")
+		usermessage("I [maint_panel? "open" : "close"] the maintenance panel.")
 		return FALSE
 	else if(!maint_panel)
 		usermessage("The maintenance panel is closed!", "boldwarning")
@@ -1028,7 +1028,7 @@
 		var/input = input(user, "What to remove?", "Removing module") as null|anything in list("Pack", "Shoes")
 		if(pack && input == "Pack")
 			if(pack.flight)
-				usermessage("You can not pry off an active flightpack!", "boldwarning")
+				usermessage("I can not pry off an active flightpack!", "boldwarning")
 				return FALSE
 			if(deployedpack)
 				usermessage("Disengage the flightpack first!", "boldwarning")

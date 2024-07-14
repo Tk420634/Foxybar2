@@ -100,11 +100,11 @@
 
 	if(I.use_tool(src, user, 0, volume=40))
 		adjustBruteLoss(-15)
-		to_chat(user, span_info("You repair some of the armor on [src]."))
+		to_chat(user, span_info("I repair some of the armor on [src]."))
 
 /mob/living/simple_animal/hostile/mining_drone/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/mining_scanner) || istype(I, /obj/item/t_scanner/adv_mining_scanner))
-		to_chat(user, span_info("You instruct [src] to drop any collected ore."))
+		to_chat(user, span_info("I instruct [src] to drop any collected ore."))
 		DropOre()
 		return
 	if(istype(I, /obj/item/crowbar) || istype(I, /obj/item/borg/upgrade/modkit))
@@ -154,7 +154,7 @@
 	minimum_distance = 1
 	retreat_distance = null
 	icon_state = "mining_drone"
-	to_chat(src, span_info("You are set to collect mode. You can now collect loose ore."))
+	to_chat(src, span_info("I am set to collect mode. You can now collect loose ore."))
 
 /mob/living/simple_animal/hostile/mining_drone/proc/SetOffenseBehavior()
 	mode = MINEDRONE_ATTACK
@@ -165,7 +165,7 @@
 	retreat_distance = 2
 	minimum_distance = 1
 	icon_state = "mining_drone_offense"
-	to_chat(src, span_info("You are set to attack mode. You can now attack from range."))
+	to_chat(src, span_info("I am set to attack mode. You can now attack from range."))
 
 /mob/living/simple_animal/hostile/mining_drone/AttackingTarget()
 	var/atom/my_target = get_target()
@@ -188,10 +188,10 @@
 /mob/living/simple_animal/hostile/mining_drone/proc/DropOre(message = 1)
 	if(!contents.len)
 		if(message)
-			to_chat(src, span_notice("You attempt to dump your stored ore, but you have none."))
+			to_chat(src, span_notice("I attempt to dump your stored ore, but you have none."))
 		return
 	if(message)
-		to_chat(src, span_notice("You dump your stored ore."))
+		to_chat(src, span_notice("I dump your stored ore."))
 	for(var/obj/item/stack/ore/O in contents)
 		O.forceMove(drop_location())
 
@@ -215,7 +215,7 @@
 
 	user.sync_lighting_plane_alpha()
 
-	to_chat(user, span_notice("You toggle your meson vision [(user.sight & SEE_TURFS) ? "on" : "off"]."))
+	to_chat(user, span_notice("I toggle your meson vision [(user.sight & SEE_TURFS) ? "on" : "off"]."))
 
 
 /mob/living/simple_animal/hostile/mining_drone/proc/toggle_mode()
@@ -240,7 +240,7 @@
 	var/mob/living/simple_animal/hostile/mining_drone/user = owner
 
 	user.set_light_on(!user.light_on)
-	to_chat(user, span_notice("You toggle your light [user.light_on ? "on" : "off"]."))
+	to_chat(user, span_notice("I toggle your light [user.light_on ? "on" : "off"]."))
 
 /datum/action/innate/minedrone/toggle_mode
 	name = "Toggle Mode"

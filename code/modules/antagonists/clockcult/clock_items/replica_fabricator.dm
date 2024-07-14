@@ -77,7 +77,7 @@
 		return FALSE
 	if(repairing)
 		if(!silent)
-			to_chat(user, span_warning("You are currently repairing [repairing] with [src]!"))
+			to_chat(user, span_warning("I am currently repairing [repairing] with [src]!"))
 		return FALSE
 	var/list/fabrication_values = target.fabrication_vals(user, src, silent) //relevant values for fabricating stuff, given as an associated list
 	if(!islist(fabrication_values))
@@ -111,29 +111,29 @@
 			var/atom/A = fabrication_values["new_obj_type"]
 			if(A)
 				user.visible_message(span_warning("[user]'s [name] starts ripping [target] apart!"), \
-				span_brass("You start fabricating \a [initial(A.name)] from [target]..."))
+				span_brass("I start fabricating \a [initial(A.name)] from [target]..."))
 			else
 				user.visible_message(span_warning("[user]'s [name] starts consuming [target]!"), \
-				span_brass("Your [name] starts consuming [target]..."))
+				span_brass("My [name] starts consuming [target]..."))
 		if(!do_after(user, fabrication_values["operation_time"], target = target, extra_checks = CALLBACK(src,PROC_REF(fabricate_checks), fabrication_values, target, target_type, user, TRUE)))
 			return FALSE
 		if(!silent)
 			var/atom/A = fabrication_values["new_obj_type"]
 			if(A)
 				user.visible_message(span_warning("[user]'s [name] replaces [target] with \a [initial(A.name)]!"), \
-				span_brass("You fabricate \a [initial(A.name)] from [target]."))
+				span_brass("I fabricate \a [initial(A.name)] from [target]."))
 			else
 				user.visible_message(span_warning("[user]'s [name] consumes [target]!"), \
-				span_brass("Your [name] consumes [target]."))
+				span_brass("My [name] consumes [target]."))
 	else
 		if(!silent)
 			var/atom/A = fabrication_values["new_obj_type"]
 			if(A)
 				user.visible_message(span_warning("[user]'s [name] rips apart [target], replacing it with \a [initial(A.name)]!"), \
-				span_brass("You fabricate \a [initial(A.name)] from [target]."))
+				span_brass("I fabricate \a [initial(A.name)] from [target]."))
 			else
 				user.visible_message(span_warning("[user]'s [name] rapidly consumes [target]!"), \
-				span_brass("Your [name] consumes [target]."))
+				span_brass("My [name] consumes [target]."))
 
 	playsound(target, 'sound/items/deconstruct.ogg', 50, 1)
 	var/new_thing_type = fabrication_values["new_obj_type"]
@@ -177,7 +177,7 @@
 			if(!silent)
 				var/atom/A = fabrication_values["new_obj_type"]
 				if(A)
-					to_chat(user, span_warning("You need <b>[DisplayPower(fabrication_values["power_cost"])]</b> power to fabricate \a [initial(A.name)] from [target]!"))
+					to_chat(user, span_warning("I need <b>[DisplayPower(fabrication_values["power_cost"])]</b> power to fabricate \a [initial(A.name)] from [target]!"))
 		return FALSE
 	return TRUE
 
@@ -193,7 +193,7 @@
 			return FALSE
 		if(L.health >= L.maxHealth || (L.flags_1 & GODMODE))
 			if(!silent)
-				to_chat(user, span_warning("[L == user ? "You are" : "[L] is"] at maximum health!"))
+				to_chat(user, span_warning("[L == user ? "I am" : "[L] is"] at maximum health!"))
 			return FALSE
 		repair_values["amount_to_heal"] = L.maxHealth - L.health
 	else if(isobj(target))

@@ -115,7 +115,7 @@
 	if(trash)
 		generate_trash(T)
 
-	visible_message(span_warning("[src] has been squashed."),span_italic("You hear a smack."))
+	visible_message(span_warning("[src] has been squashed."),span_italic("I hear a smack."))
 	if(seed)
 		for(var/datum/plant_gene/trait/trait in seed.genes)
 			trait.on_squash(src, target)
@@ -170,4 +170,4 @@
 		T = generate_trash()
 		qdel(src)
 		user.putItemFromInventoryInHandIfPossible(T, user.active_hand_index, TRUE)
-		to_chat(user, span_notice("You open [src]\'s shell, revealing \a [T]."))
+		to_chat(user, span_notice("I open [src]\'s shell, revealing \a [T]."))

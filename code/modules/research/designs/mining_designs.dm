@@ -24,7 +24,7 @@
 
 /datum/design/drill
 	name = "Mining Drill"
-	desc = "Yours is the drill that will pierce through the rock walls."
+	desc = "Mys is the drill that will pierce through the rock walls."
 	id = "drill"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 6000, /datum/material/glass = 1000) //expensive, but no need for miners.
@@ -34,7 +34,7 @@
 
 /datum/design/drill_diamond
 	name = "Diamond-Tipped Mining Drill"
-	desc = "Yours is the drill that will pierce the heavens!"
+	desc = "Mys is the drill that will pierce the heavens!"
 	id = "drill_diamond"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 6000, /datum/material/glass = 1000, /datum/material/diamond = 2000) //Yes, a whole diamond is needed.
@@ -44,7 +44,7 @@
 
 /datum/design/plasmacutter
 	name = "Plasma Cutter"
-	desc = "You could use it to cut limbs off of xenos! Or, you know, mine stuff."
+	desc = "I could use it to cut limbs off of xenos! Or, you know, mine stuff."
 	id = "plasmacutter"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 1500, /datum/material/glass = 500, /datum/material/plasma = 400)

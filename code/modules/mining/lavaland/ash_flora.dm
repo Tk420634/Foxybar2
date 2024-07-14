@@ -12,9 +12,9 @@
 	var/harvest_amount_low = 1
 	var/harvest_amount_high = 3
 	var/harvest_time = 60
-	var/harvest_message_low = "You pick a mushroom, but fail to collect many shavings from its cap."
-	var/harvest_message_med = "You pick a mushroom, carefully collecting the shavings from its cap."
-	var/harvest_message_high = "You harvest and collect shavings from several mushroom caps."
+	var/harvest_message_low = "I pick a mushroom, but fail to collect many shavings from its cap."
+	var/harvest_message_med = "I pick a mushroom, carefully collecting the shavings from its cap."
+	var/harvest_message_high = "I harvest and collect shavings from several mushroom caps."
 	var/harvested = FALSE
 	var/base_icon
 	var/regrowth_time_low = 8 MINUTES
@@ -56,7 +56,7 @@
 
 /obj/structure/flora/ash/attackby(obj/item/W, mob/user, params)
 	if(!harvested && needs_sharp_harvest && W.sharpness)
-		user.visible_message(span_notice("[user] starts to harvest from [src] with [W]."),span_notice("You begin to harvest from [src] with [W]."))
+		user.visible_message(span_notice("[user] starts to harvest from [src] with [W]."),span_notice("I begin to harvest from [src] with [W]."))
 		if(do_after(user, harvest_time, target = src))
 			harvest(user)
 	else
@@ -64,7 +64,7 @@
 
 /obj/structure/flora/ash/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
 	if(!harvested && !needs_sharp_harvest)
-		user.visible_message(span_notice("[user] starts to harvest from [src]."),span_notice("You begin to harvest from [src]."))
+		user.visible_message(span_notice("[user] starts to harvest from [src]."),span_notice("I begin to harvest from [src]."))
 		if(do_after(user, harvest_time, target = src))
 			harvest(user)
 
@@ -81,9 +81,9 @@
 	needs_sharp_harvest = FALSE
 	harvest_amount_high = 4
 	harvest_time = 20
-	harvest_message_low = "You pluck a single, suitable leaf."
-	harvest_message_med = "You pluck a number of leaves, leaving a few unsuitable ones."
-	harvest_message_high = "You pluck quite a lot of suitable leaves."
+	harvest_message_low = "I pluck a single, suitable leaf."
+	harvest_message_med = "I pluck a number of leaves, leaving a few unsuitable ones."
+	harvest_message_high = "I pluck quite a lot of suitable leaves."
 	regrowth_time_low = 2400
 	regrowth_time_high = 6000
 
@@ -96,9 +96,9 @@
 	harvest = /obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_cap
 	harvest_amount_high = 4
 	harvest_time = 50
-	harvest_message_low = "You slice the cap off a mushroom."
-	harvest_message_med = "You slice off a few conks from the larger mushrooms."
-	harvest_message_high = "You slice off a number of caps and conks from these mushrooms."
+	harvest_message_low = "I slice the cap off a mushroom."
+	harvest_message_med = "I slice off a few conks from the larger mushrooms."
+	harvest_message_high = "I slice off a number of caps and conks from these mushrooms."
 	regrowth_time_low = 3000
 	regrowth_time_high = 5400
 
@@ -113,9 +113,9 @@
 	harvest = /obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_stem
 	harvest_amount_high = 4
 	harvest_time = 40
-	harvest_message_low = "You pick and slice the cap off a mushroom, leaving the stem."
-	harvest_message_med = "You pick and decapitate several mushrooms for their stems."
-	harvest_message_high = "You acquire a number of stems from these mushrooms."
+	harvest_message_low = "I pick and slice the cap off a mushroom, leaving the stem."
+	harvest_message_med = "I pick and decapitate several mushrooms for their stems."
+	harvest_message_high = "I acquire a number of stems from these mushrooms."
 	regrowth_time_low = 3000
 	regrowth_time_high = 6000
 
@@ -129,9 +129,9 @@
 	needs_sharp_harvest = FALSE
 	harvest_amount_high = 2
 	harvest_time = 10
-	harvest_message_low = "You pick a cactus fruit."
-	harvest_message_med = "You pick several cactus fruit." //shouldn't show up, because you can't get more than two
-	harvest_message_high = "You pick a pair of cactus fruit."
+	harvest_message_low = "I pick a cactus fruit."
+	harvest_message_med = "I pick several cactus fruit." //shouldn't show up, because you can't get more than two
+	harvest_message_high = "I pick a pair of cactus fruit."
 	regrowth_time_low = 4800
 	regrowth_time_high = 7200
 
@@ -178,7 +178,7 @@
 		if(I.w_class > WEIGHT_CLASS_SMALL)
 			to_chat(user, span_warning("The ingredient is too big for [src]!"))
 		else if(contents.len >= 20)
-			to_chat(user, span_warning("You can't add more ingredients to [src]!"))
+			to_chat(user, span_warning("I can't add more ingredients to [src]!"))
 		else
 			if(reagents.has_reagent(/datum/reagent/water, 10)) //are we starting a soup or a salad?
 				var/obj/item/reagent_containers/food/snacks/customizable/A = new/obj/item/reagent_containers/food/snacks/customizable/soup/ashsoup(get_turf(src))
@@ -209,7 +209,7 @@
 		if(I.w_class > WEIGHT_CLASS_SMALL)
 			to_chat(user, span_warning("The ingredient is too big for [src]!"))
 		else if(contents.len >= 20)
-			to_chat(user, span_warning("You can't add more ingredients to [src]!"))
+			to_chat(user, span_warning("I can't add more ingredients to [src]!"))
 		else
 			if(reagents.has_reagent(/datum/reagent/water, 10)) //are we starting a soup or a salad?
 				var/obj/item/reagent_containers/food/snacks/customizable/A = new/obj/item/reagent_containers/food/snacks/customizable/soup/woodsoup(get_turf(src))

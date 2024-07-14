@@ -29,7 +29,7 @@
 	return TRUE
 
 /datum/surgery_step/viral_bond/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, span_notice("You start heating [target]'s bone marrow with [tool]..."),
+	display_results(user, target, span_notice("I start heating [target]'s bone marrow with [tool]..."),
 		"[user] starts heating [target]'s bone marrow with [tool]...",
 		"[user] starts heating something in [target]'s chest with [tool]...")
 

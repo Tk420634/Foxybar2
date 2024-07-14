@@ -5,7 +5,7 @@
 
 /obj/item/poster
 	name = "poorly coded poster"
-	desc = "You probably shouldn't be holding this."
+	desc = "I probably shouldn't be holding this."
 	icon = 'icons/obj/contraband.dmi'
 	force = 0
 	resistance_flags = FLAMMABLE
@@ -112,10 +112,10 @@
 	if(I.tool_behaviour == TOOL_WIRECUTTER)
 		I.play_tool_sound(src, 100)
 		if(ruined)
-			to_chat(user, span_notice("You remove the remnants of the poster."))
+			to_chat(user, span_notice("I remove the remnants of the poster."))
 			qdel(src)
 		else
-			to_chat(user, span_notice("You carefully remove the poster from the wall."))
+			to_chat(user, span_notice("I carefully remove the poster from the wall."))
 			roll_and_drop(user.loc)
 
 
@@ -167,7 +167,7 @@
 			to_chat(user, span_warning("The wall is far too cluttered to place a poster!"))
 			return
 
-	to_chat(user, span_notice("You start placing the poster on the wall...") )
+	to_chat(user, span_notice("I start placing the poster on the wall...") )
 
 	var/obj/structure/sign/poster/D = P.poster_structure
 
@@ -183,7 +183,7 @@
 			return
 
 		if(iswallturf(src) && user && user.loc == temp_loc) //Let's check if everything is still there
-			to_chat(user, span_notice("You place the poster!"))
+			to_chat(user, span_notice("I place the poster!"))
 			return
 
 	to_chat(user, span_notice("The poster falls down!"))
@@ -195,7 +195,7 @@
 	ruined = TRUE
 	icon_state = "poster_ripped"
 	name = "ripped poster"
-	desc = "You can't make out anything from the poster's original print. It's ruined."
+	desc = "I can't make out anything from the poster's original print. It's ruined."
 
 /obj/structure/sign/poster/random
 	name = "random poster" // could even be ripped
@@ -291,7 +291,7 @@
 
 /obj/structure/sign/poster/contraband/have_a_puff
 	name = "Have a Puff"
-	desc = "You have the feeling this poster isn't approved by any medical authority."
+	desc = "I have the feeling this poster isn't approved by any medical authority."
 	icon_state = "poster25"
 
 /obj/structure/sign/poster/contraband/revolver
@@ -331,7 +331,7 @@
 
 /obj/structure/sign/poster/contraband/space_cola
 	name = "Cosmic Cola"
-	desc = "Your favorite cola, now in a can!"
+	desc = "My favorite cola, now in a can!"
 	icon_state = "poster41"
 
 /obj/structure/sign/poster/contraband/kudzu
@@ -350,7 +350,7 @@
 	icon_state = "poster46"
 
 /obj/structure/sign/poster/contraband/syndicate_logo
-	name = "You Bring Democracy to This Land"
+	name = "I Bring Democracy to This Land"
 	desc = "NCR Trooper... YOU bring DEMOCRACY to This Land."
 	icon_state = "poster47"
 
@@ -507,7 +507,7 @@
 	icon_state = "poster45"
 
 /obj/structure/sign/poster/ncr/democracy
-	name = "You Bring Democracy to This Land"
+	name = "I Bring Democracy to This Land"
 	desc = "NCR Trooper... YOU bring DEMOCRACY to This Land."
 	icon_state = "poster47"
 

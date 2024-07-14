@@ -417,7 +417,7 @@
 		if(istype(I, /obj/item/crowbar))
 			//If the turret is destroyed, you can remove it with a crowbar to
 			//try and salvage its components
-			to_chat(user, span_notice("You begin prying the metal coverings off..."))
+			to_chat(user, span_notice("I begin prying the metal coverings off..."))
 			if(I.use_tool(src, user, 20))
 				drop_loot(I, user)
 				qdel(src)
@@ -432,13 +432,13 @@
 			setAnchored(TRUE)
 			invisibility = INVISIBILITY_MAXIMUM
 			update_icon()
-			to_chat(user, span_notice("You secure the exterior bolts on the turret."))
+			to_chat(user, span_notice("I secure the exterior bolts on the turret."))
 			if(has_cover)
 				cover = new /obj/machinery/porta_turret_cover(loc) //create a new turret. While this is handled in process(), this is to workaround a bug where the turret becomes invisible for a split second
 				cover.parent_turret = src //make the cover's parent src
 		else if(anchored)
 			setAnchored(FALSE)
-			to_chat(user, span_notice("You unsecure the exterior bolts on the turret."))
+			to_chat(user, span_notice("I unsecure the exterior bolts on the turret."))
 			power_change()
 			invisibility = 0
 			qdel(cover) //deletes the cover, and the turret instance itself becomes its own cover.
@@ -455,14 +455,14 @@
 			return
 		var/obj/item/multitool/M = I
 		M.buffer = src
-		to_chat(user, span_notice("You add [src] to multitool buffer."))
+		to_chat(user, span_notice("I add [src] to multitool buffer."))
 	else
 		return ..()
 
 /obj/machinery/porta_turret/emag_act(mob/user)
 	if(obj_flags & EMAGGED)
 		return
-	to_chat(user, span_warning("You short out [src]'s threat assessment circuits."))
+	to_chat(user, span_warning("I short out [src]'s threat assessment circuits."))
 	audible_message(span_hear("[src] hums oddly..."))
 	obj_flags |= EMAGGED
 	controllock = TRUE
@@ -508,7 +508,7 @@
 	if(!isturf(right_here))
 		return
 	if(user)
-		to_chat(user, span_notice("You remove the turret and salvage some components."))
+		to_chat(user, span_notice("I remove the turret and salvage some components."))
 	if(stored_gun)
 		stored_gun.forceMove(right_here)
 		stored_gun = null
@@ -722,7 +722,7 @@
 	our_target.visible_message(
 		span_alert("[src] swivels its gun around to face <b>[our_target]</b>!"),
 		span_userdanger("[src] suddenly aims at you!"),
-		span_alert("You hear mechanical whirring!")
+		span_alert("I hear mechanical whirring!")
 		)
 
 /// caution mode is mostly handled elsewhere
@@ -1046,7 +1046,7 @@
 		return FALSE
 	if(remote_controller)
 		if(warning_message)
-			to_chat(remote_controller, span_warning("Your uplink to [src] has been severed!"))
+			to_chat(remote_controller, span_warning("My uplink to [src] has been severed!"))
 		quit_action.Remove(remote_controller)
 		toggle_action.Remove(remote_controller)
 		remote_controller.click_intercept = null
@@ -1306,7 +1306,7 @@
 		var/obj/item/multitool/M = I
 		if(M.buffer && istype(M.buffer, /obj/machinery/porta_turret))
 			turrets |= M.buffer
-			to_chat(user, span_notice("You link \the [M.buffer] with \the [src]."))
+			to_chat(user, span_notice("I link \the [M.buffer] with \the [src]."))
 			return
 
 	if (issilicon(user))
@@ -1319,14 +1319,14 @@
 				return
 
 			locked = !locked
-			to_chat(user, span_notice("You [ locked ? "lock" : "unlock"] the panel."))
+			to_chat(user, span_notice("I [ locked ? "lock" : "unlock"] the panel."))
 		else
 			to_chat(user, span_alert("Access denied."))
 
 /obj/machinery/turretid/emag_act(mob/user)
 	if(obj_flags & EMAGGED)
 		return
-	to_chat(user, span_notice("You short out the turret controls' access analysis module."))
+	to_chat(user, span_notice("I short out the turret controls' access analysis module."))
 	obj_flags |= EMAGGED
 	locked = FALSE
 
@@ -2089,10 +2089,10 @@
 	if(!LAZYLEN(saq.contents))
 		to_chat(user, span_warning("There's nothing in \the [saq] to load into \the [src]!"))
 		return
-	to_chat(user, span_notice("You start dumping \the [saq] into \the [src]."))
+	to_chat(user, span_notice("I start dumping \the [saq] into \the [src]."))
 	playsound(get_turf(src), "sound/effects/rustle[rand(1,4)].ogg", 50, TRUE, 0, ignore_walls = TRUE)
 	if(!do_after(user, 1 SECONDS, target = src))
-		to_chat(user, span_alert("You were interrupted!."))
+		to_chat(user, span_alert("I were interrupted!."))
 		return
 	var/count = 0
 	for(var/obj/item/ammo_casing/casing in saq.contents)
@@ -2104,18 +2104,18 @@
 			continue
 		count++
 	if(count > 0)
-		to_chat(user, span_notice("You insert [count] casing\s into \the [src]."))
+		to_chat(user, span_notice("I insert [count] casing\s into \the [src]."))
 		playsound(get_turf(src), "sound/weapons/gun_magazine_insert_empty_[rand(1,4)].ogg", 50, TRUE, 0, ignore_walls = TRUE)
 	else
-		to_chat(user, span_warning("You couldn't fit anything into [src]!"))
+		to_chat(user, span_warning("I couldn't fit anything into [src]!"))
 
 /obj/machinery/porta_turret/f13/nash/proc/undeploy_turret(obj/item/m_tool, mob/user)
 	visible_message(span_notice("[user] starts packing up [src]!"),
-		span_notice("You starts packing up [src]!"))
+		span_notice("I starts packing up [src]!"))
 	if(!m_tool.use_tool(src, user, 3 SECONDS, 0, 100))
-		user.show_message(span_alert("You were interrupted"))
+		user.show_message(span_alert("I were interrupted"))
 	visible_message(span_notice("[user] packed up [src]!"),
-		span_green("You packed up [src]!"))
+		span_green("I packed up [src]!"))
 	var/obj/item/turret_box/the_box = new(get_turf(src))
 	eject_chambered_round(TRUE)
 	the_box.turret_type = type
@@ -2129,15 +2129,15 @@
 		user.show_message(span_alert("It's beyond repair!"))
 		return
 	if(!weldertool.tool_start_check(user, amount=1))
-		user.show_message(span_alert("You need at least 1 unit of fuel in your welder!"))
+		user.show_message(span_alert("I need at least 1 unit of fuel in your welder!"))
 		return
 
 	visible_message(span_notice("[user] starts repairing [src]!"),
-		span_notice("You starts repairing [src]!"))
+		span_notice("I starts repairing [src]!"))
 	if(weldertool.use_tool(src, user, 3 SECONDS, 0, 100))
 		obj_integrity = initial(obj_integrity)
 		visible_message(span_notice("[user] repaired [src]!"),
-			span_green("You repaired [src]!"))
+			span_green("I repaired [src]!"))
 
 /// modified to use our silly ammo system
 /obj/machinery/porta_turret/f13/nash/shoot_at_target(atom/movable/target, turf/our_turf)
@@ -2234,7 +2234,7 @@
 		return
 	user.visible_message(span_notice("[user] starts unpacking [src]."))
 	if(!do_after(user, 3 SECONDS, FALSE, user))
-		user.show_message(span_alert("You were interrupted!"))
+		user.show_message(span_alert("I were interrupted!"))
 		return
 	var/obj/machinery/porta_turret/f13/nash/turret_new = new turret_type(get_turf(src))
 	if(istype(stored_mag))

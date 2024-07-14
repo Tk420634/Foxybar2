@@ -295,7 +295,7 @@
 	if(!isliving(user))
 		return
 	if(!istype(user.get_item_by_slot(SLOT_SHOES), /obj/item/clothing/shoes/wheelys))
-		to_chat(user, span_warning("You must be wearing the wheely-heels to use them!"))
+		to_chat(user, span_warning("I must be wearing the wheely-heels to use them!"))
 		return
 	if(!(W.is_occupant(user)))
 		wheelToggle = FALSE
@@ -477,7 +477,7 @@
 	var/obj/item/bluespacerecharge/ER = W
 	if(ER.uses)
 		wallcharges += ER.uses
-		to_chat(user, span_notice("You charged the bluespace crystal in the [src]. It now has [wallcharges] charges left."))
+		to_chat(user, span_notice("I charged the bluespace crystal in the [src]. It now has [wallcharges] charges left."))
 		ER.uses = 0
 		ER.icon_state = "[initial(ER.icon_state)]0"
 	else
@@ -514,7 +514,7 @@
 	m.adjustOxyLoss(rand(5,13))
 	if (prob(15))
 		m.adjustBruteLoss(rand(4,7))
-		to_chat(m,span_warning("You feel as if travelling through the solid object left something behind and it hurts!"))
+		to_chat(m,span_warning("I feel as if travelling through the solid object left something behind and it hurts!"))
 	var/datum/effect_system/spark_spread/s = new /datum/effect_system/spark_spread
 	s.set_up(5, 1, oldloc)
 	s.start()
@@ -545,7 +545,7 @@
 	if (B.amount < 10)
 		return
 	uses += 3
-	to_chat(user, span_notice("You insert [I] into [src]."))
+	to_chat(user, span_notice("I insert [I] into [src]."))
 	B.use(10)
 	icon_state = initial(icon_state)
 

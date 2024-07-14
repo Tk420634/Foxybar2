@@ -79,11 +79,11 @@
 			M.updatehealth()
 			target.visible_message(span_danger("[chassis] squeezes [target]."), \
 								span_userdanger("[chassis] squeezes [target]."),\
-								span_italic("You hear something crack."))
+								span_italic("I hear something crack."))
 			log_combat(chassis.occupant, M, "attacked", "[name]", "(INTENT: [uppertext(chassis.occupant.a_intent)]) (DAMTYE: [uppertext(damtype)])")
 		else
 			step_away(M,chassis)
-			occupant_message("You push [target] out of the way.")
+			occupant_message("I push [target] out of the way.")
 			chassis.visible_message("[chassis] pushes [target] out of the way.")
 		return 1
 

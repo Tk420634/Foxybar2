@@ -58,7 +58,7 @@
 	merge_type = /obj/item/stack/sheet/bluespace_crystal
 
 /obj/item/stack/sheet/bluespace_crystal/attack_self(mob/user)// to prevent the construction menu from ever happening
-	to_chat(user, span_warning("You cannot crush the cluster in-hand, try breaking one off."))
+	to_chat(user, span_warning("I cannot crush the cluster in-hand, try breaking one off."))
 
 /obj/item/stack/sheet/bluespace_crystal/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
 	if(user.get_inactive_held_item() == src)
@@ -68,9 +68,9 @@
 		user.put_in_hands(BC)
 		use(1)
 		if(!amount)
-			to_chat(user, span_notice("You break the final piece of the Netherium crystal cluster off."))
+			to_chat(user, span_notice("I break the final piece of the Netherium crystal cluster off."))
 		else
-			to_chat(user, span_notice("You break off a piece from the Netherium crystal cluster."))
+			to_chat(user, span_notice("I break off a piece from the Netherium crystal cluster."))
 	else
 		..()
 

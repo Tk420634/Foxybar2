@@ -65,9 +65,9 @@
 
 /obj/effect/decal/waste/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/crafting/abraxo))
-		user.show_message(span_notice("You start sprinkling \the [I.name] onto the puddle of goo..."), MSG_VISUAL)
+		user.show_message(span_notice("I start sprinkling \the [I.name] onto the puddle of goo..."), MSG_VISUAL)
 		if(do_after(user, 30, target = src))
-			user.show_message(span_notice("You neutralize the radioactive goo!"), MSG_VISUAL)
+			user.show_message(span_notice("I neutralize the radioactive goo!"), MSG_VISUAL)
 			new /obj/effect/decal/cleanable/chem_pile(src.loc) //Leave behind some cleanable chemical powder
 			qdel(src)
 			qdel(I)

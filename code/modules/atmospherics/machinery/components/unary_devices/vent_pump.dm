@@ -243,13 +243,13 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/welder_act(mob/living/user, obj/item/I)
 	if(!I.tool_start_check(user, amount=0))
 		return TRUE
-	to_chat(user, span_notice("You begin welding the vent..."))
+	to_chat(user, span_notice("I begin welding the vent..."))
 	if(I.use_tool(src, user, 20, volume=50))
 		if(!welded)
-			user.visible_message("[user] welds the vent shut.", span_notice("You weld the vent shut."), span_italic("You hear welding."))
+			user.visible_message("[user] welds the vent shut.", span_notice("I weld the vent shut."), span_italic("I hear welding."))
 			welded = TRUE
 		else
-			user.visible_message("[user] unwelded the vent.", span_notice("You unweld the vent."), span_italic("You hear welding."))
+			user.visible_message("[user] unwelded the vent.", span_notice("I unweld the vent."), span_italic("I hear welding."))
 			welded = FALSE
 		update_icon()
 		pipe_vision_img = image(src, loc, layer = ABOVE_HUD_LAYER, dir = dir)
@@ -259,7 +259,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/can_unwrench(mob/user)
 	. = ..()
 	if(. && on && is_operational())
-		to_chat(user, span_warning("You cannot unwrench [src], turn it off first!"))
+		to_chat(user, span_warning("I cannot unwrench [src], turn it off first!"))
 		return FALSE
 
 /obj/machinery/atmospherics/components/unary/vent_pump/examine(mob/user)
@@ -277,7 +277,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/attack_alien(mob/user)
 	if(!welded || !(do_after(user, 20, target = src)))
 		return
-	user.visible_message("[user] furiously claws at [src]!", "You manage to clear away the stuff blocking the vent", "You hear loud scraping noises.")
+	user.visible_message("[user] furiously claws at [src]!", "I manage to clear away the stuff blocking the vent", "I hear loud scraping noises.")
 	welded = FALSE
 	update_icon()
 	pipe_vision_img = image(src, loc, layer = ABOVE_HUD_LAYER, dir = dir)

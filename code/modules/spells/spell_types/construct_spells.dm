@@ -206,7 +206,7 @@
 		return
 
 	if(target.anti_magic_check(TRUE, TRUE))
-		to_chat(target, span_warning("You feel a freezing darkness closing in on you, but it rapidly dissipates."))
+		to_chat(target, span_warning("I feel a freezing darkness closing in on you, but it rapidly dissipates."))
 		return
 
 	to_chat(target, span_userdanger("A freezing darkness surrounds you..."))

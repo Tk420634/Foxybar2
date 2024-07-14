@@ -545,7 +545,7 @@
 	if(istype(O, /obj/item/reagent_containers/food/snacks/grown/ambrosia/gaia))
 		if(!self_sustaining)
 			adjustSelfSuff(1)
-			to_chat(user, "You spread the gaia through the soil. ([self_sustainingprog] out of 7)")
+			to_chat(user, "I spread the gaia through the soil. ([self_sustainingprog] out of 7)")
 			qdel(O)
 			return
 		else
@@ -556,7 +556,7 @@
 		if(istype(reagent_source, /obj/item/reagent_containers/syringe))
 			var/obj/item/reagent_containers/syringe/syr = reagent_source
 			if(syr.mode != 1)
-				to_chat(user, span_warning("You can't get any extract out of this plant.")		)
+				to_chat(user, span_warning("I can't get any extract out of this plant.")		)
 				return
 
 		if(!reagent_source.reagents.total_volume)
@@ -618,7 +618,7 @@
 				investigate_log("had Kudzu planted in it by [key_name(user)] at [AREACOORD(src)]", INVESTIGATE_BOTANY)
 			if(!user.transferItemToLoc(O, src))
 				return
-			to_chat(user, span_notice("You plant [O]."))
+			to_chat(user, span_notice("I plant [O]."))
 			dead = FALSE
 			myseed = O
 			investigate_log("planting: [user] planted [O] with traits [english_list(myseed)] and reagents [english_list_assoc(myseed.reagents_add)] and potency [myseed.potency]", INVESTIGATE_BOTANY)
@@ -660,7 +660,7 @@
 
 	else if(istype(O, /obj/item/cultivator))
 		if(weedlevel > 0)
-			user.visible_message("[user] uproots the weeds.", span_notice("You remove the weeds from [src]."))
+			user.visible_message("[user] uproots the weeds.", span_notice("I remove the weeds from [src]."))
 			weedlevel = 0
 			update_icon()
 		else
@@ -679,9 +679,9 @@
 			to_chat(user, span_warning("[src] doesn't have any plants or weeds!"))
 			return
 		user.visible_message(span_notice("[user] starts digging out [src]'s plants..."),
-			span_notice("You start digging out [src]'s plants..."))
+			span_notice("I start digging out [src]'s plants..."))
 		if(O.use_tool(src, user, 50, volume=50) || (!myseed && !weedlevel))
-			user.visible_message(span_notice("[user] digs out the plants in [src]!"), span_notice("You dig out all of [src]'s plants!"))
+			user.visible_message(span_notice("[user] digs out the plants in [src]!"), span_notice("I dig out all of [src]'s plants!"))
 			if(myseed) //Could be that they're just using it as a de-weeder
 				age = 0
 				plant_health = 0
@@ -716,7 +716,7 @@
 
 	else if(dead)
 		dead = FALSE
-		to_chat(user, span_notice("You remove the dead plant from [src]."))
+		to_chat(user, span_notice("I remove the dead plant from [src]."))
 		qdel(myseed)
 		myseed = null
 		update_icon()
@@ -748,15 +748,15 @@
 	var/warning = alert(user, "Are you sure you wish to empty the tray's nutrient beaker?","Empty Tray Nutrients?", "Yes", "No")
 	if(warning == "Yes" && user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
 		reagents.clear_reagents()
-		to_chat(user, span_warning("You empty [src]'s nutrient tank."))
+		to_chat(user, span_warning("I empty [src]'s nutrient tank."))
 
 /obj/machinery/hydroponics/proc/update_tray(mob/user)
 	harvest = FALSE
 	lastproduce = age
 	if(myseed.getYield() <= 0)
-		to_chat(user, span_warning("You fail to harvest anything useful!"))
+		to_chat(user, span_warning("I fail to harvest anything useful!"))
 	else
-		to_chat(user, span_notice("You harvest [myseed.getYield()] items from the [myseed.plantname]."))
+		to_chat(user, span_notice("I harvest [myseed.getYield()] items from the [myseed.plantname]."))
 	if(!myseed.get_gene(/datum/plant_gene/trait/repeated_harvest))
 		qdel(myseed)
 		STOP_PROCESSING(SSplants, src)
@@ -821,7 +821,7 @@
 
 /obj/machinery/hydroponics/soil/attackby(obj/item/O, mob/user, params)
 	if(istype(O, /obj/item/shovel) && !istype(O, /obj/item/shovel/spade)) //Doesn't include spades because of uprooting plants
-		to_chat(user, span_notice("You clear up [src]!"))
+		to_chat(user, span_notice("I clear up [src]!"))
 		qdel(src)
 	else
 		return ..()
@@ -840,7 +840,7 @@
 	. = ..()
 	. += span_notice("<b>Alt-Click</b> to empty the tray's nutrients.")
 	if(in_range(user, src) || isobserver(user))
-		. += span_notice("You might be able to discern a plant's harvest by examining it <b>closer</b>.")
+		. += span_notice("I might be able to discern a plant's harvest by examining it <b>closer</b>.")
 
 /obj/machinery/hydroponics/proc/become_self_sufficient() // Ambrosia Gaia effect
 	visible_message(span_boldnotice("[src] begins to glow with a beautiful light!"))

@@ -58,28 +58,28 @@
 	name = "Axe Slam"
 	icon_icon = 'modular_sand/icons/mob/actions/actions_elites.dmi'
 	button_icon_state = "axe_slam"
-	chosen_message = span_boldwarning("You will attempt to slam your axe.")
+	chosen_message = span_boldwarning("I will attempt to slam your axe.")
 	chosen_attack_num = AXE_SLAM
 
 /datum/action/innate/elite_attack/summon_shambler
 	name = "Summon Shambler"
 	icon_icon = 'modular_sand/icons/mob/actions/actions_elites.dmi'
 	button_icon_state = "summon_shambler"
-	chosen_message = span_boldwarning("You will attempt to summon a shambling miner.")
+	chosen_message = span_boldwarning("I will attempt to summon a shambling miner.")
 	chosen_attack_num = SUMMON_SHAMBLER
 
 /datum/action/innate/elite_attack/dash
 	name = "Dash"
 	icon_icon = 'modular_sand/icons/mob/actions/actions_elites.dmi'
 	button_icon_state = "dash"
-	chosen_message = span_boldwarning("You will attempt to dash near your target.")
+	chosen_message = span_boldwarning("I will attempt to dash near your target.")
 	chosen_attack_num = DASH
 
 /datum/action/innate/elite_attack/axe_throw
 	name = "Axe Throw"
 	icon_icon = 'modular_sand/icons/mob/actions/actions_elites.dmi'
 	button_icon_state = "axe_throw"
-	chosen_message = span_boldwarning("You will attempt to throw your axe.")
+	chosen_message = span_boldwarning("I will attempt to throw your axe.")
 	chosen_attack_num = AXE_THROW
 
 /mob/living/simple_animal/hostile/asteroid/elite/minerpriest/OpenFire()
@@ -195,7 +195,7 @@
 	var/mob/living/carbon/human/H = new /mob/living/carbon/human(src.loc)
 	if(src.client)
 		H.client = src.client
-		to_chat(H, span_userdanger("You have been finally enlightened.  Serving the necropolis is not your duty anymore, thanks to whoever defeated you. You owe them a great debt."))
+		to_chat(H, span_userdanger("I have been finally enlightened.  Serving the necropolis is not your duty anymore, thanks to whoever defeated you. You owe them a great debt."))
 		to_chat(H, span_big(span_bold("Note that you now share the loyalties of the one who defeated you.  You are expected not to intentionally sabotage their faction unless commanded to!")))
 	else
 		H.adjustBruteLoss(200)

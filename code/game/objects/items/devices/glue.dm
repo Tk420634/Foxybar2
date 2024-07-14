@@ -22,7 +22,7 @@
 			uses -= 1
 			ADD_TRAIT(I, TRAIT_NODROP, GLUED_ITEM_TRAIT)
 			I.desc += " It looks sticky."
-			to_chat(user, span_notice("You smear the [I] with glue, making it incredibly sticky!"))
+			to_chat(user, span_notice("I smear the [I] with glue, making it incredibly sticky!"))
 			if(uses == 0)
 				icon_state = "glue_used"
 				name = "empty bottle of super glue"

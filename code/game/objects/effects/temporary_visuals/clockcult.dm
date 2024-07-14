@@ -126,17 +126,17 @@
 		var/obj/item/I = L.anti_magic_check()
 		if(I)
 			L.visible_message(span_warning("Strange energy flows into [L]'s [I.name]!"), \
-			span_userdanger("Your [I.name] shields you from [src]!"))
+			span_userdanger("My [I.name] shields you from [src]!"))
 			continue
 		L.visible_message(span_warning("[L] is struck by a [name]!"), span_userdanger("You're struck by a [name]!"))
-		L.apply_damage(damage, BURN, "chest", L.run_armor_check("chest", "laser", "Your armor absorbs [src]!", "Your armor blocks part of [src]!", 0, "Your armor was penetrated by [src]!"))
+		L.apply_damage(damage, BURN, "chest", L.run_armor_check("chest", "laser", "My armor absorbs [src]!", "My armor blocks part of [src]!", 0, "My armor was penetrated by [src]!"))
 		log_combat(user, L, "struck with a volt blast")
 		hit_amount++
 	for(var/obj/mecha/M in T)
 		if(M.occupant)
 			if(is_servant_of_ratvar(M.occupant))
 				continue
-			to_chat(M.occupant, span_userdanger("Your [M.name] is struck by a [name]!"))
+			to_chat(M.occupant, span_userdanger("My [M.name] is struck by a [name]!"))
 		M.visible_message(span_warning("[M] is struck by a [name]!"))
 		M.take_damage(damage, BURN, 0, 0)
 		hit_amount++

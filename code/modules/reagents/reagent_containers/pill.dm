@@ -40,7 +40,7 @@
 		if(self_delay)
 			if(!do_mob(user, M, self_delay, allow_incap = TRUE, allow_lying = TRUE, public_progbar = TRUE))
 				return FALSE
-		to_chat(M, span_notice("You [apply_method] [src]."))
+		to_chat(M, span_notice("I [apply_method] [src]."))
 	else
 		M.visible_message(span_danger("[user] attempts to force [M] to [apply_method] [src]."), \
 							span_userdanger("[user] attempts to force [M] to [apply_method] [src]."))
@@ -75,7 +75,7 @@
 		return
 
 	user.visible_message(span_warning("[user] slips something into [target]!"),
-						span_notice("You dissolve [src] in [target]."), vision_distance = 2)
+						span_notice("I dissolve [src] in [target]."), vision_distance = 2)
 	log_combat(user, target, "spiked", src, reagents.log_list())
 	reagents.trans_to(target, reagents.total_volume, log = TRUE)
 	qdel(src)
@@ -247,7 +247,7 @@
 	desc = "A strange pill found in the depths of maintenance"
 	icon_state = "pill21"
 	var/static/list/names = list("maintenance pill","floorpill","mystery pill","suspicious pill","strange pill")
-	var/static/list/descs = list("Your feeling is telling you no, but...","Drugs are expensive, you can't afford not to eat any pills that you find."\
+	var/static/list/descs = list("My feeling is telling you no, but...","Drugs are expensive, you can't afford not to eat any pills that you find."\
 	, "Surely, there's no way this could go bad.")
 
 /obj/item/reagent_containers/pill/floorpill/Initialize()

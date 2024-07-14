@@ -413,7 +413,7 @@ SUBSYSTEM_DEF(chat)
 	if(!isliving(flirter))
 		return
 	if(flirter.get_active_held_item() && flirter.get_inactive_held_item())
-		to_chat(flirter, span_warning("Your hands are too full to flirt! Yes, you need your hands to flirt."))
+		to_chat(flirter, span_warning("My hands are too full to flirt! Yes, you need your hands to flirt."))
 		return
 
 	var/obj/item/hand_item/flirt_targetter/hiya = new(flirter)
@@ -438,7 +438,7 @@ SUBSYSTEM_DEF(chat)
 			to_chat(usr, span_hypnophrase("They're not in the right mood for flirting."))
 		return
 	// if(A == usr)
-	// 	to_chat(usr, span_hypnophrase("You take a deep breath and psyche yourself up to flirt with someone other than yourself for a change. You got this, tiger!"))
+	// 	to_chat(usr, span_hypnophrase("I take a deep breath and psyche yourself up to flirt with someone other than yourself for a change. You got this, tiger!"))
 	// 	return
 	return TRUE
 
@@ -448,7 +448,7 @@ SUBSYSTEM_DEF(chat)
 
 	if(!SSchat.can_usr_flirt_with_this(A))
 		return
-	to_chat(src, span_notice("You get ready to flirt with [A]. What will you do?"))
+	to_chat(src, span_notice("I get ready to flirt with [A]. What will you do?"))
 	to_chat(src, span_notice("HOW TO USE: Click on the emote you want to use, and it'll direct a flirtatious message toward them! That's it! \
 		Be sure to respect their OOC preferences, don't be a creep (unless they like it), and <i>have fun!</i>"))
 	SSchat.add_flirt_target(src, A)
@@ -471,7 +471,7 @@ SUBSYSTEM_DEF(chat)
 			var/datum/flirt/F = LAZYACCESS(SSchat.flirtsByNumbers, whichm)
 			if(F)
 				return F.give_flirter(user)
-	to_chat(user, span_notice("You get ready to flirt. What will you do? And who with?"))
+	to_chat(user, span_notice("I get ready to flirt. What will you do? And who with?"))
 	to_chat(user, span_notice("HOW TO USE: Click on the emote you want to use, and it'll give you a thing in your hand! Just click on whoever you want to send a flirtatious message to, or just use it in hand to send a message to everyone nearby. That's it! \
 		Be sure to respect their OOC preferences, don't be a creep (unless they like it), and <i>have fun!</i>"))
 	SSchat.ui_interact(user)

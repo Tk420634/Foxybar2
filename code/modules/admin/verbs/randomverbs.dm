@@ -81,7 +81,7 @@
 
 	log_directed_talk(mob, H, input, LOG_ADMIN, "reply")
 	message_admins("[key_name_admin(src)] replied to [key_name_admin(H)]'s [sender] message with: \"[input]\"")
-	to_chat(H, "You hear something crackle in your ears for a moment before a voice speaks.  \"Please stand by for a message from [sender == "Syndicate" ? "your benefactor" : "Central Command"].  Message as follows[sender == "Syndicate" ? ", agent." : ":"] <span class='bold'>[input].</span> Message ends.\"")
+	to_chat(H, "I hear something crackle in your ears for a moment before a voice speaks.  \"Please stand by for a message from [sender == "Syndicate" ? "your benefactor" : "Central Command"].  Message as follows[sender == "Syndicate" ? ", agent." : ":"] <span class='bold'>[input].</span> Message ends.\"")
 
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Headset Message") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
@@ -277,7 +277,7 @@
 		log_admin("SPAM AUTOMUTE: [muteunmute] [key_name(whom)] from [mute_string]")
 		message_admins("SPAM AUTOMUTE: [muteunmute] [key_name_admin(whom)] from [mute_string].")
 		if(C)
-			to_chat(C, "You have been [muteunmute] from [mute_string] by the SPAM AUTOMUTE system. Contact an admin.", confidential = TRUE)
+			to_chat(C, "I have been [muteunmute] from [mute_string] by the SPAM AUTOMUTE system. Contact an admin.", confidential = TRUE)
 		SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Auto Mute [feedback_string]", "1")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 		return
 
@@ -291,7 +291,7 @@
 	log_admin("[key_name(usr)] has [muteunmute] [key_name(whom)] from [mute_string]")
 	message_admins("[key_name_admin(usr)] has [muteunmute] [key_name_admin(whom)] from [mute_string].")
 	if(C)
-		to_chat(C, "You have been [muteunmute] from [mute_string] by [key_name(usr, include_name = FALSE)].", confidential = TRUE)
+		to_chat(C, "I have been [muteunmute] from [mute_string] by [key_name(usr, include_name = FALSE)].", confidential = TRUE)
 	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Mute [feedback_string]", "[P.muted & mute_type]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 
@@ -401,7 +401,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 				//Now to give them their mind back.
 				G_found.mind.transfer_to(new_xeno)	//be careful when doing stuff like this! I've already checked the mind isn't in use
 				G_found.transfer_ckey(new_xeno, FALSE)
-				to_chat(new_xeno, "You have been fully respawned. Enjoy the game.")
+				to_chat(new_xeno, "I have been fully respawned. Enjoy the game.")
 				var/msg = span_adminnotice("[key_name_admin(usr)] has respawned [new_xeno.key] as a filthy xeno.")
 				message_admins(msg)
 				admin_ticket_log(new_xeno, msg)
@@ -414,7 +414,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 				SSjob.SendToLateJoin(new_monkey)
 				G_found.mind.transfer_to(new_monkey)	//be careful when doing stuff like this! I've already checked the mind isn't in use
 				G_found.transfer_ckey(new_monkey, FALSE)
-				to_chat(new_monkey, "You have been fully respawned. Enjoy the game.")
+				to_chat(new_monkey, "I have been fully respawned. Enjoy the game.")
 				var/msg = span_adminnotice("[key_name_admin(usr)] has respawned [new_monkey.key] as a filthy xeno.")
 				message_admins(msg)
 				admin_ticket_log(new_monkey, msg)
@@ -513,7 +513,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	message_admins(msg)
 	admin_ticket_log(new_character, msg)
 
-	to_chat(new_character, "You have been fully respawned. Enjoy the game.")
+	to_chat(new_character, "I have been fully respawned. Enjoy the game.")
 
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Respawn Character") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	return new_character
@@ -739,7 +739,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	set name = "Gibself"
 	set category = "Admin.Fun"
 
-	var/confirm = alert(src, "You sure?", "Confirm", "Yes", "No")
+	var/confirm = alert(src, "I sure?", "Confirm", "Yes", "No")
 	if(confirm == "Yes")
 		log_admin("[key_name(usr)] used gibself.")
 		message_admins(span_adminnotice("[key_name_admin(usr)] used gibself."))
@@ -781,7 +781,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 		log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use admin_call_shuttle() without admin perms.")
 		return
 
-	var/confirm = alert(src, "You sure?", "Confirm", "Yes", "No")
+	var/confirm = alert(src, "I sure?", "Confirm", "Yes", "No")
 	if(confirm != "Yes")
 		return
 
@@ -796,7 +796,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	set name = "Cancel Train"
 	if(!check_rights(0))
 		return
-	if(alert(src, "You sure?", "Confirm", "Yes", "No") != "Yes")
+	if(alert(src, "I sure?", "Confirm", "Yes", "No") != "Yes")
 		return
 
 	if(EMERGENCY_AT_LEAST_DOCKED)
@@ -820,7 +820,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	if(SSshuttle.emergency.mode == SHUTTLE_DISABLED)
 		to_chat(usr, span_warning("Error, shuttle is already disabled."))
 		return
-	if(alert(src, "You sure?", "Confirm", "Yes", "No") != "Yes")
+	if(alert(src, "I sure?", "Confirm", "Yes", "No") != "Yes")
 		return
 	message_admins(span_adminnotice("[key_name_admin(usr)] disabled the shuttle."))
 	SSshuttle.lastMode = SSshuttle.emergency.mode
@@ -842,7 +842,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	if(SSshuttle.emergency.mode != SHUTTLE_DISABLED)
 		to_chat(usr, span_warning("Error, shuttle not disabled."))
 		return
-	if(alert(src, "You sure?", "Confirm", "Yes", "No") != "Yes")
+	if(alert(src, "I sure?", "Confirm", "Yes", "No") != "Yes")
 		return
 	message_admins(span_adminnotice("[key_name_admin(usr)] enabled the emergency shuttle."))
 	SSshuttle.adminEmergencyNoRecall = FALSE
@@ -1143,7 +1143,7 @@ GLOBAL_LIST_EMPTY(custom_outfits) //Admin created outfits
 
 	mob.update_sight()
 
-	to_chat(usr, "You toggled your admin combo HUD [adding_hud ? "ON" : "OFF"].")
+	to_chat(usr, "I toggled your admin combo HUD [adding_hud ? "ON" : "OFF"].")
 	message_admins("[key_name_admin(usr)] toggled their admin combo HUD [adding_hud ? "ON" : "OFF"].")
 	log_admin("[key_name(usr)] toggled their admin combo HUD [adding_hud ? "ON" : "OFF"].")
 	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggle Combo HUD", "[adding_hud ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
@@ -1486,7 +1486,7 @@ GLOBAL_LIST_EMPTY(custom_outfits) //Admin created outfits
 				return
 			var/mob/living/carbon/dude = target
 			dude.generate_fake_scars(rand(1, 4))
-			to_chat(dude, span_warning("You feel your body grow jaded and torn..."))
+			to_chat(dude, span_warning("I feel your body grow jaded and torn..."))
 		if(ADMIN_PUNISHMENT_PERFORATE)
 			if(!iscarbon(target))
 				to_chat(usr,span_warning("This must be used on a carbon mob."), confidential = TRUE)

@@ -42,12 +42,12 @@
 			return
 		if(!user.transferItemToLoc(O, src))
 			return
-		to_chat(user, span_notice("You install [O] in the slot and [lowertext(initial(reagent_type.name))] starts to fill it."))
+		to_chat(user, span_notice("I install [O] in the slot and [lowertext(initial(reagent_type.name))] starts to fill it."))
 		output = O
 		update_icon()
 		return
 
-	to_chat(user, span_warning("You cannot install [O] into the machine."))
+	to_chat(user, span_warning("I cannot install [O] into the machine."))
 	return
 
 /obj/machinery/water_purifier/on_attack_hand(mob/living/carbon/user)

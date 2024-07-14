@@ -35,11 +35,11 @@
 		return FALSE
 
 	if(praying)
-		to_chat(user, span_notice("You are already using [src]."))
+		to_chat(user, span_notice("I am already using [src]."))
 		return
 
 	user.visible_message(span_info("[user] kneels[M == user ? null : "next to [M]"] and begins to fix their burns."), \
-		span_info("You kneel[M == user ? null : " next to [M]"] and begin repairing their burns."))
+		span_info("I kneel[M == user ? null : " next to [M]"] and begin repairing their burns."))
 
 	praying = TRUE
 	if(!target || !isrobotic(target))
@@ -51,7 +51,7 @@
 		praying = FALSE
 		playsound(get_turf(target), 'sound/items/Deconstruct.ogg', 100, 1)
 	else
-		to_chat(user, span_notice("You were interrupted."))
+		to_chat(user, span_notice("I were interrupted."))
 		praying = FALSE
 
 /obj/item/wirecutters/proc/colorize(set_color)
@@ -123,7 +123,7 @@
 	playsound(get_turf(user), 'sound/items/change_jaws.ogg', 50, 1)
 	var/obj/item/crowbar/power/pryjaws = new /obj/item/crowbar/power(drop_location())
 	pryjaws.name = name
-	to_chat(user, span_notice("You attach the pry jaws to [src]."))
+	to_chat(user, span_notice("I attach the pry jaws to [src]."))
 	qdel(src)
 	user.put_in_active_hand(pryjaws)
 
@@ -136,10 +136,10 @@
 		else if(C.has_status_effect(STATUS_EFFECT_CHOKINGSTRAND))
 			var/man = C == user ? "your" : "[C]'\s"
 			user.visible_message(span_notice("[user] attempts to remove the durathread strand from around [man] neck."), \
-								span_notice("You attempt to remove the durathread strand from around [man] neck."))
+								span_notice("I attempt to remove the durathread strand from around [man] neck."))
 			if(do_after(user, 15, null, C))
 				user.visible_message(span_notice("[user] succesfuly removes the durathread strand."),
-									span_notice("You succesfuly remove the durathread strand."))
+									span_notice("I succesfuly remove the durathread strand."))
 				C.remove_status_effect(STATUS_EFFECT_CHOKINGSTRAND)
 			return
 	..()

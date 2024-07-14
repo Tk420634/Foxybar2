@@ -84,7 +84,7 @@
 				if(confirm == "Yes" && !..())
 					flush = TRUE
 					if(AI && AI.loc == src)
-						to_chat(AI, span_userdanger("Your core files are being wiped!"))
+						to_chat(AI, span_userdanger("My core files are being wiped!"))
 						while(AI.stat != DEAD && flush)
 							AI.adjustOxyLoss(5)
 							AI.updatehealth()
@@ -97,6 +97,6 @@
 			. = TRUE
 		if("radio")
 			AI.radio_enabled = !AI.radio_enabled
-			to_chat(AI, span_warning("Your Subspace Transceiver has been [AI.radio_enabled ? "enabled" : "disabled"]!"))
+			to_chat(AI, span_warning("My Subspace Transceiver has been [AI.radio_enabled ? "enabled" : "disabled"]!"))
 			. = TRUE
 	update_icon()

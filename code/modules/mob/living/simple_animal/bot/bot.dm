@@ -217,11 +217,11 @@
 		locked = FALSE
 		emagged = 1
 		if(user)
-			to_chat(user, span_notice("You bypass [src]'s controls."))
+			to_chat(user, span_notice("I bypass [src]'s controls."))
 		return TRUE
 	if(!open)
 		if(user)
-			to_chat(user, span_warning("You need to open maintenance panel first!"))
+			to_chat(user, span_warning("I need to open maintenance panel first!"))
 		return
 	emagged = 2
 	remote_disabled = 1 //Manually emagging the bot locks out the AI built in panel.
@@ -330,10 +330,10 @@
 		if(open)
 			to_chat(user, span_warning("Close the access panel before manipulating the personality slot!"))
 		else
-			to_chat(user, span_notice("You attempt to pull [paicard] free..."))
+			to_chat(user, span_notice("I attempt to pull [paicard] free..."))
 			if(do_after(user, 30, target = src))
 				if (paicard)
-					user.visible_message(span_notice("[user] uses [W] to pull [paicard] out of [bot_name]!"),span_notice("You pull [paicard] out of [bot_name] with [W]."))
+					user.visible_message(span_notice("[user] uses [W] to pull [paicard] out of [bot_name]!"),span_notice("I pull [paicard] out of [bot_name] with [W]."))
 					ejectpai(user)
 	else
 		if(istype(W, /obj/item/weldingtool) && user.a_intent != INTENT_HARM)
@@ -346,7 +346,7 @@
 
 			if(W.use_tool(src, user, 0, volume=40))
 				adjustHealth(-10)
-				user.visible_message("[user] repairs [src]!",span_notice("You repair [src]."))
+				user.visible_message("[user] repairs [src]!",span_notice("I repair [src]."))
 		else
 			if(W.force) //if force is non-zero
 				do_sparks(5, TRUE, src)
@@ -367,7 +367,7 @@
 	new /obj/effect/temp_visual/emp(loc)
 	if(paicard)
 		paicard.emp_act(severity)
-		src.visible_message("[paicard] is flies out of [bot_name]!",span_warning("You are forcefully ejected from [bot_name]!"))
+		src.visible_message("[paicard] is flies out of [bot_name]!",span_warning("I am forcefully ejected from [bot_name]!"))
 		ejectpai(0)
 	if(on)
 		turn_off()
@@ -377,9 +377,9 @@
 			turn_on()
 
 /mob/living/simple_animal/bot/proc/set_custom_texts() //Superclass for setting hack texts. Appears only if a set is not given to a bot locally.
-	text_hack = "You hack [name]."
-	text_dehack = "You reset [name]."
-	text_dehack_fail = "You fail to reset [name]."
+	text_hack = "I hack [name]."
+	text_dehack = "I reset [name]."
+	text_dehack_fail = "I fail to reset [name]."
 
 /mob/living/simple_animal/bot/proc/speak(message,channel) //Pass a message to have the bot say() it. Pass a frequency to say it on the radio.
 	if((!on) || (!message))
@@ -869,7 +869,7 @@ Pass a positive integer as an argument to override a bot's default speed.
 				bot_reset()
 		if("ejectpai")
 			if(paicard && (!locked || hasSiliconAccessInArea(usr) || IsAdminGhost(usr)))
-				to_chat(usr, span_notice("You eject [paicard] from [bot_name]"))
+				to_chat(usr, span_notice("I eject [paicard] from [bot_name]"))
 				ejectpai(usr)
 	update_controls()
 
@@ -935,9 +935,9 @@ Pass a positive integer as an argument to override a bot's default speed.
 				if(!user.transferItemToLoc(card, src))
 					return
 				paicard = card
-				user.visible_message("[user] inserts [card] into [src]!",span_notice("You insert [card] into [src]."))
+				user.visible_message("[user] inserts [card] into [src]!",span_notice("I insert [card] into [src]."))
 				paicard.pai.mind.transfer_to(src)
-				to_chat(src, span_notice("You sense your form change as you are uploaded into [src]."))
+				to_chat(src, span_notice("I sense your form change as you are uploaded into [src]."))
 				bot_name = name
 				name = paicard.pai.name
 				faction = user.faction.Copy()
@@ -965,7 +965,7 @@ Pass a positive integer as an argument to override a bot's default speed.
 		else
 			log_combat(src, paicard.pai, "ejected")
 		if(announce)
-			to_chat(paicard.pai, span_notice("You feel your control fade as [paicard] ejects from [bot_name]."))
+			to_chat(paicard.pai, span_notice("I feel your control fade as [paicard] ejects from [bot_name]."))
 		paicard = null
 		name = bot_name
 		faction = initial(faction)

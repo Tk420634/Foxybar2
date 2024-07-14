@@ -70,7 +70,7 @@
 				apply_damage(2 * crit_percent, BRUTE, BODY_ZONE_CHEST, 0, src, FALSE, FALSE, sendsignal = FALSE)
 			else
 				if(is_bleeding())
-					to_chat(src, span_danger("You feel a clot dislodge, spraying blood all over!"))
+					to_chat(src, span_danger("I feel a clot dislodge, spraying blood all over!"))
 					aggravate_wound(crit_percent)
 				else
 					apply_damage(2 * crit_percent, OXY, BODY_ZONE_CHEST, 0, src, FALSE, FALSE, sendsignal = FALSE)
@@ -82,7 +82,7 @@
 				drop_all_held_items()
 			else
 				AdjustSleeping(sleeptime)
-				to_chat(src, span_danger("You feel faint and collapse!"))
+				to_chat(src, span_danger("I feel faint and collapse!"))
 
 /mob/living/carbon/human/proc/can_bleed()
 	var/list/implies_nonbleedable = list(
@@ -143,7 +143,7 @@
 	if (getOrganLoss(ORGAN_SLOT_BRAIN) >= 30) //Citadel change to make memes more often.
 		SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "brain_damage", /datum/mood_event/brain_damage)
 		if(prob(1))
-			to_chat(src, span_warning("Your head feels numb and painful."))
+			to_chat(src, span_warning("My head feels numb and painful."))
 	else
 		SEND_SIGNAL(src, COMSIG_CLEAR_MOOD_EVENT, "brain_damage")
 

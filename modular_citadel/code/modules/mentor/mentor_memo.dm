@@ -40,7 +40,7 @@
 				return
 			if(query_memocheck.NextRow())
 				qdel(query_memocheck)
-				to_chat(src, "You already have set a memo.")
+				to_chat(src, "I already have set a memo.")
 				return
 			qdel(query_memocheck)
 			var/memotext = input(src,"Write your Memo","Memo") as message

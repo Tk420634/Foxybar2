@@ -164,7 +164,7 @@
 /datum/status_effect/off_balance/on_remove()
 	var/active_item = owner.get_active_held_item()
 	if(is_type_in_typecache(active_item, GLOB.shove_disarming_types))
-		owner.visible_message(span_warning("[owner.name] regains their grip on \the [active_item]!"), span_warning("You regain your grip on \the [active_item]"), null, COMBAT_MESSAGE_RANGE)
+		owner.visible_message(span_warning("[owner.name] regains their grip on \the [active_item]!"), span_warning("I regain your grip on \the [active_item]"), null, COMBAT_MESSAGE_RANGE)
 	return ..()
 
 /datum/status_effect/no_combat_mode
@@ -204,7 +204,7 @@
 
 /atom/movable/screen/alert/status_effect/mesmerized
 	name = "Mesmerized"
-	desc = "You cant tear your sight from who is in front of you... their gaze is simply too enthralling.."
+	desc = "I cant tear your sight from who is in front of you... their gaze is simply too enthralling.."
 	icon = 'icons/mob/actions/bloodsucker.dmi'
 	icon_state = "power_mez"
 
@@ -255,7 +255,7 @@
 
 /atom/movable/screen/alert/status_effect/his_wrath
 	name = "His Wrath"
-	desc = "You fled from His Grace instead of feeding Him, and now you suffer."
+	desc = "I fled from His Grace instead of feeding Him, and now you suffer."
 	icon_state = "his_grace"
 	alerttooltipstyle = "hisgrace"
 
@@ -304,9 +304,9 @@
 				owner.apply_damage(leg_damage_on_toggle * 0.5, BURN, BODY_ZONE_R_LEG)
 		if(owner.m_intent != MOVE_INTENT_WALK)
 			if(!iscultist(owner))
-				to_chat(owner, span_warning("Your leg[number_legs > 1 ? "s shiver":" shivers"] with pain!"))
+				to_chat(owner, span_warning("My leg[number_legs > 1 ? "s shiver":" shivers"] with pain!"))
 			else //Cultists take extra burn damage
-				to_chat(owner, span_warning("Your leg[number_legs > 1 ? "s burn":" burns"] with pain!"))
+				to_chat(owner, span_warning("My leg[number_legs > 1 ? "s burn":" burns"] with pain!"))
 			owner.toggle_move_intent()
 		return TRUE
 	return FALSE
@@ -332,7 +332,7 @@
 	var/static/list/flee_messages = list("Oh, NOW you flee.", "Get back here!", "If you were smarter, you'd come back.", "Only fools run.", "You'll be back.")
 	var/static/list/turnoff_messages = list("Why would they turn it-", "What are these idi-", "Fools, fools, all of-", "Are they trying to c-", "All this effort just f-")
 	var/static/list/powerloss_messages = list("\"Oh, the id**ts di***t s***e en**** pow**...\"" = TRUE, "\"D*dn't **ey mak* an **te***c*i*n le**?\"" = TRUE, "\"The** f**ls for**t t* make a ***** *f-\"" = TRUE, \
-	"\"No, *O, you **re so cl***-\"" = TRUE, "You hear a yell of frustration, cut off by static." = FALSE)
+	"\"No, *O, you **re so cl***-\"" = TRUE, "I hear a yell of frustration, cut off by static." = FALSE)
 
 /datum/status_effect/maniamotor/on_creation(mob/living/new_owner, obj/structure/destructible/clockwork/powered/mania_motor/new_motor)
 	. = ..()
@@ -390,7 +390,7 @@
 		var/static/hum = get_sfx('sound/effects/screech.ogg') //same sound for every proc call
 		if(owner.getToxLoss() > MANIA_DAMAGE_TO_CONVERT)
 			if(is_eligible_servant(owner))
-				to_chat(owner, "<span class='sevtug[span_part]'>\"[text2ratvar("You are mine and his, now.")]\"</span>")
+				to_chat(owner, "<span class='sevtug[span_part]'>\"[text2ratvar("I am mine and his, now.")]\"</span>")
 				if(add_servant_of_ratvar(owner))
 					owner.log_message("conversion was done with a Mania Motor", LOG_ATTACK, color="#BE8700")
 			owner.Unconscious(100)
@@ -556,7 +556,7 @@
 
 /datum/status_effect/corrosion_curse/on_creation(mob/living/new_owner, ...)
 	. = ..()
-	to_chat(owner, span_danger("Your feel your body starting to break apart..."))
+	to_chat(owner, span_danger("My feel your body starting to break apart..."))
 
 /datum/status_effect/corrosion_curse/tick()
 	. = ..()
@@ -627,7 +627,7 @@
 
 /datum/status_effect/amok/on_apply(mob/living/afflicted)
 	. = ..()
-	to_chat(owner, span_boldwarning("Your feel filled with a rage that is not your own!"))
+	to_chat(owner, span_boldwarning("My feel filled with a rage that is not your own!"))
 
 /datum/status_effect/amok/tick()
 	. = ..()
@@ -863,7 +863,7 @@
 /datum/status_effect/kindle/on_remove()
 	. = ..()
 	owner.visible_message(span_warning("The light in [owner]'s eyes fades!"), \
-	span_boldannounce("You snap out of your daze!"))
+	span_boldannounce("I snap out of your daze!"))
 
 /atom/movable/screen/alert/status_effect/kindle
 	name = "Dazzling Lights"
@@ -893,7 +893,7 @@
 
 /atom/movable/screen/alert/status_effect/ichorial_stain
 	name = "Ichorial Stain"
-	desc = "Your body is covered in blue ichor! You can't be revived by vitality matrices."
+	desc = "My body is covered in blue ichor! You can't be revived by vitality matrices."
 	icon_state = "ichorial_stain"
 	alerttooltipstyle = "clockcult"
 
@@ -935,11 +935,11 @@
 
 /atom/movable/screen/alert/status_effect/strandling/Click(location, control, params)
 	. = ..()
-	to_chat(mob_viewer, span_notice("You attempt to remove the durathread strand from around your neck."))
+	to_chat(mob_viewer, span_notice("I attempt to remove the durathread strand from around your neck."))
 	if(do_after(mob_viewer, 35, null, mob_viewer))
 		if(isliving(mob_viewer))
 			var/mob/living/L = mob_viewer
-			to_chat(mob_viewer, span_notice("You successfully remove the durathread strand."))
+			to_chat(mob_viewer, span_notice("I successfully remove the durathread strand."))
 			L.remove_status_effect(STATUS_EFFECT_CHOKINGSTRAND)
 
 
@@ -990,7 +990,7 @@
 	ADD_TRAIT(owner, TRAIT_MUTE, "trance")
 	owner.add_client_colour(/datum/client_colour/monochrome/trance)
 	owner.visible_message("[stun ? span_warning("[owner] stands still as [owner.p_their()] eyes seem to focus on a distant point.") : ""]", \
-	span_warning("[pick("You feel your thoughts slow down...", "You suddenly feel extremely dizzy...", "You feel like you're in the middle of a dream...","You feel incredibly relaxed...")]"))
+	span_warning("[pick("I feel your thoughts slow down...", "I suddenly feel extremely dizzy...", "I feel like you're in the middle of a dream...","I feel incredibly relaxed...")]"))
 	return TRUE
 
 /datum/status_effect/trance/on_creation(mob/living/new_owner, _duration, _stun = TRUE)
@@ -1003,7 +1003,7 @@
 	REMOVE_TRAIT(owner, TRAIT_MUTE, "trance")
 	owner.dizziness = 0
 	owner.remove_client_colour(/datum/client_colour/monochrome/trance)
-	to_chat(owner, span_warning("You snap out of your trance!"))
+	to_chat(owner, span_warning("I snap out of your trance!"))
 	return ..()
 
 /datum/status_effect/trance/proc/hypnotize(datum/source, list/hearing_args)
@@ -1028,14 +1028,14 @@
 		switch(rand(1,5))
 			if(1)
 				if((!owner.lying && !owner.buckled) && isturf(owner.loc))
-					to_chat(owner, span_warning("Your leg spasms!"))
+					to_chat(owner, span_warning("My leg spasms!"))
 					step(owner, pick(GLOB.cardinals))
 			if(2)
 				if(owner.incapacitated())
 					return
 				var/obj/item/I = owner.get_active_held_item()
 				if(I)
-					to_chat(owner, span_warning("Your fingers spasm!"))
+					to_chat(owner, span_warning("My fingers spasm!"))
 					owner.log_message("used [I] due to a Muscle Spasm", LOG_ATTACK)
 					I.attack_self(owner)
 			if(3)
@@ -1051,14 +1051,14 @@
 					if(isliving(M))
 						targets += M
 				if(LAZYLEN(targets))
-					to_chat(owner, span_warning("Your arm spasms!"))
+					to_chat(owner, span_warning("My arm spasms!"))
 					owner.log_message(" attacked someone due to a Muscle Spasm", LOG_ATTACK) //the following attack will log itself
 					owner.ClickOn(pick(targets))
 				owner.a_intent = prev_intent
 			if(4)
 				var/prev_intent = owner.a_intent
 				owner.a_intent = INTENT_HARM
-				to_chat(owner, span_warning("Your arm spasms!"))
+				to_chat(owner, span_warning("My arm spasms!"))
 				owner.log_message("attacked [owner.p_them()]self to a Muscle Spasm", LOG_ATTACK)
 				owner.ClickOn(owner)
 				owner.a_intent = prev_intent
@@ -1070,7 +1070,7 @@
 				for(var/turf/T in oview(owner, 3))
 					targets += T
 				if(LAZYLEN(targets) && I)
-					to_chat(owner, span_warning("Your arm spasms!"))
+					to_chat(owner, span_warning("My arm spasms!"))
 					owner.log_message("threw [I] due to a Muscle Spasm", LOG_ATTACK)
 					owner.throw_item(pick(targets))
 
@@ -1112,25 +1112,25 @@
 	switch(msg_stage)
 		if(0 to 300)
 			if(prob(1))
-				fake_msg = pick(span_warning("[pick("Your head hurts.", "Your head pounds.")]"),
-				span_warning("[pick("You're having difficulty breathing.", "Your breathing becomes heavy.")]"),
-				span_warning("[pick("You feel dizzy.", "Your head spins.")]"),
-				"<span notice='warning'>[pick("You swallow excess mucus.", "You lightly cough.")]</span>",
-				span_warning("[pick("Your head hurts.", "Your mind blanks for a moment.")]"),
-				span_warning("[pick("Your throat hurts.", "You clear your throat.")]"))
+				fake_msg = pick(span_warning("[pick("My head hurts.", "My head pounds.")]"),
+				span_warning("[pick("You're having difficulty breathing.", "My breathing becomes heavy.")]"),
+				span_warning("[pick("I feel dizzy.", "My head spins.")]"),
+				"<span notice='warning'>[pick("I swallow excess mucus.", "I lightly cough.")]</span>",
+				span_warning("[pick("My head hurts.", "My mind blanks for a moment.")]"),
+				span_warning("[pick("My throat hurts.", "I clear your throat.")]"))
 		if(301 to 600)
 			if(prob(2))
-				fake_msg = pick(span_warning("[pick("Your head hurts a lot.", "Your head pounds incessantly.")]"),
-				span_warning("[pick("Your windpipe feels like a straw.", "Your breathing becomes tremendously difficult.")]"),
-				span_warning("You feel very [pick("dizzy","woozy","faint")]."),
-				span_warning("[pick("You hear a ringing in your ear.", "Your ears pop.")]"),
-				span_warning("You nod off for a moment."))
+				fake_msg = pick(span_warning("[pick("My head hurts a lot.", "My head pounds incessantly.")]"),
+				span_warning("[pick("My windpipe feels like a straw.", "My breathing becomes tremendously difficult.")]"),
+				span_warning("I feel very [pick("dizzy","woozy","faint")]."),
+				span_warning("[pick("I hear a ringing in your ear.", "My ears pop.")]"),
+				span_warning("I nod off for a moment."))
 		else
 			if(prob(3))
 				if(prob(50))// coin flip to throw a message or an emote
-					fake_msg = pick(span_userdanger("[pick("Your head hurts!", "You feel a burning knife inside your brain!", "A wave of pain fills your head!")]"),
-					span_userdanger("[pick("Your lungs hurt!", "It hurts to breathe!")]"),
-					span_warning("[pick("You feel nauseated.", "You feel like you're going to throw up!")]"))
+					fake_msg = pick(span_userdanger("[pick("My head hurts!", "I feel a burning knife inside your brain!", "A wave of pain fills your head!")]"),
+					span_userdanger("[pick("My lungs hurt!", "It hurts to breathe!")]"),
+					span_warning("[pick("I feel nauseated.", "I feel like you're going to throw up!")]"))
 				else
 					fake_emote = pick("cough", "sniff", "sneeze")
 	if(fake_emote)

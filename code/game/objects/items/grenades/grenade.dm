@@ -56,7 +56,7 @@
 			preprime(user, 5, FALSE)
 			return TRUE
 	else if(clumsy_check == GRENADE_NONCLUMSY_FUMBLE && !(user.mind && HAS_TRAIT(user.mind, TRAIT_CLOWN_MENTALITY)))
-		to_chat(user, span_warning("You pull the pin on [src]. Attached to it is a pink ribbon that says, \"<span class='clown'>HONK</span>\""))
+		to_chat(user, span_warning("I pull the pin on [src]. Attached to it is a pink ribbon that says, \"<span class='clown'>HONK</span>\""))
 		preprime(user, 5, FALSE)
 		return TRUE
 
@@ -78,9 +78,9 @@
 		to_chat(user, span_danger("You're too messed up to do that!"))
 		return FALSE
 	if(HAS_TRAIT(src, TRAIT_NODROP))
-		to_chat(user, span_notice("You try prying [src] off your hand..."))
+		to_chat(user, span_notice("I try prying [src] off your hand..."))
 		if(do_after(user, 70, target=src))
-			to_chat(user, span_notice("You manage to remove [src] from your hand."))
+			to_chat(user, span_notice("I manage to remove [src] from your hand."))
 			REMOVE_TRAIT(src, TRAIT_NODROP, STICKY_NODROP)
 
 		return
@@ -118,7 +118,7 @@
 			var/mob/living/carbon/C = user
 			C.throw_mode_on()
 		if(msg)
-			to_chat(user, span_warning("You prime [src]! [DisplayTimeText(det_time)]!"))
+			to_chat(user, span_warning("I prime [src]! [DisplayTimeText(det_time)]!"))
 	playsound(src, preprime_sound, volume, 1)
 	active = TRUE
 	icon_state = initial(icon_state) + "_active"
@@ -146,7 +146,7 @@
 			C.throw_mode_on()
 		if(msg)
 			playsound(src, preprime_sound, 100, 1)
-			to_chat(user, span_warning("You prime [src]! [DisplayTimeText(det_time)]!"))
+			to_chat(user, span_warning("I prime [src]! [DisplayTimeText(det_time)]!"))
 	active = TRUE
 	icon_state = initial(icon_state) + "_active"
 	item_state = initial(item_state) + "_active"
@@ -162,7 +162,7 @@
 			var/mob/living/carbon/C = user
 			C.throw_mode_on()
 		if(msg)
-			to_chat(user, span_warning("You prime [src]! [DisplayTimeText(det_time)]!"))
+			to_chat(user, span_warning("I prime [src]! [DisplayTimeText(det_time)]!"))
 	playsound(src, preprime_sound, volume, 1)
 	active = TRUE
 	icon_state = initial(icon_state) + "_active"
@@ -195,16 +195,16 @@
 		switch(det_time)
 			if ("1")
 				det_time = 10
-				to_chat(user, span_notice("You set the [name] for 1 second detonation time."))
+				to_chat(user, span_notice("I set the [name] for 1 second detonation time."))
 			if ("10")
 				det_time = 30
-				to_chat(user, span_notice("You set the [name] for 3 second detonation time."))
+				to_chat(user, span_notice("I set the [name] for 3 second detonation time."))
 			if ("30")
 				det_time = 50
-				to_chat(user, span_notice("You set the [name] for 5 second detonation time."))
+				to_chat(user, span_notice("I set the [name] for 5 second detonation time."))
 			if ("50")
 				det_time = 1
-				to_chat(user, span_notice("You set the [name] for instant detonation."))
+				to_chat(user, span_notice("I set the [name] for instant detonation."))
 		add_fingerprint(user)
 	else
 		return ..()

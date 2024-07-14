@@ -202,19 +202,19 @@ GLOBAL_LIST_EMPTY(fish_ponds) // actually spawners
 	var/messenge = ""
 	switch(LAZYLEN(stuff_spawned))
 		if(-INFINITY to 0)
-			messenge = "You have a strange feeling for a moment, then it passes."
+			messenge = "I have a strange feeling for a moment, then it passes."
 		if(1 to 10)
-			messenge = "You feel a faint ripple, like a rock thrown in a pond."
+			messenge = "I feel a faint ripple, like a rock thrown in a pond."
 		if(10 to 20)
-			messenge = "You feel a slight tremor in the ground, and... everywhere else too."
+			messenge = "I feel a slight tremor in the ground, and... everywhere else too."
 		if(20 to 30)
-			messenge = "Your vision squeezes in ever so slightly."
+			messenge = "My vision squeezes in ever so slightly."
 		if(30 to 40)
-			messenge = "You have a brief feeling as though you're congested, but all over."
+			messenge = "I have a brief feeling as though you're congested, but all over."
 		if(40 to 50)
-			messenge = "You feel a slight pressure in your ears, like you're underwater."
+			messenge = "I feel a slight pressure in your ears, like you're underwater."
 		else
-			messenge = "You feel hemmed in."
+			messenge = "I feel hemmed in."
 	to_chat(world, span_notice(messenge))
 	message_admins("[report]")
 	QDEL_LIST(spawn_holes)

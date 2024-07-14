@@ -21,7 +21,7 @@
 		painting = C
 		C.forceMove(get_turf(src))
 		C.layer = layer+0.1
-		user.visible_message(span_notice("[user] puts \the [C] on \the [src]."),span_notice("You place \the [C] on \the [src]."))
+		user.visible_message(span_notice("[user] puts \the [C] on \the [src]."),span_notice("I place \the [C] on \the [src]."))
 	else
 		return ..()
 
@@ -265,7 +265,7 @@
 	if(C)
 		C.forceMove(drop_location())
 		C = null
-		to_chat(user, span_notice("You remove the painting from the frame."))
+		to_chat(user, span_notice("I remove the painting from the frame."))
 		update_icon()
 		return TRUE
 
@@ -274,7 +274,7 @@
 		C = new_canvas
 		if(!C.finalized)
 			C.finalize(user)
-		to_chat(user,span_notice("You frame [C]."))
+		to_chat(user,span_notice("I frame [C]."))
 	update_icon()
 
 /obj/structure/sign/painting/proc/try_rename(mob/user)

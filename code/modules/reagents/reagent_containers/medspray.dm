@@ -29,7 +29,7 @@
 		amount_per_transfer_from_this = squirt_amount
 	else
 		amount_per_transfer_from_this = initial(amount_per_transfer_from_this)
-	to_chat(user, span_notice("You will now apply the medspray's contents in [squirt_mode ? "short bursts":"extended sprays"]. You'll now use [amount_per_transfer_from_this] units per use."))
+	to_chat(user, span_notice("I will now apply the medspray's contents in [squirt_mode ? "short bursts":"extended sprays"]. You'll now use [amount_per_transfer_from_this] units per use."))
 
 /obj/item/reagent_containers/medspray/attack(mob/living/L, mob/user, def_zone)
 	INVOKE_ASYNC(src,PROC_REF(attempt_spray), L, user, def_zone)		// this is shitcode because the params for attack aren't even right but i'm not in the mood to refactor right now.
@@ -57,7 +57,7 @@
 				return
 			if(!reagents || !reagents.total_volume)
 				return
-		to_chat(L, span_notice("You [apply_method] yourself with [src]."))
+		to_chat(L, span_notice("I [apply_method] yourself with [src]."))
 
 	else
 		log_combat(user, L, "attempted to apply", src, reagents.log_list())

@@ -248,7 +248,7 @@ GLOBAL_LIST_EMPTY(allCasters)
 				dat+="<B>Free America Censorship Tool guidance</B><HR>"
 				dat+="<FONT SIZE=1>If a columnist is reported to be exposing Anti American Values, it can be frozen and restricted until review."
 				dat+="This will render a column unable to be updated by anyone, without deleting any content it might contain at the time."
-				dat+="You can lift these restrictions if you have the required access at any time.</FONT><HR>"
+				dat+="I can lift these restrictions if you have the required access at any time.</FONT><HR>"
 				if(isemptylist(GLOB.news_network.network_channels))
 					dat+="<I>No columns found active...</I><BR>"
 				else
@@ -555,7 +555,7 @@ GLOBAL_LIST_EMPTY(allCasters)
 
 /obj/machinery/newscaster/attackby(obj/item/I, mob/living/user, params)
 	if(istype(I, /obj/item/wrench))
-		to_chat(user, span_notice("You start [anchored ? "un" : ""]securing [name]..."))
+		to_chat(user, span_notice("I start [anchored ? "un" : ""]securing [name]..."))
 		I.play_tool_sound(src)
 		if(I.use_tool(src, user, 60))
 			playsound(loc, 'sound/items/deconstruct.ogg', 50, 1)
@@ -565,7 +565,7 @@ GLOBAL_LIST_EMPTY(allCasters)
 				new /obj/item/shard(loc)
 				new /obj/item/shard(loc)
 			else
-				to_chat(user, span_notice("You [anchored ? "un" : ""]secure [name]."))
+				to_chat(user, span_notice("I [anchored ? "un" : ""]secure [name]."))
 				new /obj/item/wallframe/newscaster(loc)
 			qdel(src)
 	else if(istype(I, /obj/item/weldingtool) && user.a_intent != INTENT_HARM)
@@ -573,12 +573,12 @@ GLOBAL_LIST_EMPTY(allCasters)
 			if(!I.tool_start_check(user, amount=0))
 				return
 			user.visible_message("[user] is repairing [src].", \
-							span_notice("You begin repairing [src]..."), \
-							span_italic("You hear welding."))
+							span_notice("I begin repairing [src]..."), \
+							span_italic("I hear welding."))
 			if(I.use_tool(src, user, 40, volume=50))
 				if(!(stat & BROKEN))
 					return
-				to_chat(user, span_notice("You repair [src]."))
+				to_chat(user, span_notice("I repair [src]."))
 				obj_integrity = max_integrity
 				stat &= ~BROKEN
 				update_icon()
@@ -634,7 +634,7 @@ GLOBAL_LIST_EMPTY(allCasters)
 			else
 				targetcam = R.aicamera
 		else
-			to_chat(user, span_warning("You cannot interface with silicon photo uploading!"))
+			to_chat(user, span_warning("I cannot interface with silicon photo uploading!"))
 		if(!targetcam.stored.len)
 			to_chat(usr, span_boldannounce("No images saved"))
 			return

@@ -410,7 +410,7 @@
 	if(.)
 		return
 	if(length(src_object.contents()))
-		to_chat(user, span_notice("You start dumping out the contents..."))
+		to_chat(user, span_notice("I start dumping out the contents..."))
 		if(!do_after(user,20,target=src_object.parent))
 			return FALSE
 

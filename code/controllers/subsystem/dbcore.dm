@@ -118,7 +118,7 @@ SUBSYSTEM_DEF(dbcore)
 				log_sql("Could not get schema version from database")
 			qdel(query_db_version)
 		else
-			log_sql("Your server failed to establish a connection with the database.")
+			log_sql("My server failed to establish a connection with the database.")
 	else
 		log_sql("Database is not enabled in configuration.")
 

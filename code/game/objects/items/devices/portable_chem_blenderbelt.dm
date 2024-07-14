@@ -535,7 +535,7 @@
 /obj/item/storage/blender_belt/proc/set_dispenser(mob/user)
 	BLENDER_GET_SUBJECT
 	if(user)
-		user.show_message(span_notice("You flip the switch on [src] to DISPENSER mode."))
+		user.show_message(span_notice("I flip the switch on [src] to DISPENSER mode."))
 	grind_or_dispense = BLENDER_BELTMODE_DISPENSER
 	SEND_SIGNAL(src, COMSIG_BB_HOST_TO_PC_STIMULUS, STIMULUS_SET_TO_DISPENSER, subject)
 	lock_belt()
@@ -543,7 +543,7 @@
 /obj/item/storage/blender_belt/proc/set_blender(mob/user)
 	BLENDER_GET_SUBJECT
 	if(user)
-		user.show_message(span_notice("You flip the switch on [src] to BLENDER mode."))
+		user.show_message(span_notice("I flip the switch on [src] to BLENDER mode."))
 	if(istype(brevin))
 		eject_beaker(user, silent = TRUE)
 	grind_or_dispense = BLENDER_BELTMODE_BLENDER
@@ -619,7 +619,7 @@
 	if(user)
 		user.put_in_hands(brevin)
 		if(!silent)
-			user.show_message(span_notice("You take [brevin] out of [src]."))
+			user.show_message(span_notice("I take [brevin] out of [src]."))
 			SEND_SIGNAL(src, COMSIG_BB_HOST_TO_PC_STIMULUS, STIMULUS_EJECT_BREVIN, subject, list(BB_TOKEN_EXTRA1 = "[brevin.name]"))
 	brevin = null
 	update_icon()
@@ -638,10 +638,10 @@
 	update_icon()
 	if(old_brevin)
 		user.put_in_hands(old_brevin)
-		user.show_message(span_notice("You swap out the beakers."))
+		user.show_message(span_notice("I swap out the beakers."))
 		SEND_SIGNAL(src, COMSIG_BB_HOST_TO_PC_STIMULUS, STIMULUS_SWAP_BREVIN, subject, list(BB_TOKEN_EXTRA1 = "[old_brevin.name]", BB_TOKEN_EXTRA2 = "[brevin.name]"))
 		return
-	user.show_message(span_notice("You insert [brevin]."))
+	user.show_message(span_notice("I insert [brevin]."))
 	SEND_SIGNAL(src, COMSIG_BB_HOST_TO_PC_STIMULUS, STIMULUS_INSERT_BREVIN, subject, list(BB_TOKEN_EXTRA1 = "[brevin.name]"))
 	
 /obj/item/storage/blender_belt/proc/get_subject(user)

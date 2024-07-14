@@ -1,6 +1,6 @@
 /datum/quirk/hypnotic_stupor //straight from skyrat
 	name = "Hypnotic Stupor"
-	desc = "Your prone to episodes of extreme stupor that leaves you extremely suggestible."
+	desc = "My prone to episodes of extreme stupor that leaves you extremely suggestible."
 	value = 0
 	human_only = TRUE
 	gain_text = null // Handled by trauma.
@@ -18,26 +18,26 @@
 	value = 0
 	human_only = TRUE
 	mob_trait = TRAIT_INFERTILE
-	gain_text = span_notice("Your womb starts feeling dry and empty, all the life in it begins to fade away...")
-	lose_text = span_love("You feel the warm blow of life flooding your womb, full of newfound, vibrant fertility!")
+	gain_text = span_notice("My womb starts feeling dry and empty, all the life in it begins to fade away...")
+	lose_text = span_love("I feel the warm blow of life flooding your womb, full of newfound, vibrant fertility!")
 	medical_record_text = "Patient doesn't seem able to ovulate properly..."
 */
 
 /datum/quirk/estrous_detection
 	name = "Estrous Detection"
-	desc = "You have a mammalian sense of detecting if someone\'s body longs for breeding."
+	desc = "I have a mammalian sense of detecting if someone\'s body longs for breeding."
 	value = 0
 	mob_trait = TRAIT_ESTROUS_DETECT
-	gain_text = span_love("Your senses adjust, allowing a mammalian sense of others' fertility.")
-	lose_text = span_notice("Your sense of others' fertility fades.")
+	gain_text = span_love("My senses adjust, allowing a mammalian sense of others' fertility.")
+	lose_text = span_notice("My sense of others' fertility fades.")
 
 /datum/quirk/estrous_active
 	name = "In Estrous"
-	desc = "Your system burns with the desire to be bred. Satisfying your lust will make you happy, while ignoring it may cause you to become sad and needy."
+	desc = "My system burns with the desire to be bred. Satisfying your lust will make you happy, while ignoring it may cause you to become sad and needy."
 	value = 0
 	mob_trait = TRAIT_ESTROUS_ACTIVE
-	gain_text = span_love("You body burns with the desire to engage in breeding.")
-	lose_text = span_notice("You feel more in control of your body and thoughts.")
+	gain_text = span_love("I body burns with the desire to engage in breeding.")
+	lose_text = span_notice("I feel more in control of your body and thoughts.")
 
 	// Default heat message for examine text
 	var/heat_type = "influenced by the estrous cycle"

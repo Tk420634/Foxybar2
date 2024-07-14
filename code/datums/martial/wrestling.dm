@@ -49,10 +49,10 @@
 
 /datum/action/slam/Trigger()
 	if(owner.incapacitated())
-		to_chat(owner, span_warning("You can't WRESTLE while you're OUT FOR THE COUNT."))
+		to_chat(owner, span_warning("I can't WRESTLE while you're OUT FOR THE COUNT."))
 		return
 	if(HAS_TRAIT(owner, TRAIT_PACIFISM))
-		to_chat(owner, span_warning("You are too HIPPIE to WRESTLE other living beings!"))
+		to_chat(owner, span_warning("I am too HIPPIE to WRESTLE other living beings!"))
 		return
 	owner.visible_message(span_danger("[owner] prepares to BODY SLAM!"), "<b><i>Your next attack will be a BODY SLAM.</i></b>")
 	var/mob/living/carbon/human/H = owner
@@ -64,10 +64,10 @@
 
 /datum/action/throw_wrassle/Trigger()
 	if(owner.incapacitated())
-		to_chat(owner, span_warning("You can't WRESTLE while you're OUT FOR THE COUNT."))
+		to_chat(owner, span_warning("I can't WRESTLE while you're OUT FOR THE COUNT."))
 		return
 	if(HAS_TRAIT(owner, TRAIT_PACIFISM))
-		to_chat(owner, span_warning("You are too HIPPIE to WRESTLE other living beings!"))
+		to_chat(owner, span_warning("I am too HIPPIE to WRESTLE other living beings!"))
 		return
 	owner.visible_message(span_danger("[owner] prepares to THROW!"), "<b><i>Your next attack will be a THROW.</i></b>")
 	var/mob/living/carbon/human/H = owner
@@ -79,10 +79,10 @@
 
 /datum/action/kick/Trigger()
 	if(owner.incapacitated())
-		to_chat(owner, span_warning("You can't WRESTLE while you're OUT FOR THE COUNT."))
+		to_chat(owner, span_warning("I can't WRESTLE while you're OUT FOR THE COUNT."))
 		return
 	if(HAS_TRAIT(owner, TRAIT_PACIFISM))
-		to_chat(owner, span_warning("You are too HIPPIE to WRESTLE other living beings!"))
+		to_chat(owner, span_warning("I am too HIPPIE to WRESTLE other living beings!"))
 		return
 	owner.visible_message(span_danger("[owner] prepares to KICK!"), "<b><i>Your next attack will be a KICK.</i></b>")
 	var/mob/living/carbon/human/H = owner
@@ -94,10 +94,10 @@
 
 /datum/action/strike/Trigger()
 	if(owner.incapacitated())
-		to_chat(owner, span_warning("You can't WRESTLE while you're OUT FOR THE COUNT."))
+		to_chat(owner, span_warning("I can't WRESTLE while you're OUT FOR THE COUNT."))
 		return
 	if(HAS_TRAIT(owner, TRAIT_PACIFISM))
-		to_chat(owner, span_warning("You are too HIPPIE to WRESTLE other living beings!"))
+		to_chat(owner, span_warning("I am too HIPPIE to WRESTLE other living beings!"))
 		return
 	owner.visible_message(span_danger("[owner] prepares to STRIKE!"), "<b><i>Your next attack will be a STRIKE.</i></b>")
 	var/mob/living/carbon/human/H = owner
@@ -109,10 +109,10 @@
 
 /datum/action/drop/Trigger()
 	if(owner.incapacitated())
-		to_chat(owner, span_warning("You can't WRESTLE while you're OUT FOR THE COUNT."))
+		to_chat(owner, span_warning("I can't WRESTLE while you're OUT FOR THE COUNT."))
 		return
 	if(HAS_TRAIT(owner, TRAIT_PACIFISM))
-		to_chat(owner, span_warning("You are too HIPPIE to WRESTLE other living beings!"))
+		to_chat(owner, span_warning("I am too HIPPIE to WRESTLE other living beings!"))
 		return
 	owner.visible_message(span_danger("[owner] prepares to LEG DROP!"), "<b><i>Your next attack will be a LEG DROP.</i></b>")
 	var/mob/living/carbon/human/H = owner
@@ -146,7 +146,7 @@
 	if(!D)
 		return
 	if(!A.pulling || A.pulling != D)
-		to_chat(A, "You need to have [D] in a cinch!")
+		to_chat(A, "I need to have [D] in a cinch!")
 		return
 	D.forceMove(A.loc)
 	D.setDir(get_dir(D, A))
@@ -176,7 +176,7 @@
 				return FALSE
 
 			if (!isturf(A.loc) || !isturf(D.loc))
-				to_chat(A, "You can't throw [D] from here!")
+				to_chat(A, "I can't throw [D] from here!")
 				return FALSE
 
 			A.setDir(turn(A.dir, 90))
@@ -198,7 +198,7 @@
 			return FALSE
 
 		if (!isturf(A.loc) || !isturf(D.loc))
-			to_chat(A, "You can't throw [D] from here!")
+			to_chat(A, "I can't throw [D] from here!")
 			return FALSE
 
 		D.forceMove(A.loc) // Maybe this will help with the wallthrowing bug.
@@ -231,7 +231,7 @@
 	if(!D)
 		return
 	if(!A.pulling || A.pulling != D)
-		to_chat(A, "You need to have [D] in a cinch!")
+		to_chat(A, "I need to have [D] in a cinch!")
 		return
 	var/damage = damage_roll(A,D)
 	D.forceMove(A.loc)
@@ -268,7 +268,7 @@
 				return FALSE
 
 			if (!isturf(A.loc) || !isturf(D.loc))
-				to_chat(A, "You can't slam [D] here!")
+				to_chat(A, "I can't slam [D] here!")
 				A.pixel_x = 0
 				A.pixel_y = 0
 				D.pixel_x = 0
@@ -296,7 +296,7 @@
 			return FALSE
 
 		if (!isturf(A.loc) || !isturf(D.loc))
-			to_chat(A, "You can't slam [D] here!")
+			to_chat(A, "I can't slam [D] here!")
 			return FALSE
 
 		D.forceMove(A.loc)
@@ -417,7 +417,7 @@
 
 		if (!isturf(A.loc) || !isturf(D.loc))
 			A.pixel_y = 0
-			to_chat(A, "You can't drop onto [D] from here!")
+			to_chat(A, "I can't drop onto [D] from here!")
 			return FALSE
 
 		var/transform_before

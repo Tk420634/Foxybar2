@@ -113,7 +113,7 @@ They deal 35 brute (armor is considered).
 		else if(islizard(target))
 			var/list/messages = list("Thisss isss not the time nor place to be. Leave.",\
 									"Go back where you came from. I am sssafeguarding thisss sssacred place.",\
-									"You ssshould not be here. Turn.",\
+									"I ssshould not be here. Turn.",\
 									"I can sssee an outlander from a mile away. You're not one of us."\
 									)
 			message = pick(messages)
@@ -127,7 +127,7 @@ They deal 35 brute (armor is considered).
 			Retaliate()
 		else
 			var/list/messages = list("Get out of my sssight, outlander.",\
-									"You will not run your dirty handsss through what little sssacred land we have left. Out.",\
+									"I will not run your dirty handsss through what little sssacred land we have left. Out.",\
 									"My urge to end your life isss immeasssurable, but I am willing to ssspare you. Leave.",\
 									"You're not invited. Get out.")
 			message = pick(messages)
@@ -136,7 +136,7 @@ They deal 35 brute (armor is considered).
 		say(message, language = language)
 
 	else
-		say("You are not welcome into the necropolisss.")
+		say("I am not welcome into the necropolisss.")
 		introduced |= target
 
 /mob/living/simple_animal/hostile/megafauna/gladiator/Move(atom/newloc, dir, step_x, step_y)

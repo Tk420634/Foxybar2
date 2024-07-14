@@ -236,7 +236,7 @@
 	if(!can_use(usr))
 		return 0
 
-	to_chat(usr, span_notice("You mess around with the shin guards."))
+	to_chat(usr, span_notice("I mess around with the shin guards."))
 	if(src.boottoggled)
 		src.icon_state = "[initial(icon_state)]"
 		src.item_state = "[initial(icon_state)]"
@@ -278,7 +278,7 @@
 
 /obj/item/clothing/shoes/f13/swimfins
 	name = "swimming fins"
-	desc = "You see, Ivan, when you wear fin in desert, they help you swim good if you find much water."
+	desc = "I see, Ivan, when you wear fin in desert, they help you swim good if you find much water."
 	icon_state = "flippers"
 	item_state = "flippers"
 	clothing_flags = NOSLIP

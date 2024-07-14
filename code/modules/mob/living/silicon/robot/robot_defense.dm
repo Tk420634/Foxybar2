@@ -1,9 +1,9 @@
 /mob/living/silicon/robot/attackby(obj/item/I, mob/living/user)
 	if(hat_offset != INFINITY && user.a_intent == INTENT_HELP && is_type_in_typecache(I, equippable_hats))
 		if(!(I.slot_flags & INV_SLOTBIT_HEAD))
-			to_chat(user, span_warning("You can't quite fit [I] onto [src]'s head."))
+			to_chat(user, span_warning("I can't quite fit [I] onto [src]'s head."))
 			return
-		to_chat(user, span_notice("You begin to place [I] on [src]'s head..."))
+		to_chat(user, span_notice("I begin to place [I] on [src]'s head..."))
 		to_chat(src, span_notice("[user] is placing [I] on your head..."))
 		if(do_after(user, 30, target = src))
 			if (user.temporarilyRemoveItemFromInventory(I, TRUE))
@@ -34,7 +34,7 @@
 				uneq_active()
 				visible_message(span_danger("[M] has disarmed [src]!"), \
 					span_userdanger("[M] has disabled your active module!"), null, COMBAT_MESSAGE_RANGE, null, M,
-					span_danger("You have disarmed [src]!"))
+					span_danger("I have disarmed [src]!"))
 				log_combat(M, src, "disarmed", "[I ? " removing \the [I]" : ""]")
 			else
 				Paralyze(40)
@@ -42,7 +42,7 @@
 				log_combat(M, src, "pushed")
 				visible_message(span_danger("[M] has forced back [src]!"), \
 					span_userdanger("[M] has forced you back!"), null, COMBAT_MESSAGE_RANGE, null, M,
-					span_danger("You have forced back [src]!"))
+					span_danger("I have forced back [src]!"))
 			playsound(loc, 'sound/weapons/pierce.ogg', 50, 1, -1)
 
 /mob/living/silicon/robot/attack_slime(mob/living/simple_animal/slime/M)
@@ -68,7 +68,7 @@
 		cell.update_icon()
 		cell.add_fingerprint(user)
 		user.put_in_active_hand(cell)
-		to_chat(user, span_notice("You remove \the [cell]."))
+		to_chat(user, span_notice("I remove \the [cell]."))
 		cell = null
 		update_icons()
 		diag_hud_set_borgcell()
@@ -95,7 +95,7 @@
 	. = ..()
 	if(!opened)//Cover is closed
 		if(locked)
-			to_chat(user, span_notice("You emag the cover lock."))
+			to_chat(user, span_notice("I emag the cover lock."))
 			locked = FALSE
 			if(shell) //A warning to Traitors who may not know that emagging AI shells does not slave them.
 				to_chat(user, span_boldwarning("[src] seems to be controlled remotely! Emagging the interface may not work as expected."))
@@ -103,14 +103,14 @@
 		to_chat(user, span_warning("The cover is already unlocked!"))
 		return
 	if(wiresexposed)
-		to_chat(user, span_warning("You must unexpose the wires first!"))
+		to_chat(user, span_warning("I must unexpose the wires first!"))
 		return
 
-	to_chat(user, span_notice("You emag [src]'s interface."))
+	to_chat(user, span_notice("I emag [src]'s interface."))
 	emag_cooldown = world.time + 100
 
 /*	if(is_servant_of_ratvar(src))
-		to_chat(src, "<span class='nezbere'>\"[text2ratvar("You will serve Engine above all else")]!\"</span>\n\
+		to_chat(src, "<span class='nezbere'>\"[text2ratvar("I will serve Engine above all else")]!\"</span>\n\
 		<span class='danger'>ALERT: Subversion attempt denied.</span>")
 		log_game("[key_name(user)] attempted to emag cyborg [key_name(src)], but they serve only Ratvar.")
 		return TRUE*/

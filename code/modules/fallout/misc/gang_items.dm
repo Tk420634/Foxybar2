@@ -323,7 +323,7 @@
 
 /obj/item/storage/box/bundleelguapo
 	name = "Bandito Bundle"
-	desc = "You burned the Village, raped the horses, and rode off on their women. It was a long time ago, so the details got mixed up, but you get the point. "
+	desc = "I burned the Village, raped the horses, and rode off on their women. It was a long time ago, so the details got mixed up, but you get the point. "
 
 /obj/item/storage/box/bundleelguapo/PopulateContents()
 	new /obj/item/gun/ballistic/rifle/repeater/cowboy(src)

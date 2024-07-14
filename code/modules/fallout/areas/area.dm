@@ -280,6 +280,7 @@
 
 	ambience_area = list(
 		/datum/looping_sound/ambient/fb/bar,
+		/datum/looping_sound/ambient/fb/bar_bacon,
 		/datum/looping_sound/ambient/woodcreak,
 		/datum/looping_sound/ambient/lightbulb,
 		)
@@ -299,6 +300,7 @@
 		/datum/looping_sound/ambient/fb/bar,
 		/datum/looping_sound/ambient/woodcreak,
 		/datum/looping_sound/ambient/lightbulb,
+		/datum/looping_sound/ambient/fb/bar_bacon,
 		/datum/looping_sound/ambient/fb/brownnoise,
 		/datum/looping_sound/ambient/fb/fannoise
 		)

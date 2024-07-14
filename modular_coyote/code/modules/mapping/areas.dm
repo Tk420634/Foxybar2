@@ -118,7 +118,7 @@
 /area/f13/building/abandoned/renegade
 
 /area/f13/underground/cave/tunnelertemple
-	narrate = "You feel a subtle dread. Something here feels wrong. The world is unrealized for a brief moment; a thin tarp concealing a reality you can't experience, nor want to. You think you might feel safer if you had lots of friends and supplies."
+	narrate = "I feel a subtle dread. Something here feels wrong. The world is unrealized for a brief moment; a thin tarp concealing a reality you can't experience, nor want to. You think you might feel safer if you had lots of friends and supplies."
 
 /area/f13/underground/cave/tunnelertemple/void
 	narrate = "Darkness looms ahead. In the void you hear quiet croaks and whispers. Two sharp emerald eyes stare back at you. You're in for a big fight.."

@@ -45,7 +45,7 @@
 			//if(3)
 				//fisto_setting = 1
 		//W.play_tool_sound(src)
-		//to_chat(user, span_notice("You tweak \the [src]'s piston valve to [fisto_setting]."))
+		//to_chat(user, span_notice("I tweak \the [src]'s piston valve to [fisto_setting]."))
 	//else if(istype(W, /obj/item/screwdriver))
 		//if(tank)
 			//updateTank(tank, 1, user)
@@ -55,7 +55,7 @@
 		if(!tank)
 			to_chat(user, span_notice("\The [src] currently has no tank attached to it."))
 			return
-		to_chat(user, span_notice("You detach \the [thetank] from \the [src]."))
+		to_chat(user, span_notice("I detach \the [thetank] from \the [src]."))
 		tank.forceMove(get_turf(user))
 		user.put_in_hands(tank)
 		tank = null
@@ -65,13 +65,13 @@
 			return
 		if(!user.transferItemToLoc(thetank, src))
 			return
-		to_chat(user, span_notice("You hook \the [thetank] up to \the [src]."))
+		to_chat(user, span_notice("I hook \the [thetank] up to \the [src]."))
 		tank = thetank
 
 
 /obj/item/melee/powerfist/attack(mob/living/target, mob/living/user, attackchain_flags = NONE)
 	if(HAS_TRAIT(user, TRAIT_PACIFISM))
-		to_chat(user, span_warning("You don't want to harm other living beings!"))
+		to_chat(user, span_warning("I don't want to harm other living beings!"))
 		return FALSE
 	// if(!tank)
 	// 	to_chat(user, span_warning("\The [src] can't operate without a source of gas!"))
@@ -110,7 +110,7 @@
 	SSdamage.damage_mob(user, target, totalitemdamage)
 
 	target.visible_message(span_danger("[user]'s powerfist lets out a loud hiss as [user.p_they()] punch[user.p_es()] [target.name]!"), \
-		span_userdanger("You cry out in pain as [user]'s punch flings you backwards!"))
+		span_userdanger("I cry out in pain as [user]'s punch flings you backwards!"))
 	new /obj/effect/temp_visual/kinetic_blast(target.loc)
 	playsound(loc, 'sound/weapons/resonator_blast.ogg', 50, 1)
 	playsound(loc, 'sound/weapons/genhit2.ogg', 50, 1)

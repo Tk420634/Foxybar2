@@ -86,7 +86,7 @@ ty ilu - bear
 	narrate = "The smell of mold mixed with the stench of bloatfly puss burns your nose the first time you enter this place. Once, perhaps not all that long ago, someone was growing plants in here. Maybe someone is now, but if not then this ramshackle greenhouse is in poor repair."
 
 /area/f13/building/coyote/nash/museum/groundfloor
-	narrate = "You have to struggle with cobwebs just to enter this decayed building, it's a wonder that the giant spiders who make these messes seem to have been cleared out. Then what, you wonder, has taken this place over in their stead? You should be wary."
+	narrate = "I have to struggle with cobwebs just to enter this decayed building, it's a wonder that the giant spiders who make these messes seem to have been cleared out. Then what, you wonder, has taken this place over in their stead? You should be wary."
 
 /area/f13/building/coyote/nash/school/groundfloor
 	narrate = "The stench of rotting wood smashes you in the face like a hammer as you pass into this creaking building. Rot, rust, decay and ruin fill these dark hallways. No more do the teenagers of the city seek to learn from this hallowed ground, only death waits within. Faintly, you can hear something on one of the upper floors. Something heavy. Perhaps, though, it is your imagination run wild."
@@ -116,12 +116,12 @@ ty ilu - bear
 	narrate = "The western part of the ground floor of the Mass Fusion power plant. Even in this room you can smell burnt cordite and, while well lit you really wish it wasn't. Unless of course you revel in the sight of what is likely human blood and viscera smeared around as if by the hands of an expert janitor. The people within this place, if they do still live, are not worth tarrying with. Danger, and perhaps golden nuggets of the age past lay ahead of you. If you can survive to bring them home."
 
 /area/f13/building/coyote/nash/massfus/upperfloor
-	narrate = "You can hear the raiders talking, even as you step off the metal stairs. Or perhaps its the memories of them still lingering in this area. Intution tells you to be careful, and take it slow. This will be a marathon, not a sprint. You really should have brought a friend, if you didn't."
+	narrate = "I can hear the raiders talking, even as you step off the metal stairs. Or perhaps its the memories of them still lingering in this area. Intution tells you to be careful, and take it slow. This will be a marathon, not a sprint. You really should have brought a friend, if you didn't."
 
 
 //Underground
 /area/f13/underground/cave/coyote
-	narrate = "You feel a subtle dread. Something here feels wrong. The world is unrealized for a brief moment; a thin tarp concealing a reality you can't experience, nor want to. You think you might feel safer if you had lots of friends and supplies."
+	narrate = "I feel a subtle dread. Something here feels wrong. The world is unrealized for a brief moment; a thin tarp concealing a reality you can't experience, nor want to. You think you might feel safer if you had lots of friends and supplies."
 
 /area/f13/underground/cave/coyote/antmound
 	narrate = "This cave smells like a mixture of petrolium products mixed with a lemony, almost citrus, scent. If you're clever you know it as formic acid. It's the smell of ants, and something flamable. Be careful here, you are in their home and they know these tunnels well."

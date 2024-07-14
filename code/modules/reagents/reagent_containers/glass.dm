@@ -57,7 +57,7 @@
 				log_reagent("INGESTION: FED BY: [key_name(user)] (loc [user.loc] at [AREACOORD(UT)]) -> [key_name(M)] (loc [M.loc] at [AREACOORD(MT)]) - [reagents.log_list()]")
 			else
 				var/turf/T = get_turf(user)
-				to_chat(user, span_notice("You swallow a gulp of [src]."))
+				to_chat(user, span_notice("I swallow a gulp of [src]."))
 				log_reagent("INGESTION: SELF: [key_name(user)] (loc [user.loc] at [AREACOORD(T)]) - [reagents.log_list()]")
 			var/fraction = min(5/reagents.total_volume, 1)
 			reagents.reaction(M, INGEST, fraction)
@@ -79,7 +79,7 @@
 			return
 
 		var/trans = reagents.trans_to(target, amount_per_transfer_from_this, log = "reagentcontainer-glass afterattack transfer to")
-		to_chat(user, span_notice("You transfer [trans] unit\s of the solution to [target]."))
+		to_chat(user, span_notice("I transfer [trans] unit\s of the solution to [target]."))
 
 	else if(target.is_drainable()) //A dispenser. Transfer FROM it TO us.
 		if(!target.reagents.total_volume)
@@ -91,12 +91,12 @@
 			return
 
 		var/trans = target.reagents.trans_to(src, amount_per_transfer_from_this, log = "reagentcontainer-glass afterattack fill from")
-		to_chat(user, span_notice("You fill [src] with [trans] unit\s of the contents of [target]."))
+		to_chat(user, span_notice("I fill [src] with [trans] unit\s of the contents of [target]."))
 
 	else if(reagents.total_volume)
 		if(user.a_intent == INTENT_HARM)
 			user.visible_message(span_danger("[user] splashes the contents of [src] onto [target]!"), \
-								span_notice("You splash the contents of [src] onto [target]."))
+								span_notice("I splash the contents of [src] onto [target]."))
 			reagents.reaction(target, TOUCH)
 			reagents.clear_reagents()
 
@@ -104,7 +104,7 @@
 	var/hotness = I.get_temperature()
 	if(hotness && reagents)
 		reagents.expose_temperature(hotness)
-		to_chat(user, span_notice("You heat [name] with [I]!"))
+		to_chat(user, span_notice("I heat [name] with [I]!"))
 
 	if(istype(I, /obj/item/reagent_containers/food/snacks/egg)) //breaking eggs
 		var/obj/item/reagent_containers/food/snacks/egg/E = I
@@ -112,7 +112,7 @@
 			if(reagents.total_volume >= reagents.maximum_volume)
 				to_chat(user, span_notice("[src] is full."))
 			else
-				to_chat(user, span_notice("You break [E] in [src]."))
+				to_chat(user, span_notice("I break [E] in [src]."))
 				E.reagents.trans_to(src, E.reagents.total_volume, log = "reagentcontainer-glass break egg in")
 				qdel(E)
 			return
@@ -389,7 +389,7 @@
 		eject()
 	else
 		mortar_mode = !mortar_mode
-		to_chat(user, span_notice("You decide to [mortar_mode == MORTAR_JUICE ? "juice the contents of the mortar" : "grind the contents of the mortar"]."))
+		to_chat(user, span_notice("I decide to [mortar_mode == MORTAR_JUICE ? "juice the contents of the mortar" : "grind the contents of the mortar"]."))
 
 /obj/item/reagent_containers/glass/mortar/attackby(obj/item/I, mob/living/carbon/human/user)
 	if(is_type_in_list(I, blacklistchems))
@@ -397,7 +397,7 @@
 	if(istype(I,/obj/item/pestle))
 		if(LAZYLEN(holdingitems))
 			if(IS_STAMCRIT(user))
-				to_chat(user, span_warning("You are too tired to work!"))
+				to_chat(user, span_warning("I am too tired to work!"))
 				return
 			user.adjustStaminaLoss(2 * holdingitems.len) //max 40
 			if(mortar_mode== MORTAR_JUICE)
@@ -418,18 +418,18 @@
 			for(var/i in inserted)
 				holdingitems[i] = TRUE
 			if(!I.contents.len)
-				to_chat(user, span_notice("You empty [I] into [src]."))
+				to_chat(user, span_notice("I empty [I] into [src]."))
 			else
-				to_chat(user, span_notice("You fill [src] to the brim."))
+				to_chat(user, span_notice("I fill [src] to the brim."))
 		return TRUE
 	if(I.grind_requirements(src)) //Error messages should be in the objects' definitions
 		return
 	if(I.juice_results || I.grind_results)
 		if(user.transferItemToLoc(I, src))
-			to_chat(user, span_notice("You add [I] to [src]."))
+			to_chat(user, span_notice("I add [I] to [src]."))
 			holdingitems[I] = TRUE
 			return FALSE
-	to_chat(user, span_warning("You can't put this in the mortar!"))
+	to_chat(user, span_warning("I can't put this in the mortar!"))
 	..()
 
 /obj/item/reagent_containers/glass/mortar/proc/eject(mob/user)
@@ -447,14 +447,14 @@
 	if(user)
 		user.visible_message(
 			span_notice("[user] starts squeezing the juice out of the mortars contents..."),
-			span_notice("You start squeezing the juice out of the contents of the mortar..."),
+			span_notice("I start squeezing the juice out of the contents of the mortar..."),
 			span_notice("Something is squishing something nearby.")
 			)
 	if(!do_after(user, 4 SECONDS, target = src))
 		if(user)
 			user.visible_message(
 				span_alert("[user] messes up!"),
-				span_alert("You mess up and have to start over!"),
+				span_alert("I mess up and have to start over!"),
 				span_alert("Something stops grinding rocks together.")
 				)
 			return
@@ -467,7 +467,7 @@
 	if(user)
 		user.visible_message(
 			span_notice("[user] finishes squeezing the juice out of the mortars contents..."),
-			span_notice("You finish squeezing the juice out of the contents within the mortar..."),
+			span_notice("I finish squeezing the juice out of the contents within the mortar..."),
 			span_notice("Something stops grinding rocks together.")
 			)
 
@@ -482,14 +482,14 @@
 	if(user)
 		user.visible_message(
 			span_notice("[user] starts grinding the mortars contents..."),
-			span_notice("You start grinding the contents of the mortar..."),
+			span_notice("I start grinding the contents of the mortar..."),
 			span_notice("Something is grinding something nearby.")
 			)
 	if(!do_after(user, 4 SECONDS, target = src))
 		if(user)
 			user.visible_message(
 				span_alert("[user] messes up!"),
-				span_alert("You mess up and have to start over!"),
+				span_alert("I mess up and have to start over!"),
 				span_alert("Something stops grinding rocks together."),
 				)
 			return
@@ -502,7 +502,7 @@
 	if(user)
 		user.visible_message(
 			span_notice("[user] finishes grinding the mortars contents..."),
-			span_notice("You finish grinding the contents within the mortar..."),
+			span_notice("I finish grinding the contents within the mortar..."),
 			span_notice("Something stops grinding rocks together.")
 			)
 

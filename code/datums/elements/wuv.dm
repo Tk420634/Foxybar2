@@ -6,7 +6,7 @@
 	var/pet_emote
 	//whether the emote is visible or audible
 	var/pet_type
-	//same as above, except when harmed. "You are going into orbit, you stupid mutt!"
+	//same as above, except when harmed. "I am going into orbit, you stupid mutt!"
 	var/punt_emote
 	//same as pet_type
 	var/punt_type

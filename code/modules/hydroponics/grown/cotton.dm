@@ -33,7 +33,7 @@
 	var/cotton_name = "raw cotton"
 
 /obj/item/grown/cotton/attack_self(mob/user)
-	user.show_message(span_notice("You pull some [cotton_name] out of the [name]!"), MSG_VISUAL)
+	user.show_message(span_notice("I pull some [cotton_name] out of the [name]!"), MSG_VISUAL)
 	var/cottonAmt = 1 + round(seed.potency / 25) // The cotton we're holding
 	for(var/obj/item/grown/cotton/C in user.loc) // The cotton on the floor
 		if(C.cotton_type != cotton_type)

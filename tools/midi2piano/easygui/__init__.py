@@ -394,7 +394,7 @@ def buttonbox(msg="",title=" "
                 else:  # PIL is not loaded
                     msg += ImageErrorMsg % (imageFilename,
                     "\nI could not import the Python Imaging Library (PIL) to display the image.\n\n"
-                    "You may need to install PIL\n"
+                    "I may need to install PIL\n"
                     "(http://www.pythonware.com/products/pil/)\n"
                     "to display " + ext + " image files.")
 
@@ -861,7 +861,7 @@ def __fillablebox(msg
                 else:  # PIL is not loaded
                     msg += ImageErrorMsg % (imageFilename,
                     "\nI could not import the Python Imaging Library (PIL) to display the image.\n\n"
-                    "You may need to install PIL\n"
+                    "I may need to install PIL\n"
                     "(http://www.pythonware.com/products/pil/)\n"
                     "to display " + ext + " image files.")
 
@@ -2283,19 +2283,19 @@ def _demo_filesavebox():
     msg ="Save file as:"
 
     f = filesavebox(msg,title,default=filename)
-    writeln("You chose to save file: %s" % f)
+    writeln("I chose to save file: %s" % f)
 
 def _demo_diropenbox():
     title = "Demo of diropenbox"
     msg = "Pick the directory that you wish to open."
     d = diropenbox(msg, title)
-    writeln("You chose directory...: %s" % d)
+    writeln("I chose directory...: %s" % d)
 
     d = diropenbox(msg, title,default="./")
-    writeln("You chose directory...: %s" % d)
+    writeln("I chose directory...: %s" % d)
 
     d = diropenbox(msg, title,default="c:/")
-    writeln("You chose directory...: %s" % d)
+    writeln("I chose directory...: %s" % d)
 
 
 def _demo_fileopenbox():
@@ -2303,28 +2303,28 @@ def _demo_fileopenbox():
     title = "Open files"
     default="*.py"
     f = fileopenbox(msg,title,default=default)
-    writeln("You chose to open file: %s" % f)
+    writeln("I chose to open file: %s" % f)
 
     default="./*.gif"
     filetypes = ["*.jpg",["*.zip","*.tgs","*.gz", "Archive files"],["*.htm", "*.html","HTML files"]]
     f = fileopenbox(msg,title,default=default,filetypes=filetypes)
-    writeln("You chose to open file: %s" % f)
+    writeln("I chose to open file: %s" % f)
 
     """#deadcode -- testing ----------------------------------------
     f = fileopenbox(None,None,default=default)
-    writeln("You chose to open file: %s" % f)
+    writeln("I chose to open file: %s" % f)
 
     f = fileopenbox(None,title,default=default)
-    writeln("You chose to open file: %s" % f)
+    writeln("I chose to open file: %s" % f)
 
     f = fileopenbox(msg,None,default=default)
-    writeln("You chose to open file: %s" % f)
+    writeln("I chose to open file: %s" % f)
 
     f = fileopenbox(default=default)
-    writeln("You chose to open file: %s" % f)
+    writeln("I chose to open file: %s" % f)
 
     f = fileopenbox(default=None)
-    writeln("You chose to open file: %s" % f)
+    writeln("I chose to open file: %s" % f)
     #----------------------------------------------------deadcode """
 
 
@@ -2485,8 +2485,8 @@ if __name__ == '__main__':
         msgbox("this is a second test of passing in boxRoot", root=root)
 
         reply = enterbox("Enter something", root=root)
-        writeln("You wrote:", reply)
+        writeln("I wrote:", reply)
 
         reply = enterbox("Enter something else", root=root)
-        writeln("You wrote:", reply)
+        writeln("I wrote:", reply)
         root.destroy()

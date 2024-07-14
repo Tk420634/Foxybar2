@@ -178,7 +178,7 @@
 /datum/component/vore/proc/save_vore_prefs()
 	VORE_MASTER
 	if(!master?.client?.prefs)
-		to_chat(src,span_phobia("You attempted to save your vore prefs but somehow you're in this character without a client.prefs variable. Tell a dev."))
+		to_chat(src,span_phobia("I attempted to save your vore prefs but somehow you're in this character without a client.prefs variable. Tell a dev."))
 		return FALSE
 
 	// vore prefs are saved with the rest of the prefs
@@ -204,7 +204,7 @@
 
 	living_sniffer.visible_message(
 		span_warning("[living_sniffer] smells [master]!"),
-		span_notice("You smell [master]. [master.p_they(TRUE)] smell like [smellmsg]."),
+		span_notice("I smell [master]. [master.p_they(TRUE)] smell like [smellmsg]."),
 		"<b>Sniff!</b>",
 		pref_check = VOREPREF_VORE_MESSAGES)
 
@@ -297,7 +297,7 @@
 		master.ShiftClickOn(thingy)
 		return FALSE
 	if(!(thingy.interaction_flags_item & INTERACT_ITEM_ATTACK_HAND_PICKUP)) //See if we're supposed to auto pickup.
-		to_chat(master, span_warning("You can't pick that up to eat it!"))
+		to_chat(master, span_warning("I can't pick that up to eat it!"))
 		return FALSE
 	return TRUE
 
@@ -378,14 +378,14 @@
 				to_chat(master, span_alert("[movable_prey] is too far away from [living_pred]!"))
 				return
 			if(!prey_consents && !CHECK_PREFS(movable_prey, VOREPREF_BEING_PREY))
-				to_chat(master, span_alert("You respect the fact that [movable_prey.name] prefers not to be eaten, and refuse to feed them to [living_pred.name]."))
-				to_chat(movable_prey, span_alert("You notice that [master.name] understands your preference to not be eaten."), pref_check = VOREPREF_VORE_MESSAGES)
-				to_chat(living_pred, span_alert("You notice that [master.name] understands [movable_prey.name]'s preference to not be eaten."), pref_check = VOREPREF_VORE_MESSAGES)
+				to_chat(master, span_alert("I respect the fact that [movable_prey.name] prefers not to be eaten, and refuse to feed them to [living_pred.name]."))
+				to_chat(movable_prey, span_alert("I notice that [master.name] understands your preference to not be eaten."), pref_check = VOREPREF_VORE_MESSAGES)
+				to_chat(living_pred, span_alert("I notice that [master.name] understands [movable_prey.name]'s preference to not be eaten."), pref_check = VOREPREF_VORE_MESSAGES)
 				return
 			if(living_pred.ckey && !CHECK_PREFS(living_pred, VOREPREF_BEING_FED_PREY))
-				to_chat(master, span_alert("You respect the fact that [living_pred.name] prefers not to be fed anyone, and refuse to feed [movable_prey.name] them to them."))
-				to_chat(movable_prey, span_alert("You notice that [master.name] understands [living_pred.name]'s preference to not be fed to anyone."), pref_check = VOREPREF_VORE_MESSAGES)
-				to_chat(living_pred, span_alert("You notice that [master.name] understands your preference to not be fed to [movable_prey.name]."), pref_check = VOREPREF_VORE_MESSAGES)
+				to_chat(master, span_alert("I respect the fact that [living_pred.name] prefers not to be fed anyone, and refuse to feed [movable_prey.name] them to them."))
+				to_chat(movable_prey, span_alert("I notice that [master.name] understands [living_pred.name]'s preference to not be fed to anyone."), pref_check = VOREPREF_VORE_MESSAGES)
+				to_chat(living_pred, span_alert("I notice that [master.name] understands your preference to not be fed to [movable_prey.name]."), pref_check = VOREPREF_VORE_MESSAGES)
 				return
 			if(!prey_consents && SEND_SIGNAL(movable_prey, COMSIG_VORE_CAN_BE_EATEN) == FALSE)
 				to_chat(master, span_alert("[movable_prey] would prefer not to be eaten!"))
@@ -396,17 +396,17 @@
 			INVOKE_ASYNC(src,PROC_REF(feed_prey_to_predator), living_pred, movable_prey)
 		if(VORETYPE_FEED_US_TO_PRED)
 			if(!master.Adjacent(living_pred))
-				to_chat(master, span_alert("You are too far away from [living_pred]!"))
+				to_chat(master, span_alert("I am too far away from [living_pred]!"))
 				return FALSE
 			if(!CHECK_PREFS(living_pred, VOREPREF_BEING_FED_PREY))
-				to_chat(master, span_alert("You respect the fact that [living_pred.name] prefers not to have you feed yourself to them."))
-				to_chat(living_pred, span_alert("You notice that [master.name] understands your preference not to feed themself to you."), pref_check = VOREPREF_VORE_MESSAGES)
+				to_chat(master, span_alert("I respect the fact that [living_pred.name] prefers not to have you feed yourself to them."))
+				to_chat(living_pred, span_alert("I notice that [master.name] understands your preference not to feed themself to you."), pref_check = VOREPREF_VORE_MESSAGES)
 				return
 			if(!SEND_SIGNAL(living_pred, COMSIG_VORE_CAN_EAT))
 				to_chat(master, span_alert("[living_pred] can't eat you right now!"))
 				return FALSE
 			if(!can_be_eaten()) // just in case
-				to_chat(master, span_alert("You can't be eaten right now!"))
+				to_chat(master, span_alert("I can't be eaten right now!"))
 				return FALSE // they cont want to eat em
 			if(!SEND_SIGNAL(living_pred, COMSIG_VORE_CAN_BE_FED_PREY))
 				to_chat(master, span_alert("[living_pred] would prefer not to be fed prey!"))
@@ -414,17 +414,17 @@
 			INVOKE_ASYNC(src,PROC_REF(feed_self_to_other), living_pred)
 		if(VORETYPE_EAT_PREY)
 			if(!master.Adjacent(movable_prey))
-				to_chat(master, span_alert("You are too far away from [movable_prey]!"))
+				to_chat(master, span_alert("I am too far away from [movable_prey]!"))
 				return FALSE
 			if(!prey_consents && !CHECK_PREFS(movable_prey, VOREPREF_BEING_PREY))
-				to_chat(master, span_alert("You respect the fact that [movable_prey.name] prefers not to be eaten, and refuse to eat them."))
-				to_chat(movable_prey, span_alert("You notice that [master.name] understands your preference to not be eaten."), pref_check = VOREPREF_VORE_MESSAGES)
+				to_chat(master, span_alert("I respect the fact that [movable_prey.name] prefers not to be eaten, and refuse to eat them."))
+				to_chat(movable_prey, span_alert("I notice that [master.name] understands your preference to not be eaten."), pref_check = VOREPREF_VORE_MESSAGES)
 				return
 			if(!prey_consents && SEND_SIGNAL(movable_prey, COMSIG_VORE_CAN_BE_EATEN) == FALSE)
 				to_chat(master, span_alert("[movable_prey] can't be eaten right now!"))
 				return FALSE
 			if(!can_eat()) // just in case
-				to_chat(master, span_alert("You can't eat [movable_prey] right now!"))
+				to_chat(master, span_alert("I can't eat [movable_prey] right now!"))
 				return FALSE
 			INVOKE_ASYNC(src,PROC_REF(devour_prey), movable_prey)
 	return TRUE
@@ -463,16 +463,16 @@
 /datum/component/vore/proc/perform_the_nom(atom/movable/movable_prey, mob/living/living_pred, obj/vore_belly/belly)
 	VORE_MASTER
 	if(!voremode)
-		to_chat(master, span_alert("You aren't in Vore Intent! You can toggle this on in your vore tab."))
+		to_chat(master, span_alert("I am not in Vore Intent! You can toggle this on in your vore tab."))
 		return
 	if(!movable_prey)
-		to_chat(master, span_phobia("You tried to eat someone, but they apparently don't exist? This might be a bug."))
+		to_chat(master, span_phobia("I tried to eat someone, but they apparently don't exist? This might be a bug."))
 		return
 	if(!living_pred)
 		to_chat(master, span_phobia("Someone tried to eat you (or someone else?), but something went wrong. This might be a bug?"))
 		return
 	if(!istype(belly))
-		to_chat(master, span_phobia("Your selected belly... isn't. This might be a bug?"))
+		to_chat(master, span_phobia("My selected belly... isn't. This might be a bug?"))
 		return
 	if(!SEND_SIGNAL(living_pred, COMSIG_VORE_VERIFY_BELLY, belly))
 		to_chat(master, span_phobia("[belly] isn't in the right place. This might be a bug??"))
@@ -517,12 +517,12 @@
 			required_mobility_flags = NONE,
 			allow_movement = TRUE,
 			))
-		to_chat(master, span_alert("You were intererupted!"))
+		to_chat(master, span_alert("I were intererupted!"))
 		to_chat(movable_prey, span_alert("They were intererupted!"))
 		return FALSE
 	if(!movable_prey.Adjacent(master)) //double check'd just in case they moved during the timer and the do_mob didn't fail for whatever reason
 		to_chat(master, span_alert("They got away!"))
-		to_chat(movable_prey, span_alert("You got away!"), pref_check = VOREPREF_VORE_MESSAGES)
+		to_chat(movable_prey, span_alert("I got away!"), pref_check = VOREPREF_VORE_MESSAGES)
 		return FALSE
 
 	// If we got this far, nom successful! Announce it!
@@ -607,7 +607,7 @@
 	var/die = alert(
 		probably_master,
 		"Looks like you're dead, and likely inside someone's belly! What would you like to happen?",
-		"You died",
+		"I died",
 		"Disappear",
 		"Fall out",
 		"Just sit there"
@@ -616,8 +616,8 @@
 		if("Disappear")
 			var/usure = alert(
 				probably_master,
-				"You sure? This'll delete your body! The only ways back into the round are through cloning or playing a different character!",
-				"You sure?",
+				"I sure? This'll delete your body! The only ways back into the round are through cloning or playing a different character!",
+				"I sure?",
 				"Yes, delete my body",
 				"No, don't delete my body"
 				)

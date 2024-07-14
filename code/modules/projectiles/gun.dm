@@ -440,7 +440,7 @@ ATTACHMENTS
 	if(clumsy_check)
 		if(istype(user))
 			if (HAS_TRAIT(user, TRAIT_CLUMSY) && prob(40))
-				to_chat(user, span_userdanger("You shoot yourself in the foot with [src]!"))
+				to_chat(user, span_userdanger("I shoot yourself in the foot with [src]!"))
 				var/shot_leg = pick(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 				process_fire(user, user, FALSE, params, shot_leg)
 				user.dropItemToGround(src, TRUE)
@@ -449,13 +449,13 @@ ATTACHMENTS
 	// if(weapon_weight == GUN_TWO_HAND_ONLY && !wielded)
 	// 	wield(user)
 	// 	if(!wielded)
-	// 		to_chat(user, span_userdanger("You need both hands free to fire \the [src]!"))
+	// 		to_chat(user, span_userdanger("I need both hands free to fire \the [src]!"))
 	// 		return
 
 	if(rigged)
 		user.visible_message(
 			span_danger("As \the [user] pulls the trigger on \the [src], a bullet fires backwards out of it"),
-			span_danger("Your \the [src] fires backwards, shooting you in the face!")
+			span_danger("My \the [src] fires backwards, shooting you in the face!")
 		)
 		process_fire(user, user, FALSE, params, BODY_ZONE_HEAD)
 		if(rigged > TRUE)
@@ -578,11 +578,11 @@ ATTACHMENTS
 		if(isliving(user))
 			if(type == /obj/item/gun/magic/wand/kelpmagic/magicmissile)
 				if(HAS_TRAIT(user, TRAIT_MARTIAL_A))
-					to_chat(user, span_danger("You don't know how to use magic wands!"))
+					to_chat(user, span_danger("I don't know how to use magic wands!"))
 					return
 			else
 				if(HAS_TRAIT(user, TRAIT_MARTIAL_A) || !HAS_TRAIT(user, TRAIT_WAND_PROFICIENT))
-					to_chat(user, span_danger("You don't know how to use magic wands!"))
+					to_chat(user, span_danger("I don't know how to use magic wands!"))
 					return
 
 	if(safety)
@@ -650,7 +650,7 @@ ATTACHMENTS
 		if(!gun_light)
 			if(!user.transferItemToLoc(I, src))
 				return
-			to_chat(user, span_notice("You click [S] into place on [src]."))
+			to_chat(user, span_notice("I click [S] into place on [src]."))
 			set_gun_light(S)
 			update_gunlight()
 			alight = new(src)
@@ -664,7 +664,7 @@ ATTACHMENTS
 			return ..()
 		if(!user.transferItemToLoc(I, src))
 			return
-		to_chat(user, span_notice("You attach \the [K] to the front of \the [src]."))
+		to_chat(user, span_notice("I attach \the [K] to the front of \the [src]."))
 		bayonet = K
 		update_icon()
 		update_overlays()
@@ -683,14 +683,14 @@ ATTACHMENTS
 	if(can_flashlight && gun_light)
 		I.play_tool_sound(src)
 		var/obj/item/flashlight/seclite/S = gun_light
-		to_chat(user, span_notice("You unscrew the seclite from \the [src]."))
+		to_chat(user, span_notice("I unscrew the seclite from \the [src]."))
 		S.forceMove(get_turf(user))
 		clear_gunlight()
 		return TRUE
 
 	if(can_bayonet && bayonet)
 		I.play_tool_sound(src)
-		to_chat(user, span_notice("You unscrew the bayonet from \the [src]."))
+		to_chat(user, span_notice("I unscrew the bayonet from \the [src]."))
 		var/obj/item/melee/onehanded/knife/bayonet/K = bayonet
 		K.forceMove(get_turf(user))
 		bayonet = null
@@ -743,7 +743,7 @@ ATTACHMENTS
 	var/mob/living/carbon/human/user = usr
 	gun_light.on = !gun_light.on
 	gun_light.update_brightness()
-	to_chat(user, span_notice("You toggle the gunlight [gun_light.on ? "on":"off"]."))
+	to_chat(user, span_notice("I toggle the gunlight [gun_light.on ? "on":"off"]."))
 
 	playsound(user, 'sound/weapons/empty.ogg', 100, TRUE)
 	update_gunlight()
@@ -861,14 +861,14 @@ ATTACHMENTS
 		user.client.pixel_y = world.icon_size*_y
 		RegisterSignal(user, COMSIG_ATOM_DIR_CHANGE,PROC_REF(rotate))
 		UnregisterSignal(user, COMSIG_MOVABLE_MOVED) //pls don't conflict with anything else using this signal
-		user.visible_message(span_notice("[user] looks down the scope of [src]."), span_notice("You look down the scope of [src]."))
+		user.visible_message(span_notice("[user] looks down the scope of [src]."), span_notice("I look down the scope of [src]."))
 	else
 		user.remove_movespeed_modifier(/datum/movespeed_modifier/scoped_in)
 		user.client.change_view(CONFIG_GET(string/default_view))
 		user.client.pixel_x = 0
 		user.client.pixel_y = 0
 		UnregisterSignal(user, COMSIG_ATOM_DIR_CHANGE)
-		user.visible_message(span_notice("[user] looks up from the scope of [src]."), span_notice("You look up from the scope of [src]."))
+		user.visible_message(span_notice("[user] looks up from the scope of [src]."), span_notice("I look up from the scope of [src]."))
 		RegisterSignal(user, COMSIG_MOVABLE_MOVED,PROC_REF(on_walk)) //Extra proc to make sure your zoom resets for bug where you don't unzoom when toggling while moving
 
 /obj/item/gun/proc/on_walk(mob/living/user)
@@ -1010,7 +1010,7 @@ ATTACHMENTS
 		return
 	safety = !safety
 	playsound(user, 'sound/weapons/selector.ogg', 50, 1)
-	to_chat(user, span_notice("You toggle the safety [safety ? "on":"off"]."))
+	to_chat(user, span_notice("I toggle the safety [safety ? "on":"off"]."))
 	if(!safety)
 		user.visible_message(span_danger("[user] toggles the safety of [user.p_their()] \a [src] off!"))
 	//Update firemode when safeties are toggled
@@ -1028,17 +1028,17 @@ ATTACHMENTS
 	if(braceable && !braced)
 		var/atom/original_loc = user.loc
 		var/brace_direction = get_dir(user, target)
-		to_chat(user, span_notice("You brace your weapon on \the [target]."))
+		to_chat(user, span_notice("I brace your weapon on \the [target]."))
 		braced = TRUE
 		while(user.loc == original_loc && user.dir == brace_direction)
 			sleep(2)
-		to_chat(user, span_notice("You stop bracing your weapon."))
+		to_chat(user, span_notice("I stop bracing your weapon."))
 		braced = FALSE
 	else
 		if(braced)
-			to_chat(user, span_notice("You are already bracing your weapon!"))
+			to_chat(user, span_notice("I am already bracing your weapon!"))
 		else
-			to_chat(user, span_notice("You can\'t properly place your weapon on \the [target] because of the foregrip!"))
+			to_chat(user, span_notice("I can\'t properly place your weapon on \the [target] because of the foregrip!"))
 
 /obj/item/gun/swapped_from()
 	.=..()
@@ -1456,7 +1456,7 @@ ATTACHMENTS
 	user.visible_message(
 		god_i_wish_i_was_them,
 		you_are_so_lucky,
-		span_alert("You hear a loud bang!")
+		span_alert("I hear a loud bang!")
 		)
 	/// Everyone gets to hear how shitty your gun is
 	var/datum/ammo_sound_properties/soundies = GLOB.casing_sound_properties[chambered?.sound_properties]
@@ -1677,7 +1677,7 @@ GLOBAL_LIST_INIT(gun_yeet_words, list(
 	if(istype(I2, /obj/item/gun))
 		G2 = I2
 	if(!G && !G2)
-		to_chat(src, span_warning("You aren't holding a gun you can reload!"))
+		to_chat(src, span_warning("I am not holding a gun you can reload!"))
 		return FALSE
 	G?.Reload(src)
 	if(get_inactive_held_item() == G2)//recheck this again because it might have changed since we reloaded the active hand gun.
@@ -1798,11 +1798,11 @@ ATTACHING SLING
 	if(istype(A, /obj/item/stack/cable_coil) && !sawn_off)
 		if(A.use_tool(src, user, 0, 10, skill_gain_mult = EASY_USE_TOOL_MULT))
 			slot_flags = INV_SLOTBIT_BACK
-			to_chat(user, span_notice("You tie the lengths of cable to the rifle, making a sling."))
+			to_chat(user, span_notice("I tie the lengths of cable to the rifle, making a sling."))
 			slung = TRUE
 			update_icon()
 		else
-			to_chat(user, span_warning("You need at least ten lengths of cable if you want to make a sling!"))
+			to_chat(user, span_warning("I need at least ten lengths of cable if you want to make a sling!"))
 
 /obj/item/gun/ballistic/shotgun/boltaction/improvised/update_overlays()
 	. = ..()

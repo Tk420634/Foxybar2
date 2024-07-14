@@ -38,7 +38,7 @@
 		if(!user.transferItemToLoc(I,src))
 			return
 		mytape = I
-		to_chat(user, span_notice("You insert [I] into [src]."))
+		to_chat(user, span_notice("I insert [I] into [src]."))
 		update_icon()
 	else if(is_wire_tool(I) && panel_open)
 		wires.interact(user)
@@ -47,10 +47,10 @@
 	I.play_tool_sound(src, 50)
 	if(!panel_open)
 		panel_open = TRUE
-		to_chat(user, span_notice("You open the maintenance hatch of [src]."))
+		to_chat(user, span_notice("I open the maintenance hatch of [src]."))
 	else
 		panel_open = FALSE
-		to_chat(user, span_notice("You close the maintenance hatch of [src]."))
+		to_chat(user, span_notice("I close the maintenance hatch of [src]."))
 	return TRUE
 
 /obj/item/taperecorder/Destroy()
@@ -60,7 +60,7 @@
 
 /obj/item/taperecorder/proc/eject(mob/user)
 	if(mytape)
-		to_chat(user, span_notice("You remove [mytape] from [src]."))
+		to_chat(user, span_notice("I remove [mytape] from [src]."))
 		stop()
 		user.put_in_hands(mytape)
 		mytape = null
@@ -261,7 +261,7 @@
 
 /obj/item/tape/attack_self(mob/user)
 	if(!ruined)
-		to_chat(user, span_notice("You pull out all the tape!"))
+		to_chat(user, span_notice("I pull out all the tape!"))
 		ruin()
 
 /obj/item/tape/proc/ruin()
@@ -290,9 +290,9 @@
 
 /obj/item/tape/attackby(obj/item/I, mob/user, params)
 	if(ruined && istype(I, /obj/item/screwdriver) || istype(I, /obj/item/pen))
-		to_chat(user, span_notice("You start winding the tape back in..."))
+		to_chat(user, span_notice("I start winding the tape back in..."))
 		if(I.use_tool(src, user, 120))
-			to_chat(user, span_notice("You wound the tape back in."))
+			to_chat(user, span_notice("I wound the tape back in."))
 			fix()
 
 /obj/item/tape/Initialize()
@@ -321,20 +321,20 @@
 /obj/item/tape/AltClick(mob/user)
 	. = ..()
 	if (firstFlip)
-		to_chat(usr, span_notice("You flip the tape so you can record on the clean magnetic strip."))
+		to_chat(usr, span_notice("I flip the tape so you can record on the clean magnetic strip."))
 		firstFlip = FALSE
 	else
-		to_chat(usr, span_notice("You flip the tape back around."))
+		to_chat(usr, span_notice("I flip the tape back around."))
 	flip()
 
 /obj/item/tape/verb/flipVerb()
 //adding this verb too just so players know it's an option.
 	set name = "Flip Tape";
 	if (firstFlip)
-		to_chat(usr, span_notice("You flip the tape so you can record on the clean magnetic strip"))
+		to_chat(usr, span_notice("I flip the tape so you can record on the clean magnetic strip"))
 		firstFlip = FALSE
 	else
-		to_chat(usr, span_notice("You flip the tape back around."))
+		to_chat(usr, span_notice("I flip the tape back around."))
 	flip()
 
 //Random colour tapes

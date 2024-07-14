@@ -10,7 +10,7 @@
 
 /obj/item/ammo_casing/caseless/laser
 	name = "laser casing"
-	desc = "You shouldn't be seeing this."
+	desc = "I shouldn't be seeing this."
 	caliber = CALIBER_LASER
 	icon_state = "s-casing-live"
 	projectile_type = /obj/item/projectile/beam

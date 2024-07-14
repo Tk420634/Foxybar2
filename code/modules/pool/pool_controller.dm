@@ -99,7 +99,7 @@
 /obj/machinery/pool/controller/emag_act(mob/user)
 	. = ..()
 	if(!(obj_flags & EMAGGED)) //If it is not already emagged, emag it.
-		to_chat(user, span_warning("You disable the [src]'s safety features."))
+		to_chat(user, span_warning("I disable the [src]'s safety features."))
 		do_sparks(5, TRUE, src)
 		obj_flags |= EMAGGED
 		temperature_unlocked = TRUE
@@ -180,7 +180,7 @@
 		return TRUE
 	cut_overlays()
 	panel_open = !panel_open
-	to_chat(user, "You [panel_open ? "open" : "close"] the maintenance panel.")
+	to_chat(user, "I [panel_open ? "open" : "close"] the maintenance panel.")
 	W.play_tool_sound(src)
 	if(panel_open)
 		add_overlay("wires")
