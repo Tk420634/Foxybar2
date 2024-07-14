@@ -346,7 +346,7 @@ GLOBAL_LIST_EMPTY(chat_chuds)
 		numb = 99999999
 	var/list/splitnumbers = list()
 	/// splits numb into its digits, from most to least significant
-	while(numb > 0)
+	while(numb >= 0)
 		splitnumbers += numb % 10
 		numb /= 10
 		numb = floor(numb)
@@ -368,22 +368,39 @@ GLOBAL_LIST_EMPTY(chat_chuds)
 	var/area/A = get_area(source)
 	var/private = A.private
 	var/datum/chatchud/CC = get_chatchud(source)
-	var/list/see_close = hearers(source, close_range)
-	var/list/see_far = hearers(source, long_range) - see_close
+	// var/list/see_close = hearers(source, close_range)
+	// var/list/see_far = hearers(source, long_range) - see_close
+	var/turf/myturf = get_turf(source)
 	var/debug_i = 0
 	dingus:
 		for(var/client/C in GLOB.clients)
 			var/mob/M = C.mob
-			if(M.z != source.z)
+			var/turf/theyturf = get_turf(M)
+			if(myturf.z != theyturf.z)
 				continue dingus
-			if(get_dist(M, source) > long_range)
+			if(get_dist(myturf, theyturf) > long_range)
 				continue dingus
-			var/is_far = (M in see_far)
-			var/is_close = (M in see_close)
+			var/list/me2them = getline(myturf, theyturf)
+			var/is_arguably_visible = TRUE
+			if(!isturf(M.loc))
+				is_arguably_visible = FALSE
+			else
+				bungus:
+					for(var/turf/tee as anything in me2them)
+						if(tee.opacity)
+							is_arguably_visible = FALSE
+							break
+						for(var/atom/movable/AM as anything in tee.contents)
+							if(AM.opacity)
+								is_arguably_visible = FALSE
+								break bungus // dont break my bungus
+			var/is_far = !is_arguably_visible || get_dist(myturf, theyturf) > close_range
+			var/is_close = is_arguably_visible && get_dist(myturf, theyturf) <= close_range
 			if(is_far)
-				if(private)
+				if(private && !is_arguably_visible)
 					continue dingus
-				CC.visible_far[M] = TRUE
+				else if(is_arguably_visible)
+					CC.visible_far[M] = TRUE
 				continue dingus
 			else if(is_close)
 				CC.visible_close[M] = TRUE
@@ -392,7 +409,7 @@ GLOBAL_LIST_EMPTY(chat_chuds)
 			// 	continue dingus // they're too far away to hear
 			// now the fun begins. Try to find a path to them
 			// now the real fun begins
-			var/list/soundwalk = get_path_to(source, M, long_range, use_visibility = TRUE)
+			var/list/soundwalk = get_path_to(theyturf, myturf, long_range, use_visibility = TRUE)
 			if(!islist(soundwalk))
 				CC.hidden_inaccessible[M] = TRUE
 				continue dingus
@@ -401,14 +418,17 @@ GLOBAL_LIST_EMPTY(chat_chuds)
 				continue dingus
 			// now walk through the path and find the first tile that can see the source
 			donger:
+				debug_i = 0
+				var/cole = SSchat.debug_chud && safepick("#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#FF00FF", "#00FFFF")
 				for(var/turf/T as anything in soundwalk)
-					var/list/seeline = getline(T, M)
-					debug_i = 0
-					var/cole = pick("#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#FF00FF", "#00FFFF")
+					var/list/seeline = getline(T, theyturf)
+					if(LAZYLEN(seeline) > SSchat.far_distance)
+						continue donger
+					if(SSchat.debug_chud)
+						new /obj/effect/temp_visual/numbers/backgrounded(T, debug_i, cole)
+						debug_i++
 					for(var/turf/TT as anything in seeline) // beeg american TTs
-						if(SSchat.debug_chud)
-							new /obj/effect/temp_visual/numbers/backgrounded(T, debug_i, cole)
-							debug_i++
+						new /obj/effect/temp_visual/emp/pulse(TT)
 						if(TT.opacity)
 							continue donger
 						for(var/atom/AM as anything in TT.contents)

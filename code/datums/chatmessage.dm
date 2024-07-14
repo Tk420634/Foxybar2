@@ -7,7 +7,7 @@
 #define CHAT_MESSAGE_WIDTH			100 // pixels
 #define CHAT_MESSAGE_MAX_LENGTH		200 // characters
 
-// GLOBAL_LIST_EMPTY(verbal_punch_lasers)
+GLOBAL_LIST_INIT(verbal_punch_lasers, list(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,)) // im a genus
 
 /**
  * # Chat Message Overlay
@@ -157,28 +157,38 @@
 		var/turf/ownerturf = get_turf(owner)
 		message_loc = ownerturf
 		var/angle_to_source = Get_Angle(ownerturf, message_loc)
-		// cus the damn angles are rotated 90 degrees clockwise, gotta change the angle 90 degrees counter
-		// // get us a verbal punch laser
-		// var/i = 1
-		// var/datum/point/vector/punch_laser
-		// while(!punch_laser)
-		// 	punch_laser = GLOB.verbal_punch_lasers[i]
-		// 	if(!punch_laser)
-		// 		punch_laser = new /datum/point/vector()
-		// 		GLOB.verbal_punch_lasers[i] = punch_laser
-		// 	else if(punch_laser.inuse)
-		// 		i++
-		// 		punch_laser = null
-		// punch_laser.initialize_location(ownerturf.x, ownerturf.y, ownerturf.z, 0, 0)
-		// punch_laser.initialize_trajectory(32*6, angle_to_source) // 32 pixels per tile, 6 tiles away
-		// punch_laser.increment(1)
-		var/turf/displayloc = get_turf_in_angle(angle_to_source, ownerturf, 6)
+		if(SSchat.debug_chud)
+			var/angle_it_probably_shoud_be = get_dir(owner, target)
+			var/actually_angle = dir2angle(angle_it_probably_shoud_be)
+			message_admins("Angle from [owner] to [message_loc] is [angle_to_source]. The dir from owner to target is [angle_it_probably_shoud_be], with an angle of [actually_angle]. Suck me off.")
+		// get us a verbal punch laser
+		var/i = 1
+		var/datum/point/vector/punch_laser
+		var/tries = 100
+		while(!punch_laser && tries-- > 1)
+			punch_laser = LAZYACCESS(GLOB.verbal_punch_lasers, i)
+			if(!punch_laser)
+				punch_laser = new /datum/point/vector()
+				if(GLOB.verbal_punch_lasers.len < i)
+					GLOB.verbal_punch_lasers.len = i + 4 // genius
+				GLOB.verbal_punch_lasers[i] = punch_laser
+			else if(punch_laser.inuse)
+				i++
+				punch_laser = null
+		punch_laser.initialize_location(ownerturf.x, ownerturf.y, ownerturf.z, 0, 0)
+		punch_laser.initialize_trajectory(32*6, angle_to_source) // 32 pixels per tile, 6 tiles away
+		punch_laser.increment(1)
+		var/turf/displayloc = punch_laser.return_turf() // get_turf_in_angle(angle_to_source, ownerturf, 6)
+		if(SSchat.debug_chud)
+			var/angle_it_probably_shoud_be = get_dir(owner, displayloc)
+			var/actually_angle = dir2angle(angle_it_probably_shoud_be)
+			message_admins("Post-Nut Angle from [owner] to [displayloc] is [angle_to_source]. The dir from owner to target is [angle_it_probably_shoud_be], with an angle of [actually_angle]. Suck me off.")
+			new /obj/effect/temp_visual/monkeyify(displayloc)
 		if(!displayloc)
 			displayloc = ownerturf // whatevs
 		message_loc = displayloc
 		if(SSchat.debug_chud)
 			ownerturf.Beam(displayloc, icon_state = "g_beam", time = 3 SECONDS)
-
 	if(!owned_by)
 		return
 	if (owned_by.seen_messages)
