@@ -201,7 +201,7 @@
 		data["message_mode"] = message_mode
 		// make a second one, for in case we go from not seeing them to seeing them
 		if(data["is_eaves"] || data["is_far"] || data["display_turf"])
-			var/list/cooldata = data.copy()
+			var/list/cooldata = data.Copy()
 			cooldata["is_eaves"] = FALSE
 			cooldata["is_far"] = FALSE
 			cooldata["display_turf"] = null
