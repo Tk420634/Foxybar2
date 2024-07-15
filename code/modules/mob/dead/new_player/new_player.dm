@@ -613,7 +613,7 @@
 			for(var/mob/living/i in GLOB.player_list)
 				if(isliving(i))
 					to_chat(i, span_nicegreen("You overhear a mention that [humanc.name] may be poking around the bar."))
-					i.playsound_local(i, 'sound/doorbell.ogg', 75, TRUE)
+					i.playsound_local(i, 'sound/doorbell.ogg', 60, TRUE)
 
 /mob/dead/new_player/proc/AddEmploymentContract(mob/living/carbon/human/employee)
 	//TODO:  figure out a way to exclude wizards/nukeops/demons from this.
