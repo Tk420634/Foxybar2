@@ -199,6 +199,13 @@
 	// Create map text prior to modifying message for goonchat
 	if (client?.prefs?.chat_on_map && stat != UNCONSCIOUS && (client.prefs.see_chat_non_mob || ismob(speaker)) && can_hear())
 		data["message_mode"] = message_mode
+		// make a second one, for in case we go from not seeing them to seeing them
+		if(data["is_eaves"] || data["is_far"] || data["display_turf"])
+			var/list/cooldata = data
+			data["is_eaves"] = FALSE
+			data["is_far"] = FALSE
+			data["display_turf"] = null
+			create_chat_message(speaker, message_language, raw_message, spans, NONE, cooldata)
 		create_chat_message(speaker, message_language, raw_message, spans, NONE, data)
 
 	if(just_chat)
@@ -253,8 +260,9 @@
 	var/list/listening = get_hearers_in_view(message_range, src, TRUE)
 	var/datum/chatchud/CC = get_listening(src, message_range, max_range, quietness)
 	var/list/visible_close = CC.visible_close.Copy()
-	var/list/visible_far = CC.visible_far.Copy()
-	var/list/hidden_close_pathable = CC.hidden_close_pathable.Copy()
+	// var/list/visible_far = CC.visible_far.Copy()
+	var/list/hidden_pathable = CC.hidden_pathable.Copy()
+	// var/list/hidden_inaccessible = CC.hidden_inaccessible.Copy()
 	CC.putback()
 
 
@@ -298,23 +306,32 @@
 	for(var/mob/mvc in visible_close)
 		mvc.Hear(rendered, src, message_language, message, null, spans, message_mode, source, just_chat)
 		sblistening |= mvc.client
-	for(var/mob/mvf in visible_far)
-		var/list/coolspans = spans
-		coolspans += SPAN_SMALL
-		var/list/data = list()
-		data["is_eaves"] = TRUE
-		data["is_far"] = TRUE
-		mvf.Hear(eavesrendered, src, message_language, eavesdropping, null, coolspans, message_mode, source, just_chat, data)
-		sblistening |= mvf.client
-	for(var/mob/mhp in hidden_close_pathable)
-		var/turf/hearfrom = hidden_close_pathable[mhp]
+	// for(var/mob/mvf in visible_far)
+	// 	var/list/coolspans = spans
+	// 	coolspans += SPAN_SMALL
+	// 	var/list/data = list()
+	// 	data["is_eaves"] = TRUE
+	// 	data["display_turf"] = src
+	// 	mvf.Hear(eavesrendered, src, message_language, eavesdropping, null, coolspans, message_mode, source, just_chat, data)
+	// 	sblistening |= mvf.client
+	for(var/mob/mhp in hidden_pathable)
+		var/turf/hearfrom = hidden_pathable[mhp]
 		var/list/cooler_spans = spans
-		cooler_spans += SPAN_SMALLER
+		cooler_spans += SPAN_SMALL
 		var/list/data = list()
 		data["is_eaves"] = TRUE
 		data["display_turf"] = hearfrom
 		mhp.Hear(eavesrendered, src, message_language, eavesdropping, null, cooler_spans, message_mode, source, just_chat, data)
 		sblistening |= mhp.client
+	// for(var/mob/mhp in hidden_inaccessible)
+	// 	var/turf/hearfrom = hidden_inaccessible[mhp]
+	// 	var/list/cooler_spans = spans
+	// 	cooler_spans += SPAN_SMALLER
+	// 	var/list/data = list()
+	// 	data["is_eaves"] = TRUE
+	// 	data["is_far"] = TRUE
+	// 	mhp.Hear(eavesrendered, src, message_language, eavesdropping, null, cooler_spans, message_mode, source, just_chat, data)
+	// 	sblistening |= mhp.client
 
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_LIVING_SAY_SPECIAL, src, message)
 
