@@ -20,11 +20,12 @@ SUBSYSTEM_DEF(chat)
 	var/extended_whisper_distance = 3
 	
 	var/base_sing_distance = 15
-	var/extended_sing_distance = INFINITY
+	var/extended_sing_distance = 150
 	var/base_yell_distance = 15
-	var/extended_yell_distance = INFINITY
+	var/extended_yell_distance = 150
 	var/far_distance = 6 // how far until they're considered offscreen
 
+	var/chat_display_plane = LIGHTING_PLANE + 1 // FUKCUAING FUKCING LIGHTING EATING AS //CHAT_PLANE
 
 	var/list/payload_by_client = list()
 	/// All the lookups for translating emotes to say prefixes

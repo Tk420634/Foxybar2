@@ -7,7 +7,7 @@
 #define CHAT_MESSAGE_WIDTH			100 // pixels
 #define CHAT_MESSAGE_MAX_LENGTH		200 // characters
 
-// GLOBAL_LIST_EMPTY(verbal_punch_lasers)
+GLOBAL_LIST_INIT(verbal_punch_lasers, list(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,)) // im a genus
 
 /**
  * # Chat Message Overlay
@@ -51,7 +51,7 @@
 		qdel(src)
 		return
 	alt_display = data["display_turf"] || null
-	if((get_dist(owner, (alt_display || target)) > 6 || data["is_far"]) && CHECK_PREFS(owner, SEE_FANCY_OFF_SCREEN_RUNECHAT)) // SD screens are 7 radius, but the UI covers a bit of that
+	if(data["is_far"] && CHECK_PREFS(owner, SEE_FANCY_OFF_SCREEN_RUNECHAT)) // SD screens are 7 radius, but the UI covers a bit of that
 		offscreen = TRUE
 	eavesdrop = data["is_eaves"] || FALSE
 	INVOKE_ASYNC(src,PROC_REF(generate_image), text, target, owner, extra_classes, lifespan)
@@ -140,7 +140,6 @@
 
 	// We dim italicized text to make it more distinguishable from regular text
 	var/tgt_color = extra_classes.Find("italics") ? target.chat_color_darkened : target.chat_color
-
 	// Approximate text height
 	// Note we have to replace HTML encoded metacharacters otherwise MeasureText will return a zero height
 	// BYOND Bug #2563917
@@ -151,40 +150,36 @@
 	approx_lines = max(1, mheight / CHAT_MESSAGE_APPROX_LHEIGHT)
 
 	// Translate any existing messages upwards, apply exponential decay factors to timers
-	var/atom/remembered_location = alt_display || target
 	message_loc = alt_display || target
 	if(offscreen) // if its offscreen, put it somewhere they can see it
 		var/turf/ownerturf = get_turf(owner)
-		message_loc = ownerturf
-		var/angle_to_source = Get_Angle(ownerturf, message_loc)
-		// cus the damn angles are rotated 90 degrees clockwise, gotta change the angle 90 degrees counter
-		// // get us a verbal punch laser
-		// var/i = 1
-		// var/datum/point/vector/punch_laser
-		// while(!punch_laser)
-		// 	punch_laser = GLOB.verbal_punch_lasers[i]
-		// 	if(!punch_laser)
-		// 		punch_laser = new /datum/point/vector()
-		// 		GLOB.verbal_punch_lasers[i] = punch_laser
-		// 	else if(punch_laser.inuse)
-		// 		i++
-		// 		punch_laser = null
-		// punch_laser.initialize_location(ownerturf.x, ownerturf.y, ownerturf.z, 0, 0)
-		// punch_laser.initialize_trajectory(32*6, angle_to_source) // 32 pixels per tile, 6 tiles away
-		// punch_laser.increment(1)
-		var/turf/displayloc = get_turf_in_angle(angle_to_source, ownerturf, 6)
-		if(!displayloc)
-			displayloc = ownerturf // whatevs
-		message_loc = displayloc
-		if(SSchat.debug_chud)
-			ownerturf.Beam(displayloc, icon_state = "g_beam", time = 3 SECONDS)
-
+		var/turf/targetturf = get_turf(message_loc)
+		var/westest = max(ownerturf.x - 9, 1)
+		var/eastest = min(ownerturf.x + 9, world.maxx)
+		var/northest = max(ownerturf.y - 9, 1)
+		var/southest = min(ownerturf.y + 9, world.maxy)
+		var/list/turfe = getline(targetturf, ownerturf)
+		var/turf/where = null
+		for(var/turf/check in turfe)
+			if(SSchat.debug_chud)
+				new /obj/effect/temp_visual/monkeyify(check)
+			if(!TURF_IN_RECTANGLE(check, westest, northest, eastest, southest))
+				continue
+			if(!(check in view(10, ownerturf)))
+				continue
+			message_loc = check
+			where = check
+			if(SSchat.debug_chud)
+				new /obj/effect/temp_visual/love_heart(message_loc)
+			break
+		if(!where)
+			message_loc = ownerturf // whatevs
 	if(!owned_by)
 		return
 	if (owned_by.seen_messages)
 		var/idx = 1
 		var/combined_height = approx_lines
-		for(var/msg in owned_by.seen_messages[remembered_location])
+		for(var/msg in owned_by.seen_messages[message_loc])
 			var/datum/chatmessage/m = msg
 			if(m.message)
 				animate(m.message, pixel_y = m.message.pixel_y + mheight, time = CHAT_MESSAGE_SPAWN_TIME)
@@ -195,9 +190,15 @@
 					m.scheduled_destruction = world.time + remaining_time
 					addtimer(CALLBACK(m,PROC_REF(end_of_life)), remaining_time, TIMER_UNIQUE|TIMER_OVERRIDE)
 
+	if(SSchat.debug_chud)
+		var/turf/ownerturf = get_turf(owner)
+		var/turf/targetturf = get_turf(message_loc)
+		ownerturf.Beam(targetturf, icon_state = "g_beam", time = 3 SECONDS)
+		ownerturf.Beam(get_turf(target), icon_state = "1-full", time = 3 SECONDS)
+
 	// Build message image
 	message = image(loc = message_loc, layer = CHAT_LAYER)
-	message.plane = CHAT_PLANE
+	message.plane = SSchat.chat_display_plane
 	message.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA | KEEP_APART
 	message.alpha = 0
 	var/hight = (alt_display || offscreen) ? 0 : owner.bound_height
@@ -209,14 +210,14 @@
 	message.maptext = complete_text
 	var/alphatomakeit = 255
 	if(eavesdrop)
-		message.alpha /= 2
+		message.pixel_x = rand(-16, 16)
+		message.pixel_y = rand(-16, 16)
+		alphatomakeit /= 2
 	if(offscreen)
-		message.alpha /= 2
-		// message.pixel_x = rand(-40, 40)
-		// message.pixel_y = rand(-40, 40)
+		alphatomakeit /= 2
 
 	// View the message
-	LAZYADDASSOC(owned_by.seen_messages, remembered_location, src)
+	LAZYADDASSOC(owned_by.seen_messages, message_loc, src)
 	owned_by.images |= message
 	animate(message, alpha = alphatomakeit, time = CHAT_MESSAGE_SPAWN_TIME)
 

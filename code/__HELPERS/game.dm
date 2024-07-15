@@ -309,15 +309,15 @@ GLOBAL_LIST_EMPTY(chat_chuds)
 /datum/chatchud
 	var/list/visible_close = list()
 	var/list/visible_far = list()
-	var/list/hidden_close_pathable = list()
+	var/list/hidden_pathable = list()
 	var/list/hidden_inaccessible = list()
 	var/ready = TRUE
 
 /datum/chatchud/proc/putback()
 	visible_close.Cut()
 	visible_far.Cut()
-	hidden_close_pathable.Cut()
-	ready = TRUE
+	hidden_pathable.Cut()
+	ready = TRUE // snip snip no jutsu wuz here
 
 /obj/effect/temp_visual/debug_heart
 	name = "love heart"
@@ -346,10 +346,14 @@ GLOBAL_LIST_EMPTY(chat_chuds)
 		numb = 99999999
 	var/list/splitnumbers = list()
 	/// splits numb into its digits, from most to least significant
-	while(numb > 0)
-		splitnumbers += numb % 10
-		numb /= 10
-		numb = floor(numb)
+	if(numb <= 0)
+		splitnumbers += 0
+	else
+		var/tries = 10
+		while(numb > 0 && tries-- > 0)
+			splitnumbers += numb % 10
+			numb /= 10
+			numb = floor(numb)
 	/// now we have to reverse the list
 	splitnumbers = reverseList(splitnumbers)
 	var/offset = 0
@@ -363,61 +367,83 @@ GLOBAL_LIST_EMPTY(chat_chuds)
 	if(coler)
 		color = coler
 
+#define IS_IN_VIEWER_RECT(turf) TURF_IN_RECTANGLE(turf, westest, eastest, northest, southest)
+
 /// returns a datum of players and how well they can hear the source
 /proc/get_listening(atom/source, close_range, long_range, quiet)
 	var/area/A = get_area(source)
 	var/private = A.private
 	var/datum/chatchud/CC = get_chatchud(source)
-	var/list/see_close = hearers(source, close_range)
-	var/list/see_far = hearers(source, long_range) - see_close
+	var/turf/source_turf = get_turf(source)
 	var/debug_i = 0
 	dingus:
 		for(var/client/C in GLOB.clients)
 			var/mob/M = C.mob
-			if(M.z != source.z)
+			var/turf/viewer_turf = get_turf(M)
+			if(source_turf.z != viewer_turf.z)
 				continue dingus
-			if(get_dist(M, source) > long_range)
+			var/westest = max(viewer_turf.x - 9, 1)
+			var/eastest = min(viewer_turf.x + 9, world.maxx)
+			var/northest = max(viewer_turf.y - 6, 1)
+			var/southest = min(viewer_turf.y + 6, world.maxy)
+			var/list/things_in_viewer_los = view(9, viewer_turf)
+			if(SSchat.debug_chud)
+				var/turf/t_northwest = locate(westest, northest, viewer_turf.z)
+				var/turf/t_southeast = locate(eastest, southest, viewer_turf.z)
+				var/turf/t_northeast = locate(eastest, northest, viewer_turf.z)
+				var/turf/t_southwest = locate(westest, southest, viewer_turf.z)
+				/// draw a beam box!
+				t_northeast.Beam(t_northwest, icon_state = "1-full", time = 3 SECONDS, show_to = list(C))
+				t_northeast.Beam(t_southeast, icon_state = "1-full", time = 3 SECONDS, show_to = list(C))
+				t_southeast.Beam(t_southwest, icon_state = "1-full", time = 3 SECONDS, show_to = list(C))
+				t_southwest.Beam(t_northwest, icon_state = "1-full", time = 3 SECONDS, show_to = list(C))
+			var/in_close_view = (source_turf in things_in_viewer_los)
+			var/in_rect = IS_IN_VIEWER_RECT(source_turf)
+			if(!in_rect && get_dist(source_turf, viewer_turf) > long_range)
 				continue dingus
-			var/is_far = (M in see_far)
-			var/is_close = (M in see_close)
-			if(is_far)
-				if(private)
+			// basic visibility, fulfills these conditions:
+			// 1. must be in the box of visibility, so we dont have to play with pathing nonsense
+			// 2. must be in the line of sight of the hearer, so it shouldnt be over darkness
+			// basically if they're on screen, and either of the ranges are met, they're visible and we can skip the pathing
+			if(in_rect && in_close_view)
+				if(get_dist(source_turf, viewer_turf) <= close_range)
+					CC.visible_close[M] = TRUE
 					continue dingus
-				CC.visible_far[M] = TRUE
+				else if(get_dist(source_turf, viewer_turf) <= long_range)
+					CC.visible_far[M] = TRUE
+					continue dingus
+			// if the source is in a Private area,
+			// and the viewer is either not in the line of sight or not in the box of visibility,
+			// then they're hidden, so we dont bleat out a bunch of horny moaning to the whole world
+			if(private)
 				continue dingus
-			else if(is_close)
-				CC.visible_close[M] = TRUE
-				continue dingus
-			// if(get_dist(M, source) > long_range)
-			// 	continue dingus // they're too far away to hear
 			// now the fun begins. Try to find a path to them
-			// now the real fun begins
-			var/list/soundwalk = get_path_to(source, M, long_range, use_visibility = TRUE)
+			var/list/soundwalk = get_path_to(source_turf, viewer_turf, long_range, use_visibility = TRUE)
+			// they're closed off, no path to them, but they're still within long range
 			if(!islist(soundwalk))
-				CC.hidden_inaccessible[M] = TRUE
+				CC.hidden_inaccessible[M] = TRUE // mark them as hidden
 				continue dingus
+			// the path from source to viewer is too long, so we consider them out of range
 			if(!LAZYLEN(soundwalk) || LAZYLEN(soundwalk) > long_range)
-				CC.hidden_inaccessible[M] = TRUE
 				continue dingus
-			// now walk through the path and find the first tile that can see the source
-			donger:
-				for(var/turf/T as anything in soundwalk)
-					var/list/seeline = getline(T, M)
-					debug_i = 0
-					var/cole = pick("#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#FF00FF", "#00FFFF")
-					for(var/turf/TT as anything in seeline) // beeg american TTs
-						if(SSchat.debug_chud)
-							new /obj/effect/temp_visual/numbers/backgrounded(T, debug_i, cole)
-							debug_i++
-						if(TT.opacity)
-							continue donger
-						for(var/atom/AM as anything in TT.contents)
-							if(AM.opacity)
-								continue donger
-					if(SSchat.debug_chud)
-						new /obj/effect/temp_visual/debug_heart(T)
-					CC.hidden_close_pathable[M] = T
-					continue dingus
+			// now walk through the path and find the first tile that can fulfill all of these conditions:
+			// 1. must be in the box of visibility
+			// 2. must be in the line of sight of the hearer
+			debug_i = 0
+			var/cole = SSchat.debug_chud && safepick("#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#FF00FF", "#00FFFF")
+			for(var/turf/T as anything in soundwalk) // for each step we take...
+				if(SSchat.debug_chud)
+					new /obj/effect/temp_visual/numbers/backgrounded(T, debug_i, cole)
+					debug_i++
+				if(!IS_IN_VIEWER_RECT(T)) // ...check if our turf is in the viewer's box of visibility
+					continue // we can't see them
+				if(!(T in things_in_viewer_los)) // if they're in the box but not in the line of sight,
+					continue // we can't see them
+				// at this point, we have met these conditions
+				if(SSchat.debug_chud)
+					new /obj/effect/temp_visual/debug_heart(T)
+				CC.hidden_pathable[M] = T
+				continue dingus
 			// couldnt find anything! mark them as hidden
 			CC.hidden_inaccessible[M] = TRUE
 	return CC
