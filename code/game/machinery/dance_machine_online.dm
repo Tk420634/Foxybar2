@@ -17,16 +17,33 @@
 	var/sound/playingsound = null
 	var/list/songdata = list()
 	var/soundchannel = 0
+	var/pendingsongurl = ""
+
 
 /obj/machinery/jukebox_online/on_attack_hand(mob/living/user, act_intent, unarmed_attack_flags)
-	var/pwdoutput = world.shelleo("pwd")
-	to_chat(user, pwdoutput[1] + pwdoutput[2] + pwdoutput[3])
 	var/songinput = input(user, "Enter URL (supported sites only, leave blank to stop playing)", "Online Jukebox") as text|null
 	if(isnull(songinput) || !length(songinput))
 		stop = world.time + 100
-	var/adminmessage = "<span class=\"admin\">[user.name] wants to play <a href=\"[songinput]\"></></span>"
+		return
+	pendingsongurl = songinput
+	var/adminmessage = "<span class=\"admin\">[user.name] wants to play <a href=\"[pendingsongurl]\">[pendingsongurl]</><br/>You can <a href='?src=\ref[src];action=allow;url=[pendingsongurl]'>Allow</a> or <a href='?src=\ref[src];action=deny;url=[pendingsongurl]'>Deny</a>.</span>"
 	for(var/admin in GLOB.admins.Copy())
 		to_chat(admin, adminmessage, confidential = TRUE)
+
+/obj/machinery/jukebox_online/Topic(href, href_list[])
+	if(pendingsongurl == href_list["url"])
+		if(href_list["action"] == "allow")
+			parse_url(pendingsongurl)
+			it_begins()
+			message_admins("[usr] approved [pendingsongurl]")
+			pendingsongurl = ""
+			return
+		if(href_list["action"] == "deny")
+			pendingsongurl = ""
+			message_admins("[usr] denied [pendingsongurl]")
+			return
+	else
+		to_chat(usr, "Someone else must have responded already.")
 
 
 /obj/machinery/jukebox_online/proc/parse_url(var/url)
@@ -86,6 +103,7 @@
 
 	playsound(src, 'sound/machines/terminal_off.ogg', 50, 1)
 	SSjukeboxes.freejukeboxchannels += soundchannel
+	songdata -= songdata[1]
 
 #undef SONG_TITLE
 #undef SONG_START
