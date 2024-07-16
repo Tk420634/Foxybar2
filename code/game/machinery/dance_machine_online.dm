@@ -33,8 +33,8 @@
 /obj/machinery/jukebox_online/Topic(href, href_list[])
 	if(pendingsongurl == href_list["url"])
 		if(href_list["action"] == "allow")
-			parse_url(pendingsongurl)
-			it_begins()
+			if(parse_url(pendingsongurl))
+				it_begins()
 			message_admins("[usr] approved [href_list["url"]]")
 			pendingsongurl = ""
 			return
@@ -47,16 +47,17 @@
 
 
 /obj/machinery/jukebox_online/proc/parse_url(var/url)
+	. = FALSE
 	var/ytdl = CONFIG_GET(string/invoke_youtubedl)
 	if(!ytdl)
 		to_chat(src, span_boldwarning("yt-dlp was not configured, action unavailable")) //Check config.txt for the INVOKE_YOUTUBEDL value
-		return FALSE
+		return
 	if(length(url))
 		url = trim(url)
 		if(findtext(url, ":") && !findtext(url, GLOB.is_http_protocol))
 			to_chat(src, span_boldwarning("Non-http(s) URIs are not allowed."))
 			to_chat(src, span_warning("For yt-dlp shortcuts like ytsearch: please use the appropriate full url from the website."))
-			return FALSE
+			return
 		var/shell_scrubbed_input = shell_url_scrub(url)
 		var/list/output = world.shelleo("[ytdl] --format \"bestaudio\" -P \"./config/jukebox_music/online\" --dump-single-json --no-playlist -- \"[shell_scrubbed_input]\"")
 		var/errorlevel = output[SHELLEO_ERRORLEVEL]
@@ -69,7 +70,7 @@
 			catch(var/exception/e)
 				to_chat(src, span_boldwarning("yt-dlp JSON parsing FAILED:"))
 				to_chat(src, span_warning("[e]: [stdout]"))
-				return FALSE
+				return
 
 			if (data["url"])
 				var/storeddata = list()
@@ -78,6 +79,7 @@
 				storeddata[SONG_END] = data["end_time"]
 				storeddata[SONG_URL] = data["webpage_url"]
 				songdata += storeddata
+				. = TRUE
 
 /obj/machinery/jukebox_online/proc/it_begins()
 	soundchannel = pick(SSjukeboxes.freejukeboxchannels)
