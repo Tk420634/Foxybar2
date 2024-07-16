@@ -59,7 +59,7 @@
 			to_chat(src, span_warning("For yt-dlp shortcuts like ytsearch: please use the appropriate full url from the website."))
 			return
 		var/shell_scrubbed_input = shell_url_scrub(url)
-		var/list/output = world.shelleo("[ytdl] --format \"bestaudio\" -P \"./config/jukebox_music/online\" --dump-single-json --no-playlist -- \"[shell_scrubbed_input]\"")
+		var/list/output = world.shelleo("[ytdl] --format \"bestaudio\" -P \"./jukeboxdownloaded\" --dump-single-json --no-playlist -- \"[shell_scrubbed_input]\"")
 		var/errorlevel = output[SHELLEO_ERRORLEVEL]
 		var/stdout = output[SHELLEO_STDOUT]
 		//var/stderr = output[SHELLEO_STDERR]
@@ -84,7 +84,7 @@
 /obj/machinery/jukebox_online/proc/it_begins()
 	soundchannel = pick(SSjukeboxes.freejukeboxchannels)
 	SSjukeboxes.freejukeboxchannels -= soundchannel
-	var/soundtoplay = sound(file("config/jukebox_music/online/" + songdata[1][SONG_TITLE]))
+	var/soundtoplay = sound(file("data/jukeboxdownloaded/" + songdata[1][SONG_TITLE]))
 	var/jukeboxturf = get_turf(src)
 
 	for(var/mob/M in GLOB.player_list)
