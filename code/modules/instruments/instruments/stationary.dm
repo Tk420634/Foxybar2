@@ -34,23 +34,12 @@
 /obj/structure/musician/piano
 	name = "minimoog"
 	icon = 'icons/obj/musician.dmi'
-	icon_state = "minimoog"
+	icon_state = "piano"
 	anchored = TRUE
-	density = TRUE
+	density = FALSE
 
 /obj/structure/musician/piano/unanchored
 	anchored = FALSE
-
-/obj/structure/musician/piano/Initialize(mapload)
-	. = ..()
-	if(prob(50) && icon_state == initial(icon_state))
-		name = "minimoog"
-		desc = "This is a minimoog, like a piano, but more futuristic!"
-		icon_state = "minimoog"
-	else
-		name = "piano"
-		desc = "This old piano can barely hold a tune. Too bad all the piano tuners are dead, more or less."
-		icon_state = "piano"
 
 /obj/structure/piano/fancy
 	name = "piano"
