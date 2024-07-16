@@ -14,18 +14,22 @@
 	var/active = FALSE
 	var/stop = 0
 	var/volume = 70
-	var/datum/sound/playingsound = null
+	var/sound/playingsound = null
 	var/list/songdata = list()
 	var/soundchannel = 0
 
 /obj/machinery/jukebox_online/on_attack_hand(mob/living/user, act_intent, unarmed_attack_flags)
+	var/pwdoutput = world.shelleo("pwd")
+	to_chat(user, pwdoutput[1] + pwdoutput[2] + pwdoutput[3])
 	var/songinput = input(user, "Enter URL (supported sites only, leave blank to stop playing)", "Online Jukebox") as text|null
 	if(isnull(songinput) || !length(songinput))
 		stop = world.time + 100
 	var/adminmessage = "<span class=\"admin\">[user.name] wants to play <a href=\"[songinput]\"></></span>"
+	for(var/admin in GLOB.admins.Copy())
+		to_chat(admin, adminmessage, confidential = TRUE)
 
 
-/obj/machinery/jukebox_online/parse_url(string/url)
+/obj/machinery/jukebox_online/proc/parse_url(var/url)
 	var/ytdl = CONFIG_GET(string/invoke_youtubedl)
 	if(!ytdl)
 		to_chat(src, span_boldwarning("yt-dlp was not configured, action unavailable")) //Check config.txt for the INVOKE_YOUTUBEDL value
@@ -40,7 +44,7 @@
 		var/list/output = world.shelleo("[ytdl] --format \"bestaudio\" -P \"./config/jukebox_music/online\" --dump-single-json --no-playlist -- \"[shell_scrubbed_input]\"")
 		var/errorlevel = output[SHELLEO_ERRORLEVEL]
 		var/stdout = output[SHELLEO_STDOUT]
-		var/stderr = output[SHELLEO_STDERR]
+		//var/stderr = output[SHELLEO_STDERR]
 		if(!errorlevel)
 			var/list/data
 			try
@@ -58,7 +62,7 @@
 				storeddata[SONG_URL] = data["webpage_url"]
 				songdata += storeddata
 
-/obj/machinery/jukebox_online/it_begins()
+/obj/machinery/jukebox_online/proc/it_begins()
 	soundchannel = pick(SSjukeboxes.freejukeboxchannels)
 	SSjukeboxes.freejukeboxchannels -= soundchannel
 	var/soundtoplay = sound(file("config/jukebox_music/online/" + songdata[1][SONG_TITLE]))
@@ -68,17 +72,17 @@
 		if(!M.client)
 			continue
 		if(!(M.client.prefs.toggles & SOUND_INSTRUMENTS) || !M.can_hear())
-			M.stop_sound_channel(jukeinfo[2])
+			M.stop_sound_channel(soundchannel)
 			continue
-		if(jukebox.z == M.z)	//todo - expand this to work with mining planet z-levels when robust jukebox audio gets merged to master
-			soundtoplay.status = SOUND_UPDATE
+		if(src.z == M.z)	//todo - expand this to work with mining planet z-levels when robust jukebox audio gets merged to master
+			playingsound.status = SOUND_UPDATE
 		else
-			soundtoplay.status = SOUND_MUTE | SOUND_UPDATE	//Setting volume = 0 doesn't let the sound properties update at all, which is lame.
+			playingsound.status = SOUND_MUTE | SOUND_UPDATE	//Setting volume = 0 doesn't let the sound properties update at all, which is lame.
 
-		M.playsound_local(currentturf, null, 100, channel = soundchannel, S = soundtoplay)
+		M.playsound_local(jukeboxturf, null, 100, channel = soundchannel, S = soundtoplay)
 		CHECK_TICK
 
-/obj/machinery/jukebox_online/its_over()
+/obj/machinery/jukebox_online/proc/its_over()
 
 	playsound(src, 'sound/machines/terminal_off.ogg', 50, 1)
 	SSjukeboxes.freejukeboxchannels += soundchannel
