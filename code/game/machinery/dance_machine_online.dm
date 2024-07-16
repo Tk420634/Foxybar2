@@ -19,7 +19,10 @@
 	var/soundchannel = 0
 
 /obj/machinery/jukebox_online/on_attack_hand(mob/living/user, act_intent, unarmed_attack_flags)
-	
+	var/songinput = input(user, "Enter URL (supported sites only, leave blank to stop playing)", "Online Jukebox") as text|null
+	if(isnull(songinput) || !length(songinput))
+		stop = world.time + 100
+	var/adminmessage = "<span class=\"admin\">[user.name] wants to play <a href=\"[songinput]\"></></span>"
 
 
 /obj/machinery/jukebox_online/parse_url(string/url)
@@ -34,7 +37,7 @@
 			to_chat(src, span_warning("For yt-dlp shortcuts like ytsearch: please use the appropriate full url from the website."))
 			return FALSE
 		var/shell_scrubbed_input = shell_url_scrub(url)
-		var/list/output = world.shelleo("[ytdl] --format \"bestaudio\" --dump-single-json --no-playlist -- \"[shell_scrubbed_input]\"")
+		var/list/output = world.shelleo("[ytdl] --format \"bestaudio\" -P \"./config/jukebox_music/online\" --dump-single-json --no-playlist -- \"[shell_scrubbed_input]\"")
 		var/errorlevel = output[SHELLEO_ERRORLEVEL]
 		var/stdout = output[SHELLEO_STDOUT]
 		var/stderr = output[SHELLEO_STDERR]
@@ -58,12 +61,27 @@
 /obj/machinery/jukebox_online/it_begins()
 	soundchannel = pick(SSjukeboxes.freejukeboxchannels)
 	SSjukeboxes.freejukeboxchannels -= soundchannel
+	var/soundtoplay = sound(file("config/jukebox_music/online/" + songdata[1][SONG_TITLE]))
+	var/jukeboxturf = get_turf(src)
 
+	for(var/mob/M in GLOB.player_list)
+		if(!M.client)
+			continue
+		if(!(M.client.prefs.toggles & SOUND_INSTRUMENTS) || !M.can_hear())
+			M.stop_sound_channel(jukeinfo[2])
+			continue
+		if(jukebox.z == M.z)	//todo - expand this to work with mining planet z-levels when robust jukebox audio gets merged to master
+			soundtoplay.status = SOUND_UPDATE
+		else
+			soundtoplay.status = SOUND_MUTE | SOUND_UPDATE	//Setting volume = 0 doesn't let the sound properties update at all, which is lame.
 
+		M.playsound_local(currentturf, null, 100, channel = soundchannel, S = soundtoplay)
+		CHECK_TICK
 
 /obj/machinery/jukebox_online/its_over()
 
 	playsound(src, 'sound/machines/terminal_off.ogg', 50, 1)
+	SSjukeboxes.freejukeboxchannels += soundchannel
 
 #undef SONG_TITLE
 #undef SONG_START
