@@ -1,9 +1,3 @@
-#define SONG_TITLE 1
-#define SONG_START 2
-#define SONG_END 3
-#define SONG_URL 4
-
-
 /obj/machinery/jukebox_online
 	name = "Online Jukebox"
 	desc = "A music player. This one has a massive selection."
@@ -11,14 +5,7 @@
 	icon_state = "jukebox"
 	verb_say = "intones"
 	density = TRUE
-	var/active = FALSE
-	var/stop = 0
-	var/volume = 70
-	var/sound/playingsound = null
-	var/list/songdata = list()
-	var/soundchannel = 0
 	var/pendingsongurl = ""
-
 
 /obj/machinery/jukebox_online/on_attack_hand(mob/living/user, act_intent, unarmed_attack_flags)
 	var/songinput = input(user, "Enter URL (supported sites only, leave blank to stop playing)", "Online Jukebox") as text|null
@@ -33,8 +20,7 @@
 /obj/machinery/jukebox_online/Topic(href, href_list[])
 	if(pendingsongurl == href_list["url"])
 		if(href_list["action"] == "allow")
-			if(parse_url(pendingsongurl))
-				it_begins()
+			parse_url(pendingsongurl)
 			message_admins("[usr] approved [href_list["url"]]")
 			pendingsongurl = ""
 			return
@@ -59,7 +45,7 @@
 			to_chat(src, span_warning("For yt-dlp shortcuts like ytsearch: please use the appropriate full url from the website."))
 			return
 		var/shell_scrubbed_input = shell_url_scrub(url)
-		var/list/output = world.shelleo("[ytdl] --format \"bestaudio\" -P \"./jukeboxdownloaded\" --dump-single-json --no-playlist -- \"[shell_scrubbed_input]\"")
+		var/list/output = world.shelleo("[ytdl] --format \"bestaudio\" -q -P \"data/jukeboxdownloaded\"-o \"tmpdl.%(ext)s\" --dump-single-json --no-playlist -- \"[shell_scrubbed_input]\"")
 		var/errorlevel = output[SHELLEO_ERRORLEVEL]
 		var/stdout = output[SHELLEO_STDOUT]
 		//var/stderr = output[SHELLEO_STDERR]
@@ -74,40 +60,25 @@
 
 			if (data["url"])
 				var/storeddata = list()
-				storeddata[SONG_TITLE] = data["title"]
-				storeddata[SONG_START] = data["start_time"]
-				storeddata[SONG_END] = data["end_time"]
-				storeddata[SONG_URL] = data["webpage_url"]
-				songdata += storeddata
+				storeddata["start"] = data["start_time"]
+				storeddata["end"] = data["end_time"]
+				storeddata["link"] = data["webpage_url"]
+				storeddata["title"] = data["title"]
+				play_online_song(url, storeddata)
 				. = TRUE
 
-/obj/machinery/jukebox_online/proc/it_begins()
-	soundchannel = pick(SSjukeboxes.freejukeboxchannels)
-	SSjukeboxes.freejukeboxchannels -= soundchannel
-	var/soundtoplay = sound(file("data/jukeboxdownloaded/" + songdata[1][SONG_TITLE]))
-	var/jukeboxturf = get_turf(src)
+/obj/machinery/jukebox_online/proc/play_online_song(url, extradata)
+	for(var/m in GLOB.player_list)
+		var/mob/M = m
+		var/client/C = M?.client
+		if(C)
+			if(C.prefs.toggles & SOUND_MIDI)
+				C.tgui_panel?.play_music(url, extradata)
 
-	for(var/mob/M in GLOB.player_list)
-		if(!M.client)
-			continue
-		if(!(M.client.prefs.toggles & SOUND_INSTRUMENTS) || !M.can_hear())
-			M.stop_sound_channel(soundchannel)
-			continue
-		if(src.z == M.z)	//todo - expand this to work with mining planet z-levels when robust jukebox audio gets merged to master
-			playingsound.status = SOUND_UPDATE
-		else
-			playingsound.status = SOUND_MUTE | SOUND_UPDATE	//Setting volume = 0 doesn't let the sound properties update at all, which is lame.
-
-		M.playsound_local(jukeboxturf, null, 100, channel = soundchannel, S = soundtoplay)
-		CHECK_TICK
-
-/obj/machinery/jukebox_online/proc/its_over()
-
-	playsound(src, 'sound/machines/terminal_off.ogg', 50, 1)
-	SSjukeboxes.freejukeboxchannels += soundchannel
-	songdata -= songdata[1]
-
-#undef SONG_TITLE
-#undef SONG_START
-#undef SONG_END
-#undef SONG_URL
+/obj/machinery/jukebox_online/proc/stop_online_song()
+	for(var/m in GLOB.player_list)
+		var/mob/M = m
+		var/client/C = M?.client
+		if(C)
+			if(C.prefs.toggles & SOUND_MIDI)
+				C.tgui_panel?.stop_music()
