@@ -606,7 +606,7 @@
 			SSeconomy.player_spawned(H)
 
 	character.client.is_in_game = 1
-	spawn(2 MINUTES)
+	spawn(30 SECONDS)
 		if(character?.client?.is_in_game)
 			character?.client?.is_in_game = 2
 			
