@@ -62,6 +62,27 @@
 	action_verb_ing = "touching"
 	can_taste = FALSE
 
+/obj/item/hand_item/healable/kisser
+	name = "kisser"
+	desc = "A kisser, for smooching things."
+	icon = 'icons/obj/in_hands.dmi'
+	icon_state = "kisser"
+	attack_verb = list("kissed", "smooched", "snogged")
+	hitsound = list(
+		'sound/effects/kiss.ogg',
+		'modular_splurt/sound/interactions/kiss/kiss1.ogg',
+		'modular_splurt/sound/interactions/kiss/kiss2.ogg',
+		'modular_splurt/sound/interactions/kiss/kiss3.ogg',
+		'modular_splurt/sound/interactions/kiss/kiss4.ogg',
+	)
+	healthing = /obj/item/stack/medical/bruise_pack/lick/touch
+	needed_trait = TRAIT_HEAL_TOUCH
+	tend_word = "smooching"
+	action_verb = "kiss"
+	action_verb_s = "kisses"
+	action_verb_ing = "kissing"
+	can_taste = FALSE
+
 /obj/item/hand_item/healable/licker
 	name = "tongue"
 	desc = "Mlem."
@@ -136,6 +157,10 @@
 			span_notice("I hear [action_verb_ing]."),
 			LICK_SOUND_TEXT_RANGE
 		)
+	var/list/sounds2play = list()
+	sounds2play += hitsound
+	sounds2play += pokesound
+	playsound(licked, safepick(sounds2play), 85, TRUE)
 	if(can_taste && iscarbon(user))
 		lick_flavor(atom_licked = licked, licker = user)
 

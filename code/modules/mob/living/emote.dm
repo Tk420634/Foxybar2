@@ -345,6 +345,7 @@
 	message = "grimaces."
 	message_param = "grimaces at %t."
 
+/*
 /datum/emote/living/kiss
 	key = "kiss"
 	key_third_person = "kisses"
@@ -361,6 +362,7 @@
 	if(. && iscarbon(user))
 		var/mob/living/carbon/C = user
 		return !C.silent && (!C.mind || !C.mind.miming)
+*/
 
 /datum/emote/living/audible/laugh
 	key = "laugh"

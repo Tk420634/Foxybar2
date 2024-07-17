@@ -198,6 +198,25 @@
 	else
 		qdel(touchy)
 
+/datum/emote/living/carbon/kiss
+	key = "kiss"
+	key_third_person = "kisses"
+	restraint_check = TRUE
+
+/datum/emote/living/carbon/kiss/run_emote(mob/user)
+	. = ..()
+	var/obj/item/I = user.get_active_held_item()
+	if(istype(I, /obj/item/hand_item/healable/))
+		I.melee_attack_chain(user, user)
+	// else if(I)
+	// 	to_chat(user, span_warning("My active hand is full, and therefore you can't touch anything!"))
+	// 	return
+	var/obj/item/hand_item/healable/kisser/touchy = new(user)
+	if(user.put_in_hands(touchy))
+		to_chat(user, span_notice("I get ready to smooch something."))
+	else
+		qdel(touchy)
+
 /datum/emote/living/carbon/tend
 	key = "tend"
 	key_third_person = "tends"
