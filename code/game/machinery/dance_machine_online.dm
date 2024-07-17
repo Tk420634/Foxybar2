@@ -46,7 +46,7 @@
 			to_chat(src, span_warning("For yt-dlp shortcuts like ytsearch: please use the appropriate full url from the website."))
 			return
 		var/shell_scrubbed_input = shell_url_scrub(url)
-		var/list/output = world.shelleo("[ytdl] --format \"bestaudio\" -q -P \"data/jukeboxdownloaded\"-o \"tmpdl.%(ext)s\" --dump-single-json --no-playlist -- \"[shell_scrubbed_input]\"")
+		var/list/output = world.shelleo("[ytdl] --format \"bestaudio\" --dump-single-json --no-playlist --skip-download -- \"[shell_scrubbed_input]\"")
 		var/errorlevel = output[SHELLEO_ERRORLEVEL]
 		var/stdout = output[SHELLEO_STDOUT]
 		//var/stderr = output[SHELLEO_STDERR]
@@ -60,13 +60,12 @@
 				return
 
 			if (data["url"])
-				var/hyperlink = "<a href=\"[url]\">[data["title"]]</a>"
 				var/storeddata = list()
 				storeddata["start"] = data["start_time"]
 				storeddata["end"] = data["end_time"]
 				storeddata["link"] = data["webpage_url"]
 				storeddata["title"] = data["title"]
-				play_online_song(hyperlink, storeddata)
+				play_online_song(data["url"], storeddata)
 				. = TRUE
 
 /obj/machinery/jukebox_online/proc/play_online_song(url, extradata)
