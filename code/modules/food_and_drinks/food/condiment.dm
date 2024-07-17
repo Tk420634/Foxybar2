@@ -129,6 +129,7 @@
 	volume = 20
 	list_reagents = list(/datum/reagent/consumable/sodiumchloride = 20)
 	possible_states = list()
+	
 
 /obj/item/reagent_containers/food/condiment/saltshaker/on_reagent_change(changetype)
 	if(reagents.reagent_list.len == 0)
@@ -158,6 +159,7 @@
 	volume = 20
 	list_reagents = list(/datum/reagent/consumable/blackpepper = 20)
 	possible_states = list()
+	
 
 /obj/item/reagent_containers/food/condiment/peppermill/on_reagent_change(changetype)
 	if(reagents.reagent_list.len == 0)

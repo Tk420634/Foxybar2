@@ -5,14 +5,14 @@
 
 	telegraph_duration = 15 SECONDS
 	telegraph_overlay = "rain_gathering"
-	telegraph_message = span_notice("<font size=2>You hear a rainstorm gathering on the horizon.</font>")
+	telegraph_message = span_notice("<font size=2>I hear a rainstorm gathering on the horizon.</font>")
 	telegraph_sound = 'sound/weather/thunder.ogg' //credit: boomlibrary
 //	weather_sound = 'sound/weather/rain/outdoors/rain-01.ogg' //credit: soundjay.com
 	end_sound = 'sound/weather/thunder.ogg' //credit: boomlibrary
 	end_duration = 5 SECONDS
-	end_message = span_notice("<font size=2>You start to hear the last of the rain as the sky begins to clear up.</font>")
+	end_message = span_notice("<font size=2>I start to hear the last of the rain as the sky begins to clear up.</font>")
 	end_overlay = "rain_gathering"
-	weather_message = span_notice("<i>You hear the crack of thunder as the rainstorm grows.</i>")
+	weather_message = span_notice("<i>I hear the crack of thunder as the rainstorm grows.</i>")
 	weather_overlay = "thunderstorm"
 	weather_duration_lower = 5 MINUTES
 	weather_duration_upper = 25 MINUTES

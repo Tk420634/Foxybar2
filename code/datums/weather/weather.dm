@@ -247,18 +247,18 @@
 /datum/weather/proc/handle_looping_sound(mob/living/L)
 	if(!L || !ismob(L))
 		return
-	var/turf/mob_turf = get_turf(L)
-	if(mob_turf?.z in impacted_z_levels)
-		var/area/mob_area = get_area(L)
-		if(mob_area.outdoors)//Mob is outdoors, add them to the outdoors list and remove them from the indoors
-			sound_ao?.output_atoms |= L
-			sound_ai?.output_atoms -= L
-		else//Mob is indoors, add them to the indoor list and remove from outdoors
-			sound_ai?.output_atoms |= L
-			sound_ao?.output_atoms -= L
-	else
-		sound_ao?.output_atoms -= L
+	// var/turf/mob_turf = get_turf(L)
+	// if(mob_turf?.z in impacted_z_levels)
+	var/area/mob_area = get_area(L)
+	if(mob_area.outdoors)//Mob is outdoors, add them to the outdoors list and remove them from the indoors
+		sound_ao?.output_atoms |= L
 		sound_ai?.output_atoms -= L
+	else//Mob is indoors, add them to the indoor list and remove from outdoors
+		sound_ai?.output_atoms |= L
+		sound_ao?.output_atoms -= L
+	// else
+	// 	sound_ao?.output_atoms -= L
+	// 	sound_ai?.output_atoms -= L
 
 /**
  * Returns TRUE if the living mob can be affected by the weather

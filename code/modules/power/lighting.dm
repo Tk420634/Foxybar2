@@ -226,6 +226,7 @@
 
 	var/flicker_chance = 100/90 // the chance to flicker every tick (2 seconds) as a percentage;
 	// 100/90 is once every 90 ticks/three minutes, roughly.
+	var/datum/looping_sound/ambient/lightbulb/quiet/zzzzhummmmmzzzzzz
 
 /obj/machinery/light/broken
 	status = LIGHT_BROKEN
@@ -292,6 +293,14 @@
 	if(flicker_chance)
 		START_PROCESSING(SSmachines, src)
 	RegisterSignal(src, COMSIG_ATOM_LICKED,PROC_REF(lick_light))
+	zzzzhummmmmzzzzzz = new(list(src), FALSE)
+	if(!istype(zzzzhummmmmzzzzzz))
+		zzzzhummmmmzzzzzz = new /datum/looping_sound/ambient/debug3(list(src), FALSE)
+		if(!istype(zzzzhummmmmzzzzzz))
+			to_chat(world, span_narsie("FUCK YOU"))
+	zzzzhummmmmzzzzzz?.start()
+
+
 
 /obj/machinery/light/proc/lick_light(atom/A, mob/living/carbon/licker, obj/item/hand_item/tongue)
 	if(!iscarbon(licker) || !tongue)
@@ -360,6 +369,7 @@
 //		A.update_lights()
 	UnregisterSignal(src, COMSIG_ATOM_LICKED)
 	QDEL_NULL(cell)
+	QDEL_NULL(zzzzhummmmmzzzzzz)
 	return ..()
 
 /obj/machinery/light/update_icon_state()
@@ -397,6 +407,7 @@
 			on = FALSE
 	emergency_mode = FALSE
 	if(on)
+		zzzzhummmmmzzzzzz?.start()
 		var/BR = brightness
 		var/PO = bulb_power
 		var/CO = bulb_colour
@@ -442,6 +453,7 @@
 			addStaticPower(static_power_used, CHANNEL_STATIC_LIGHT)
 		else
 			removeStaticPower(static_power_used, CHANNEL_STATIC_LIGHT)
+	zzzzhummmmmzzzzzz?.stop()
 
 /obj/machinery/light/update_atom_colour()
 	. = ..()

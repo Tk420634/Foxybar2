@@ -16,6 +16,7 @@
 	var/foodtype = NONE
 	var/last_check_time
 	var/food_quality = 50
+	tableplacesound = 'sound/tableplace.ogg'
 
 /obj/item/reagent_containers/food/Initialize(mapload)
 	. = ..()

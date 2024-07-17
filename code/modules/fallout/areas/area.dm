@@ -71,8 +71,6 @@
 	name = "Town"
 	icon_state = "green"
 	ambience_area = list(
-		/datum/looping_sound/ambient/town,
-
 		/datum/looping_sound/ambient/swamp/quiet,
 		/datum/looping_sound/ambient/critters/birds,
 		/datum/looping_sound/ambient/critters/birds/crow,

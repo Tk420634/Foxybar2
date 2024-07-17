@@ -47,7 +47,7 @@
 		SOUND_LOOP_ENTRY('sound/weather/rain/indoors/rain-02.ogg', 5 SECONDS, 1),
 		SOUND_LOOP_ENTRY('sound/weather/rain/indoors/rain-03.ogg', 5 SECONDS, 1)
 		)
-	volume = 100 //This is already a quiet sound effect
+	volume = 40 //This is already a quiet sound effect
 	direct = TRUE
 
 /datum/looping_sound/rad_storm

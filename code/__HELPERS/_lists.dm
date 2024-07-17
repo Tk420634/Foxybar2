@@ -231,6 +231,8 @@
 //Return either pick(list) or null if list is not of type /list or is empty
 /proc/safepick(list/L)
 	if(LAZYLEN(L))
+		if(!islist(L))
+			return L
 		return pick(L)
 
 //Checks if the list is empty
