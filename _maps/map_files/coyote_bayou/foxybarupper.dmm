@@ -529,10 +529,14 @@
 /turf/open/transparent/openspace,
 /area/f13/fb/bar)
 "gn" = (
-/obj/effect/decal/cleanable/glitter/white{
-	color = "#884444"
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 8;
+	color = "#3B2B1A"
 	},
-/obj/structure/chair/stool/retro/tan,
+/obj/structure/sign/poster/contraband/donut_corp{
+	pixel_x = -32;
+	pixel_y = -33
+	},
 /turf/open/floor/carpet/black,
 /area/f13/fb/bar)
 "gs" = (
@@ -834,10 +838,6 @@
 /turf/open/floor/wood_common/wood_common_dark,
 /area/f13/fb/bar)
 "kX" = (
-/obj/machinery/vending/cola/red{
-	density = 0;
-	pixel_y = 16
-	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 1;
 	color = "#3B2B1A"
@@ -846,6 +846,11 @@
 	icon_state = "vault_arcade";
 	pixel_y = 30
 	},
+/obj/machinery/computer/slot_machine{
+	pixel_y = 16;
+	density = 0
+	},
+/obj/structure/chair/stool/retro/tan,
 /turf/open/floor/carpet/black,
 /area/f13/fb/bar)
 "ln" = (
@@ -2515,14 +2520,12 @@
 /turf/open/floor/carpet/red,
 /area/f13/fb/bar)
 "EE" = (
-/obj/effect/turf_decal/siding/wood{
-	color = "#3B2B1A"
+/obj/structure/table/glass,
+/obj/item/storage/fancy/donut_box{
+	pixel_y = 14
 	},
-/obj/machinery/computer/slot_machine{
-	pixel_y = -4;
-	density = 0
-	},
-/turf/open/floor/carpet/black,
+/obj/item/storage/fancy/donut_box,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/f13/fb/bar)
 "EK" = (
 /obj/item/kirbyplants/random,
@@ -2640,17 +2643,13 @@
 /area/f13/caves)
 "Fv" = (
 /obj/effect/turf_decal/siding/wood{
-	dir = 8;
 	color = "#3B2B1A"
+	},
+/obj/machinery/computer/arcade{
+	density = 0;
+	dir = 1
 	},
 /obj/effect/turf_decal/siding/wood{
-	color = "#3B2B1A"
-	},
-/obj/machinery/computer/slot_machine{
-	pixel_y = -4;
-	density = 0
-	},
-/obj/effect/turf_decal/siding/wood/corner{
 	dir = 8;
 	color = "#3B2B1A"
 	},
@@ -2795,13 +2794,14 @@
 	},
 /area/f13/fb/bar)
 "Ib" = (
-/obj/machinery/vending/cigarette{
-	density = 0;
-	pixel_y = 13
-	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 1;
 	color = "#3B2B1A"
+	},
+/obj/machinery/mineral/wasteland_vendor/special{
+	pixel_y = 14;
+	pixel_x = 5;
+	density = 0
 	},
 /turf/open/floor/carpet/black,
 /area/f13/fb/bar)
@@ -3213,11 +3213,16 @@
 	},
 /area/f13/fb/bar)
 "Pc" = (
+/obj/machinery/light/floor{
+	light_color = "#444499";
+	color = "#444499";
+	alpha = 10
+	},
+/obj/structure/chair/stool/retro/tan,
 /obj/effect/turf_decal/siding/wood{
 	dir = 8;
 	color = "#3B2B1A"
 	},
-/obj/structure/chair/stool/retro/tan,
 /turf/open/floor/carpet/black,
 /area/f13/fb/bar)
 "Pq" = (
@@ -3927,10 +3932,23 @@
 	},
 /turf/open/transparent/openspace,
 /area/f13/fb/bar)
+"WQ" = (
+/obj/structure/table/glass,
+/obj/item/crafting/coffee_pot{
+	pixel_y = 17
+	},
+/obj/item/storage/fancy/donut_box,
+/turf/open/floor/wood_common/wood_common_dark,
+/area/f13/fb/bar)
 "Xr" = (
 /turf/open/indestructible,
 /area/f13/wasteland)
 "Xy" = (
+/obj/machinery/light/floor{
+	light_color = "#444499";
+	color = "#444499";
+	alpha = 10
+	},
 /obj/structure/chair/stool/retro/tan,
 /turf/open/floor/carpet/black,
 /area/f13/fb/bar)
@@ -4119,18 +4137,9 @@
 /obj/structure/sign/poster/contraband/pinup_topless{
 	pixel_y = 32
 	},
-/obj/machinery/mineral/wasteland_vendor/special{
-	pixel_y = 14;
-	pixel_x = 5;
+/obj/machinery/computer/slot_machine{
+	pixel_y = 16;
 	density = 0
-	},
-/turf/open/floor/carpet/black,
-/area/f13/fb/bar)
-"YP" = (
-/obj/machinery/light/floor{
-	light_color = "#444499";
-	color = "#444499";
-	alpha = 10
 	},
 /obj/structure/chair/stool/retro/tan,
 /turf/open/floor/carpet/black,
@@ -5666,7 +5675,7 @@ Ll
 Pc
 Fv
 il
-YQ
+WQ
 rk
 Ec
 kf
@@ -5780,8 +5789,8 @@ nZ
 il
 yx
 zr
-gn
-EE
+Xy
+NB
 il
 DS
 kf
@@ -5898,7 +5907,7 @@ il
 YO
 zr
 Xy
-EE
+NB
 il
 nc
 kf
@@ -6014,10 +6023,10 @@ nZ
 il
 kX
 zr
-YP
+Xy
 NB
 il
-YQ
+EE
 YQ
 YQ
 kf
@@ -6483,7 +6492,7 @@ il
 Qe
 gi
 zr
-um
+gn
 Ll
 cQ
 ea
