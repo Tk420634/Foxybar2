@@ -10,7 +10,7 @@
 /obj/machinery/jukebox_online/on_attack_hand(mob/living/user, act_intent, unarmed_attack_flags)
 	var/songinput = input(user, "Enter URL (supported sites only, leave blank to stop playing)", "Online Jukebox") as text|null
 	if(isnull(songinput) || !length(songinput))
-		stop = world.time + 100
+		stop_online_song()
 		return
 	pendingsongurl = songinput
 	var/adminmessage = "<span class=\"admin\">[user.name] wants to play <a href=\"[pendingsongurl]\">[pendingsongurl]</a><br/>You can <a href='byond://?src=\ref[src];action=allow;url=[pendingsongurl]'>Allow</a> or <a href='byond://?src=\ref[src];action=deny;url=[pendingsongurl]'>Deny</a>.</span>"
@@ -20,7 +20,8 @@
 /obj/machinery/jukebox_online/Topic(href, href_list[])
 	if(pendingsongurl == href_list["url"])
 		if(href_list["action"] == "allow")
-			parse_url(pendingsongurl)
+			var/toplay = pendingsongurl
+			parse_url(toplay)
 			message_admins("[usr] approved [href_list["url"]]")
 			pendingsongurl = ""
 			return
@@ -59,12 +60,13 @@
 				return
 
 			if (data["url"])
+				var/hyperlink = "<a href=\"[url]\">[data["title"]]</a>"
 				var/storeddata = list()
 				storeddata["start"] = data["start_time"]
 				storeddata["end"] = data["end_time"]
 				storeddata["link"] = data["webpage_url"]
 				storeddata["title"] = data["title"]
-				play_online_song(url, storeddata)
+				play_online_song(hyperlink, storeddata)
 				. = TRUE
 
 /obj/machinery/jukebox_online/proc/play_online_song(url, extradata)
