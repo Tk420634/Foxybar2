@@ -226,7 +226,7 @@
 
 	var/flicker_chance = 100/90 // the chance to flicker every tick (2 seconds) as a percentage;
 	// 100/90 is once every 90 ticks/three minutes, roughly.
-	var/datum/looping_sound/ambient/debug3/zzzzhummmmmzzzzzz
+	var/datum/looping_sound/ambient/lightbulb/quiet/zzzzhummmmmzzzzzz
 
 /obj/machinery/light/broken
 	status = LIGHT_BROKEN

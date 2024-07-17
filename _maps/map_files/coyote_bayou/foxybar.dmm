@@ -1365,6 +1365,7 @@
 	plane = -2;
 	alpha = 175
 	},
+/obj/effect/sound_emitter/foxybar/machinery,
 /turf/open/floor/wood_fancy{
 	color = "#779999"
 	},
@@ -1754,6 +1755,14 @@
 	},
 /turf/open/floor/carpet/purple,
 /area/f13/fb/bar)
+"ihm" = (
+/obj/effect/overlay/fog/fog2{
+	plane = -2;
+	alpha = 175
+	},
+/obj/effect/sound_emitter/foxybar/airconditioner,
+/turf/closed/wall/mineral/brick,
+/area/f13/fb/bar)
 "iku" = (
 /obj/effect/decal/cleanable/glitter/blue{
 	color = "#993311";
@@ -1786,6 +1795,16 @@
 	alpha = 175
 	},
 /turf/open/floor/carpet/purple,
+/area/f13/fb/bar)
+"irF" = (
+/obj/effect/overlay/fog/fog2{
+	plane = -2;
+	alpha = 175
+	},
+/obj/effect/sound_emitter/foxybar/ceilingfan,
+/turf/open/floor/wood_fancy{
+	color = "#779999"
+	},
 /area/f13/fb/bar)
 "iub" = (
 /obj/effect/decal/marking,
@@ -1958,6 +1977,7 @@
 	plane = -2;
 	alpha = 175
 	},
+/obj/effect/sound_emitter/foxybar/machinery,
 /turf/open/floor/carpet/royalblack,
 /area/f13/fb/bar)
 "kcI" = (
@@ -2297,6 +2317,16 @@
 	},
 /turf/open/floor/wood_fancy{
 	color = "#779999"
+	},
+/area/f13/fb/bar)
+"lJE" = (
+/obj/effect/overlay/fog/fog2{
+	plane = -2;
+	alpha = 175
+	},
+/obj/effect/sound_emitter/foxybar/ceilingfan,
+/turf/open/floor/plasteel/f13/whitemarble{
+	color = "#333333"
 	},
 /area/f13/fb/bar)
 "lSC" = (
@@ -3616,17 +3646,20 @@
 	light_color = "#993311";
 	light_power = 2;
 	light_range = 2;
-	pixel_y = 0
+	pixel_y = 0;
+	pixel_x = -13
 	},
 /obj/structure/toilet{
-	dir = 1
+	dir = 1;
+	plane = -1;
+	pixel_y = 0
 	},
 /obj/structure/toilet_paper{
 	pixel_x = 17;
 	pixel_y = 5
 	},
 /obj/effect/overlay/fog/fog2{
-	plane = -2;
+	plane = -1;
 	alpha = 175
 	},
 /turf/open/floor/plasteel/freezer,
@@ -5752,7 +5785,7 @@ bPG
 ffh
 pBI
 pBI
-bPG
+ihm
 bPG
 bPG
 bPG
@@ -6810,7 +6843,7 @@ aNE
 okV
 qxm
 wev
-wxN
+irF
 iku
 wxN
 iKD
@@ -6820,7 +6853,7 @@ wxN
 lel
 fvH
 exD
-orZ
+lJE
 orZ
 gOe
 mRP
