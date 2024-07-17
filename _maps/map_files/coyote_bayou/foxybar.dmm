@@ -130,6 +130,7 @@
 	plane = -2;
 	alpha = 175
 	},
+/obj/effect/sound_emitter/foxybar/windycurtains,
 /turf/open/floor/wood_fancy{
 	color = "#779999"
 	},
@@ -3014,6 +3015,7 @@
 /obj/effect/overlay/fog/fog2{
 	plane = 1
 	},
+/obj/effect/sound_emitter/foxybar/machinery,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontalbottomborderbottom0"
 	},

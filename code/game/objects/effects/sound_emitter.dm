@@ -234,3 +234,25 @@
 		SOUND_LOOP_ENTRY('sound/machinery.ogg', 2.5 SECONDS, 1), //sound, how long it plays, weighted play 
 		)
 
+/obj/effect/sound_emitter/foxybar/windycurtains
+	name = "sound emitter (windycurtains)"
+	desc = "Sound emitter for some sort of noise."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "rock"
+	snd = /datum/looping_sound/soundrock/foxybar/windycurtains
+	synchronize = TRUE
+
+
+/datum/looping_sound/soundrock/foxybar/windycurtains
+	chance = 100 //% to play per time passing on the sound loop entry, in this case every 1 seconds.  If it doesn't get a true then it still uses the last played sounds time.
+	vary = FALSE //wink wonk versus wInK wOnK
+	extra_range = SOUND_DISTANCE(5) //flat out, this is 15 tiles from the sound rock itself
+	volume = SOUND_LOOP_VOL_RANGE(50, 60)
+	direct = FALSE 
+	managed = FALSE //true = sound dies when you leave the area, must be direct to use. 
+	loop_delay = 0
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/windcurtains.ogg', 2.5 SECONDS, 1), //sound, how long it plays, weighted play 
+		)
+
+
