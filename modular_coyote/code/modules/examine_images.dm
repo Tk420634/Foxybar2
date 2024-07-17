@@ -8,7 +8,8 @@ GLOBAL_LIST_INIT(pfp_filehost_prefix, list(
 ))
 GLOBAL_LIST_INIT(pfp_filehost_safe_suffixes, list(
 									".png",
-									".jpg"
+									".jpg",
+									".gif"
 ))
 #define SUFFIX_LENGTH 4
 #define LEGACY_PREFIX ".png"
