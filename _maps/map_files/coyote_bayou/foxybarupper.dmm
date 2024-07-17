@@ -1232,7 +1232,8 @@
 "ph" = (
 /obj/effect/decal/cleanable/glitter/blue{
 	color = "#444499";
-	layer = 3
+	layer = 3;
+	plane = -1
 	},
 /turf/open/floor/carpet/black,
 /area/f13/fb/bar)
@@ -1516,7 +1517,8 @@
 	},
 /obj/effect/decal/cleanable/glitter/blue{
 	color = "#444499";
-	layer = 3
+	layer = 3;
+	plane = -1
 	},
 /turf/open/floor/carpet/black,
 /area/f13/fb/bar)
@@ -3080,7 +3082,8 @@
 /area/f13/fb/bar)
 "LE" = (
 /obj/effect/decal/cleanable/glitter/white{
-	color = "#884444"
+	color = "#884444";
+	plane = -1
 	},
 /turf/open/floor/carpet/black,
 /area/f13/fb/bar)

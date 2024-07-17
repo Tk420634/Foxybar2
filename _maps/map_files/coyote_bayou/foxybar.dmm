@@ -3989,6 +3989,20 @@
 	icon_state = "horizontalbottomborderbottom3"
 	},
 /area/f13/wasteland/city/newboston/outdoors)
+"wUh" = (
+/obj/effect/decal/cleanable/glitter/blue{
+	color = "#993311";
+	layer = 3;
+	plane = -1
+	},
+/obj/effect/overlay/fog/fog2{
+	plane = -2;
+	alpha = 175
+	},
+/turf/open/floor/wood_fancy{
+	color = "#779999"
+	},
+/area/f13/fb/bar)
 "xaI" = (
 /obj/structure/easel,
 /obj/effect/overlay/fog/fog2{
@@ -6844,7 +6858,7 @@ okV
 qxm
 wev
 irF
-iku
+wUh
 wxN
 iKD
 wxN
