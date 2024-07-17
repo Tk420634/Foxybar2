@@ -15,6 +15,7 @@
 	volume = 50
 	resistance_flags = NONE
 	var/isGlass = TRUE //Whether the 'bottle' is made of glass or not so that milk cartons dont shatter when someone gets hit by it
+	tableplacesound = 'sound/machines/glassclink.ogg'
 
 /obj/item/reagent_containers/food/drinks/on_reagent_change(changetype)
 	if (gulp_size < 5)
