@@ -3081,7 +3081,10 @@
 /obj/effect/turf_decal/siding/wood{
 	color = "#3B2B1A"
 	},
-/obj/item/kirbyplants/random,
+/obj/machinery/computer/arcade{
+	density = 0;
+	dir = 1
+	},
 /turf/open/floor/carpet/black,
 /area/f13/fb/bar)
 "NE" = (
@@ -4121,6 +4124,15 @@
 	pixel_x = 5;
 	density = 0
 	},
+/turf/open/floor/carpet/black,
+/area/f13/fb/bar)
+"YP" = (
+/obj/machinery/light/floor{
+	light_color = "#444499";
+	color = "#444499";
+	alpha = 10
+	},
+/obj/structure/chair/stool/retro/tan,
 /turf/open/floor/carpet/black,
 /area/f13/fb/bar)
 "YQ" = (
@@ -6002,7 +6014,7 @@ nZ
 il
 kX
 zr
-zr
+YP
 NB
 il
 YQ
@@ -6119,7 +6131,7 @@ il
 il
 Ib
 zr
-LC
+ph
 UB
 il
 iA
@@ -6236,7 +6248,7 @@ uu
 il
 nX
 zr
-ph
+zr
 UB
 il
 wM
