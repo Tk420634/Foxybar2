@@ -33,7 +33,7 @@
 		to_chat(usr, "Someone else must have responded already.")
 
 
-/obj/machinery/jukebox_online/proc/parse_url(var/url)
+/obj/machinery/jukebox_online/proc/parse_url(url)
 	. = FALSE
 	var/ytdl = CONFIG_GET(string/invoke_youtubedl)
 	if(!ytdl)
@@ -46,7 +46,7 @@
 			to_chat(src, span_warning("For yt-dlp shortcuts like ytsearch: please use the appropriate full url from the website."))
 			return
 		var/shell_scrubbed_input = shell_url_scrub(url)
-		var/list/output = world.shelleo("[ytdl] --format \"bestaudio\" --dump-single-json --no-playlist --skip-download -- \"[shell_scrubbed_input]\"")
+		var/list/output = world.shelleo("[ytdl] --format \"bestaudio\[ext=mp3]/best\[ext=mp4]\[height<=360]/bestaudio\[ext=m4a]/bestaudio\[ext=aac]\" --dump-single-json --no-playlist -- \"[shell_scrubbed_input]\"")
 		var/errorlevel = output[SHELLEO_ERRORLEVEL]
 		var/stdout = output[SHELLEO_STDOUT]
 		//var/stderr = output[SHELLEO_STDERR]
