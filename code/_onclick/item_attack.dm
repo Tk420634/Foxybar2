@@ -153,9 +153,9 @@
 
 	var/force_out = force + force_modifier
 	if(force_out <= 0)
-		playsound(loc, pokesound, get_clamped_volume(), 1, -1)
+		playsound(loc, safepick(pokesound), get_clamped_volume(), 1, -1)
 	else if(hitsound)
-		playsound(loc, hitsound, get_clamped_volume(), 1, -1)
+		playsound(loc, safepick(hitsound), get_clamped_volume(), 1, -1)
 
 	M.lastattacker = user.real_name
 	M.lastattackerckey = user.ckey
