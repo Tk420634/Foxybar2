@@ -190,6 +190,18 @@
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
+"cO" = (
+/obj/structure/curtain{
+	color = "#c40e0e";
+	open = 0
+	},
+/obj/effect/fake_stairs/west{
+	color = "#845f58";
+	dir = 4
+	},
+/obj/effect/sound_emitter/foxybar/windycurtains,
+/turf/open/floor/carpet/black,
+/area/f13/fb/bar)
 "cQ" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8;
@@ -1634,10 +1646,13 @@
 	plane = -2
 	},
 /obj/effect/decal/cleanable/glitter/white,
+/obj/effect/sound_emitter/foxybar/hottub,
+/obj/effect/fake_stairs/south{
+	alpha = 30
+	},
 /obj/effect/overlay/fog/fog2{
 	plane = -2
 	},
-/obj/effect/sound_emitter/foxybar/hottub,
 /turf/open/indestructible/ground/outside/water{
 	name = "hot spring";
 	color = "#90DBFE";
@@ -2012,6 +2027,10 @@
 	},
 /obj/effect/overlay/fog/fog2{
 	plane = -2
+	},
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
@@ -3591,18 +3610,6 @@
 	color = "#3B2B1A"
 	},
 /turf/open/floor/carpet/blue,
-/area/f13/fb/bar)
-"Rz" = (
-/obj/structure/curtain{
-	color = "#c40e0e";
-	open = 0
-	},
-/obj/effect/fake_stairs/west{
-	color = "#845f58";
-	dir = 4
-	},
-/obj/effect/sound_emitter/foxybar/windycurtains,
-/turf/open/floor/carpet/black,
 /area/f13/fb/bar)
 "RF" = (
 /obj/effect/turf_decal/siding/wood{
@@ -7680,11 +7687,11 @@ JX
 Vq
 il
 aH
-Rz
+cO
 aH
 il
 aH
-Rz
+cO
 aH
 il
 Ek
