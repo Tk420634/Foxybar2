@@ -3592,6 +3592,18 @@
 	},
 /turf/open/floor/carpet/blue,
 /area/f13/fb/bar)
+"Rz" = (
+/obj/structure/curtain{
+	color = "#c40e0e";
+	open = 0
+	},
+/obj/effect/fake_stairs/west{
+	color = "#845f58";
+	dir = 4
+	},
+/obj/effect/sound_emitter/foxybar/windycurtains,
+/turf/open/floor/carpet/black,
+/area/f13/fb/bar)
 "RF" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8;
@@ -3924,6 +3936,7 @@
 /obj/effect/turf_decal/siding/wood{
 	color = "#3B2B1A"
 	},
+/obj/effect/sound_emitter/foxybar/windycurtains,
 /turf/open/floor/carpet/black,
 /area/f13/fb/bar)
 "VG" = (
@@ -7667,11 +7680,11 @@ JX
 Vq
 il
 aH
-aH
+Rz
 aH
 il
 aH
-aH
+Rz
 aH
 il
 Ek
