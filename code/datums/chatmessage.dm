@@ -156,8 +156,8 @@ GLOBAL_LIST_INIT(verbal_punch_lasers, list(null,null,null,null,null,null,null,nu
 		var/turf/targetturf = get_turf(message_loc)
 		var/westest = max(ownerturf.x - 9, 1)
 		var/eastest = min(ownerturf.x + 9, world.maxx)
-		var/northest = max(ownerturf.y - 9, 1)
-		var/southest = min(ownerturf.y + 9, world.maxy)
+		var/northest = max(ownerturf.y - 7, 1)
+		var/southest = min(ownerturf.y + 6, world.maxy)
 		var/list/turfe = getline(targetturf, ownerturf)
 		var/turf/where = null
 		for(var/turf/check in turfe)
