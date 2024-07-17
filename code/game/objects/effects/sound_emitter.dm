@@ -86,3 +86,45 @@
 	snd = /datum/looping_sound/soundrock/creek
 	synchronize = TRUE
 
+//Foxybar Soundrocks//
+
+/obj/effect/sound_emitter/foxybar/
+	name = "sound emitter (creek)"
+	desc = "Sound emitter for some sort of noise."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "rock"
+	snd = /datum/looping_sound/soundrock/foxybar
+	synchronize = TRUE
+
+/datum/looping_sound/soundrock/foxybar
+	chance = 100 //% to play per time passing on the sound loop entry, in this case every 1 seconds.  If it doesn't get a true then it still uses the last played sounds
+	vary = TRUE //wink wonk versus wInK wOnK
+	extra_range = SOUND_DISTANCE(15) //flat out, this is 15 tiles from the sound rock itself
+	volume = SOUND_LOOP_VOL_RANGE(70, 70)
+	direct = FALSE 
+	managed = FALSE //true = sound dies when you leave the area, must be direct to use. 
+	loop_delay = 0
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/machines/glassclink.ogg', 1 SECONDS, 1), //sound, how long it plays, weighted play 
+		)
+
+/obj/effect/sound_emitter/foxybar/clock
+	name = "sound emitter (clock)"
+	desc = "Sound emitter for some sort of noise."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "rock"
+	snd = /datum/looping_sound/soundrock/foxybar/clock
+	synchronize = TRUE
+
+
+/datum/looping_sound/soundrock/foxybar/clock
+	chance = 100 //% to play per time passing on the sound loop entry, in this case every 1 seconds.  If it doesn't get a true then it still uses the last played sounds time.
+	vary = TRUE //wink wonk versus wInK wOnK
+	extra_range = SOUND_DISTANCE(5) //flat out, this is 15 tiles from the sound rock itself
+	volume = SOUND_LOOP_VOL_RANGE(4, 8)
+	direct = FALSE 
+	managed = FALSE //true = sound dies when you leave the area, must be direct to use. 
+	loop_delay = 0
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/machines/clocktick.ogg', 1 SECONDS, 1), //sound, how long it plays, weighted play 
+		)
