@@ -60,7 +60,7 @@
 	dir = 4;
 	color = "#3B2B1A"
 	},
-/obj/machinery/jukebox_online,
+/obj/structure/chair/stool/retro/backed,
 /obj/effect/overlay/fog/fog2{
 	plane = -2;
 	alpha = 175
