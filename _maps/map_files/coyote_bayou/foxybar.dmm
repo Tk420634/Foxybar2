@@ -60,10 +60,7 @@
 	dir = 4;
 	color = "#3B2B1A"
 	},
-/obj/machinery/jukebox{
-	pixel_x = 9;
-	density = 0
-	},
+/obj/machinery/jukebox_online,
 /obj/effect/overlay/fog/fog2{
 	plane = -2;
 	alpha = 175
