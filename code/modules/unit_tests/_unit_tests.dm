@@ -44,7 +44,6 @@
 //Keep this sorted alphabetically
 #include "anchored_mobs.dm"
 #include "character_saving.dm"
-#include "combat.dm"
 #include "component_tests.dm"
 #include "designs.dm"
 #include "initialize_sanity.dm"
