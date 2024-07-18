@@ -1036,6 +1036,14 @@
 /obj/effect/overlay/fog/fog2{
 	plane = -2
 	},
+/obj/machinery/light/small{
+	color = "#444499";
+	dir = 4;
+	light_color = "#444499";
+	light_power = 2;
+	light_range = 2;
+	pixel_y = 13
+	},
 /turf/open/floor/wood_common,
 /area/f13/caves)
 "kE" = (
@@ -3884,7 +3892,7 @@
 "Ox" = (
 /obj/structure/simple_door/room,
 /obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/mineral/brick,
+/turf/open/floor/wood_common,
 /area/f13/fb/bar)
 "Oz" = (
 /obj/structure/spacevine{
@@ -3936,6 +3944,13 @@
 	},
 /obj/effect/turf_decal/siding/wood{
 	color = "#4F3528"
+	},
+/obj/machinery/light/small{
+	color = "#444499";
+	light_color = "#444499";
+	light_power = 2;
+	light_range = 2;
+	pixel_y = 0
 	},
 /turf/open/floor/wood_common,
 /area/f13/fb/bar)
@@ -4362,6 +4377,21 @@
 /turf/open/floor/carpet/black{
 	color = "#CCCCCC"
 	},
+/area/f13/fb/bar)
+"Sf" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8;
+	color = "#3B2B1A"
+	},
+/obj/machinery/light/small{
+	color = "#444499";
+	dir = 8;
+	light_color = "#444499";
+	light_power = 2;
+	light_range = 2;
+	pixel_y = 13
+	},
+/turf/open/floor/carpet/black,
 /area/f13/fb/bar)
 "SL" = (
 /obj/effect/sound_emitter/foxybar/ceilingfan,
@@ -4973,6 +5003,14 @@
 	},
 /obj/effect/overlay/fog/fog2{
 	plane = -2
+	},
+/obj/machinery/light/small{
+	color = "#444499";
+	dir = 8;
+	light_color = "#444499";
+	light_power = 2;
+	light_range = 2;
+	pixel_y = 13
 	},
 /turf/open/floor/wood_common,
 /area/f13/caves)
@@ -7787,7 +7825,7 @@ XW
 xY
 zc
 RJ
-RJ
+Sf
 RJ
 RJ
 oD
