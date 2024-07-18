@@ -43,7 +43,7 @@
 	owner.reagents.metabolize(owner, can_overdose=TRUE)
 
 	if(damage > 10 && prob(damage/3))//the higher the damage the higher the probability
-		to_chat(owner, span_warning("I feel a dull pain in your abdomen."))
+		to_chat(owner, span_warning("I feel a dull pain in my abdomen."))
 
 /obj/item/organ/liver/applyOrganDamage(d, maximum = maxHealth)
 	. = ..()
