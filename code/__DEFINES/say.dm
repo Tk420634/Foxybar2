@@ -58,7 +58,6 @@
 	Icebreaker!\n\
 	This exists for this person to have set a quick way for you to break the IC with their character in a way that may lead to ERP, but this person hasn't changed this text to set one!\n\
 	\n\
-	Slavery: Ask\n\
 	Non-Con: Ask\n\
 	Vore: Ask\n\
 	\n\
@@ -67,7 +66,6 @@
 	...............Erotic Roleplay: Ask\n\
 	...............Non-Con Roleplay: Ask\n\
 	...............Partner Prefs: Ask\n\
-	.............- Slavery: Ask\n\
 	.............- Non-Con: Ask\n\
 	.............- Vore: Ask\n\
 	\n\

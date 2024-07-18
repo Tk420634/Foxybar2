@@ -205,7 +205,7 @@
 	chance = 100 //% to play per time passing on the sound loop entry, in this case every 1 seconds.  If it doesn't get a true then it still uses the last played sounds time.
 	vary = FALSE //wink wonk versus wInK wOnK
 	extra_range = SOUND_DISTANCE(5) //flat out, this is 15 tiles from the sound rock itself
-	volume = SOUND_LOOP_VOL_RANGE(15, 15)
+	volume = SOUND_LOOP_VOL_RANGE(8, 10)
 	direct = FALSE 
 	managed = FALSE //true = sound dies when you leave the area, must be direct to use. 
 	loop_delay = 0
@@ -255,4 +255,24 @@
 		SOUND_LOOP_ENTRY('sound/windcurtains.ogg', 2.5 SECONDS, 1), //sound, how long it plays, weighted play 
 		)
 
+/obj/effect/sound_emitter/foxybar/threecandles
+	name = "sound emitter (threecandles)"
+	desc = "Sound emitter for some sort of noise."
+	icon = 'modular_coyote/icons/objects/c13ammo.dmi'
+	icon_state = "rock"
+	snd = /datum/looping_sound/soundrock/foxybar/threecandles
+	synchronize = FALSE
+
+
+/datum/looping_sound/soundrock/foxybar/threecandles
+	chance = 100 //% to play per time passing on the sound loop entry, in this case every 1 seconds.  If it doesn't get a true then it still uses the last played sounds time.
+	vary = FALSE //wink wonk versus wInK wOnK
+	extra_range = SOUND_DISTANCE(7) //flat out, this is 15 tiles from the sound rock itself
+	volume = SOUND_LOOP_VOL_RANGE(20, 20)
+	direct = FALSE 
+	managed = FALSE //true = sound dies when you leave the area, must be direct to use. 
+	loop_delay = 0
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/threecandles.ogg', 5 SECONDS, 1), //sound, how long it plays, weighted play 
+		)
 
