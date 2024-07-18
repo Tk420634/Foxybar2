@@ -123,6 +123,19 @@
 	if(usr.client)
 		usr.client.show_character_directory()
 
+/atom/movable/screen/flirt_hud_button
+	name = "Flirt with people!"
+	icon = 'icons/mob/screen_gen.dmi'
+	icon_state = "flirt"
+	screen_loc = ui_flirt
+
+/atom/movable/screen/flirt_hud_button/Click(location,control,params)
+	var/mob/living/carbon/human/H = usr
+	if(!ishuman(usr))
+		to_chat(usr, span_alert("Sorry! You've gotta be a fully spawned in character with hopes and dreams to use this!"))
+		return
+	H.emote("flirt")
+
 /atom/movable/screen/pvp_focus_toggle
 	name = "PVP focus On/Off"
 	icon = 'icons/mob/screen_gen.dmi'

@@ -147,7 +147,7 @@
 	pushed_mob.Knockdown(30)
 	var/obj/item/bodypart/banged_limb = pushed_mob.get_bodypart(user.zone_selected) || pushed_mob.get_bodypart(BODY_ZONE_HEAD)
 	if(HAS_TRAIT(user, TRAIT_HULK))
-	pushed_mob.apply_damage(60, STAMINA)
+		pushed_mob.apply_damage(60, STAMINA)
 
 	playsound(pushed_mob, 'sound/effects/bang.ogg', 40, TRUE)
 	pushed_mob.visible_message(span_danger("[user] smashes [pushed_mob]'s [banged_limb.name] against \the [src]!"),
