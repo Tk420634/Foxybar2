@@ -288,7 +288,7 @@
 //Biter//
 /datum/emote/living/carbon/bite
 	key = "bite"
-	key_third_person = "bites"
+	key_third_person = "bite"
 	restraint_check = TRUE
 
 /datum/emote/living/carbon/bite/run_emote(mob/living/user)
