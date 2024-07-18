@@ -206,7 +206,7 @@ GLOBAL_LIST_INIT(warning_ckeys, list())
 		upLimit *= 5
 	
 	if(filelength > upLimit)
-		to_chat(src, "<font color='red'>Error: AllowUpload(): File Upload too large. Upload Limit: [upLimit/1024]KiB.</font>")
+		to_chat(src, "<font color='red'>Error: AllowUpload(): File Upload too large. Upload Limit: [upLimit/3000]KiB.</font>")
 		return 0
 	return 1
 
