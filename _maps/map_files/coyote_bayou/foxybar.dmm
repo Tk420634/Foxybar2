@@ -2929,6 +2929,7 @@
 	dir = 4;
 	color = "#3B2B1A"
 	},
+/obj/item/reagent_containers/food/drinks/bottle/absinthe,
 /obj/effect/overlay/fog/fog2{
 	plane = -2;
 	alpha = 175
