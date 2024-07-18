@@ -338,11 +338,11 @@
 
 /datum/quirk/oral_fixation
 	name = "Oral Fixation"
-	desc = "I have an urge to put things in your mouth."
+	desc = "I have an urge to put things in my mouth."
 	mob_trait = TRAIT_ORAL_FIXATION
 	value = 0
 	category = "Bawdy Quirks"
-	mechanics = "I can fit any small sized item in your mouth. Small items will muffle your voice. Tiny items wont."
+	mechanics = "I can fit any small sized item in my mouth. Small items will muffle your voice. Tiny items wont."
 	conflicts = list()
 
 /datum/quirk/overweight

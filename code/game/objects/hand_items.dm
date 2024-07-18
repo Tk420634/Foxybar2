@@ -68,7 +68,7 @@
 	icon = 'icons/obj/in_hands.dmi'
 	icon_state = "kisser"
 	attack_verb = list("kissed", "smooched", "snogged")
-	hitsound = list(
+	pokesound = list(
 		'sound/effects/kiss.ogg',
 		'modular_splurt/sound/interactions/kiss/kiss1.ogg',
 		'modular_splurt/sound/interactions/kiss/kiss2.ogg',
@@ -158,7 +158,7 @@
 			LICK_SOUND_TEXT_RANGE
 		)
 	var/list/sounds2play = list()
-	sounds2play += hitsound
+	// sounds2play += hitsound
 	sounds2play += pokesound
 	playsound(licked, safepick(sounds2play), 85, TRUE)
 	if(can_taste && iscarbon(user))
