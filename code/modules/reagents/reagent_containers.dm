@@ -1,3 +1,10 @@
+#define taste = '1'
+#define sip = '3'
+#define drink = '6'
+#define gulp = '8'
+#define chug = '10'
+
+
 /obj/item/reagent_containers
 	name = "Container"
 	desc = "..."
@@ -5,7 +12,7 @@
 	icon_state = null
 	w_class = WEIGHT_CLASS_TINY
 	var/amount_per_transfer_from_this = 5
-	var/list/possible_transfer_amounts = list(5,10,15,20,25,30)
+	var/list/possible_transfer_amounts = list()
 	var/volume = 30
 	var/reagent_flags = NONE //used to determine the reagent holder flags on add_initial_reagents()
 	var/reagent_value = DEFAULT_REAGENTS_VALUE //same as above but for the holder value multiplier.
@@ -17,6 +24,7 @@
 	var/container_HP = 2
 	var/cached_icon
 	var/warped_glass = FALSE
+
 
 /obj/item/reagent_containers/Initialize(mapload, vol)
 	. = ..()
@@ -48,10 +56,10 @@
 	set name = "Set Transfer Amount"
 	set category = "Object"
 	set waitfor = FALSE
-	var/N = input("Amount per transfer from this:","[src]") as null|anything in possible_transfer_amounts
+	var/N = input("Amount to drink per quaff:","[src]") as null|anything in possible_transfer_amounts
 	if(N)
 		amount_per_transfer_from_this = N
-		to_chat(usr, span_notice("[src]'s transfer amount is now [amount_per_transfer_from_this] units."))
+		to_chat(usr, span_notice("[src]'s quaff amount is now [amount_per_transfer_from_this] units."))
 
 /obj/item/reagent_containers/proc/add_initial_reagents()
 	if(list_reagents)

@@ -1,3 +1,4 @@
+//butts
 //Pillow and pillow related items
 /obj/item/pillow
 	name = "pillow"
