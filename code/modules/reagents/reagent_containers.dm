@@ -1,8 +1,8 @@
-#define taste = '1'
-#define sip = '3'
-#define drink = '6'
-#define gulp = '8'
-#define chug = '10'
+#define DRINKAMT_TASTE 1
+#define DRINKAMT_SIP 3
+#define DRINKAMT_DRINK 6
+#define DRINKAMT_GULP 8
+#define DRINKAMT_CHUG 10
 
 
 /obj/item/reagent_containers
