@@ -1253,3 +1253,7 @@ GLOBAL_LIST_EMPTY(every_fucking_sound_file)
 	nicebutt.update_genitals(TRUE)
 	return TRUE
  */
+/client/proc/open_filter_editor(atom/in_atom)
+	if(holder)
+		holder.filteriffic = new /datum/filter_editor(in_atom)
+		holder.filteriffic.ui_interact(mob)

@@ -40,7 +40,7 @@
 /atom/movable/screen/plane_master/proc/shadow(_size, _offset = 0, _x = 0, _y = 0, _color = "#04080FAA")
 	filters += filter(type = "drop_shadow", x = _x, y = _y, color = _color, size = _size, offset = _offset)
 
-/atom/movable/screen/plane_master/proc/clear_filters()
+/atom/movable/screen/plane_master/clear_filters()
 	filters = list()
 
 ///Contains just the floor
@@ -226,3 +226,14 @@
 	render_target = O_LIGHTING_VISUAL_RENDER_TARGET
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	blend_mode = BLEND_MULTIPLY
+
+// /atom/movable/screen/plane_master/runechat
+// 	name = "runechat plane master"
+// 	plane = RUNECHAT_PLANE
+// 	appearance_flags = PLANE_MASTER
+// 	blend_mode = BLEND_OVERLAY
+
+// /atom/movable/screen/plane_master/runechat/backdrop(mob/mymob)
+// 	filters = list()
+// 	if(istype(mymob) && mymob.client?.prefs?.ambientocclusion)
+// 		add_filter("AO", 1, drop_shadow_filter(x = 0, y = -2, size = 4, color = "#04080FAA"))
