@@ -10,50 +10,186 @@
 	righthand_file = 'modular_coyote/icons/objects/hairbrush/inhand_right.dmi'
 	w_class = WEIGHT_CLASS_TINY
 	var/brush_speed = 3 SECONDS
+	var/am_brushing = FALSE
+	var/datum/looping_sound/hairbrush/fwhuush
+	var/last_brushed
+	var/vis_dist = 3
 
 
-// /obj/item/hairbrush/attack(mob/target, mob/user)
-// 	if(target.stat == DEAD)
-// 		to_chat(usr, span_warning("There isn't much point brushing someone who can't appreciate it!"))
-// 		return
-// 	brush(target, user)
-// 	return COMPONENT_CANCEL_ATTACK_CHAIN
+/obj/item/hairbrush/Initialize()
+	. = ..()
+	fwhuush = new(list(src), FALSE)
+
+/obj/item/hairbrush/Destroy()
+	QDEL_NULL(fwhuush)
+	. = ..()
+
+/obj/item/hairbrush/attack(mob/target, mob/user)
+	. = COMPONENT_ITEM_NO_ATTACK
+	if(am_brushing)
+		to_chat(user, span_alert("You're already brushing!"))
+		return
+	brush(target, user)
+
+/obj/item/hairbrush/proc/abort(mob/target, mob/user)
+	am_brushing = FALSE
+	if(target && user)
+		to_chat(user, span_notice("You stop brushing."))
+		to_chat(target, ("[user] stops brushing."))
+	fwhuush.stop()
+	last_brushed = null
 
 /// Brushes someone, giving them a small mood boost
-/obj/item/hairbrush/proc/brush(mob/living/target, mob/user)
-	if(ishuman(target))
-		var/mob/living/carbon/human/human_target = target
-		var/obj/item/bodypart/head = human_target.get_bodypart(BODY_ZONE_HEAD)
-
-		// Don't brush if you can't reach their head or cancel the action
-		if(!head)
-			to_chat(user, span_warning("[human_target] has no head!"))
-			return
-		if(human_target.is_mouth_covered(SLOT_HEAD))
-			to_chat(user, span_warning("You can't brush [human_target]'s hair while [human_target.p_their()] head is covered!"))
-			return
-		if(!do_after(user, brush_speed, human_target))
-			return
-
-		// // Do 1 brute to their head if they're bald. Should've been more careful.
-		// if(human_target.hairstyle == "Bald" || human_target.hairstyle == "Skinhead" && is_species(human_target, /datum/species/human)) //It can be assumed most anthros have hair on them!
-		// 	human_target.visible_message(span_warning("[usr] scrapes the bristles uncomfortably over [human_target]'s scalp."), span_warning("You scrape the bristles uncomfortably over [human_target]'s scalp."))
-		// 	head.receive_damage(1)
-		// 	return
-
-		// Brush their hair
-		if(human_target == user)
-			human_target.visible_message(span_notice("[usr] brushes [usr.p_their()] hair!"), span_notice("You brush your hair."))
-			// human_target.add_mood_event("brushed", /datum/mood_event/brushed/self)
+/obj/item/hairbrush/proc/brush(mob/living/target, mob/user, silent)
+	if(!ishuman(target))
+		return abort()
+	var/mob/living/carbon/human/human_target = target
+	var/brush_where = user.zone_selected
+	var/brush_what = "hair"
+	var/through = "through"
+	switch(brush_where)
+		if(BODY_ZONE_HEAD)
+			var/obj/item/bodypart/head = human_target.get_bodypart(BODY_ZONE_HEAD)
+			if(!head)
+				to_chat(user, span_warning("[human_target] has no head!"))
+				return abort()
+			if(human_target.hair_style == "Bald" || human_target.hair_style == "Skinhead" && is_species(human_target, /datum/species/human)) //It can be assumed most anthros have hair on them!
+				brush_what = "scalp"
+			else
+				brush_what = "hair"
+		if(BODY_ZONE_PRECISE_EYES)
+			var/obj/item/bodypart/head = human_target.get_bodypart(BODY_ZONE_HEAD)
+			if(!head)
+				to_chat(user, span_warning("[human_target] has no head!"))
+				return abort()
+			brush_what = "ears"
+			through = "along"
+		if(BODY_ZONE_PRECISE_MOUTH)
+			var/obj/item/bodypart/head = human_target.get_bodypart(BODY_ZONE_HEAD)
+			if(!head)
+				to_chat(user, span_warning("[human_target] has no head!"))
+				return abort()
+			if(human_target.dna.features["snout"])
+				brush_what = pick("muzzle", "snout", "cheeks")
+			else
+				brush_what = "cheeks"
+				through = "across"
+		if(BODY_ZONE_PRECISE_GROIN)
+			through = "across"
+			if(user.a_intent == INTENT_HARM)
+				smack_em_on_the_butt(user, human_target)
+				return abort()
+			else if(user.a_intent == INTENT_GRAB)
+				brush_what = "crotch"
+			else if(user.a_intent == INTENT_DISARM)
+				brush_what = "belly"
+			else if(human_target.dna.features["tail_lizard"] \
+				|| human_target.dna.features["tail_mam"] \
+				|| human_target.dna.features["tails_list_human"]) // FUCK YOU POOJ WHY DO WE HAVE THREE FUCKIN TAILS THATA ARE THE EXACT SAME FUCKING THING AFUIUCK YOU FUCK YOU  (🐾 teehee)
+				brush_what = pick("tail")
+				through = "along"
+			else
+			 brush_what = "tummy"
+		if(BODY_ZONE_CHEST)
+			through = "down"
+			var/obj/item/organ/genital/b00bz = human_target.getorganslot(ORGAN_SLOT_BREASTS)
+			if(b00bz && b00bz.is_exposed() && wielded)
+				switch(user.a_intent)
+					if(INTENT_HELP)
+						brush_what = "breasts, softly"
+					if(INTENT_DISARM)
+						brush_what = "breasts, sensually"
+					if(INTENT_GRAB)
+						brush_what = "breasts, firmly"
+					if(INTENT_HARM)
+						brush_what = "breasts, vigorously"
+			else
+				if(wielded)
+					brush_what = "back"
+				else
+					brush_what = "chest"
+		if(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM)
+			through = "along"
+			switch(user.a_intent)
+				if(INTENT_HELP)
+					brush_what = "arm"
+				if(INTENT_DISARM)
+					brush_what = "wrist"
+				if(INTENT_GRAB)
+					brush_what = "shoulder"
+				if(INTENT_HARM)
+					brush_what = prob(1) ? "weenis" : "hand"
+		if(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
+			through = "along"
+			switch(user.a_intent)
+				if(INTENT_HELP)
+					brush_what = "hip"
+				if(INTENT_DISARM)
+					brush_what = "thigh"
+				if(INTENT_GRAB)
+					brush_what = "knee"
+				if(INTENT_HARM)
+					brush_what = prob(50) ? "foot" : "ankle"
+	am_brushing = TRUE
+	fwhuush.start()
+	if(last_brushed != brush_what)
+		if(user == human_target)
+			user.visible_message(
+				span_notice("[user] starts to run [src] [through] [user.p_their()] [brush_what]..."),
+				span_notice("You start running [src] [through] your [brush_what]..."),
+				span_notice("[user] starts to run [src] [through] [user.p_their()] [brush_what]..."),
+				vis_dist,
+			)
 		else
-			user.visible_message(span_notice("[usr] brushes [human_target]'s hair!"), span_notice("You brush [human_target]'s hair."), ignored_mobs=list(human_target))
-			human_target.show_message(span_notice("[usr] brushes your hair!"), MSG_VISUAL)
-			// human_target.add_mood_event("brushed", /datum/mood_event/brushed, user)
+			user.visible_message(
+				span_notice("[user] starts to run [src] [through] [human_target]'s [brush_what]..."),
+				span_notice("You start running [src] [through] [human_target]'s [brush_what]..."),
+				span_notice("[user] starts to run [src] [through] [human_target]'s [brush_what]..."),
+				vis_dist,
+			)
+	if(!do_after(user, brush_speed, TRUE, human_target))
+		return abort(human_target, user)
+	if(last_brushed != brush_what)
+		if(human_target == user)
+			user.visible_message(
+				span_notice("[user] brushes [user.p_their()] [brush_what]!"),
+				span_notice("You brush your [brush_what]!"),
+				span_notice("[user] brushes [user.p_their()] [brush_what]!"),
+				vis_dist,
+			)
+		else
+			user.visible_message(
+				span_notice("[user] brushes [human_target]'s [brush_what]!"),
+				span_notice("You brush [human_target]'s [brush_what]!"),
+				span_notice("[user] brushes [human_target]'s [brush_what]!"),
+				vis_dist,
+			)
+	last_brushed = brush_what
+	brush(target, user, TRUE)
 
-	// else if(istype(target, /mob/living/basic/pet))
-	// 	if(!do_after(usr, brush_speed, target))
-	// 		return
-	// 	to_chat(user, span_notice("[target] closes [target.p_their()] eyes as you brush [target.p_them()]!"))
-		// var/mob/living/living_user = user
-		// if(istype(living_user))
-			// living_user.add_mood_event("brushed", /datum/mood_event/brushed/pet, target)
+/obj/item/hairbrush/proc/smack_em_on_the_butt(mob/user, mob/target)
+	if(target.stat == DEAD)
+		to_chat(user, span_alert("They're already dead!"))
+		return
+	if(user == target)
+		user.visible_message(
+			span_alert("[user] WHAPS [user.p_their()] ass with the back of [src]!"),
+			span_userdanger("You WHAP yourself on the ass with the back of your [src.name]!"),
+			span_alert("[user] WHAPS [user.p_their()] ass with the back of [src]!"),
+			vis_dist,
+		)
+	else
+		user.visible_message(
+			span_alert("[user] WHAPS [target] on the ass with the back of [src]!"),
+			span_alert("You WHAP [user] on the ass with the back of your [src.name]!"),
+			span_alert("[user] WHAPS [target] on the ass with the back of [src]!"),
+			vis_dist,
+			ignored_mobs = list(target),//k
+		)
+		var/thespan = "userdanger"
+		if(HAS_TRAIT(target, TRAIT_MASO))
+			thespan = "love"
+		else //i helped, fenny, 2024
+			thespan = "userdanger"
+		to_chat(target, "<span class='[thespan]'>[user] WHAPS you on the ass with the hard end of [user.p_their()] [src.name]!!</span>")
+	playsound(target.loc, 'sound/weapons/slap.ogg', 25, FALSE, -1) // deep bassy ass
