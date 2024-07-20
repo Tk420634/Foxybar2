@@ -5,7 +5,6 @@
 	desc = "A soft and fluffy pillow. You can smack someone with this!"
 	icon = 'icons/obj/bed.dmi'
 	icon_state = "pillow_1_t"
-	inhand_icon_state = "pillow_t"
 	lefthand_file = 'icons/mob/inhands/items/pillow_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/items/pillow_righthand.dmi'
 	force = 5

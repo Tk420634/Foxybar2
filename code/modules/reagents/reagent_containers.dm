@@ -4,7 +4,6 @@
 #define DRINKAMT_GULP 8
 #define DRINKAMT_CHUG 10
 
-
 /obj/item/reagent_containers
 	name = "Container"
 	desc = "..."
@@ -12,7 +11,13 @@
 	icon_state = null
 	w_class = WEIGHT_CLASS_TINY
 	var/amount_per_transfer_from_this = 5
-	var/list/possible_transfer_amounts = list()
+	var/list/possible_transfer_amounts = list(
+		DRINKAMT_TASTE,
+		DRINKAMT_SIP,
+		DRINKAMT_DRINK,
+		DRINKAMT_GULP,
+		DRINKAMT_CHUG,
+	)
 	var/volume = 30
 	var/reagent_flags = NONE //used to determine the reagent holder flags on add_initial_reagents()
 	var/reagent_value = DEFAULT_REAGENTS_VALUE //same as above but for the holder value multiplier.
@@ -56,8 +61,8 @@
 	set name = "Set Transfer Amount"
 	set category = "Object"
 	set waitfor = FALSE
-	var/N = input("Amount to drink per quaff:","[src]") as null|anything in possible_transfer_amounts
-	if(N)
+	var/N = input("Amount to drink per quaff: (1u - [volume]u)","[src]") as null|num
+	if(N && N >= 1 && N <= volume)
 		amount_per_transfer_from_this = N
 		to_chat(usr, span_notice("[src]'s quaff amount is now [amount_per_transfer_from_this] units."))
 
