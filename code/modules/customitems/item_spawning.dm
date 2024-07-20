@@ -55,12 +55,12 @@
 			if(inherit_inhands)
 				apply_inherit_inhands(item)
 			else
-				item.item_state_slots = null
+				item.inhand_icon_state_slots = null
 				item.item_icons = null
 
 //			item.icon = CUSTOM_ITEM_OBJ
 			item.icon_state = item_icon
-			item.item_state = null
+			item.inhand_icon_state = null
 //			item.icon_override = CUSTOM_ITEM_MOB
 
 		var/obj/item/clothing/under/U = item
@@ -94,30 +94,30 @@
 
 /datum/custom_item/proc/apply_inherit_inhands(obj/item/item)
 	var/list/new_item_icons = list()
-	var/list/new_item_state_slots = list()
+	var/list/new_inhand_icon_state_slots = list()
 */
 //	var/list/available_states = icon_states(CUSTOM_ITEM_MOB)
 
-	//If l_hand or r_hand are not present, preserve them using item_icons/item_state_slots
+	//If l_hand or r_hand are not present, preserve them using item_icons/inhand_icon_state_slots
 	//Then use icon_override to make every other slot use the custom sprites by default.
 	//This has to be done before we touch any of item's vars
 /*	if(!("[item_icon]_l" in available_states))
-		new_item_state_slots[slot_l_hand_str] = get_state(item, slot_l_hand_str, "_l")
+		new_inhand_icon_state_slots[slot_l_hand_str] = get_state(item, slot_l_hand_str, "_l")
 		new_item_icons[slot_l_hand_str] = get_icon(item, slot_l_hand_str, 'icons/mob/items/lefthand.dmi')
 	if(!("[item_icon]_r" in available_states))
-		new_item_state_slots[slot_r_hand_str] = get_state(item, slot_r_hand_str, "_r")
+		new_inhand_icon_state_slots[slot_r_hand_str] = get_state(item, slot_r_hand_str, "_r")
 		new_item_icons[slot_r_hand_str] = get_icon(item, slot_r_hand_str, 'icons/mob/items/righthand.dmi')
 
-	item.item_state_slots = new_item_state_slots
+	item.inhand_icon_state_slots = new_inhand_icon_state_slots
 	item.item_icons = new_item_icons
 
 //this has to mirror the way update_inv_*_hand() selects the state
 /datum/custom_item/proc/get_state(obj/item/item, slot_str, hand_str)
 	var/t_state
-	if(item.item_state_slots && item.item_state_slots[slot_str])
-		t_state = item.item_state_slots[slot_str]
-	else if(item.item_state)
-		t_state = item.item_state
+	if(item.inhand_icon_state_slots && item.inhand_icon_state_slots[slot_str])
+		t_state = item.inhand_icon_state_slots[slot_str]
+	else if(item.inhand_icon_state)
+		t_state = item.inhand_icon_state
 	else
 		t_state = item.icon_state
 	if(item.icon_override)

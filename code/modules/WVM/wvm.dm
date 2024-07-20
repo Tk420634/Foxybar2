@@ -119,7 +119,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		return
 
 	var/item_allowed = is_available_category(Itm)
-	var/status_allowed = is_acceptable_item_state(Itm)
+	var/status_allowed = is_acceptable_inhand_icon_state(Itm)
 
 	if(item_allowed && status_allowed)
 		var/price = input(usr, "Enter price for " + Itm.name + ".", "Setup Price", basic_price) as null|num
@@ -155,7 +155,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 	return 0
 
 /* Hook for check item parameters */
-/obj/machinery/trading_machine/proc/is_acceptable_item_state(obj/item/Itm)
+/obj/machinery/trading_machine/proc/is_acceptable_inhand_icon_state(obj/item/Itm)
 	return 1
 
 /* Remove item from machine. */

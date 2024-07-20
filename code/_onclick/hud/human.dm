@@ -402,6 +402,18 @@
 	flirt_hud_button.hud = src
 	infodisplay += flirt_hud_button
 
+	touch_hud_button = new /atom/movable/screen/touch_hud_button()
+	touch_hud_button.hud = src
+	infodisplay += touch_hud_button
+
+	lick_hud_button = new /atom/movable/screen/lick_hud_button()
+	lick_hud_button.hud = src
+	infodisplay += lick_hud_button
+
+	kiss_hud_button = new /atom/movable/screen/kiss_hud_button()
+	kiss_hud_button.hud = src
+	infodisplay += kiss_hud_button
+
 	pull_icon = new /atom/movable/screen/pull()
 	pull_icon.icon = ui_style
 	pull_icon.hud = src

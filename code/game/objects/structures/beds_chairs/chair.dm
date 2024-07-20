@@ -173,7 +173,7 @@
 	name = "wooden chair"
 	desc = "A basic yet sturdy chair made from weathered old wood."
 	icon_state = "wooden_chair_settler_toppled"
-	item_state = "woodenchair"
+	inhand_icon_state = "woodenchair"
 	resistance_flags = FLAMMABLE
 	max_integrity = 70
 	hitsound = 'sound/weapons/genhit1.ogg'
@@ -189,7 +189,7 @@
 /obj/item/chair/wood/dining
 	desc = "A commonplace dining chair with a faded green cushion."
 	icon_state = "wooden_chair_toppled"
-	item_state = "wooden_chair"
+	inhand_icon_state = "wooden_chair"
 	origin_type = /obj/structure/chair/wood/dining
 
 // fantasy chairs - KNOTTINGHAM
@@ -226,7 +226,7 @@
 /obj/item/chair/wood/fancy
 	desc = "A well-designed study chair with a faded red cushion."
 	icon_state = "wooden_chair_fancy_toppled"
-	item_state = "wooden_chair_fancy"
+	inhand_icon_state = "wooden_chair_fancy"
 	origin_type = /obj/structure/chair/wood/fancy
 
 // Folding chair
@@ -236,7 +236,7 @@
 
 /obj/item/chair/folding
 	icon_state = "folding_chair_toppled"
-	item_state = "folding_chair"
+	inhand_icon_state = "folding_chair"
 	origin_type = /obj/structure/chair/folding
 
 // Plywood chair
@@ -309,7 +309,7 @@
 
 /obj/item/chair/stool/retro
 	icon_state = "bar_toppled"
-	item_state = "bar"
+	inhand_icon_state = "bar"
 	origin_type = /obj/structure/chair/stool/retro
 
 /obj/structure/chair/stool/retro/black
@@ -318,7 +318,7 @@
 
 /obj/item/chair/stool/retro/black
 	icon_state = "bar_black_toppled"
-	item_state = "bar_black"
+	inhand_icon_state = "bar_black"
 	origin_type = /obj/structure/chair/stool/retro/black
 
 /obj/structure/chair/stool/retro/tan
@@ -328,7 +328,7 @@
 
 /obj/item/chair/stool/retro/tan
 	icon_state = "bar_tan_toppled"
-	item_state = "bar_tan"
+	inhand_icon_state = "bar_tan"
 	origin_type = /obj/structure/chair/stool/retro/tan
 
 /obj/structure/chair/stool/retro/backed
@@ -337,7 +337,7 @@
 
 /obj/item/chair/stool/retro/backed
 	icon_state = "bar_backed_toppled"
-	item_state = "bar_backed"
+	inhand_icon_state = "bar_backed"
 	origin_type = /obj/structure/chair/stool/retro/backed
 
 // Comfy chairs
@@ -471,7 +471,7 @@
 /obj/item/chair/stool/bar
 	name = "bar stool"
 	icon_state = "bar_toppled"
-	item_state = "stool_bar"
+	inhand_icon_state = "stool_bar"
 	origin_type = /obj/structure/chair/stool/bar
 
 /obj/item/chair/wood/modern
@@ -481,7 +481,7 @@
 	desc = "Bar brawl essential."
 	icon = 'icons/fallout/objects/furniture/chairs_and_beds.dmi'
 	icon_state = "chair_toppled"
-	item_state = "chair"
+	inhand_icon_state = "chair"
 	lefthand_file = 'icons/mob/inhands/misc/chairs_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/chairs_righthand.dmi'
 	w_class = WEIGHT_CLASS_HUGE
@@ -582,7 +582,7 @@
 /obj/item/chair/greyscale
 	icon = 'icons/obj/chairs.dmi'
 	icon_state = "chair_greyscale_toppled"
-	item_state = "chair_greyscale"
+	inhand_icon_state = "chair_greyscale"
 	material_flags = MATERIAL_ADD_PREFIX | MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
 	origin_type = /obj/structure/chair/greyscale
 
@@ -590,7 +590,7 @@
 	name = "stool"
 	icon = 'icons/obj/chairs.dmi'
 	icon_state = "stool_toppled"
-	item_state = "stool"
+	inhand_icon_state = "stool"
 	origin_type = /obj/structure/chair/stool
 	break_chance = 0 //It's too sturdy.
 
@@ -619,7 +619,7 @@
 /obj/item/chair/stool/alien
 	name = "stool"
 	icon_state = "stoolalien_toppled"
-	item_state = "stoolalien"
+	inhand_icon_state = "stoolalien"
 	icon = 'icons/obj/abductor.dmi'
 	origin_type = /obj/structure/chair/stool/alien
 	break_chance = 0 //It's too sturdy.
@@ -627,7 +627,7 @@
 /obj/item/chair/stool/bar/alien
 	name = "bar stool"
 	icon_state = "baralien_toppled"
-	item_state = "baralien"
+	inhand_icon_state = "baralien"
 	icon = 'icons/obj/abductor.dmi'
 	origin_type = /obj/structure/chair/stool/bar/alien
 
@@ -671,28 +671,28 @@
 	name = "brass stool"
 	icon = 'icons/obj/chairs.dmi'
 	icon_state = "stoolbrass_toppled"
-	item_state = "stoolbrass"
+	inhand_icon_state = "stoolbrass"
 	origin_type = /obj/structure/chair/stool/brass
 
 /obj/item/chair/stool/bar/brass
 	name = "brass bar stool"
 	icon = 'icons/obj/chairs.dmi'
 	icon_state = "barbrass_toppled"
-	item_state = "stoolbrass_bar"
+	inhand_icon_state = "stoolbrass_bar"
 	origin_type = /obj/structure/chair/stool/bar/brass
 */
 /obj/item/chair/stool/bronze
 	name = "bronze stool"
 	icon = 'icons/obj/chairs.dmi'
 	icon_state = "stoolbrass_toppled"
-	item_state = "stoolbrass"
+	inhand_icon_state = "stoolbrass"
 	origin_type = /obj/structure/chair/stool/bronze
 
 /obj/item/chair/stool/bar/bronze
 	name = "bronze bar stool"
 	icon = 'icons/obj/chairs.dmi'
 	icon_state = "barbrass_toppled"
-	item_state = "stoolbrass_bar"
+	inhand_icon_state = "stoolbrass_bar"
 	origin_type = /obj/structure/chair/stool/bar/bronze
 
 /////////////////////////////////
@@ -903,7 +903,7 @@
 	name = "metal chair"
 	desc = "A basic yet sturdy chair made from metal."
 	icon_state = "chair_metal_toppled"
-	item_state = "chair"
+	inhand_icon_state = "chair"
 	max_integrity = 70
 	hitsound = 'sound/weapons/genhit1.ogg'
 	origin_type = /obj/structure/chair/metal

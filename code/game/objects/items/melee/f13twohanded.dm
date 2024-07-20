@@ -785,7 +785,7 @@
 	lefthand_file = 'icons/fallout/onmob/weapons/melee2h_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/melee2h_righthand.dmi'
 	icon_state = "steelsaw"
-	item_state = "steelsaw"
+	inhand_icon_state = "steelsaw"
 	icon_prefix = "steelsaw"
 	force = 4
 	backstab_multiplier = 1.5
@@ -803,8 +803,8 @@
 	var/structure_bonus_damage = 20
 	var/on_icon_state = "steelsaw_on"
 	var/off_icon_state = "steelsaw"
-	var/on_item_state = "steelsaw_on"
-	var/off_item_state = "steelsaw"
+	var/on_inhand_icon_state = "steelsaw_on"
+	var/off_inhand_icon_state = "steelsaw"
 	var/weight_class_on = WEIGHT_CLASS_HUGE
 	var/on = FALSE
 	var/force_on = 50
@@ -816,7 +816,7 @@
 	if(on)
 		user.visible_message("<span class ='warning'>[user] pulls the cord, starting up the [src] with a roar and letting the blades spin up.</span>")
 		icon_state = on_icon_state
-		item_state = on_item_state
+		inhand_icon_state = on_inhand_icon_state
 		w_class = weight_class_on
 		force = force_on
 		attack_speed = CLICK_CD_MELEE * 0.5
@@ -825,7 +825,7 @@
 	else
 		user.visible_message("<span class ='notice'>[user] presses the off button, stopping the noise and the carnage.</span>")
 		icon_state = off_icon_state
-		item_state = off_item_state
+		inhand_icon_state = off_inhand_icon_state
 		w_class = WEIGHT_CLASS_BULKY
 		force = force_off
 		attack_verb = list("poked", "scraped")
@@ -855,15 +855,15 @@
 	name = "auto axe"
 	desc = "A reinforced and heavier steel saw, upgraded using the parts of a car engine. A little heavy and ungainly to use as a tool, however."
 	icon_state = "autoaxe"
-	item_state = "autoaxe"
+	inhand_icon_state = "autoaxe"
 	icon_prefix = "autoaxe"
 	force_on = 55
 	armour_penetration = 0.3 //it's an expensive to craft weapon that requires crafting recipes and hunting around for some rather esoteric parts, it should be worth the trouble.
 	attack_speed = CLICK_CD_MELEE * 1.5
 	on_icon_state = "autoaxe_on"
 	off_icon_state = "autoaxe"
-	on_item_state = "autoaxe_on"
-	off_item_state = "autoaxe"
+	on_inhand_icon_state = "autoaxe_on"
+	off_inhand_icon_state = "autoaxe"
 	toolspeed = 2
 	structure_bonus_damage = 40
 
@@ -872,7 +872,7 @@
 	if(on)
 		user.visible_message("<span class ='warning'>[user] turns the starting crank on the [src], starting it up with a guttral roar.</span>")
 		icon_state = on_icon_state
-		item_state = on_item_state
+		inhand_icon_state = on_inhand_icon_state
 		w_class = weight_class_on
 		force = force_on
 		attack_speed = CLICK_CD_MELEE * 0.5
@@ -881,7 +881,7 @@
 	else
 		user.visible_message("<span class ='notice'>[user] cuts the throttle on the [src], letting the blades slowly spin down.</span>")
 		icon_state = off_icon_state
-		item_state = off_item_state
+		inhand_icon_state = off_inhand_icon_state
 		w_class = WEIGHT_CLASS_BULKY
 		force = force_off
 		attack_verb = list("poked", "scraped")

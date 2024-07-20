@@ -1278,7 +1278,7 @@
 	name = "fifi"
 	desc = "A colorful firlly hat"
 	icon_state = "fifi_hat"
-	item_state = "fifi_hat"
+	inhand_icon_state = "fifi_hat"
 
 
 /datum/gear/head/fifi

@@ -30,14 +30,11 @@
 	screen_loc = ui_character_actions
 
 /atom/movable/screen/up/Click(location,control,params)
-	if(isliving(usr))
-		var/mob/living/L = usr
-		to_chat(L, span_danger("Double clicking on the same button will make you travel up, if possible."))
-		L.lookup()
-
-/atom/movable/screen/up/DblClick(location,control,params)
-	var/mob/L = usr
-	L.up()
+	var/mob/living/carbon/human/H = usr
+	if(!ishuman(usr))
+		to_chat(usr, span_alert("Sorry! You've gotta be a fully spawned in character with hopes and dreams to use this!"))
+		return
+	H.layershift_up()
 
 /atom/movable/screen/down
 	name = "down"
@@ -45,8 +42,11 @@
 	screen_loc = ui_character_actions
 
 /atom/movable/screen/down/Click(location,control,params)
-	var/mob/L = usr
-	L.down()
+	var/mob/living/carbon/human/H = usr
+	if(!ishuman(usr))
+		to_chat(usr, span_alert("Sorry! You've gotta be a fully spawned in character with hopes and dreams to use this!"))
+		return
+	H.layershift_down()
 
 /atom/movable/screen/sleep_hud_button
 	name = "sleep toggle"
@@ -135,6 +135,47 @@
 		to_chat(usr, span_alert("Sorry! You've gotta be a fully spawned in character with hopes and dreams to use this!"))
 		return
 	H.emote("flirt")
+
+/atom/movable/screen/touch_hud_button
+	name = "Touch on people!"
+	icon = 'icons/mob/screen_gen.dmi'
+	icon_state = "touch"
+	screen_loc = ui_touch
+
+/atom/movable/screen/touch_hud_button/Click(location,control,params)
+	var/mob/living/carbon/human/H = usr
+	if(!ishuman(usr))
+		to_chat(usr, span_alert("Sorry! You've gotta be a fully spawned in character with hopes and dreams to use this!"))
+		return
+	H.emote("touch")
+
+/atom/movable/screen/lick_hud_button
+	name = "lick on people!"
+	icon = 'icons/mob/screen_gen.dmi'
+	icon_state = "lick"
+	screen_loc = ui_lick
+
+/atom/movable/screen/lick_hud_button/Click(location,control,params)
+	var/mob/living/carbon/human/H = usr
+	if(!ishuman(usr))
+		to_chat(usr, span_alert("Sorry! You've gotta be a fully spawned in character with hopes and dreams to use this!"))
+		return
+	H.emote("lick")
+
+/atom/movable/screen/kiss_hud_button
+	name = "kiss on people!"
+	icon = 'icons/mob/screen_gen.dmi'
+	icon_state = "kiss"
+	screen_loc = ui_kiss
+
+/atom/movable/screen/kiss_hud_button/Click(location,control,params)
+	var/mob/living/carbon/human/H = usr
+	if(!ishuman(usr))
+		to_chat(usr, span_alert("Sorry! You've gotta be a fully spawned in character with hopes and dreams to use this!"))
+		return
+	H.emote("kiss")
+
+
 
 /atom/movable/screen/pvp_focus_toggle
 	name = "PVP focus On/Off"

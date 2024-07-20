@@ -6,6 +6,6 @@ SUBSYSTEM_DEF(religion)
 	var/deity
 	var/bible_name
 	var/bible_icon_state
-	var/bible_item_state
+	var/bible_inhand_icon_state
 	var/holy_weapon_type
 	var/holy_armor_type
