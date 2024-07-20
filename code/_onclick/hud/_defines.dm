@@ -146,6 +146,9 @@
 #define ui_bayou				"EAST-1:28, SOUTH+0:2" //Character directory
 #define ui_pvpbuttons			"EAST-1:28, SOUTH+1:18" //slut directory
 #define ui_flirt			"EAST-1:28, SOUTH+2:0" //slut directory
+#define ui_touch			"EAST-1:28, SOUTH+2:-4" //slut directory
+#define ui_lick			"EAST-1:28, SOUTH+3:-10" //slut directory
+#define ui_kiss			"EAST-1:28, SOUTH+3:-14" //slut directory
 
 //living
 #define ui_living_pull "EAST-1:28,CENTER-2:15"

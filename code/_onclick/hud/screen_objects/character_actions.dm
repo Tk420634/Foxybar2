@@ -136,6 +136,47 @@
 		return
 	H.emote("flirt")
 
+/atom/movable/screen/touch_hud_button
+	name = "Touch on people!"
+	icon = 'icons/mob/screen_gen.dmi'
+	icon_state = "touch"
+	screen_loc = ui_touch
+
+/atom/movable/screen/touch_hud_button/Click(location,control,params)
+	var/mob/living/carbon/human/H = usr
+	if(!ishuman(usr))
+		to_chat(usr, span_alert("Sorry! You've gotta be a fully spawned in character with hopes and dreams to use this!"))
+		return
+	H.emote("touch")
+
+/atom/movable/screen/lick_hud_button
+	name = "lick on people!"
+	icon = 'icons/mob/screen_gen.dmi'
+	icon_state = "lick"
+	screen_loc = ui_lick
+
+/atom/movable/screen/lick_hud_button/Click(location,control,params)
+	var/mob/living/carbon/human/H = usr
+	if(!ishuman(usr))
+		to_chat(usr, span_alert("Sorry! You've gotta be a fully spawned in character with hopes and dreams to use this!"))
+		return
+	H.emote("lick")
+
+/atom/movable/screen/kiss_hud_button
+	name = "kiss on people!"
+	icon = 'icons/mob/screen_gen.dmi'
+	icon_state = "kiss"
+	screen_loc = ui_kiss
+
+/atom/movable/screen/kiss_hud_button/Click(location,control,params)
+	var/mob/living/carbon/human/H = usr
+	if(!ishuman(usr))
+		to_chat(usr, span_alert("Sorry! You've gotta be a fully spawned in character with hopes and dreams to use this!"))
+		return
+	H.emote("kiss")
+
+
+
 /atom/movable/screen/pvp_focus_toggle
 	name = "PVP focus On/Off"
 	icon = 'icons/mob/screen_gen.dmi'
