@@ -30,14 +30,11 @@
 	screen_loc = ui_character_actions
 
 /atom/movable/screen/up/Click(location,control,params)
-	if(isliving(usr))
-		var/mob/living/L = usr
-		to_chat(L, span_danger("Double clicking on the same button will make you travel up, if possible."))
-		L.lookup()
-
-/atom/movable/screen/up/DblClick(location,control,params)
-	var/mob/L = usr
-	L.up()
+	var/mob/living/carbon/human/H = usr
+	if(!ishuman(usr))
+		to_chat(usr, span_alert("Sorry! You've gotta be a fully spawned in character with hopes and dreams to use this!"))
+		return
+	H.layershift_up()
 
 /atom/movable/screen/down
 	name = "down"
@@ -45,8 +42,11 @@
 	screen_loc = ui_character_actions
 
 /atom/movable/screen/down/Click(location,control,params)
-	var/mob/L = usr
-	L.down()
+	var/mob/living/carbon/human/H = usr
+	if(!ishuman(usr))
+		to_chat(usr, span_alert("Sorry! You've gotta be a fully spawned in character with hopes and dreams to use this!"))
+		return
+	H.layershift_down()
 
 /atom/movable/screen/sleep_hud_button
 	name = "sleep toggle"
