@@ -3,7 +3,7 @@
 	desc = "Don't cross the streams!"
 	icon = 'icons/obj/chronos.dmi'
 	icon_state = "chronogun"
-	item_state = "chronogun"
+	inhand_icon_state = "chronogun"
 	weapon_class = WEAPON_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_ONLY
 

@@ -67,7 +67,7 @@
 		small enough to whip out of a coat when someone doesn't feel like paying for your raccoon pelts. \
 		A brave, enterprising waster can stuff just about anything into the improvised clipazine, though anything more powerful \
 		than a handloaded 9mm round will run the risk of voiding the warranty on your fingers."
-	item_state = "gun"
+	inhand_icon_state = "gun"
 	mag_type = /obj/item/ammo_box/magazine/zipgun
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
@@ -106,7 +106,7 @@
 		some metal parts into the breech block, " + span_notice("weld") + " it until its good and soft, and then " + span_notice("insert") + " a new \
 		casing in there. Be sure to unload it first!"
 	icon_state = "piperifle"
-	item_state = "pepperbox"
+	inhand_icon_state = "pepperbox"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvisedpipe
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -134,7 +134,7 @@
 		anything fired through it hit like a wet noodle."
 	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "rocketlauncher"
-	item_state = "rocketlauncher"
+	inhand_icon_state = "rocketlauncher"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised_any
 	fire_sound = 'sound/weapons/magrifle.ogg'
 
@@ -172,7 +172,7 @@
 		each connected to a separate trigger that'll fire a 10mm pistol round. If you grip it <i>just right</i>, you might just \
 		get it to fire all four shots at once! Or explode!"
 	icon_state = "pepperbox"
-	item_state = "pepperbox"
+	inhand_icon_state = "pepperbox"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised10mm
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_ONLY
@@ -193,7 +193,7 @@
 	name = "Deal with the Devil"
 	desc = "This terrifying abomination of a weapon is made of four heavy pipes strapped together, with a single trigger mechanism. Be very careful when firing it, or better yet, don't."
 	icon_state = "pepperbox"
-	item_state = "pepperbox"
+	inhand_icon_state = "pepperbox"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised10mm
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_ONLY
@@ -231,7 +231,7 @@
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "shotgunbat"
-	item_state = "shotgunbat"
+	inhand_icon_state = "shotgunbat"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/improvised
 
 	added_spread = 5 // its a melee weapon lol
@@ -272,7 +272,7 @@
 		stab should point-blank the everliving daylights out of someone. Or blast one of your fingers into them. \
 		Either way, someone's in for a bad time."
 	icon_state = "knifegun"
-	item_state = "knifegun"
+	inhand_icon_state = "knifegun"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised44
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
@@ -306,7 +306,7 @@
 		in .45 ACP, connect all those to a pressure plate on the strikeface, and try not to think about all the explosives you have \
 		less than an inch from your fingers. Fires all four rounds at once, and if your hand still exists, delivers a solid punch too."
 	icon_state = "knucklegun"
-	item_state = "knucklegun"
+	inhand_icon_state = "knucklegun"
 	slot_flags = INV_SLOTBIT_GLOVES
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised45
 	weapon_class = WEAPON_CLASS_SMALL
@@ -346,7 +346,7 @@
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "autopipe"
-	item_state = "autopipe"
+	inhand_icon_state = "autopipe"
 	mag_type = /obj/item/ammo_box/magazine/autopipe
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_ONE_HAND_AKIMBO
@@ -392,7 +392,7 @@
 		Made from metal scraps, electronic parts. an old rifle stock and a bottle full of dreams, \
 		the Laser Musket is sure to stop anything in their tracks and make those raiders think twice."
 	icon_state = "lasmusket"
-	item_state = "lasmusket"
+	inhand_icon_state = "lasmusket"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/lasmusket
 	fire_delay = 15
 	dryfire_sound = 'sound/f13weapons/noammoenergy.ogg'
@@ -424,7 +424,7 @@
 	name = "Plasma Musket"
 	desc = "The cooling looks dubious and is that a empty can of beans used as a safety valve? Pray the plasma goes towards the enemy and not your face when you pull the trigger."
 	icon_state = "plasmamusket"
-	item_state = "plasmamusket"
+	inhand_icon_state = "plasmamusket"
 	mag_type = /obj/item/ammo_box/magazine/internal/plasmacaster
 	fire_delay = 20
 	var/bolt_open = FALSE
@@ -458,7 +458,7 @@
 	name = "destroyer carbine"
 	desc = "There are many ways to describe this, very few of them nice. This is a .45ACP silenced bolt action rifle - that via the expertise of a gun runner mainlining 50 liters of psycho, mentats, and turbo - has been converted into a semi auto."
 	icon_state = "destroyer-carbine"
-	item_state = "varmintrifle"
+	inhand_icon_state = "varmintrifle"
 	mag_type = /obj/item/ammo_box/magazine/greasegun
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_ONE_HAND_ONLY
@@ -485,7 +485,7 @@
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "308-sawn"
-	item_state = "308-sawn"
+	inhand_icon_state = "308-sawn"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction
 	weapon_class = WEAPON_CLASS_SMALL
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -511,7 +511,7 @@
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "winchesterbore"
-	item_state = "shotgundouble"
+	inhand_icon_state = "shotgundouble"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised308
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY
@@ -555,7 +555,7 @@
 	lefthand_file = 'icons/mob/inhands/equipment/belt_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/belt_righthand.dmi'
 	icon_state = "sling"
-	item_state = "utility"
+	inhand_icon_state = "utility"
 	pin = null
 	no_pin_required = TRUE
 	trigger_guard = TRIGGER_GUARD_ALLOW_ALL
@@ -591,7 +591,7 @@
 	desc = "An old rocket launcher that has somehow been repurposed to fire bricks at high velocity. You can probably find more bricks with *brick!"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	icon_state = "launcher"
-	item_state = "rocketlauncher"
+	inhand_icon_state = "rocketlauncher"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/brick
 	weapon_class = WEAPON_CLASS_CARBINE
 	weapon_weight = GUN_TWO_HAND_ONLY

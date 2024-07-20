@@ -3,7 +3,7 @@
 	desc = "Dance my monkeys! DANCE!!!"
 	icon = 'icons/obj/radio.dmi'
 	icon_state = "electropack0"
-	item_state = "electropack"
+	inhand_icon_state = "electropack"
 	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
 	flags_1 = CONDUCT_1
@@ -136,7 +136,7 @@
 	desc = "A reinforced metal collar. It seems to have some form of wiring near the front. A small lock is present, though it seems impossible to get it off anyway without external help."
 	icon = 'icons/obj/clothing/neck.dmi'
 	icon_state = "slavecollar"
-	item_state = "slavecollar"
+	inhand_icon_state = "slavecollar"
 	body_parts_covered = NECK
 	slot_flags = INV_SLOTBIT_NECK //no more pocket shockers. Now done without lazyness
 	w_class = WEIGHT_CLASS_SMALL
@@ -217,7 +217,7 @@
 	desc = "A thick reinforced metal collar. 'Explosion' danger symbols line the outside. A small lock is present, though it seems impossible to get it off anyway without external help."
 	icon = 'icons/obj/clothing/neck.dmi'
 	icon_state = "slavecollarb"
-	item_state = "slavecollarb"
+	inhand_icon_state = "slavecollarb"
 	slot_flags = INV_SLOTBIT_NECK
 	w_class = WEIGHT_CLASS_SMALL
 	body_parts_covered = NECK
