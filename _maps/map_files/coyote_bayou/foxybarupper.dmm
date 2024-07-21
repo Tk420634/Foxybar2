@@ -3220,10 +3220,6 @@
 	},
 /turf/open/floor/plasteel/freezer,
 /area/f13/fb/bar)
-"DQ" = (
-/obj/structure/simple_door/room,
-/turf/open/floor/wood_common,
-/area/f13/fb/bar)
 "DS" = (
 /obj/structure/table/glass,
 /obj/machinery/chem_dispenser/drinks/fullupgrade{
@@ -3457,14 +3453,6 @@
 	color = "#3B2B1A"
 	},
 /turf/open/indestructible/cobble/dark,
-/area/f13/fb/bar)
-"FW" = (
-/obj/structure/window/bronze{
-	dir = 1;
-	light_color = "#b5a642";
-	light_range = 1
-	},
-/turf/open/transparent/openspace,
 /area/f13/fb/bar)
 "Ga" = (
 /obj/effect/overlay/fog/fog2{
@@ -3922,7 +3910,7 @@
 /area/f13/caves)
 "MW" = (
 /obj/structure/simple_door/room,
-/turf/closed/wall/mineral/brick,
+/turf/open/floor/plasteel/freezer,
 /area/f13/fb/bar)
 "MX" = (
 /obj/effect/turf_decal/siding/wood/corner{
@@ -4076,7 +4064,7 @@
 "Ox" = (
 /obj/structure/simple_door/room,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood_common,
+/turf/open/floor/plasteel/freezer,
 /area/f13/fb/bar)
 "Oz" = (
 /obj/structure/spacevine{
@@ -6643,7 +6631,7 @@ nZ
 nZ
 il
 il
-DQ
+MW
 il
 il
 il
@@ -7001,7 +6989,7 @@ il
 nX
 hj
 il
-DQ
+MW
 il
 il
 yx
@@ -7832,7 +7820,7 @@ zr
 Ys
 Wj
 UB
-FW
+CP
 bt
 bt
 bt
