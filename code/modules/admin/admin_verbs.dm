@@ -1049,7 +1049,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 /// Never gonna give one up, never gonna give one down
 /datum/admins/proc/grope_shotglass()
 	set category = "Admin.Game"
-	set name = "Let people grope wierd things"
+	set name = "grope shotglass"
 
 	if(!check_rights(R_ADMIN))
 		message_admins("[ADMIN_TPMONTY(usr)] tried to use mess with grope_shotglass() without admin perms.")
