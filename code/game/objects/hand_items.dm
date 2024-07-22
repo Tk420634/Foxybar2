@@ -70,6 +70,7 @@
 	icon = 'icons/obj/in_hands.dmi'
 	icon_state = "kisser"
 	attack_verb = list("kissed", "smooched", "snogged")
+	grope = /datum/grope_kiss_MERP/kiss
 	pokesound = list(
 		'sound/effects/kiss.ogg',
 		'modular_splurt/sound/interactions/kiss/kiss1.ogg',
@@ -90,6 +91,7 @@
 	desc = "Mlem."
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "tonguenormal"
+	grope = /datum/grope_kiss_MERP/lick
 	attack_verb = list("licked", "lapped", "mlemmed")
 	pokesound = 'sound/effects/lick.ogg'
 	siemens_coefficient = 5 // hewwo mistow ewectwic fence mlem mlem
@@ -192,8 +194,7 @@
 /obj/item/hand_item/tactile/proc/do_a_grope(mob/living/doer, mob/living/target)
 	if(!LAZYLEN(GLOB.gropekissers))
 		for(var/booby in typesof(/datum/grope_kiss_MERP))
-			var/datum/grope_kiss_MERP/gkm = booby
-			gkm = new()
+			var/datum/grope_kiss_MERP/gkm = new booby()
 			GLOB.gropekissers[gkm.type] = gkm
 	if(!grope)
 		return
@@ -209,7 +210,7 @@
 	if(!user)
 		return
 
-	. = list(LICK_LOCATION = "spot", LICK_INTENT = "like a dork")
+	. = list(LICK_LOCATION = "spot", LICK_INTENT = "like a dork") //👀 Dan I swear to god.
 	switch(user.zone_selected)
 		if(BODY_ZONE_CHEST)
 			.[LICK_LOCATION] = "chest"
