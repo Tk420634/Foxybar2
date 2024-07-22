@@ -56,7 +56,7 @@ GLOBAL_LIST_EMPTY(shotglass_gropers)
 	var/list/head_front_action_harm_sound = list('sound/effects/slap.ogg')
 
 	var/list/head_side = list("ear")
-	var/list/head_side_action_help = list(
+	var/list/head_side_action_help = list( 
 		"caress",
 		"caresses",
 		"caressing",
@@ -1098,6 +1098,1755 @@ GLOBAL_LIST_EMPTY(shotglass_gropers)
 					return "back"
 	return "front"
 
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+/datum/grope_kiss_MERP/kiss
+	/*
+		for action tenses, format is: 
+			I "kiss" Tia's [toes], (present tense, user performing)
+			Dan "kisses" my [toes], (present tense, target recieving)
+			I continue "kissing" Tia's [toes] / Dan continues "kissing" my [toes], (continuous/gerundo)
+			Dan "kissed" Tia's [toes], (past tense, third person)
+	*/
+	head_front = list("head")
+	head_front_action_help = list(
+		"softly kiss", //I [grab] the (back of Tia's neck)
+		"softly kisses", //Dan [grabs] (the back of my neck)
+		"softly kissing", // Dan continues [grabbing] (the back of my neck)
+		"softly kissed", // Dan [grabbed] (the back of Tia's neck)
+		)
+	head_front_action_disarm = list(
+		"teasingly kiss", //I [grab] the (back of Tia's neck)
+		"teasingly kisses", //Dan [grabs] (the back of my neck)
+		"teasingly kissing", // Dan continues [grabbing] (the back of my neck)
+		"teasingly kissed", // Dan [grabbed] (the back of Tia's neck)
+		)
+	head_front_action_grab = list(
+		"firmly kiss", //I [grab] the (back of Tia's neck)
+		"firmly kisses", //Dan [grabs] (the back of my neck)
+		"firmly kissing", // Dan continues [grabbing] (the back of my neck)
+		"firmly kissed", // Dan [grabbed] (the back of Tia's neck)
+		)
+	head_front_action_harm = list(
+		"hotly kiss", //I [grab] the (back of Tia's neck)
+		"hotly kisses", //Dan [grabs] (the back of my neck)
+		"hotly kissing", // Dan continues [grabbing] (the back of my neck)
+		"hotly kissed", // Dan [grabbed] (the back of Tia's neck)
+		)
+	head_front_action_help_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	head_front_action_disarm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	head_front_action_grab_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	head_front_action_harm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+
+	head_side = list("ear")
+	head_side_action_help = list(
+		"softly kiss", //I [grab] the (back of Tia's neck)
+		"softly kisses", //Dan [grabs] (the back of my neck)
+		"softly kissing", // Dan continues [grabbing] (the back of my neck)
+		"softly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	head_side_action_disarm = list(
+		"teasingly kiss", //I [grab] the (back of Tia's neck)
+		"teasingly kisses", //Dan [grabs] (the back of my neck)
+		"teasingly kissing", // Dan continues [grabbing] (the back of my neck)
+		"teasingly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	head_side_action_grab = list(
+		"wetly nibble", //I [grab] the (back of Tia's neck)
+		"wetly nibbles", //Dan [grabs] (the back of my neck)
+		"wetly nibbling", // Dan continues [grabbing] (the back of my neck)
+		"wetly nibbled", // Dan [grabbed] (the back of Tia's neck)
+	)
+	head_side_action_harm = list(
+		"breathily mouth", //I [grab] the (back of Tia's neck)
+		"breathily mouths", //Dan [grabs] (the back of my neck)
+		"breathily mouthing", // Dan continues [grabbing] (the back of my neck)
+		"breathily mouthed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	head_side_action_help_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	head_side_action_disarm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	head_side_action_grab_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	head_side_action_harm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+
+	head_back = list("neck from behind")
+	head_back_action_help = list(
+		"softly kiss", //I [grab] the (back of Tia's neck)
+		"softly kisses", //Dan [grabs] (the back of my neck)
+		"softly kissing", // Dan continues [grabbing] (the back of my neck)
+		"softly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	head_back_action_disarm = list(
+		"teasingly kiss", //I [grab] the (back of Tia's neck)
+		"teasingly kisses", //Dan [grabs] (the back of my neck)
+		"teasingly kissing", // Dan continues [grabbing] (the back of my neck)
+		"teasingly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	head_back_action_grab = list(
+		"firmly kiss", //I [grab] the (back of Tia's neck)
+		"firmly kisses", //Dan [grabs] (the back of my neck)
+		"firmly kissing", // Dan continues [grabbing] (the back of my neck)
+		"firmly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	head_back_action_harm = list(
+		"hotly kiss", //I [grab] the (back of Tia's neck)
+		"hotly kisses", //Dan [grabs] (the back of my neck)
+		"hotly kissing", // Dan continues [grabbing] (the back of my neck)
+		"hotly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	head_back_action_help_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	head_back_action_disarm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	head_back_action_grab_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	head_back_action_harm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+
+	///////////////////////////////////////////////////////////////////////////////////
+	/// eyes are special
+	eyes_front = list("forehead")
+	eyes_front_action_help = list(
+		"softly kiss", //I [grab] the (back of Tia's neck)
+		"softly kisses", //Dan [grabs] (the back of my neck)
+		"softly kissing", // Dan continues [grabbing] (the back of my neck)
+		"softly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	eyes_front_action_disarm = list(
+		"teasingly kiss", //I [grab] the (back of Tia's neck)
+		"teasingly kisses", //Dan [grabs] (the back of my neck)
+		"teasingly kissing", // Dan continues [grabbing] (the back of my neck)
+		"teasingly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	eyes_front_action_grab = list(
+		"firmly kiss", //I [grab] the (back of Tia's neck)
+		"firmly kisses", //Dan [grabs] (the back of my neck)
+		"firmly kissing", // Dan continues [grabbing] (the back of my neck)
+		"firmly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	eyes_front_action_harm = list(
+		"hotly kiss", //I [grab] the (back of Tia's neck)
+		"hotly kisses", //Dan [grabs] (the back of my neck)
+		"hotly kissing", // Dan continues [grabbing] (the back of my neck)
+		"hotly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	eyes_front_action_help_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	eyes_front_action_disarm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	eyes_front_action_grab_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	eyes_front_action_harm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+
+	eyes_side = list("temple") // MAKE INTO EARS TOO (insides??????)
+	eyes_side_action_help = list(
+		"softly kiss", //I [grab] the (back of Tia's neck)
+		"softly kisses", //Dan [grabs] (the back of my neck)
+		"softly kissing", // Dan continues [grabbing] (the back of my neck)
+		"softly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	eyes_side_action_disarm = list(
+		"teasingly kiss", //I [grab] the (back of Tia's neck)
+		"teasingly kisses", //Dan [grabs] (the back of my neck)
+		"teasingly kissing", // Dan continues [grabbing] (the back of my neck)
+		"teasingly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	eyes_side_action_grab = list(
+		"firmly kiss", //I [grab] the (back of Tia's neck)
+		"firmly kisses", //Dan [grabs] (the back of my neck)
+		"firmly kissing", // Dan continues [grabbing] (the back of my neck)
+		"firmly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	eyes_side_action_harm = list(
+		"hotly kiss", //I [grab] the (back of Tia's neck)
+		"hotly kisses", //Dan [grabs] (the back of my neck)
+		"hotly kissing", // Dan continues [grabbing] (the back of my neck)
+		"hotly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	eyes_side_action_help_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	eyes_side_action_disarm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	eyes_side_action_grab_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	eyes_side_action_harm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+
+	eyes_back = list("earlobe")
+	eyes_back_action_help = list(
+		"softly kiss", //I [grab] the (back of Tia's neck)
+		"softly kisses", //Dan [grabs] (the back of my neck)
+		"softly kissing", // Dan continues [grabbing] (the back of my neck)
+		"softly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	eyes_back_action_disarm = list(
+		"teasingly kiss", //I [grab] the (back of Tia's neck)
+		"teasingly kisses", //Dan [grabs] (the back of my neck)
+		"teasingly kissing", // Dan continues [grabbing] (the back of my neck)
+		"teasingly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	eyes_back_action_grab = list(
+		"firmly kiss", //I [grab] the (back of Tia's neck)
+		"firmly kisses", //Dan [grabs] (the back of my neck)
+		"firmly kissing", // Dan continues [grabbing] (the back of my neck)
+		"firmly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	eyes_back_action_harm = list(
+		"hotly kiss", //I [grab] the (back of Tia's neck)
+		"hotly kisses", //Dan [grabs] (the back of my neck)
+		"hotly kissing", // Dan continues [grabbing] (the back of my neck)
+		"hotly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	eyes_back_action_help_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	eyes_back_action_disarm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	eyes_back_action_grab_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	eyes_back_action_harm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+
+	///////////////////////////////////////////////////////////////////////////////////
+	/// mouth is also special
+	mouth_front = list("lips")
+	mouth_front_action_help = list(
+		"softly kiss", //I [grab] the (back of Tia's neck)
+		"softly kisses", //Dan [grabs] (the back of my neck)
+		"softly kissing", // Dan continues [grabbing] (the back of my neck)
+		"softly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	mouth_front_action_disarm = list(
+		"teasingly kiss", //I [grab] the (back of Tia's neck)
+		"teasingly kisses", //Dan [grabs] (the back of my neck)
+		"teasingly kissing", // Dan continues [grabbing] (the back of my neck)
+		"teasingly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	mouth_front_action_grab = list(
+		"firmly kiss", //I [grab] the (back of Tia's neck)
+		"firmly kisses", //Dan [grabs] (the back of my neck)
+		"firmly kissing", // Dan continues [grabbing] (the back of my neck)
+		"firmly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	mouth_front_action_harm = list(
+		"hotly kiss", //I [grab] the (back of Tia's neck)
+		"hotly kisses", //Dan [grabs] (the back of my neck)
+		"hotly kissing", // Dan continues [grabbing] (the back of my neck)
+		"hotly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	mouth_front_action_help_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	mouth_front_action_disarm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	mouth_front_action_grab_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	mouth_front_action_harm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+
+	mouth_side = list("cheek")
+	mouth_side_action_help = list(
+		"softly kiss", //I [grab] the (back of Tia's neck)
+		"softly kisses", //Dan [grabs] (the back of my neck)
+		"softly kissing", // Dan continues [grabbing] (the back of my neck)
+		"softly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	mouth_side_action_disarm = list(
+		"teasingly kiss", //I [grab] the (back of Tia's neck)
+		"teasingly kisses", //Dan [grabs] (the back of my neck)
+		"teasingly kissing", // Dan continues [grabbing] (the back of my neck)
+		"teasingly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	mouth_side_action_grab = list(
+		"firmly kiss", //I [grab] the (back of Tia's neck)
+		"firmly kisses", //Dan [grabs] (the back of my neck)
+		"firmly kissing", // Dan continues [grabbing] (the back of my neck)
+		"firmly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	mouth_side_action_harm = list(
+		"hotly kiss", //I [grab] the (back of Tia's neck)
+		"hotly kisses", //Dan [grabs] (the back of my neck)
+		"hotly kissing", // Dan continues [grabbing] (the back of my neck)
+		"hotly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	mouth_side_action_help_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	mouth_side_action_disarm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	mouth_side_action_grab_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	mouth_side_action_harm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+
+//back of neck start//
+	mouth_back = list("neck from behind") // this is the thing that I am doing to Their Thing
+	mouth_back_action_help = list(
+		"softly kiss", //I [grab] the (back of Tia's neck)
+		"softly kisses", //Dan [grabs] (the back of my neck)
+		"softly kissing", // Dan continues [grabbing] (the back of my neck)
+		"softly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	mouth_back_action_disarm = list(
+		"teasingly kiss", //I [grab] the (back of Tia's neck)
+		"teasingly kisses", //Dan [grabs] (the back of my neck)
+		"teasingly kissing", // Dan continues [grabbing] (the back of my neck)
+		"teasingly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	mouth_back_action_grab = list(
+		"firmly kiss", //I [grab] the (back of Tia's neck)
+		"firmly kisses", //Dan [grabs] (the back of my neck)
+		"firmly kissing", // Dan continues [grabbing] (the back of my neck)
+		"firmly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	mouth_back_action_harm = list(
+		"hotly kiss", //I [grab] the (back of Tia's neck)
+		"hotly kisses", //Dan [grabs] (the back of my neck)
+		"hotly kissing", // Dan continues [grabbing] (the back of my neck)
+		"hotly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	mouth_back_action_help_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	mouth_back_action_disarm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	mouth_back_action_grab_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	mouth_back_action_harm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+//back of neck end//
+
+	///////////////////////////////////////////////////////////////////////////////////
+	chest_front = list("chest")
+	chest_front_action_help = list(
+		"softly kiss", //I [grab] the (back of Tia's neck)
+		"softly kisses", //Dan [grabs] (the back of my neck)
+		"softly kissing", // Dan continues [grabbing] (the back of my neck)
+		"softly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	chest_front_action_disarm = list(
+		"teasingly kiss", //I [grab] the (back of Tia's neck)
+		"teasingly kisses", //Dan [grabs] (the back of my neck)
+		"teasingly kissing", // Dan continues [grabbing] (the back of my neck)
+		"teasingly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	chest_front_action_grab = list(
+		"firmly kiss", //I [grab] the (back of Tia's neck)
+		"firmly kisses", //Dan [grabs] (the back of my neck)
+		"firmly kissing", // Dan continues [grabbing] (the back of my neck)
+		"firmly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	chest_front_action_harm = list(
+		"hotly kiss", //I [grab] the (back of Tia's neck)
+		"hotly kisses", //Dan [grabs] (the back of my neck)
+		"hotly kissing", // Dan continues [grabbing] (the back of my neck)
+		"hotly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	chest_front_action_help_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	chest_front_action_disarm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	chest_front_action_grab_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	chest_front_action_harm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	
+	chest_side = list("side") // non blank
+	chest_side_action_help = list(
+		"softly kiss", //I [grab] the (back of Tia's neck)
+		"softly kisses", //Dan [grabs] (the back of my neck)
+		"softly kissing", // Dan continues [grabbing] (the back of my neck)
+		"softly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	chest_side_action_disarm = list(
+		"teasingly kiss", //I [grab] the (back of Tia's neck)
+		"teasingly kisses", //Dan [grabs] (the back of my neck)
+		"teasingly kissing", // Dan continues [grabbing] (the back of my neck)
+		"teasingly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	chest_side_action_grab = list(
+		"firmly kiss", //I [grab] the (back of Tia's neck)
+		"firmly kisses", //Dan [grabs] (the back of my neck)
+		"firmly kissing", // Dan continues [grabbing] (the back of my neck)
+		"firmly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	chest_side_action_harm = list(
+		"hotly kiss", //I [grab] the (back of Tia's neck)
+		"hotly kisses", //Dan [grabs] (the back of my neck)
+		"hotly kissing", // Dan continues [grabbing] (the back of my neck)
+		"hotly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	chest_side_action_help_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	chest_side_action_disarm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	chest_side_action_grab_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	chest_side_action_harm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	
+	chest_back = list("back")
+	chest_back_action_help = list(
+		"softly kiss", //I [grab] the (back of Tia's neck)
+		"softly kisses", //Dan [grabs] (the back of my neck)
+		"softly kissing", // Dan continues [grabbing] (the back of my neck)
+		"softly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	chest_back_action_disarm = list(
+		"teasingly kiss", //I [grab] the (back of Tia's neck)
+		"teasingly kisses", //Dan [grabs] (the back of my neck)
+		"teasingly kissing", // Dan continues [grabbing] (the back of my neck)
+		"teasingly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	chest_back_action_grab = list(
+		"firmly kiss", //I [grab] the (back of Tia's neck)
+		"firmly kisses", //Dan [grabs] (the back of my neck)
+		"firmly kissing", // Dan continues [grabbing] (the back of my neck)
+		"firmly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	chest_back_action_harm = list(
+		"hotly kiss", //I [grab] the (back of Tia's neck)
+		"hotly kisses", //Dan [grabs] (the back of my neck)
+		"hotly kissing", // Dan continues [grabbing] (the back of my neck)
+		"hotly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	chest_back_action_help_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	chest_back_action_disarm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	chest_back_action_grab_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	chest_back_action_harm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	
+	///////////////////////////////////////////////////////////////////////////////////
+	l_arm_front = list("left hand")
+	l_arm_front_action_help = list(
+		"softly kiss", //I [grab] the (back of Tia's neck)
+		"softly kisses", //Dan [grabs] (the back of my neck)
+		"softly kissing", // Dan continues [grabbing] (the back of my neck)
+		"softly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	l_arm_front_action_disarm = list(
+		"teasingly kiss", //I [grab] the (back of Tia's neck)
+		"teasingly kisses", //Dan [grabs] (the back of my neck)
+		"teasingly kissing", // Dan continues [grabbing] (the back of my neck)
+		"teasingly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	l_arm_front_action_grab = list(
+		"firmly kiss", //I [grab] the (back of Tia's neck)
+		"firmly kisses", //Dan [grabs] (the back of my neck)
+		"firmly kissing", // Dan continues [grabbing] (the back of my neck)
+		"firmly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	l_arm_front_action_harm = list(
+		"hotly kiss", //I [grab] the (back of Tia's neck)
+		"hotly kisses", //Dan [grabs] (the back of my neck)
+		"hotly kissing", // Dan continues [grabbing] (the back of my neck)
+		"hotly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	l_arm_front_action_help_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	l_arm_front_action_disarm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	l_arm_front_action_grab_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	l_arm_front_action_harm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	
+	l_arm_side = list("left arm")
+	l_arm_side_action_help = list(
+		"softly kiss", //I [grab] the (back of Tia's neck)
+		"softly kisses", //Dan [grabs] (the back of my neck)
+		"softly kissing", // Dan continues [grabbing] (the back of my neck)
+		"softly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	l_arm_side_action_disarm = list(
+		"teasingly kiss", //I [grab] the (back of Tia's neck)
+		"teasingly kisses", //Dan [grabs] (the back of my neck)
+		"teasingly kissing", // Dan continues [grabbing] (the back of my neck)
+		"teasingly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	l_arm_side_action_grab = list(
+		"firmly kiss", //I [grab] the (back of Tia's neck)
+		"firmly kisses", //Dan [grabs] (the back of my neck)
+		"firmly kissing", // Dan continues [grabbing] (the back of my neck)
+		"firmly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	l_arm_side_action_harm = list(
+		"hotly kiss", //I [grab] the (back of Tia's neck)
+		"hotly kisses", //Dan [grabs] (the back of my neck)
+		"hotly kissing", // Dan continues [grabbing] (the back of my neck)
+		"hotly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	l_arm_side_action_help_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	l_arm_side_action_disarm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	l_arm_side_action_grab_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	l_arm_side_action_harm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	
+	l_arm_back = list("left shoulder blade")
+	l_arm_back_action_help = list(
+		"softly kiss", //I [grab] the (back of Tia's neck)
+		"softly kisses", //Dan [grabs] (the back of my neck)
+		"softly kissing", // Dan continues [grabbing] (the back of my neck)
+		"softly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	l_arm_back_action_disarm = list(
+		"teasingly kiss", //I [grab] the (back of Tia's neck)
+		"teasingly kisses", //Dan [grabs] (the back of my neck)
+		"teasingly kissing", // Dan continues [grabbing] (the back of my neck)
+		"teasingly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	l_arm_back_action_grab = list(
+		"firmly kiss", //I [grab] the (back of Tia's neck)
+		"firmly kisses", //Dan [grabs] (the back of my neck)
+		"firmly kissing", // Dan continues [grabbing] (the back of my neck)
+		"firmly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	l_arm_back_action_harm = list(
+		"hotly kiss", //I [grab] the (back of Tia's neck)
+		"hotly kisses", //Dan [grabs] (the back of my neck)
+		"hotly kissing", // Dan continues [grabbing] (the back of my neck)
+		"hotly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	l_arm_back_action_help_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	l_arm_back_action_disarm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	l_arm_back_action_grab_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	l_arm_back_action_harm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+
+	
+	///////////////////////////////////////////////////////////////////////////////////
+	/// right arms are the same as left arms, but on the right side
+	r_arm_front = list("right hand")
+	r_arm_front_action_help = list(
+		"softly kiss", //I [grab] the (back of Tia's neck)
+		"softly kisses", //Dan [grabs] (the back of my neck)
+		"softly kissing", // Dan continues [grabbing] (the back of my neck)
+		"softly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	r_arm_front_action_disarm = list(
+		"teasingly kiss", //I [grab] the (back of Tia's neck)
+		"teasingly kisses", //Dan [grabs] (the back of my neck)
+		"teasingly kissing", // Dan continues [grabbing] (the back of my neck)
+		"teasingly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	r_arm_front_action_grab = list(
+		"firmly kiss", //I [grab] the (back of Tia's neck)
+		"firmly kisses", //Dan [grabs] (the back of my neck)
+		"firmly kissing", // Dan continues [grabbing] (the back of my neck)
+		"firmly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	r_arm_front_action_harm = list(
+		"hotly kiss", //I [grab] the (back of Tia's neck)
+		"hotly kisses", //Dan [grabs] (the back of my neck)
+		"hotly kissing", // Dan continues [grabbing] (the back of my neck)
+		"hotly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	r_arm_front_action_help_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	r_arm_front_action_disarm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	r_arm_front_action_grab_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	r_arm_front_action_harm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+
+	r_arm_side = list("right arm")
+	r_arm_side_action_help = list(
+		"softly kiss", //I [grab] the (back of Tia's neck)
+		"softly kisses", //Dan [grabs] (the back of my neck)
+		"softly kissing", // Dan continues [grabbing] (the back of my neck)
+		"softly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	r_arm_side_action_disarm = list(
+		"teasingly kiss", //I [grab] the (back of Tia's neck)
+		"teasingly kisses", //Dan [grabs] (the back of my neck)
+		"teasingly kissing", // Dan continues [grabbing] (the back of my neck)
+		"teasingly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	r_arm_side_action_grab = list(
+		"firmly kiss", //I [grab] the (back of Tia's neck)
+		"firmly kisses", //Dan [grabs] (the back of my neck)
+		"firmly kissing", // Dan continues [grabbing] (the back of my neck)
+		"firmly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	r_arm_side_action_harm = list(
+		"hotly kiss", //I [grab] the (back of Tia's neck)
+		"hotly kisses", //Dan [grabs] (the back of my neck)
+		"hotly kissing", // Dan continues [grabbing] (the back of my neck)
+		"hotly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	r_arm_side_action_help_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	r_arm_side_action_disarm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	r_arm_side_action_grab_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	r_arm_side_action_harm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+
+	r_arm_back = list("right shoulder blade")
+	r_arm_back_action_help = list(
+		"softly kiss", //I [grab] the (back of Tia's neck)
+		"softly kisses", //Dan [grabs] (the back of my neck)
+		"softly kissing", // Dan continues [grabbing] (the back of my neck)
+		"softly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	r_arm_back_action_disarm = list(
+		"teasingly kiss", //I [grab] the (back of Tia's neck)
+		"teasingly kisses", //Dan [grabs] (the back of my neck)
+		"teasingly kissing", // Dan continues [grabbing] (the back of my neck)
+		"teasingly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	r_arm_back_action_grab = list(
+		"firmly kiss", //I [grab] the (back of Tia's neck)
+		"firmly kisses", //Dan [grabs] (the back of my neck)
+		"firmly kissing", // Dan continues [grabbing] (the back of my neck)
+		"firmly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	r_arm_back_action_harm = list(
+		"hotly kiss", //I [grab] the (back of Tia's neck)
+		"hotly kisses", //Dan [grabs] (the back of my neck)
+		"hotly kissing", // Dan continues [grabbing] (the back of my neck)
+		"hotly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	r_arm_back_action_help_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	r_arm_back_action_disarm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	r_arm_back_action_grab_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	r_arm_back_action_harm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+
+	///////////////////////////////////////////////////////////////////////////////////
+	l_leg_front = list("left inner thigh") // the outer thigh
+	l_leg_front_action_help = list(
+		"softly kiss", //I [grab] the (back of Tia's neck)
+		"softly kisses", //Dan [grabs] (the back of my neck)
+		"softly kissing", // Dan continues [grabbing] (the back of my neck)
+		"softly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	l_leg_front_action_disarm = list(
+		"teasingly kiss", //I [grab] the (back of Tia's neck)
+		"teasingly kisses", //Dan [grabs] (the back of my neck)
+		"teasingly kissing", // Dan continues [grabbing] (the back of my neck)
+		"teasingly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	l_leg_front_action_grab = list(
+		"firmly kiss", //I [grab] the (back of Tia's neck)
+		"firmly kisses", //Dan [grabs] (the back of my neck)
+		"firmly kissing", // Dan continues [grabbing] (the back of my neck)
+		"firmly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	l_leg_front_action_harm = list(
+		"hotly kiss", //I [grab] the (back of Tia's neck)
+		"hotly kisses", //Dan [grabs] (the back of my neck)
+		"hotly kissing", // Dan continues [grabbing] (the back of my neck)
+		"hotly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	l_leg_front_action_help_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	l_leg_front_action_disarm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	l_leg_front_action_grab_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	l_leg_front_action_harm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	
+	l_leg_side = list("left hip") // the side of the hip, not quite the butt yet
+	l_leg_side_action_help = list(
+		"softly kiss", //I [grab] the (back of Tia's neck)
+		"softly kisses", //Dan [grabs] (the back of my neck)
+		"softly kissing", // Dan continues [grabbing] (the back of my neck)
+		"softly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	l_leg_side_action_disarm = list(
+		"teasingly kiss", //I [grab] the (back of Tia's neck)
+		"teasingly kisses", //Dan [grabs] (the back of my neck)
+		"teasingly kissing", // Dan continues [grabbing] (the back of my neck)
+		"teasingly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	l_leg_side_action_grab = list(
+		"firmly kiss", //I [grab] the (back of Tia's neck)
+		"firmly kisses", //Dan [grabs] (the back of my neck)
+		"firmly kissing", // Dan continues [grabbing] (the back of my neck)
+		"firmly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	l_leg_side_action_harm = list(
+		"hotly kiss", //I [grab] the (back of Tia's neck)
+		"hotly kisses", //Dan [grabs] (the back of my neck)
+		"hotly kissing", // Dan continues [grabbing] (the back of my neck)
+		"hotly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	l_leg_side_action_help_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	l_leg_side_action_disarm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	l_leg_side_action_grab_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	l_leg_side_action_harm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	
+	l_leg_back = list("left buttcheek") // the butt, lots of fun here with big fat soft squishy cheeks
+	l_leg_back_action_help = list(
+		"softly kiss", //I [grab] the (back of Tia's neck)
+		"softly kisses", //Dan [grabs] (the back of my neck)
+		"softly kissing", // Dan continues [grabbing] (the back of my neck)
+		"softly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	l_leg_back_action_disarm = list(
+		"teasingly kiss", //I [grab] the (back of Tia's neck)
+		"teasingly kisses", //Dan [grabs] (the back of my neck)
+		"teasingly kissing", // Dan continues [grabbing] (the back of my neck)
+		"teasingly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	l_leg_back_action_grab = list(
+		"firmly kiss", //I [grab] the (back of Tia's neck)
+		"firmly kisses", //Dan [grabs] (the back of my neck)
+		"firmly kissing", // Dan continues [grabbing] (the back of my neck)
+		"firmly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	l_leg_back_action_harm = list(
+		"hotly kiss", //I [grab] the (back of Tia's neck)
+		"hotly kisses", //Dan [grabs] (the back of my neck)
+		"hotly kissing", // Dan continues [grabbing] (the back of my neck)
+		"hotly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	l_leg_back_action_help_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	l_leg_back_action_disarm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	l_leg_back_action_grab_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	l_leg_back_action_harm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	
+	///////////////////////////////////////////////////////////////////////////////////
+	r_leg_front = list("right inner thigh")
+	r_leg_front_action_help = list(
+		"softly kiss", //I [grab] the (back of Tia's neck)
+		"softly kisses", //Dan [grabs] (the back of my neck)
+		"softly kissing", // Dan continues [grabbing] (the back of my neck)
+		"softly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	r_leg_front_action_disarm = list(
+		"teasingly kiss", //I [grab] the (back of Tia's neck)
+		"teasingly kisses", //Dan [grabs] (the back of my neck)
+		"teasingly kissing", // Dan continues [grabbing] (the back of my neck)
+		"teasingly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	r_leg_front_action_grab = list(
+		"firmly kiss", //I [grab] the (back of Tia's neck)
+		"firmly kisses", //Dan [grabs] (the back of my neck)
+		"firmly kissing", // Dan continues [grabbing] (the back of my neck)
+		"firmly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	r_leg_front_action_harm = list(
+		"hotly kiss", //I [grab] the (back of Tia's neck)
+		"hotly kisses", //Dan [grabs] (the back of my neck)
+		"hotly kissing", // Dan continues [grabbing] (the back of my neck)
+		"hotly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	r_leg_front_action_help_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	r_leg_front_action_disarm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	r_leg_front_action_grab_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	r_leg_front_action_harm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	
+	r_leg_side = list("right hip")
+	r_leg_side_action_help = list(
+		"softly kiss", //I [grab] the (back of Tia's neck)
+		"softly kisses", //Dan [grabs] (the back of my neck)
+		"softly kissing", // Dan continues [grabbing] (the back of my neck)
+		"softly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	r_leg_side_action_disarm = list(
+		"teasingly kiss", //I [grab] the (back of Tia's neck)
+		"teasingly kisses", //Dan [grabs] (the back of my neck)
+		"teasingly kissing", // Dan continues [grabbing] (the back of my neck)
+		"teasingly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	r_leg_side_action_grab = list(
+		"firmly kiss", //I [grab] the (back of Tia's neck)
+		"firmly kisses", //Dan [grabs] (the back of my neck)
+		"firmly kissing", // Dan continues [grabbing] (the back of my neck)
+		"firmly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	r_leg_side_action_harm = list(
+		"hotly kiss", //I [grab] the (back of Tia's neck)
+		"hotly kisses", //Dan [grabs] (the back of my neck)
+		"hotly kissing", // Dan continues [grabbing] (the back of my neck)
+		"hotly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	r_leg_side_action_help_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	r_leg_side_action_disarm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	r_leg_side_action_grab_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	r_leg_side_action_harm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	
+	r_leg_back = list("right buttcheek")
+	r_leg_back_action_help = list(
+		"softly kiss", //I [grab] the (back of Tia's neck)
+		"softly kisses", //Dan [grabs] (the back of my neck)
+		"softly kissing", // Dan continues [grabbing] (the back of my neck)
+		"softly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	r_leg_back_action_disarm = list(
+		"teasingly kiss", //I [grab] the (back of Tia's neck)
+		"teasingly kisses", //Dan [grabs] (the back of my neck)
+		"teasingly kissing", // Dan continues [grabbing] (the back of my neck)
+		"teasingly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	r_leg_back_action_grab = list(
+		"firmly kiss", //I [grab] the (back of Tia's neck)
+		"firmly kisses", //Dan [grabs] (the back of my neck)
+		"firmly kissing", // Dan continues [grabbing] (the back of my neck)
+		"firmly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	r_leg_back_action_harm = list(
+		"hotly kiss", //I [grab] the (back of Tia's neck)
+		"hotly kisses", //Dan [grabs] (the back of my neck)
+		"hotly kissing", // Dan continues [grabbing] (the back of my neck)
+		"hotly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	r_leg_back_action_help_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	r_leg_back_action_disarm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	r_leg_back_action_grab_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	r_leg_back_action_harm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	
+	///////////////////////////////////////////////////////////////////////////////////
+	groin_front = list("lap") // very forward, very direct, gender neutral for now
+	groin_front_action_help = list(
+		"softly kiss", //I [grab] the (back of Tia's neck)
+		"softly kisses", //Dan [grabs] (the back of my neck)
+		"softly kissing", // Dan continues [grabbing] (the back of my neck)
+		"softly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	groin_front_action_disarm = list(
+		"teasingly kiss", //I [grab] the (back of Tia's neck)
+		"teasingly kisses", //Dan [grabs] (the back of my neck)
+		"teasingly kissing", // Dan continues [grabbing] (the back of my neck)
+		"teasingly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	groin_front_action_grab = list(
+		"firmly kiss", //I [grab] the (back of Tia's neck)
+		"firmly kisses", //Dan [grabs] (the back of my neck)
+		"firmly kissing", // Dan continues [grabbing] (the back of my neck)
+		"firmly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	groin_front_action_harm = list(
+		"hotly kiss", //I [grab] the (back of Tia's neck)
+		"hotly kisses", //Dan [grabs] (the back of my neck)
+		"hotly kissing", // Dan continues [grabbing] (the back of my neck)
+		"hotly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	groin_front_action_help_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	groin_front_action_disarm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	groin_front_action_grab_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	groin_front_action_harm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+
+	groin_side = list("love handle") // more fat-focused play
+	groin_side_action_help = list(
+		"softly kiss", //I [grab] the (back of Tia's neck)
+		"softly kisses", //Dan [grabs] (the back of my neck)
+		"softly kissing", // Dan continues [grabbing] (the back of my neck)
+		"softly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	groin_side_action_disarm = list(
+		"teasingly kiss", //I [grab] the (back of Tia's neck)
+		"teasingly kisses", //Dan [grabs] (the back of my neck)
+		"teasingly kissing", // Dan continues [grabbing] (the back of my neck)
+		"teasingly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	groin_side_action_grab = list(
+		"firmly kiss", //I [grab] the (back of Tia's neck)
+		"firmly kisses", //Dan [grabs] (the back of my neck)
+		"firmly kissing", // Dan continues [grabbing] (the back of my neck)
+		"firmly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	groin_side_action_harm = list(
+		"hotly kiss", //I [grab] the (back of Tia's neck)
+		"hotly kisses", //Dan [grabs] (the back of my neck)
+		"hotly kissing", // Dan continues [grabbing] (the back of my neck)
+		"hotly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	groin_side_action_help_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	groin_side_action_disarm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	groin_side_action_grab_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	groin_side_action_harm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+
+	groin_back = list("butt") // the butt, lots of fun here with big fat soft squishy cheeks
+	groin_back_action_help = list(
+		"softly kiss", //I [grab] the (back of Tia's neck)
+		"softly kisses", //Dan [grabs] (the back of my neck)
+		"softly kissing", // Dan continues [grabbing] (the back of my neck)
+		"softly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	groin_back_action_disarm = list(
+		"teasingly kiss", //I [grab] the (back of Tia's neck)
+		"teasingly kisses", //Dan [grabs] (the back of my neck)
+		"teasingly kissing", // Dan continues [grabbing] (the back of my neck)
+		"teasingly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	groin_back_action_grab = list(
+		"firmly kiss", //I [grab] the (back of Tia's neck)
+		"firmly kisses", //Dan [grabs] (the back of my neck)
+		"firmly kissing", // Dan continues [grabbing] (the back of my neck)
+		"firmly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	groin_back_action_harm = list(
+		"hotly kiss", //I [grab] the (back of Tia's neck)
+		"hotly kisses", //Dan [grabs] (the back of my neck)
+		"hotly kissing", // Dan continues [grabbing] (the back of my neck)
+		"hotly kissed", // Dan [grabbed] (the back of Tia's neck)
+	)
+	groin_back_action_help_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	groin_back_action_disarm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	groin_back_action_grab_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+	groin_back_action_harm_sound = list('modular_splurt/sound/interactions/kiss/kiss3.ogg')
+
+	///////////////////////////////////////////////////////////////////////////////////
+	l_hand_front = list("left hand")
+	
+	
+	l_hand_side = list("left wrist")
+	
+	
+	l_hand_back = list("left forearm")
+	
+	
+	r_hand_front = list("right hand")
+	
+	
+	r_hand_side = list("right wrist")
+	
+	
+	r_hand_back = list("right forearm")
+	
+	
+	l_foot_front = list("left foot")
+	
+	
+	l_foot_side = list("left ankle")
+	
+	
+	l_foot_back = list("left calf")
+	
+	
+	r_foot_front = list("right foot")
+	
+	
+	r_foot_side = list("right ankle")
+	
+	
+	r_foot_back = list("right calf")
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////lick///////
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+/datum/grope_kiss_MERP/lick
+	/*
+		for action tenses, format is: 
+			I "kiss" Tia's [toes], (present tense, user performing)
+			Dan "kisses" my [toes], (present tense, target recieving)
+			I continue "kissing" Tia's [toes] / Dan continues "kissing" my [toes], (continuous/gerundo)
+			Dan "kissed" Tia's [toes], (past tense, third person)
+	*/
+	head_front = list("face")
+	head_front_action_help = list(
+		"softly lick", 
+		"softly licks", 
+		"softly licking", 
+		"softly licked",
+		)
+	head_front_action_disarm = list(
+		"playfully lick", 
+		"playfully licks", 
+		"playfully licking", 
+		"playfully licked",
+		)
+	head_front_action_grab = list(
+		"tongue", 
+		"tongues", 
+		"tonguing", 
+		"tongued",
+		)
+	head_front_action_harm = list(
+		"wetly lick", 
+		"wetly licks", 
+		"wetly licking", 
+		"wetly licked",
+		)
+	head_front_action_help_sound = list('sound/effects/lick.ogg')
+	head_front_action_disarm_sound = list('sound/effects/lick.ogg')
+	head_front_action_grab_sound = list('sound/effects/lick.ogg')
+	head_front_action_harm_sound = list('sound/effects/lick.ogg')
+
+	head_side = list("ear")
+	head_side_action_help = list(
+		"softly lick", 
+		"softly licks", 
+		"softly licking", 
+		"softly licked",
+	)
+	head_side_action_disarm = list(
+		"playfully lick", 
+		"playfully licks", 
+		"playfully licking", 
+		"playfully licked",,
+	)
+	head_side_action_grab = list(
+		"tongue", 
+		"tongues", 
+		"tonguing", 
+		"tongued",
+	)
+	head_side_action_harm = list(
+		"wetly lick", 
+		"wetly licks", 
+		"wetly licking", 
+		"wetly licked",
+	)
+	head_side_action_help_sound = list('sound/effects/lick.ogg')
+	head_side_action_disarm_sound = list('sound/effects/lick.ogg')
+	head_side_action_grab_sound = list('sound/effects/lick.ogg')
+	head_side_action_harm_sound = list('sound/effects/lick.ogg')
+
+	head_back = list("neck")
+	head_back_action_help = list(
+		"softly lick the nape of", 
+		"softly licks the nape of", 
+		"softly licking the nape of", 
+		"softly licked the nape of",
+	)
+	head_back_action_disarm = list(
+		"playfully lick the nape of",
+		"playfully licks the nape of",
+		"playfully licking the nape of",
+		"playfully licked the nape of",
+	)
+	head_back_action_grab = list(
+		"tongue the nape of",
+		"tongues the nape of",
+		"tonguing the nape of",
+		"tongued the nape of",
+	)
+	head_back_action_harm = list(
+		"wetly lick the nape of",
+		"wetly licks the nape of",
+		"wetly licking the nape of",
+		"wetly licked the nape of",
+	)
+	head_back_action_help_sound = list('sound/effects/lick.ogg')
+	head_back_action_disarm_sound = list('sound/effects/lick.ogg')
+	head_back_action_grab_sound = list('sound/effects/lick.ogg')
+	head_back_action_harm_sound = list('sound/effects/lick.ogg')
+
+	///////////////////////////////////////////////////////////////////////////////////
+	/// eyes are special
+	eyes_front = list("cheek")
+	eyes_front_action_help = list(
+		"softly lick", 
+		"softly licks", 
+		"softly licking", 
+		"softly licked",
+	)
+	eyes_front_action_disarm = list(
+		"playfully lick", 
+		"playfully licks", 
+		"playfully licking", 
+		"playfully licked",
+	)
+	eyes_front_action_grab = list(
+		"tongue", 
+		"tongues", 
+		"tonguing", 
+		"tongued",
+	)
+	eyes_front_action_harm = list(
+		"wetly lick", 
+		"wetly licks", 
+		"wetly licking", 
+		"wetly licked",
+	)
+	eyes_front_action_help_sound = list('sound/effects/blink.ogg')
+	eyes_front_action_disarm_sound = list('sound/effects/blink.ogg')
+	eyes_front_action_grab_sound = list('sound/effects/blink.ogg')
+	eyes_front_action_harm_sound = list('sound/effects/blink.ogg')
+
+	eyes_side = list("ear") // MAKE INTO EARS TOO (insides??????)
+	eyes_side_action_help = list(
+		"softly lick the rim of", 
+		"softly licks the rim of", 
+		"softly licking the rim of", 
+		"softly licked the rim of", 
+	)
+	eyes_side_action_disarm = list(
+		"playfully lick the rim of", 
+		"playfully licks the rim of", 
+		"playfully licking the rim of", 
+		"playfully licked the rim of", 
+	)
+	eyes_side_action_grab = list(
+		"tongue the rim of", 
+		"tongues the rim of", 
+		"tonguing the rim of", 
+		"tongued the rim of", 
+	)
+	eyes_side_action_harm = list(
+		"wetly lick the rim of", 
+		"wetly licks the rim of", 
+		"wetly licking the rim of", 
+		"wetly licked the rim of", 
+	)
+	eyes_side_action_help_sound = list('sound/effects/lick.ogg')
+	eyes_side_action_disarm_sound = list('sound/effects/lick.ogg')
+	eyes_side_action_grab_sound = list('sound/effects/lick.ogg')
+	eyes_side_action_harm_sound = list('sound/effects/lick.ogg')
+
+	eyes_back = list("earlobe")
+	eyes_back_action_help = list(
+		"softly suckle on", 
+		"softly suckles on", 
+		"softly sucking on", 
+		"softly sucked on",
+	)
+	eyes_back_action_disarm = list(
+		"playfully suckle on", 
+		"playfully suckles on", 
+		"playfully sucking on", 
+		"playfully sucked on",
+	)
+	eyes_back_action_grab = list(
+		"warmly suckle on", 
+		"warmly suckles on", 
+		"warmly sucking on", 
+		"warmly sucked on",
+	)
+	eyes_back_action_harm = list(
+		"lewdly suckle on", 
+		"lewdly suckles on", 
+		"lewdly sucking on", 
+		"lewdly sucked on",
+	)
+	eyes_back_action_help_sound = list('sound/effects/lick.ogg')
+	eyes_back_action_disarm_sound = list('sound/effects/lick.ogg')
+	eyes_back_action_grab_sound = list('sound/effects/lick.ogg')
+	eyes_back_action_harm_sound = list('sound/effects/lick.ogg')
+
+	///////////////////////////////////////////////////////////////////////////////////
+	/// mouth is also special
+	mouth_front = list("lips")
+	mouth_front_action_help = list(
+		"softly mlem", 
+		"softly mlems", 
+		"softly mleming", 
+		"softly mlemed",
+	)
+	mouth_front_action_disarm = list(
+		"playfully lick", 
+		"playfully licks", 
+		"playfully licking", 
+		"playfully licked",
+	)
+	mouth_front_action_grab = list(
+		"intimately tongue", 
+		"intimately tongues", 
+		"intimately tonguing", 
+		"intimately tongued",
+	)
+	mouth_front_action_harm = list(
+		"hotly lick", 
+		"hotly licks", 
+		"hotly licking", 
+		"hotly licked",
+	)
+	mouth_front_action_help_sound = list('sound/effects/lick.ogg')
+	mouth_front_action_disarm_sound = list('sound/effects/lick.ogg')
+	mouth_front_action_grab_sound = list('sound/effects/lick.ogg')
+	mouth_front_action_harm_sound = list('sound/effects/lick.ogg')
+
+	mouth_side = list("cheek")
+	mouth_side_action_help = list(
+		"softly lick", 
+		"softly licks", 
+		"softly licking", 
+		"softly licked",
+	)
+	mouth_side_action_disarm = list(
+		"playfully lick", 
+		"playfully licks", 
+		"playfully licking", 
+		"playfully licked",
+	)
+	mouth_side_action_grab = list(
+		"tongue", 
+		"tongues", 
+		"tonguing", 
+		"tongued",
+	)
+	mouth_side_action_harm = list(
+		"wetly lick", 
+		"wetly licks", 
+		"wetly licking", 
+		"wetly licked",
+	)
+	mouth_side_action_help_sound = list('sound/effects/lick.ogg')
+	mouth_side_action_disarm_sound = list('sound/effects/lick.ogg')
+	mouth_side_action_grab_sound = list('sound/effects/lick.ogg')
+	mouth_side_action_harm_sound = list('sound/effects/lick.ogg')
+
+//back of neck start//
+	mouth_back = list("neck from behind") // this is the thing that I am doing to Their Thing
+	mouth_back_action_help = list(
+		"softly lick", 
+		"softly licks", 
+		"softly licking", 
+		"softly licked",
+	)
+	mouth_back_action_disarm = list(
+		"playfully lick", 
+		"playfully licks", 
+		"playfully licking", 
+		"playfully licked",
+	)
+	mouth_back_action_grab = list(
+		"tongue", 
+		"tongues", 
+		"tonguing", 
+		"tongued",
+	)
+	mouth_back_action_harm = list(
+		"wetly lick", 
+		"wetly licks", 
+		"wetly licking", 
+		"wetly licked",
+	)
+	mouth_back_action_help_sound = list('sound/effects/lick.ogg')
+	mouth_back_action_disarm_sound = list('sound/effects/lick.ogg')
+	mouth_back_action_grab_sound = list('sound/effects/lick.ogg')
+	mouth_back_action_harm_sound = list('sound/effects/lick.ogg')
+//back of neck end//
+
+	///////////////////////////////////////////////////////////////////////////////////
+	chest_front = list("chest")
+	chest_front_action_help = list(
+		"softly lick", 
+		"softly licks", 
+		"softly licking", 
+		"softly licked",
+	)
+	chest_front_action_disarm = list(
+		"playfully lick", 
+		"playfully licks", 
+		"playfully licking", 
+		"playfully licked",
+	)
+	chest_front_action_grab = list(
+		"tongue", 
+		"tongues", 
+		"tonguing", 
+		"tongued",
+	)
+	chest_front_action_harm = list(
+		"wetly lick", 
+		"wetly licks", 
+		"wetly licking", 
+		"wetly licked",
+	)
+	chest_front_action_help_sound = list('sound/effects/lick.ogg')
+	chest_front_action_disarm_sound = list('sound/effects/lick.ogg')
+	chest_front_action_grab_sound = list('sound/effects/lick.ogg')
+	chest_front_action_harm_sound = list('sound/effects/lick.ogg')
+	
+	chest_side = list("flank") // non blank
+	chest_side_action_help = list(
+		"softly lick", 
+		"softly licks", 
+		"softly licking", 
+		"softly licked",
+	)
+	chest_side_action_disarm = list(
+		"playfully lick", 
+		"playfully licks", 
+		"playfully licking", 
+		"playfully licked",
+	)
+	chest_side_action_grab = list(
+		"tongue", 
+		"tongues", 
+		"tonguing", 
+		"tongued",
+	)
+	chest_side_action_harm = list(
+		"wetly lick", 
+		"wetly licks", 
+		"wetly licking", 
+		"wetly licked",
+	)
+	chest_side_action_help_sound = list('sound/effects/lick.ogg')
+	chest_side_action_disarm_sound = list('sound/effects/lick.ogg')
+	chest_side_action_grab_sound = list('sound/effects/lick.ogg')
+	chest_side_action_harm_sound = list('sound/effects/lick.ogg')
+	
+	chest_back = list("back")
+	chest_back_action_help = list(
+		"softly lick", 
+		"softly licks", 
+		"softly licking", 
+		"softly licked",
+	)
+	chest_back_action_disarm = list(
+		"playfully lick", 
+		"playfully licks", 
+		"playfully licking", 
+		"playfully licked",
+	)
+	chest_back_action_grab = list(
+		"tongue", 
+		"tongues", 
+		"tonguing", 
+		"tongued",
+	)
+	chest_back_action_harm = list(
+		"wetly lick", 
+		"wetly licks", 
+		"wetly licking", 
+		"wetly licked",
+	)
+	chest_back_action_help_sound = list('sound/effects/lick.ogg')
+	chest_back_action_disarm_sound = list('sound/effects/lick.ogg')
+	chest_back_action_grab_sound = list('sound/effects/lick.ogg')
+	chest_back_action_harm_sound = list('sound/effects/lick.ogg')
+	
+	///////////////////////////////////////////////////////////////////////////////////
+	l_arm_front = list("left hand's fingers")
+	l_arm_front_action_help = list(
+		"softly lick", 
+		"softly licks", 
+		"softly licking", 
+		"softly licked",
+	)
+	l_arm_front_action_disarm = list(
+		"playfully lick", 
+		"playfully licks", 
+		"playfully licking", 
+		"playfully licked",
+	)
+	l_arm_front_action_grab = list(
+		"tongue", 
+		"tongues", 
+		"tonguing", 
+		"tongued",
+	)
+	l_arm_front_action_harm = list(
+		"wetly lick", 
+		"wetly licks", 
+		"wetly licking", 
+		"wetly licked",
+	)
+	l_arm_front_action_help_sound = list('sound/effects/lick.ogg')
+	l_arm_front_action_disarm_sound = list('sound/effects/lick.ogg')
+	l_arm_front_action_grab_sound = list('sound/effects/lick.ogg')
+	l_arm_front_action_harm_sound = list('sound/effects/lick.ogg')
+	
+	l_arm_side = list("left arm")
+	l_arm_side_action_help = list(
+		"softly lick", 
+		"softly licks", 
+		"softly licking", 
+		"softly licked",
+	)
+	l_arm_side_action_disarm = list(
+		"playfully lick", 
+		"playfully licks", 
+		"playfully licking", 
+		"playfully licked",
+	)
+	l_arm_side_action_grab = list(
+		"tongue", 
+		"tongues", 
+		"tonguing", 
+		"tongued",
+	)
+	l_arm_side_action_harm = list(
+		"wetly lick", 
+		"wetly licks", 
+		"wetly licking", 
+		"wetly licked",
+	)
+	l_arm_side_action_help_sound = list('sound/effects/lick.ogg')
+	l_arm_side_action_disarm_sound = list('sound/effects/lick.ogg')
+	l_arm_side_action_grab_sound = list('sound/effects/lick.ogg')
+	l_arm_side_action_harm_sound = list('sound/effects/lick.ogg')
+	
+	l_arm_back = list("left shoulder blade")
+	l_arm_back_action_help = list(
+		"softly lick", 
+		"softly licks", 
+		"softly licking", 
+		"softly licked",
+	)
+	l_arm_back_action_disarm = list(
+		"playfully lick", 
+		"playfully licks", 
+		"playfully licking", 
+		"playfully licked",
+	)
+	l_arm_back_action_grab = list(
+		"tongue", 
+		"tongues", 
+		"tonguing", 
+		"tongued",
+	)
+	l_arm_back_action_harm = list(
+		"wetly lick", 
+		"wetly licks", 
+		"wetly licking", 
+		"wetly licked",
+	)
+	l_arm_back_action_help_sound = list('sound/effects/lick.ogg')
+	l_arm_back_action_disarm_sound = list('sound/effects/lick.ogg')
+	l_arm_back_action_grab_sound = list('sound/effects/lick.ogg')
+	l_arm_back_action_harm_sound = list('sound/effects/lick.ogg')
+
+	
+	///////////////////////////////////////////////////////////////////////////////////
+	/// right arms are the same as left arms, but on the right side
+	r_arm_front = list("right hand's fingers")
+	r_arm_front_action_help = list(
+		"softly lick", 
+		"softly licks", 
+		"softly licking", 
+		"softly licked",
+	)
+	r_arm_front_action_disarm = list(
+		"playfully lick", 
+		"playfully licks", 
+		"playfully licking", 
+		"playfully licked",
+	)
+	r_arm_front_action_grab = list(
+		"tongue", 
+		"tongues", 
+		"tonguing", 
+		"tongued",
+	)
+	r_arm_front_action_harm = list(
+		"wetly lick", 
+		"wetly licks", 
+		"wetly licking", 
+		"wetly licked",
+	)
+	r_arm_front_action_help_sound = list('sound/effects/lick.ogg')
+	r_arm_front_action_disarm_sound = list('sound/effects/lick.ogg')
+	r_arm_front_action_grab_sound = list('sound/effects/lick.ogg')
+	r_arm_front_action_harm_sound = list('sound/effects/lick.ogg')
+
+	r_arm_side = list("right arm")
+	r_arm_side_action_help = list(
+		"softly lick", 
+		"softly licks", 
+		"softly licking", 
+		"softly licked",
+	)
+	r_arm_side_action_disarm = list(
+		"playfully lick", 
+		"playfully licks", 
+		"playfully licking", 
+		"playfully licked",
+	)
+	r_arm_side_action_grab = list(
+		"tongue", 
+		"tongues", 
+		"tonguing", 
+		"tongued",
+	)
+	r_arm_side_action_harm = list(
+		"wetly lick", 
+		"wetly licks", 
+		"wetly licking", 
+		"wetly licked",
+	)
+	r_arm_side_action_help_sound = list('sound/effects/lick.ogg')
+	r_arm_side_action_disarm_sound = list('sound/effects/lick.ogg')
+	r_arm_side_action_grab_sound = list('sound/effects/lick.ogg')
+	r_arm_side_action_harm_sound = list('sound/effects/lick.ogg')
+
+	r_arm_back = list("right shoulder blade")
+	r_arm_back_action_help = list(
+		"softly lick", 
+		"softly licks", 
+		"softly licking", 
+		"softly licked",
+	)
+	r_arm_back_action_disarm = list(
+		"playfully lick", 
+		"playfully licks", 
+		"playfully licking", 
+		"playfully licked",
+	)
+	r_arm_back_action_grab = list(
+		"tongue", 
+		"tongues", 
+		"tonguing", 
+		"tongued",
+	)
+	r_arm_back_action_harm = list(
+		"wetly lick", 
+		"wetly licks", 
+		"wetly licking", 
+		"wetly licked",
+	)
+	r_arm_back_action_help_sound = list('sound/effects/lick.ogg')
+	r_arm_back_action_disarm_sound = list('sound/effects/lick.ogg')
+	r_arm_back_action_grab_sound = list('sound/effects/lick.ogg')
+	r_arm_back_action_harm_sound = list('sound/effects/lick.ogg')
+
+	///////////////////////////////////////////////////////////////////////////////////
+	l_leg_front = list("left inner thigh") // the outer thigh
+	l_leg_front_action_help = list(
+		"softly lick", 
+		"softly licks", 
+		"softly licking", 
+		"softly licked",
+	)
+	l_leg_front_action_disarm = list(
+		"playfully lick", 
+		"playfully licks", 
+		"playfully licking", 
+		"playfully licked",
+	)
+	l_leg_front_action_grab = list(
+		"tongue", 
+		"tongues", 
+		"tonguing", 
+		"tongued",
+	)
+	l_leg_front_action_harm = list(
+		"wetly lick", 
+		"wetly licks", 
+		"wetly licking", 
+		"wetly licked",
+	)
+	l_leg_front_action_help_sound = list('sound/effects/lick.ogg')
+	l_leg_front_action_disarm_sound = list('sound/effects/lick.ogg')
+	l_leg_front_action_grab_sound = list('sound/effects/lick.ogg')
+	l_leg_front_action_harm_sound = list('sound/effects/lick.ogg')
+	
+	l_leg_side = list("left hip") // the side of the hip, not quite the butt yet
+	l_leg_side_action_help = list(
+		"softly lick", 
+		"softly licks", 
+		"softly licking", 
+		"softly licked",
+	)
+	l_leg_side_action_disarm = list(
+		"playfully lick", 
+		"playfully licks", 
+		"playfully licking", 
+		"playfully licked",
+	)
+	l_leg_side_action_grab = list(
+		"tongue", 
+		"tongues", 
+		"tonguing", 
+		"tongued",
+	)
+	l_leg_side_action_harm = list(
+		"wetly lick", 
+		"wetly licks", 
+		"wetly licking", 
+		"wetly licked",
+	)
+	l_leg_side_action_help_sound = list('sound/effects/lick.ogg')
+	l_leg_side_action_disarm_sound = list('sound/effects/lick.ogg')
+	l_leg_side_action_grab_sound = list('sound/effects/lick.ogg')
+	l_leg_side_action_harm_sound = list('sound/effects/lick.ogg')
+	
+	l_leg_back = list("left buttcheek") // the butt, lots of fun here with big fat soft squishy cheeks
+	l_leg_back_action_help = list(
+		"softly lick", 
+		"softly licks", 
+		"softly licking", 
+		"softly licked",
+	)
+	l_leg_back_action_disarm = list(
+		"playfully lick", 
+		"playfully licks", 
+		"playfully licking", 
+		"playfully licked",
+	)
+	l_leg_back_action_grab = list(
+		"tongue", 
+		"tongues", 
+		"tonguing", 
+		"tongued",
+	)
+	l_leg_back_action_harm = list(
+		"wetly lick", 
+		"wetly licks", 
+		"wetly licking", 
+		"wetly licked",
+	)
+	l_leg_back_action_help_sound = list('sound/effects/lick.ogg')
+	l_leg_back_action_disarm_sound = list('sound/effects/lick.ogg')
+	l_leg_back_action_grab_sound = list('sound/effects/lick.ogg')
+	l_leg_back_action_harm_sound = list('sound/effects/lick.ogg')
+	
+	///////////////////////////////////////////////////////////////////////////////////
+	r_leg_front = list("right inner thigh")
+	r_leg_front_action_help = list(
+		"softly lick", 
+		"softly licks", 
+		"softly licking", 
+		"softly licked",
+	)
+	r_leg_front_action_disarm = list(
+		"playfully lick", 
+		"playfully licks", 
+		"playfully licking", 
+		"playfully licked",
+	)
+	r_leg_front_action_grab = list(
+		"tongue", 
+		"tongues", 
+		"tonguing", 
+		"tongued",
+	)
+	r_leg_front_action_harm = list(
+		"wetly lick", 
+		"wetly licks", 
+		"wetly licking", 
+		"wetly licked",
+	)
+	r_leg_front_action_help_sound = list('sound/effects/lick.ogg')
+	r_leg_front_action_disarm_sound = list('sound/effects/lick.ogg')
+	r_leg_front_action_grab_sound = list('sound/effects/lick.ogg')
+	r_leg_front_action_harm_sound = list('sound/effects/lick.ogg')
+	
+	r_leg_side = list("right hip")
+	r_leg_side_action_help = list(
+		"softly lick", 
+		"softly licks", 
+		"softly licking", 
+		"softly licked",
+	)
+	r_leg_side_action_disarm = list(
+		"playfully lick", 
+		"playfully licks", 
+		"playfully licking", 
+		"playfully licked",
+	)
+	r_leg_side_action_grab = list(
+		"tongue", 
+		"tongues", 
+		"tonguing", 
+		"tongued",
+	)
+	r_leg_side_action_harm = list(
+		"wetly lick", 
+		"wetly licks", 
+		"wetly licking", 
+		"wetly licked",
+	)
+	r_leg_side_action_help_sound = list('sound/effects/lick.ogg')
+	r_leg_side_action_disarm_sound = list('sound/effects/lick.ogg')
+	r_leg_side_action_grab_sound = list('sound/effects/lick.ogg')
+	r_leg_side_action_harm_sound = list('sound/effects/lick.ogg')
+	
+	r_leg_back = list("right buttcheek")
+	r_leg_back_action_help = list(
+		"softly lick", 
+		"softly licks", 
+		"softly licking", 
+		"softly licked",
+	)
+	r_leg_back_action_disarm = list(
+		"playfully lick", 
+		"playfully licks", 
+		"playfully licking", 
+		"playfully licked",
+	)
+	r_leg_back_action_grab = list(
+		"tongue", 
+		"tongues", 
+		"tonguing", 
+		"tongued",
+	)
+	r_leg_back_action_harm = list(
+		"wetly lick", 
+		"wetly licks", 
+		"wetly licking", 
+		"wetly licked",
+	)
+	r_leg_back_action_help_sound = list('sound/effects/lick.ogg')
+	r_leg_back_action_disarm_sound = list('sound/effects/lick.ogg')
+	r_leg_back_action_grab_sound = list('sound/effects/lick.ogg')
+	r_leg_back_action_harm_sound = list('sound/effects/lick.ogg')
+	
+	///////////////////////////////////////////////////////////////////////////////////
+	groin_front = list("lap") // very forward, very direct, gender neutral for now
+	groin_front_action_help = list(
+		"softly lick", 
+		"softly licks", 
+		"softly licking", 
+		"softly licked",
+	)
+	groin_front_action_disarm = list(
+		"playfully lick", 
+		"playfully licks", 
+		"playfully licking", 
+		"playfully licked",
+	)
+	groin_front_action_grab = list(
+		"tongue", 
+		"tongues", 
+		"tonguing", 
+		"tongued",
+	)
+	groin_front_action_harm = list(
+		"wetly lick", 
+		"wetly licks", 
+		"wetly licking", 
+		"wetly licked",
+	)
+	groin_front_action_help_sound = list('sound/effects/lick.ogg')
+	groin_front_action_disarm_sound = list('sound/effects/lick.ogg')
+	groin_front_action_grab_sound = list('sound/effects/lick.ogg')
+	groin_front_action_harm_sound = list('sound/effects/lick.ogg')
+
+	groin_side = list("love handle") // more fat-focused play
+	groin_side_action_help = list(
+		"softly lick", 
+		"softly licks", 
+		"softly licking", 
+		"softly licked",
+	)
+	groin_side_action_disarm = list(
+		"playfully lick", 
+		"playfully licks", 
+		"playfully licking", 
+		"playfully licked",
+	)
+	groin_side_action_grab = list(
+		"tongue", 
+		"tongues", 
+		"tonguing", 
+		"tongued",
+	)
+	groin_side_action_harm = list(
+		"wetly lick", 
+		"wetly licks", 
+		"wetly licking", 
+		"wetly licked",
+	)
+	groin_side_action_help_sound = list('sound/effects/lick.ogg')
+	groin_side_action_disarm_sound = list('sound/effects/lick.ogg')
+	groin_side_action_grab_sound = list('sound/effects/lick.ogg')
+	groin_side_action_harm_sound = list('sound/effects/lick.ogg')
+
+	groin_back = list("butt") // the butt, lots of fun here with big fat soft squishy cheeks
+	groin_back_action_help = list(
+		"softly lick", 
+		"softly licks", 
+		"softly licking", 
+		"softly licked",
+	)
+	groin_back_action_disarm = list(
+		"playfully lick", 
+		"playfully licks", 
+		"playfully licking", 
+		"playfully licked",
+	)
+	groin_back_action_grab = list(
+		"tongue", 
+		"tongues", 
+		"tonguing", 
+		"tongued",
+	)
+	groin_back_action_harm = list(
+		"wetly lick", 
+		"wetly licks", 
+		"wetly licking", 
+		"wetly licked",
+	)
+	groin_back_action_help_sound = list('sound/effects/lick.ogg')
+	groin_back_action_disarm_sound = list('sound/effects/lick.ogg')
+	groin_back_action_grab_sound = list('sound/effects/lick.ogg')
+	groin_back_action_harm_sound = list('sound/effects/lick.ogg')
+
+	///////////////////////////////////////////////////////////////////////////////////
+	l_hand_front = list("left hand")
+	
+	
+	l_hand_side = list("left wrist")
+	
+	
+	l_hand_back = list("left forearm")
+	
+	
+	r_hand_front = list("right hand")
+	
+	
+	r_hand_side = list("right wrist")
+	
+	
+	r_hand_back = list("right forearm")
+	
+	
+	l_foot_front = list("left foot")
+	
+	
+	l_foot_side = list("left ankle")
+	
+	
+	l_foot_back = list("left calf")
+	
+	
+	r_foot_front = list("right foot")
+	
+	
+	r_foot_side = list("right ankle")
+	
+	
+	r_foot_back = list("right calf")
 
 
 
