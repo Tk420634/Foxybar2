@@ -418,10 +418,6 @@
 	plane = -2;
 	pixel_y = 0
 	},
-/obj/effect/overlay/fog/fog2{
-	plane = -2;
-	pixel_y = 0
-	},
 /turf/open/floor/wood_common{
 	color = "#99BBBB"
 	},
