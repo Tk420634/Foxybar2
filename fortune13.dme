@@ -4028,6 +4028,7 @@
 #include "modular_splurt\code\datums\modules\client\preferences_savefile.dm"
 #include "modular_splurt\code\datums\modules\client\verbs\character_directory.dm"
 #include "modular_splurt\code\game\objects\items\lewd_items\strapon.dm"
+#include "modular_splurt\code\game\objects\structures\pole.dm"
 #include "modular_splurt\code\mobs\mob.dm"
 #include "modular_splurt\code\modules\research\xenoarch\artifact.dm"
 #include "modular_splurt\code\modules\research\xenoarch\artifact_list.dm"
