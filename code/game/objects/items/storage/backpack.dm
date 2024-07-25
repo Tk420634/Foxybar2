@@ -1007,6 +1007,7 @@
 	inhand_icon_state = "invisipack"
 
 /obj/item/storage/backpack/purse 
+	name = "purse"
 	icon = 'icons/fallout/objects/storage.dmi'
 	desc = "A stylish handbag, not really recolorable!"
 	lefthand_file = 'icons/fallout/onmob/items/bags_lefthand.dmi'
