@@ -247,16 +247,16 @@
 
 		if(H == user)
 			user.visible_message(span_notice("[user] does [user.p_their()] nails with \the [src]."), \
-								 span_notice("You take a moment to apply \the [src]. Perfect!"))
+								span_notice("You take a moment to apply \the [src]. Perfect!"))
 			H.nail_style = "nails"
 			H.nail_color = paint
 			H.update_body()
 		else
 			user.visible_message(span_warning("[user] begins to do [H]'s nails with \the [src]."), \
-								 span_notice("You begin to apply \the [src] on [H]'s nails..."))
+								span_notice("You begin to apply \the [src] on [H]'s nails..."))
 			if(do_after(user, 20, target = H))
 				user.visible_message("[user] does [H]'s nails with \the [src].", \
-									 span_notice("You apply \the [src] on [H]'s nails."))
+									span_notice("You apply \the [src] on [H]'s nails."))
 				H.nail_style = "nails"
 				H.nail_color = paint
 				H.update_body()
