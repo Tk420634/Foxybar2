@@ -127,7 +127,7 @@
 
 	if(brut > 0 || fire > 0 || oxy > 0 || tox > 0)
 		var/adjustby = brut + fire + oxy + tox
-		var/actuallyadjustby = clamp(adjustby/10, 0, adjustby)
+		var/actuallyadjustby = clamp((adjustby/10) + 5, 0, adjustby)
 		adjustBruteLoss(-actuallyadjustby)
 		adjustFireLoss(-actuallyadjustby)
 		adjustOxyLoss(-actuallyadjustby)
