@@ -176,7 +176,7 @@
 			var/obj/item/bodypart/head/hed = user.get_bodypart(BODY_ZONE_HEAD)
 			if(hed)
 				hed.receive_damage(brute=20, updating_health=TRUE)
-			user.gain_trauma(/datum/brain_trauma/mild/concussion)
+			// user.gain_trauma(/datum/brain_trauma/mild/concussion)
 
 		if(-4 to -2) // glancing blow at best
 			user.visible_message(span_warning("[user] lands a weak [tackle_word] on [target], briefly knocking [target.p_them()] off-balance!"), span_userdanger("I land a weak [tackle_word] on [target], briefly knocking [target.p_them()] off-balance!"), target)
@@ -510,7 +510,7 @@
 			user.adjustStaminaLoss(30)
 			user.adjustBruteLoss(80)
 			user.Unconscious(100)
-			user.gain_trauma_type(BRAIN_TRAUMA_MILD)
+			// user.gain_trauma_type(BRAIN_TRAUMA_MILD)
 			playsound(user, 'sound/effects/blobattack.ogg', 60, TRUE)
 			playsound(user, 'sound/effects/splat.ogg', 70, TRUE)
 			user.playsound_local(get_turf(user), 'sound/weapons/flashbang.ogg', 100, TRUE, 8, 0.9)
@@ -524,7 +524,7 @@
 			user.adjustStaminaLoss(100)
 			user.adjustBruteLoss(30)
 			user.Unconscious(100)
-			user.gain_trauma_type(BRAIN_TRAUMA_MILD)
+			// user.gain_trauma_type(BRAIN_TRAUMA_MILD)
 			user.playsound_local(get_turf(user), 'sound/weapons/flashbang.ogg', 100, TRUE, 8, 0.9)
 			shake_camera(user, 6, 6)
 			user.overlay_fullscreen("flash", /atom/movable/screen/fullscreen/flash)
@@ -535,8 +535,8 @@
 			user.adjustStaminaLoss(30)
 			user.adjustBruteLoss(30)
 			user.confused += 15
-			if(prob(80))
-				user.gain_trauma(/datum/brain_trauma/mild/concussion)
+			// if(prob(80))
+			// 	user.gain_trauma(/datum/brain_trauma/mild/concussion)
 			user.playsound_local(get_turf(user), 'sound/weapons/flashbang.ogg', 100, TRUE, 8, 0.9)
 			user.DefaultCombatKnockdown(40)
 			shake_camera(user, 5, 5)

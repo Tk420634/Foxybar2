@@ -1149,12 +1149,13 @@
 	value = REAGENT_VALUE_EXCEPTIONAL
 
 /datum/reagent/toxin/brainhurtingjuice/on_mob_life(mob/living/carbon/M)
-	if(prob(50))
-		M.gain_trauma_type(BRAIN_TRAUMA_MILD)
-	else if(prob(50))
-		M.gain_trauma_type(BRAIN_TRAUMA_SEVERE)
-	else
-		M.gain_trauma_type(BRAIN_TRAUMA_SPECIAL)
+	to_chat(M, span_warning("My brain hurts! Oof ouch."))
+	// if(prob(50))
+	// 	M.gain_trauma_type(BRAIN_TRAUMA_MILD)
+	// else if(prob(50))
+	// 	M.gain_trauma_type(BRAIN_TRAUMA_SEVERE)
+	// else
+	// 	M.gain_trauma_type(BRAIN_TRAUMA_SPECIAL)
 	..()
 
 /datum/reagent/toxin/bungotoxin
