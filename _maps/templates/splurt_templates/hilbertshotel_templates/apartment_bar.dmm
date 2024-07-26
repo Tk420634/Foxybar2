@@ -13,6 +13,7 @@
 /obj/structure/table/wood/fancy/royalblack,
 /obj/item/storage/fancy/heart_box,
 /obj/item/paper/fluff/hilbertshotel/welcomeletter,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "ee" = (
 /turf/open/floor/carpet/royalblack,
@@ -21,6 +22,7 @@
 /obj/machinery/vending/boozeomat{
 	shut_up = 1
 	},
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "hi" = (
 /obj/structure/chair/stool/bar{
@@ -30,6 +32,7 @@
 /area/hilbertshotel)
 "jj" = (
 /obj/structure/mirror,
+/turf/closed/wall/mineral/brick,
 /area/hilbertshotel)
 "kp" = (
 /obj/structure/table/wood,
@@ -47,6 +50,7 @@
 /area/hilbertshotel)
 "kB" = (
 /obj/item/toy/cards/deck,
+/obj/structure/table/wood/fancy/royalblack,
 /turf/open/floor/carpet/royalblack,
 /area/hilbertshotel)
 "kC" = (
@@ -79,24 +83,33 @@
 /obj/item/reagent_containers/food/drinks/drinkingglass,
 /obj/item/reagent_containers/food/drinks/drinkingglass,
 /obj/item/reagent_containers/food/drinks/drinkingglass,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "lS" = (
 /obj/structure/table/wood,
 /obj/machinery/chem_dispenser/drinks{
 	dir = 1
 	},
+/turf/open/floor/wood_common/wood_common_dark,
+/area/hilbertshotel)
+"nj" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/structure/table/wood/fancy/royalblack,
+/turf/open/floor/carpet/royalblack,
 /area/hilbertshotel)
 "nQ" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
 /obj/structure/table/wood/fancy/royalblack,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "oH" = (
 /obj/structure/table/wood,
 /obj/machinery/chem_dispenser/drinks/beer{
 	dir = 1
 	},
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "pr" = (
 /obj/structure/chair/stool/bar,
@@ -108,8 +121,13 @@
 	},
 /turf/open/floor/carpet/royalblack,
 /area/hilbertshotel)
+"qQ" = (
+/obj/structure/table/wood/fancy/royalblack,
+/turf/open/floor/carpet/royalblack,
+/area/hilbertshotel)
 "rY" = (
 /obj/structure/sign/poster/random,
+/turf/closed/wall/mineral/brick,
 /area/hilbertshotel)
 "sm" = (
 /obj/effect/turf_decal/siding/wood,
@@ -186,9 +204,13 @@
 	},
 /turf/open/floor/carpet/royalblack,
 /area/hilbertshotel)
+"yz" = (
+/turf/open/floor/wood_common/wood_common_dark,
+/area/hilbertshotel)
 "yO" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/item/choice_beacon/box/plushie,
+/obj/structure/table/wood/fancy/royalblack,
 /turf/open/floor/carpet/royalblack,
 /area/hilbertshotel)
 "BL" = (
@@ -204,6 +226,7 @@
 /obj/structure/window/reinforced/survival_pod{
 	dir = 4
 	},
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "DV" = (
 /obj/machinery/light{
@@ -220,6 +243,7 @@
 	dir = 1
 	},
 /obj/structure/table/wood/fancy/royalblack,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "Fz" = (
 /obj/structure/window{
@@ -282,10 +306,6 @@
 	},
 /turf/open/floor/carpet/black,
 /area/hilbertshotel)
-"Jn" = (
-/obj/structure/sign/poster/random,
-/turf/closed/wall,
-/area/hilbertshotel)
 "Mr" = (
 /obj/machinery/light{
 	dir = 1
@@ -319,9 +339,11 @@
 	dir = 4;
 	pixel_x = -14
 	},
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "PG" = (
 /obj/machinery/smartfridge/drinks,
+/turf/closed/wall/mineral/brick,
 /area/hilbertshotel)
 "PJ" = (
 /obj/structure/window,
@@ -343,6 +365,7 @@
 	dir = 4
 	},
 /obj/machinery/light,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "RL" = (
 /obj/structure/lattice,
@@ -350,6 +373,7 @@
 /area/hilbertshotel)
 "SW" = (
 /obj/structure/sign/poster/contraband/random,
+/turf/closed/wall/mineral/brick,
 /area/hilbertshotel)
 "Tk" = (
 /obj/structure/table,
@@ -367,6 +391,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "UR" = (
 /obj/effect/turf_decal/siding/wood{
@@ -376,6 +401,7 @@
 	dir = 4
 	},
 /obj/structure/table/wood/fancy/royalblack,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "We" = (
 /obj/machinery/vending/snack/random,
@@ -405,6 +431,7 @@
 /turf/open/floor/carpet/royalblack,
 /area/hilbertshotel)
 "ZE" = (
+/turf/closed/wall/mineral/brick,
 /area/hilbertshotel)
 
 (1,1,1) = {"
@@ -452,7 +479,7 @@ ee
 pr
 yO
 Wg
-ZE
+yz
 dy
 nQ
 TA
@@ -467,14 +494,14 @@ RL
 ZE
 tx
 kB
-ee
-sm
+qQ
+nj
 cK
-ZE
+yz
 dy
 nQ
-ZE
-ZE
+yz
+yz
 lS
 ZE
 Xr
@@ -488,11 +515,11 @@ hi
 hi
 kr
 cK
-ZE
+yz
 dy
 dR
-ZE
-ZE
+yz
+yz
 oH
 rY
 Xr
@@ -506,11 +533,11 @@ ee
 ee
 sm
 cK
-ZE
+yz
 dy
 nQ
-ZE
-ZE
+yz
+yz
 fo
 ZE
 Xr
@@ -524,12 +551,12 @@ hi
 ee
 sm
 cK
-ZE
+yz
 dy
 nQ
-ZE
-ZE
-ZE
+yz
+yz
+yz
 PG
 Xr
 "}
@@ -537,12 +564,12 @@ Xr
 Xr
 Xr
 ZE
-MV
-MV
-MV
-MV
-Ji
 ZE
+ZE
+ZE
+ZE
+Ji
+yz
 dy
 EI
 UR
@@ -560,7 +587,7 @@ BL
 GV
 te
 cK
-ZE
+yz
 cK
 cK
 cK
@@ -576,14 +603,14 @@ jj
 sU
 GV
 GV
-MV
+ZE
 Mr
-ZE
-ZE
-ZE
-ZE
-ZE
-ZE
+yz
+yz
+yz
+yz
+yz
+yz
 ZE
 Xr
 "}
@@ -594,7 +621,7 @@ ZE
 MV
 QC
 GV
-MV
+ZE
 We
 cK
 cK
@@ -612,8 +639,8 @@ ZE
 DV
 te
 GV
-MV
-Jn
+ZE
+rY
 ut
 sY
 Hs
@@ -631,7 +658,7 @@ MV
 MV
 GV
 Tk
-MV
+ZE
 xI
 vW
 PJ
@@ -649,7 +676,7 @@ DV
 te
 GV
 WO
-QC
+SW
 Fz
 kp
 Hy

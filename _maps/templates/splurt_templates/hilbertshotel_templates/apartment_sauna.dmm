@@ -26,6 +26,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "fo" = (
 /obj/effect/turf_decal/siding/wood{
@@ -72,8 +73,6 @@
 	},
 /turf/open/floor/carpet/royalblue,
 /area/hilbertshotel)
-"hw" = (
-/area/hilbertshotel)
 "ix" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -95,6 +94,7 @@
 /obj/structure/sign/poster/contraband/random{
 	pixel_x = -31
 	},
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "jP" = (
 /obj/structure/window/reinforced/tinted/frosted{
@@ -103,6 +103,7 @@
 /obj/structure/chair/pew/right{
 	dir = 4
 	},
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "jX" = (
 /obj/structure/mineral_door/paperframe{
@@ -158,12 +159,14 @@
 /obj/structure/window/reinforced/tinted/frosted{
 	dir = 8
 	},
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "pw" = (
 /obj/structure/mineral_door/paperframe{
 	name = "Changing Room";
 	dir = 8
 	},
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "pE" = (
 /obj/effect/turf_decal/siding/wood{
@@ -178,16 +181,19 @@
 /obj/machinery/light/floor{
 	bulb_colour = "F27D0C"
 	},
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "qm" = (
 /obj/structure/table/wood,
 /obj/item/storage/fancy/heart_box,
 /obj/item/paper/fluff/hilbertshotel/welcomeletter,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "qv" = (
 /obj/structure/chair/pew/right{
 	dir = 8
 	},
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "rb" = (
 /obj/effect/turf_decal/trimline/white/filled/line{
@@ -204,6 +210,7 @@
 /area/hilbertshotel)
 "tB" = (
 /obj/machinery/light,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "tF" = (
 /obj/machinery/vending/boozeomat{
@@ -223,6 +230,7 @@
 /obj/structure/window/reinforced/tinted/frosted{
 	dir = 8
 	},
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "tX" = (
 /obj/structure/closet/crate/wooden,
@@ -241,6 +249,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "vL" = (
 /obj/effect/turf_decal/siding/wood{
@@ -272,6 +281,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "xp" = (
 /obj/effect/turf_decal/trimline/white/filled/line{
@@ -306,6 +316,7 @@
 /obj/structure/chair/pew/left{
 	dir = 4
 	},
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "Au" = (
 /obj/effect/turf_decal/siding/wood{
@@ -342,6 +353,7 @@
 /area/hilbertshotel)
 "CY" = (
 /obj/machinery/vending/kink,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "CZ" = (
 /obj/structure/fireplace{
@@ -353,6 +365,7 @@
 /obj/structure/chair/pew{
 	dir = 4
 	},
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "DO" = (
 /obj/structure/table,
@@ -369,6 +382,7 @@
 /obj/structure/chair/pew/left{
 	dir = 8
 	},
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "FQ" = (
 /turf/closed/wall/mineral/wood,
@@ -403,7 +417,7 @@
 /area/hilbertshotel)
 "HB" = (
 /obj/machinery/smartfridge/drinks,
-/turf/closed/indestructible/wood,
+/turf/closed/wall/mineral/wood,
 /area/hilbertshotel)
 "HN" = (
 /obj/structure/table/glass,
@@ -429,6 +443,7 @@
 /obj/item/toy/poolnoodle/blue,
 /obj/item/toy/poolnoodle/blue,
 /obj/item/toy/poolnoodle/blue,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "KL" = (
 /obj/structure/closet/secure_closet/personal,
@@ -438,6 +453,7 @@
 /obj/structure/window/reinforced/tinted/frosted{
 	dir = 8
 	},
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "LP" = (
 /obj/machinery/vending/cigarette{
@@ -481,6 +497,7 @@
 /obj/structure/window/reinforced/tinted/frosted{
 	dir = 1
 	},
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "Op" = (
 /obj/structure/closet/crate/bin{
@@ -490,9 +507,6 @@
 	dir = 1
 	},
 /turf/open/floor/carpet/royalblue,
-/area/hilbertshotel)
-"OE" = (
-/turf/closed/indestructible/wood,
 /area/hilbertshotel)
 "OQ" = (
 /obj/effect/turf_decal/trimline/white/filled/line{
@@ -548,7 +562,8 @@
 /turf/open/floor/plasteel/white,
 /area/hilbertshotel)
 "Rt" = (
-/obj/structure/bookcase/random,
+/obj/structure/rack,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "Rz" = (
 /obj/effect/turf_decal/trimline/white/filled/line,
@@ -569,6 +584,9 @@
 	},
 /turf/open/pool,
 /area/hilbertshotel)
+"Sx" = (
+/turf/open/floor/wood_common/wood_common_dark,
+/area/hilbertshotel)
 "Tp" = (
 /obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/plasteel/white,
@@ -578,12 +596,14 @@
 	name = "Changing Room";
 	dir = 4
 	},
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "Ur" = (
 /obj/structure/closet/athletic_mixed,
 /obj/structure/window/reinforced/tinted/frosted{
 	dir = 4
 	},
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "UJ" = (
 /obj/structure/closet/crate/wooden,
@@ -601,12 +621,14 @@
 /turf/open/floor/carpet/royalblue,
 /area/hilbertshotel)
 "Vk" = (
-/obj/structure/table/bronze,
+/obj/structure/table/wood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "Wj" = (
 /obj/structure/chair/pew{
 	dir = 8
 	},
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "WQ" = (
 /obj/machinery/pool/drain,
@@ -629,25 +651,25 @@
 /area/hilbertshotel)
 
 (1,1,1) = {"
-OE
-OE
-OE
-OE
-OE
+FQ
+FQ
+FQ
+FQ
+FQ
 GJ
-OE
-OE
-OE
-OE
-OE
+FQ
+FQ
+FQ
+FQ
+FQ
 HB
-OE
-OE
-OE
-OE
+FQ
+FQ
+FQ
+FQ
 "}
 (2,1,1) = {"
-OE
+FQ
 Ur
 jr
 Kz
@@ -662,13 +684,13 @@ rb
 OQ
 CU
 Gs
-OE
+FQ
 "}
 (3,1,1) = {"
-OE
+FQ
 tS
-hw
-hw
+Sx
+Sx
 FQ
 vL
 Zm
@@ -680,12 +702,12 @@ Gf
 OY
 OY
 Rz
-OE
+FQ
 "}
 (4,1,1) = {"
-OE
+FQ
 KL
-hw
+Sx
 tB
 FQ
 vL
@@ -698,13 +720,13 @@ Gw
 Gw
 Gw
 Kq
-OE
+FQ
 "}
 (5,1,1) = {"
-OE
+FQ
 KL
-hw
-hw
+Sx
+Sx
 FQ
 vL
 Zm
@@ -716,12 +738,12 @@ RY
 RY
 oz
 dm
-OE
+FQ
 "}
 (6,1,1) = {"
-OE
+FQ
 oR
-hw
+Sx
 CY
 FQ
 vL
@@ -734,10 +756,10 @@ HN
 fW
 zJ
 mc
-OE
+FQ
 "}
 (7,1,1) = {"
-OE
+FQ
 FQ
 pw
 FQ
@@ -752,10 +774,10 @@ FQ
 FQ
 FQ
 FQ
-OE
+FQ
 "}
 (8,1,1) = {"
-OE
+FQ
 zw
 xC
 xC
@@ -770,10 +792,10 @@ bd
 xC
 Kt
 BQ
-OE
+FQ
 "}
 (9,1,1) = {"
-OE
+FQ
 OW
 Pn
 pE
@@ -788,10 +810,10 @@ wy
 Pn
 Kt
 fo
-OE
+FQ
 "}
 (10,1,1) = {"
-OE
+FQ
 FQ
 TH
 FQ
@@ -805,13 +827,13 @@ FQ
 FQ
 FQ
 FQ
-OE
-OE
+FQ
+FQ
 "}
 (11,1,1) = {"
-OE
+FQ
 Rt
-hw
+Sx
 qm
 FQ
 Op
@@ -823,11 +845,11 @@ zJ
 jP
 Dt
 Aq
-OE
+FQ
 Si
 "}
 (12,1,1) = {"
-OE
+FQ
 wD
 uG
 fb
@@ -839,13 +861,13 @@ Gm
 zJ
 zJ
 NG
-hw
+Sx
 Vk
-OE
+FQ
 ki
 "}
 (13,1,1) = {"
-OE
+FQ
 CZ
 PD
 ly
@@ -856,14 +878,14 @@ FQ
 fG
 WQ
 zJ
-hw
+Sx
 qi
-hw
-OE
+Sx
+FQ
 ki
 "}
 (14,1,1) = {"
-OE
+FQ
 PD
 PD
 MT
@@ -875,13 +897,13 @@ Gm
 zJ
 zJ
 NG
-hw
+Sx
 Vk
-OE
+FQ
 ki
 "}
 (15,1,1) = {"
-OE
+FQ
 aN
 Ml
 NC
@@ -895,24 +917,24 @@ Tp
 EW
 Wj
 qv
-OE
+FQ
 ki
 "}
 (16,1,1) = {"
-OE
-OE
-OE
-OE
-OE
-OE
-OE
-OE
-OE
-OE
-OE
-OE
-OE
-OE
-OE
-OE
+FQ
+FQ
+FQ
+FQ
+FQ
+FQ
+FQ
+FQ
+FQ
+FQ
+FQ
+FQ
+FQ
+FQ
+FQ
+FQ
 "}

@@ -1,7 +1,7 @@
 GLOBAL_VAR_INIT(hhStorageTurf, null)
 GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 
-/obj/item/hilbertshotel
+/obj/hilbertshotel
 	name = "Hilbert's Hotel"
 	desc = "A sphere of what appears to be an intricate network of bluespace. Observing it in detail seems to give you a headache as you try to comprehend the infinite amount of infinitesimally distinct points on its surface."
 	icon_state = "hilbertshotel"
@@ -30,12 +30,12 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 	w_class = WEIGHT_CLASS_GIGANTIC
 	var/list/list/mob_dorms = list()
 
-/obj/item/hilbertshotel/Initialize(mapload)
+/obj/hilbertshotel/Initialize(mapload)
 	. = ..()
 	//Load templates
 	INVOKE_ASYNC(src, PROC_REF(prepare_rooms))
 
-/obj/item/hilbertshotel/proc/prepare_rooms()
+/obj/hilbertshotel/proc/prepare_rooms()
 	hotelRoomTemp = new()
 	hotelRoomTempEmpty = new()
 	hotelRoomTempLore = new()
@@ -52,26 +52,26 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 	if(currentArea.type == /area/ruin/space/has_grav/hilbertresearchfacility)
 		ruinSpawned = TRUE
 
-/obj/item/hilbertshotel/Destroy()
+/obj/hilbertshotel/Destroy()
 	ejectRooms()
 	return ..()
 
-/obj/item/hilbertshotel/attack(mob/living/M, mob/living/user)
+/obj/hilbertshotel/attack(mob/living/M, mob/living/user)
 	if(M.mind)
 		to_chat(user, span_notice("You invite [M] to the hotel."))
 		promptAndCheckIn(user, M)
 	else
 		to_chat(user, span_warning("[M] is not intelligent enough to understand how to use this device!"))
 
-/obj/item/hilbertshotel/attack_self(mob/user)
+/obj/hilbertshotel/attack_self(mob/user)
 	. = ..()
 	promptAndCheckIn(user, user)
 
-/obj/item/hilbertshotel/attack_hand(mob/user)
+/obj/hilbertshotel/attack_hand(mob/user)
 	. = ..()
 	return promptAndCheckIn(user, user)
 
-/obj/item/hilbertshotel/proc/promptAndCheckIn(mob/user)
+/obj/hilbertshotel/proc/promptAndCheckIn(mob/user)
 	//SPLURT EDIT - max infinidorms rooms
 	var/max_rooms = 40 // CONFIG_GET(number/max_infinidorms)
 	var/chosenRoomNumber
@@ -157,7 +157,7 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 		LS.area = src // Update the area reference for each light switch
 		LS.update_icon() // Update the appearance of the light switch
 
-/obj/item/hilbertshotel/proc/tryActiveRoom(var/roomNumber, var/mob/user)
+/obj/hilbertshotel/proc/tryActiveRoom(var/roomNumber, var/mob/user)
 	if(activeRooms["[roomNumber]"])
 		var/datum/turf_reservation/roomReservation = activeRooms["[roomNumber]"]
 		var/area/hilbertshotel/currentArea = get_area(locate(roomReservation.bottom_left_coords[1], roomReservation.bottom_left_coords[2], roomReservation.bottom_left_coords[3]))
@@ -171,7 +171,7 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 	else
 		return FALSE
 
-/obj/item/hilbertshotel/proc/tryStoredRoom(var/roomNumber, var/mob/user)
+/obj/hilbertshotel/proc/tryStoredRoom(var/roomNumber, var/mob/user)
 // SPLURT EDIT START: Load the correct stored room by loading an empty template and adding stored atoms on top of it.
 	if(storedRooms["[roomNumber]"])
 		// Find the storage object for the stored room
@@ -231,7 +231,7 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 	else
 		return FALSE
 
-/obj/item/hilbertshotel/proc/getMapTemplate(roomType) // To load a map and remove it's atoms
+/obj/hilbertshotel/proc/getMapTemplate(roomType) // To load a map and remove it's atoms
 	switch(roomType)
 		if("Hotel Room") return hotelRoomTemp
 		if("Apartment-1") return hilberts_hotel_rooms_apartment_one
@@ -245,7 +245,7 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 	return hotelRoomTemp // Default to Hotel Room if no match is found
 
 //SPLURT EDIT START: HOTEL UPDATE. Was sendToNewRoom(chosenRoomNumber, target) | Added new selectable apartments
-/obj/item/hilbertshotel/proc/sendToNewRoom(roomNumber, mob/user, chosen_room)
+/obj/hilbertshotel/proc/sendToNewRoom(roomNumber, mob/user, chosen_room)
 	var/datum/turf_reservation/roomReservation = SSmapping.RequestBlockReservation(hotelRoomTemp.width, hotelRoomTemp.height)
 	mysteryRoom = GLOB.hhmysteryRoomNumber
 
@@ -285,7 +285,7 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 
 //SPLURT EDIT END
 
-/obj/item/hilbertshotel/proc/linkTurfs(var/datum/turf_reservation/currentReservation, var/currentRoomnumber, var/chosen_room)
+/obj/hilbertshotel/proc/linkTurfs(var/datum/turf_reservation/currentReservation, var/currentRoomnumber, var/chosen_room)
 	var/area/hilbertshotel/currentArea = get_area(locate(currentReservation.bottom_left_coords[1], currentReservation.bottom_left_coords[2], currentReservation.bottom_left_coords[3]))
 	currentArea.name = "Hilbert's Hotel Room [currentRoomnumber]"
 	currentArea.parentSphere = src
@@ -298,7 +298,7 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 	for(var/turf/open/space/bluespace/BSturf in currentArea)
 		BSturf.parentSphere = src
 
-/obj/item/hilbertshotel/proc/ejectRooms()
+/obj/hilbertshotel/proc/ejectRooms()
 	if(activeRooms.len)
 		for(var/x in activeRooms)
 			var/datum/turf_reservation/room = activeRooms[x]
@@ -340,12 +340,12 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 				var/turf/T = locate(_x, _y, _z)
 				A.forceMove(T)
 
-/obj/item/hilbertshotel/ghostdojo
+/obj/hilbertshotel/ghostdojo
 	name = "Infinite Dormitories"
 	anchored = TRUE
 	interaction_flags_atom = INTERACT_ATOM_ATTACK_HAND
 
-/obj/item/hilbertshotel/ghostdojo/linkTurfs(datum/turf_reservation/currentReservation, currentRoomnumber)
+/obj/hilbertshotel/ghostdojo/linkTurfs(datum/turf_reservation/currentReservation, currentRoomnumber)
 	. = ..()
 	var/area/hilbertshotel/currentArea = get_area(locate(currentReservation.bottom_left_coords[1], currentReservation.bottom_left_coords[2], currentReservation.bottom_left_coords[3]))
 	for(var/turf/closed/indestructible/hoteldoor/door in currentArea)
@@ -397,7 +397,7 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 	baseturfs = /turf/open/space/bluespace
 	flags_1 = NOJAUNT_1
 	explosion_block = INFINITY
-	var/obj/item/hilbertshotel/parentSphere
+	var/obj/hilbertshotel/parentSphere
 
 /turf/open/space/bluespace/Entered(atom/movable/A)
 	. = ..()
@@ -408,7 +408,7 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 	name = "Hotel Door"
 	icon_state = "hoteldoor"
 	explosion_block = INFINITY
-	var/obj/item/hilbertshotel/parentSphere
+	var/obj/hilbertshotel/parentSphere
 
 /turf/closed/indestructible/hoteldoor/proc/promptExit(mob/living/user)
 	if(!isliving(user))
@@ -492,21 +492,21 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 	ambientsounds = list('sound/ambience/servicebell.ogg')
 	var/roomnumber = 0
-	var/obj/item/hilbertshotel/parentSphere
+	var/obj/hilbertshotel/parentSphere
 	var/datum/turf_reservation/reservation
 	var/turf/storageTurf
 	var/roomType = "Hotel Room" // SPLURT ADDITION: Default room type
 
 /area/hilbertshotel/Entered(atom/movable/AM)
 	. = ..()
-	if(istype(AM, /obj/item/hilbertshotel))
+	if(istype(AM, /obj/hilbertshotel))
 		relocate(AM)
-	var/list/obj/item/hilbertshotel/hotels = AM.GetAllContents(/obj/item/hilbertshotel)
-	for(var/obj/item/hilbertshotel/H in hotels)
+	var/list/obj/hilbertshotel/hotels = AM.GetAllContents(/obj/hilbertshotel)
+	for(var/obj/hilbertshotel/H in hotels)
 		if(parentSphere == H)
 			relocate(H)
 
-/area/hilbertshotel/proc/relocate(obj/item/hilbertshotel/H)
+/area/hilbertshotel/proc/relocate(obj/hilbertshotel/H)
 	if(prob(0.135685)) //Because screw you
 		qdel(H)
 		return
@@ -551,7 +551,7 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	item_flags = ABSTRACT
 	var/roomNumber
-	var/obj/item/hilbertshotel/parentSphere
+	var/obj/hilbertshotel/parentSphere
 	var/roomType = "Hotel Room" // Default room type
 
 /obj/item/abstracthotelstorage/Entered(atom/movable/AM, atom/oldLoc)
@@ -577,11 +577,11 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 
 /obj/item/analyzer/hilbertsanalyzer/afterattack(atom/target, mob/user, proximity)
 	. = ..()
-	if(istype(target, /obj/item/hilbertshotel))
+	if(istype(target, /obj/hilbertshotel))
 		if(!proximity)
 			to_chat(user, "<span class='warning'>It's to far away to scan!</span>")
 			return
-		var/obj/item/hilbertshotel/sphere = target
+		var/obj/hilbertshotel/sphere = target
 		if(sphere.activeRooms.len)
 			to_chat(user, "Currently Occupied Rooms:")
 			for(var/roomnumber in sphere.activeRooms)

@@ -3,10 +3,10 @@
 /turf/open/space/bluespace,
 /area/hilbertshotel)
 "b" = (
-/turf/closed/indestructible/hotelwall,
+/turf/closed/wall/mineral/brick,
 /area/hilbertshotel)
 "c" = (
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "d" = (
 /turf/open/indestructible/hoteltile,

@@ -9,7 +9,7 @@
 /area/hilbertshotel)
 "bx" = (
 /obj/structure/mineral_door/wood,
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "dl" = (
 /obj/structure/table/reinforced,
@@ -47,15 +47,15 @@
 "hn" = (
 /obj/item/toy/plush/beeplushie,
 /obj/structure/table/wood/fancy,
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "hz" = (
 /obj/structure/mineral_door/paperframe,
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "hK" = (
 /obj/structure/chair/stool/bar,
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "iq" = (
 /obj/structure/table/reinforced,
@@ -77,14 +77,11 @@
 /obj/machinery/light_switch{
 	pixel_x = -32
 	},
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "kX" = (
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/cafeteria,
-/area/hilbertshotel)
-"qH" = (
-/turf/open/floor/plasteel/stairs/left,
 /area/hilbertshotel)
 "re" = (
 /obj/structure/table/reinforced,
@@ -93,7 +90,7 @@
 /area/hilbertshotel)
 "su" = (
 /obj/structure/dresser,
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "uU" = (
 /obj/machinery/shower{
@@ -121,19 +118,19 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "zD" = (
 /obj/machinery/jukebox{
 	req_one_access = null
 	},
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "AZ" = (
 /obj/structure/chair/comfy/brown{
 	dir = 1
 	},
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "Bt" = (
 /obj/structure/window/reinforced/tinted{
@@ -149,10 +146,7 @@
 /obj/structure/sign/painting/library{
 	pixel_y = 32
 	},
-/turf/open/indestructible/hotelwood,
-/area/hilbertshotel)
-"Ce" = (
-/turf/open/floor/plasteel/stairs/medium,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "CN" = (
 /turf/open/floor/plasteel/cafeteria,
@@ -169,7 +163,7 @@
 /area/hilbertshotel)
 "Ii" = (
 /obj/machinery/vending/kink,
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "IT" = (
 /turf/closed/indestructible/hoteldoor,
@@ -182,24 +176,24 @@
 /obj/structure/fireplace{
 	pixel_y = -6
 	},
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "KD" = (
 /obj/machinery/light/small,
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "Ld" = (
 /obj/machinery/light/small{
 	dir = 1
 	},
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "LT" = (
 /obj/structure/closet/crate/bin,
 /obj/machinery/light/small{
 	dir = 4
 	},
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "LX" = (
 /obj/structure/window/reinforced/tinted{
@@ -210,14 +204,11 @@
 /area/hilbertshotel)
 "Mt" = (
 /obj/structure/table/reinforced,
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "MA" = (
 /obj/structure/table/wood/fancy,
-/turf/open/indestructible/hotelwood,
-/area/hilbertshotel)
-"MZ" = (
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "NV" = (
 /obj/structure/table/reinforced,
@@ -232,34 +223,34 @@
 /area/hilbertshotel)
 "QV" = (
 /obj/structure/bed/double,
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "Rt" = (
 /obj/machinery/light/small{
 	dir = 4
 	},
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "Si" = (
-/turf/closed/indestructible/hotelwall,
+/turf/closed/wall/mineral/brick,
 /area/hilbertshotel)
 "Tt" = (
-/turf/open/floor/plasteel/stairs/right,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "Uc" = (
 /obj/item/kirbyplants/random,
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "Um" = (
 /obj/item/candle/infinite,
 /obj/structure/table/wood/fancy,
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "Us" = (
 /obj/structure/closet/cabinet{
 	anchored = 1
 	},
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "VT" = (
 /obj/structure/table/reinforced,
@@ -283,7 +274,7 @@
 "YR" = (
 /obj/structure/table/wood/fancy,
 /obj/item/stack/spacecash/c100,
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "Zx" = (
 /turf/open/floor/carpet,
@@ -328,11 +319,11 @@ GW
 Si
 Uc
 yh
-MZ
-MZ
-MZ
+Tt
+Tt
+Tt
 yh
-MZ
+Tt
 CN
 Ow
 NV
@@ -344,11 +335,11 @@ GW
 GW
 Si
 Mt
-qH
-MZ
+Tt
+Tt
 YR
 AZ
-MZ
+Tt
 hK
 fv
 CN
@@ -361,11 +352,11 @@ GW
 GW
 Si
 Mt
-Ce
-MZ
+Tt
+Tt
 Um
 AZ
-MZ
+Tt
 hK
 iq
 CN
@@ -379,10 +370,10 @@ GW
 Si
 Mt
 Tt
-MZ
+Tt
 MA
 AZ
-MZ
+Tt
 hK
 re
 CN
@@ -396,9 +387,9 @@ GW
 Si
 zD
 Rt
-MZ
-MZ
-MZ
+Tt
+Tt
+Tt
 LT
 Uc
 dl
@@ -430,9 +421,9 @@ GW
 Si
 Uc
 yh
-MZ
+Tt
 ke
-MZ
+Tt
 hz
 wf
 jS
@@ -449,7 +440,7 @@ BG
 Zx
 Zx
 Zx
-MZ
+Tt
 Si
 wf
 wf
@@ -483,7 +474,7 @@ BG
 Zx
 Zx
 Zx
-MZ
+Tt
 Si
 WM
 Bt
@@ -497,10 +488,10 @@ GW
 GW
 Si
 Ld
-MZ
-MZ
-MZ
-MZ
+Tt
+Tt
+Tt
+Tt
 Si
 wf
 wf

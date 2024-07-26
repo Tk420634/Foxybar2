@@ -3,7 +3,7 @@
 /turf/open/space/bluespace,
 /area/hilbertshotel)
 "ab" = (
-/turf/closed/indestructible/hotelwall,
+/turf/closed/wall/mineral/brick,
 /area/hilbertshotel)
 "ac" = (
 /obj/structure/table/wood/fancy,
@@ -16,14 +16,14 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "ad" = (
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "ae" = (
 /obj/structure/table/wood,
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "af" = (
 /obj/structure/table/wood,
@@ -31,25 +31,25 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "ag" = (
 /obj/structure/dresser,
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "ah" = (
 /obj/structure/table/wood/fancy,
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "ai" = (
 /obj/structure/table/wood/poker,
 /obj/item/toy/cards/deck,
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "aj" = (
 /obj/structure/table/wood/fancy,
 /obj/item/flashlight/lamp/green,
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "ak" = (
 /obj/structure/chair/comfy/brown{
@@ -58,11 +58,11 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "al" = (
 /obj/structure/table/wood/poker,
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "am" = (
 /obj/structure/chair/comfy/brown{
@@ -71,77 +71,77 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "an" = (
 /obj/machinery/light/small{
 	dir = 8
 	},
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "ap" = (
 /obj/structure/bed,
 /obj/item/bedsheet/random,
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "aq" = (
 /obj/structure/chair/comfy/brown{
 	dir = 1
 	},
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "ar" = (
 /obj/structure/mineral_door/wood,
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "as" = (
 /turf/closed/indestructible/hoteldoor,
 /area/hilbertshotel)
 "at" = (
 /obj/effect/decal/cleanable/cobweb,
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "au" = (
 /obj/machinery/light_switch{
 	pixel_x = -32
 	},
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "av" = (
 /obj/machinery/light/small,
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "aw" = (
 /obj/structure/closet/cabinet{
 	anchored = 1
 	},
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "ax" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "ay" = (
 /obj/structure/closet/crate/bin,
 /obj/machinery/light/small{
 	dir = 4
 	},
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "az" = (
 /obj/structure/mineral_door/paperframe,
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "aA" = (
 /obj/structure/chair/stool/bar,
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "aB" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 32
 	},
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "aC" = (
 /turf/open/indestructible/hoteltile,
@@ -158,12 +158,12 @@
 /area/hilbertshotel)
 "aG" = (
 /obj/structure/table/reinforced,
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "aH" = (
 /obj/structure/table/reinforced,
 /obj/item/pen,
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "aI" = (
 /obj/structure/mirror{
@@ -193,12 +193,12 @@
 /area/hilbertshotel)
 "aL" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "aM" = (
 /obj/structure/table/wood/poker,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "aN" = (
 /obj/structure/toilet{
@@ -228,11 +228,11 @@
 "aQ" = (
 /obj/structure/table/reinforced,
 /obj/machinery/microwave,
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "aR" = (
 /obj/machinery/smartfridge/food,
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "aS" = (
 /obj/structure/window/reinforced/tinted{
@@ -245,13 +245,13 @@
 /obj/structure/table/reinforced,
 /obj/structure/sink/kitchen,
 /obj/machinery/light/small,
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "aU" = (
 /obj/structure/bed,
 /obj/item/bedsheet/random,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "aV" = (
 /obj/machinery/light/small,
@@ -261,21 +261,21 @@
 /obj/machinery/jukebox{
 	req_access = null
 	},
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "aX" = (
 /obj/machinery/light_switch{
 	pixel_x = 32
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "aY" = (
 /obj/structure/chair/stool/bar,
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/vomit,
 /obj/effect/mob_spawn/human/doctorhilbert,
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "aZ" = (
 /obj/effect/decal/cleanable/dirt,
@@ -314,12 +314,12 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "bf" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "bg" = (
 /obj/structure/table/reinforced,
@@ -327,7 +327,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "bh" = (
 /obj/structure/table/reinforced,
@@ -353,12 +353,12 @@
 "bk" = (
 /obj/structure/table/reinforced,
 /obj/item/analyzer/hilbertsanalyzer,
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 "bl" = (
 /obj/structure/table/reinforced,
 /obj/item/paper/crumpled/bloody/docsdeathnote,
-/turf/open/indestructible/hotelwood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/hilbertshotel)
 
 (1,1,1) = {"
@@ -399,7 +399,7 @@ aa
 aa
 ab
 at
-aL
+ad
 ak
 ad
 aL
