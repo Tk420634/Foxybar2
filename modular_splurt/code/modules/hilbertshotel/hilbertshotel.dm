@@ -1,14 +1,26 @@
 GLOBAL_VAR_INIT(hhStorageTurf, null)
 GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 
+
+
+
 /obj/hilbertshotel
 	name = "Hilbert's Hotel"
 	desc = "A sphere of what appears to be an intricate network of bluespace. Observing it in detail seems to give you a headache as you try to comprehend the infinite amount of infinitesimally distinct points on its surface."
+	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "hilbertshotel"
-	w_class = WEIGHT_CLASS_SMALL
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	//SPLURT EDIT START
-	var/list/static/hotel_maps = list("Hotel Room", "Apartment-1","Apartment-2", "Apartment-3", "Apartment-4", "Apartment-Bar", "Apartment-Garden", "Apartment-Sauna")
+	var/list/static/hotel_maps = list(
+	"Hotel Room",
+	"Apartment-1",
+	"Apartment-2",
+	"Apartment-3", 
+	"Apartment-4",
+	"Apartment-Bar", 
+	"Apartment-Garden",
+	"Apartment-Sauna"
+	)
 	var/datum/map_template/hilbertshotel/apartment/one/hilberts_hotel_rooms_apartment_one
 	var/datum/map_template/hilbertshotel/apartment/two/hilberts_hotel_rooms_apartment_two
 	var/datum/map_template/hilbertshotel/apartment/three/hilberts_hotel_rooms_apartment_three
@@ -27,7 +39,6 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 	//Lore Stuff
 	var/ruinSpawned = FALSE
 	var/mysteryRoom
-	w_class = WEIGHT_CLASS_GIGANTIC
 	var/list/list/mob_dorms = list()
 
 /obj/hilbertshotel/Initialize(mapload)
@@ -47,25 +58,10 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 	hilberts_hotel_rooms_apartment_bar = new()
 	hilberts_hotel_rooms_apartment_garden = new()
 	hilberts_hotel_rooms_apartment_sauna = new()
-	//SPLURT EDIT END
-	var/area/currentArea = get_area(src)
-	if(currentArea.type == /area/ruin/space/has_grav/hilbertresearchfacility)
-		ruinSpawned = TRUE
 
 /obj/hilbertshotel/Destroy()
 	ejectRooms()
 	return ..()
-
-/obj/hilbertshotel/attack(mob/living/M, mob/living/user)
-	if(M.mind)
-		to_chat(user, span_notice("You invite [M] to the hotel."))
-		promptAndCheckIn(user, M)
-	else
-		to_chat(user, span_warning("[M] is not intelligent enough to understand how to use this device!"))
-
-/obj/hilbertshotel/attack_self(mob/user)
-	. = ..()
-	promptAndCheckIn(user, user)
 
 /obj/hilbertshotel/attack_hand(mob/user)
 	. = ..()
