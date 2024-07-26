@@ -4028,8 +4028,8 @@
 #include "modular_splurt\code\datums\modules\client\preferences_savefile.dm"
 #include "modular_splurt\code\datums\modules\client\verbs\character_directory.dm"
 #include "modular_splurt\code\game\objects\items\lewd_items\strapon.dm"
-#include "modular_splurt\code\game\objects\structures\pole.dm"
 #include "modular_splurt\code\mobs\mob.dm"
+#include "modular_splurt\code\modules\hilbertshotel\hilbertshotel.dm"
 #include "modular_splurt\code\modules\research\xenoarch\artifact.dm"
 #include "modular_splurt\code\modules\research\xenoarch\artifact_list.dm"
 #include "modular_splurt\code\modules\research\xenoarch\strange_rock.dm"
@@ -4053,5 +4053,4 @@
 #include "modular_sunset\code\modules\fluff\happyshark_granter.dm"
 #include "modular_sunset\code\modules\fluff\happyshark_recipe.dm"
 #include "modular_sunset\code\modules\food_and_drinks\happy_shark\happy_shark.dm"
-#include "modular_virgo\earrings.dm"
 // END_INCLUDE
