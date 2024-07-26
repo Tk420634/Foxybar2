@@ -298,10 +298,70 @@
 	cost = 2
 	*/
 
-/datum/gear/hands/defib/carbattery
-	name = "Primitive Defib"
-	path = /obj/item/defibrillator/primitive
+/datum/gear/hands/studearrings
+	name = "stud earrings, glass"
+	path = "/obj/item/clothing/accessory/earring/stud/glass"
+	cost = 0
 
-/datum/gear/hands/bedroll
-	name = "bedroll"
-	path = /obj/item/roller/bedroll
+/datum/gear/hands/studearrings/wood
+	name = "stud earrings, wood"
+	path = "/obj/item/clothing/accessory/earring/stud/wood"
+
+/datum/gear/hands/studearrings/iron
+	name = "stud earrings, iron"
+	path = "/obj/item/clothing/accessory/earring/stud/iron"
+
+/datum/gear/hands/studearrings/steel
+	name = "stud earrings, steel"
+	path = "/obj/item/clothing/accessory/earring/stud/steel"
+
+/datum/gear/hands/studearrings/silver
+	name = "stud earrings, silver"
+	path = "/obj/item/clothing/accessory/earring/stud/silver"
+
+/datum/gear/hands/studearrings/gold
+	name = "stud earrings, gold"
+	path = "/obj/item/clothing/accessory/earring/stud/gold"
+
+/datum/gear/hands/studearrings/platinum
+	name = "stud earrings, platinum"
+	path = "/obj/item/clothing/accessory/earring/stud/platinum"
+
+/datum/gear/hands/studearrings/diamond
+	name = "stud earrings, diamond"
+	path = "/obj/item/clothing/accessory/earring/stud/diamond"
+
+//dangle-danglers
+/datum/gear/hands/dangleearrings
+	name = "dangle earrings, glass"
+	path = "/obj/item/clothing/accessory/earring/dangle/glass"
+	cost = 0
+
+/datum/gear/hands/dangleearrings/wood
+	name = "dangle earrings, wood"
+	path = "/obj/item/clothing/accessory/earring/dangle/wood"
+
+/datum/gear/hands/dangleearrings/iron
+	name = "dangle earrings, iron"
+	path = "/obj/item/clothing/accessory/earring/dangle/iron"
+
+/datum/gear/hands/dangleearrings/steel
+	name = "dangle earrings, steel"
+	path = "/obj/item/clothing/accessory/earring/dangle/steel"
+
+/datum/gear/hands/dangleearrings/silver
+	name = "dangle earrings, silver"
+	path = "/obj/item/clothing/accessory/earring/dangle/silver"
+
+/datum/gear/hands/dangleearrings/gold
+	name = "dangle earrings, gold"
+	path = "/obj/item/clothing/accessory/earring/dangle/gold"
+
+/datum/gear/hands/dangleearrings/platinum
+	name = "dangle earrings, platinum"
+	path = "/obj/item/clothing/accessory/earring/dangle/platinum"
+
+/datum/gear/hands/dangleearrings/diamond
+	name = "dangle earrings, diamond"
+	path = "/obj/item/clothing/accessory/earring/dangle/diamond"
+
