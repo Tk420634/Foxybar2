@@ -72,7 +72,6 @@
 /area/hilbertshotel)
 "kU" = (
 /obj/machinery/telecomms/relay/preset/auto,
-/turf/open/floor/catwalk_floor,
 /area/hilbertshotel)
 "kX" = (
 /obj/structure/table/reinforced,
@@ -141,7 +140,6 @@
 /turf/open/indestructible/hotelwood,
 /area/hilbertshotel)
 "zo" = (
-/obj/machinery/door/window/northleft,
 /obj/machinery/airalarm/all_access{
 	dir = 4;
 	pixel_x = -24
@@ -195,13 +193,6 @@
 /obj/machinery/vending/kink,
 /turf/open/indestructible/hotelwood,
 /area/hilbertshotel)
-"Ir" = (
-/obj/structure/pole{
-	pixel_y = 9
-	},
-/obj/structure/table/reinforced,
-/turf/open/indestructible/hotelwood,
-/area/hilbertshotel)
 "IT" = (
 /turf/closed/indestructible/hoteldoor,
 /area/hilbertshotel)
@@ -217,7 +208,6 @@
 /area/hilbertshotel)
 "KD" = (
 /obj/machinery/light/small,
-/obj/effect/landmark/xmastree/hilbert,
 /turf/open/indestructible/hotelwood,
 /area/hilbertshotel)
 "Ld" = (
@@ -265,7 +255,6 @@
 /area/hilbertshotel)
 "QV" = (
 /obj/structure/bed/double,
-/obj/item/bedsheet/random/double,
 /turf/open/indestructible/hotelwood,
 /area/hilbertshotel)
 "Rt" = (
@@ -399,7 +388,7 @@ GW
 GW
 GW
 Si
-Ir
+Mt
 Ce
 MZ
 Um

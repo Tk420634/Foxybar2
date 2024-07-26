@@ -4,16 +4,13 @@
 /area/hilbertshotel)
 "ab" = (
 /obj/machinery/telecomms/relay/preset/auto,
-/turf/open/floor/catwalk_floor,
 /area/hilbertshotel)
 "ag" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
-/turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 "aj" = (
-/turf/open/floor/catwalk_floor,
 /area/hilbertshotel)
 "am" = (
 /obj/machinery/vending/kink{
@@ -64,17 +61,14 @@
 /obj/structure/toilet{
 	dir = 8
 	},
-/obj/machinery/door/window/westleft,
 /turf/open/indestructible/hoteltile,
 /area/hilbertshotel)
 "aD" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/structure/closet/crate/bin,
-/turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 "aF" = (
 /obj/structure/bed/double,
-/obj/item/bedsheet/random/double,
 /turf/open/floor/carpet,
 /area/hilbertshotel)
 "aI" = (
@@ -138,7 +132,6 @@
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
 	},
-/turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 "aZ" = (
 /obj/effect/turf_decal/siding/thinplating/dark,
@@ -149,30 +142,10 @@
 	dir = 8
 	},
 /area/hilbertshotel)
-"bg" = (
-/obj/structure/chair/sofa/middle/maroon,
-/turf/open/floor/carpet,
-/area/hilbertshotel)
-"bh" = (
-/obj/structure/chair/sofa/left/maroon,
-/turf/open/floor/carpet,
-/area/hilbertshotel)
-"bk" = (
-/obj/structure/chair/sofa/left/maroon{
-	dir = 4
-	},
-/turf/open/floor/carpet,
-/area/hilbertshotel)
 "bl" = (
 /obj/structure/table/wood,
 /obj/item/storage/fancy/heart_box,
 /obj/item/paper/fluff/hilbertshotel/welcomeletter,
-/turf/open/floor/carpet,
-/area/hilbertshotel)
-"bn" = (
-/obj/structure/chair/sofa/right/maroon{
-	dir = 8
-	},
 /turf/open/floor/carpet,
 /area/hilbertshotel)
 "bp" = (
@@ -194,18 +167,6 @@
 	},
 /obj/item/reagent_containers/food/drinks/bottle/champagne,
 /turf/open/floor/plasteel/cafeteria,
-/area/hilbertshotel)
-"bu" = (
-/obj/structure/chair/sofa/right/maroon{
-	dir = 4
-	},
-/turf/open/floor/carpet,
-/area/hilbertshotel)
-"bv" = (
-/obj/structure/chair/sofa/left/maroon{
-	dir = 8
-	},
-/turf/open/floor/carpet,
 /area/hilbertshotel)
 "bw" = (
 /obj/structure/table/reinforced,
@@ -247,14 +208,12 @@
 	area_limited = 1
 	},
 /obj/effect/turf_decal/siding/wood,
-/turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 "bC" = (
 /obj/item/kirbyplants/random,
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
 	},
-/turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 "cA" = (
 /obj/effect/turf_decal/siding/wood{
@@ -265,7 +224,6 @@
 	},
 /obj/structure/flora/junglebush,
 /obj/structure/flora/junglebush/large,
-/turf/open/floor/grass/grass0,
 /area/hilbertshotel)
 "dh" = (
 /obj/structure/table/wood,
@@ -277,13 +235,11 @@
 	shut_up = 1
 	},
 /obj/effect/turf_decal/siding/wood,
-/turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 "dT" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
-/turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 "dU" = (
 /obj/machinery/light{
@@ -296,7 +252,6 @@
 	dir = 8
 	},
 /obj/structure/flora/junglebush,
-/turf/open/floor/grass/grass0,
 /area/hilbertshotel)
 "gc" = (
 /obj/effect/turf_decal/siding/wood{
@@ -310,7 +265,6 @@
 	},
 /obj/structure/flora/junglebush,
 /obj/structure/flora/junglebush/large,
-/turf/open/floor/grass/grass0,
 /area/hilbertshotel)
 "kt" = (
 /obj/structure/table/wood,
@@ -347,7 +301,6 @@
 /area/hilbertshotel)
 "lo" = (
 /obj/machinery/smartfridge/food,
-/turf/closed/indestructible/wall,
 /area/hilbertshotel)
 "mf" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -389,7 +342,6 @@
 	},
 /obj/structure/window,
 /obj/structure/flora/junglebush,
-/turf/open/floor/grass/grass0,
 /area/hilbertshotel)
 "wX" = (
 /obj/structure/table/wood,
@@ -404,7 +356,6 @@
 	dir = 8
 	},
 /obj/item/soap/deluxe,
-/obj/machinery/door/window/westright,
 /turf/open/indestructible/hoteltile,
 /area/hilbertshotel)
 "yI" = (
@@ -427,7 +378,6 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
-/turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 "IH" = (
 /obj/structure/sign/poster/contraband/random,
@@ -437,7 +387,6 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
-/turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 "KK" = (
 /obj/machinery/light{
@@ -467,7 +416,6 @@
 /obj/structure/table/reinforced,
 /obj/item/candle/infinite,
 /obj/effect/turf_decal/siding/wood,
-/turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 "Nv" = (
 /obj/machinery/light/small{
@@ -483,10 +431,6 @@
 	dir = 1
 	},
 /turf/open/indestructible/hotelwood,
-/area/hilbertshotel)
-"Oi" = (
-/obj/machinery/light_switch/directional/east,
-/turf/open/floor/carpet,
 /area/hilbertshotel)
 "PJ" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -515,17 +459,12 @@
 /area/hilbertshotel)
 "Xr" = (
 /obj/structure/sign/poster/contraband/random,
-/turf/closed/indestructible/wall,
-/area/hilbertshotel)
-"XP" = (
-/turf/closed/indestructible/wall,
 /area/hilbertshotel)
 "XQ" = (
 /obj/item/kirbyplants/random,
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
-/turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 "Yf" = (
 /obj/machinery/light_switch{
@@ -540,7 +479,6 @@
 /turf/open/indestructible/hotelwood,
 /area/hilbertshotel)
 "Yw" = (
-/obj/structure/chair/sofa/right/maroon,
 /obj/item/choice_beacon/box/plushie,
 /turf/open/floor/carpet,
 /area/hilbertshotel)
@@ -548,13 +486,11 @@
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 1
 	},
-/turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 "YK" = (
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 8
 	},
-/turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 "Zq" = (
 /obj/item/kirbyplants/random,
@@ -589,25 +525,25 @@ aa
 aa
 ab
 aj
-XP
-XP
+aj
+aj
 Xr
-XP
-XP
-XP
-XP
-XP
-XP
-XP
-XP
-XP
+aj
+aj
+aj
+aj
+aj
+aj
+aj
+aj
+aj
 aa
 "}
 (3,1,1) = {"
 aa
 aj
 aj
-XP
+aj
 oY
 Vu
 Vu
@@ -618,7 +554,7 @@ ZC
 bp
 bw
 bz
-XP
+aj
 aa
 "}
 (4,1,1) = {"
@@ -643,7 +579,7 @@ aa
 aa
 aj
 aj
-XP
+aj
 mf
 KM
 PJ
@@ -654,14 +590,14 @@ ZC
 bq
 bx
 bx
-XP
+aj
 aa
 "}
 (6,1,1) = {"
 aa
 aj
 aj
-XP
+aj
 ZC
 ZC
 ZC
@@ -672,14 +608,14 @@ ZC
 bs
 by
 kR
-XP
+aj
 aa
 "}
 (7,1,1) = {"
 aa
-XP
-XP
-XP
+aj
+aj
+aj
 aB
 aI
 aJ
@@ -690,12 +626,12 @@ ag
 GN
 GN
 dT
-XP
+aj
 aa
 "}
 (8,1,1) = {"
 aa
-XP
+aj
 am
 ZC
 aC
@@ -704,16 +640,16 @@ xS
 ZC
 Ka
 ax
-bk
-bu
+ax
+ax
 ax
 aD
-XP
+aj
 aa
 "}
 (9,1,1) = {"
 aa
-XP
+aj
 an
 ZC
 ZC
@@ -726,12 +662,12 @@ wX
 bl
 ax
 LU
-XP
+aj
 aa
 "}
 (10,1,1) = {"
 aa
-XP
+aj
 Nv
 Yf
 kT
@@ -739,17 +675,17 @@ nE
 lm
 ZC
 Ka
-bg
+ax
 Rh
 dh
 ax
 bA
-XP
+aj
 aa
 "}
 (11,1,1) = {"
 aa
-XP
+aj
 ax
 ax
 ax
@@ -757,17 +693,17 @@ aL
 aO
 aU
 YE
-bh
+ax
 kt
 nA
 ax
 LU
-XP
+aj
 aa
 "}
 (12,1,1) = {"
 aa
-XP
+aj
 aq
 ax
 ax
@@ -776,18 +712,18 @@ aP
 aT
 aX
 ax
-bn
-bv
+ax
+ax
 ax
 dC
-XP
+aj
 aa
 "}
 (13,1,1) = {"
 aa
-XP
+aj
 ar
-Oi
+ax
 aF
 Lo
 aQ
@@ -798,25 +734,25 @@ dU
 cA
 qh
 bC
-XP
+aj
 aa
 "}
 (14,1,1) = {"
 aa
-XP
-XP
-XP
-XP
-XP
-XP
-XP
-XP
-XP
-XP
-XP
-XP
-XP
-XP
+aj
+aj
+aj
+aj
+aj
+aj
+aj
+aj
+aj
+aj
+aj
+aj
+aj
+aj
 aa
 "}
 (15,1,1) = {"

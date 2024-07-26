@@ -156,10 +156,6 @@
 /obj/structure/curtain,
 /turf/open/indestructible/hoteltile,
 /area/hilbertshotel)
-"aF" = (
-/obj/machinery/door/window/northleft,
-/turf/open/indestructible/hotelwood,
-/area/hilbertshotel)
 "aG" = (
 /obj/structure/table/reinforced,
 /turf/open/indestructible/hotelwood,
@@ -409,7 +405,7 @@ ad
 aL
 an
 ad
-aF
+ad
 be
 aQ
 aG
