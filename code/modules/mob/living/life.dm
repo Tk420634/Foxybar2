@@ -62,6 +62,8 @@
 	if(stat == DEAD)
 		return FALSE
 
+	handle_passive_heal() //Passive healing, if applicable
+
 	//Tongue wetness code or something
 	handle_healreservoir()
 
@@ -115,6 +117,22 @@
 	if(machine)
 		machine.check_eye(src)
 	return TRUE
+
+/mob/living/proc/handle_passive_heal()
+	var/brut = getBruteLoss()
+	var/fire = getFireLoss()
+	var/oxy = getOxyLoss()
+	var/tox = getToxLoss()
+
+
+	if(brut > 0 || fire > 0 || oxy > 0 || tox > 0)
+		var/adjustby = brut + fire + oxy + tox
+		var/actuallyadjustby = clamp((adjustby/10) + 5, 0, adjustby)
+		adjustBruteLoss(-actuallyadjustby)
+		adjustFireLoss(-actuallyadjustby)
+		adjustOxyLoss(-actuallyadjustby)
+		adjustToxLoss(-actuallyadjustby, force_be_heal = TRUE)
+		adjustStaminaLoss(actuallyadjustby)
 
 /mob/living/proc/handle_breathing(times_fired)
 	return

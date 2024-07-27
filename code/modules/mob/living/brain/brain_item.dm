@@ -227,13 +227,13 @@
 	. = ..()
 	if(!. || !owner)
 		return
-	if(damage >= BRAIN_DAMAGE_DEATH) //rip
-		if(owner.stat != DEAD)
-			to_chat(owner, span_userdanger("The last spark of life in your brain fizzles out..."))
-			owner.death()
-		brain_death = TRUE
-	else
-		brain_death = FALSE
+	// if(damage >= BRAIN_DAMAGE_DEATH) //rip
+	// 	if(owner.stat != DEAD)
+	// 		to_chat(owner, span_userdanger("The last spark of life in your brain fizzles out..."))
+	// 		owner.death()
+	// 	brain_death = TRUE
+	// else
+	// 	brain_death = FALSE
 
 /obj/item/organ/brain/check_damage_thresholds(mob/M)
 	. = ..()

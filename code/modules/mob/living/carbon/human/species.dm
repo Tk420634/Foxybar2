@@ -2078,8 +2078,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 											span_userdanger("I have been knocked senseless!"))
 							H.confused = max(H.confused, 20)
 							H.adjust_blurriness(10)
-						if(prob(10))
-							H.gain_trauma(/datum/brain_trauma/mild/concussion)
+						// if(prob(10))
+						// 	H.gain_trauma(/datum/brain_trauma/mild/concussion)
 					else
 						H.adjustOrganLoss(ORGAN_SLOT_BRAIN, totitemdamage * 0.2)
 

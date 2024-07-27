@@ -34,10 +34,10 @@
 	Overwriting of base procs
 */
 /datum/wound/blunt/wound_injury(datum/wound/old_wound = null)
-	if(limb.body_zone == BODY_ZONE_HEAD && brain_trauma_group)
-		processes = TRUE
-		active_trauma = victim.gain_trauma_type(brain_trauma_group, TRAUMA_RESILIENCE_WOUND)
-		next_trauma_cycle = world.time + (rand(100-WOUND_BONE_HEAD_TIME_VARIANCE, 100+WOUND_BONE_HEAD_TIME_VARIANCE) * 0.01 * trauma_cycle_cooldown)
+	// if(limb.body_zone == BODY_ZONE_HEAD && brain_trauma_group)
+	// 	processes = TRUE
+	// 	active_trauma = victim.gain_trauma_type(brain_trauma_group, TRAUMA_RESILIENCE_WOUND)
+	// 	next_trauma_cycle = world.time + (rand(100-WOUND_BONE_HEAD_TIME_VARIANCE, 100+WOUND_BONE_HEAD_TIME_VARIANCE) * 0.01 * trauma_cycle_cooldown)
 
 	RegisterSignal(victim, COMSIG_HUMAN_EARLY_UNARMED_ATTACK,PROC_REF(attack_with_hurt_hand))
 	if(limb.held_index && victim.get_item_for_held_index(limb.held_index) && (disabling || prob(30 * severity)))
@@ -59,12 +59,12 @@
 
 /datum/wound/blunt/handle_process()
 	. = ..()
-	if(limb.body_zone == BODY_ZONE_HEAD && brain_trauma_group && world.time > next_trauma_cycle)
-		if(active_trauma)
-			QDEL_NULL(active_trauma)
-		else
-			active_trauma = victim.gain_trauma_type(brain_trauma_group, TRAUMA_RESILIENCE_WOUND)
-		next_trauma_cycle = world.time + (rand(100-WOUND_BONE_HEAD_TIME_VARIANCE, 100+WOUND_BONE_HEAD_TIME_VARIANCE) * 0.01 * trauma_cycle_cooldown)
+	// if(limb.body_zone == BODY_ZONE_HEAD && brain_trauma_group && world.time > next_trauma_cycle)
+	// 	if(active_trauma)
+	// 		QDEL_NULL(active_trauma)
+	// 	else
+	// 		active_trauma = victim.gain_trauma_type(brain_trauma_group, TRAUMA_RESILIENCE_WOUND)
+	// 	next_trauma_cycle = world.time + (rand(100-WOUND_BONE_HEAD_TIME_VARIANCE, 100+WOUND_BONE_HEAD_TIME_VARIANCE) * 0.01 * trauma_cycle_cooldown)
 
 	if(!regen_points_needed)
 		return
