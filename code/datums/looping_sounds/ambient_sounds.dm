@@ -551,6 +551,8 @@
 		SOUND_LOOP_ENTRY('sound/f13ambience/creek_08.ogg', 2 SECONDS, 10),
 		)
 
+	
+
 /datum/looping_sound/ambient/kf/forestmusic
 	chance = 80
 	vary = FALSE
@@ -643,4 +645,3 @@
 		SOUND_LOOP_ENTRY('sound/f13ambience/bar/cool_bar_ambience_raw_17.ogg', 10 SECONDS, 1),
 		SOUND_LOOP_ENTRY('sound/f13ambience/bar/cool_bar_ambience_raw_18.ogg', 10 SECONDS, 1),
 	)
-
