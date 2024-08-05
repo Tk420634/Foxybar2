@@ -20,7 +20,10 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 	"Apartment-Bar", 
 	"Apartment-Garden",
 	"Apartment-Sauna",
-	"Movie-Theater"
+	"Movie-Theater",
+	"Dungeon-One",
+	"Oasis-One",
+	"Snowcabin-One",
 	)
 	var/datum/map_template/hilbertshotel/apartment/one/hilberts_hotel_rooms_apartment_one
 	var/datum/map_template/hilbertshotel/apartment/two/hilberts_hotel_rooms_apartment_two
@@ -32,6 +35,9 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 	//SPLURT EDIT END
 	//FB Maps
 	var/datum/map_template/hilbertshotel/apartment/movietheater/hilberts_hotel_rooms_movie_theater
+	var/datum/map_template/hilbertshotel/apartment/dungeon_one/dungeon_one
+	var/datum/map_template/hilbertshotel/apartment/oasis_one/oasis_one
+	var/datum/map_template/hilbertshotel/apartment/snowcabin_one/snowcabin_one
 	//FB Maps End
 	var/datum/map_template/hilbertshotel/hotelRoomTemp
 	var/datum/map_template/hilbertshotel/empty/hotelRoomTempEmpty
@@ -64,6 +70,9 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 	hilberts_hotel_rooms_apartment_sauna = new()
 	//FB EDIT START
 	hilberts_hotel_rooms_movie_theater = new()
+	dungeon_one = new()
+	oasis_one = new()
+	snowcabin_one = new()
 
 /obj/hilbertshotel/Destroy()
 	ejectRooms()
@@ -244,6 +253,9 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 		if("Apartment-Garden") return hilberts_hotel_rooms_apartment_garden
 		if("Apartment-Sauna") return hilberts_hotel_rooms_apartment_sauna
 		if("Movie-Theater") return hilberts_hotel_rooms_movie_theater
+		if("Dungeon-One") return dungeon_one
+		if("Oasis-One") return oasis_one
+		if("Snowcabin-One") return snowcabin_one
 		if("Mystery Room") return hotelRoomTempLore
 	return hotelRoomTemp // Default to Hotel Room if no match is found
 
@@ -268,6 +280,9 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 			if("Apartment-Garden") mapTemplate = hilberts_hotel_rooms_apartment_garden
 			if("Apartment-Sauna") mapTemplate = hilberts_hotel_rooms_apartment_sauna
 			if("Movie-Theater") mapTemplate = hilberts_hotel_rooms_movie_theater
+			if("Dungeon-One") mapTemplate = dungeon_one
+			if("Oasis-One") mapTemplate = oasis_one
+			if("Snowcabin-One") mapTemplate = snowcabin_one
 	if(!mapTemplate)
 		mapTemplate = hotelRoomTemp //Default Hotel Room
 
@@ -549,6 +564,9 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 	requires_power = FALSE
 	has_gravity = TRUE
 
+/area/hilbertshotel/arabian
+	name = "Hilbert's Hotel Room - arabian ambience"
+
 /obj/item/abstracthotelstorage
 	anchored = TRUE
 	invisibility = INVISIBILITY_ABSTRACT
@@ -730,6 +748,18 @@ Not all that's countable has an end..._
 /datum/map_template/hilbertshotel/apartment/movietheater
 	name = "Movie_Theater"
 	mappath = '_maps/templates/splurt_templates/hilbertshotel_templates/movie_theater.dmm'
+
+/datum/map_template/hilbertshotel/apartment/dungeon_one
+	name = "Dungeon-One"
+	mappath = '_maps/templates/splurt_templates/hilbertshotel_templates/dungeon_1.dmm'
+
+/datum/map_template/hilbertshotel/apartment/oasis_one
+	name = "oasis-One"
+	mappath = '_maps/templates/splurt_templates/hilbertshotel_templates/oasis_1.dmm'
+
+/datum/map_template/hilbertshotel/apartment/snowcabin_one
+	name = "snowcabin-One"
+	mappath = '_maps/templates/splurt_templates/hilbertshotel_templates/snowcabin_1.dmm'
 
 
 // Fluff - Misc

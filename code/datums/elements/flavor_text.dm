@@ -15,8 +15,9 @@ GLOBAL_LIST_EMPTY(mobs_with_editable_flavor_text) //et tu, hacky code
 	/// Do not attempt to render a preview on examine. If this is on, it will display as \[flavor_name\]
 	var/examine_no_preview = FALSE
 	var/why_does_it_do_this = 0
+	var/spandex = "notice"
 
-/datum/element/flavor_text/Attach(datum/target, text = "", _name = "Flavor Text", _addendum, _max_len = MAX_FLAVOR_LEN, _always_show = FALSE, _edit = TRUE, _save_key, _examine_no_preview = FALSE, _attach_internet_link = FALSE)
+/datum/element/flavor_text/Attach(datum/target, text = "", _name = "Flavor Text", _addendum, _max_len = MAX_FLAVOR_LEN, _always_show = FALSE, _edit = TRUE, _save_key, _examine_no_preview = FALSE, _attach_internet_link = FALSE, _span)
 	. = ..()
 
 	if(. == ELEMENT_INCOMPATIBLE || !isatom(target)) //no reason why this shouldn't work on atoms too.
@@ -35,6 +36,8 @@ GLOBAL_LIST_EMPTY(mobs_with_editable_flavor_text) //et tu, hacky code
 	can_edit = _edit
 	save_key = _save_key
 	examine_no_preview = _examine_no_preview
+	if(!isnull(_span))
+		spandex = _span
 
 	RegisterSignal(target, COMSIG_PARENT_EXAMINE,PROC_REF(show_flavor))
 	RegisterSignal(target, COMSIG_FLIST,PROC_REF(show_flist))
@@ -59,16 +62,16 @@ GLOBAL_LIST_EMPTY(mobs_with_editable_flavor_text) //et tu, hacky code
 			remove_verb(M, /mob/proc/manage_flavor_tests)
 
 /datum/element/flavor_text/proc/show_flavor(atom/target, mob/user, list/examine_list)
-	if(!always_show && isliving(target) && !isobserver(user))
-		var/mob/living/L = target
-		var/unknown = L.get_visible_name() == "Unknown"
-		if(!unknown && iscarbon(target))
-			var/mob/living/carbon/C = L
-			unknown = !HAS_TRAIT(C, TRAIT_NOHIDEFACE) && ((C.wear_mask && (C.wear_mask.flags_inv & HIDEFACE)) || (C.head && (C.head.flags_inv & HIDEFACE)))
-		if(unknown)
-			if(!("...?" in examine_list)) //can't think of anything better in case of multiple flavor texts.
-				examine_list += "...?"
-			return
+	// if(!always_show && isliving(target) && !isobserver(user))
+	// 	var/mob/living/L = target
+	// 	var/unknown = L.get_visible_name() == "Unknown"
+	// 	if(!unknown && iscarbon(target))
+	// 		var/mob/living/carbon/C = L
+	// 		unknown = !HAS_TRAIT(C, TRAIT_NOHIDEFACE) && ((C.wear_mask && (C.wear_mask.flags_inv & HIDEFACE)) || (C.head && (C.head.flags_inv & HIDEFACE)))
+	// 	if(unknown)
+	// 		if(!("...?" in examine_list)) //can't think of anything better in case of multiple flavor texts.
+	// 			examine_list += "...?"
+	// 		return
 	var/text = texts_by_atom[target]
 	if(!text)
 		return
@@ -76,9 +79,9 @@ GLOBAL_LIST_EMPTY(mobs_with_editable_flavor_text) //et tu, hacky code
 		var/mob/living/carbon/human/H = target
 		if(H.dna.features["background_info_notes"] == BACKGROUND_INFO_NOTE_TEMPLATE)
 			return
-	if(examine_no_preview)
-		examine_list += span_notice("<a href='?src=[REF(src)];show_flavor=[REF(target)]'>\[[flavor_name]\]</a>")
-		return
+	// if(examine_no_preview)
+	// 	examine_list += span_notice("<a href='?src=[REF(src)];show_flavor=[REF(target)]'>\[[flavor_name]\]</a>")
+	// 	return
 	var/msg = replacetext(text, "\n", " ")
 	if(length_char(msg) <= 200)
 		examine_list += span_notice("[msg]")
@@ -150,10 +153,10 @@ GLOBAL_LIST_EMPTY(mobs_with_editable_flavor_text) //et tu, hacky code
 		var/datum/element/flavor_text/F = i
 		choices[F.flavor_name] = F
 
-	var/chosen = input(src, "Which flavor text would you like to modify?") as null|anything in choices
-	if(!chosen)
-		return
-	var/datum/element/flavor_text/F = choices[chosen]
+	// var/chosen = input(src, "Which flavor text would you like to modify?") as null|anything in choices
+	// if(!chosen)
+	// 	return
+	var/datum/element/flavor_text/F = choices["Set Pose/Leave OOC Message"]
 	F.set_flavor(src)
 
 /datum/element/flavor_text/proc/set_flavor(mob/user)
